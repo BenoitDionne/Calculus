@@ -1,0 +1,256 @@
+\nonumchapter{\AP}
+
+Le contenu de ce manuel couvre la grande majorité des sujets présentés
+dans les cours de calcul différentiel et intégral pour les étudiants
+\footnote{Dans ce manuel, le genre non marqué, c'est-à-dire le
+masculin, quand il est employé pour désigner des personnes, renvoie
+aussi bien à des femmes qu'à des hommes.}
+en sciences et génies.  Les seuls préalables sont les mathématiques
+normalement enseignées au secondaire en Ontario.  En fait, le premier
+chapitre revoit rapidement tous les concepts mathématiques que le
+lecteur devrait connaître à la sortie du secondaire.  Certains
+concepts qui ne sont pas présentés au secondaire ont aussi été ajoutés
+au chapitre~\ref{ChapFonct}.  Il est donc fortement suggérer au
+lecteur de revoir le chapitre~\ref{ChapFonct} même s'il est
+confiants de bien connaître les mathématiques de base.
+
+Afin que le lecteur puisse bien comprendre le matériel présenté dans
+ce manuel, nous avons porté un très grand soin à fournir tous les
+détails et calculs algébriques qui supportent les énoncés
+mathématiques.  De cette façon, nous espérons que le lecteur ne sera pas
+nuit dans son apprentissage de la matière par des détails techniques.
+De plus, cela permet au lecteur de développer ses capacités à
+exécuter correctement des calculs algébriques.
+
+Nous avons aussi choisi d'inclure les solutions détaillés d'un grande
+nombre de problèmes à la fin du manuel.  Le lecteur devrait
+sérieusement essayer de résoudre les problèmes à la fin de chaque
+chapitre avant de regarder les solutions.  On n'apprend pas à jouer de
+la guitare en regardant un guitariste jouer.  Il faut sérieusement
+pratiquer au point d'avoir le bout des doigts sensibles.  C'est la
+même chose pour les mathématiques.  Ce n'est pas en lissant simplement
+les solutions des problèmes produites par une autre personne que vous
+apprendrez à résoudre des problèmes.  Il faut en résoudre soit
+même.
+
+Une autre raison pour justifier l'inclusion d'un grande nombre de
+solutions est qu'il est maintenant facile d'accéder à un logiciel qui
+peut presque complètement résoudre les problèmes ou d'utiliser
+certains sites Internet pour demander à d'autres personnes de
+résoudre les problèmes.  C'est la meilleure façon pour ne rien
+apprendre.  C'est sans compter que bien souvent les solutions
+fournies sur ces sites sont erronées.  Donc, si vraiment vous ne
+pouvez pas résoudre un problème après avoir essayé pour une bonne
+période de temps, il est préférable de regarder la
+solution à la fin du manuel pour obtenir une solution correcte; en
+assumant que l'auteur n'ait pas fait lui-même d'erreurs. 
+
+Ce manuel peut être utilisées pour trois des variantes des cours de
+calcul différentiel et intégral que nous retrouvons dans la majorité des
+universités en Ontario.
+
+{\renewcommand{\labelitemi}{\textbullet}
+\begin{itemize}
+\item Les items marqués par le symbole \eng sont spécifiquement pour
+les cours de {\bfseries Calcul différentiel et intégral pour les 
+étudiants en génie}.
+\item Les items marqués par le symbole \life sont spécifiquement pour
+les cours de {\bfseries Calcul différentiel et intégral pour les
+étudiants en sciences de la vie}.
+\item Les items marqués par le symbole \eco sont spécifiquement pour
+les cours de {\bfseries Calcul différentiel et intégral pour les
+étudiants en administration}.
+\end{itemize}
+}
+
+Les items qui n'ont aucun de ces symboles sont requis pour les trois
+variantes des cours de calcul différentiel et intégral.  Le contenu
+pour les étudiants en administration est probablement à un niveau plus
+avancé que celui du contenu normalement présenté à ce groupe d'étudiants.
+
+L'ordre dans lequel le matériel est présenté est standard.  Il y a
+cependant certaines additions au matériel que nous ne retrouvons
+traditionnellement pas dans un manuel de calcul différentiel et
+intégral à ce niveau.  Une introduction à l'algèbre linéaire est
+fournie au chapitre~\ref{chapALLin}.  Le matériel présenté dans ce
+chapitre est tout ce que le lecteur a besoin de connaître en algèbre
+linéaire pour l'étude des fonctions de plusieurs variables aux
+chapitres~\ref{chapFonctPlusVar}, \ref{chapDerFonctMult}, \ref{chapIntMult}
+et \ref{chapCalcVect}; et l'étude des systèmes d'équations
+différentielles au chapitre~\ref{ChapSystEquDiff}.   Donc, aucun cours
+d'algèbre linéaire n'est préalable aux derniers chapitres de ce
+manuel.  Une application concrète de l'algèbre linéaire est fournie
+par les chaînes de Markov à la section~\ref{sectChainseMarkov}.
+Un chapitre comme le chapitre~\ref{ChapSystEquDiff} sur les
+systèmes d'équations différentielles n'est généralement pas inclus
+dans un manuel de calcul différentiel et intégral.  En particulier, lorsque
+l'emphase de l'étude des systèmes d'équations différentielles est sur
+l'aspect qualitatif de ces systèmes.
+
+Les chapitres~\ref{ChapSuitesSeries} et \ref{chapLimites} couvrent
+certains sujets présentés au secondaire.  Cependant, plusieurs sujets
+qui ne sont pas abordés au secondaire font parties de ces chapitres.
+La matière des cours de calcul différentiel et intégral au niveau
+universitaire débute donc avec certaines sections de ces chapitres
+selon le cours de calcul différentiel et intégral auxquels l'étudiant
+est inscrit.
+
+Comme les principaux utilisateurs de ces notes depuis plus de dix ans
+ont été les étudiants inscrits aux cours de Calcul différentiel et
+intégral pour les sciences de la vie à l'Université d'Ottawa, il n'est
+pas surprenant qu'une emphase toute particulière a été apporté à ce
+sujet.  Cela se traduit par plusieurs exemples en biologie et
+médecine, en particulier dans les premiers chapitres.
+
+Le cours de calcul différentiel et intégral pour les sciences de la
+vie comporte deux principales parties.  La première partie
+est dédiée au calcul différentiel pour les fonctions d'une variable et
+culmine avec l'étude des \lgm systèmes dynamiques discrets\rgm\ à la
+section~\ref{Sect_SDD}.  Les systèmes dynamiques discrets sont
+utilisés entre autre pour décrire certaines caractéristiques des
+populations animales mesurées à intervalles réguliers.
+La deuxième partie du cours de calcul différentiel et intégral pour
+les sciences de la vie est dédié au calcul intégral.  Le but ultime de
+cette partie est l'étude des \lgm systèmes dynamiques (continus)\rgm\ 
+au chapitre~\ref{ChapSystEquDiff}.  Les systèmes dynamiques continues
+sont des systèmes d'équations différentielles.  Ils sont utilisés
+entre autre pour modéliser les réactions chimiques, la croissance des
+populations et leurs mouvements, etc.
+
+\noindent {\bfseries Avertissement}: Les modèles biologiques utilisés
+dans les exemples et les questions ne représentent pas toujours des
+situations réelles.  Pour obtenir des modèles mathématiques qui soient
+intéressants et utilisent la théorie présentée dans les notes, tout en
+étant accessibles pour le niveau du cours, nous avons dû créer des
+modèles qui ne sont pas basés sur des données scientifiques.  Nous
+avons quand même essayé d'obtenir des modèles qui soient qualitativement
+valables.
+
+Alors que l'emphase est misse sur les applications à la biologie au
+début du manuel, notre attention se tourne vers les applications à la
+physique lorsque nous avançons dans la matière pour porter exclusivement
+sur les applications à la physique lorsque nous abordons l'étude des
+fonctions de plusieurs variables.  En fait, à partir du
+chapitre~\ref{chapFonctPlusVar} qui introduit les fonctions de
+plusieurs variables, nous nous attendons à ce que le lecteur est
+une plus grande maturité mathématique.
+
+Le manuel contient deux courts chapitres, le
+chapitre~\ref{CHAPvecteurs} sur les vecteurs et le
+chapitre~\ref{cha[ReprParam} sur les représentations paramétriques de
+courbes dans le plan et dans l'espace.  Le
+chapitre~\ref{CHAPvecteurs} sur les vecteurs contient beaucoup plus
+d'information que nécessaire.  Cependant, ce chapitre est une bonne
+préparation pour l'étude des fonctions de plusieurs variables.  En
+particulier, il permet au lecteur de développer ses aptitudes à
+visualiser les objets en trois dimensions; ce qui sera très utile lors
+l'étude de l'intégral double et triple au chapitre~\ref{chapIntMult}.
+Le chapitre~\ref{cha[ReprParam} est fondamental pour l'étude du calcul
+vectoriel au chapitre~\ref{chapCalcVect} et des systèmes d'équations
+différentielles au chapitre~\ref{ChapSystEquDiff}.
+
+Le chapitre~\ref{chapSerEnt} sur les séries entières est probablement
+le plus théorique des chapitres.  Cela n'est pas surprenant dû à la
+nature du sujet.  Le but principal de ce chapitre est de déterminer la
+convergence des séries entières.  Il n'en reste pas moins que ce
+chapitre est fondamental pour ceux qui poursuivront l'étude des
+équations différentielles comme c'est le cas pour plusieurs des
+domaines du génie.
+
+Nous avons limité au minimum le contenu du chapitre~\ref{chapCalcVect} sur
+le calcul vectoriel.  Nous avons adopté une approche intuitive à ce sujet.
+Il aurait été bénéfique d'aborder plus en détails les opérations sur
+les courbes (additions et différences) pour créer de nouvelles
+courbes, et l'interprétation de ces opérations en termes d'opérations
+sur les intégrales le long de courbes.  Ce chapitre ouvre la porte au
+vaste sujet de la géométrie différentielle.  Nous nous sommes retenu pour
+ne pas déborder do contenu d'un cours de calcul différentiel et intégral
+standard.
+
+\section*{Théorie}
+
+Les items marqués par le symbole \theory sont spécifiquement pour les
+lecteurs intéressés à la théorie et la rigueur en mathématique.
+Plusieurs de ces items demandent une connaissance du concept de \lgm
+démonstration\rgm\ que la majorité des étudiants du secondaire
+n'auront probablement pas vu.  Ces items sont généralement optionnels.
+Ils sont pour les lecteurs curieux qui voudrait en savoir plus sur les
+méthodes enseignées en classe.
+
+Il est fort probable que la majorité des étudiants en science de la
+vie et même en génie ne liront pas les sections plus théoriques.
+Malheureusement, pour eux, les mathématiques se limitent
+à une suite de méthodes et trucs pour résoudre certains problèmes.  Ce
+manuel contient ces méthodes et trucs.  Cependant, les sections plus
+théoriques donnent un avant goût de se que sont les mathématiques.  Nous
+espérons que certains lecteurs seront intéressés par la rigueur
+mathématiques et voudront poursuive cette direction dans leur études.
+
+Il y a plusieurs mentions du nombre d'Euler $e$.  Nous donnons plusieurs
+façons équivalentes de le définir.  Nous mentionnons indirectement le lien
+entre le nombre $e$ et les fonctions trigonométriques, donc le nombre
+$\pi$, lors d'une des démonstrations de la règle d'addition pour les
+fonctions trigonométriques $\sin$ et $\cos$.  Nous espérons que les
+étudiants seront fascinés par le fait que les nombres $e$ et $\pi$
+sont reliés.
+
+\section*{Notation}
+
+\begin{focus*}{\dfn}
+Les ensembles suivants seront fréquemment utilisés dans le présent
+document.
+\begin{itemize}
+\item $\NN = \{0,1,2,3,\ldots \}$ est l'ensemble des nombres naturels.
+\item $\NNp = \{1,2,3,\ldots \}$ est l'ensemble des nombres naturels
+positifs.
+\item $\ZZ = \{0,1,-1,2,-2,3,-3, \ldots \}$ est l'ensemble des nombres
+entiers.
+\item $\QQ$ est l'ensemble des nombres rationnels; c'est-à-dire, les
+  nombres de la forme $n/m$ où $n,m \in \ZZ$ et $m \neq 0$.
+\item $\RR$ est l'ensemble des nombres réels.
+\end{itemize}
+\end{focus*}
+
+En français, la virgule est utilisée pour séparer la partie entière de
+la partie décimale d'un nombre et nous utilisons un espace pour séparer
+les multiples de $10^3$.  Ainsi,
+\[
+105\ 456\ 263,456 =
+105\times 10^6+ 456\times 10^3 + 263 + \frac{456}{1000} \ .
+\]
+Cependant, dans le présent document, nous utiliserons la notation
+anglaise.  Le point sépare la partie entière de la partie décimale d'un
+nombre et la virgule sépare les multiples de $10^3$.  Nous écrivons donc
+\[
+105,456,263.456 = 105\times 10^6+ 456\times 10^3 + 263 + \frac{456}{1000} \ .
+\]
+La raison principale de ce choix est que la grande majorité des
+données utilisées dans ce document proviennent de documents en anglais
+qui utilisent cette notation.  De plus, les logiciels sont tous en
+anglais et utilisent aussi cette notation.  Pour être consistent, nous
+avons donc choisi d'utiliser la notation anglaise.
+
+\section*{Avertissement}
+
+Les notes de cours que vous avez devant vous représente un ouvrage
+inachevé, qui est en constante évolution.  Il ne faut donc pas être
+surpris d'y retrouver des fautes d'orthographe, des coquilles, etc.
+Les corrections seront apportées au cours du temps suite aux
+commentaires des lecteurs.  L'auteur prend entière responsabilité
+des erreurs; comment pourrait-il faire autrement?
+
+\section*{Remerciements}
+
+J'aimerais remercier Yves Bourgault, Wadii Hajji et Monica Nevins,
+des collègues de travail, dont les suggestions ont améliorées la
+présentation de la matière.
+
+De plus, j'aimerais remercier Paméla Touchette-Giroux pour son
+excellent travail de révision des textes pour la première édition de
+ces notes.  Il n'en reste pas moins que je prends toute la
+responsabilité pour les fautes présentes dans le texte.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

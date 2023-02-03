@@ -1,0 +1,43 @@
+\section{Représentations paramétriques des courbes}
+
+\subsection{Droite tangente à une courbe}
+
+\subsection{Longueur d'une courbe}
+
+\compileSOL{\SOLUb}{\ref{13Q2}}{
+Pour aller de $(0,1)$ à $(4,9)$ le long de la courbe, il faut que
+$0 \leq t \leq 2$.  Donc
+\[
+  L = \int_a^b \sqrt{  \left(x'(t)\right)^2 + \left(y'(t)\right)^2} \dx{t}
+= \int_0^2 \sqrt{ (2t)^2+(3t^2)^2} \dx{t}
+= \int_0^2 t\sqrt{4+9t^2}\,\dx{t} \ .
+\]
+Si $u=4+9t^2$, alors $\dx{u} = 18 t \dx{t}$, $u = 4$
+pour $t=0$ et $u = 40$ pour $t=2$.  Donc
+\[
+L = \frac{1}{18} \int_4^{40} u^{1/2} \dx{u}
+= \frac{1}{18} \left( \frac{2}{3}u^{3/2} \right)\bigg|_4^{40}
+= 9.07\ldots
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{13Q4}}{
+La longueur de la courbe est donnée par
+\[
+L = \int_1^3 \sqrt{1 + (y')^2} \dx{x}
+= \int_1^3 \sqrt{1 + (3x^{1/2})^2} \dx{x}
+= \int_1^3 \sqrt{1 + 9x} \dx{x} \ .
+\]
+Si $u=1+9x$, alors $\dx{u} = 9 \dx{x}$, $u=28$
+lorsque $x=3$ et $u=10$ lorsque $x=1$.  Donc
+\[
+L = \frac{1}{9} \int_{10}^{28} u^{1/2} \dx{u}
+= \frac{1}{9} \left(\frac{2}{3} u^{3/2}\right) \bigg|_{10}^{28}
+= \frac{2}{27}\left( 56 \sqrt{7} - 10 \sqrt{10}\right) \ .
+\]
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

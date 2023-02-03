@@ -1,0 +1,4110 @@
+\chapter[Algèbre linéaire \life \eco]{Algèbre linéaire}\label{chapALLin}
+
+\compileTHEO{
+
+Ce chapitre se veut une brève introduction à l'algèbre linéaire.  À la
+fin de ce chapitre, le lecteur devrait être en mesure de calculer le
+{\em déterminant} d'une matrice, de trouver les {\em valeurs propres}
+d'une matrice et les {\em vecteurs propres} qui leurs sont
+associés.  Pour ce faire, la première partie du chapitre est dédiée à
+la résolution de systèmes d'équations linéaires; en particulier, nous
+introduisons la méthode d'élimination de Gauss.
+
+Puisqu'elles sont très utiles, nous avons aussi inclus une section sur les
+matrice et les opérations sur les matrices.  En particulier, elles
+fournissent une structure simple pour la méthode d'élimination de
+Gauss grâce à la matrice augmentée associée à un système d'équations
+linéaires.  Les opérations sur les matrices sont aussi très utiles pour
+décrire les systèmes dynamiques discrets linéaires de plus d'une
+dimension.
+
+Par la suite, nous définissons ce qu'est le déterminant d'une matrice et
+comment nous pouvons le calculer.  Finalement, nous définissons ce qu'est une
+valeur propre et un vecteur propre d'une matrice, et nous expliquons
+comment utiliser la méthode de résolution des systèmes d'équations
+linéaires pour trouver les vecteurs propres associées à une valeur
+propre.
+
+Nous terminons le chapitre avec les chaînes de Markov, une
+application très intéressante de l'algèbre linéaire.  nous donnons des
+exemples de chaînes de Markov en science économique mais elles sont
+aussi très utiles en science naturel et en génie.
+
+\section{Systèmes d'équations linéaires}
+
+\begin{egg}
+Nous avons eu à quelques reprises dans le passé à résoudre des systèmes
+d'équations linéaires comme, par exemple,
+\begin{equation} \label{exSystLE1}
+\begin{split}
+5x_1 + 3x_2 &= 7 \\
+2x_1 + 5x_ 2&= 1
+\end{split}
+\end{equation}
+Pour résoudre un tel système, nous résolvons la première équation pour $x_2$.
+Nous trouvons $x_2 = (7 - 5x_1)/3$.  Puis, nous substituons cette dernière
+expression pour $x_2$ dans la deuxième équation pour obtenir
+\[
+2x_1 + 5\,(7-5x_1)/3 = 1 \; .
+\]
+Après simplification, nous trouvons $x_1 = 32/19$ et donc
+$x_2 = (7 - 5x_1)/3 = -9/19$.
+
+Nous pouvons donner une interprétation graphique à la solution
+$(x_1,x_2) = (32/19, -9/19)$ du système d'équations linéaires précédent.
+Chacune des équations du système d'équations linéaires ci-dessus est
+l'équation d'une droite dans le plan et la solution
+$(x_1,x_2) = (32/19, -9/19)$ de ce système est le point d'intersection de
+ces deux droites comme il est illustré dans le dessin ci-dessous.
+\PDFgraph{12_alg_lin/intersect}
+
+Les coordonnées du point d'intersection satisfont les deux équations
+linéaires simultanément puisque que ce point appartient aux deux
+droites.
+\end{egg}
+
+Nous présentons une autre façon de résoudre un système d'équations
+linéaires.
+
+\begin{focus}{\mth} \label{opOnRows}
+Pour résoudre les systèmes d'équations linéaires comme celui en
+(\ref{exSystLE1}), les trois opérations suivantes peuvent être
+utilisées pour réduire (avec une bonne combinaison de ses opérations)
+le système initial à un système plus simple qui possède les mêmes
+solutions.
+\begin{enumerate}
+\item Multiplier une équation par un nombre réel non nul.
+\item Additionner une équation à une autre équation.
+\item Échanger l'ordre des équations.
+\end{enumerate}
+\end{focus}
+
+Les opérations (1) et (2) peuvent être combinées pour permettre
+l'addition d'un multiple d'une équation à une autre équation.
+
+\begin{egg}
+Résolvons le système d'équations linéraires (\ref{exSystLE1}) à l'aide
+des opérations sur les équations.
+
+Si nous multiplions la première équation de (\ref{exSystLE1}) par $1/5$,
+Nous obtenons le système d'équations linéaires suivant qui possède les
+mêmes solutions que (\ref{exSystLE1}).
+\begin{equation} \label{exSystLE2}
+\begin{split}
+x_1 + \frac{3}{5}\,x_2 &= \frac{7}{5} \\
+2x_1 + 5x_2 &= 1
+\end{split}
+\end{equation}
+Si nous soustrayons $2$ fois la première équation de la deuxième équation
+dans le système d'équations linéaires (\ref{exSystLE2}), nous
+obtenons le système d'équations linéaires suivant qui possède toujours
+les mêmes solutions que
+(\ref{exSystLE1}).
+\begin{equation} \label{exSystLE3}
+\begin{split}
+x_1 + \frac{3}{5}\,x_2 &= \frac{7}{5} \\
+\frac{19}{5}\,x_2 &= -\frac{9}{5}
+\end{split}
+\end{equation}
+Si nous multiplions la deuxième équation de (\ref{exSystLE3}) par $5/19$,
+nous obtenons le système d'équations linéaires suivant qui possède les
+mêmes solutions que (\ref{exSystLE1}).
+\begin{equation} \label{exSystLE4}
+\begin{split}
+x_1 + \frac{3}{5}\,x_2 &= \frac{7}{5} \\
+x_2 &= -\frac{9}{19}
+\end{split}
+\end{equation}
+Finalement, si nous soustrayons $3/5$ fois la deuxième équation de la
+première équation dans le système d'équations linéaires
+(\ref{exSystLE4}), nous obtenons la solution de (\ref{exSystLE1}).
+\[
+x_1 = \frac{32}{19} \quad \text{et} \quad
+x_2 = -\frac{9}{19} \ .
+\]
+\label{IntroReductLin}
+\end{egg}
+
+\subsection{Systèmes d'équations linéaires avec deux inconnues}
+
+\begin{egg}
+Résolvons si possible le système d'équations linéaires
+\begin{equation}\label{ex2SystLE1}
+\begin{split}
+2x_1- 5x_2 &= 1 \\
+4x_1 - 10x_2 &= 1
+\end{split}
+\end{equation}
+
+Pour résoudre ce système, nous procédons comme nous avons fait pour le
+système d'équations linéaires à l'exemple~\ref{IntroReductLin} de la
+section précédente.  Si nous multiplions la première équation de
+(\ref{ex2SystLE1}) par $1/2$, nous obtenons le système d'équations
+linéaires suivant.
+\begin{equation} \label{ex2SystLE2}
+\begin{split}
+x_1 - \frac{5}{2}\,x_2 &= \frac{1}{2} \\
+4x_1 - 10x_2 &= 1
+\end{split}
+\end{equation}
+Si nous soustrayons $4$ fois la première équation de la deuxième équation
+dans le système d'équations linéaires (\ref{ex2SystLE2}), nous
+obtenons le système d'équations linéaires suivant.
+\[
+\begin{split}
+x_1 - \frac{5}{2}\,x_2 &= \frac{1}{2} \\
+0 &= -1
+\end{split}
+\]
+Ce système est absurde.  Cela veut dire qu'il n'y a pas de solutions
+pour le système (\ref{ex2SystLE1}).
+
+% Nous commençons par résoudre la première équation pour $y$.  Nous
+% obtenons $y = -(1-2x)/5$.  Si nous substituons cette expression pour $y$
+% dans la deuxième équation, nous trouvons $4x + 10\,(1-2x)/5 = 1$.  Or,
+% après simplification, cette dernière équation donne $2=1$.  Il n'y a
+% donc pas de solution pour ce système d'équations linéaires.
+
+Graphiquement, ce n'est pas une surprise qu'il n'y ait pas de
+solutions car les deux droites sont parallèles et donc ne se coupent
+pas comme il est illustré dans le dessin ci-dessous.
+\PDFgraph{12_alg_lin/intersect2}
+\end{egg}
+
+\begin{egg}
+Le système d'équations linéaires
+\begin{equation}\label{ex3SystLE}
+\begin{split}
+3x_1- 5x_2 &= 1 \\
+1.5x_1 - 2.5x_2 &= 0.5
+\end{split}
+\end{equation}
+a un nombre infini de solutions.  Ce sont tous les points $(x_1,x_2)$ de
+la droite $x_2 = 3x_1/5 - 1/5$.  En effet, si nous soustrayons $1/2$ fois la
+première équation de la seconde équation, nous obtenons le système
+\begin{align*}
+3x_1- 5x_2 &= 1 \\
+0 &= 0
+\end{align*}
+Les deux équations du système (\ref{ex3SystLE}) représentent donc la
+même droite dans le plan.  Tous les points de cette droite satisfont
+les deux équations linéaires.  La forme paramétrique de cette droite
+est $(x_1,x_2) = (s, 3s/5 - 1/5)$ pour $s\in \RR$.
+\end{egg}
+
+Jusqu'à maintenant, nous avons considéré des systèmes d'équations linéaires
+formés de seulement deux équations linaires.  Il pourrait y avoir plus
+de deux équations linaires.
+
+\begin{egg}
+Résolvons le système d'équations linéaires
+\begin{equation}\label{ex4SystLE1}
+\begin{split}
+2x_1 + 3x_2 &= 1\\
+x_1 - 2x_2 &= 4\\
+3x_1 + x_2 &= 5
+\end{split}
+\end{equation}
+
+Nous échangeons la première et deuxième équation du système d'équations
+linéaires (\ref{ex4SystLE1}) pour obtenir le système
+\begin{equation}\label{ex4SystLE2}
+\begin{split}
+x_1 - 2x_2 &= 4\\
+2x_1 + 3x_2 &= 1\\
+3x_1 + x_2 &= 5
+\end{split}
+\end{equation}
+Nous soustrayons $2$ fois la première équation de la deuxième équation et
+$3$ fois la première équation de la troisième équation dans le
+système d'équations linéaires (\ref{ex4SystLE2}) pour obtenir le système 
+\[
+\begin{split}
+x_1 - 2x_2 &= 4\\
+7x_2 &= -7\\
+7x_2 &= -7
+\end{split}
+\]
+Nous soustrayons la deuxième équation de la troisième équation dans ce
+dernier système d'équations linéaires pour obtenir le système
+\begin{equation}\label{ex4SystLE3}
+\begin{split}
+x_1 - 2x_2 &= 4\\
+7x_2 &= -7\\
+0 &= 0
+\end{split}
+\end{equation}
+Nous pouvons éliminer la troisième équation du système d'équations
+linéaires (\ref{ex4SystLE3}) car elle est évidemment toujours
+satisfaite.  De plus, nous pouvons diviser la deuxième équation par $7$
+pour obtenir le système
+\begin{equation}\label{ex4SystLE4}
+\begin{split}
+x_1 - 2x_2 &= 4\\
+x_2 &= -1\\
+\end{split}
+\end{equation}
+Finalement, si nous additionnons $2$ fois la deuxième équation à la
+première équation dans le système d'équations linéaires
+(\ref{ex4SystLE4}), nous obtenons la solution de (\ref{ex4SystLE1}).
+\[
+x_1 = 2 \quad \text{et} \quad x_2 = -1 \ 
+\]
+
+% Si nous résolvons la première équation pour $y$, nous trouvons
+% $y = (1-2x)/3$.  Si nous substituons cette expression pour $y$ dans la
+% deuxième équation, nous obtenons $x - 2\,(1-2x)/3 =4$ qui donne $x= 2$.
+% Ainsi, $y = (1-2x)/3 = -1$ pour $x=2$.  Puisque $3x+y=5$ est satisfait
+% pour $(x,y) = (2,-1)$, nous avons que la solution de notre système
+% d'équation linéaire est $(2,-1)$.
+
+Le dessin ci-dessous illustre le fait que le point $(2,-1)$ est le
+point d'intersection des trois droites $2x_1 + 3x_2 = 1$,
+$x_1 - 2x_2 = 4$ et $3x_1 + x_2 = 5$.
+\PDFgraph{12_alg_lin/intersect3}
+\end{egg}
+
+Les exemples précédents semblent indiquer que pour un système
+d'équations linéaires à deux inconnues, nous retrouvons une des situations
+suivantes: le système n'a pas de solutions, le système a une seule
+solution, ou le système a une nombre infini de solutions.   C'est en
+fait ce que l'interprétation graphique démontre.  En géométrie
+Euclidienne, deux droites distinctes peuvent être parallèles, et donc
+elles ne se coupent pas, ou elles peuvent se couper en un seul point.
+
+\subsection{Systèmes d'équations linéaires avec plus de deux
+ inconnues}
+
+\begin{egg}
+Résolvons si possible le système d'équations linéaires avec trois
+inconnues
+\begin{equation}\label{exSyst3D1}
+\begin{split}
+2x_1 + x_2 + x_3 &= 1\\
+x_1 + 2x_2 + x_3 &= 1\\
+x_1 + x_2 + 3x_3 &= 1
+\end{split}
+\end{equation}
+
+Pour résoudre un tel système, nous pouvons utiliser la méthode classique de
+substitution.  De la première équation, nous obtenons
+\begin{equation}\label{linsystD3A}
+x_3 = 1 - 2x_1 -x_2 \; .
+\end{equation}
+Si nous substituons cette expression pour $x_3$ dans la deuxième
+équation de (\ref{exSyst3D1}),  nous obtenons
+\[
+x_1 + 2x_2 + (1-2x_1-x_2) = -x_1 + x_2 + 1 = 1 \; .
+\]
+Après simplification, nous trouvons
+\begin{equation}\label{linsystD3B}
+x_2=x_1 \; .
+\end{equation}
+Si nous substituons (\ref{linsystD3B}) dans (\ref{linsystD3A}), nous
+trouvons
+\begin{equation}\label{linsystD3C}
+x_3 = 1 - 3x_1 \; .
+\end{equation}
+Finalement, si nous substituons (\ref{linsystD3B}) et
+(\ref{linsystD3C}) dans la troisième équation de (\ref{exSyst3D1}),
+nous trouvons
+\[
+x_1 + x_2 + 3x_3 = x_1 + x_1 + 3(1-3x_1) = 1 \; .
+\]
+Ce qui donne $x_1 = 2/7$.  Si nous substituons cette valeur de $x_1$ dans
+(\ref{linsystD3B}) et (\ref{linsystD3C}), nous trouvons $x_2=2/7$ et
+$x_3=1/7$.
+
+Nous obtenons donc la solution $(x_1,x_2,x_3)=(2/7,2/7,1/7)$.
+
+Nous pouvons interpréter graphiquement la solution du système d'équations
+linéaires ci-dessus.  Chaque équation est l'équation d'un plan.  La
+solution est le point d'intersection des trois plans.
+\MATHgraph{12_alg_lin/three_planes}{8cm}
+Il peut être difficile de visualiser le point d'intersection des trois
+plans.
+
+\noindent le plan $2x_1 + x_2 + x_3 = 1$ est en rouge, le plan
+$x_1 + 2x_2 + x_3 = 1$ est en vert et le plan $x_1 + x_2 + 3x_3 = 1$
+est en bleu.
+\end{egg}
+
+Nous pouvons aussi utiliser les opérations sur les équations pour résoudre
+le système d'équations linéaires (\ref{exSyst3D1}).
+
+\begin{egg}
+Résolvons le système d'équations linéraires (\ref{exSyst3D1}) à l'aide des
+opérations sur les équations.
+
+Nous échangeons la première et troisième équation de (\ref{exSyst3D1}) pour
+obtenir le système
+\begin{equation}\label{exSyst3D2}
+\begin{split}
+x_1 + x_2 + 3x_3 &= 1\\
+x_1 + 2x_2 + x_3 &= 1\\
+2x_1 + x_2 + x_3 &= 1
+\end{split}
+\end{equation}
+Nous soustrayons la première équation de la deuxième équation et nous
+soustrayons $2$ fois la première équation de la troisième équation
+dans le système d'équations linéaires (\ref{exSyst3D2}) pour obtenir
+le système
+\begin{equation}\label{exSyst3D3}
+\begin{split}
+x_1 + x_2 + 3x_3 &= 1\\
+x_2 - 2x_3 &= 0\\
+-x_2 - 5x_3 &= -1
+\end{split}
+\end{equation}
+Nous additionnons la deuxième équation à la troisième équation dans le
+système d'équations linéaires (\ref{exSyst3D3}) pour obtenir le système
+\[
+\begin{split}
+x_1 + x_2 + 3x_3 &= 1\\
+x_2 - 2x_3 &= 0\\
+- 7x_3 &= -1
+\end{split}
+\]
+Nous multiplions la troisième équation de ce système d'équations
+linéaires par $-1/7$ pour obtenir le système
+\begin{equation}\label{exSyst3D4}
+\begin{split}
+x_1 + x_2 + 3x_3 &= 1\\
+x_2 - 2x_3 &= 0 \\
+x_3 &= 1/7
+\end{split}
+\end{equation}
+Nous additionnons
+$2$ fois la troisième équation à la deuxième équation et nous soustrayons
+$3$ fois la troisième équation de la première équation dans le système
+d'équations linéaires (\ref{exSyst3D4}) pour obtenir le système
+\begin{equation}\label{exSyst3D5}
+\begin{split}
+x_1 + x_2 &= 4/7\\
+x_2 &= 2/7 \\
+x_3 &= 1/7
+\end{split}
+\end{equation}
+Finalement, nous soustrayons la deuxième équation de la première équation
+dans le système d'équations linéaires (\ref{exSyst3D5}, pour obtenir
+la solution du système d'équations linéaires (\ref{exSyst3D1}) que
+nous avons trouvé ci-haut; c'est-à-dire,
+\[
+x_1 = 2/7\quad , \quad x_2 = 2/7 \quad \text{et} \quad
+x_3 = 1/7 \ .
+\]
+\end{egg}
+
+\begin{egg}
+Résolvons si possible le système d'équations linéaires
+\begin{equation}\label{ex2Syst3D1}
+\begin{split}
+2x_1 + x_2 + x_3 &= 1\\
+x_1 + 2x_2 + x_3 &= 1\\
+x_1 - x_2 &= 0
+\end{split}
+\end{equation}
+
+Nous échangeons la première et troisième équation de (\ref{ex2Syst3D1})
+pour obtenir le système
+\begin{equation}\label{ex2Syst3D2}
+\begin{split}
+x_1 - x_2 &= 0\\
+x_1 + 2x_2 + x_3 &= 1\\
+2x_1 + x_2 + x_3 &= 1
+\end{split}
+\end{equation}
+Nous soustrayons la première équation de la deuxième équation et nous
+soustrayons $2$ fois la première équation de la troisième équation dans
+le système d'équations linéaires (\ref{ex2Syst3D2}) pour obtenir le
+système
+\begin{equation}\label{ex2Syst3D3}
+\begin{split}
+x_1 - x_2 &= 0\\
+3x_2 + x_3 &= 1\\
+3x_2 + x_3 &= 1
+\end{split}
+\end{equation}
+Nous soustrayons la deuxième équation de la troisième équation dans le
+système d'équations linéaires (\ref{ex2Syst3D3}) pour obtenir le système
+\[
+\begin{split}
+x_1 - x_2 &= 0\\
+3x_2 + x_3 &= 1\\
+0 &= 0
+\end{split}
+\]
+Nous pouvons éliminer la troisième équation.  Si nous multiplions la deuxième
+équation de ce système par $1/3$, nous obtenons le système
+\begin{equation}\label{ex2Syst3D4}
+\begin{split}
+x_1 - x_2 &= 0\\
+x_2 + \frac{1}{3}\,x_3 &= \frac{1}{3}
+\end{split}
+\end{equation}
+Nous additionnons la deuxième équation à la première équation dans le
+système d'équations linéaires (\ref{ex2Syst3D4}) pour obtenir le
+système
+\begin{equation}\label{ex2Syst3D5}
+\begin{split}
+x_1 + \frac{1}{3}\,x_3 &= \frac{1}{3}\\
+x_2 + \frac{1}{3}\,x_3 &= \frac{1}{3}\\
+\end{split}
+\end{equation}
+Nous ne pouvons plus simplifier le système.  Nous avons $x_1 = 1/3 - x_3/3$ et
+$x_2= 1/3 - x_3/3$.  Les points $(x_1,x_2,x_3)$ qui résolvent le système
+d'équations linéaires (\ref{ex2Syst3D1}) forment donc une droite dont
+la représentation paramétrique est
+\[
+(x_1,x_2,x_3) = \left( -s/3 + 1/3, -s/3 + 1/3, s\right)
+\]
+pour $s \in \RR$.
+
+% Pour résoudre un tel système, nous utilisons la troisième équation pour
+% obtenir
+% \begin{equation}\label{linsystD3D}
+% y = x
+% \end{equation}
+% Si nous substituons cette expression pour $y$ dans la deuxième équation,
+% nous obtenons
+% \[
+% x + 2y + z = 3x + z = 1
+% \]
+% qui donne
+% \begin{equation}\label{linsystD3E}
+% z= 1 - 3x
+% \end{equation}
+% Finalement, si nous substituons (\ref{linsystD3D}) et (\ref{linsystD3E})
+% dans la première équation, nous trouvons
+% \[
+% 2x + x + 1 - 3x = 1
+% \]
+% pour tout $x$.  Cette équation in trivialement satisfaite.  Nous
+% obtenons donc un nombre infini de solutions de la forme $(x,y,z) =
+% (s,s,1-3s)$ pour $s \in \RR$.
+
+Les solutions du système d'équations linéaires forment une droite dans
+l'espace qui représente l'intersection des trois plans.
+\MATHgraph{12_alg_lin/three_planes2}{8cm}
+
+\noindent le plan $2x_1 + x_2 + x_3 = 1$ est en rouge, le plan
+$x_1 + 2x_2 + x_3 = 1$ est en vert et le plan $x_1 - x_2 = 0$ est en
+bleu.
+
+Le droite d'intersection des trois plans possède la représentation
+paramétrique \\
+$(x_1,x_2,x_3) = \left( -s/3 + 1/3, -s/3 + 1/3, s\right)$ pour $s \in \RR$.
+La forme standard pour cette droite est
+$\displaystyle x_1 = x_2 = \frac{x_3-1}{-3}$. 
+\end{egg}
+
+\begin{egg}
+Nous laissons au lecteur la tâche de montrer que le système d'équations
+linéaires
+\begin{align*}
+2x_1 + x_2 + x_3 &= 1\\
+4x_1 + 2x_2 + 2x_3 &= 2\\
+-2x_1 - x_2 - x_3 &= -1
+\end{align*}
+possède un nombre infini de solutions de la forme
+$(x_1,x_2,x_3) = (s,t,1-2s-t)$ pour tout $s$ et $t$ réels.  L'ensemble des
+solutions forme le plan $x_3=1-2x_1-x_2$.  En fait, les trois équations
+linéaires de ce système sont trois équations qui représentent le même
+plan.
+\end{egg}
+
+\begin{egg}
+Montrons que le système d'équations linéaires
+\begin{equation}\label{ex3Syst3D1}
+\begin{split}
+2x_1 + x_2 + x_3 &= 1\\
+x_1 + 2x_2 + x_3 &= 2\\
+3x_1 + 3x_2 + 2x_3 &= 1
+\end{split}
+\end{equation}
+n'a pas de solution.
+
+Nous échangeons la première et deuxième équation de (\ref{ex3Syst3D1}) pour
+obtenir le système
+\begin{equation}\label{ex3Syst3D2}
+\begin{split}
+x_1 + 2x_2 + x_3 &= 2\\
+2x_1 + x_2 + x_3 &= 1\\
+3x_1 + 3x_2 + 2x_3 &= 1
+\end{split}
+\end{equation}
+Nous soustrayons $2$ fois la première équation de la deuxième équation et
+$3$ fois la première équation de la troisième équation dans le système
+d'équations linéaires (\ref{ex3Syst3D2}) pour obtenir le système
+\begin{equation}\label{ex3Syst3D3}
+\begin{split}
+x_1 + 2x_2 + x_3 &= 2\\
+-3x_2 - x_3 &= -3\\
+-3x_2 - x_3 &= -5
+\end{split}
+\end{equation}
+Il est impossible de satisfaire simultanément la deuxième et la
+troisième équation du système d'équations linéaires (\ref{exSyst3D3});
+si nous soustrayons la deuxième équation de la troisième équation,
+nous obtenons $0=-2$ qui est impossible.
+
+% De la première équation, nous obtenons
+% \begin{equation}\label{linsystD3F}
+% z = 1 - 2x -y
+% \end{equation}
+% Si nous substituons cette expression pour $z$ dans la deuxième équation,
+% nous obtenons
+% \[
+% x + 2y + (1-2x-y) = -x + y + 1 = 1
+% \]
+% Après simplification, cette dernière équation donne
+% \begin{equation}\label{linsystD3G}
+% y=x
+% \end{equation}
+% Si nous substituons (\ref{linsystD3G}) dans (\ref{linsystD3F}), nous trouvons
+% \begin{equation}\label{linsystD3H}
+% z = 1 - 3x
+% \end{equation}
+% Finalement, si nous substituons (\ref{linsystD3G}) et (\ref{linsystD3H})
+% dans la troisième équation, nous trouvons $2 = 1$ car
+% \[
+% 3x + 3y + 2z = 3x + 3x + 2\,(1-3x) = 2
+% \]
+% pour tout $x$.  Nous ne pouvons donc pas trouver de point $(x,y,z)$ qui
+% satisfait les trois équations linéaires simultanément.
+\end{egg}
+
+L'interprétation des solutions de systèmes d'équations linéaires à
+l'aide de plan dans l'espace nous permet de conclure qu'un système
+d'équations linéaires (avec trois inconnues et trois équations) peut
+avoir aucune solution, une seule solution, un nombre infini de
+solutions qui forment une droite, ou un nombre infini de solutions qui
+forment un plan.
+
+Avec trois inconnues, nous avons déjà atteint les limites de la
+visualisation graphique des systèmes d'équations linéaires.  De plus,
+il devient laborieux de résoudre algébriquement de tels systèmes.  Nous
+allons donc introduire une nouvelle approche pour résoudre les systèmes
+d'équations linéaires qui nous permettra de travailler avec plus de
+trois inconnues.  Ce nouvel outil est l'algèbre linaire.
+
+\section{Matrices}
+
+À la section précédente, nous avons constaté que le travail nécessaire pour
+résoudre les systèmes d'équations linéaires avec trois équations et
+trois inconnues demandait beaucoup d'attention.  Nous pouvons facilement
+imaginer que le travail nécessaire pour résoudre les systèmes
+d'équations linéaires avec plus que trois inconnues et trois équations
+devient rapidement très ardu.
+
+Nous allons donc développer des outils qui nous permettront de
+résoudre efficacement les systèmes avec un grand nombre d'inconnues et
+d'équations. Notre premier but est de représenter de façon simple et
+claire les systèmes d'équations linéaires.  En fait, cette notation va
+grandement influencer le développement des outils pour résoudre les
+systèmes d'équations linéaires.
+
+\begin{focus}{\dfn}
+Une {\bfseries matrice}\index{Matrice} $A$ est un tableau de nombres
+de la forme
+\[
+A =
+\begin{pmatrix}
+a_{1,1} & a_{1,2} & a_{1,3} & \ldots & a_{1,m} \\
+a_{2,1} & a_{2,2} & a_{2,3} & \ldots & a_{2,m} \\
+a_{3,1} & a_{3,2} & a_{3,3} & \ldots & a_{3,m} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n,1} & a_{n,2} & a_{n,3} & \ldots & a_{n,m}
+\end{pmatrix} \; .
+\]
+Cette matrice a $n$ lignes et $m$ colonnes.  Nous disons que c'est
+{\bfseries une matrice de dimension \nm{n}{m}}.  Les nombres $a_{i,j}$
+sont appelés les {\bfseries composantes} ou {\bfseries éléments} de la
+matrice $A$.  Le nombre $a_{i,j}$ est la composante sur la $i^{e}$
+ligne et dans la $j^{e}$ colonne.\index{Matrice!composante}
+\index{Matrice!élément}
+
+Nous disons que la matrice $A$ est {\bfseries carrée} lorsque $n=m$;
+nous avons le même nombre de lignes et colonnes.\index{Matrice!carrée}
+\end{focus}
+
+\begin{egg}
+\[
+A =
+\begin{pmatrix}
+-3 & 0 & \pi & 5 & 2.3 \\
+0 & 4 & -7.56 & 1 & -10 \\
+-7 & e^2 & 10^6 & 2 & \sqrt{5}
+\end{pmatrix}
+\]
+est une matrice de dimension \nm{3}{5} alors que
+\[
+B =
+\begin{pmatrix}
+1 & 4 & 7 & 10
+\end{pmatrix}
+\]
+est une matrice de dimension \nm{1}{4}.  Nous avons que $a_{1,3} = \pi$,
+$a_{3,2} = e^2$, $a_{3,5} = \sqrt{5}$, $b_{1,1} = 1$, $b_{1,3} = 7$, etc.
+\end{egg}
+
+\subsection{Opérations sur les matrices}
+
+Avant de définir des opérations sur les matrices, il faut définir
+quand deux matrices sont égales.
+
+\begin{focus}{\dfn} \index{Matrice!matrices égales}
+Nous disons que deux matrices $A$ et $B$ sont {\bfseries égales}, dénoté
+$A = B$, lorsque les deux conditions suivantes sont satisfaites.
+\begin{enumerate}
+\item $A$ et $B$ ont le même nombre de lignes et de colonnes.
+\item Si $n$ est le nombre de lignes et $m$ est le nombre de colonnes,
+alors $a_{i,j}=b_{i,j}$ pour tout $1\leq i \leq n$ et $1\leq j \leq  m$.
+\end{enumerate}
+\end{focus}
+
+Nous voulons définir des opérations sur les matrices qui prolongeront les
+opérations sur les vecteurs que nous connaissons déjà; c'est-à-dire, le
+produit d'un vecteur par un scalaire, la somme de deux vecteurs et le
+produit scalaire de deux vecteurs.   Il faut premièrement généraliser
+la définition de vecteur que nous avons donnée pour $\RR^2$ et
+$\RR^3$.
+
+\begin{focus}{\dfn}
+Un vecteur $\VEC{x} \in \RR^n$ est une liste de $n$ nombres réels que
+nous dénotons
+\begin{equation}\label{rowVect}
+\VEC{x} = (x_1,x_2, \ldots, x_n)
+\end{equation}
+ou
+\begin{equation}\label{matrVect}
+\VEC{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} \; .
+\end{equation}
+\end{focus}
+
+La représentation du vecteur $\VEC{x}$ en (\ref{rowVect}) est associée
+à l'aspect géométrique des vecteurs (i.e.\ $\VEC{x}$ est le point où
+se termine une flèche qui part de l'origine) alors que la représentation de
+$\VEC{x}$ en (\ref{matrVect}) est associée à l'aspect algébrique des
+vecteurs.  En effet, la représentation de $\VEC{x}$ en
+(\ref{matrVect}) représente une matrice de dimension \nm{n}{1}.  Par
+la suite, nous parlerons souvent du vecteur $\VEC{x}$ quand, en fait, nous
+ferons référence à la matrice que nous retrouvons en (\ref{matrVect}).
+C'est le contexte qui déterminera quelle interprétation doit être
+donnée à $\VEC{x}$.
+
+Le produit d'un vecteur $\VEC{x}$ par un scalaire $\alpha$ et la somme
+des vecteurs $\VEC{x}$ et $\VEC{y}$ prennent alors la forme suivante.
+\[
+\alpha \VEC{x} = \alpha
+\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}
+= \begin{pmatrix}\alpha x_1 \\ \alpha x_2 \\ \vdots \\ \alpha x_n
+\end{pmatrix}
+\quad \text{et}
+\quad
+\VEC{x}+\VEC{y} =
+\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}
++ \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}
+= \begin{pmatrix} x_1+y_1 \\ x_2+y_2 \\ \vdots \\ x_n+y_n \end{pmatrix}
+\ .
+\]
+
+La somme de matrices et le produit d'une matrice par un scalaire sont
+des reformulations de ces mêmes opérations pour les vecteurs.
+
+\begin{focus}{\dfn}
+Soit $A$ et $B$ deux matrices de dimension \nm{n}{m} et $\alpha$
+un nombre réel.
+\begin{enumerate}
+\item La {\bfseries somme} \index{Matrice!somme de deux matrices}
+de $A$ et $B$, dénotée $A+B$, est la
+matrice $C$ de dimension \nm{n}{m} qui possède les éléments
+\[
+c_{i,j} = a_{i,j} + b_{a,j}
+\]
+pour $1\leq i \leq n$ et $1\leq j \leq  m$.
+\item Le {\bfseries produit}\index{Matrice!produit par un scalaire}
+du scalaire $\alpha$ et de la matrice
+$A$, dénoté $\alpha A$, est la matrice $C$ de dimension \nm{n}{m}
+qui possède les éléments
+\[
+c_{i,j} = \alpha \, a_{i,j}
+\]
+pour $1\leq i \leq n$ et $1\leq j \leq  m$.
+\end{enumerate}
+\end{focus}
+
+Nous remarquons que la somme de matrices n'est pas définie si les matrices
+n'ont pas la même dimension.  La somme de matrices et le produit
+d'une matrice par un scalaire possèdent les propriétés suivantes.
+
+\begin{focus}{\prp}
+\begin{enumerate}
+\item $A+B = B+A$ pour toutes matrices $A$ et $B$ de dimension
+\nm{n}{m} (commutativité de l'addition).
+\item $A+(B+C) = (A+B)+C$ pour toutes matrices $A$, $B$ et $C$ de
+dimension \nm{n}{m} (associativité de l'addition). 
+\item $\alpha(A+B) = \alpha A + \alpha B$ pour toutes matrices $A$ et
+$B$ de dimension \nm{n}{m} et tout nombre réel $\alpha$
+(distributivité du produit par un scalaire sur la somme de matrices).
+\item $(\alpha+\beta) A = \alpha A + \beta A$ pour toute matrice $A$
+de dimension \nm{n}{m} et tous nombres réels $\alpha$ et $\beta$.
+\item $\alpha (\beta A) = \beta (\alpha A) = (\alpha\,\beta) A$ pour
+toute matrice $A$ de dimension \nm{n}{m} et tous nombres réels
+$\alpha$ et $\beta$.
+\end{enumerate}
+\end{focus}
+
+\begin{egg}
+Si
+\[
+A = \begin{pmatrix} 1 & -1 & 3 & 1 \\ -4 & 5 & -7 & 2 \\ 3 & 6 & 9 & 3
+\end{pmatrix} \quad \text{et} \quad
+B = \begin{pmatrix} 2 & 2 & 2 & -1 \\ -3 & 1 & -5 & 2 \\ 2 & -4 & 5 & -2
+\end{pmatrix} \; ,
+\]
+alors
+\begin{align*}
+C &= A + 2\, B =
+\begin{pmatrix} 1 & -1 & 3 & 1 \\ -4 & 5 & -7 & 2 \\ 3 & 6 & 9 & 3
+\end{pmatrix}
++ 2\,
+\begin{pmatrix} 2 & 2 & 2 & -1 \\ -3 & 1 & -5 & 2 \\ 2 & -4 & 5 & -2
+\end{pmatrix} \\
+&=
+\begin{pmatrix} 1 & -1 & 3 & 1 \\ -4 & 5 & -7 & 2 \\ 3 & 6 & 9 & 3
+\end{pmatrix}
++
+\begin{pmatrix} 4 & 4 & 4 & -2 \\ -6 & 2 & -10 & 4 \\ 4 & -8 & 10 & -4
+\end{pmatrix} \\
+&=
+\begin{pmatrix} 1+4 & -1+4 & 3+4 & 1-2 \\ -4-6 & 5+2 & -7-10 & 2+4 \\
+3+4 & 6-8 & 9+10 & 3-4 \end{pmatrix}
+=
+\begin{pmatrix} 5 & 3 & 7 & -1 \\ -10 & 7 & -17 & 6 \\ 7 & -2 & 19 & -1
+\end{pmatrix} \; .
+\end{align*}
+\end{egg}
+
+Avant d'introduire le produit de deux matrices, revoyons le produit
+scalaire de deux vecteurs.  Pour cela, nous aurons besoin de la notion de
+{\em transposée d'une matrice}.
+
+\begin{focus}{\dfn} \index{Matrice!transposée}
+Soit $A$ une matrice de dimension \nm{n}{m}, la
+{\bfseries transposée de $A$}, dénotée $A^\top$, est la matrice de
+dimension \nm{m}{n} dont les éléments $a_{i,j}^\top$ sont
+$a_{i,j}^\top = a_{j,i}$ pour $1 \leq i \leq m$ et $1\leq j \leq n$.
+\end{focus}
+
+La première ligne de $A$ est la première colonne de $A^\top$. La
+deuxième ligne de $A$ est la deuxième colonne de $A^\top$, etc.
+
+\begin{egg}
+Si
+\[
+A = \left(
+\begin{array}{cccc}
+\hline
+\multicolumn{1}{|c}{1} & -3 & 5 & \multicolumn{1}{c|}{7} \\
+\hline
+2 & -2 & 4 & -2 \\
+3 & 5 & 7 & 9
+\end{array}
+\right) \; ,
+\]
+alors
+\[
+A^\top =
+\left(
+\begin{array}{ccc}
+\cline{1-1}
+\multicolumn{1}{|c|}{1} & 2 & 3 \\
+\multicolumn{1}{|c|}{-3} & -2 & 5 \\
+\multicolumn{1}{|c|}{5} & 4 & 7 \\
+\multicolumn{1}{|c|}{7} & -2 & 9 \\
+\cline{1-1}
+\end{array}
+\right) \; .
+\]
+\end{egg}
+
+Soit $\VEC{x}$ et $\VEC{y}$, deux vecteurs de $\RR^n$ que nous
+représentons sous la forme de matrices de dimension \nm{n}{1}.  Nous
+définissons le produit de $\VEC{x}^\top$ et $\VEC{y}$ de la façon
+suivante.
+\[
+\VEC{x}^\top \VEC{y}
+= \begin{pmatrix} x_1 & x_2 & \ldots & x_n \end{pmatrix}
+\begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ x_n \end{pmatrix}
+= \left( \sum_{k=1}^n x_k y_k \right) \; .
+\]
+La matrice $\VEC{x}^\top$ est de dimension \nm{1}{n}, la matrice
+$\VEC{y}$ est de dimension \nm{n}{1}, et le produit
+$\VEC{x}^\top \VEC{y}$ est la matrice de dimension \nm{1}{1} définie
+par $\displaystyle \left(\sum_{k=1}^n x_k y_k\right)$.
+
+La tradition veut qu'une matrice $\left( z \right)$ de dimension
+\nm{1}{1} soit simplement dénotée $z$, la valeur de son unique
+composante.  Avec cette convention, le produit de $\VEC{x}^\top$ et
+$\VEC{y}$ est
+\[
+\VEC{x}^\top \VEC{y} = \VEC{x} \cdot \VEC{y} \; .
+\]
+Nous retrouvons du côté droit de l'égalité le produit scalaire de deux
+vecteurs que nous avons défini au chapitre~\ref{CHAPvecteurs}.  En
+particulier, $\VEC{x}$ et $\VEC{y}$ désignent les vecteurs
+$(x_1,x_2,\ldots,x_n)$ et $(y_1,y_2,\ldots, y_n)$ à droite du signe
+d'égalité et non plus les matrices de dimension \nm{n}{1} comme c'est
+le cas du côté gauche.
+
+\begin{focus}{\dfn}
+À partir de maintenant, le
+{\bfseries produit scalaire}\index{Produit scalaire} de deux vecteurs
+$\VEC{x}$ et $\VEC{y}$ de $\RR^n$ sera définie par
+\[
+  \ps{\VEC{x}}{\VEC{y}} = \VEC{x}^\top \VEC{y}
+\]
+\label{pstransposed}
+\end{focus}
+
+C'est cette présentation du produit scalaire de deux vecteurs que nous
+prolongeons pour définir le produit de deux matrices.
+
+\begin{focus}{\dfn} \index{Matrice!produit de deux matrices}
+Soit $A$ et $B$ deux matrices.  La matrice $A$ est de dimension
+\nm{n}{m} et la matrice $B$ est de dimension \nm{m}{q}.  Le produit
+$A\,B$ est la matrice $C$ de dimension \nm{n}{q} qui possède les
+éléments
+\begin{equation}\label{matrixProd}
+c_{i,j} = \sum_{k=0}^m a_{i,k} b_{k,j}
+\end{equation}
+pour $1\leq i \leq n$ et $1\leq j \leq q$.
+\end{focus}
+
+Les rectangles dans le produit suivant indiquent la ligne de $A$ et la
+colonne de $B$ qui sont utilisées pour calculer $c_{3,2}$.
+\[
+C = A\,B =
+\left(
+\begin{array}{ccccc}
+a_{1,1} & a_{1,2} & a_{1,3} & \ldots & a_{1,m} \\
+a_{2,1} & a_{2,2} & a_{2,3} & \ldots & a_{2,m} \\
+\hline
+\multicolumn{1}{|c}{a_{3,1}} & a_{3,2} & a_{3,3} & \ldots &
+\multicolumn{1}{c|}{a_{3,m}} \\
+\hline
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n,1} & a_{n,2} & a_{n,3} & \ldots & a_{n,m}
+\end{array}
+\right)
+\,
+\left(
+\begin{array}{ccccc}
+\cline{2-2}
+b_{1,1} & \multicolumn{1}{|c|}{b_{1,2}} & b_{1,3} & \ldots & b_{1,q} \\
+b_{2,1} & \multicolumn{1}{|c|}{b_{2,2}} & b_{2,3} & \ldots & b_{2,q} \\
+b_{3,1} & \multicolumn{1}{|c|}{b_{3,2}} & b_{3,3} & \ldots & b_{3,q} \\
+\vdots & \multicolumn{1}{|c|}{\vdots} & \vdots & \ddots & \vdots \\
+b_{m,1} & \multicolumn{1}{|c|}{b_{m,2}} & b_{m,3} & \ldots & b_{m,q} \\
+\cline{2-2}
+\end{array}
+\right) \; .
+\]
+Nous avons $c_{3,2} = a_{3,1}b_{1,2} + a_{3,2}b_{2,2} + a_{3,3}b_{3,2} +
+a_{3,4}b_{4,2} + \ldots + a_{3,m}b_{m,2}$.
+
+La formule (\ref{matrixProd}) est le produit scalaire du vecteur formé
+par les composantes de la $i^e$ ligne de $A$ avec le vecteur formé de
+composantes de la $j^e$ colonne de $B$.  En effet, si
+\[
+\VEC{a} = \begin{pmatrix} a_{i,1} \\ a_{i,2} \\ \vdots \\
+a_{i,m} \end{pmatrix}
+\quad \text{et} \quad
+\VEC{b} = \begin{pmatrix} b_{1,j} \\ b_{2,j} \\ \vdots \\
+b_{m,j} \end{pmatrix} \; ,
+\]
+alors
+$c_{i,j} = \VEC{a}^\top\,\VEC{b} = \ps{\VEC{a}}{\VEC{b}}$.
+
+\begin{egg}
+Si
+\[
+A = \begin{pmatrix} 1 & -1 & 3 \\ -4 & 5 & -7 \\ 3 & 6 & 9
+\end{pmatrix} \quad \text{et} \quad
+B = \begin{pmatrix} 2 & 2 & 2 & -1 \\ -3 & 1 & -5 & 2 \\ 2 & -4 & 5 & -2
+\end{pmatrix} \; ,
+\]
+alors
+\[
+C = A\,B =
+\left(\begin{array}{ccc}
+1 & -1 & 3 \\
+\hline
+\multicolumn{1}{|c}{-4} & 5 & \multicolumn{1}{c|}{-7} \\
+\hline
+3 & 6 & 9
+\end{array}
+\right) \,
+\left(
+\begin{array}{cccc}
+\cline{3-3}
+2 & 2 & \multicolumn{1}{|c|}{2} & -1 \\
+-3 & 1 & \multicolumn{1}{|c|}{-5} & 2 \\
+2 & -4 & \multicolumn{1}{|c|}{5} & -2 \\
+\cline{3-3}
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cccc}
+11 & -11 & 22 & -9 \\
+\cline{3-3}
+-37 & 25 & \multicolumn{1}{|c|}{-68} & 28 \\
+\cline{3-3}
+6 & -24 & 21 & -9
+\end{array}
+\right) \; .
+\]
+Nous avons $c_{2,3} = (-4) \times 2 + 5 \times (-5) + (-7)\times 5 = -68$.
+
+Le produit $B\,A$ est impossible car nous ne pouvons pas faire le produit
+scalaire d'une ligne de $B$ qui a $4$ composantes avec une colonne de
+$A$ qui a seulement $3$ composantes.
+\end{egg}
+
+\begin{egg}
+Si $A$ est une matrice de dimension \nm{3}{4} et $B$ est une matrice
+de dimension \nm{4}{2}, alors $A\,B$ est une matrice de dimension
+\nm{3}{2}.  Le produit $B\,A$ n'est pas défini car le nombre de
+colonnes de $B$ (i.e. $2$) n'est pas égal au nombre de lignes de $A$
+(i.e. $3$).
+\end{egg}
+
+Le produit de matrices possède les propriétés suivantes.
+
+\begin{focus}{\prp}
+\begin{enumerate}
+\item $A(B\,C)= (A\,B)C$ pour toute matrice $A$ de dimension
+\nm{n}{m}, toute matrice $B$ de dimension \nm{m}{q} et toute matrice
+$C$ de dimension \nm{q}{p} (associativité du produit de matrices).
+\item $A(B+C) = A\,B + A\,C$ pour toute matrice $A$ de dimension
+\nm{n}{m} et toutes matrices $B$ et $C$ de dimension \nm{m}{q}
+(distributivité du produit de matrices sur la somme de matrices).
+\item $(\alpha A)B = A(\alpha B) = \alpha (A\,B)$ pour toute matrice
+$A$ de dimension \nm{n}{m}, toute matrice $B$ de dimension \nm{m}{q}
+et tout nombre réel $\alpha$.
+\end{enumerate}
+\end{focus}
+
+Le produit de nombres réels est commutatif; c'est-à-dire que
+$a\,b=b\,a$ pour tous les nombres réels $a$ et $b$.  Nous ne retrouvons
+pas cette propriété dans la liste ci-dessus car elle n'est pas vraie
+pour le produit de matrices.
+
+Pour pouvoir parler de commutativité du produit de matrices, il faut
+que les matrices soient carrées et de même dimension.  En effet, si
+$A$ est une matrice de dimension \nm{n_1}{m_1} et $B$ est une matrice
+de dimension \nm{n_2}{m_2}, alors il faut avoir $m_1 = n_2$ pour que
+$A\,B$ soit défini, $m_2 = n_1$ pour que $B\,A$ soit défini, $n_1=n_2$
+et $m_2 = m_1$ pour que $B\,A$ et $A\,B$ ait la même dimension.  Le
+fait d'avoir des matrices carrées de même dimension n'est pas
+suffisant pour avoir commutativité.  Même si $A$ et $B$ sont deux
+matrices carrées de dimension \nn, il est rare que nous ayons
+$A\,B = B\,A$.  L'exemple suivant illustre ce fait.
+
+\begin{egg}
+Soit
+\[
+A=\begin{pmatrix} 1 & 3 \\ -1 & 2 \end{pmatrix} \quad \text{et} 
+\quad
+B=\begin{pmatrix} 2 & 1 \\ -2 & 1 \end{pmatrix} \; .
+\]
+
+Ce sont deux matrices carrées de dimension \nm{2}{2}.  Nous avons
+\[
+AB = \begin{pmatrix} 1 & 3 \\ -1 & 2 \end{pmatrix} \,
+\begin{pmatrix} 2 & 1 \\ -2 & 1 \end{pmatrix}
+= \begin{pmatrix} -4 & 4 \\ -6 & 1 \end{pmatrix}
+\]
+et
+\[
+BA = \begin{pmatrix} 2 & 1 \\ -2 & 1 \end{pmatrix} \,
+\begin{pmatrix} 1 & 3 \\ -1 & 2 \end{pmatrix}
+= \begin{pmatrix} 1 & 8 \\ -3 & -4 \end{pmatrix} \; .
+\]
+Donc $A\,B \neq B \, A$.
+\end{egg}
+
+Nous terminons cette section avec une proposition qui lie la transposée
+d'une matrice au produit scalaire de deux vecteurs.  Pour cela, nous
+aurons besoin du résultat suivant qui, en lieu même, est très
+important.  La démonstration de ce résultat est une simple mais
+fastidieuse conséquence de la définition du produit de matrices.  Nous
+laissons donc le soin aux lecteurs de s'en convaincre.
+
+\begin{focus}{\prp} \label{transpAB}
+Si $A$ est une matrice de dimension \nm{n}{m} et $B$ est une matrice
+de dimension \nm{m}{q} alors $(AB)^\top = B^\top\, A^\top$.
+\end{focus}
+
+\begin{focus}{\prp}
+Soit $A$, une matrice de dimension \nm{n}{m}, alors
+\[
+\ps{A\VEC{x}}{\VEC{y}} = \ps{\VEC{x}}{A^\top\VEC{y}}
+\]
+pour tout vecteur $\VEC{x}$ de $\RR^m$ et tout vecteur $\VEC{y}$ de
+$\RR^n$
+\end{focus}
+
+Comme les expressions de la forme $\ps{A\VEC{x}}{\VEC{y}}$ jouent un
+rôle prédominant en algèbre linéaire, nous allons prouver cette
+proposition.
+
+Il découle de la définition~\ref{pstransposed} que
+\[
+\ps{A\VEC{x}}{\VEC{y}} = \left(A\VEC{x}\right)^\top \VEC{y}
+= \left(\VEC{x}^\top A^\top\right) \VEC{y}
+= \VEC{x}^\top \left( A^\top \VEC{y}\right)
+= \ps{\VEC{x}}{A^\top \VEC{y}}
+\]
+où nous avons utilisé la proposition~\ref{transpAB} pour obtenir la
+deuxième égalité.
+
+Une autre façon de prouver la proposition précédente est de développer
+chacun des côtés de l'égalité donnée à la proposition précédente.
+Posons $\VEC{z} = A\VEC{x}$.  Les composantes de $\VEC{z}$ sont
+\[
+z_i = \sum_{j=1}^m a_{i,j}x_j
+\]
+pour $i=1$, $2$, \ldots , $n$.  Ainsi,
+\begin{equation}\label{psAxy}
+\ps{A\VEC{x}}{\VEC{y}} = \ps{\VEC{z}}{\VEC{y}}
+= \sum_{i=1}^n z_i\,y_i
+= \sum_{i=1}^n\left(\sum_{j=1}^m a_{i,j}x_j\right)y_i
+= \sum_{\substack{1\leq i\leq n\\1\leq j \leq m}} a_{i,j} x_j y_i \; .
+\end{equation}
+De plus, posons $\VEC{w} = A^\top\VEC{y}$.  Les composantes de
+$\VEC{w}$ sont
+\[
+w_j = \sum_{i=1}^n a_{i,j}y_i
+\]
+pour $j=1$, $2$, \ldots , $m$.  Ainsi,
+\begin{equation}\label{psxAty}
+\ps{\VEC{x}}{A^\top\VEC{y}} = \ps{\VEC{x}}{\VEC{w}}
+= \sum_{j=1}^m x_j\,w_j
+= \sum_{j=1}^m x_j \left(\sum_{i=1}^n a_{i,j}y_i\right)
+= \sum_{\substack{1\leq i\leq n\\1\leq j \leq m}} a_{i,j} x_j y_i \; .
+\end{equation}
+Il découle de (\ref{psAxy}) et (\ref{psxAty}) que la conclusion de la
+proposition précédente est vraie.
+
+\begin{egg}
+Vérifions que
+\[
+\ps{A\VEC{x}}{\VEC{y}} = \ps{\VEC{x}}{A^\top\VEC{y}}
+\]
+si
+\[
+A = \begin{pmatrix} 1 & 2 \\ -1 & -1 \\ 2 & -1 \end{pmatrix} \quad ,
+\quad
+\VEC{x} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}
+\quad \text{et} \quad
+\VEC{y} = \begin{pmatrix} -1 \\ 1 \\ 2 \end{pmatrix} \; .
+\]
+
+Nous avons
+\[
+\VEC{z} = A\VEC{x} = \begin{pmatrix} 1 & 2 \\ -1 & -1 \\ 2 & -1 \end{pmatrix}
+\begin{pmatrix} 1 \\ 2 \end{pmatrix} =
+\begin{pmatrix}  5 \\ -3 \\ 0 \end{pmatrix} \; .
+\]
+Donc
+\[
+\ps{A\VEC{x}}{\VEC{y}} = \ps{\VEC{z}}{\VEC{y}}
+= \VEC{z}^\top \VEC{y} =
+\begin{pmatrix}  5 & -3 & 0 \end{pmatrix}
+\begin{pmatrix} -1 \\ 1 \\ 2 \end{pmatrix}
+= -8 \; .
+\]
+
+De plus,
+\[
+\VEC{w} = A^\top\VEC{y} =
+\begin{pmatrix} 1 & -1 & 2 \\  2 & -1 & -1 \end{pmatrix}
+\begin{pmatrix} -1 \\ 1 \\ 2 \end{pmatrix} =
+\begin{pmatrix}  2 \\ -5 \end{pmatrix} \; .
+\]
+Donc
+\[
+\ps{\VEC{x}}{A^\top\VEC{y}} = \ps{\VEC{x}}{\VEC{w}}
+= \VEC{x}^\top \VEC{w} =
+\begin{pmatrix} 1 & 2 \end{pmatrix}
+\begin{pmatrix} 2 \\ -5 \end{pmatrix}
+= -8 \; .
+\]
+\end{egg}
+
+Pour conclure cette section, nous présentons une dernière opération sur
+le matrices.  Celle-ci est valide seulement pour les matrices carrées.
+Elle ne jouera pas un grand rôle dans ce manuel mais elle est utile en
+algèbre linéaire, en analyse numérique, etc.
+
+\begin{focus}{\dfn} \index{Matrice!Trace}
+Soit la matrice carrée
+\[
+A =
+\begin{pmatrix}
+a_{1,1} & a_{1,2} &\ldots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \ldots & a_{2,n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n,1} & a_{n,2} & \ldots & a_{n,n}
+\end{pmatrix} \; .
+\]
+la {\bfseries Trace} de la matrice $A$, dénotée $\tr(A)$, est la somme
+des éléments sur la diagonale de $A$; c'est-à-dire,
+$\displaystyle \tr(A) = \sum_{j=1}^n a_{j,j}$.
+\end{focus}
+
+\subsection{Inverse additif et multiplicatif d'une matrice}
+
+Nous savons que $0$ est un élément neutre pour l'addition de nombres
+réels; c'est-à-dire que $a+0 = 0+a = a$ pour tout nombre réel $a$. De
+même, le nombre $1$ est un élément neutre pour la multiplication de
+nombres réels; c'est-à-dire que $a \times 1 = 1 \times a = a$ pour
+tout nombre réel $a$. Est-ce que l'addition de matrices possède un
+élément neutre?  De même, est-ce que le produit de matrices possède un
+élément neutre?  Pour l'addition, la réponse est simple.
+
+\begin{focus}{\dfn}
+$0$ dénote une matrice dont les composantes sont toutes nulles.
+\end{focus}
+
+\begin{focus}{\prp}
+La matrice $0$ de dimension \nm{n}{m} est l'élément neutre pour
+l'addition de matrices de dimension \nm{n}{m}.  C'est-à-dire que
+$0 + A = A + 0 = A$ pour toutes matrices $A$ de dimension \nm{n}{m}.
+\end{focus}
+
+\begin{focus}{\dfn} \index{Matrice!inverse additif}
+{\bfseries L'inverse additif d'une matrice $A$} de dimension \nm{n}{m}
+est la matrice $B$ de dimension \nm{n}{m} telle que $A+B=B+A = 0$ où
+$0$ est la matrice nulle de dimension \nm{n}{m}.
+
+Comme l'addition de matrices est définie par l'addition composante par
+composante, nous avons $b_{i,j} = -a_{i,j}$ pour $1\leq i \leq n$ et
+$1 \leq j \leq m$.  La matrice $B$ est dénotée $-A$.
+Nous avons $-A = (-1) A$.
+\end{focus}
+
+L'inverse additif d'une matrice $A$ est unique.  En effet, si $B$ et
+$C$ sont deux inverses additifs de $A$ alors
+\[
+B = B + 0 = B + \underbrace{(A + C)}_{=0}
+= \underbrace{(B+A)}_{=0} + C = 0 + C = C \; .
+\]
+Toute matrice $A$ a un seul inverse additif.
+
+Pour définir un élément neutre $\Id$ pour le produit de matrices, il
+faut considérer seulement les matrices carrées car cet élément neutre
+doit satisfaire $\Id A = A \Id = A$ pour toutes matrices $A$.  Pour
+que $A \Id$ et $\Id A$ soient définis, et que $A \Id$ et $\Id A$
+soient de même dimension, il faut que $\Id$ et $A$ soient des matrices
+carrées de même dimension.
+
+Certaines composantes d'une matrice carrée jouent un rôle particulier
+dans l'étude des matrices, c'est le cas des composantes qui forment la
+{\em diagonale} de la matrice. 
+
+\begin{focus}{\dfn} \index{Matrice!diagonale d'une matrice}
+Soit $A$ une matrice de dimension \nn.  La {\bfseries diagonale} de la
+matrice $A$ est l'ensemble des éléments $a_{1,1}$, $a_{2,2}$, \ldots,
+$a_{n,n}$ de $A$.
+\end{focus}
+
+\begin{focus}{\dfn} \index{Matrice!identité}
+$\Id$ dénote une matrice carrée dont les composantes sur la diagonale sont
+$1$ et les autres composantes sont nulles.  La matrice $\Id$ est appelée la
+{\bfseries matrice identité}.
+\end{focus}
+
+\begin{focus}{\prp}
+La matrice $\Id$ de dimension \nn est l'élément neutre pour la
+multiplication de matrices carrées de dimension \nn.  C'est-à-dire que
+$\Id A = A \Id = A$ pour toutes matrices carrées $A$ de dimension
+\nn.
+\end{focus}
+
+\begin{egg}
+Soit
+\[
+A = \begin{pmatrix} 2 & 3 & 4 \\ 5 & 6 & 7 \\ 8 & 9 & 10 \end{pmatrix}
+\quad \text{et} \quad
+\Id = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \; .
+\]
+Nous avons
+\[
+\Id  A =
+\left(
+\begin{array}{cccc}
+1 & 0 & 0 \\
+\hline
+\multicolumn{1}{|c}{0} & 1 & \multicolumn{1}{c|}{0} \\
+\hline
+0 & 0 & 1
+\end{array}
+\right)\,
+\left(
+\begin{array}{cccc}
+\cline{3-3}
+2 & 3 & \multicolumn{1}{|c|}{4} \\
+5 & 6 & \multicolumn{1}{|c|}{7} \\
+8 & 9 & \multicolumn{1}{|c|}{10} \\
+\cline{3-3}
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cccc}
+2 & 3 & 4 \\
+\cline{3-3}
+5 & 6 & \multicolumn{1}{|c|}{7} \\
+\cline{3-3}
+8 & 9 & 10
+\end{array}
+\right)
+=A
+\]
+et
+\[
+A \Id =
+\left(
+\begin{array}{cccc}
+2 & 3 & 4 \\
+\hline
+\multicolumn{1}{|c}{5} & 6 & \multicolumn{1}{c|}{7} \\
+\hline
+8 & 9 & 10
+\end{array}
+\right)\,
+\left(
+\begin{array}{cccc}
+\cline{3-3}
+1 & 0 & \multicolumn{1}{|c|}{0} \\
+0 & 1 & \multicolumn{1}{|c|}{0} \\
+0 & 0 & \multicolumn{1}{|c|}{1} \\
+\cline{3-3}
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cccc}
+2 & 3 & 4 \\
+\cline{3-3}
+5 & 6 & \multicolumn{1}{|c|}{7} \\
+\cline{3-3}
+8 & 9 & 10
+\end{array}
+\right)
+=A \; .
+\]
+\end{egg}
+
+Maintenant que nous avons un élément neutre pour le produit de matrices
+carrées, il est naturel de chercher à définir ce que serait l'inverse
+d'une matrice. Commençons par revoir la définition de l'inverse
+multiplicatif pour les nombre réels.  L'inverse multiplicatif pour le
+nombre réel $a$ est le nombre réel $b$ tel que $b\,a=a\,b =1$.  Sauf
+pour $a=0$, tout nombre réel $a$ possède un inverse multiplicatif.
+
+\begin{egg}
+Si $a = 4$, alors $b = 0.25$ est l'inverse de $a$ car $a\,b= b\,a = 1$.
+\end{egg}
+
+Comme pour la multiplication de nombres réels, nous pouvons définir
+l'inverse d'une matrice carrée.
+
+\begin{focus}{\dfn}
+{\bfseries S'il existe, l'inverse (multiplicatif) d'une matrice carrée}
+\index{Matrice!inverse multiplicatif}\index{Matrice!inversible} $A$ de
+dimension \nn est la matrice $B$ de dimension \nn telle que
+$A\,B = B\, A = \Id$.  La matrice $B$ est dénotée $A^{-1}$.  Nous disons
+que la matrice carrée $A$ est {\bfseries inversible} si $A$ possède un
+inverse.
+\end{focus}
+
+Contrairement aux nombres réels, les matrices carrées ne possèdent pas
+toutes des inverses.  Par contre, si la matrice carrée $A$ a un
+inverse $B$ alors cet inverse est unique.  En effet, si $C$ est une
+autre matrice telle que $A\, C = C\, A = \Id$ alors
+\[
+B = B \Id = B\, \underbrace{(A C)}_{=\Id}
+= \underbrace{(B\, A)}_{=\Id} C = \Id C = C \; .
+\]
+
+\begin{egg}
+Soit
+\[
+A = \begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix}
+\quad \text{et} \quad
+B = \begin{pmatrix} -5 & 3 \\ 2 & -1 \end{pmatrix} \; .
+\]
+Nous avons que $A\,B = B\, A = \Id$.  Donc $A^{-1} = B$.
+\end{egg}
+
+\begin{egg}
+Par contre, la matrice
+\[
+A= \begin{pmatrix} 1 & 2 \\ -1 & -2 \end{pmatrix}
+\]
+n'a pas d'inverse.  Supposons que
+\[
+B = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+\]
+soit l'inverse de $A$.  Il faut donc avoir $A\,B = \Id$;
+c'est-à-dire,
+\[
+\begin{pmatrix} a + 2c & b+2d \\ -a-2c & -b-2d \end{pmatrix}
+= \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \; .
+\]
+Il est impossible de trouver $a$ et $b$ tels que $a + 2c=1$ et $-a-2c
+=0$ simultanément.  De même, il est impossible de trouver $b$ et $d$
+tels que $b+2d =0$ et $-b-2d =1$.  Nous ne pouvons donc pas trouver
+d'inverse pour $A$.
+\end{egg}
+
+Il est généralement très difficile de déterminer si une matrice
+possède un inverse et de trouver cet inverse s'il existe.  Dans une
+prochaine section, nous donnerons une méthode pour trouver l'inverse
+d'une matrice si cet inverse existe.
+
+\section[Représentations matricielles]{Représentations
+  matricielles des systèmes d'équations linéaires}
+
+Les matrices nous permettent de développer une méthode pour déterminer
+si un système d'équations linéaires possède une solution, un nombre
+infini de solutions ou aucune solution.    Nous commençons par 
+une méthode qui nous permet de trouver les solutions d'un système
+d'équations linéaires quand celui-ci a des solutions.
+
+Considérons le système d'équations linéaires suivant avec $m$
+inconnues et $n$ équations.
+\begin{equation} \label{systLE}
+\begin{split}
+a_{1,1} x_1 + a_{1,2} x_2 + a_{1,3} x_3 + \ldots + a_{1,m} x_m &= b_1 \\
+a_{2,1} x_1 + a_{2,2} x_2 + a_{2,3} x_3 + \ldots + a_{2,m} x_m &= b_2 \\
+\qquad \vdots \qquad & \quad \vdots \\
+a_{n,1} x_1 + a_{n,2} x_2 + a_{n,3} x_3 + \ldots + a_{n,m} x_m &= b_n
+\end{split}
+\end{equation}
+Nous pouvons exprimer ce système d'équations linéaires à l'aide des
+matrices.  Soit
+\[
+A=\begin{pmatrix}
+a_{1,1} & a_{1,2} & a_{1,3} & \ldots & a_{1,m} \\
+a_{2,1} & a_{2,2} & a_{2,3} & \ldots & a_{2,m} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n,1} & a_{n,2} & a_{n,3} & \ldots & a_{n,m}
+\end{pmatrix}
+\quad , \quad
+\VEC{x} =
+\begin{pmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{pmatrix}
+\qquad \text{et} \qquad
+\VEC{b} =
+\begin{pmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_n
+\end{pmatrix} \; .
+\]
+Alors, le système d'équations linéaires (\ref{systLE}) peut être
+exprimé sous la forme
+\begin{equation}\label{systLE3}
+A\,\VEC{x} = \VEC{b} \ .
+\end{equation}
+
+\begin{focus}{\prp}
+Résoudre (\ref{systLE}) est équivalent à trouver les vecteurs
+$\VEC{x}$ qui satisfont (\ref{systLE3}) s'il y en a.
+\end{focus}
+
+La matrice $A$ est la matrice des coefficients de $\VEC{x}$ dans le
+système d'équations linéaires (\ref{systLE}).
+
+\subsection{Méthode d'élimination de Gauss\index{Méthode
+  d'élimination de Gauss}}
+
+\begin{focus}{\dfn} \index{Matrice!augmentée}
+La {\bfseries matrice augmentée} associée au
+système d'équations linéaires (\ref{systLE}) est la matrice
+\[
+\Maug{A}{\VEC{b}} = \left(\begin{array}{rrrrr|r}
+a_{1,1} & a_{1,2} & a_{1,3} & \ldots & a_{1,m} & b_1 \\
+a_{2,1} & a_{2,2} & a_{2,3} & \ldots & a_{2,m} & b_2 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+a_{n,1} & a_{n,2} & a_{n,3} & \ldots & a_{n,m} & b_n
+\end{array}\right) \; .
+\]
+\end{focus}
+
+Au lieu d'effectuer les opérations sur les équations du système
+d'équations linéaires (\ref{systLE}) présentées à la
+méthode~\ref{opOnRows}, nous effectuons les mêmes opérations
+sur les lignes de la matrice augmentée.  Afin de simplifier la
+description des opérations sur les lignes, nous utiliserons la
+terminologie suivante.
+
+\begin{focus}{\dfn}
+\begin{enumerate}
+\item $R_i$ désigne la $i^e$ ligne.
+\item Multiplier la $i^e$ ligne par $\alpha$ est dénoté \quad
+$\alpha\,R_i \to R_i$.
+\item Additionner $\alpha$ fois la $j^e$ ligne à la $i^e$ ligne est dénoté
+\quad $\alpha\,R_j + R_i \to R_i$. 
+\item Échanger la $i^e$ ligne et la $j^e$ ligne est dénoté \quad
+$R_i \leftrightarrow R_j$.
+\end{enumerate}
+\end{focus}
+
+\begin{egg}
+Utilisons la notation matricielle pour résoudre le système d'équations
+linéaires
+\begin{equation} \label{exSEL1}
+\begin{split}
+3x_1 + 2x_2 + 5x_3 &= 2\\
+x_1 + x_2 + 2x_3 &= -2\\
+-2x_1 - x_2 + x_3 &= 1
+\end{split}
+\end{equation}
+
+La matrice augmentée associée à ce système d'équations linéaires est
+\[
+\Maug{A}{\VEC{b}} = \left(\begin{array}{rrr|r}
+3 & 2 & 5 & 2 \\
+1 & 1 & 2 & -2 \\
+-2 & -1 & 1 & 1
+\end{array}\right) \; .
+\]
+$R_1 \leftrightarrow R_2$ donne
+\[
+\Maug{A}{\VEC{b}} \rightsquigarrow \left(\begin{array}{rrr|r}
+1 & 1 & 2 & -2 \\
+3 & 2 & 5 & 2 \\
+-2 & -1 & 1 & 1
+\end{array}\right) \; .
+\]
+$R_2-3\,R_1 \to R_2$ et $2\,R_1+R_3\to R_3$ donnent
+\[
+\Maug{A}{\VEC{b}} \rightsquigarrow \left(\begin{array}{rrr|r}
+1 & 1 & 2 & -2 \\
+0 & -1 & -1 & 8 \\
+0 & 1 & 5 & -3
+\end{array}\right) \; .
+\]
+$-R_2 \to R_2$ donne
+\[
+\Maug{A}{\VEC{b}} \rightsquigarrow \left(\begin{array}{rrr|r}
+1 & 1 & 2 & -2 \\
+0 & 1 & 1 & -8 \\
+0 & 1 & 5 & -3
+\end{array}\right) \; .
+\]
+$R_3-R_2 \to R_2$ et $R_1-R_2 \to R_1$ donnent
+\[
+\Maug{A}{\VEC{b}} \rightsquigarrow \left(\begin{array}{rrr|r}
+1 & 0 & 1 & 6 \\
+0 & 1 & 1 & -8 \\
+0 & 0 & 4 & 5
+\end{array}\right) \; .
+\]
+$(1/4) \, R_3 \to R_3$ donne
+\[
+\Maug{A}{\VEC{b}} \rightsquigarrow \left(\begin{array}{rrr|r}
+1 & 0 & 1 & 6 \\
+0 & 1 & 1 & -8 \\
+0 & 0 & 1 & 5/4
+\end{array}\right) \; .
+\]
+Finalement, $R_2 - R_3 \to R_2$ et $R_1 - R_3 \to R_1$ donnent
+\[
+\Maug{A}{\VEC{b}} \rightsquigarrow \left(\begin{array}{rrr|r}
+1 & 0 & 0 & 19/4 \\
+0 & 1 & 0 & -37/4 \\
+0 & 0 & 1 & 5/4
+\end{array}\right) \; .
+\]
+Puisque la première, deuxième et troisième colonne de la matrice
+augmentée sont respectivement associées à $x_1$, $x_2$ et $x_3$, nous
+obtenons la solution
+\begin{align*}
+x_1 = 19/4  \quad , \quad x_2=-37/4 \quad \text{et} \quad x_3=5/4
+\end{align*}
+du système d'équations linéaires (\ref{exSEL1}).
+\end{egg}
+
+\subsection{Matrices inverses}
+
+Avec cette nouvelle notation pour les systèmes d'équations linéaires,
+nous pouvons maintenant donner une méthode pour trouver la matrice inverse
+d'une matrice carrée si un tel inverse existe.
+
+Soit $A$ et $B$ deux matrices carrées tel que $B=A^{-1}$.  Nous
+pouvons déduire de l'égalité $A B = \Id$ que
+\[
+\sum_{j=1}^n a_{i,j} b_{j,k}
+=
+\begin{cases}
+0 & \qquad \text{si} \quad i \neq k\\
+1 & \qquad \text{si} \quad i = k
+\end{cases}
+\]
+Ainsi, nous obtenons de
+\begin{align*}
+& \hspace{16em} 2^e \text{ colonne} \hspace{8em} 2^e \text{ colonne} \\
+& \hspace{17.5em} \downarrow \hspace{12em} \downarrow \\
+& \left(
+\begin{array}{ccccc}
+a_{1,1} & a_{1,2} & a_{1,3} & \ldots & a_{1,n} \\
+a_{2,1} & a_{2,2} & a_{2,3} & \ldots & a_{2,n} \\
+a_{3,1} & a_{3,2} & a_{3,3} & \ldots & a_{3,n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n,1} & a_{n,2} & a_{n,3} & \ldots & a_{n,n} \\
+\end{array}
+\right)
+\,
+\left(
+\begin{array}{ccccc}
+\cline{2-2}
+b_{1,1} & \multicolumn{1}{|c|}{b_{1,2}} & b_{1,3} & \ldots & b_{1,n} \\
+b_{2,1} & \multicolumn{1}{|c|}{b_{2,2}} & b_{2,3} & \ldots & b_{2,n} \\
+b_{3,1} & \multicolumn{1}{|c|}{b_{3,2}} & b_{3,3} & \ldots & b_{3,n} \\
+\vdots & \multicolumn{1}{|c|}{\vdots} & \vdots & \ddots & \vdots \\
+b_{n,1} & \multicolumn{1}{|c|}{b_{n,2}} & b_{n,3} & \ldots & b_{n,n} \\
+\cline{2-2}
+\end{array}
+\right)
+=
+\left(
+\begin{array}{ccccc}
+\cline{2-2}
+1 & \multicolumn{1}{|c|}{0} & 0 & \ldots & 0 \\
+0 & \multicolumn{1}{|c|}{1} & 0 & \ldots & 0 \\
+0 & \multicolumn{1}{|c|}{0} & 1 & \ldots & 0 \\
+\vdots & \multicolumn{1}{|c|}{\vdots} & \vdots & \ddots & \vdots \\
+0 & \multicolumn{1}{|c|}{0} & 0 & \ldots & 1 \\
+\cline{2-2}
+\end{array}
+\right)
+\end{align*}
+que
+\[
+\begin{pmatrix}
+a_{1,1} & a_{1,2} & a_{1,3} & \ldots & a_{1,n} \\
+a_{2,1} & a_{2,2} & a_{2,3} & \ldots & a_{2,n} \\
+a_{3,1} & a_{3,2} & a_{3,3} & \ldots & a_{3,n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n,1} & a_{n,2} & a_{n,3} & \ldots & a_{n,n}
+\end{pmatrix}
+\,
+\begin{pmatrix}
+b_{1,2} \\
+b_{2,2} \\
+b_{3,2} \\
+\vdots \\
+b_{n,2}
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+1 \\
+0 \\
+\vdots \\
+0
+\end{pmatrix} \; .
+\]
+La deuxième colonne de la matrice $\Id$ est $A$ multiplié à droite par
+la deuxième colonne de la matrice $B$.  En générale, la $k^e$ colonne
+de la matrice identité $\Id$ est $A$ multiplié à droite par la $k^e$
+colonne de la matrice $B$.
+
+Chaque colonne de $B$ donne un vecteur (i.e.\ une matrice de dimension
+\nm{n}{1}).  La $k^e$ colonne de $B$ donne le vecteur
+\[
+\VEC{b}_k = \begin{pmatrix}
+b_{1,k} \\
+b_{2,k} \\
+\vdots \\
+b_{n,k} \\
+\end{pmatrix} \; .
+\]
+De même, la $k^e$ colonne de $\Id$ donne le vecteur $\VEC{e}_k$ dont
+les composantes sont $0$ sauf pour la $k^e$ qui est $1$.  Par exemple,
+\[
+e_{2} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} \; .
+\]
+Nous pouvons donc reformuler la remarque du paragraphe précédent par
+$A\VEC{b}_k = \VEC{e}_k$ pour $1\leq k \leq n$.  C'est cette dernière
+propriété qui justifie la méthode suivante pour trouver l'inverse
+d'une matrice carrée si celui-ci existe.
+
+\begin{focus}{\prp}
+Si $A$ est une matrice de dimension \nn qui possède une matrice
+inverse, alors la $k^e$ colonne $\VEC{b}_k$ de la matrice $A^{-1}$
+est la solution de l'équation
+\[
+A\VEC{b}_k = \VEC{e}_k
+\]
+pour $1\leq k \leq n$.  De plus, si $A$ est une matrice de dimension
+\nn et une des équations $A\VEC{b}_k = \VEC{e}_k$ pour $1\leq k \leq
+n$ n'a pas de solution, alors $A$ n'est pas inversible.
+\end{focus}
+
+Soit $A$ une matrice inversible (i.e. qui a un inverse) de dimension
+\nn.  Pour trouver les $n$ colonnes de la matrice inverse $A^{-1}$, il
+faut résoudre $n$ équations de la forme $A\VEC{b}_k = \VEC{e}_k$.
+Pour chaque valeur de $k$, il faut donc réduire la matrice augmentée
+$\Maug{A}{\VEC{e}_k}$ à une forme simple qui donnera la $k^e$ colonne
+$\VEC{b}_k$ de $A^{-1}$.  Comme $A$ est une matrice carrée inversible
+de dimension \nn, nous pouvons assumer que la forme simple qui résulte de
+la réduction de la matrice augmentée $\Maug{A}{\VEC{e}_k}$ remplace
+$A$ par la matrice identité de dimension \nn.  C'est-à-dire que la
+forme simple finale est $\Maug{\Id}{\VEC{b}_k}$.  Si ce n'était pas
+le cas, nous aurions qu'une des équations $A\VEC{b}_k = \VEC{e}_k$ n'a
+pas de solutions.
+
+Or, pour les $n$ matrices augmentées $\Maug{A}{\VEC{e}_k}$ pour
+$1\leq k \leq n$, les mêmes opérations sur les lignes sont effectuées
+pour réduire la matrice $A$ à la matrice identité.  Nous pouvons donc
+regrouper les $n$ matrices augmentées en une large matrice augmentée
+\[
+\Maug{A}{\Id} = \Maug{A}{\VEC{e}_1\ \VEC{e}_2\ \ldots\ \VEC{e}_n} \; .
+\]
+Si nous réduisons la matrice $A$ à la matrice identité $\Id$ de dimension
+\nn, nous obtenons
+\[
+\Maug{\Id}{B} = \Maug{\Id}{\VEC{b}_1\ \VEC{b}_2\ \ldots\ \VEC{b}_n} \; .
+\]
+$\VEC{b}_1$ est la solution de l'équation $A\VEC{b}_1 = \VEC{e}_1$,
+$\VEC{b}_2$ est la solution de l'équation $A\VEC{b}_2 = \VEC{e}_2$, etc.
+Ainsi,
+\[
+A^{-1} = B = \begin{pmatrix} \VEC{b}_1 & \VEC{b}_2 & \ldots & \VEC{b}_n
+\end{pmatrix} \; .
+\]
+
+\begin{egg}
+Trouvons l'inverse de la matrice
+\[
+A = \begin{pmatrix} 1 & 3 & 0 \\ 0 & 2 & -1 \\ -3 & 1 & 5 \end{pmatrix} \; .
+\]
+
+Nous considérons la matrice augmentée
+\[
+\Maug{A}{\Id} =
+\left(
+\begin{array}{ccc|ccc}
+1 & 3 & 0 & 1 & 0 & 0 \\
+0 & 2 & -1 & 0 & 1 & 0 \\
+-3 & 1 & 5 & 0 & 0 & 1
+\end{array}
+\right) \; .
+\]
+$3\, R_1 + R_3 \to R_3$ donne
+\[
+\Maug{A}{\Id} \rightsquigarrow
+\left(
+\begin{array}{ccc|ccc}
+1 & 3 & 0 & 1 & 0 & 0 \\
+0 & 2 & -1 & 0 & 1 & 0 \\
+0 & 10 & 5 & 3 & 0 & 1
+\end{array}
+\right)
+\]
+$R_3 - 5\,R_2 \to R_3$ donne
+\[
+\Maug{A}{\Id} \rightsquigarrow
+\left(
+\begin{array}{ccc|ccc}
+1 & 3 & 0 & 1 & 0 & 0 \\
+0 & 2 & -1 & 0 & 1 & 0 \\
+0 & 0 & 10 & 3 & -5 & 1
+\end{array}
+\right)\; .
+\]
+$(1/2) \, R_2 \to R_2$ et $(1/10)\,R_3 \to R_3$ donnent
+\[
+\Maug{A}{\Id} \rightsquigarrow
+\left(
+\begin{array}{ccc|ccc}
+1 & 3 & 0 & 1 & 0 & 0 \\
+0 & 1 & -1/2 & 0 & 1/2 & 0 \\
+0 & 0 & 1 & 3/10 & -1/2 & 1/10
+\end{array}
+\right) \; .
+\]
+$R_2 + (1/2) \, R_3 \to R_3$ donne
+\[
+\Maug{A}{\Id} \rightsquigarrow
+\left(
+\begin{array}{ccc|ccc}
+1 & 3 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 3/20 & 1/4 & 1/20 \\
+0 & 0 & 1 & 3/10 & -1/2 & 1/10
+\end{array}
+\right) \; .
+\]
+Finalement, $R_1 - 3\,R_2 \to R_1$ donne
+\[
+\Maug{A}{\Id} \rightsquigarrow
+\left(
+\begin{array}{ccc|ccc}
+1 & 0 & 0 & 11/20 & -3/4 & -3/20 \\
+0 & 1 & 0 & 3/20 & 1/4 & 1/20 \\
+0 & 0 & 1 & 3/10 & -1/2 & 1/10
+\end{array}
+\right) \; .
+\]
+L'inverse de la matrice $A$ est donc
+\[
+A^{-1} = \begin{pmatrix}
+11/20 & -3/4 & -3/20 \\
+3/20 & 1/4 & 1/20 \\
+3/10 & -1/2 & 1/10
+\end{pmatrix} \; .
+\]
+Nous invitons le lecteur à vérifier que $A A^{-1} = A^{-1} A = \Id$.
+\end{egg}
+
+\begin{focus}{\prp}
+Si $A$ est une matrice inversible de dimension \nn et $\VEC{b}$ est un
+vecteur de dimension \nm{n}{1}, alors l'équation $A\VEC{x} = \VEC{b}$
+a une solution et cette solution est unique.  Cette solution est
+donnée par $\VEC{x} = A^{-1} \VEC{b}$.
+\label{AinvConc1}
+\end{focus}
+
+En effet, si $A$ est inversible, une solution de $A\VEC{x} = \VEC{b}$
+est donnée par $\VEC{x} = A^{-1} \VEC{b}$ car
+\[
+A\VEC{x} = A\,\left( A^{-1} \VEC{b} \right)
+= \left(A A^{-1}\right) \VEC{b} = \Id \VEC{b} = \VEC{b} \; .
+\]
+De plus, si $\VEC{y}$ est un solution de $A\VEC{x} = \VEC{b}$ alors
+\[
+A\VEC{y} = \VEC{b} \Leftrightarrow A^{-1} \left(A\VEC{y}\right) = A^{-1}\VEC{b}
+\Leftrightarrow \left(A^{-1} A\right)\VEC{y} = A^{-1}\VEC{b}
+\Leftrightarrow \Id \VEC{y} = A^{-1}\VEC{b}
+\Leftrightarrow \VEC{y} = A^{-1}\VEC{b} \; .
+\]
+
+De la proposition précédente, nous déduisons que si $A$ est une matrice
+inversible alors la seule solution de l'équation $A\VEC{x} = \VEC{0}$
+est $\VEC{x} = A^{-1}\VEC{0} = \VEC{0}$.  Ce qui est un peu plus
+surprenant est que l'inverse est aussi vrai.
+
+\begin{focus}{\prp} \label{AinvConc2}
+Si $A$ est une matrice de dimension \nn telle que la seule solution de
+$A\VEC{x} = \VEC{0}$ est $\VEC{x}=\VEC{0}$, alors $A$ est inversible.
+\end{focus}
+
+\subsection{Intersection de trois plans dans $\mathbf{\RR^3}$}
+
+Lors de l'étude des vecteurs, nous avons donné quelques exemples où il
+fallait déterminer si trois plans se coupaient simultanément et, si
+oui, déterminer l'intersection de ces trois plans.
+
+Considérons les trois plans ${\cal M}_1$, ${\cal M}_2$ et ${\cal M}_3$
+donnés respectivement par
+\begin{align*}
+m_{1,1} x_1 + m_{1,2} x_2 + m_{1,3} x_3 &= b_1 \; , \\
+m_{2,1} x_1 + m_{2,2} x_2 + m_{2,3} x_3 &= b_2
+\intertext{et}
+m_{3,1} x_1 + m_{3,2} x_2 + m_{3,3} x_3 &= b_3 \; .
+\end{align*}
+
+Les points $\VEC{x}$ qui appartiennent à l'intersection des trois
+plans doivent satisfaire le système d'équations linéaires
+\begin{align*}
+m_{1,1} x_1 + m_{1,2} x_2 + m_{1,3} x_3 &= b_1 \\
+m_{2,1} x_1 + m_{2,2} x_2 + m_{2,3} x_3 &= b_2 \\
+m_{3,1} x_1 + m_{3,2} x_2 + m_{3,3} x_3 &= b_3
+\end{align*}
+C'est un système de la forme $M\VEC{x} = \VEC{b}$ où
+\[
+M= \begin{pmatrix}
+m_{1,1} & m_{1,2} & m_{1,3} \\
+m_{2,1} & m_{2,2} & m_{2,3} \\
+m_{3,1} & m_{3,2} & m_{3,3}
+\end{pmatrix}
+\quad \text{et} \quad
+\VEC{b} =
+\begin{pmatrix}
+b_1 \\ b_2 \\ b_3  
+\end{pmatrix} \; .
+\]
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+m_{1,1} & m_{1,2} & m_{1,3} & b_1 \\
+m_{2,1} & m_{2,2} & m_{2,3} & b_2 \\
+m_{3,1} & m_{3,2} & m_{3,3} & b_n
+\end{array}\right) \; .
+\]
+
+Il y a quatre possibilités:
+\begin{enumerate}
+\item Le système $M\VEC{x} = \VEC{b}$ n'a pas de solutions. Les trois
+  plans ${\cal M}_1$, ${\cal M}_2$ et ${\cal M}_3$ n'ont aucun point
+  en commun.
+\item Le système $M\VEC{x} = \VEC{b}$ a une seule solution. Les trois
+  plans ${\cal M}_1$, ${\cal M}_2$ et ${\cal M}_3$ ont un seul point
+  commun.
+\item Le système $M\VEC{x} = \VEC{b}$ a un nombre infini de solutions
+  qui dépendent d'un paramètre.  L'intersection des trois plans
+  ${\cal M}_1$, ${\cal M}_2$ et ${\cal M}_3$ est une droite donnée par
+  la représentation paramétrique des solutions.
+\item Le système $M\VEC{x} = \VEC{b}$ a un nombre infini de solutions
+  qui dépendent de deux paramètres.  L'intersection des trois plans
+  ${\cal M}_1$, ${\cal M}_2$ et ${\cal M}_3$ est un plan.  C'est le
+  cas où les trois équations linéaires sont des multiples l'une de
+  l'autre et représentent le même plan.
+\end{enumerate}
+
+\section{Déterminant}\label{DetermSect}
+
+Dans cette section, nous définissons une fonction qui, à toute matrice
+carrée $A$, associe un nombre réel dénoté $\det(A)$ (certains auteurs
+écrivent simplement $\det A$ mais nous ne ferons pas comme eux).
+Cette fonction permettra en théorie de déterminer si une matrice
+possède un inverse.  L'expression \lgm en théorie \rgm\ indique
+qu'il est en fait très onéreux d'évaluer cette fonction.  En pratique,
+pour les matrices de grandes dimensions, nous utilisons d'autres méthodes
+(par exemple, la proposition~\ref{AinvConc2}) pour déterminer si une
+matrice est inversible.
+
+\subsection{introduction}
+
+Pour définir ce qu'est le déterminant d'une matrice $n \times n$, il
+faut premièrement définir ce qu'est une permutation des éléments de
+l'ensemble $\{ 1, 2, 3, \ldots, n\}$.
+
+\begin{focus}{\dfn}
+Comme le nom l'indique, une {\bfseries permutation} des éléments de
+l'ensemble $\{ 1, 2, 3, \ldots, n\}$ est tout simplement une liste
+ordonnée $(\sigma_1, \sigma_2, \ldots, \sigma_n)$ de tous les éléments
+de $\{1, 2, 3, \ldots, n\}$.  En termes mathématiques, 
+$\sigma_i \in \{ 1, 2, 3, \ldots, n\}$ et $\sigma_i \neq \sigma_j$ pour
+$i \neq j$.
+\end{focus}
+
+Par exemple, les permutations de l'ensemble $\{1,2\}$ sont $(1,2)$ et
+$(2,1)$.  Les permutations de l'ensemble $\{1,2,3\}$ sont $(1,2,3)$,
+$(1,3,2)$, $(2,1,3)$, $(2,3,1)$, $(3,1,2)$ et $(3,2,1)$.  Quelles
+seront les $24$ permutations de l'ensemble $\{1,2,3,4\}$?
+
+Nous dénotons par $\SN{2}$ l'ensemble $\{ (1,2), (2,1) \}$ des
+permutations de l'ensemble $\{1,2\}$.  Nous dénotons par $\SN{3}$
+l'ensemble $\{ (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), (3,2,1)
+\}$ des permutations de l'ensemble $\{1,2,3\}$.  En générale, nous
+dénotons par $S_{n}$ l'ensemble des permutations de l'ensemble
+$\{1,2,\ldots, n\}$. 
+
+\begin{focus}{\dfn}
+Inverser deux éléments d'une permutation est appelé une
+{\bfseries transposition} sur une permutation.
+\end{focus}
+
+Par exemple, inverser le deuxième et troisième élément de $(1,3,2)$
+donne $(1,2,3)$, inverser le troisième et quatrième élément de
+$(1,4,3,2,5)$ donne $(1,4,2,3,5)$, et inverser le deuxième et
+quatrième élément de $(1,4,3,2)$ donne $(1,2,3,4)$.
+
+\begin{focus}{\dfn}
+Le {\bfseries signe d'une permutation} de $S_{n}$ est définie par
+\[
+\sgn (\sigma_1, \sigma_2, \ldots, \sigma_n) =
+\begin{cases}
+1 & \ \text{s'il faut effectuer un nombre pair de transpositions}\\
+& \ \text{pour réduire }(\sigma_1, \sigma_2, \ldots, \sigma_n)\text{ à }
+(1,2,\ldots, n) \\
+-1 & \ \text{s'il faut effectuer un nombre impair de transposi-}\\
+&\ \text{tions pour réduire }(\sigma_1, \sigma_2, \ldots, \sigma_n)\text{ à }
+(1,2,\ldots, n)
+\end{cases}
+\]
+\end{focus}
+
+Ainsi, $\sgn (2,1) = -1$ car une seule transposition est nécessaire
+pour réduire $(2,1)$ à $(1,2)$; il suffit d'inverser le premier et
+deuxième élément.  Nous avons que $\sgn (2,3,1)=1$ car deux transpositions
+sont nécessaires pour réduire $(2,3,1)$ à $(1,2,3)$; nous inversons le
+deuxième et troisième élément de $(2,3,1)$ pour obtenir $(2,1,3)$ et
+nous inversons le premier et deuxième élément de $(2,1,3)$ pour obtenir
+$(1,2,3)$.
+
+\begin{focus}{\dfn} \index{Déterminant}
+Soit
+\[
+A = \begin{pmatrix} a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2} \end{pmatrix} \; .
+\]
+Le {\bfseries déterminant} de la matrice $A$, dénoté $\det(A)$, est
+défini par
+\begin{align*}
+\det(A) &= \sum_{(\sigma_1,\sigma_2) \in \SN{2}} \sgn (\sigma_1,\sigma_2) \;
+a_{1,\sigma_1} a_{2,\sigma_2} \\
+&= a_{1,1}a_{2,2} - a_{1,2}a_{2,1} \; .
+\end{align*}
+\end{focus}
+
+\begin{egg}
+Si
+\[
+A= \begin{pmatrix} 1 & 2 \\ -1 & 5 \end{pmatrix}
+\]
+alors $\det(A) = 1\times 5 - 2 \times (-1) = 7$.
+\end{egg}
+
+\begin{focus}{\dfn} \index{Déterminant}
+Soit
+\[
+A = \begin{pmatrix} a_{1,1} & a_{1,2} & a_{1,3} \\
+a_{2,1} & a_{2,2} & a_{2,3} \\
+a_{3,1} & a_{3,2} & a_{3,3}
+\end{pmatrix} \; .
+\]
+Le {\bfseries déterminant} de la matrice $A$, dénoté $\det(A)$, est
+défini par
+\begin{align*}
+\det(A) &= \sum_{(\sigma_1,\sigma_2,\sigma_2)\in \SN{3}} \sgn
+(\sigma_1,\sigma_2,\sigma_3)\; a_{1,\sigma_1} a_{2,\sigma_2} a_{3,\sigma_3} \\
+&= a_{1,1}a_{2,2}a_{3,3} - a_{1,1}a_{2,3}a_{3,2}
+- a_{1,2}a_{2,1}a_{3,3} \\
+&\quad + a_{1,2}a_{2,3}a_{3,1}
++ a_{1,3}a_{2,1}a_{3,2} - a_{1,3}a_{2,2}a_{3,1} \; .
+\end{align*}
+\end{focus}
+
+\begin{egg}
+Si
+\[
+A= \begin{pmatrix} 1 & 2 & -1 \\ -2 & 5 & 3 \\
+-3 & -5 & 4 \end{pmatrix} \; ,
+\]
+alors
+\begin{align*}
+\det(A) &= 1\times 5 \times 4 - 1\times 3 \times (-5)
+- 2 \times (-2)\times 4 + 2 \times 3 \times (-3) \\
+& +(-1)\times (-2)\times (-5) - (-1)\times 5 \times (-3)
+= 8 \; .
+\end{align*}
+\end{egg}
+
+En générale, le déterminant est définie de la façons suivante.
+
+\begin{focus}{\dfn} \index{Déterminant}
+Si $A$ est une matrice de dimension \nn, le {\bfseries déterminant} de
+$A$, dénoté $\det(A)$, est définie par
+\begin{align*}
+\det(A) &= \sum_{(\sigma_1,\sigma_2,\ldots,\sigma_n)\in \SN{n}} \sgn
+(\sigma_1,\sigma_2,\ldots,\sigma_n)\;
+a_{1,\sigma_1} a_{2,\sigma_2}\cdots  a_{n,\sigma_n} \ .
+\end{align*}
+\label{gendeffdet}
+\end{focus}
+
+\subsection{Signe d'une permutation \theory}
+
+Est-ce que le déterminant est bien défini?  En particulier, il y a
+plusieurs choix possibles de transpositions pour réduire une
+permutation $(\sigma_1, \sigma_2, \ldots, \sigma_n)$ à la permutation
+trivial $(1,2,\ldots,n)$.  Est-ce que le nombre de transpositions pour
+chaque choix est toujours pair ou impaire?  Il faut une réponse
+affirmative à cette question si nous voulons que le signe d'une permutation
+soit indépendant du choix de transpositions utilisées pour réduire
+cette permutation à la permutation trivial.
+
+Nous commençons par donner une définition plus précise d'une permutation
+sur l'ensemble $\{1,2,3,\ldots,n\}$.
+
+\begin{focus}{\dfn}
+Une {\bfseries permutation}\index{Permutation} sur l'ensemble
+$\{1,2,3,\ldots,n\}$ est
+une fonction injective de l'ensemble $\{1,2,3,\ldots,n\}$ dans lui
+même.
+
+L'ensemble des permutations sur l'ensemble $\{1,2,3,\ldots,n\}$ est
+dénoté $\SN{n}$.
+
+Une {\bfseries transposition}\index{Transposition} est une permutation
+$\tau \in \SN{n}$ qui est définie de la façon suivante.  Ils existent
+$i$ et $j$ dans $\{1,2,3,\ldots,n\}$ tels que $\tau(i) = j$, $\tau(j) = i$ et
+$\tau(k) =k$ pour $k \in \{1,2,3,\ldots,n\} \setminus \{i,j\}$.
+\end{focus}
+
+\begin{focus}{\thm}
+Si $\sigma$ est une permutation sur l'ensemble $\{1,2,3,\ldots,n\}$ alors ils
+existent des transpositions $\tau_1$, $\tau_2$, \ldots, $\tau_s$ telles que
+\[
+\sigma = \tau_1 \circ \tau_2 \circ \ldots \circ \tau_s \; .
+\]
+La représentation de $\sigma$ en termes de transpositions n'est pas unique.
+Par contre, si $\rho_1$, $\rho_2$, \ldots, $\rho_t$ est un autre ensemble de
+transpositions telles que
+\[
+\sigma = \rho_1 \circ \rho_2 \circ \ldots \circ \rho_t \ ,
+\]
+alors $t$ est pair si et seulement si $s$ est pair (donc $t$ est impair si et
+seulement si $s$ est impair).
+\end{focus}
+
+Ce dernier théorème nous permet donc de définir sans ambiguïté le signe d'une
+permutation sur l'ensemble $\{1,2,3,\ldots,n\}$
+
+\begin{focus}{\dfn} \index{Permutation!signe}
+Le {\bfseries signe} d'une permutation $\sigma \in \SN{n}$, dénoté
+$\sgn(\sigma)$, est définie par
+\[
+\sgn(\sigma) = \begin{cases}
+1 & \quad \text{s'il faut un nombre pair de transpositions} \\
+& \quad \text{pour représenter $\sigma$} \\
+-1 & \quad \text{s'il faut un nombre impair de transposi\-tions} \\
+& \quad \text{pour représenter $\sigma$}
+\end{cases}
+\]
+\end{focus}
+
+Maintenant que nous savons que le signe d'une permutation est bien
+défini, nous pouvons dire que le déterminant d'une matrice carré est bien
+définie.
+
+\subsection{Calcul du déterminant}
+
+Il y a un lien entre la formule pour calculer le déterminant d'une
+matrice de dimension \nm{2}{2} et celle pour calculer le déterminant
+d'une matrice de dimension \nm{3}{3}.
+
+Soit $A$ une matrice de dimension \nm{3}{3} et posons
+\[
+A_{1,1} = \begin{pmatrix} a_{2,2} & a_{2,3} \\ a_{3,2} & a_{3,3} \end{pmatrix}
+\quad , \quad
+A_{1,2} = \begin{pmatrix} a_{2,1} & a_{2,3} \\ a_{3,1} & a_{3,3} \end{pmatrix}
+\quad \text{et} \quad
+A_{1,3} = \begin{pmatrix} a_{2,1} & a_{2,2} \\ a_{3,1} & a_{3,2} \end{pmatrix}
+\; . \]
+Alors
+\begin{align*}
+\det(A) &= a_{1,1}a_{2,2}a_{3,3} - a_{1,1}a_{2,3}a_{3,2}
+- a_{1,2}a_{2,1}a_{3,3} + a_{1,2}a_{2,3}a_{3,1}
++ a_{1,3}a_{2,1}a_{3,2} - a_{1,3}a_{2,2}a_{3,1} \\
+&= a_{1,1}\left(a_{2,2}a_{3,3} - a_{2,3}a_{3,2}\right)
+- a_{1,2}\left(a_{2,1}a_{3,3} - a_{2,3}a_{3,1}\right)
++ a_{1,3}\left(a_{2,1}a_{3,2} - a_{2,2}a_{3,1}\right) \\
+&= a_{1,1} \det(A_{1,1}) - a_{1,2} \det(A_{1,2}) + a_{1,3}
+\det(A_{1,3}) \; .
+\end{align*}
+
+De façon semblable, nous pouvons démontrer la proposition suivante.
+
+\begin{focus}{\prp} \label{devROWCOL2_3}
+Si $A_{i,j}$ est la matrice de dimension \nm{2}{2} obtenue d'une
+matrice $A$ de dimension \nm{3}{3} en enlevant la $i^e$ ligne et la
+$j^e$ colonne, alors
+\begin{align}
+\det(A) &= \sum_{j=1}^3 (-1)^{k+j} a_{k,j} \det(A_{k,j}) \label{devROW}
+\intertext{et}
+\det(A) &= \sum_{i=1}^3 (-1)^{k+i} a_{i,k} \det(A_{i,k}) \label{devCOL}
+\end{align}
+quelle que soit la valeur de l'indice $k \in \{1,2,3\}$.
+\end{focus}
+
+La somme en (\ref{devROW}) est un développement selon une ligne pour
+calculer le déterminant de $A$ alors que la somme en (\ref{devCOL})
+est un développement selon une colonne pour calculer le déterminant de
+$A$.  Un bon choix de développement peut grandement simplifier le
+calcul du déterminant.
+
+\begin{egg}
+Pour calculer le déterminant de la matrice
+\[
+A= \begin{pmatrix} 3 & 2 & -1 \\ 0 & 5 & 0 \\
+-2 & 4 & 7 \end{pmatrix} \; ,
+\]
+il est très avantageux de développer selon la deuxième ligne.  Ainsi,
+\begin{align*}
+\det(A) &= -a_{2,1} \det(A_{2,1}) + a_{2,2} \det(A_{2,2})
+- a_{2,3}\det(A_{2,3}) \\
+&= -0\times \det(A_{2,1}) + 5\,\times \det(A_{2,2}) - 0\times \det(A_{2,3}) \\
+&= 5\, \det\begin{pmatrix} 3 & -1 \\ -2 & 7 \end{pmatrix}
+= 5\,(3\times 7 - (-1)\times (-2)) = 95 \; .
+\end{align*}
+
+Les matrices $A_{i,j}$ proviennent de la matrice $A$ à laquelle nous avons
+enlevé la $i^e$ ligne et la $j^e$ colonne.
+\begin{align*}
+A_{2,1} &= \begin{pmatrix} 2 & -1 \\ 4 & 7 \end{pmatrix}
+\quad \text{provient de} \quad
+A = \left(\begin{array}{rrr}
+3\hspace{-1.5ex}\blacksquare & 2 & -1 \\
+0\hspace{-1.5ex}\blacksquare & 5\hspace{-1.5ex}\blacksquare &
+0\hspace{-1.5ex}\blacksquare \\ 
+-2\hspace{-1.5ex}\blacksquare & 4 & 7
+\end{array}\right)
+\\
+A_{2,2} &= \begin{pmatrix} 3 & -1 \\ -2 & 7 \end{pmatrix}
+\quad \text{provient de} \quad
+A = \left(\begin{array}{rrr}
+3 & 2\hspace{-1.5ex}\blacksquare & -1 \\
+0\hspace{-1.5ex}\blacksquare & 5\hspace{-1.5ex}\blacksquare
+& 0\hspace{-1.5ex}\blacksquare \\
+-2 & 4\hspace{-1.5ex}\blacksquare & 7
+\end{array}\right)
+\intertext{et}
+A_{2,3} &= \begin{pmatrix} 3 & 2 \\ -2 & 4 \end{pmatrix}
+\quad \text{provient de} \quad
+A = \left(\begin{array}{rrr}
+3 & 2 & -1\hspace{-1.5ex}\blacksquare \\
+0\hspace{-1.5ex}\blacksquare & 5\hspace{-1.5ex}\blacksquare
+& 0\hspace{-1.5ex}\blacksquare \\
+-2 & 4 & 7\hspace{-1.5ex}\blacksquare
+\end{array}\right) \; .
+\end{align*}
+\end{egg}
+
+La proposition~\ref{devROWCOL2_3} a une version équivalent pour les
+matrices de dimension \nn avec $n$ un entier positif.
+
+\begin{focus}{\prp} \label{devROWCOL}
+Si $A_{i,j}$ est la matrice de dimension \nm{(n-1)}{(n-1)} obtenue d'une
+matrice $A$ de dimension \nn en enlevant la $i^e$ ligne et la $j^e$ colonne,
+alors
+\begin{align*}
+\det(A) &= \sum_{j=1}^n (-1)^{k+j} a_{k,j} \det(A_{k,j})
+\intertext{et}
+\det(A) &= \sum_{i=1}^n (-1)^{k+i} a_{i,k} \det(A_{i,k})
+\end{align*}
+quelle que soit la valeur de l'indice $k \in \{1,2,3, \ldots, n\}$.
+\end{focus}
+
+Nous pouvons utiliser cette proposition récursivement pour calculer le
+déterminant d'une matrice.
+
+\begin{egg}
+Calculons le déterminant de la matrice
+\[
+A= \begin{pmatrix} 3 & 2 & -1 & 3 & -1 \\ 0 & 5 & 0 & 0 & 3 \\
+0 & 3 & 0 & 0 & 0 \\ -2 & 4 & 7 & 5 & -3 \\
+1 & -1 & 1 & -1 & 1 \end{pmatrix} \; .
+\]
+
+Si nous développons selon la troisième ligne, nous obtenons
+\begin{align*}
+\det(A) &= a_{3,1} \det(A_{3,1}) - a_{3,2} \det(A_{3,2})
++ a_{3,3}\det(A_{3,3}) - a_{3,4}\det(A_{3,4}) + a_{3,5}\det(A_{3,5}) \\
+&= 0\times \det(A_{3,1}) - 3\, \det(A_{3,2})
++ 0\times \det(A_{3,3}) - 0\times \det(A_{3,4}) + 0\times \det(A_{3,5}) \\
+&= -3 \det(A_{3,2}) \; .
+\end{align*}
+
+Posons
+\[
+B = A_{3,2} =
+\begin{pmatrix} 3 & -1 & 3 & -1 \\ 0 & 0 & 0 & 3 \\
+-2 & 7 & 5 & -3 \\ 1 & 1 & -1 & 1 \end{pmatrix} \; .
+\]
+Si nous développons la matrice $B$ selon la deuxième ligne, nous obtenons
+\begin{align*}
+\det(B)&= -b_{2,1} \det(B_{2,1}) + b_{2,2} \det(B_{2,2})
+- b_{2,3}\det(B_{2,3}) + b_{2,4}\det(B_{2,4}) \\
+&= -0\times \det(B_{2,1}) + 0\times \det(B_{2,2})
+- 0\times \det(B_{2,3}) + 3\, \det(B_{2,4}) \\
+&= 3 \det(B_{2,4}) \; .
+\end{align*}
+Ainsi,
+\[
+\det(A) = -3 \det(B) = -9 \det(B_{2,4}) \; .
+\]
+
+Posons
+\[
+C = B_{2,4} =
+\begin{pmatrix} 3 & -1 & 3 \\ -2 & 7 & 5 \\ 1 & 1 & -1 \end{pmatrix} \; .
+\]
+Si nous développons selon la deuxième ligne de $C$ (toute autre choix de
+ligne ou colonne serait valable), nous obtenons
+\begin{align*}
+\det(C) &= - c_{2,1} \det(C_{2,1}) + c_{2,2} \det(C_{2,2})
+- c_{2,3} \det(C_{2,3}) \\
+&= 2 \det\begin{pmatrix} -1 & 3 \\ 1 & -1 \end{pmatrix}
++ 7 \det\begin{pmatrix} 3 & 3 \\ 1 & -1 \end{pmatrix}
+-5 \det\begin{pmatrix} 3 & -1\\ 1 & 1\end{pmatrix} \\
+&= 2 ( 1 -3) + 7(-3-3) -5 (3+1) = -66 \; .
+\end{align*}
+Ainsi.
+\[
+\det(A) = -9 \det(C) = -9\times (-66) = 594 \; .
+\]
+\end{egg}
+
+\begin{egg}
+Pour calculer le déterminant de la matrice
+\[
+A= \begin{pmatrix} 3 & 2 & -1 \\ 0 & 5 & 3 \\
+0 & 0 & 4 \end{pmatrix} \; ,
+\]
+il est très avantageux de développer selon la première colonne.  Ainsi,
+\begin{align*}
+\det(A) &= a_{1,1} \det(A_{1,1}) - a_{2,1} \det(A_{2,1})
++ a_{3,1}\det(A_{3,1}) \\
+&= 3\, \det(A_{1,1}) - 0\times \det(A_{2,1}) + 0\times \det(A_{3,1}) \\
+&= 3\, \det\begin{pmatrix} 5 & 3 \\ 0 & 4 \end{pmatrix}
+= 3\times 5\times 4 = 60 \; .
+\end{align*}
+\end{egg}
+
+La matrice de l'exemple précédent est d'un type particulier.
+
+\begin{focus}{\dfn}
+Une matrice $A$ de dimension \nn est
+{\bfseries triangulaire supérieure}\index{Matrice!triangulaire
+  supérieure} si les composantes de $A$ qui sont sous la diagonale
+sont nulles.  En d'autres mots, $a_{i,j} =0$ pour $i>j$.
+
+Une matrice $A$ de dimension \nn est
+{\bfseries triangulaire inférieure}\index{Matrice!triangulaire
+  inférieure} si les composantes de $A$ qui sont au-dessus de la
+diagonale sont nulles.  En d'autres mots, $a_{i,j} =0$ pour $i<j$.
+\end{focus}
+
+L'exemple précédent montre que le déterminant des matrices
+triangulaires supérieures (de dimensions \nm{2}{2} ou \nm{3}{3}) est
+le produit des éléments sur la diagonale.  Il en est de même pour les
+matrices triangulaires inférieures.
+
+\begin{focus}{\prp}
+Si $A$ est une matrice triangulaire supérieure (ou triangulaire
+inférieure) de dimension \nn, alors
+\[
+\det(A) = a_{1,1}a_{2,2} \ldots a_{n,n} \; .
+\]
+C'est-à-dire que le déterminant de $A$ est le produit des éléments sur
+la diagonale de $A$.
+\end{focus}
+
+\begin{rmk}[\theory]
+La démonstration de cette proposition est très simple.  Le seul terme
+de la forme
+\[
+a_{1,\sigma(1)}a_{2,\sigma(2)} \ldots a_{n,\sigma(n)}
+\]
+dans la définition~\ref{gendeffdet} du déterminant qui ne contient
+possiblement pas un facteur nul est donné par la permutation
+$\sigma(i) = i$ pour tout $i\in \{1,2,\ldots,n\}$.  Toutes les autres
+permutations $\sigma$ vont avoir $\sigma(k) < k$ pour au moins une
+valeur de $k$.
+\end{rmk}
+
+Le déterminant possède les propriétés suivantes.
+
+\begin{focus}{\prp} \label{detProps}
+Soit $A$ un matrice de dimension \nn.
+\begin{enumerate}
+\item Si nous échangeons deux lignes (ou deux colonnes) de $A$, nous obtenons
+  une matrice $B$ telle que $\det(B) = - \det(A)$. 
+\item Si nous ajoutons une ligne de $A$ à une autre ligne de $A$, nous
+  obtenons une matrice $B$ telle que $\det(B) = \det(A)$. 
+\item Si nous ajoute une colonne de $A$ à une autre colonne de $A$, nous
+  obtenons une matrice $B$ telle que $\det(B) = \det(A)$.
+\item Si nous multiplions une ligne (ou une colonne) de $A$ par une nombre
+  $\alpha$, nous obtenons une matrice $B$ telle que
+  $\det(B) = \alpha \det(A)$.
+\end{enumerate}
+\end{focus}
+
+Nous pouvons utiliser ces propriétés pour calculer le déterminant d'une
+matrice. Dans l'exemple qui suit, nous dénotons la $i^e$ ligne par $R_i$
+et la $j^e$ colonne par $C_j$, comme nous avons fait précédemment.
+
+\begin{egg}
+Calculons le déterminant de la matrice
+\[
+A= \begin{pmatrix} 3 & 2 & -1 \\ -3 & 5 & -2 \\
+1 & -5 & 4 \end{pmatrix} \; .
+\]
+
+Nous utilisons les opérations sur les lignes et colonnes de $A$ pour
+réduire le calcul du déterminant de $A$ au calcul du déterminant d'une
+matrice triangulaire supérieure.
+
+$R_1 \leftrightarrow R_3$ donne
+\[
+\det(A) = -\det \begin{pmatrix} 1 & -5 & 4 \\ -3 & 5 & -2 \\
+3 & 2 & -1 \end{pmatrix} \; .
+\]
+$(1/3) \, R_2 \rightarrow R_2$ et $-(1/3) \, R_3 \rightarrow R_3$
+donnent
+\[
+\det(A) = -\left(3\right)\left(-3\right) \,\det
+\begin{pmatrix} 1 & -5 & 4 \\ -1 & 5/3 & -2/3 \\
+-1 & -2/3 & 1/3 \end{pmatrix}
+= 9 \, \det
+\begin{pmatrix} 1 & -5 & 4 \\ -1 & 5/3 & -2/3 \\
+-1 & -2/3 & 1/3 \end{pmatrix} \; .
+\]
+$R_2+R_1 \rightarrow R_2$ et $R_3+R_1 \rightarrow R_3$ donnent
+\[
+\det(A) = 9 \,\det
+\begin{pmatrix} 1 & -5 & 4 \\ 0 & -10/3 & 10/3 \\
+0 & -17/3 & 13/3 \end{pmatrix} \; .
+\]
+$R_2 \leftrightarrow R_3$ donne
+\[
+\det(A) = - 9 \,\det
+\begin{pmatrix} 1 & -5 & 4 \\ 0 & -17/3 & 13/3 \\
+0 & -10/3 & 10/3 \end{pmatrix} \; .
+\]
+$C_2 + C_3 \rightarrow C_2$ donne
+\[
+\det(A) = - 9 \,\det
+\begin{pmatrix} 1 & -1 & 4 \\ 0 & -4/3 & 13/3 \\
+0 & 0 & 10/3 \end{pmatrix} \; .
+\]
+Finalement,
+\[
+\det(A) = - 9 \times 1 \times \left(-\frac{4}{3}\right)
+\times \frac{10}{3} 
+= 40 \; .
+\]
+\end{egg}
+
+Les propriétés énoncées à la proposition~\ref{detProps} sont vrais
+pour toutes les valeurs positives de $n$.  Pour calculer le
+déterminant d'une matrice $A$, nous n'utilisons pas la définition du
+déterminant mais nous utilisons les propriétés données à la
+proposition~\ref{detProps} pour réduire la matrice $A$ à un matrice
+triangulaire supérieure.  Le déterminant d'une matrice triangulaire
+supérieure est alors très simple a calculer puisque c'est le produit des
+éléments sur sa diagonale.
+
+Nous concluons cette section en remplissant la promesse que nous avons
+faite au premier paragraphe de la section.
+
+\begin{focus}{\thm} \label{AinvDetNN}
+Soit $A$ une matrice de dimension \nn.  La matrice $A$ est inversible
+si et seulement si $\det(A) \neq 0$.
+\end{focus}
+
+\begin{rmk}
+Comme nous avons promis lors de la présentation du produit vectoriel,
+nous pouvons utiliser formellement la définition du déterminant d'une
+matrice \nm{3}{3} pour donner une formule {\em symbolique} simple pour
+calculer le produit vectoriel de deux vecteurs.
+
+Si $\VEC{p} = (p_1,p_2,p_3)$ et $\VEC{q} = (q_1, q_2, q_3)$ sont deux
+vecteurs, le produit vectoriel de ces deux vecteurs est le vecteur
+$\VEC{m}$ donnė par
+\[
+\VEC{m} = \det \begin{pmatrix}
+\ii & \jj & \kk \\
+p_1 & p_2 & p_3 \\
+q_1 & q_2 & q_3 
+\end{pmatrix}
+\]
+si nous développons le déterminant selon la première ligne.  En effet, nous
+obtenons alors
+\[
+\VEC{m} = \VEC{p} \times \VEC{q}
+= (p_2 q_3 - p_3 q_2) \ii - (p_1 q_3 - p_3 q_1) \jj
++ (p_1 q_2 - p_2 q_1) \kk
+\]
+comme à la définition~\ref{VecTProdDef}.  Nous insistons sur le fait que
+cette formule est seulement symbolique et est introduite seulement
+comme aide mémoire pour ne pas oublier la formule pour le
+produit vectoriel de deux vecteurs.
+\label{DetermVectProd}
+\end{rmk}
+\section{Suites dans $\mathbf{\RR^n}$}
+
+Dans les exemples qui suivent, nous aurons besoin de la notion de
+convergence dans $\RR^n$.  Soit
+$\displaystyle \{ \VEC{v}_j \}_{j=1}^\infty$, une suite 
+de vecteurs dans $\RR^n$.  Que voulons-nous dire par la suite de
+vecteurs $\displaystyle \{ \VEC{v}_j \}_{j=1}^\infty$ tend vers un
+vecteur $\VEC{w}$? 
+
+\begin{focus}{\dfn} \index{suite!convergence dans $\RR^n$}
+Nous disons que la suite de vecteurs
+$\displaystyle \left\{\VEC{v}_j\right\}_{j=0}^\infty$
+{\bfseries converge} (ou {\bfseries tend}) vers $\VEC{w}$ si
+$\| \VEC{v}_j - \VEC{w}\|\to 0$ lorsque $j \to \infty$.  Nous écrivons
+$\VEC{v}_j \rightarrow \VEC{w}$ lorsque $j\rightarrow \infty$ ou
+$\displaystyle \lim_{j\to \infty} \VEC{v}_j = \VEC{w}$.
+\end{focus}
+
+La formule introduite en (\ref{norm}) pour calculer la longueur d'un
+vecteur est utilisé dans la définition précédente pour calculer la
+distance entre deux vecteurs.   Plus précisément, la formule qui a été
+utilisée est
+\[
+\| \VEC{x} \| = \left( \sum_{j=1}^n x_j^2 \right)^{1/2} \qquad , \qquad
+\VEC{x} \in \RR^n \ .
+\]
+
+\begin{focus}{\prp}
+La suite de vecteurs $\displaystyle \left\{\VEC{v}_j\right\}_{j=0}^\infty$
+converge vers $\VEC{w}$ si et seulement si la $i^{th}$ composante de
+$\VEC{v}_j$ converge vers la $i^{th}$ composante de $\VEC{w}$ lorsque
+$j\rightarrow \infty$ pour tout $i$.
+\end{focus}
+
+\section{Valeurs propres et vecteurs propres}
+
+\begin{focus}{\dfn} 
+Soit $A$ une matrice de dimension \nn.  Le nombre $\lambda$ est une
+{\bfseries valeur propre}\index{Valeur propre} de $A$ s'il existe un
+vecteur non nul $\VEC{v}$ tel que $A\VEC{v} = \lambda \VEC{v}$.
+
+Les vecteurs non nuls $\VEC{v}$ qui satisfont
+$A\VEC{v} = \lambda \VEC{v}$ sont appelés les
+{\bfseries vecteurs propres}\index{Vecteur propre} de $A$ associés à
+la valeur propre $\lambda$.
+\end{focus}
+
+Notons que si $\VEC{v}$ est un vecteur propre associé à la valeur
+propre $\lambda$ alors $\alpha \VEC{v}$ pour $\alpha \in \RR$ est
+aussi un vecteur propre associé à la valeur propre $\lambda$.  En
+effet,
+\[
+A\left(\alpha \VEC{v}\right) = \alpha \left(A\VEC{v}\right)
+= \alpha \left( \lambda \VEC{v} \right)
+= \lambda \left(\alpha \VEC{v}\right) \; .
+\]
+Il y a donc un nombre infini de vecteurs propres associés à chaque
+valeur propre.
+
+Pour trouver les valeurs propres d'une matrice carrée $A$, nous remarquons
+que
+\[
+A\VEC{v} = \lambda \VEC{v} = \lambda \Id \VEC{v}
+\]
+donne l'équation
+\begin{equation}\label{eigCond}
+\left( A - \lambda \Id\right) \VEC{v} = \VEC{0} \; .
+\end{equation}
+
+Le nombre $\lambda$ est une valeur propre de $A$ s'il existe un
+vecteur non nul qui satisfait (\ref{eigCond}).  Or, il découle de la
+proposition~\ref{AinvConc1} qu'une condition nécessaire pour que
+(\ref{eigCond}) ait une solution non nulle est que $A - \lambda \Id$
+n'ait pas d'inverse. Grâce au théorème~\ref{AinvDetNN},
+$A - \lambda \Id$ n'a pas d'inverse si et seulement si
+$\det(A -\lambda \Id)=0$.  Nous obtenons ainsi la méthode suivante pour
+trouver les valeurs propres d'une matrice carré.
+
+\begin{focus}{\prp} \index{Polynôme caractéristique}
+Les valeurs propres d'une matrice carrée $A$ sont les racines du
+{\bfseries polynôme caractéristique}
+\[
+p(\lambda) = \det\left(A-\lambda \Id\right) \; .
+\]
+
+Pour trouver un vecteur propre $\VEC{v}$ associé à une valeur propre
+$\lambda$, il faut résoudre le système d'équations linéaires
+\[
+\left(A-\lambda \Id\right)\VEC{v} = \VEC{0} \; .
+\]
+\end{focus}
+
+Rappelons ce qu'est un {\em nombre complexe}.  Cela va être nécessaire
+pour l'étude des valeurs propres.
+
+\begin{focus}{\dfn}
+Un {\bfseries nombre complexe}\index{Nombre complexe} est un nombre de
+la forme
+\[
+z = a+b\,i
+\]
+où $a \in \RR$ est la
+{\bfseries partie réelle}\index{Nombre complexe!partie réelle} de $z$,
+$b\in\RR$ est la
+{\bfseries partie imaginaire}\index{Nombre complexe!partie imaginaire}
+de $z$ et $i^2 = -1$.  L'ensemble des nombres complexes est dénoté
+$\CC$.
+\end{focus}
+
+Le nombre complexe $i$ est la racine carrée de $-1$.  Pour cette
+raison, il est fréquent de voir l'énoncé $i = \sqrt{-1}$.  Les nombres
+complexes dont la partie imaginaire est nulle représentent les nombres
+réelles.  Pour cette raison, $\RR \subset \CC$.
+
+\begin{focus}{\dfn}
+Les opérations d'addition et de multiplication pour les nombres
+complexes $a_1+b_1\,i$ et $a_2 + b_2\,i$ sont définies par:
+\begin{enumerate}
+\item $(a_1+b_1\,i) + (a_2 + b_2\,i) = (a_1+a_2)+(b_1+b_2)\,i$ 
+\item $(a_1+b_1\,i)(a_2 + b_2\,i) = (a_1a_2-b_1 b_2)+(a_1 b_2+b_1 a_2)\,i$
+\end{enumerate}
+\end{focus}
+
+\begin{focus}{\dfn}
+Le {\bfseries complexe conjugué}\index{Nombre complexe!conjugué} d'un
+nombre complexe $z=a+b\,i$ est le nombre complexe
+$\overline{z} = a - b\, i$.
+\end{focus}
+
+\begin{focus}{\dfn}
+La {\bfseries valeur absolue}\index{Nombre complexe!valeur absolue}
+d'un nombre complexe $z=a+b\,i$ est définie par
+$|z| = \sqrt{a^2+b^2}$.
+\end{focus}
+
+Si $z = a + b \, i$ et $b=0$ (i.e. $z \in \RR$), alors
+$|z| = \sqrt{a^2} = |a|$.  La valeur absolue pour les nombres
+complexes est donc une extension de la valeur absolue pour les nombres
+réelles.  Puisque $|z|^2 = a^2 + b^2 = z\overline{z}$,
+nous avons que $|z| = \sqrt{z\overline{z}}$.
+
+\begin{rmk}
+Toute les matrices $A$ que nous allons considérer ont seulement des
+composantes réelles.  Néanmoins, les racines du polynôme
+caractéristique associé à $A$, et donc les valeurs propres de $A$,
+peuvent être des nombres complexes.  Si $\lambda \in \CC\setminus \RR$
+est une valeur propre pour une matrice dont toutes les composantes
+sont réelles, alors certaines des composantes d'un vecteur propre
+associé à $\lambda$ seront complexes.
+\end{rmk}
+
+\begin{egg}
+Trouvons les valeurs propres de la matrice
+\[
+A = \begin{pmatrix} 1 & 3 \\ 2 & 2 \end{pmatrix}
+\]
+et donnons un vecteur propre pour chacune des valeurs propres.
+
+Le polynôme caractéristique est 
+\begin{align*}
+p(\lambda) &= \det(A - \lambda \Id) = \det
+\begin{pmatrix}
+1-\lambda & 3 \\ 2 & 2-\lambda  
+\end{pmatrix} \\
+&= (1-\lambda)(2-\lambda) - 6 = \lambda^2 -3 \lambda - 4
+= (\lambda - 4)(\lambda +1) \; .
+\end{align*}
+Les racines de ce polynôme sont $\lambda_1 = 4$ et $\lambda_2 = -1$.
+Ce sont les deux valeurs propres de $A$.
+
+Pour trouver un vecteur propre de $A$ associé à la valeur propre
+$\lambda_1=4$, il faut résoudre le système d'équations linéaires
+$(A-\lambda_1 \Id) \VEC{x} = \VEC{0}$.  Si
+\[
+\VEC{x} =
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+\]
+nous obtenons le système
+\begin{equation}\label{EVEVegg1}
+(A - 4 \Id)\VEC{x} =
+\begin{pmatrix}
+-3 & 3 \\ 2 & -2  
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\ 0
+\end{pmatrix}\; .
+\end{equation}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rr|r}
+-3 & 3 & 0 \\
+2 & -2 & 0
+\end{array}\right) \; .
+\]
+$(-1/3) R_1 \to R_1$ donne
+\[
+\left(\begin{array}{rr|r}
+1 & -1 & 0 \\
+2 & -2 & 0
+\end{array}\right) \; .
+\]
+$R_2 - 2 R_1 \to R_2$ donne
+\[
+\left(\begin{array}{rr|r}
+1 & -1 & 0 \\
+0 & 0 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{x}$ de (\ref{EVEVegg1}) satisfont donc
+$x_1 - x_2 = 0$; c'est-à-dire, $x_1=x_2$.  Nous obtenons une famille de
+solutions de la forme
+\[
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha \\ \alpha
+\end{pmatrix}
+\]
+où $\alpha \in \RR$.  Si $\alpha = 1$, nous obtenons le vecteur propre
+\[
+\VEC{x}_1 =
+\begin{pmatrix}
+1 \\ 1
+\end{pmatrix} \; .
+\]
+Nous pouvons vérifier que $A\VEC{x}_1 = 4 \VEC{x}_1$.  Tout autre
+choix pour $\alpha$ aurait été acceptable et aurait donné un vecteur
+propre $\VEC{x}_1$ associé à $\lambda_1$.
+
+Pour trouver un vecteur propre de $A$ associé à la valeur propre
+$\lambda_2=-1$, il faut résoudre le système d'équations linéaires
+$(A -\lambda_2 \Id) \VEC{x} = \VEC{0}$; c'est-à-dire,
+\begin{equation}\label{EVEVegg2}
+(A + I) \VEC{x} =
+\begin{pmatrix}
+2 & 3 \\ 2 & 3
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\ 0
+\end{pmatrix} \; .
+\end{equation}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rr|r}
+2 & 3 & 0 \\
+2 & 3 & 0
+\end{array}\right) \; .
+\]
+$R_2 -  R_1 \to R_2$ donne
+\[
+\left(\begin{array}{rr|r}
+2 & 3 & 0 \\
+0 & 0 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{x}$ de (\ref{EVEVegg2}) satisfont donc
+$2x_1 +3x_2 = 0$;  c'est-à-dire, $x_2= -2x_1 /3$.  Nous obtenons une
+famille de solutions de la forme
+\[
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha \\ -2 \alpha /3
+\end{pmatrix}
+\]
+où $\alpha \in \RR$.  Si $\alpha = 3$, nous obtenons le vecteur propre
+\[
+\VEC{x}_2 =
+\begin{pmatrix}
+3 \\ -2
+\end{pmatrix} \; .
+\]
+Nous pouvons vérifier que $A\VEC{x}_2 = \VEC{x}_2$.  Comme pour
+la valeur propre $\lambda_1$, tout autre choix pour $\alpha$ aurait
+été acceptable et aurait donné un vecteur propre $\VEC{x}_2$ associé à
+$\lambda_2$.
+\end{egg}
+
+\begin{egg}
+Trouvons les valeurs propres de la matrice
+\[
+A = \begin{pmatrix} 1 & -1 \\ 4 & 1 \end{pmatrix}
+\]
+et donnons un vecteur propre pour chacune des valeurs propres.
+
+Le polynôme caractéristique est 
+\[
+p(\lambda) = \det(A - \lambda \Id) = \det
+\begin{pmatrix}
+1-\lambda & -1 \\ 4 & 1-\lambda  
+\end{pmatrix}
+= (1-\lambda)(1-\lambda) + 4 = \lambda^2 - 2 \lambda + 5 \; .
+\]
+Les racines de ce polynôme sont
+\[
+\lambda_1 = \frac{2 + \sqrt{(-2)^2 - 4 \times 5}}{2}
+= \frac{2 + 4\,i}{2} = 1 +2\,i \; .
+\]
+et
+\[
+\lambda_2 = \frac{2 - \sqrt{(-2)^2 - 4 \times 5}}{2}
+= \frac{2 - 4\,i}{2} = 1  - 2\,i = \overline{\lambda_1} \; .
+\]
+Il est normal que $\lambda_2$ soit le complexe conjugué de $\lambda_1$
+car, pour les polynômes avec coefficients réels, si $z$ est une racine
+du polynôme alors $\overline{z}$ est aussi une racine du polynôme.
+$\lambda_1$ et $\lambda_2$ sont les deux valeurs propres de $A$.
+
+Pour trouver un vecteur propre de $A$ associé à la valeur propre
+$\lambda_1=1+2\,i$, il faut résoudre le système d'équations linéaires
+$(A-\lambda_1 \Id) \VEC{x} = \VEC{0}$.  Si
+\[
+\VEC{x} =
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+\]
+nous obtenons le système
+\begin{equation}\label{EVEVegg3}
+(A - (1 + 2 i)\Id)\VEC{x} =
+\begin{pmatrix}
+-2\,i & -1 \\ 4 & -2\,i  
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\ 0
+\end{pmatrix} \; .
+\end{equation}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rr|r}
+-2i & -1 & 0 \\
+4 & -2i & 0
+\end{array}\right) \; .
+\]
+$R_1 \leftrightarrow R_2$ donne
+\[
+\left(\begin{array}{rr|r}
+4 & -2i & 0 \\
+-2i & -1 & 0
+\end{array}\right) \; .
+\]
+$(1/4) R_1 \to R_1$ donne
+\[
+\left(\begin{array}{rr|r}
+1 & -i/2 & 0 \\
+-2i & -1 & 0
+\end{array}\right) \; .
+\]
+Finalement, $R_2 + 2i\, R_1 \to R_2$ donne
+\[
+\left(\begin{array}{rr|r}
+1 & -i/2 & 0 \\
+0 & 0 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{x}$ de (\ref{EVEVegg3}) satisfont donc
+$x_1 -(i/2)\, x_2 = 0$; c'est-à-dire, $x_1=(i/2)\,x_2$.  Nous obtenons
+une famille de solutions de la forme
+\[
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+(i/2)\,\alpha \\ \alpha
+\end{pmatrix}
+\]
+où $\alpha \in \RR$.  Si $\alpha = 2$, nous obtenons le vecteur propre
+\[
+\VEC{x}_1 =
+\begin{pmatrix}
+i \\ 2
+\end{pmatrix} \; .
+\]
+Nous avons bien $A\VEC{x}_1 = (1 + 2i) \VEC{x}_1$.
+
+Pour trouver un vecteur propre de $A$ associé à la valeur propre
+$\lambda_2=1-2\,i$, il faut résoudre le système d'équations linéaires
+$(A -\lambda_2 \Id) \VEC{x} = \VEC{0}$; c'est-à-dire,
+\begin{equation}\label{EVEVegg4}
+(A - (1 - 2 i)\Id)\VEC{x} =
+\begin{pmatrix}
+2i & -1 \\ 4 & 2i  
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\ 0
+\end{pmatrix}
+\end{equation}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rr|r}
+2\,i & -1 & 0 \\
+4 & 2\,i  & 0
+\end{array}\right) \; .
+\]
+$R_1 \leftrightarrow R_2$ donne
+\[
+\left(\begin{array}{rr|r}
+4 & 2\,i  & 0 \\
+2\,i & -1 & 0
+\end{array}\right) \; .
+\]
+$(1/4)\,R_1 \to R_1$ donne
+\[
+\left(\begin{array}{rr|r}
+1 & i/2  & 0 \\
+2\,i & -1 & 0
+\end{array}\right) \; .
+\]
+Finalement, $R_2 - (2\,i)\,R_1 \to R_1$ donne
+\[
+\left(\begin{array}{rr|r}
+1 & i/2  & 0 \\
+0 & 0 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{x}$ de (\ref{EVEVegg4}) satisfont donc
+$x_1 +(i/2)\,x_2 = 0$; c'est-à-dire, $x_1= -(i/2)\,x_2$.  Nous obtenons
+une famille de solutions de la forme
+\[
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+-(i/2)\alpha \\ \alpha
+\end{pmatrix}
+\]
+où $\alpha \in \RR$.  Si $\alpha = 2$, nous obtenons le vecteur propre
+\[
+\VEC{x}_2 =
+\begin{pmatrix}
+-i \\ 2
+\end{pmatrix} \; .
+\]
+Nous avons bien $A\VEC{x}_2 = (1- 2 i) \VEC{x}_2$.
+\end{egg}
+
+À l'exemple précédent, nous aurions pu trouver un vecteur propre associé à
+$\lambda_2$ sans faire de calculs grâce au résultat de la proposition qui
+suit.  Si $\VEC{v}$ est un vecteur dont les composantes sont les nombres
+complexes $v_1$, $v_2$, \ldots, $v_n$.  Nous définissons le
+{\bfseries complexe conjugué} du vecteur $\VEC{v}$ comme étant le vecteur
+$\overline{\VEC{v}}$ dont les composantes sont $\overline{v_1}$,
+$\overline{v_2}$, \ldots, $\overline{v_n}$.
+
+\begin{focus}{\prp}
+Soit $A$ une matrice de dimension \nn avec des composantes réelles.
+Si $\lambda$ est une valeur propre complexe de $A$ et $\VEC{v}$ est un
+vecteur propre de $A$ associé à la valeur propre $\lambda$, alors
+$\overline{\lambda}$ est une valeur propre de $A$ et
+$\overline{\VEC{v}}$ est un vecteur propre de $A$ associé à la valeur
+propre $\overline{\lambda}$.
+\end{focus}
+
+À l'exemple précédent, nous avons trouvé le vecteur propre
+$\displaystyle \VEC{x}_1 = \begin{pmatrix} i \\ 2 \end{pmatrix}$
+associé à la valeur propre $\lambda_1=1+2\,i$.  Il découle de la
+proposition précédente que $\lambda_2 = \overline{\lambda_1}$ est une
+valeur propre et
+$\displaystyle \VEC{x}_2 = \overline{\VEC{x}_1}
+= \begin{pmatrix} -i \\ 2 \end{pmatrix}$
+est une vecteur propre associé à $\lambda_2$.  C'est effectivement ce
+que nous avons trouvé à l'exemple précédent.
+
+\begin{egg}
+Trouvons les valeurs propres de la matrice
+\[
+A = \begin{pmatrix} -0.5 & -1 & 3.5 \\ 3 & 1 & -3 \\
+1.5 & -1 & 1.5 \end{pmatrix}
+\]
+et donnons un vecteur propre pour chacune des valeurs propres.
+
+Le polynôme caractéristique est 
+\begin{align*}
+p(\lambda) &= \det
+\begin{pmatrix}
+-0.5-\lambda & -1 & 3.5 \\ 3 & 1-\lambda & -3 \\ 1.5 & -1 & 1.5-\lambda  
+\end{pmatrix} \\
+&= (-0.5-\lambda)\left( (1-\lambda)(1.5-\lambda) -3 \right)
++ \left( 3(1.5-\lambda)+4.5\right)
++ 3.5\left(-3-1.5(1-\lambda)\right) \\
+&= -\lambda^3 + 2\,\lambda^2 + 5 \lambda -6
+\end{align*}
+où nous avons calculé le déterminant en développant selon la première ligne.
+Il y a une formule pour calculer les racines d'un polynôme de degré
+trois mais elle n'est pas simple.  Après avoir essayé certaines
+valeurs entières, nous trouvons que $1$ est une racine (hourra!).
+Nous pouvons alors diviser le polynôme caractéristique par $\lambda-1$
+pour obtenir
+\[
+p(\lambda) = (\lambda-1)(-\lambda^2 + \lambda +6)
+=-(\lambda -1)(\lambda+2)(\lambda-3) \; .
+\]
+Les racines du polynôme caractéristique sont
+$\lambda_1=1$, $\lambda_2 = -2$ et $\lambda_3 = 3$. Ce sont les trois
+valeurs propres de $A$.
+
+Pour trouver un vecteur propre de $A$ associé à la valeur propre
+$\lambda_1=1$, il faut résoudre le système d'équations linéaires
+$(A-\lambda_1 \Id) \VEC{x} = \VEC{0}$.  Si
+\[
+\VEC{x} =
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix} \; ,
+\]
+nous obtenons le système
+\begin{equation}\label{EVEVegg5}
+(A - \Id)\VEC{x} =
+\begin{pmatrix}
+-1.5 & -1 & 3.5 \\ 3 & 0 & -3 \\ 1.5 & -1 & 0.5
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\ 0 \\ 0
+\end{pmatrix} \; .
+\end{equation}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+-1.5 & -1 & 3.5 & 0 \\ 3 & 0 & -3 & 0 \\ 1.5 & -1 & 0.5 & 0
+\end{array}\right) \; .
+\]
+$(1/3)R_2 \to R_2$ et $R_3 + R_1 \to R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+-1.5 & -1 & 3.5 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & -2 & 4 & 0
+\end{array}\right) \; .
+\]
+$-(1/2) R_3 \to R_3$ donne
+\[
+\left(\begin{array}{rrr|r}
+-1.5 & -1 & 3.5 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -2 & 0
+\end{array}\right) \; .
+\]
+Finalement, $R_1 + 1.5 R_2 + R_3 \to R_1$ donne
+\[
+\left(\begin{array}{rrr|r}
+0 & 0 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -2 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{x}$ de (\ref{EVEVegg5}) satisfont donc
+$x_1 - x_3 = 0$ et $x_2 -2\,x_3 =0$; c'est-à-dire, $x_1=x_3$ et
+$x_2 = 2\,x_3$.  Nous obtenons une famille de solutions de la forme
+\[
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha \\ 2\alpha \\ \alpha
+\end{pmatrix}
+\]
+où $\alpha \in \RR$.  Si $\alpha = 1$, nous obtenons le vecteur propre
+\[
+\VEC{x}_1 =
+\begin{pmatrix}
+1 \\ 2 \\ 1
+\end{pmatrix} \; .
+\]
+
+Pour trouver un vecteur propre de $A$ associé à la valeur propre
+$\lambda_2=-2$, nous résolvons le système d'équations linéaires
+$(A -\lambda_2 \Id) \VEC{x} = \VEC{0}$.  De façon semblable à ce
+que nous venons de faire pour $\lambda_1$, nous trouvons que les solutions
+$\VEC{x}$ de $(A -\lambda_2 \Id) \VEC{x} = \VEC{0}$ satisfont
+$x_1 = - x_3$ et $x_2 = 2\,x_3$.  Nous obtenons une famille de solutions
+de la forme
+\[
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\alpha \\ 2\alpha \\ \alpha
+\end{pmatrix}
+\]
+où $\alpha \in \RR$.  Si $\alpha = 1$, nous obtenons le vecteur propre
+\[
+\VEC{x}_2 =
+\begin{pmatrix}
+-1 \\ 2 \\ 1
+\end{pmatrix} \; .
+\]
+
+Finalement, pour trouver un vecteur propre de $A$ associé à la valeur
+propre $\lambda_3=3$, nous résolvons le système d'équations
+linéaires $(A -\lambda_3 \Id) \VEC{x} = \VEC{0}$.  Nous trouvons que
+les solutions $\VEC{x}$ de $(A -\lambda_3 \Id) \VEC{x} = \VEC{0}$
+satisfont $x_1 = x_3$ et $x_2 = 0$.  Nous obtenons une famille de
+solutions de la forme
+\[
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha \\ 0 \\ \alpha
+\end{pmatrix}
+\]
+où $\alpha \in \RR$.  Si $\alpha = 1$, nous obtenons le vecteur propre
+\[
+\VEC{x}_3 =
+\begin{pmatrix}
+1 \\ 0 \\ 1
+\end{pmatrix} \; .
+\]
+\end{egg}
+
+La recherche des vecteurs propres associés à la valeur propre
+$\lambda$ d'une matrice $a$ peut devenir très complexe lorsque la
+matrice $A$ est de dimension plus grande que \nm{2}{2}.  Par exemple,
+il peut y avoir des vecteurs propres associés à la valeur propre
+$\lambda$ qui ne sont pas des multiples l'un de l'autre.  En fait, la
+situation est encore plus complexe.  Pour adresser ce problème, il
+faut introduire la notion suivante.
+
+\begin{focus}{\dfn}
+Soit $\VEC{v}_1$, $\VEC{v}_2$, \ldots, $\VEC{c}_k$ des vecteurs de
+$\RR^n$.  Nous dirons que les vecteurs
+$\VEC{v}_1$, $\VEC{v}_2$, \ldots, $\VEC{c}_k$ sont
+{\bfseries linéairement indépendants} s'il est impossible d'avoir
+\[
+  \sum_{j=1}^k \alpha_j \VEC{v}_j
+  = \alpha_1 \VEC{v}_1 + \alpha_2 \VEC{v}_2 + \ldots + \alpha_k
+  \VEC{v}_k = \VEC{0} \ .
+\]
+pour des valeurs de $\alpha_i$ qui ne sont pas tous nulles.  
+Autrement, nous dirons que les vecteurs $\VEC{v}_1$, $\VEC{v}_2$,
+\ldots, $\VEC{v}_k$ sont {\bfseries linéairement dépendants}.
+\end{focus}
+
+\begin{egg}
+Deux vecteurs colinéaires $\VEC{v}_1$ et $\VEC{v}_2$ sont
+linéairement dépendants.  En effet, si $\VEC{v_1} = \beta \VEC{v}_2$
+pour $\beta \neq 0$, alors $\VEC{v}_1 - \beta \VEC{v}_2 = \VEC{0}$.
+Donc $\alpha_1 \VEC{v}_1 + \alpha_2 \VEC{v}_2 = \VEC{0}$ pour
+$\alpha_1 =1$ et $\alpha_2 = -\beta$.
+\end{egg}
+
+Le notion d'indépendance linéaire généralise la notion de colinéarité
+entre deux vecteurs.
+
+\begin{rmk}[\theory]
+La notion d'indépendance linéaire ouvre la porte à une multitude
+d'autres sujets en algèbre linaire: {\em espaces vectoriels},
+{\em dimension} d'un espace vectoriel (le nombre maximum de vecteurs
+linéairement indépendants qu'un espace peut avoir), {\em base} d'un espace
+vectoriel, etc.  Tout cela est nécessaire pour étudier l'ensemble des
+vecteurs propres associés à une valeur propre.
+
+La recherche de vecteurs propres associés à une valeur propre est donc
+plus complexe que les exemples précédents semblent indiquer.
+
+Supposons que le polynôme caractéristique après factorisation d'une
+matrice $A$ de dimension \nn soit
+\[
+p(\lambda) = (x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\ldots(x-\lambda_s)^{n_s}
+\; .
+\]
+Les racines distinctes de ce polynôme sont $\lambda_1$, $\lambda_2$,
+\ldots, $\lambda_s$.  Comme $p$ est un polynôme de degré $n$, nous avons que
+\[
+n = \sum_{j=1}^s n_j \; .
+\]
+Nous disons que $n_j$ est la
+{\bfseries multiplicité algébrique}\index{Valeur propre!multiplicité
+algébrique} de la valeur propre $\lambda_j$.
+
+Si $n_j>1$, il est fort possible que l'ensemble $E_j$ des vecteurs
+propres de $A$ associé à la valeur propre $\lambda_j$ ne représente
+pas seulement une droite dans l'espace qui passe par l'origine mais un
+plan qui contient l'origine ou un espace plus grande si $n_j\geq 3$.
+En fait, l'ensemble $E_j$ des vecteurs propres associés à la valeur
+propre $\lambda_j$ forme un {\em espace vectoriel}.  La
+{\em dimension} de $E_j$ est la
+{\bfseries multiplicité géométrique}\index{Valeur propre!multiplicité
+géométrique} de la valeur propre $\lambda_j$.  
+
+Il n'est pas rare que la multiplicité géométrique soit plus petite que
+la multiplicité algébrique.  Il faut alors parler de
+{\em vecteurs propres généralisées}.
+Tout cela est pour un cours futur d'algèbre linéaire.
+\end{rmk}
+
+\section{Systèmes Dynamiques Discrets Linéaires \life}
+
+\begin{egg}
+Nous considérons le {\bfseries système dynamique discret} en deux dimensions
+\begin{align*}
+\VEC{v}_{n+1} &= A \VEC{v}_n \quad , \quad n = 0, 1, 2, \ldots \\
+\VEC{v}_0 &= \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+\intertext{où}
+A &= \begin{pmatrix} -1/2 & 0 \\ 2/3 & -1/3 \end{pmatrix} \ .
+\end{align*}
+Nous avons
+\begin{align*}
+\VEC{v}_1 &= A \VEC{v}_0 =
+\begin{pmatrix} -1/2 & 0 \\ 2/3 & -1/3 \end{pmatrix}
+\begin{pmatrix} 1 \\ 1 \end{pmatrix} =
+\begin{pmatrix} -1/2 \\ 1/3 \end{pmatrix} \\
+\VEC{v}_2 &= A \VEC{v}_1 =
+\begin{pmatrix} -1/2 & 0 \\ 2/3 & -1/3 \end{pmatrix}
+\begin{pmatrix} -1/2 \\ 1/3 \end{pmatrix} =
+\begin{pmatrix} 1/4 \\ -4/9 \end{pmatrix} \\
+\VEC{v}_3 &= A \VEC{v}_2 =
+\begin{pmatrix} -1/2 & 0 \\ 2/3 & -1/3 \end{pmatrix}
+\begin{pmatrix} 1/4 \\ -4/9 \end{pmatrix} =
+\begin{pmatrix} -1/8 \\ 17/54 \end{pmatrix} \\
+\VEC{v}_4 &= A \VEC{v}_3 =
+\begin{pmatrix} -1/2 & 0 \\ 2/3 & -1/3 \end{pmatrix}
+\begin{pmatrix} -1/8 \\ 17/54 \end{pmatrix} =
+\begin{pmatrix} 1/16 \\ -61/324 \end{pmatrix} \\
+\vdots & \qquad \vdots
+\end{align*}
+Nous semblons avoir $\VEC{v}_n \to \VEC{0}$ lorsque $n \to \infty$
+(chacune des composantes de $\VEC{v}_n$ semble tendre vers $0$).
+Mais!  En sommes-nous certain?  Existe-t-il une façon de répondre à cette
+question sans avoir à calculer les vecteurs $\VEC{v}_n$?
+\end{egg}
+
+À l'exemple précédent, nous pourrions penser que
+$\VEC{v}_n \to \VEC{0}$ lorsque $n \to \infty$ 
+car tous les éléments de la matrice $A$ sont plus petit que $1$ en
+valeur absolue.  Mais l'exemple suivant montre que ce n'est pas une
+bonne raison.
+
+\begin{egg}
+Nous considérons le système dynamique discret en deux dimensions
+\begin{align*}
+\VEC{v}_{n+1} &= A \VEC{v}_n \quad , \quad n = 0, 1, 2, \ldots \\
+\VEC{v}_0 &= \begin{pmatrix} 1 \\ 1.2 \end{pmatrix}
+\intertext{où}
+A &= \begin{pmatrix} 0.6 & 0.5 \\ 0.6 & 0.7 \end{pmatrix} \ .
+\end{align*}
+Nous avons
+\begin{align*}
+\VEC{v}_1 &= A \VEC{v}_0 =
+\begin{pmatrix} 0.6 & 0.5 \\ 0.6 & 0.7 \end{pmatrix}
+\begin{pmatrix} 1 \\ 1.2 \end{pmatrix} =
+\begin{pmatrix} 1.2 \\ 1.44 \end{pmatrix} \\
+\VEC{v}_2 &= A \VEC{v}_1 =
+\begin{pmatrix} 0.6 & 0.5 \\ 0.6 & 0.7 \end{pmatrix}
+\begin{pmatrix} 1.2 \\ 1.44 \end{pmatrix} =
+\begin{pmatrix} 1.44 \\ 1.728 \end{pmatrix} \\
+\VEC{v}_3 &= A \VEC{v}_2 =
+\begin{pmatrix} 0.6 & 0.5 \\ 0.6 & 0.7 \end{pmatrix}
+\begin{pmatrix} 1.44 \\ 1.728 \end{pmatrix} =
+\begin{pmatrix} 1.728 \\ 2.736 \end{pmatrix} \\
+\vdots & \qquad \vdots \\
+\VEC{v}_{40} &= A \VEC{v}_{39} \approx
+\begin{pmatrix} 1469.77156796909\ldots \\
+1763.72588156290\ldots \end{pmatrix} \\
+\vdots & \qquad \vdots \\
+\VEC{v}_{100} &= A \VEC{v}_{99} \approx
+\begin{pmatrix}
+8.28179745220147\ldots \times 10^7 \\
+9.93815694264176\ldots \times 10^7
+\end{pmatrix} \\
+\vdots & \qquad \vdots
+\end{align*}
+Nous ne semblons pas avoir $\VEC{v}_n \to \VEC{0}$ lorsque $n \to \infty$.
+\end{egg}
+
+Il est donc nécessaire de trouver un critère infaillible pour
+déterminer si l'origine est stable; c'est-à-dire, pour déterminer si
+$\VEC{v}_n \to \VEC{0}$ lorsque $n \to \infty$ quelle que soit la
+condition initial $\VEC{v}_0$.
+
+\begin{egg}
+Nous avons vu que nous pouvions estimer périodiquement le nombre d'individus
+(par km$^2$) d'une population à l'aide d'un système dynamique discret
+de la forme
+\begin{equation}\label{oneDDDS}
+p_{k+1} = r p_k
+\end{equation}
+où $p_k$ est le nombre d'individus à la fin de la $k^e$ période et $r$
+est le taux de croissance relatif.  Cette formule ne tient pas compte
+du fait que le taux de reproduction peut varier avec l'âge.  Le taux
+de croissance $r$ utilisé dans la formule ci-dessus est une moyenne
+pour l'ensemble de la population.
+
+Supposons que nous ayons une population que nous pouvons diviser en quatre
+groupes d'âge.  Le premier groupe est formé des jeunes individus qui
+ne peuvent pas encore se reproduire.  Le deuxième groupe est formé des
+individus qui sont les plus \lgm performants \rgm\ au niveau
+reproductif.  Le troisième groupe est formé des individus dont les
+capacités de reproduction déclinent. Finalement, le quatrième groupe
+est formé des individus qui sont trop âgés pour pouvoir se reproduire.
+
+Nous possédons les statistiques suivantes pour une période donnée
+(e.g. une année).
+\begin{center}
+\begin{tabular}{c|c|c|c}
+groupe & taux de & taux de décès & taux de transfert \\
+& reproduction & & au groupe suivant \\
+\hline
+1 & 0 & 0.1 & 0.2 \\
+2 & 0.2 & 0.1 & 0.2 \\
+3 & 0.1 & 0.1 & 0.2 \\
+4 & 0 & 0.4 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+Le taux de reproduction des jeunes individus est $0$ car ils ne
+peuvent pas encore se reproduire.  Le taux de reproduction des
+individus les plus âgés est aussi $0$ car ils ont passé la période de
+reproduction.  Le deuxième groupe a le taux de reproduction le plus
+élevé.  Nous notons qu'à la fin de chaque période, plusieurs individus
+d'un groupe ont atteint l'âge requise pour passer au groupe suivant.
+Nous indiquons ce transfert d'un groupe au groupe suivant dans la dernière
+colonne du tableau ci-dessus.
+
+Nous aimerions prédire le nombre d'individus dans chacun des quatre
+groupes à la fin de chaque période.
+
+Posons
+\[
+\VEC{v}_k = \begin{pmatrix} v_{k,1} \\ v_{k,2} \\ v_{k,3} \\ v_{k,4}
+\end{pmatrix}
+\]
+où $v_{k,i}$ est le nombre d'individus du groupe $i$ après $k$
+périodes.  Nous déduisons les équations suivantes des statistiques
+ci-dessus.
+\begin{align*}
+v_{k+1,1} &= 0.7 v_{k,1} + 0.2 v_{k,2} + 0.1 v_{k,3}  \\
+v_{k+1,2} &= 0.2 v_{k,1} + 0.7 v_{k,2}  \\
+v_{k+1,3} &= 0.2 v_{k,2} + 0.7 v_{k,3} \\
+v_{k+1,4} &= 0.2 v_{k,3} + 0.6 v_{k,4}
+\end{align*}
+Par exemple, pour obtenir la première équation, nous notons qu'il reste
+$0.7 v_{k,1}$ individus du premier groupe après une période:
+$0.1 v_{k,1}$ individus sont décédés et $0.2 v_{k,1}$ ont transférés au
+deuxième groupe.   Par contre, durant cette période, $0.2 v_{k,2}$
+individus et $0.1 v_{k,3}$ individus se sont ajoutés au premier groupe
+grâce aux naissances provenant du deuxième et troisième groupes
+respectivement.  En raisonnant de façon semblable, nous arrivons aux trois
+autres équations.
+
+Nous pouvons exprimer ces équations sous la forme du système dynamique
+discret
+\begin{equation}\label{nDDDS}
+\VEC{v}_{k+1} = A \VEC{v}_k
+\end{equation}
+où
+\[
+A = \begin{pmatrix}
+0.7 & 0.2 & 0.1 & 0 \\
+0.2 & 0.7 & 0 & 0 \\
+0 & 0.2 & 0.7 & 0 \\
+0 & 0 & 0.2 & 0.6
+\end{pmatrix}
+\]
+
+Si $\VEC{v}_0$ est donné, nous pouvons calculer les autres vecteurs
+$\VEC{v}_k$ récursivement.
+\begin{align*}
+\VEC{v}_1 &= A \VEC{v}_0 \\
+\VEC{v}_2 &= A \VEC{v}_1  = A (A \VEC{v}_0) = A^2\VEC{v}_0  \\
+\VEC{v}_3 &= A \VEC{v}_2  = A (A^2 \VEC{v}_0) = A^3\VEC{v}_0  \\
+\vdots & \qquad \vdots \\
+\VEC{v}_k &= A^k \VEC{v}_0 \; .
+\end{align*}
+
+Soit
+\[
+\VEC{v}_0 = \begin{pmatrix} 5,000\\ 20,000 \\ 15,000 \\ 4,000 \end{pmatrix}\; .
+\]
+Nous obtenons
+\begin{align*}
+\VEC{v}_1 &= A \VEC{v}_0 =
+\begin{pmatrix} 9000 \\ 15000 \\ 14500 \\ 5400 \end{pmatrix}
+\quad, \quad
+\VEC{v}_2 = A \VEC{v}_1 =
+\begin{pmatrix} 10750 \\ 12300 \\ 13150 \\ 6140 \end{pmatrix} \ , \ldots \\
+\VEC{v}_{20} &= A \VEC{v}_{19} \approx
+\begin{pmatrix}
+4562.7737 \\ 3828.2253 \\ 3215.0260 \\ 1907.2974
+\end{pmatrix}
+\quad , \quad
+\VEC{v}_{30} = A \VEC{v}_{29} \approx
+\begin{pmatrix}
+2413.1867 \\ 2025.3504 \\ 1699.8553 \\ 1005.0093
+\end{pmatrix}
+\quad , \quad \ldots
+\end{align*}
+où les valeurs ont été arrondie à quatre décimales.  Les résultats
+numériques semblent indiquer que chacune des composantes de
+$\VEC{v}_k$ tend vers $0$ lorsque $k\rightarrow \infty$.  Si c'est le
+cas, la population va disparaître? 
+
+Est-il possible qu'avec des conditions initiales $\VEC{v}_0$
+différentes, nous ayons que la population ne disparaît pas?
+
+Pour le système dynamique discret (\ref{oneDDDS}), nous avons que la suite
+$\displaystyle \left\{p_i\right\}_{i=0}^\infty$ tend vers $0$ si
+$|r|<1$ et la suite $\displaystyle \left\{p_i\right\}_{i=0}^\infty$ ne
+converge pas si $|r| > 1$.  
+
+Pour le système dynamique discret (\ref{nDDDS}), pouvons-nous trouver une
+condition qui nous permettra de conclure que toute orbite
+$\displaystyle \left\{\VEC{v}_i\right\}_{i=0}^\infty$ approche
+$\VEC{0}$. Donc, quelle que soit la condition initiale, la population
+va disparaître.
+\label{alglinpopeg}
+\end{egg}
+
+L'étude du comportement asymptotique (i.e. lorsque
+$k\rightarrow \infty$) des orbites $\VEC{v}_0$, $\VEC{v}_1$,
+$\VEC{v}_2$,\ldots du système dynamique discret (\ref{nDDDS}) est
+beaucoup plus complexe que l'étude du comportement asymptotique des
+orbites $p_0$, $p_1$, $p_2$, \ldots du système dynamique discret
+(\ref{oneDDDS}).  Dans le cas de (\ref{oneDDDS}), la condition $|r|<1$
+est suffisante (et nécessaire) pour montrer que toutes les orbites
+approchent l'origine.  Nous aimerions bien avoir un résultat équivalent
+pour (\ref{nDDDS}).  L'étude des
+valeurs propres et vecteurs propres de la matrice $A$ va nous
+permettre d'obtenir un tel résultat.  En fait, la valeur absolue des
+valeurs propres de la matrice $A$ en (\ref{nDDDS}) va nous permettre
+de déterminer si toutes les orbites de (\ref{nDDDS}) vont converger
+vers $\VEC{0}$.
+
+\begin{focus}{\prp}
+Soit $A$ une matrice de dimension \nn et considérons le système
+dynamique discret $\VEC{v}_{k+1} = A \VEC{v}_k$ pour $k=0$, $1$, $2$,
+\ldots\   Si toutes les valeurs propres de la matrice $A$ sont
+plus petites que $1$ en valeur absolue, alors les orbites
+$\displaystyle \left\{ \VEC{v}_k \right\}_{k=0}^\infty$ tendent vers
+l'origine (i.e.\ $\VEC{v}_k\rightarrow \VEC{0}$ lorsque 
+$k\rightarrow \infty$) quel que soit le choix de $\VEC{v}_0$.
+\end{focus}
+
+\begin{egg}[][suite de l'exemple~\ref{alglinpopeg}]
+Si nous revenons au système dynamique discret (\ref{nDDDS}) du début de
+la section et que nous calculons les valeurs propres de $A$,
+nous trouvons les quatre valeurs propres: $\lambda_1 \approx 0.9382976$,
+$\lambda_2 \approx 0.6$, $\lambda_3 \approx 0.58085121 + 0.050885178 i$
+et $\lambda_4 = \overline{\lambda_3}$.  Puisque toutes les valeurs
+propres de $A$ sont plus petite que $1$ en valeur absolue, nous aurons que
+les orbites $\displaystyle \{\VEC{v}_k\}_{k=0}^\infty$ tendront vers
+$\VEC{0}$ quelle que soit la condition initiale $\VEC{v}_0$.
+\end{egg}
+
+\begin{rmk}[\theory]
+Si les valeurs propres d'une matrice $A$ de dimension \nn ne sont pas
+toutes plus petites que $1$ en valeur absolue, une étude détaillée des
+{\em vecteurs propres généralisés} associés aux valeurs propres qui
+sont plus petites que $1$ en valeur absolue nous permettrait de
+déterminer la région de l'espace où choisir la condition initiale
+$\VEC{v}_0$ pour que l'orbite
+$\displaystyle \left\{ \VEC{v}_i\right\}_{i=0}^\infty$ du système 
+$\VEC{v}_{i+1} = A\VEC{v}_i$ tend vers l'origine.  L'étude des
+{\em espaces propres généralisés}\index{espace propre généralisé}
+est le sujet d'un cours plus avancé d'algèbre linéaire. 
+
+En fait, les espaces propres généralisés mentionnés au paragraphe
+précédent forment un {\em sous-espace} de dimension plus petite que $n$
+dans $\RR^n$.  Si $\VEC{v}_0$ est dans ce sous-espace, l'orbite
+$\displaystyle \left\{ \VEC{v}_i \right\}_{i=0}^\infty$ tend vers 
+l'origine.  Par contre, si $\VEC{v}_0$ n'est pas dans ce sous-espace,
+l'orbite $\displaystyle \left\{ \VEC{v}_i \right\}_{i=0}^\infty$ ne
+tend pas vers l'origine.  Ce sous-espace est très petit dans le sens
+suivant.  Si vous choisissez au hasard un point de $\RR^n$, il est
+presque certain que ce point ne sera pas dans ce sous-espace.  Pour
+bien comprendre l'explication donnée précédemment, considérons
+$\RR^2$.  Un sous-espace de dimension $1$ dans $\RR^2$ est une droite
+dans $\RR^2$ qui passe par l'origine.  Si vous choisissez un point au
+hasard de $\RR^2$, les chances sont nulles que ce soit un point de
+cette droite.
+\end{rmk}
+
+Nous ferons appel aux valeurs propres lors de l'étude de la stabilité
+des {\em points d'équilibre} des systèmes d'équations différentielles.
+Mais avant de quitter cette section, nous étudierons une application
+importante des valeurs propres et vecteurs propres.
+
+\section{Chaînes de Markov \eco}\label{sectChainseMarkov}
+
+\begin{egg}
+Considérons la population d'une région donnée qui peut être divisée
+en deux groupes: les citadins et les paysans.  Supposons de plus que la
+population totale de la région ne change pas.
+
+Soit $x_{j,1}$ le nombre de citadins à la $j^e$ année et $x_{j,2}$ le nombre
+de paysans à la $j^e$ année.  Comme nous supposons que la population
+totale ne change pas, nous avons que $x_{j,1} + x_{j,2}$ est constant en
+fonction de $j$.
+
+Une étude montre que $10$\% des citadins déménagent à la campagne
+chaque année et $20$\% des paysans déménagent dans les villes.  Étant
+donné $x_{j,1}$ et $x_{j,2}$, nous pouvons donc déterminer la population
+des villes et de la campagne l'année suivante.
+
+Après un an, $0.9$ des citadins demeurent dans les villes ($0.1$ des
+citadins quittent pour la campagne) et $0.2$ des paysans déménagent
+dans les villes pour donner le total de $x_{j+1,1}$ citadins.  De même,
+après un an, $0.8$ des paysans demeurent à la campagne ($0.2$ des
+paysans quittent pour les villes) et $0.1$ des citadins déménagent à
+la campagne pour donner le total de $x_{j+1,2}$ paysans.  En termes
+mathématiques, le système dynamique discret est
+\begin{align*}
+x_{j+1,1} &= 0.9 x_{j,1} + 0.2 x_{j,2} \\
+x_{j+1,1} &= 0.1 x_{j,1} + 0.8 x_{j,2}  
+\end{align*}
+pour $j=0$, $1$, $2$, \ldots\quad Nous pouvons récrire ce système sous la
+forme matricielle suivante.
+\[
+\begin{pmatrix} x_{j+1,1} \\ x_{j+1,2} \end{pmatrix} =
+\begin{pmatrix} 0.9 & 0.2 \\ 0.1 & 0.8 \end{pmatrix}
+\begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix} \ .
+\]
+Notons que
+\[
+  x_{j+1,1} + x_{j+1,2} = (0.9 x_{j,1} + 0.2 x_{j,2}) + (0.1x_{j,1} + 0.8x_{j,2})
+  = x_{j,1} + x_{j,2}  \ .
+\]
+Donc, effectivement, la population total ne change pas.
+
+Nous supposons que
+\[
+\begin{pmatrix} x_{0,1} \\ x_{0,2} \end{pmatrix} =
+\begin{pmatrix} 1 \\ 1 \end{pmatrix}
+\]
+où les populations sont en unités de un million par exemple.
+
+Qu'arrivera-t-il dans $10$, $20$, \ldots, $100$ ans?  Qu'arrivera-t-il
+lorsque $j$ tend vers l'infini?  Est-ce que nous aurons un équilibre entre
+le nombre de paysans et le nombre de citadins? Est-ce le nombre de
+paysans et le nombre de citadins vont toujours osciller? Nous pouvons
+répondre à ces questions à l'aide des valeurs propres et vecteurs
+propres de la matrice
+\[
+A = \begin{pmatrix} 0.9 & 0.2 \\ 0.1 & 0.8 \end{pmatrix} \ .
+\]
+Avant de répondre à ces questions, nous allons étudier les matrices
+comme la matrice $A$ qui ont une structure assez spéciale.
+\label{alglinMRKV}
+\end{egg}
+
+La matrice $A$ de l'exemple précédent a deux caractéristiques
+fondamentales que nous présentons dans la définition suivante. 
+
+\begin{focus}{\dfn}
+Une matrice $A$ de dimension \nn est appelée une
+{\bfseries matrice de Markov}\index{Matrice de Markov} si les
+composantes $a_{i,j}$ satisfont:
+\begin{enumerate}
+\item $a_{i,j} \geq 0$ pour $1 \leq i, j \leq n$ et
+\item $\displaystyle \sum_{i=0}^n a_{i,j} = 1$ (la somme des éléments
+de chacune des colonnes de $A$ est $1$).
+\end{enumerate}
+Une {\bfseries chaîne de markov}\index{Chaîne de Markov}
+ou {\bfseries procédure de Markov}\index{Procédure de Markov} est une
+système dynamique discret $\VEC{x}_{i+1} = A \VEC{x}_i$ où $A$ est une
+matrice de Markov.
+\end{focus}
+
+Les chaînes de Markov ont une propriété très particulière.
+
+\begin{focus}{\prp} \label{alglinMarkoV}
+Un matrice de Markov $A$ possède toujours la valeur propre $1$.  Si nous
+considérons la chaîne de Markov $\VEC{x}_{j+1} = A \VEC{x}_j$ pour 
+$j=0$, $1$, $2$, \ldots\ avec une condition initiale $\VEC{x}_0$
+donnée, l'orbite
+$\displaystyle \left\{ \VEC{x}_j \right\}_{j=0}^\infty$ tend
+vers un vecteur propre de $A$ associé à la valeur propre $1$.
+\end{focus}
+
+\begin{egg}[][Suite de l'exemple~\ref{alglinMRKV}]
+Nous considérons la chaîne de Markov
+\[
+\begin{pmatrix} x_{j+1,1} \\ x_{j+1,2} \end{pmatrix} =
+\begin{pmatrix} 0.9 & 0.2 \\ 0.1 & 0.8 \end{pmatrix}
+\begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix} \quad
+\text{pour} \quad j=0,1,2,\ldots
+\]
+où $\displaystyle \begin{pmatrix} x_{0,1} \\ x_{0,2} \end{pmatrix} =
+\begin{pmatrix} 1 \\ 1 \end{pmatrix}$.  D'après la proposition
+précédente,
+$\displaystyle \begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix}$ tend vers un
+vecteur propre associée à la valeur propre $1$ lorsque $j$ tend vers
+l'infini.  Trouvons ce vecteur propre.
+
+En premier, vérifions que $1$ est bien une valeur propre de $A$.  Pour
+trouver les valeurs propres de la matrice
+\[
+A = \begin{pmatrix} 0.9 & 0.2 \\ 0.1 & 0.8 \end{pmatrix} \ ,
+\]
+nous considérons le polynôme caractéristique
+\begin{align*}
+p(\lambda) &= \det(A - \lambda \Id) = \det
+\begin{pmatrix}
+0.9-\lambda & 0.2 \\ 0.1 & 0.8-\lambda  
+\end{pmatrix} \\
+&= (0.9-\lambda)(0.8-\lambda) - 0.02 = \lambda^2 - 1.7 \lambda - 0.7
+= (\lambda - 1)(\lambda - 0.7) \; .
+\end{align*}
+Les racines de ce polynôme sont $\lambda_1 = 1$ et $\lambda_2 = 0.7$.
+Nous avons bien la valeur propre $1$ comme il a été prédit par la
+proposition précédente.
+
+Pour trouver les vecteurs propres de $A$ associé à la valeur propre
+$\lambda_1=1$, il faut résoudre le système d'équations linéaires
+$(A-\lambda_1\Id) \VEC{v} = \VEC{0}$ où
+\[
+\VEC{v} = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix} \ .
+\]
+Nous obtenons le système
+\[
+(A-\Id) \VEC{v} =
+\begin{pmatrix} -0.1 & 0.2 \\ 0.1 & -0.2 \end{pmatrix}
+\begin{pmatrix} v_1 \\ v_2 \end{pmatrix} =
+\begin{pmatrix} 0 \\ 0 \end{pmatrix}\; .
+\]
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rr|r}
+-0.1 & 0.2 & 0 \\
+0.1 & -0.2 & 0
+\end{array}\right) \; .
+\]
+$R_1 + R_2 \to R_2$ suivie de $-10R_1 \to R_1$ donnent
+\[
+\left(\begin{array}{rr|r}
+1 & -2 & 0 \\
+0 & 0 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{v}$ du système $(A-\Id) \VEC{v} = \VEC{0}$
+satisfont donc $v_1 -2 v_2 = 0$; c'est-à-dire, $v_1 =2 v_2$.  Ainsi,
+les vecteurs propres de $A$ associés à la valeur propre $1$ sont de la
+forme
+\[
+\begin{pmatrix} v_1 \\ v_2 \end{pmatrix} =
+\begin{pmatrix} 2a \\ a \end{pmatrix}
+\]
+pour $a \in \RR$.
+
+Pour déterminer le vecteur propre associée à la valeur propre $1$ vers
+lequel $\displaystyle \begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix}$
+converge lorsque $j$ tend vers l'infini.  Il faut utiliser le fait que
+la population total est constante.  Or, au départ, nous avons $2$ millions
+d'individus; soit, $x_{0,1} = 1$ million de citadins et $x_{0,2} = 1$
+million de paysans.  Le vecteur propre que nous cherchons est donc
+$\displaystyle \begin{pmatrix} 2a \\ a \end{pmatrix}$ où $2a + a = 2$
+(en unités de un million).  Donc $a=2/3$ et
+\[
+  \VEC{v} = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix} =
+  \begin{pmatrix} 4/3 \\ 2/3 \end{pmatrix} \ .
+\]
+Donc $\displaystyle \begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix}$
+tend vers $\displaystyle \begin{pmatrix} 4/3 \\ 2/3 \end{pmatrix}$
+lorsque $j$ tend vers l'infini
+\end{egg}
+
+\begin{rmk}[\theory]
+À l'exemple précédent, nous pouvons vérifier que 
+$\displaystyle \begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix}$ tend vers
+$\displaystyle \begin{pmatrix} 4/3 \\ 2/3 \end{pmatrix}$ lorsque $j$
+tend vers l'infini quelque soit la condition initiale
+$\displaystyle \begin{pmatrix} x_{0,1} \\ y_{0,2} \end{pmatrix}$ avec
+$x_{0,1} + x_{0,2} = 2$.
+
+Pour ce faire, nous aurons besoin des vecteurs propres associés à la
+valeur propre $0.7$\,.  Pour trouver un vecteur propre de $A$ associé
+à la valeur propre $\lambda_2=0.7$, il faut résoudre le système
+d'équations linéaires
+$(A -\lambda_2 \Id) \VEC{v} = \VEC{0}$ où
+\[
+  \VEC{v} = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix} \ .
+\]
+Nous obtenons le système
+\[
+(A -0.7 \Id) \VEC{v} =
+\begin{pmatrix} 0.2 & 0.2 \\ 0.1 & 0.1 \end{pmatrix}
+\begin{pmatrix} v_1 \\ v_2 \end{pmatrix} =
+\begin{pmatrix} 0 \\ 0 \end{pmatrix} \; .
+\]
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rr|r}
+0.2 & 0.2 & 0 \\
+0.1 & 0.1 & 0
+\end{array}\right) \; .
+\]
+$R_1 - 2R_2 \to R_1$ suivie de $10 R_2 \to R_2$ donnent
+\[
+\left(\begin{array}{rr|r}
+0 & 0 & 0 \\
+1 & 1 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{v}$ de $(A -0.7 \Id) \VEC{v} = \VEC{0}$
+satisfont donc $v_1 +v_2 = 0$; c'est-à-dire, $v_2= -v_1$.  Les
+vecteurs propres de $A$ associés à la valeur propre $0.7$ sont donc de
+la forme
+\[
+\begin{pmatrix} v_1 \\ v_2 \end{pmatrix} =
+\begin{pmatrix} b \\ -b \end{pmatrix}
+\]
+pour $b$ un nombre réel.  Nous avons que
+\[
+\begin{pmatrix} 1 \\ 1 \end{pmatrix} =
+\begin{pmatrix} 2a \\ a \end{pmatrix} + \begin{pmatrix} b \\ -b \end{pmatrix}
+\]
+pour $a=2/3$ et $b=-1/3$.  Donc
+\[
+\begin{pmatrix} 1 \\ 1 \end{pmatrix} =
+\frac{2}{3} \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{1}{3} \begin{pmatrix} 1 \\ -1 \end{pmatrix} \ .
+\]
+Ainsi,
+\[
+\begin{pmatrix} x_{1,0} \\ x_{1,2} \end{pmatrix} = A
+\begin{pmatrix} 1 \\ 1 \end{pmatrix}
+= \frac{2}{3} A\begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{1}{3} A\begin{pmatrix} 1 \\ -1 \end{pmatrix}
+= \frac{2}{3} \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{0.7}{3} \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+\]
+car $\displaystyle A\begin{pmatrix} 2 \\ 1 \end{pmatrix}
+= \begin{pmatrix} 2 \\ 1 \end{pmatrix}$ puisque
+$\begin{pmatrix} 2 \\ 1 \end{pmatrix}$ est un vecteur propre de $A$
+associé à la valeur propre $1$. De plus,
+$\displaystyle A\begin{pmatrix} 1 \\ -1 \end{pmatrix}
+= 0.7 \begin{pmatrix} 1 \\ -1 \end{pmatrix}$ puisque
+$\begin{pmatrix} 1 \\ -1 \end{pmatrix}$ est un vecteur propre de $A$
+associé à la valeur propre $0.7$.  De même,
+\begin{align*}
+\begin{pmatrix} x_{2,1} \\ x_{2,2} \end{pmatrix} &=
+A \begin{pmatrix} x_{1,1} \\ x_{1,2} \end{pmatrix}
+= \frac{2}{3} A\begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{0.7}{3} A\begin{pmatrix} 1 \\ -1 \end{pmatrix}
+= \frac{2}{3} \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{0.7^2}{3} \begin{pmatrix} 1 \\ -1 \end{pmatrix} \\
+\begin{pmatrix} x_{3,1} \\ x_{3,2} \end{pmatrix} &=
+A \begin{pmatrix} x_{2,1} \\ x_{2,2} \end{pmatrix}
+= \frac{2}{3} A\begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{0.7^2}{3} A\begin{pmatrix} 1 \\ -1 \end{pmatrix}
+= \frac{2}{3} \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{0.7^3}{3} \begin{pmatrix} 1 \\ -1 \end{pmatrix} \\
+\vdots &
+\end{align*}           
+De façon générale,
+\[
+\begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix} =
+\frac{2}{3} \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+- \frac{0.7^j}{3} \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+\]
+pour $j=1$, $2$, $3$, \ldots\quad Puisque
+$\displaystyle \lim_{j\to \infty} 0.7^j = 0$, nous obtenons bien
+\[
+\begin{pmatrix} x_{j,1} \\ x_{j,2} \end{pmatrix} \to
+\frac{2}{3} \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+= \begin{pmatrix} 4/3 \\ 2/3 \end{pmatrix}
+\quad \text{lorsque} \quad j \to \infty \ .
+\]
+\end{rmk}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Matrices}
+
+\begin{question}
+Soit
+\begin{align*}
+A &= \begin{pmatrix} 3 & 0 \\ -1 & 2 \\ 1 & 1 \end{pmatrix}\ ,
+\ B= \begin{pmatrix} 6 & -1 \\ 0 & 2 \end{pmatrix}\ ,
+\ C= \begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & 5 \end{pmatrix}\ , \\
+D &= \begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}
+\ \text{et}\ 
+E = \begin{pmatrix} 6 & 1 & 3 \\ -1 & 1 & 2 \\ 4 & 1 & 3 \end{pmatrix} \ .
+\end{align*}
+Évaluez si possible les expressions suivantes.
+\begin{center}
+\begin{tabular}{*{3}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $D+E$ & \subQ{b} & $D-E$ & \subQ{c} & $5C$ & \subQ{d} & $-7C$ \\
+\subQ{e} & $2B-C$ & \subQ{f} & $4E-2D$ & \subQ{g} & $-3(D+2E)$ &
+\subQ{h} & $A-A$ \\
+\subQ{i} & $\tr(D)$ & \subQ{j} & $\tr(D-3E)$ & \subQ{k} & $\tr(A)$ &
+\subQ{l} & $2A^\top+C$ \\
+\subQ{m} & $D^\top - E^\top$ & \subQ{n} & $(D-E)^\top$ &
+\subQ{o} & $B^\top+5C^\top$ & \subQ{p} & $B-B^\top$ \\
+\subQ{q} & $AB$ & \subQ{r} & $BA$ &
+\subQ{s} & $(3E)D$ & \subQ{t} & $A(BC)$ \\
+\subQ{u} & $(AB)C$ & \subQ{v} & $CC^\top$ &
+\subQ{w} & $(DA)^\top$ & \subQ{x} & $E^\top D^\top$ \\
+\subQ{y} & $(DE)^\top$ & \subQ{z} & $(C^\top B)A^\top$ & & & & 
+\end{tabular}
+\end{center}
+\label{12Q1}
+\end{question}
+
+\begin{question}
+Soit
+\[
+A=\begin{pmatrix}1 & -1 \\0 & 1 \end{pmatrix}
+\]
+\subQ{a} Évaluez $A^2$.
+
+\subQ{b} Évaluez $A^3$.
+
+\subQ{c} Quelle sera la forme générale de $A^n$?
+\label{12Q2}
+\end{question}
+
+\subsection{Représentations matricielles des systèmes d'équations
+  liné\-aires}
+
+\begin{question}
+Résolvez les systèmes d'équation linéaires suivants.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & \parbox{5cm}{\begin{align*} x+y+2z &= 9 \\
+2x+4y-3z &= 1 \\ 3x + 6y -5z &= 0 \end{align*}} &
+\subQ{b} & \parbox{5cm}{\begin{align*} 5x + 2y + 6 z &= 0 \\
+-2x +y + 3z &= 1 \end{align*}} \\
+\subQ{c} & \parbox{5cm}{\begin{align*} 2x_1 + 2x_3 &=1 \\
+3x_1 -x_2 + 4x_3 &= 7 \\ 6x_1 + x_2 - x_3 &= 0 \end{align*}} &
+\subQ{d} & \parbox{5cm}{\begin{align*} 7 x_1 + 2 x_2 + x_3 - 3 x_4 &= 5 \\
+x_1 + 2 x_2 + 4 x_3 &=1 \end{align*}} \\
+\subQ{e} & \parbox{5cm}{\begin{align*} 3x + 2y - z &= -15 \\
+3x + y + 3 z &= 11 \\ -6x -4 y + 2 z &= 30 \end{align*}}
+\end{tabular}
+\end{center}
+\label{12Q3}
+\end{question}
+
+\begin{question}
+Montrez que le système
+\begin{align*}
+x + y + 2z &= a \\ x+z &= b \\ 2x+y + 3z &= c
+\end{align*}
+possède au moins une solution seulement si $c= a + b$.
+\label{12Q4}
+\end{question}
+
+\begin{question}
+Pour chacun des systèmes d'équations linéaires suivant,
+donnez les valeurs de $a$ et $b$ pour que le système ait:\\
+\subI{I} Une seule solution.\\
+\subI{II} Un nombre infini de solutions.\\
+\subI{III} Aucune solution.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} &
+\parbox{3cm}{ \begin{align*} x + a y &= 1 \\ 2x + 3y &= b \end{align*}} &
+\subQ{b} &
+\parbox{3cm}{ \begin{align*} x + ay &= 1 \\ b + 5y &= 2 \end{align*}}
+\end{tabular}
+\end{center}
+\label{12Q5}
+\end{question}
+
+\begin{question}
+Considérons le système d'équations linéaires
+\begin{eqnarray*}
+2x-y+3z &=& -1 \\
+x+y+4z&=&h \\
+2x-3y+hz&=&2
+\end{eqnarray*}
+Donnez les valeurs de $h$ pour que le système ait:
+
+\subQ{a} Une seule solution.
+
+\subQ{b} Aucune solution.
+
+\subQ{c} Un nombre infini de solutions.
+\label{12Q6}
+\end{question}
+
+\begin{question}[\life]
+Deux espèces d'insectes, X et Y, se nourrissent de deux espèces de plantes, A
+et B.  L'espèce X consomme $5$ unités de A et $3$ unités de $B$ par jour, et
+l'espèce Y consomme $2$ unités de A et $4$ unités de B par jour.  Si nous
+fournissons $900$ unités de A et $960$ unités de B par jour. combien
+d'individus des espèces X et Y devons-nous avoir dans notre
+insectarium pour que toutes les unités de A et B soient consommées à
+chaque jours.
+\label{12Q7}
+\end{question}
+
+\begin{question}
+Un manufacturier vent trois types d'engrais ($I$, $II$ et $III$) qui
+sont des mélanges de trois produits ($A$, $B$ et $C$).  L'engrais de
+type $I$ contient $10$ kg de $A$, $30$ kg de $B$ et $60$ kg de $C$ par
+sac.  L'engrais de type $II$ contient $20$ kg de $A$, $30$ kg de $B$
+et $50$ kg de $C$ par sac.  Finalement,  l'engrais de type $III$
+contient $50$ kg de $A$ et $50$ kg de $C$ par sac; cet engrais de
+contient pas de produit $B$.  L'entrepôt du manufacturier contient
+$1600$ kg de $A$, $1200$ kg de $B$ et $3200$ kg de $C$.  Combien de
+sacs de chaque type d'engrais doivent être produit par le
+manufacturier si celui-ci veut utiliser tous les produits $A$, $B$ 
+et $C$ dans son entrepôt?
+\label{12Q8}
+\end{question}
+
+\subsection{Déterminant}
+
+\begin{question}
+Déterminez si les matrices suivantes ont un inverse.  Pour celles qui ont un
+inverse, trouvez cet inverse.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} &
+$\displaystyle A = \begin{pmatrix} 1 & -1 \\ 2 & 1 \end{pmatrix}$ &
+\subQ{b} &
+$\displaystyle A = \begin{pmatrix} 4 & 0 \\ 0 & -1 \end{pmatrix}$ &
+\subQ{c} &
+$\displaystyle A = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}$ \\[1em]
+\subQ{d} &
+$\displaystyle A = \begin{pmatrix} 3 & -2 \\ -6 & 4 \end{pmatrix}$ &
+\subQ{e} &
+$\displaystyle A = \begin{pmatrix}
+1 & 6 & 4 \\
+2 & 4 & -1 \\
+-1 & 2 & 5
+\end{pmatrix}$ &
+\subQ{f} &
+$\displaystyle A = \begin{pmatrix}
+1 & 2 & 3 \\
+2 & 5 & 3 \\
+1 & 0 & 8
+\end{pmatrix}$ \\[1em]
+\subQ{g} &
+$\displaystyle A=\begin{pmatrix}1 & 1 & 2 \\1 & 0 & 1 \\2 & 1 & 4\end{pmatrix}$
+& & & &
+\end{tabular}
+\end{center}
+\label{12Q9}
+\end{question}
+
+\begin{question}
+Soit
+\[
+A =
+\begin{pmatrix}
+1 & 3 & -1 \\
+0 & 2 & 1 \\
+4 & -2 & 5   
+\end{pmatrix}
+\quad , \quad
+B =
+\begin{pmatrix}
+11 & -5 & 0 \\
+-3 & 8 & -1 \\
+6 & 2 & 4  
+\end{pmatrix}
+\quad \text{et} \quad
+C =
+\begin{pmatrix}
+6 & -1 & 0 \\
+15 & 7 & 9 \\
+-7 & -2 & -3  
+\end{pmatrix} \ .
+\]
+\subQ{a} Montrez que $AB \neq BA$.
+
+\subQ{b} Évaluez $\det(2A-3B^\top-C)$.
+
+\subQ{c} Montrez que $C$ n'a pas d'inverse.
+
+\subQ{d} Trouvez $A^{-1}$.
+\label{12Q10}
+\end{question}
+
+\subsection{Valeurs propres et vecteurs propres}
+
+\begin{question}
+Trouvez les valeurs et vecteurs propres des matrices suivantes et donnez la
+multiplicité algébrique de chacune des valeurs propres.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} &
+$\displaystyle A = \begin{pmatrix} -2 & 0 \\ 0 & 4 \end{pmatrix}$ &
+\subQ{b} &
+$\displaystyle A = \begin{pmatrix} 4 & 0 \\ 2 & -4 \end{pmatrix}$ &
+\subQ{c} &
+$\displaystyle A = \begin{pmatrix} 6 & 2 & -2 \\ 2 & 5 & 0 \\
+-2 & 0 & 7 \end{pmatrix}$ \\[1em]
+\subQ{d} &
+$\displaystyle A = \begin{pmatrix} 4 & -2 & 3 \\ -2 & 1 & 6 \\
+1 & 2 & 2 \end{pmatrix}$ &
+\subQ{e} &
+$\displaystyle A = \begin{pmatrix} 0.8 & -0.6 \\ 0.6 & 0.8 \end{pmatrix}$ &
+\subQ{f} &
+$\displaystyle A = \begin{pmatrix} 4 & 2 \\ -0.5 & 2 \end{pmatrix}$ \\[1em]
+\subQ{g} & 
+$\displaystyle A= \begin{pmatrix}0 & 0 & 2 \\1 & 3 & 1 \\2 & 0 & 0\end{pmatrix}$
+& \subQ{h} &
+$\displaystyle A = \begin{pmatrix} 1 & -3 & 3 \\ 3 & -5 & 3 \\
+6 & -6 & 4 \end{pmatrix}$ &
+\subQ{i} &
+$\displaystyle A = \begin{pmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\
+0 & -1 & 2 \end{pmatrix}$ \\[1em]
+\subQ{j} &
+$\displaystyle A = \begin{pmatrix} 2 & 2 & -6 \\ 2 & -1 & -3 \\
+-2 & -1 & 1 \end{pmatrix}$ &
+\subQ{k} &
+$\displaystyle \begin{pmatrix} -\sqrt{3} & 7 & -7 \\
+-1 & \sqrt{3} & 0 \\ 0 & 0 & 7 \end{pmatrix}$ & &
+\end{tabular}
+\end{center}
+\label{12Q11}
+\end{question}
+
+\begin{question}
+Pour chacune des matrices $A$ ci-dessous.
+
+\subI{I} Montrez que le déterminant de $A$ est différent de $0$.\\
+\subI{II} Trouvez l'inverse multiplicatif $A^{-1}$ de $A$.\\
+\subI{III} Résolvez le système d'équations linéaires
+$A\VEC{x}=\VEC{b}$ pour le vecteur $\VEC{b}$ donné.\\
+\subI{IV} Trouvez les valeurs propres de $A$.\\
+\subI{V} Pour chaque valeur propre, trouvez un ensemble de vecteurs
+propres linéairement indépendants.
+
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle A =
+\begin{pmatrix} -5 & 2 & -3 \\ 0 & 1 & -2 \\ 0 & 1 & 4 \end{pmatrix}$
+et $\displaystyle \VEC{b} = \begin{pmatrix} 3 \\ -5 \\ 15
+\end{pmatrix}$ &
+\subQ{b} & $\displaystyle A =
+\begin{pmatrix} 3 & 2 & -6 \\ 0 & 1 & -2 \\ 0 & -4 & 3 \end{pmatrix}$
+et $\displaystyle \VEC{b} = \begin{pmatrix} 3 \\ -5 \\ 15
+\end{pmatrix}$ \\
+\subQ{c} & $\displaystyle A =
+\begin{pmatrix} 4 & 2 & -5 \\ 0 & 1 & 2 \\ 0 & 6 & -3 \end{pmatrix}$
+et $\displaystyle \VEC{b} = \begin{pmatrix} 3 \\ -5 \\ 15
+\end{pmatrix}$ &
+\subQ{d} & $\displaystyle A =
+\begin{pmatrix} 2 & 0 & 4 \\0 & -4 & 0 \\4 & 0 & 2 \end{pmatrix}$
+et $\displaystyle \VEC{b} = \begin{pmatrix} 12 \\ 12 \\   12 \end{pmatrix}$
+\end{tabular}
+\end{center}
+\label{12Q12}
+\end{question}
+
+\subsection{Chaînes de Markov}
+
+\begin{question}[\eco]
+Une compagnie de location de voitures possède deux succursales:
+succursale S et succursale T.  Un analyse des inventaires à chacune
+des succursales à la fin de chaque mois révèle que $70$\% des voitures
+louées à la succursale S sont retournées à la succursale S alors que
+les autres voitures ($30$\%) sont retournées à la succursale T.  De
+plus, $80$\% des voitures louées à la succursale T sont retournées à
+la succursale T alors que les autres voitures ($20$\%) sont retournées
+à la succursale S.
+
+Soit $x_0$ et $y_0$ le nombre de voitures au début du mois aux succursales
+S et T respectivement, et soit $x_1$ et $y_1$ le nombre de voitures à
+la fin du mois aux succursales S et T respectivement.
+
+\subQ{a} Exprimez le nombre de voitures à chaque succursale à la fin du
+mois en fonction du nombre de voitures à chaque succursale au
+début du mois sous la forme
+\[
+\begin{pmatrix} x_1 \\ y_1 \end{pmatrix} = A
+\begin{pmatrix} x_0 \\ y_0 \end{pmatrix}
+\]
+pour une matrice $A$.
+
+\subQ{b} Évaluez $A^2$.
+
+\subQ{c} Si au début de mars nous avons $60$ voitures à la succursale S et
+$40$ voitures à la succursale T, Combien de voitures y-aura-t-il dans
+chaque succursale au début d'avril?  Au début de mai?
+
+\subQ{d} Quel est le nombre de voitures que la compagnie devrait avoir
+à chaque succursale au début du mois pour qu'elle retrouve le même
+nombre de voiture à chaque succursale à la fin du mois?  Vous devez
+premièrement écrire le problème sous la forme d'un problème de valeurs
+et vecteurs propres.
+\label{12Q13}
+\end{question}
+
+\begin{question}[\eco]
+Une île est divisée en $1000$ lots dans le but de faire une étude
+écologique.  Chaque année, un certain nombre de lots sont choisis pour
+une observation.  La probabilité qu'un lot soit choisi une année est
+de $20$\% si le lot a été choisi l'année précédente et de $50$\% si le
+lot n'a pas été choisi l'année précédente.
+
+\subQ{a} Donnez la matrice de transition $A$ pour cette procédure de
+markov.\\
+\subQ{b} Combien de lots seront choisis l'année prochaine si $300$
+lots sont choisis cette année?\\
+\subQ{c} Combien de lots seront choisis dans deux ans si $300$ lots
+sont choisis cette année?\\ 
+\subQ{d} Combien de lots seront choisis à long terme si $300$ lots
+sont choisis cette année?   En d'autre mots, combien de lots 
+devrons-nous choisir si nous voulons que le nombre de lots choisis chaque
+année soit constant?
+\label{12Q14}
+\end{question}
+
+\begin{question}[\eco]
+Nous divisons une population de femelles en trois groupes.
+\begin{enumerate}
+\item Groupe I: Ceux dont le poids à la naissance était inférieure au poids
+minimal recommandé.
+\item Groupe II: Ceux dont le poids à la naissance était entre le poids
+minimal et le poids maximal recommandés.
+\item Groupe III: Ceux dont le poids à la naissance était supérieure au poids
+maximal recommandé.
+\end{enumerate}
+Nous observons que les femelles du groupe I donnent naissance dans 50\%
+des cas à des femelles qui sont dans le groupe I, dans 45\% des cas à
+des femelles qui sont dans le groupe II, et dans 5\% des cas à des
+femelles qui sont dans le groupe III.  De même, nous observons que les
+femelles du groupe II donnent naissance dans 25\% des cas à des
+femelles qui sont dans le groupe I, dans 50\% des cas à des femelles
+qui sont dans le groupe II, et dans 25\% des cas à des femelles qui
+sont dans le groupe III.  Finalement, nous observons que les femelles du
+groupe III donnent naissance dans 30\% des cas à des femelles qui sont
+dans le groupe I, dans 30\% des cas à des femelles qui sont dans le
+groupe II, et dans 40\% des cas à des femelles qui sont dans le groupe
+III.
+
+Déterminez la tendance à long terme pour la distribution des poids à
+la naissance pour les femelles.
+
+\noindent{\bfseries Note}: Ce problème demande une connaissance
+(intuitive) des probabilités conditionnelles.
+\label{12Q15}
+\end{question}
+
+\begin{question}[\eco]
+Chaque jour, une épicerie offre en solde une variété de pommes parmi
+trois variétés possibles: Cortland, McIntosh et Spartan.  L'épicerie
+a la politique de vente suivante.
+\begin{enumerate}
+\item Les pommes McIntosh ne sont jamais en vente deux jours de
+  suite.
+\item Si les pommes McIntosh sont en vente une journée, alors les
+  pommes Cortland et Spartan ont la même probabilité d'être en vente
+  le jour suivant.
+\item Si les pommes Cortland et Spartan sont en vente une journée, il
+  y a une chance sur deux qu'ils seront en vente la journée suivante.
+\item Si les pommes Cortland et Spartan sont en vente une journée, il
+  a une chance sur trois que les pommes McIntosh seront en vente le
+  jour suivant.
+\end{enumerate}
+
+Pour chaque item, déterminez la probabilité (ne faite pas les calculs) qu'il
+soit en vente après $100$ jours si les items avaient une probabilité égale
+d'être en vente la première journée?    Pour chaque item, déterminez la
+probabilité qu'il soit en vente dans un future éloigné?
+\label{12Q16}
+\end{question}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

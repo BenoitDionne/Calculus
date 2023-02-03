@@ -1,0 +1,674 @@
+\section{Limites et fonctions continues}
+
+\subsection{Limites}
+
+\compileSOL{\SOLUb}{\ref{4Q1}}{
+Posons $\displaystyle f(x) = \frac{e^{2x} - 1}{x}$.  Si nous choisissons la
+suite $\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ où
+$x_n = 1/n$, nous obtenons une suite qui tend vers $0$.  Les données du
+tableau suivant suggèrent que
+$\displaystyle \lim_{n\rightarrow \infty} f(x_n) = 2$.
+\[
+\begin{array}{c|c|c} 
+n & x_n = 1/n & f(x_n) \\
+\hline
+1 & 1 & 6.389056\ldots \\
+2 & 1/2 & 3.43656\ldots \\
+3 & 1/3 & 2.8432\ldots \\
+\vdots & \vdots & \vdots \\
+100 & 1/100 & 2.020134\ldots \\
+\vdots & \vdots & \vdots \\
+1000 & 1/1000 & 2.002001 \\
+\vdots & \vdots & \vdots \\
+\downarrow & \downarrow & \downarrow \\
+\infty & 0 & 2
+\end{array}
+\]
+Comme $\displaystyle \lim_{n\rightarrow \infty} f(x_n) = 2$ quelle que
+soit la suite $\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ qui
+tend vers $0$, nous pouvons écrire
+\[
+\lim_{x\rightarrow 0}\frac{e^{2x} - 1}{x} = \lim_{x\rightarrow 0}f(x) = 2 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{4Q2}}{
+Nous pouvons facilement déduire du graphe de la fonction $p$ que
+$\displaystyle \lim_{t\rightarrow 1^-} p(t) = 0$ car
+$p(t) = 0$ pour tous $t<1$.  De même, nous avons que
+$\displaystyle \lim_{t\rightarrow 1^+} p(t) = 2$.
+Ainsi, la limite $\displaystyle \lim_{t\rightarrow 1} p(t)$ n'existe pas car
+$\displaystyle \lim_{t\rightarrow 1^-} p(t) \neq \lim_{t\rightarrow 1^+} p(t)$.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q3}}{
+\subQ{a} Puisque
+\begin{align*}
+\frac{1-\cos(0.1)}{0.1} &\approx 0.04995834 \ ,
+\frac{1-\cos(0.01)}{0.01}\approx 0.00499995 \ , \\
+\frac{1-\cos(0.001)}{0.001} &\approx 4.9999995\times 10^{-4} \ ,
+\frac{1-\cos(0.0001)}{0.0001}\approx 4.9999999 \times 10^{-5} \ , \ldots 
+\to 0 \ ,
+\end{align*}
+nous pouvons assumer que
+$\displaystyle \lim_{x\to 0} \frac{1-\cos(x)}{x} = 0$.
+
+\subQ{b}
+Puisque
+\begin{align*}
+\frac{\ln(1-0.1)}{0.1} &\approx -1.05360515 \ ,
+\frac{\ln(1-0.01)}{0.01}\approx -1.00503358\ \ , \\
+\frac{\ln(1-0.001)}{0.001} &\approx -1.00050033 \ ,
+\frac{\ln(1-0.0001)}{0.0001}\approx -1.0000500 \ , \ldots 
+\to -1 \ ,
+\end{align*}
+nous pouvons assumer que
+$\displaystyle \lim_{x\to 0} \frac{1-\ln(x)}{x} = -1$.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q4}}{
+Nous avons $\sqrt{x} < 0.1$ si $0\leq x < 0.01$.
+Nous avons $\sqrt{x} < 0.01$ si $0 \leq x < 0.0001$.  La convergence n'est
+certainement pas rapide.  Il faut que $x$ soit très petit pour que
+$\sqrt{x}$ soit petit.
+}
+
+\compileSOL{\SOLUa}{\ref{4Q5}}{
+$\displaystyle \lim_{x\to 1^-}f(x) = 1.5$ et 
+$\displaystyle \lim_{x\to 1^+}f(x) = 0.5$. Comme la limite à droite
+est différente de la limite à gauche la limite,
+$\displaystyle \lim_{x\to 1}f(x)$ n'existe pas.
+
+$\displaystyle \lim_{x\to 2^-}f(x) = 6$ et 
+$\displaystyle \lim_{x\to 2^+}f(x) = 5$. Comme la limite à droite est
+différente de la limite à gauche la limite,
+$\displaystyle \lim_{x\to 2}f(x)$ n'existe pas.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q6}}{
+Puisque $v$ est une fonction continue, 
+$\displaystyle \lim_{t\rightarrow 0} v(t) = v(0) = 1$.
+
+\begin{enumerate}
+\item Nous cherchons $t$ tel que $|v(t) - 1| < 1$.
+\[
+|v(t) - 1| < 1 \Rightarrow t^2 < 1 \Rightarrow -1<t<1 \ .
+\]
+\item Nous cherchons $t$ tel que $|v(t) - 1| < 0.5$.
+\[
+|v(t) - 1| < 0.5 \Rightarrow t^2 < 0.5 \Rightarrow -\sqrt{0.5}
+<t<\sqrt{0.5} \ .
+\]
+\item Nous cherchons $t$ tel que $|v(t) - 1| < 0.01$.
+\[
+|v(t) - 1| < 0.01 \Rightarrow t^2 < 0.01 \Rightarrow
+-0.1 <t< 0.1 \ .
+\]
+\end{enumerate}
+}
+
+\compileSOL{\SOLUa}{\ref{4Q8}}{
+Nous avons $\displaystyle \lim_{x\to 0^+} H(x) = 1$ car $H(x_n)=1$
+pour toute suite $\displaystyle \{ x_n\}_{n=1}^\infty$ qui tend vers
+$0$ avec $x_n \geq 0$.
+
+Nous avons $\displaystyle \lim_{x\to 0^-} H(x) = 0$ car $H(x_n)=0$
+pour toute suite $\displaystyle \{ x_n\}_{n=1}^\infty$ qui tend vers
+$0$ avec $x_n < 0$.
+
+Puisque $\displaystyle \lim_{x\to 0^+} H(x) \neq \lim_{x\to 0^-} H(x)$,
+la limite $\displaystyle \lim_{x\to 0} H(x)$ n'existe pas.
+}
+
+\subsection{Fonctions continues}
+
+\compileSOL{\SOLUb}{\ref{4Q9}}{
+\subQ{a}
+Puisque $\displaystyle f(t) = \frac{1+t+t^2}{1+t}$ est une fonction continue
+à $t=0$, nous avons
+\[
+\lim_{t\rightarrow 0} \frac{1+t+t^2}{1+t} = 
+\lim_{t\rightarrow 0} f(t) = f(0) = 1 \ .
+\]
+
+\subQ{b} Puisque $\displaystyle f(x) = \frac{e^x}{1+x}$ est une
+fonction continue à $x =1$, nous avons
+\[
+\lim_{x\to 0} \frac{e^x}{1+x} = \lim_{x\to 0} f(x) = f(0) = \frac{e^0}{1+0} =
+1 \ .
+\]
+
+\subQ{c} Puisque $\displaystyle f(x) = \frac{(x-2)}{2+\sqrt{2x^2-4}}$
+est une fonction continue à $x=2$, nous avons
+\[
+\lim_{x\to 2} \frac{(x-2)}{2+\sqrt{2x^2-4}}
+= \lim_{x\to 2} f(x) = f(2) = \frac{(2-2)}{2+\sqrt{2\times 2^2-4}}
+= \frac{0}{4} = 0 \ .
+\]
+
+\subQ{d} Puisque $\displaystyle f(z) = \frac{3z}{1+\ln(1+z)}$ est une
+fonction continue à $z=0$, nous avons
+\[
+\lim_{z\rightarrow 0} \frac{3z}{1+\ln(1+z)}
+= \lim_{z\rightarrow 0} f(z) = f(0) = \frac{0}{1+0} = 0 \ .
+\]
+
+\subQ{e} Puisque $\displaystyle  f(x) = \frac{\cos(\pi/x)}{x^2-5}$ est
+une fonction continue à $x=3$, nous avons
+\[
+\lim_{x\to 3} \frac{\cos(\pi/x)}{x^2-5} = \lim_{x\to 3} f(x) = f(3) 
+= \frac{\cos(\pi/3)}{3^2-5} = \frac{1/2}{4} = \frac{1}{8} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{4Q10}}{
+\subQ{a} La fonction
+$\displaystyle f(x) = \frac{(x-3)}{2-\sqrt{x^2-5}}$ n'est pas définie
+à $x=3$ car le dénominateur est nul à $x=3$.  La fonction n'est donc
+pas continue à $x=3$.  Le numérateur est aussi nul à $x=3$ donc il y a
+une possibilité que la limite existe à $x=3$.  Nous
+éliminons la racine carrée au dénominateur en multipliant la fonction 
+$f$ par l'expression
+$\displaystyle \frac{2+\sqrt{x^2-5}}{2+\sqrt{x^2-5}}$.  Comme cette
+expression est égale à $1$, nous ne changeons pas la valeur de $f(x)$ pour
+$x \neq 3$.  Nous obtenons
+\begin{align*}
+\frac{(x-3)}{2-\sqrt{x^2-5}} &= \left(\frac{(x-3)}{2-\sqrt{x^2-5}}\right)
+\left(\frac{2+\sqrt{x^2-5}}{2+\sqrt{x^2-5}}\right)
+= \frac{(x-3)(2+\sqrt{x^2-5})}{4 - (x^2-5)} \\
+& = \frac{(x-3)(2+\sqrt{x^2-5})}{9 - x^2}
+= \frac{(x-3)(2+\sqrt{x^2-5})}{(3-x)(3+x)}
+= -\frac{2+\sqrt{x^2-5}}{3+x} \ .
+\end{align*}
+Ainsi,
+\[
+\lim_{x\to 3} \frac{(x-3)}{2-\sqrt{x^2-5}}
+= \lim_{x\to 3} -\frac{2+\sqrt{x^2-5}}{3+x}
+= -\frac{2+\sqrt{3^2-5}}{3+3} = -\frac{2}{3}
+\]
+où nous avons utilisé le fait que
+$\displaystyle h(x) = -\frac{2+\sqrt{x^2-5}}{3+x}$ est une fonction
+continue à $x=3$ pour calculer la dernière limite.
+
+\subQ{b} Pour déterminer si
+$\displaystyle \lim_{x\to 5} \frac{|x-5|}{x^2-25}$ existe, nous devons
+considérer les cas $x<5$ et $x>5$.
+
+Pour $x<5$, $|x-5| = 5 - x$ et nous obtenons
+\[
+\lim_{x\to 5^-} \frac{|x-5|}{x^2-25}
+= \lim_{x\to 5^-} \frac{5-x}{(x-5)(x+5)}
+= \lim_{x\to 5^-} \frac{-1}{x+5} = -\frac{1}{10} \ .
+\]
+
+Pour $x>5$, $|x-5| = x- 5$ et nous obtenons
+\[
+\lim_{x\to 5^+} \frac{|x-5|}{x^2-25}
+= \lim_{x\to 5^+} \frac{x-5}{(x-5)(x+5)}
+= \lim_{x\to 5^+} \frac{1}{x+5} = \frac{1}{10} \ .
+\]
+
+Puisque
+$\displaystyle \lim_{x\to 5^-} \frac{|x-5|}{x^2-25}
+\neq \lim_{x\to 5^+} \frac{|x-5|}{x^2-25}$, nous devons conclure que
+$\displaystyle \lim_{x\to 5} \frac{|x-5|}{x^2-25}$ n'existe pas.
+
+\subQ{c} La fonction
+$\displaystyle f(x) = \frac{3-\sqrt{9-3x}}{8x}$ n'est pas définie
+à $x=0$ car le dénominateur est nul à $x=0$.  La fonction n'est donc
+pas continue en $x=0$.  Puisque le numérateur est aussi
+nul à $x=0$, il y a une possibilité que la limite existe à $x=0$.  Nous
+éliminons la racine carrée au numérateur en multipliant la fonction
+$f$ par l'expression
+$\displaystyle \frac{3+\sqrt{9-3x}}{3+\sqrt{9-3x}}$.
+Comme cette expression est égale à $1$, nous ne changeons pas la valeur de
+$f(x)$.  Nous obtenons
+\[
+\frac{3-\sqrt{9-3x}}{8x} = \left( \frac{3-\sqrt{9-3x}}{8x} \right)
+\left( \frac{3+\sqrt{9-3x}}{3+\sqrt{9-3x}}\right)
+= \frac{9-(9-3x)}{ 8x(3+\sqrt{9-3x})}
+= \frac{3}{8(3+\sqrt{9-3x})} \ .
+\]
+Ainsi,
+\[
+\lim_{x\to 0} \frac{3-\sqrt{9-3x}}{8x}
+= \lim_{x\to 0} \frac{3}{8(3+\sqrt{9-3x})}
+= \frac{3}{8(3+\sqrt{9})} = -\frac{1}{16}
+\]
+où nous avons utilisé le fait que
+$\displaystyle h(x) = \frac{3}{8(3+\sqrt{9-3x})}$ est une fonction
+continue à $x=0$ pour calculer la dernière limite.
+
+\subQ{d} If faut noter que pour $x$ près de $1$ (e.g. entre $0$ et $2$)
+nous avons $|x-2|= 2-x$.  Ainsi,
+\[
+\lim_{x\to 1} \frac{|x-2|-1}{x^2-1}
+= \lim_{x\to 1} \frac{(2-x)-1}{(x-1)(x+1)}
+= \lim_{x\to 1} \frac{1-x}{(x-1)(x+1)}
+= \lim_{x\to 1} \frac{-1}{x+1} = -\frac{1}{2}
+\]
+où nous avons utilisé le fait que
+$\displaystyle h(x) = \frac{-1}{x+1}$ est une fonction
+continue à $x=1$ pour calculer la dernière limite.
+
+\subQ{e} Pour $x<-3$, nous avons que $|x+3| = -(x+3)$.  Ainsi,
+\[
+\lim_{x\to -3^-} \frac{|x+3|(5+x)}{x+3}
+= \lim_{x\to -3^-} \frac{-(x+3)(5+x)}{x+3}
+= \lim_{x\to -3^-} -(5+x) = -(5-3) = -2 \ .
+\]
+Pour $x>-3$, nous avons que $|x+3| = x+3$.  Ainsi,
+\[
+\lim_{x\to -3^+} \frac{|x+3|(5+x)}{x+3}
+= \lim_{x\to -3^+} \frac{(x+3)(5+x)}{x+3}
+= \lim_{x\to -3^+} (5+x) = (5-3) = 2 \ .
+\]
+Puisque
+$\displaystyle \lim_{x\to -3^-} \frac{|x+3|(5+x)}{x+3}
+\neq \lim_{x\to -3^+} \frac{|x+3|(5+x)}{x+3}$, nous devons conclure que\\
+$\displaystyle \lim_{x\to -3} \frac{|x+3|(5+x)}{x+3}$ n'existe pas.
+
+\subQ{f} Puisque le numérateur et le dénominateur de
+$\displaystyle \frac{5x^4 + 3x^2-8}{12x^2-11x-1}$ sont nuls lorsque
+$x=1$, nous savons qu'ils ont au moins un facteur $x-1$ en commun.
+Si nous divisons le numérateur et le dénominateur par $x-1$, nous trouvons que
+$5x^4 + 3x^2-8  = (x-1)(5x^3+5x^2+8x+8)$ et
+$12x^2-11x-1 = (x-1)(12x+1)$.  Donc
+\[
+\lim_{x\to 1} \frac{5x^4 + 3x^2-8}{12x^2-11x-1}
+= \lim_{x\to 1} \frac{(x-1)(5x^3+5x^2+8x+8)}{(x-1)(12x+1)}
+= \lim_{x\to 1} \frac{5x^3+5x^2+8x+8}{12x+1}
+= 2
+\]
+où nous avons utilisé le fait que
+$\displaystyle h(x) = \frac{5x^3+5x^2+8x+8}{12x+1}$ est une fonction
+continue à $x=1$ pour calculer la dernière limite.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q11}}{
+Nous avons $\displaystyle V(t) = e^{\alpha t}$ car $V_0 = 1$ par hypothèses.
+Pour déterminer $\alpha$, nous utilisons $V(1000) = 2.71828$.  Nous avons
+\begin{align*}
+e^{1000\; \alpha} = 2.71828 &
+\Rightarrow \ln\left(e^{1000\; \alpha}\right) = \ln(2.71828)
+\Rightarrow 1000\; \alpha = \ln(2.71828) \\
+&\Rightarrow \alpha = \frac{\ln(2.71828)}{1000} =
+9.999993273472820\ldots \times 10^{-4} \ .
+\end{align*}
+Donc, si nous supposons que les données du problème sont approximatives,
+nous pouvons dire que $\alpha = 10^{-3}$.
+
+Pour répondre à la deuxième partie de la question, nous devons trouver $t$ tel
+que
+\[
+2.71828 -0.1 = 2.61828 < V(t) < 2.81828 = 2.71828 +0.1 \ .
+\]
+Nous avons
+\begin{align*}
+2.61828 < e^{0.001\; t} < 2.81828
+&\Rightarrow \ln(2.61828) < 0.001\; t < \ln(2.81828) \\
+&\Rightarrow 10^3\; \ln(2.61828) < t < 10^3 \; \ln(2.81828) \\
+&\Rightarrow 962.51761\ldots < t < 1036.126769\ldots
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{4Q12}}{
+L'équation de la droite qui joint les points $(-0.1,-1)$ et $(0.1,1)$ est
+$y = 10 x$.  Donc
+\[
+f(x) =
+\begin{cases}
+-1 & \quad \text{si} \quad x < -0.1 \\
+10x & \quad \text{si} \quad -0.1 \leq x < 0.1 \\
+1 & \quad \text{si} \quad x \geq 0.1
+\end{cases}
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{4Q13}}{
+Soit $W(V)$ l'impulsion électrique produite par le neurone après qu'il
+est reçu une impulsion électrique de $V$ volts.  On nous dit dans la
+question que
+\[
+W(V) =
+\begin{cases}
+V_1 & \quad \text{si} \quad V < V_0 \\
+2V & \quad \text{si} \quad V > V_0
+\end{cases}
+\]
+De plus, on nous dit dans la question que $W$ est continue.  Donc $W$ doit
+aussi être définie à $V = V_0$ et
+\[
+W(V_0) = \lim_{V\to V_0^-} W(V) = \lim_{V\to V_0^+} W(V) \ .
+\]
+Puisque
+\[
+\lim_{V\to V_0^-} W(V) = V_1  \quad \text{et} \quad
+\lim_{V\to V_0^+} W(V) = 2V_0 \ ,
+\]
+nous avons donc $W(V_0) = V_1 = 2 V_0$.  La fonction $W$ est naturellement
+continue pour $V \neq V_0$.  Finalement, la définition de $W$ est
+\[
+W(V) =
+\begin{cases}
+2V_0 & \quad \text{si} \quad V < V_0 \\
+2V & \quad \text{si} \quad V \geq V_0
+\end{cases}
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{4Q14}}{
+Comme $f$ est défini par un polynôme pour $x > 3$ et un fonction
+sinusoïdale pour $x<3$, nous avons que $f$ est continue partout sauf
+possiblement à $x=3$.  Pour que $f$ soit continue en $x=3$, nous devons
+avoir
+\[
+\lim_{x\to 3^-} f(x) = \lim_{x\to 3^+} f(x) = f(3) \ .
+\]
+C'est-à-dire,
+\[
+a \sin\left(\frac{3\pi}{2}\right) = \frac{3^2}{2} - 4
+\Rightarrow -a = \frac{1}{2} \Rightarrow a = -\frac{1}{2} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{4Q15}}{
+Comme $f$ est défini par des polynômes pour $x \neq 3$, nous avons que $f$
+est continue partout sauf possiblement à $x=3$.  Pour que $f$ soit
+continue à $x=3$, nous devons avoir
+\[
+\lim_{x\to 3^-} f(x) = \lim_{x\to 3^+} f(x) = f(3) \ .
+\]
+Puisque
+$\displaystyle \lim_{x\to 3^-} f(x) = \lim_{x\to 3^-} (a x^2 + 4x) = 9a + 12$,
+$\displaystyle \lim_{x\to 3^+} f(x) = \lim_{x\to 3^+} x^2 + a x = 9 + 3a$ et
+$f(3) = 9 + 3a$, nous devons donc avoir $9a + 12 = 9 + 3a$.  Si nous
+résolvons, nous trouvons $a= -1/2$.
+}
+
+\compileSOL{\SOLUa}{\ref{4Q16}}{
+Puisque $f$ est définie par une fonction rationnelle sans division par
+$0$ pour $<3$ et par des sommes de termes en $x^\alpha$ pour $x > 3$,
+nous avons que $f$ est continue partout sauf possiblement en $x=3$ et
+$x=4$.
+
+Pour que $f$ soit continue en $x=3$, nous devons avoir
+\[
+\lim_{x\to 3^-} f(x) = \lim_{x\to 3^+} f(x) = f(3) \ .
+\]
+Puisque
+\[
+\lim_{x\to 3^-} f(x) = \lim_{x\to 3^-} \frac{x^2 - 2x -3}{x-3}
+= \lim_{x\to 3^-} \frac{(x+1)(x-3)}{x-3}
+= \lim_{x\to 3^-} (x+1) = 4 \; ,
+\]
+$\displaystyle \lim_{x\to 3^+} f(x) = \lim_{x\to 3^+} a x^2 + x + b = 9a +3 +b$
+et $f(3) = 9a + 3 + b$, nous devons donc avoir $4 = 9a +3 + b$.  
+Ce qui donne l'équation $9a + b = 1$.
+
+Pour que $f$ soit continue en $x=4$, nous devons avoir
+\[
+\lim_{x\to 4^-} f(x) = \lim_{x\to 4^+} f(x) = f(4) \ .
+\]
+Puisque
+$\displaystyle \lim_{x\to 4^-} f(x) = \lim_{x\to 4^-} a x^2 + x + b =
+16 a + 4 +b$,
+$\displaystyle \lim_{x\to 4^+} f(x) = \lim_{x\to 4^+} b \sqrt{x} +
+\frac{5 a x}{2}  = 2b + 10 a$
+et $f(4) = 2b + 10 a$, nous devons donc avoir $16 a + 4 + b = 2 b + 10 a$.
+Ce qui donne l'équation $6a - b = -4$.
+
+Il faut résoudre le système d'équations linéaires
+\begin{align*}
+9a + b &= 1 \\
+6a - b &= -4
+\end{align*}
+pour trouver $a$ et $b$.  Si nous additionnons les deux équations, nous
+trouvons $15 a = -3$.  Donc $a = -1/5$.  Si nous substituons cette valeur
+de $a$ dans l'équation $6a - b = -4$, nous obtenons
+$ -6/5 - b = -4$. Donc $b= 14/5$
+}
+
+\compileSOL{\SOLUa}{\ref{4Q17}}{
+Posons $f(x) = e^x + x^2 -x - 2$.  $f$ est une fonction continue sur la
+droite réelle.  De plus, $f(0) = 1-2 = -1 < 0$ et
+$f(1) = e-2 \approx 0.7182818 >0$.  Grâce au Théorème des valeurs
+intermédiaires, il existe donc $c$ entre $0$ et $1$ tel que
+$f(c)=0$; c'est-à-dire, $e^c + c^2 -2 = c$.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q18}}{
+\subQ{a} Posons $f(x) = \tan(x) + 4x - x^2 - e^x$.  Nous avons que $f$ est
+une fonction continue sur l'intervalle $[0,\pi/4]$ telle que
+$f(0) = -1 <0$ et
+\begin{align*}
+f\left(\frac{\pi}{4}\right) &= \tan\left(\frac{\pi}{4}\right)
++4 \left(\frac{\pi}{4}\right) - \left(\frac{\pi}{4}\right)^2 - e^{\pi/4} \\
+& = 1 + \pi - \pi^2/16 - e^{\pi/4} \approx 1.33146232777\ldots > 0 \ .
+\end{align*}
+Grâce au Théorème des valeurs intermédiaires, il existe donc $c$ entre $0$ et
+$\pi/4$ tel que $f(c) = 0$.
+
+\subQ{b} Posons $\displaystyle f(x) = e^{\cos(x/2)} - 2\sin(x/2)$.
+Nous avons que $f$ est une fonction continue sur l'intervalle $[0, \pi]$ avec
+$f(0)= e - 0 = e>0$ et
+$\displaystyle f(\pi) = e^{\cos(\pi/2)}-2\sin(\pi/2) = e^0 - 2 = -1 <0$.
+Grâce au Théorème des valeurs intermédiaire, il existe donc $c$ entre $0$ et
+$\pi$ tel que $f(c)=0$.  C'est-à-dire,
+$\displaystyle e^{\cos(c/2)} = 2\sin(c/2)$.
+}
+
+\compileSOL{\SOLUa}{\ref{4Q19}}{
+Si nous supposons que le prix de l'essence varie de façon continue en
+fonction du temps, alors nous pouvons utiliser le Théorème des valeurs
+intermédiaires pour conclure que le prix a été de \$$2.25$ à un
+certain moment au cours de la semaine.   Mais, est-ce vraiment
+réaliste de croire que le prix de l'essence a varié de façon continue?
+}
+
+\subsection{Limites à l'infini et limites infinies}
+
+\compileSOL{\SOLUb}{\ref{4Q20}}{
+Pour une précision de $0.1$\%, nous avons que $0.1$\% de $440$ est $0.44$ et
+le coût du diapason sera de
+$\displaystyle \frac{5}{0.44} \approx 11.36$ dollars.
+Pour une précision de $0.01$\%, nous avons que $0.01$\% de $440$ est $0.044$
+et le coût du diapason sera de
+$\displaystyle \frac{5}{0.044} \approx 113.64$ dollars.
+
+Nous avons que $\displaystyle \lim_{x\to 440} \frac{5}{|x-440|} = +\infty$.
+Le coût du diapason va devenir exorbitant si nous exigeons la
+perfection.  En fait, nous n'atteindrons jamais la perfection.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q21}}{
+Nous avons
+\[
+\frac{1}{\sqrt{x}} >10 \Rightarrow 0 < \sqrt{x} < \frac{1}{10}
+\Rightarrow 0 < x < \frac{1}{100}
+\]
+et
+\[
+\frac{1}{\sqrt{x}} >100 \Rightarrow 0 < \sqrt{x} < \frac{1}{100}
+\Rightarrow 0 < x < \frac{1}{10^4} \ .
+\]
+La croissance n'est pas rapide.  Il faut que $x$ soit très petit pour que
+$1/\sqrt{x}$ soit grand.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q22}}{
+Soit $h(t) = (1-t)^{-4}$.  Comme la fonction $h$ n'est pas
+définie en $t=1$, elle n'est certainement pas continue.  Nous devons donc
+utiliser les suites pour estimer la limite.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\cline{1-3}
+$      n      $ & $t_n = 1+1/n^2$ & $     f(t_n)  $ \\ 
+\cline{1-3}
+$1.000000$ & $2.000000$ & $1$ \\ 
+$2.000000$ & $1.250000$ & $256$ \\ 
+$3.000000$ & $1.111111$ & $6561$ \\ 
+$4.000000$ & $1.062500$ & $65536$ \\ 
+$5.000000$ & $1.040000$ & $390625$ \\ 
+$6.000000$ & $1.027778$ & $1679616$ \\ 
+$7.000000$ & $1.020408$ & $5764801$ \\ 
+$8.000000$ & $1.015625$ & $16777216$ \\ 
+$9.000000$ & $1.012346$ & $43046721$ \\ 
+$10.000000$ & $1.010000$ & $10^8$ \\ 
+$\vdots$ & $\vdots$ & $\vdots$ \\
+$98.000000$ & $1.000104$ & $\approx 8.50763 \times 10^{15}$ \\ 
+$99.000000$ & $1.000102$ & $\approx 9.22744 \times  10^{15}$ \\ 
+$100.000000$ & $1.000100$ & $\approx 10^{16}$ \\ 
+ & $\downarrow$ & $\downarrow$ \\
+& $1$ & $+\infty$ \\
+\cline{1-3}
+\end{tabular}
+\end{center}
+% Voir suitelimitQ1.m pour créer ce tableau.
+Pour toute autre suite $\displaystyle \{t_n\}_{n=1}^\infty$ qui tend
+vers $1$, nous avons toujours
+$\displaystyle (1-t_n)^{-4} \rightarrow +\infty$ lorsque $n\to \infty$.
+Donc $\displaystyle \lim_{x\to 1} (1-t)^{-4} = +\infty$.
+
+Nous aurions pu résonner à partir de la définition de la fonction $h$.
+Soit $\displaystyle \{t_n\}_{n=1}^\infty$ une suite qui tend vers $0$.
+C'est le cas pour $t_n = 1/n^2$ que nous avons utilisé dans le tableau
+ci-dessus.  Si nous substituons $t=1+ t_n$ dans $h(t)$, nous obtenons
+$\displaystyle h(1+t_n) = t_n^{-4} = \frac{1}{t_n^4}$.  Puisque
+$t_n^4 \to 0$ lorsque $n\to \infty$, nous avons que $1/t_n^4 \to +\infty$
+lorsque $n\to \infty$. Plus $t_n^4>0$ est petit, plus $1/t_n^4$ est
+grand.
+}
+
+\compileSOL{\SOLUa}{\ref{4Q23}}{
+Posons $\displaystyle f(y) = y^2 \ln(y-1)$.  Avant de répondre à la
+question, notons que $f(y)$ n'est pas défini pour $y<1$.  Il est donc
+impossible de considérer $\displaystyle \lim_{y\rightarrow 1^-} f(y)$
+et $\displaystyle \lim_{y\rightarrow 1} f(y)$.
+
+Si nous choisissons la suite $\displaystyle \left\{ x_n \right\}_{n=1}^\infty$
+où $x_n = 1+1/n$, nous obtenons une suite de termes plus grand que $1$
+qui tend vers $1$.  Nous avons les résultats suivants.
+\[
+\begin{array}{c|c|c} 
+n & x_n = 1/n & f(x_n) \\
+\hline
+1 & 2 & 0 \\
+2 & 3/2 & -1.55958\ldots \\
+\vdots & \vdots & \vdots \\
+10,000 & 1.0001 & -9.212182\ldots \\
+\vdots & \vdots & \vdots \\
+10^9 & 1+10^{-9} & -20.723265\ldots \\
+\vdots & \vdots & \vdots \\
+10^{15} & 1+10^{-15} & -34.4342154\ldots \\
+\downarrow & \downarrow & \downarrow \\
+\infty & 1 & ?
+\end{array}
+\]
+Il semble que $\displaystyle \lim_{n\rightarrow \infty} f(x_n) = -\infty$
+car $f(x_n)$ semble décroître sans borne inférieure lorsque $n$
+augmente.  Malheureusement, ce n'est pas convaincant.
+$\displaystyle f\left(1+10^{-15}\right) = -34.4342154\ldots$
+n'est pas une très petite valeur négative même si $1+10^{-15}$ est très
+près de $1$.  Peut-être que
+$\displaystyle \lim_{n\rightarrow \infty} f(x_n) = -35$.
+
+C'est ici qu'il est important d'utiliser notre connaissance de la
+fonction $\ln$ et de mettre notre calculatrice de côté.  Nous savons que
+$\ln(x)$ tend vers $-\infty$ lorsque $x>0$ tend vers $0$ (pensez au
+graphe de $\ln$).  Donc $\ln(y-1)$ tend vers $-\infty$ lorsque $y>1$
+tend vers $1$.  Puisque $y^2$ tend vers $1$ lorsque $y$ tend vers $1$,
+alors $y^2\ln(y-1)$ tend vers $-\infty$ lorsque $y>1$ tend vers $1$.
+C'est-à-dire,
+\[
+\lim_{x\rightarrow 1^+} y^2\ln(y-1) = -\infty \ .
+\]
+
+Le fait que $f$ ne soit pas défini en $y=1$ n'empêche pas l'existence
+de la limite $\displaystyle \lim_{y\rightarrow 1^+} f(y)$ car la
+limite d'une fonction à un point est indépendante du comportement de
+la fonction à ce point.
+}
+
+\compileSOL{\SOLUb}{\ref{4Q24}}{
+\subQ{a} Si nous divisons le numérateur et dénominateur par $x^2$,
+nous avons
+\[
+\lim_{x\rightarrow \infty} \frac{x^2+5x-4}{3x^2 +1}
+= \lim_{x\rightarrow \infty} \frac{ 1+ (5/x)-(4/x^2)}{3 + (1/x^2)}
+= \frac{\displaystyle 1+ \lim_{x\rightarrow \infty}(5/x)
+-\lim_{x\rightarrow \infty}(4/x^2)}
+{\displaystyle 3 + \lim_{x\rightarrow \infty}(1/x^2)}
+= \frac{1}{3}
+\]
+car $\displaystyle \lim_{x\to \infty}\frac{1}{x^r} = 0 $ pour $r>0$.
+
+\subQ{b} Si nous factorisons $x^3$ à l'extérieur de la racine cubique, nous
+obtenons
+\begin{align*}
+\lim_{x\rightarrow \infty} \frac{x-(8x^3+3)^{1/3}}{x}
+&= \lim_{x\rightarrow \infty} \frac{x- x\left(8+(3/x^3)\right)^{1/3}}{x} 
+= \lim_{x\rightarrow \infty} \left( 1- \left(8+(3/x^3)\right)^{1/3}\right) \\
+&= \left( 1- \left(8+ \lim_{x\rightarrow \infty} (3/x^3)\right)^{1/3}\right)
+= 1 - 8^{1/3} = -1 \ .
+\end{align*}
+
+\subQ{c}
+Puisque $\displaystyle \lim_{x\to 0^-} \; \frac{1}{x} = -\infty$ et
+$\displaystyle \lim_{x\to 0^+} \; \frac{1}{x} = +\infty$, la limite
+$\displaystyle \lim_{x\to 0} \; \frac{1}{x}$ n'existe pas.
+
+\subQ{d} Puisque
+\begin{align*}
+\sqrt{x^2+3x} - \sqrt{x^2 + 7x}
+&= \left(\sqrt{x^2+3x} - \sqrt{x^2 + 7x}\right)
+\left(\frac{\sqrt{x^2+3x} + \sqrt{x^2 + 7x}}
+{\sqrt{x^2+3x} + \sqrt{x^2 + 7x}} \right) \\
+&= \frac{(x^2+3x) - (x^2 + 7x)}
+{\sqrt{x^2+3x} + \sqrt{x^2 + 7x}}
+= \frac{-4x}{\sqrt{x^2+3x} + \sqrt{x^2 +7x}} \\
+&= \frac{-4x}{x\sqrt{+ (3/x)} + x\sqrt{1 +(7/x)}}
+= \frac{-4}{\sqrt{1+ (3/x)} + \sqrt{1 +(7/x)}} \ ,
+\end{align*}
+nous avons
+\begin{align*}
+\lim_{x\to \infty} \left(\sqrt{x^2+3x} - \sqrt{x^2 + 7x}\right)
+&= \lim_{x\to \infty} \frac{-4}{\sqrt{1+ (3/x)} + \sqrt{1 +(7/x)}} \\
+&= \frac{-4}{\sqrt{\displaystyle 1+ \lim_{x\to \infty}(3/x)}
++ \sqrt{\displaystyle 1 + \lim_{x\to \infty} (7/x)}} \\
+&= \frac{-4}{\sqrt{1}+\sqrt{1}} = -2 \ .
+\end{align*}
+
+\subQ{e} Puisque
+\[
+\frac{2e^{2x} -e^{-3x}}{3e^{2x} - 4e^{-5x}}
+= \frac{e^{2x}\left( 2 -e^{-5x}\right)}{e^{2x}\left(3 - 4e^{-7x}\right)}
+= \frac{2 -e^{-5x}}{3 - 4e^{-7x}} \ ,
+\]
+Nous avons
+\[
+\lim_{x\rightarrow \infty} \frac{2e^{2x} -e^{-3x}}{3e^{2x} - 4e^{-5x}}
+= \lim_{x\rightarrow \infty} \frac{2 -e^{-5x}}{3 - 4e^{-7x}}
+=\frac{\displaystyle 2 - \lim_{x\rightarrow \infty} e^{-5x}}
+{\displaystyle 3 - 4 \lim_{x\rightarrow \infty}e^{-7x}}
+= \frac{2}{3}
+\]
+car $\displaystyle \lim_{x\rightarrow \infty} e^{rx} = 0$ pour $r<0$.
+}
+
+\compileSOL{\SOLUa}{\ref{4Q25}}{
+Puisque
+\[
+  0 \leq \left| \frac{\sin^2(x)}{1+x^2} \right| \leq \frac{1}{1+x^2}
+\]
+et $\displaystyle \lim_{x\to \infty} \frac{1}{1+x^2} = 0$, nous avons grâce
+au Théorème des gendarmes, théorème~\ref{gendarmeF}, que \\
+$\displaystyle \lim_{x\to \infty} \left| \frac{\sin^2(x)}{1+x^2} \right| =0$.
+Il s'en suit que
+$\displaystyle \lim_{x\to \infty} \frac{\sin^2(x)}{1+x^2} =0$.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

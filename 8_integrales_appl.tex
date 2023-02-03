@@ -1,0 +1,2867 @@
+\chapter[Applications de l'intégrale]{Applications de l'intégrale}
+
+\compileTHEO{
+
+Nous présentons plusieurs des applications de l'intégrale d'une fonction
+dans ce chapitre.  Au risque de ce répéter, les applications
+spécifiquement pour les sciences de la vie sont identifiées par le
+symbole  \life  alors que ceux spécifiquement pour les domaines de la
+physique et du génie sont identifiées par le symbole \eng.  Comme
+c'était le cas pour les applications de la dérivée d'une fonction au
+chapitre~\ref{chapApplDer}, la classification des applications est
+très académique et arbitraire.  La majorité des applications dans ce
+chapitre proviennent de la physique et du génie.  Il n'en reste pas
+moins que certaines de ces applications ont aussi une utilité dans les
+sciences de la vie.
+
+\section{Aire entre deux courbes}
+
+Pour estimer l'aire $A$ de la région $R$ entre les courbes $y=f(x)$ et
+$y=g(x)$, et les droites $x=a$ et $x=b$, nous
+pouvons procéder comme nous l'avons fait pour estimer l'aire sous la
+courbe $y=e^{-x}$ au chapitre précédent.  Supposons que
+$f(x) \geq g(x)$ pour tout $x$.
+
+Soit $k$, un entier positif.  Posons $\Delta x = (b-a)/k$ et
+$x_i = a + i \Delta x$ pour $i=0$, $1$, $2$, \ldots, $k$.  Nous
+obtenons une partition de l'intervalle $[a,b]$ en sous-intervalles de la forme
+$[x_i,x_{i+1}]$ pour $i=0$, $1$, \ldots, $k-1$.   Pour chaque valeur
+de $i$, nous choisissons $x_i^\ast$ dans l'intervalle $[x_i,x_{i+1}]$
+et définissons le rectangle
+\[
+R_i = \{ (x,y) : x_i\leq x\leq x_{i+1} \text{ et }
+g(x_i^\ast) \leq  y \leq f(x_i^\ast) \} \; .
+\]
+L'aire d'un tel rectangle est $(f(x_i^\ast)-g(x_i^\ast))\Delta x$
+(figure~\ref{AIRE1}).
+
+\PDFfig{8_integrales_appl/aire1}{Estimation de l'aire entre deux courbes à
+l'aide des sommes de Riemann}{Estimation de l'aire entre
+deux courbes à l'aide des sommes de Riemann si les courbes ne se
+croissent pas.}{AIRE1}
+
+La somme de l'aire de chaque rectangle $R_i$ nous donne une approximation de
+l'aire $A$ de la région $R$ entre les courbes $y=f(x)$ et $y=g(x)$, et les
+droites $x=a$ et $x=b$.
+\[
+A \approx \sum_{i=0}^{k-1} \,
+\left(f(x_i^\ast)-g(x_i^\ast)\right)\Delta x \; .
+\]
+De plus, nous remarquons que cette somme est une somme de Riemann pour
+l'intégrale
+\[
+\int_a^b (f(x)-g(x))\dx{x} \; .
+\]
+
+Ainsi, si $k$ tend vers plus l'infini, nous obtenons que
+\[
+A = \int_a^b (f(x)-g(x))\dx{x} \; .
+\]
+
+Si $f(x) \geq g(x)$ pour tout $x$, alors
+$f(x_i^\ast)-g(x_i^\ast) \geq 0$ est bien la hauteur du rectangle
+$R_i$.  Par contre, dans le cas où $f(x) < g(x)$ pour certaines
+valeurs de $x$ (figure~\ref{AIRE2}), nous pourrions avoir que
+$f(x_i^\ast) < g(x_i^\ast)$ pour certaines valeurs de $i$.
+La hauteur du rectangle $R_i$ est alors donnée par
+$|f(x_i^\ast)-g(x_i^\ast)|$.  Nous obtenons le résultat suivant.
+
+\PDFfig{8_integrales_appl/aire2}{Estimation de l'aire entre deux courbes à
+l'aide des sommes de Riemann si les courbes se croissent}{Estimation
+de l'aire entre deux courbes à l'aide des sommes de Riemann si les
+courbes se croissent}{AIRE2}
+
+\begin{focus}{\mth}
+L'aire $A$ de la région $R$ entre les courbes $y=f(x)$ et $y=g(x)$, et
+entre les droites $x=a$ et $x=b$ est donnée par
+\[
+A = \int_a^b |f(x)-g(x)|\dx{x} \; .
+\]
+\end{focus}
+
+La procédure que nous avons utilisée pour obtenir la formule ci-dessus peut
+évidemment être modifiée pour donner la formule suivante.
+
+\begin{focus}{\mth}
+L'aire $A$ de la région $R$ entre les courbes $x=f(y)$ et $x=g(y)$, et
+entre les droites $y=a$ et $y=b$ est donnée par
+\[
+A = \int_a^b |f(y)-g(y)|\dx{y} \; .
+\]
+\end{focus}
+
+\begin{egg}
+Trouvons l'aire $A$ de la région $R$ bornée par les courbes $y=f(x)=x^2$ et
+$y=g(x)=2-x^2$, et les droites $x=0$ et $x=2$.
+
+Nous retrouvons le graphe de ces deux courbes à la figure~\ref{AIRE3}.
+Remarquons que $f(x)<g(x)$ pour $0\leq x < 1$ et $f(x)>g(x)$ pour $1<x\leq 2$.
+Le point $(1,1)$ est le point d'intersection des deux courbes que nous
+pouvons trouver en résolvant $f(x)=g(x)$.  Ainsi,
+\begin{align*}
+A &= \int_0^2 |f(x)-g(x)|\dx{x} = \int_0^1 (g(x)-f(x))\dx{x}
++ \int_1^2 (f(x)-g(x))\dx{x} \\
+&= \int_0^1 (2-x^2-x^2)\dx{x} + \int_1^2(x^2-(2-x^2))\dx{x}
+= \int_0^1 (2-2x^2)\dx{x} + \int_1^2(2x^2-2)\dx{x} \\
+&= \left( 2x-\frac{2}{3} \, x^3\right)\bigg|_{x=0}^1 +
+\left( \frac{2}{3}\,x^3 - 2x \right)\bigg|_{x=1}^2 = 4 \; .
+\end{align*}
+\end{egg}
+
+\PDFfig{8_integrales_appl/aire3}{Région bornée par les courbes $y=x^2$ et
+$y=2-x^2$, et les droites $x=0$ et $x=2$}{Région bornée par les courbes
+$y=x^2$ et $y=2-x^2$, et les droites $x=0$ et $x=2$}{AIRE3}
+
+\begin{egg}
+Trouvons l'aire $A$ de la région $R$ bornée par les courbes $y=f(x)=x$ et
+$y=g(x)=\sin(x)$, et les droites $x=-\pi/4$ et $x=\pi/2$.
+
+Le dessin de la région $R$ est donné à la figure~\ref{AIRE5}.  Remarquons
+que $f(x)>g(x)$ pour $0< x \leq \pi/2$ et $f(x)<g(x)$ pour $-\pi/4<x <0$. 
+Ainsi,
+\begin{align*}
+A &= \int_{-\pi/4}^{\pi/2} |f(x)-g(x)|\dx{x} = \int_{-\pi/4}^0 (g(x)-f(x))\dx{x}
++ \int_0^{\pi/2} (f(x)-g(x))\dx{x} \\
+&= \int_{-\pi/4}^0 (\sin(x)-x) \dx{x} + \int_0^{\pi/2}(x-\sin(x))\dx{x} \\
+&= \left( -\cos(x)- \frac{x^2}{2}\right)\bigg|_{x=-\pi/4}^0 +
+\left( \frac{x^2}{2} + \cos(x) \right)\bigg|_{x=0}^{\pi/2}
+= \frac{5\pi^2}{32} + \frac{\sqrt{2}}{2} - 2 \; .
+\end{align*}
+\end{egg}
+
+\PDFfig{8_integrales_appl/aire5}{Région bornée par les courbes $y=x$ et
+$y=\sin(x)$ pour $-\pi/4\leq x\leq \pi/2$}{Région bornée par les courbes
+$y=x$ et $y=\sin(x)$ pour $-\pi/4\leq x\leq \pi/2$.}{AIRE5}
+
+\begin{egg}
+Trouvons l'aire $A$ de la région $R$ bornée par la parabole $4x+y^2=0$ et
+la droite $y=2x+4$.
+
+Pour trouver les valeurs de $x$ aux points d'intersection de la parabole
+avec la droite, nous substituons $y=2x+4$ dans $4x+y^2=0$ pour obtenir
+$4x +(2x+4)^2 = 4(x+4)(x+1) = 0$.  Donc $x=-4$ ou $x=-1$.  La parabole
+et la droite se coupent aux points $(-1,2)$ et $(-4,-4)$.  Le dessin
+de la région $R$ est donné à la figure~\ref{AIRE6}.
+
+Remarquons que pour calculer l'aire
+$\displaystyle A = \int_{-4}^0 |f(x)-g(x)|\dx{x}$, il faudrait utiliser
+$f(x) = 2x+4$ et $g(x) = -2\sqrt{-x}$ entre $-4$ et $-1$, et
+$f(x) = 2\sqrt{-x}$ et $g(x) = -2\sqrt{-x}$ entre $-1$ et $0$.  Il est donc
+plus simple d'utiliser une intégrale par rapport à $y$ pour calculer l'aire
+de la région $R$.
+
+Si nous résolvons $4x+y^2=0$ et $y=2x+4$ pour $x$, nous obtenons les fonctions
+$x=f(y) = -y^2/4$ et $x=g(y) = (y-4)/2$.  Nous avons $f(y)>g(y)$ pour
+$-4< y < 2$.
+Ainsi,
+\[
+A = \int_{-4}^2 |f(y)-g(y)|\dx{y} =
+\int_{-4}^2 \left( -\frac{y^2}{4} - \frac{y-4}{2} \right)\dx{x}
+= \left( -\frac{y^3}{12} - \frac{(y-4)^2}{4} \right)\bigg|_{x=-4}^2
+= 9 \ .
+\]
+\end{egg}
+
+\PDFfig{8_integrales_appl/aire6}{Région bornée par la parabole $4x-y^2=0$ et
+la droite $y=2x+4$}{Région bornée par la parabole $4x-y^2=0$ et la
+droite $y=2x+4$.}{AIRE6}
+
+\section{Valeur moyenne d'une fonction }
+
+\begin{focus}{\dfn} \index{Valeur moyenne}
+La {\bfseries valeur moyenne} d'une fonction $f$ définie sur un intervalle
+$[a,b]$ est
+\[
+M_f = \frac{1}{b-a} \int_a^b f(x)\dx{x} \; .
+\]
+\end{focus}
+
+Pour justifier cette définition, rappelons que la formule pour calculer la
+moyenne de $k$ nombres $m_1$, $m_2$, \ldots, $m_k$ est
+\[
+\frac{1}{k} \sum_{i=1}^k m_i \; .
+\]
+
+Pour estimer la valeur moyenne d'une fonction sur un intervalle, il suffit de
+choisir un très grand nombre de points dans l'intervalle et de faire la
+moyenne des valeurs de la fonction évaluée à tous ces points.  Plus nous
+utilisons de points, plus nous sommes près de la valeur moyenne de la fonction.
+
+Soit $k$, un entier positif.  Posons $\Delta x = (b-a)/k$ et
+$x_i = a + i \Delta x$ pour $i=0$, $1$, $2$, \ldots, $k$.  Nous obtenons une
+partition de l'intervalle $[a,b]$ en sous-intervalles de la forme
+$[x_i,x_{i+1}]$ pour $i=0$, $1$, \ldots, $k-1$.  Nous choisissons $x_i^\ast$
+dans l'intervalle $[x_i,x_{i+1}]$ pour $i=0$, $1$, $2$, \ldots, $k-1$.  La
+valeur moyenne $M_f$ de $f$ sur l'intervalle $[a,b]$ est approximativement la
+moyenne de $f(x_0^\ast)$, $f(x_1^\ast)$, \ldots, $f(x_{k-1}^\ast)$.
+Nous avons donc
+\[
+M_f \approx \frac{1}{k} \sum_{i=0}^{k-1} f(x_i^\ast) \; .
+\]
+Or $k = (b-a)/\Delta x$.  Si nous substituons dans l'expression
+précédente, nous trouvons
+\[
+M_f \approx \frac{1}{b-a} \sum_{i-0}^{k-1} f(x_i^\ast) \Delta x \; .
+\]
+La somme que nous retrouvons dans l'expression précédente est une somme de
+Riemann pour $\displaystyle \int_a^b f(x) \dx{x}$.  Ainsi, si $k$ tend vers
+plus l'infini, nous obtenons
+\[
+M_f = \frac{1}{b-a} \int_a^b f(x) \dx{x} \; .
+\]
+
+\begin{egg}
+Quelle est la valeur moyenne de $f(x)=x^2$ sur l'intervalle $[-1,1]$?
+\[
+M_f = \frac{1}{2} \int_{-1}^1 x^2 \dx{x} =
+\frac{x^3}{6}\bigg|_{x=-1}^1 = \frac{1}{3} \; .
+\]
+\end{egg}
+
+Comme pour la dérivée d'une fonction, il y a un théorème de la moyenne pour
+l'intégrale d'une fonction
+
+\begin{focus}[][Théorème de la moyenne pour l'intégrale]{\thm}
+\index{Théorème de la moyenne pour l'intégrale}
+Si $f$ est une fonction continue sur l'intervalle $[a,b]$, il existe un point
+$c \in [a,b]$ tel que
+\[
+f(c) = \frac{1}{b-a} \int_a^b f(x) \dx{x} \; .
+\]
+C'est-à-dire que $f(c)$ est la valeur moyenne de $f$ sur l'intervalle
+$[a,b]$.
+\end{focus}
+
+La conclusion du théorème précédent est illustrée à la figure~\ref{MOY_INT}.
+Cette figure est une représentation typique de la valeur moyenne d'une
+fonction sur un intervalle.  L'aire sous la courbe $y=f(x)$ et au-dessus de
+la droite $y=M_f$ (i.e. la région en bleu) est égale à l'aire
+au-dessus de la courbe $y=f(x)$ et sous la droite $y=M_f$ (i.e. la
+région en rouge).  En effet, puisque
+\[
+\frac{1}{b-a} \int_a^b M_f \dx{x} = M_f = \frac{1}{b-a}\int_a^b f(x) \dx{x}
+\]
+nous obtenons
+\[
+0 = \frac{1}{b-a}\int_a^b (f(x)-M_f) \dx{x} \; .
+\]
+Pour que cette intégrale soit nulle, il faut que l'aire sous la courbe
+$y=f(x)-M_f$ et au-dessus de l'axe des $x$ soit égale à l'aire au-dessus de
+la courbe $y=f(x)-M_f$ et sous l'axe des $x$.  Avec une translation de $M_f$
+vers le haut, la courbe $y = f(x)-M_f$ devient le graphe de $f$ et
+l'axe des $x$ devient la droite $y=M_f$.  L'énoncé sur l'égalité
+entre l'aire des régions en bleu et l'aire des régions en rouge est
+une conséquence de la propriété qu'ont les translations de préserver
+l'aire.
+
+\PDFfig{8_integrales_appl/int_mvt}{Représentation graphique du théorème de la
+moyenne pour l'intégrale}{Il existe un point $c\in [a,b]$ tel que $f(c)$ est
+la valeur moyenne de $f$ sur l'intervalle $[a,b]$}{MOY_INT}
+
+\begin{egg}
+Soit $f(x) = -x^2+4$, trouvons un point $c$ de l'intervalle $[0,2]$ tel que
+$f(c)$ est la valeur moyenne de $f$ sur l'intervalle $[0,2]$.
+
+\[
+M_f = \frac{1}{2} \int_0^2 (-x^2+4) \dx{x}
+= \frac{1}{2} \left(-\frac{x^3}{3} + 4x\right)\bigg|_{x=0}^2
+= \frac{8}{3} \; .
+\]
+Le point $c$ est donné par $f(c) = -c^2+4 = 8/3$.  Si nous résolvons
+pour $c$ dans l'intervalle $[0,2]$, nous trouvons $c= 2/\sqrt{3}$.
+
+Le graphe de $f$ ainsi que la représentation de la valeur moyenne sont donnés
+à la figure~\ref{MOY_INT2}.
+\end{egg}
+
+\PDFfig{8_integrales_appl/int_mvt2}{La valeur moyenne de $f(x) = -x^4 + 4$ sur
+l'intervalle ${[0,2]}$ est $8/3$}{Graphe de $f(x) = -x^4 + 4$. La valeur
+moyenne de $f$ sur l'intervalle $[0,2]$ est $8/3$.  L'aire sous la courbe
+$y=f(x)$ et au-dessus de la droite $y=8/3$ (en bleu) est égale à
+l'aire au dessus de la courbe $y=f(x)$ et sous la droite $y = 8/3$ (en
+rouge) pour $0\leq x \leq 2$.}{MOY_INT2} 
+
+\section{Volume d'un objet \eng}
+
+Nous pouvons utiliser l'intégration pour calculer le volume $V$ d'un
+solide $S$ comme celui représenté à la figure~\ref{VOL2}.  Supposons que le
+solide $S$ soit contenu entre les plans $x=a$ et $x=b$.
+
+Pour estimer le volume $V$ du solide $S$, nous partageons le solide
+$S$ en fines tranches parallèles au plan $y$,$z$ et nous estimons le
+volume de chacune de ces tranches.  La somme de ces approximations
+nous donne une approximation du volume de $S$.
+
+Soit $k$, un entier positif.  Posons $\Delta x = (b-a)/k$ et
+$x_i = a + i \Delta x$ pour $i=0$, $1$, $2$, \ldots, $k$.  Nous
+obtenons une partition de l'intervalle $[a,b]$ en sous-intervalles de
+la forme $[x_i,x_{i+1}]$ pour $i=0$, $1$, \ldots, $k-1$.
+
+La $i^e$ tranche du solide $S$ qui est représenté à la figure~\ref{VOL2} est
+donnée par l'intersection du solide $S$ avec la région définie par
+$\{ (x,y,z) : x_i \leq x \leq x_{i+1}\}$.
+
+\PDFfig{8_integrales_appl/vol2}{Une tranche d'un solide $S$ quelconque}{La
+tranche du solide $S$ pour $x_i \leq x \leq x_{i+1}$. Le volume de cette
+tranche est $V_i$.}{VOL2}
+
+Pour estimer le volume $V_i$ de la $i^e$ tranche, nous choisissons
+$x_i^\ast$ dans l'intervalle $[x_i,x_{i+1}]$.  Nous considérons le
+{\em cylindre} $S_i$ qui est représenté à la figure~\ref{VOL1}, dont la
+hauteur est $\Delta x$ et la base est la section $B_i$ obtenue de
+l'intersection du plan $x=x_i^\ast$ avec le solide $S$.
+
+\PDFfig{8_integrales_appl/vol1}{L'approximation d'une tranche d'un solide}
+{$S_i$ est approximativement une tranche du solide $S$.  L'épaisseur de $S_i$
+est $\Delta x$.}{VOL1}
+
+Nous retrouvons à la figure~\ref{VOL3} un exemple possible pour
+la section $B_i$ du cylindre $S_i$; notons que $B_i$ n'est pas toujours un
+disque comme nous avons dans la figure.  Les côtés du cylindre
+$S_i$ sont parallèles à l'axe des $x$.
+
+\PDFfig{8_integrales_appl/vol3}{La section d'un cylindre engendrée par
+l'intersection avec un plan}{La section $B_i$ est engendrée par
+l'intersection du plan $x=x_i^\ast$ avec le solide $S$.  L'aire de la section 
+est $A(x_i^\ast)$.}{VOL3}
+
+Le volume du cylindre $S_i$ est $A(x_i^\ast) \Delta x$ où $A(x_i^\ast)$ est
+l'aire de la section $B_i$.  Pour $\Delta x$ petit, le volume $V_i$ de la
+$i^e$ tranche de $S$ est approximativement le volume de $S_i$.  Ainsi,
+\[
+V_i \approx A(x_i^\ast) \Delta x
+\]
+pour $\Delta x$ petit.  La somme des volumes des cylindres $S_i$ donne un
+estimé du volume $V$ de $S$.
+\[
+V = \sum_{i=0}^{k-1} V_i \approx \sum_{i=0}^{k-1} A(x_i^\ast) \Delta x
+\]
+Plus $k$ sera grand (et donc $\Delta x$ petit), plus la somme ci-dessus sera
+près du volume $V$ du solide $S$.  À la limite, nous obtenons le volume $V$ de
+$S$.
+
+Mais, ces sommes représentent aussi des sommes de Riemann pour l'intégrale
+\[
+\int_a^b A(x)\dx{x}
+\]
+où $A(s)$ est l'aire de la section engendrée par l'intersection du plan $x=s$
+avec le solide $S$.  Ainsi, si $k$ tend vers plus l'infini, nous
+obtenons le résultat suivant.
+
+\begin{focus}[][des tranches]{\mth}
+Le volume $V$ d'un solide $S$ comme celui représenté à la
+figure~\ref{VOL3} est donné par
+\begin{equation}\label{comp_vol}
+V = \int_a^b A(x)\dx{x}
+\end{equation}
+où $A(s)$ est l'aire de la section engendrée par l'intersection du
+plan $x=s$ avec le solide $S$.
+\end{focus}
+
+\begin{egg}
+Trouvons le volume $V$ du tronc de pyramide $S$ représenté à la
+figure~\ref{TRONC} dont la base est un carré qui possède des côtés de
+longueur $a$ et le sommet est aussi un carré mais qui possède des côtés de
+longueur $b$.  La hauteur du tronc de pyramide est $h$.
+
+Selon la façon dont nous tranchons $S$, nous obtenons des sections de
+niveaux de complexité différents.  La façon de trancher $S$ qui donne
+les sections les plus simples est de trancher horizontalement.  Les
+sections sont alors des carrés.
+
+Pour utiliser la formule (\ref{comp_vol}), il faut trouver une formule pour
+l'aire $A(x)$ des sections obtenues par l'intersection de $S$ avec le plan
+$x$ constant.  Comme nous pouvons le voir a partir du dessin d'une
+coupe verticale de $S$ que nous retrouvons à la figure~\ref{TRONC}, la
+longueur $y$ d'un côté d'une section varie linéairement en fonction de
+$x$,  Nous avons $y=a$ pour $x=0$
+et $y=b$ pour $x=h$.  La droite qui passe par ces deux points est de pente 
+$m = (b-a)/(h-0) = (b-a)/h$.  Ainsi, son équation est
+\[
+y = \left(\frac{b-a}{h}\right) x + a
+\]
+car $y=a$ lorsque $x=0$.  Nous obtenons
+\[
+A(x) = \left( \left(\frac{b-a}{h}\right) x + a \right)^2 \; .
+\]
+
+Le volume $V$ de $S$ est donc
+\begin{align*}
+V &= \int_0^h \left( \left(\frac{b-a}{h}\right) x + a \right)^2 \dx{x}
+= \frac{h}{3(b-a)}
+\left( \left(\frac{b-a}{h}\right) x + a \right)^3\bigg|_{x=0}^h \\
+&= \frac{h}{3(b-a)} \left( b^3 - a^3 \right)
+= \frac{h}{3} \left( b^2+ab+a^2 \right)
+\end{align*}
+où nous avons utilisé la substitution $y = (b-a)x/h + a$ pour évaluer
+l'intégrale.
+\end{egg}
+
+\PDFfig{8_integrales_appl/tronc}{Le tronc de pyramide et une section
+perpendiculaire de ce tronc}{Le tronc de pyramide et une
+section perpendiculaire de ce tronc.}{TRONC}
+
+\begin{egg}
+Trouvons le volume $V$ du solide $S$ dont la base est la région du plan
+$x$,$y$ bornée par les courbes $y=x^2$ et $y=8-x^2$, et les sections
+perpendiculaires à l'axe des $x$ sont des carrés.  Nous retrouvons une
+représentation de ces sections à la figure~\ref{VOL4}.
+
+Puisque les deux courbes se coupent à $x=-2$ et $x=2$ (les solutions
+de $x^2=8-x^2$), la base du solide est la région entre les courbes $y=x^2$ et
+$y=8-x^2$ pour $-2\leq x \leq 2$.
+
+La section pour $x$ constant est un carré dont la longueur des côtés est
+$(8-x^2)-x^2 = 8 - 2 x^2$.  L'aire de cette section est donc
+$A(x)= (8-2x^2)^2$.  Le volume du solide est
+\begin{align*}
+V &= \int_{-2}^2 A(x)\dx{x} = \int_{-2}^2 (8-2x^2)^2\dx{x}
+= \int_{-2}^2 \left(64 -32 x^2 + 4 x^4\right)\dx{x} \\
+&= \left(64x - \frac{32}{3}\,x^3 + \frac{4}{5}\,x^5\right)\bigg|_{x=-2}^2
+= \frac{2^{11}}{15} \; .
+\end{align*}
+\end{egg}
+
+\PDFfig{8_integrales_appl/vol4}{Solide de base donnée dont les sections
+perpendiculaires à l'axe des $x$ sont des carrés}{Solide dont la base est
+bornée par les courbes $y=x^2$ et $y=8-x^2$, et les sections perpendiculaires
+à l'axe des $x$ sont des carrés.}{VOL4}
+
+% \begin{egg}
+% Trouvons le volume $V$ du solide $S$ dont la base est la région du plan
+% $x$,$y$ bornée par la courbe $y=x^{1/3}$, l'axe des $x$ et les droites $x=0$
+% et $x=1$.  Les sections de $S$ perpendiculaires à l'axe des $x$ sont des
+% carrés.
+% \end{egg}
+
+\subsection{Solides de révolution}
+
+Nous pouvons utiliser (\ref{comp_vol}) pour trouver le volume d'un solide obtenu
+par la rotation d'une région plane autour d'un axe.
+
+\PDFfig{8_integrales_appl/rot1}{Un solide de révolution dont les sections
+transversales sont les anneaux}{La rotation de la région $R$ autour de l'axe
+$y=c$ (et $z=0$) donne une solide dont les sections perpendiculaires à
+l'axe des $x$ sont les anneaux comme celui représenté à la
+figure~\ref{ROT3}}{ROT1}
+
+Supposons que la région $R$ soit la région bornée par les courbes $y=f(x)$ et
+$y=g(x)$, et les droites $x=a$ et $x=b$ (figure~\ref{ROT1}).
+
+\PDFfig{8_integrales_appl/rot2}{Un solide produit par la rotation
+d'une région autour de l'axe $y=c$}{Le solide $S$ qui résulte de la
+rotation de la région $R$ représenté à la figure~\ref{ROT1} autour de
+l'axe $y=c$ (et $z=0$)}{ROT2}
+
+Si nous faisons la rotation de la région $R$ autour de l'axe $y=c$ (et
+$z=0$) qui ne coupe pas la région $R$, nous obtenons un solide $S$
+semblable à celui illustré à la figure~\ref{ROT2}.
+
+\PDFfig{8_integrales_appl/rot3}{Une section obtenue par l'intersection d'un
+solide avec un plan où $x$ est constant}{Une section du solide $S$
+représenté à la figure~\ref{ROT2} obtenue par l'intersection du solide
+$S$ avec un plan où $x$ est constant.  Les sections sont donc
+perpendiculaires à l'axe des $x$.}{ROT3}
+
+Pour calculer le volume $V$ du solide $S$, il faut trouver une formule pour
+l'aire $A(x)$ des sections perpendiculaires à l'axe des $x$.  Si nous
+faisons la projection dans le plan $y$,$z$ d'une section, nous trouvons un
+anneau centré au point $(c,0)$ dont le petit rayon est $|f(x)-c|$ et
+le grand rayon par $|g(x)-c|$ (figure~\ref{ROT3}).
+
+Puisque l'aire d'un disque de rayon $r$ est donnée par $\pi r^2$,
+l'aire $A(x)$ de notre anneau est l'aire du disque de rayon $|g(x)-c|$
+moins l'aire du disque de rayon $|f(x)-c|$.  Ainsi,
+\[
+A(x) = \pi\left(g(x)-c\right)^2 - \pi\left(f(x)-c\right)^2 \; .
+\]
+Nous obtenons donc la formule suivante pour calculer le volume du solide $S$.
+
+\begin{focus}[][des anneaux]{\mth}
+Soit $R$ une région bornée par les courbes $y=f(x)$ et $y=g(x)$, et les
+droites $x=a$ et $x=b$.  Soit $S$ le solide généré par la rotation de la
+région $R$ autour de l'axe $y=c$ qui ne coupe pas la région $R$.  Le volume
+$V$ du solide $S$ est
+\begin{equation}\label{vol_washer}
+V = \pi \int_a^b \left|\left(g(x)-c\right)^2 -
+  \left(f(x)-c\right)^2\right| \dx{x} \; .
+\end{equation}
+\end{focus}
+
+\begin{egg}
+Quelle est le volume $V$ du solide $S$ obtenu par la rotation autour de l'axe
+$y=-1$ de la région bornée par les courbes $y=x^2+1$ et $y=3-x^2$?
+
+Nous retrouvons à la figure~\ref{ROT1_ex} le graphe des deux courbes
+$y=x^2+1$ et $y=3-x^2$, et la région $R$ qui est bornée par ces deux
+courbes.  Pour
+déterminer les points d'intersections de ces deux courbes, il faut résoudre
+l'équation $3-x^2 = 1+x^2$ pour trouver les valeurs de $x$ où la valeur de
+$y$ est la même sur les deux courbes. Ces valeurs de $x$ sont les
+solutions de l'équation quadratique $2x^2-2 = 2(x^2-1)=0$.  Donc
+$x=\pm 1$.  Nous obtenons le point d'intersection $(-1,2)$ pour $x=-1$ et
+le point d'intersection $(1,2)$ pour $x=1$.
+
+Calculons le volume $V$ du solide $S$ à l'aide de la formule
+(\ref{vol_washer}).  Nous avons
+\begin{align*}
+V &= \pi \int_{-1}^1 \, \left( (3-x^2) - (-1)\right)^2
+ - \left( (x^2+1) - (-1)\right)^2 \dx{x} \\
+&= \pi \int_{-1}^1 \, \left( 4-x^2\right)^2-\left(x^2+2\right)^2 \dx{x}
+= \pi \int_{-1}^1 \, (-12 x^2 + 12) \dx{x} \\
+&= \pi \left( -4 x^3 + 12x \right)\bigg|_{x=-1}^1
+= 16 \pi \; .
+\end{align*}
+\label{ROT_ex1}
+\end{egg}
+
+\PDFfig{8_integrales_appl/rot1_ex}{La rotation autour de l'axe $x=-1$ de la
+région bornée par les deux courbes $y=x^2+1$ et $y=3-x^2$}{La rotation autour
+de l'axe $x=-1$ de la région bornée par les deux courbes $y=x^2+1$ et
+$y=3-x^2$ va produire un solide $S$ dans l'espace qui ressemblera à un
+bagel.}{ROT1_ex}
+
+\begin{egg}
+Trouvons le volume $V$ de chacun des solides $S$ suivant.
+
+Il est toujours préférable de dessiner la région qui fera une révolution
+autour de l'axe donné.
+
+\subQ{a} $S$ est le solide obtenu de la rotation autour de l'axe des $x$ de
+la région bornée par la courbe $y=x^2-3x+2$ et l'axe des $x$.
+
+Les valeurs de $x$ aux points d'intersection de la parabole
+$y=x^2-3x+2$ avec l'axe des $x$ sont en fait les racines du
+polynôme $x^2-3x+2=(x-2)(x-1)$.  Les racines sont $1$ et $2$.
+Le dessin suivant représente la région $R$ bornée par
+la parabole $y=x^2-3x+2$ et l'axe des $x$.
+\PDFgraph{8_integrales_appl/rot8}
+
+Calculons le volume $V$ du solide de révolution $S$ à l'aide de
+la formule (\ref{vol_washer}).  Nous avons
+\begin{align*}
+V &= \pi \int_1^2 \left(x^2-3x+2\right)^2 \dx{x} =
+\pi \int_1^2 \left( x^4-6x^3+13x^2 -12x +4\right) \dx{x} \\
+&= \pi \left( \frac{x^5}{5} -\frac{3}{2} x^4 +\frac{13}{3}x^3 - 6x^2 +
+  4x \right)\bigg|_{x=1}^2
+= \frac{\pi}{30} \; .
+\end{align*}
+
+\subQ{b} $S$ est le solide obtenu de la rotation autour de l'axe des $x$ de
+la région bornée par la courbe $y=\sin(x)$ pour $0\leq x \leq \pi$ et l'axe
+des $x$.
+
+Le dessin suivant représente la région $R$ bornée par la
+courbe $y=\sin(x)$ pour $0\leq x \leq \pi$ et l'axe des $x$.
+\PDFgraph{8_integrales_appl/rot10}
+
+Le volume $V$ du solide de révolution est donc
+\[
+V = \pi \int_0^{\pi} \sin^2(x) \dx{x}
+= \frac{\pi}{2}\int_0^\pi (1-\cos(2x)) \dx{x}
+= \frac{\pi}{2} \left( x - \frac{1}{2}\; \sin(2x) \right)\bigg|_0^\pi
+= \frac{\pi^2}{2} \ .
+\]
+
+\subQ{c} $S$ est le solide obtenu de la rotation autour de l'axe des $y$ de
+la région bornée par la courbe $x=2y-y^2$ et l'axe des $y$.
+
+Le dessin suivant représente la région $R$ bornée par
+la parabole $x=y^2-2y$ et l'axe des $y$.
+\PDFgraph{8_integrales_appl/rot11}
+
+Nous pouvons évidemment écrire une formule identique à
+(\ref{vol_washer}) où $x$ est remplacé par $y$.  Ainsi, le volume $V$
+du solide de révolution est
+\[
+V = \pi \int_0^2 (2y-y^2)^2 \dx{y}
+= \pi \int_0^2 (y^4-4y^3+4y^2)\dx{y}
+= \pi \left( \frac{y^5}{5} - y^4 + \frac{4y^3}{3}\right)\bigg|_0^2
+= \frac{16\pi}{15} \ .
+\]
+
+\subQ{d} $S$ est le solide obtenu de la rotation autour de l'axe $y=7$ de la
+région bornée par la parabole $y=(x-4)^2+1$ et la droite $y=x-1$.
+
+Pour obtenir les valeurs de $x$ aux points d'intersection de la parabole
+$y=(x-4)^2+1$ et de la droite $y=x-1$, il faut résoudre l'équation
+$x-1= (x-4)^2+1$; c'est-à-dire, l'équation
+$x^2-9x+18 = (x-3)(x-6) = 0$.  Donc $x = 3$ ou $x=6$.  Nous obtenons 
+les deux points d'intersection $(3,2)$ et $(6,5)$.  Le dessin suivant
+représente la région $R$ bornée par la parabole $y=(x-4)^2+1$ et la
+droite $y=x-1$.
+\PDFgraph{8_integrales_appl/rot12}
+Ainsi, le volume $V$ du solide de révolution est
+\begin{align*}
+V &= \pi \int_3^6 \left( ((x-4)^2+1-7)^2 - (x-1-7)^2\right) \dx{x} \\
+&= \pi \int_3^6 \left( x^4 -16 x^3 + 83 x^2 -144 x + 36 \right) \dx{x} \\
+&= \pi \left( \frac{x^5}{5} - 4 x^4 + \frac{83x^3}{3} - 72 x^2 +
+36x\right)\bigg|_3^6 = 39.6 \pi \ .
+\end{align*}
+
+\subQ{e} $S$ est le solide obtenu de la rotation autour de l'axe $y=-1$ de la
+région bornée par la courbe $y=\cos(x)$ pour $0\leq x\leq \pi/2$, et les
+droites $x=0$ et $y=0$.
+
+Le dessin suivant représente la région $R$ bornée par la courbe
+$y=\cos(x)$ pour $0\leq x \leq \pi/2$, l'axe des $x$ et l'axe des $y$.
+\PDFgraph{8_integrales_appl/rot13}
+Ainsi, le volume $V$ du solide de révolution est
+\begin{align*}
+V &= \pi \int_0^{\pi/2} \left( (\cos(x) + 1)^2 - (0 +1)^2 \right) \dx{x}
+= \pi \int_0^{\pi/2} \left( \cos^2(x) + 2\cos(x) \right) \dx{x} \\
+& = \pi \int_0^{\pi/2} \left( \frac{1}{2} (1+\cos(2x)) + 2\cos(x)\right)
+\dx{x} \\
+&= \frac{\pi}{2} \left( x + \frac{1}{2}\ \sin(2x) + 4\sin(x)
+\right)\bigg|_0^{\pi/2} 
+= \frac{\pi}{2}\left(\frac{\pi}{2} + 4\right) \ .
+\end{align*}
+\label{eggSR_washer}
+\end{egg}
+
+Quelle sera le volume $V$ du solide $S$ représenté à la
+figure~\ref{ROT4}, obtenu par la rotation de la région $R$ représentée à
+la figure~\ref{ROT1} autour d'un axe $x=c$ qui ne coupe pas $R$?  Il
+est généralement inconcevable d'utiliser les sections provenant de
+l'intersection du solide $S$ avec les plans perpendiculaires à l'axe
+des $y$ (i.e.\ les plans où $y$ est constant) car il est fort possible
+que ces sections soient formées de plusieurs anneaux.
+
+\PDFfig{8_integrales_appl/rot4}{La rotation d'une région autour d'un axe
+$x=c$ donne un solide}{La rotation de la région $R$ autour de l'axe
+$x=c$ (et $z=0$) donne un solide $S$.}{ROT4}
+
+Il faut donc retourner à la définition de l'intégrale pour développer une
+formule qui nous permettra de calculer le volume du solide $S$ dans le cas
+présent.
+
+Pour estimer le volume $V$ du solide $S$, nous partageons le solide $S$ en mince
+tubes dont l'axe est l'axe $x=c$ autour de laquelle la région $R$ fait une
+rotation.  Nous estimons le volume de chacun des tubes.  La somme de ces
+approximations nous donne une approximation du volume de $S$.
+
+Soit $k$, un entier positif.  Posons $\Delta x = (b-a)/k$ et
+$x_i = a + i \Delta x$ pour $i=0$, $1$, $2$, \ldots, $k$.  Nous obtenons une
+partition de l'intervalle $[a,b]$ en sous-intervalles de la forme
+$[x_i,x_{i+1}]$ pour $i=0$, $1$, \ldots, $k-1$.
+
+Soit $R_i$, la région donnée par l'intersection de la région $R$ avec
+l'ensemble $\{(x,y) : x_i \leq x \leq x_{i+1} \}$.  Le $i^e$ tube qui
+compose le solide $S$ (figure~\ref{ROT5}) est obtenue par la
+rotation de la région $R_i$ autour de l'axe $x=c$.
+
+\PDFfig{8_integrales_appl/rot5}{Une région dont la rotation autour d'un axe
+produit une portion tubulaire d'une solide}{la région $R_i$ donnée par
+l'intersection de la région $R$ avec l'ensemble
+$\{(x,y) : x_i \leq x \leq x_{i+1} \}$.}{ROT5}
+
+Pour estimer le volume du $i^e$ tube, nous aurons besoin de la formule pour
+calculer l'aire d'un tube $T$ comme celui représenté à la
+figure~\ref{ROT7}.  Le volume $V_T$ de ce tube est obtenu en
+soustrayant le volume du cylindre de rayon $r_1$ du volume du cylindre
+de rayon $r_2$.  Ainsi,
+\begin{equation}\label{vol_tube}
+V_T = \pi r_2^2 h - \pi r_1^2 h = 2\pi \left(\frac{r_1+r_2}{2} \right)
+(r_2-r_1) \ .
+\end{equation}
+
+\PDFfig{8_integrales_appl/rot7}{Calcul de l'aire d'un tube}{Le volume de ce
+tube est obtenu en soustrayant le volume du cylindre de rayon $r_1$ du volume
+du cylindre de rayon $r_2$.}{ROT7}
+
+Pour estimer le volume $V_i$ du $i^e$ tube, nous appliquons la formule
+(\ref{vol_tube}) au tube $S_i$ qui est représenté à la figure~\ref{ROT6}.  La
+valeur du rayon $r_1$ et celle du rayon $r_2$ dans la formule
+(\ref{vol_tube}) sont $r_1=c-x_{i+1}$ et $r_2=c-x_i$.  Nous avons alors que
+\begin{align*}
+r_2-r_1 &= x_{i+1} - x_i = \Delta x
+\intertext{et}
+\frac{r_1+r_2}{2} &= \frac{(c-x_{i-1})+(c-x_i)}{2}
+= c - \frac{x_{i-1}+x_i}{2}
+\end{align*}
+où $(x_{i-1}+x_i)/2$ est le point milieu de l'intervalle $[x_i,x_{i+1}]$.  Si
+nous posons
+\[
+x_i^\ast = \frac{x_{i-1}+x_i}{2}
+\qquad \text{et} \quad h = |f(x_i^\ast)-g(x_i^\ast)| \; ,
+\]
+alors le volume de $S_i$ est
+\[
+2\pi \,\frac{r_1+r_2}{2} \, (r_2-r_1) h
+= 2 \pi \, (c-x_i^\ast) |f(x_i^\ast)-g(x_i^\ast)| \Delta x
+\]
+
+\PDFfig{8_integrales_appl/rot6}{Approximation d'une portion tubulaire d'une
+solide}{Un tube $S_i$ d'épaisseur $\Delta x$ et de hauteur
+$|f(x_i^\ast)-g(x_i^\ast)|$.}{ROT6}
+
+Pour $\Delta x$ petit (i.e. pour des grandes valeurs de $k$), le volume $V_i$
+du $i^e$ tube produit par la rotation de la région $R_i$ autour de l'axe
+$x=c$ est approximativement le volume de $S_i$. 
+Ainsi,
+\[
+V_i \approx
+2 \pi \, (c-x_i^\ast) |f(x_i^\ast)-g(x_i^\ast)| \Delta x
+\]
+pour $i=0$, $1$, $2$, \ldots, $k-1$ et $\Delta x$ petit.
+
+La somme du volume de chaque tube $S_i$ donne un estimé du volume $V$ de
+$S$.
+\[
+V = \sum_{i=0}^{k-1} V_i \approx \sum_{i=0}^{k-1}
+2 \pi \, (c-x_i^\ast) |f(x_i^\ast)-g(x_i^\ast)| \Delta x \; .
+\]
+Plus $k$ sera grand (et donc $\Delta x$ petit), plus la somme ci-dessus sera
+près du volume $V$ du solide $S$.  À la limite, nous obtenons le volume $V$ de
+$S$.
+
+Mais, ces sommes représentent aussi des sommes de Riemann pour l'intégrale
+\begin{equation}\label{vol_tube1}
+2 \pi \int_a^b (c-x) |f(x)-g(x)| \dx{x} \; .
+\end{equation}
+Un raisonnement identique à celui qui a été utilisé pour développer
+(\ref{vol_tube1}) donne
+\[
+2 \pi \int_a^b (x-c) |f(x)-g(x)| \dx{x}
+\]
+lorsque l'axe de rotation $x=c$ est à la gauche de la région $R$.
+
+Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
+
+\begin{focus}[][des cylindres]{\mth}
+Soit $R$ une région bornée par les courbes $y=f(x)$ et $y=g(x)$, et les
+droites $x=a$ et $x=b$.  Soit $S$ le solide généré par la rotation de la
+région $R$ autour de l'axe $x=c$ qui ne coupe pas la région $R$. Le volume
+$V$ du solide $S$ est
+\begin{equation}\label{comp_vol_tube}
+V = 2 \pi \int_a^b |c-x| |f(x)-g(x)| \dx{x} \; .
+\end{equation}
+\end{focus}
+
+\begin{egg}
+Quelle est le volume $V$ du solide $S$ obtenu de la rotation autour de l'axe
+$x=2$ de la région $R$ donnée à l'exemple~\ref{ROT_ex1} et illustrée à la
+figure~\ref{ROT1_ex}.
+
+Utilisons la formule (\ref{comp_vol_tube}) pour calculer
+le volume $V$ de $S$.  Nous avons
+\begin{align*}
+V &= 2 \pi \int_{-1}^1 (2-x) \left( (3-x^2) - (x^2+1) \right)\dx{x} \\
+&= 2 \pi \int_{-1}^1 (2-x) (2 - 2x^2) \dx{x}
+= 2 \pi \int_{-1}^1 (2x^3-4x^2-2x+4) \dx{x} \\
+&= 2\pi \left( \frac{x^4}{2} - \frac{4x^3}{3} - x^2 +
+4x \right)\bigg|_{x=-1}^1 = \frac{32\pi}{3} \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Trouvons le volume $V$ de chacun des solides $S$ suivant.
+
+Au risque de ce répéter, il est préférable de dessiner la région qui fera
+une révolution autour de l'axe donné.
+
+\subQ{a} $S$ est le solide obtenu de la rotation autour de l'axe des $y$ de
+la région bornée par la courbe $y=x^2-3x+2$ et l'axe des $x$.
+
+Nous avons vu à l'exemple~\ref{eggSR_washer} que la région
+$R$ bornée par la parabole $y=x^2-3x+2$ et l'axe des $x$ est la région
+représentée dans la dessin ci-dessous.
+\PDFgraph{8_integrales_appl/rot8}
+
+Nous pouvons calculer le volume $V$ du solide $S$ à l'aide de la formule
+(\ref{comp_vol_tube}).  Nous avons
+\begin{align*}
+V &= 2 \pi \int_1^2 x \, \left( 0 - \left(x^2-3x+2\right)\right) \dx{x} =
+2\pi \int_1^2 \left( -x^3 + 3x^2 - 2x \right) \dx{x} \\
+&= 2\pi \left( -\frac{x^4}{4} + x^3 - x^2 \right)\bigg|_{x=1}^2 =
+\frac{\pi}{2} \; .
+\end{align*}
+
+\subQ{b} $S$ est le solide obtenu de la rotation autour de l'axe $x=1$ de la
+région bornée par la courbe $y=x^2$ et les droites $y=0$, $x=1$ et $x=2$.
+
+Le dessin suivant représente la région $R$ qui est bornée par la
+parabole $y=x^2$, les droites $x=1$ et $x=2$, et l'axe des $x$.
+\PDFgraph{8_integrales_appl/rot14}
+Ainsi,
+\[
+V = 2\pi \int_1^2 (x-1) (x^2-0) \dx{x} =
+= 2 \pi \int_1^2 \left( x^3 - x^2 \right)\dx{x}
+= 2\pi \left(\frac{x^4}{4} - \frac{x^3}{3} \right)\bigg|_1^2
+= \frac{17 \pi}{6} \ . 
+\]
+
+\subQ{c} $S$ est le solide obtenu de la rotation autour de l'axe $x=1$ de la
+région bornée par la courbe $y=e^x$ et les droites $y=e$ et $x=0$.
+
+Le dessin suivant représente la région $R$ qui est bornée
+par la courbe $y=e^x$, la droite $y=e$ et l'axe des $y$.
+\PDFgraph{8_integrales_appl/rot15}
+La formule (\ref{comp_vol_tube}) pour le volume d'un solide de révolution
+donne
+\begin{align*}
+V &= 2\pi \int_0^1 (1-x) (e-e^x) \dx{x}
+= 2\pi \int_0^1 (e -e x - e^x + xe^x )\dx{x} \\
+&= 2\pi\left(ex- \frac{e}{2}x^2 - e^x + xe^x - e^x\right)\bigg|_0^1
+= 2\pi\left(2-\frac{e}{2}\right) \ .
+\end{align*}
+
+\subQ{d} $S$ est le solide obtenu de la rotation autour de l'axe $x=-2$ de la
+région bornée par les paraboles $y=4x-x^2$ et $y=8x-2x^2$.
+
+Le dessin suivant contient les graphes des paraboles $y=4x-x^2$
+et $y=8x-2x^2$, et illustre la région $R$ qui est bornée par ces
+deux paraboles.
+\PDFgraph{8_integrales_appl/rot9}
+Pour déterminer les valeurs de $x$ aux points d'intersections de ces
+deux paraboles, il faut résoudre l'équation $4x-x^2 = 8x-2x^2$.
+Ces valeurs de $x$ sont les solutions de l'équation quadratique
+$x^2 - 4x = x(x-4)=0$; c'est-à-dire, $x=0$ ou $x=4$.  Nous avons le point
+d'intersection $(0,0)$ pour $x=0$ et le point d'intersection
+$(4,0)$ pour $x=4$.  Les deux graphes se coupent sur l'axe des $x$.
+
+Nous pouvons calculer le volume $V$ du solide $S$ à l'aide de la formule
+(\ref{comp_vol_tube}).  Nous avons
+\begin{align*}
+V &= 2 \pi \int_0^4 (x+2) \, \left( \left(8x-2x^2\right) -
+\left(4x-x^2\right)\right) \dx{x} =
+2\pi \int_0^4 (x+2) \left( 4x-x^2 \right) \dx{x} \\
+&= 2\pi \int_0^4 \left( -x^3 +2x^2 +8x \right) \dx{x}
+= 2\pi \left(-\frac{x^4}{4} + \frac{2}{3} x^3 + 4x^2 \right)\bigg|_{x=0}^4 =
+\frac{4^4\pi}{3} \; .
+\end{align*}
+\end{egg}
+
+\section{Masse d'un objet \eng}
+
+Comme à la section précédente pour le calcul du volume d'un solide,
+nous pouvons utiliser l'intégration pour calculer le masse $M$ d'un
+solide $S$ comme celui représenté à la figure~\ref{VOL2}.
+
+Nous supposons que la densité du solide varie de façon continue en fonction de
+$x$ seulement.  C'est très proche de la réalité lorsque le solide $S$ est un
+tube de petit diamètre.  Soit $\rho(s)$ la densité du solide pour la section
+où $x=s$.
+
+Pour estimer la masse $M$ du solide $S$, nous partageons le solide $S$
+en fines tranches parallèles au plan $y$,$z$ et nous estimons la masse
+de chacune de ces tranches. La somme de ces approximations nous donne
+une approximation de la masse de $S$.
+
+Nous utilisons les tranches (figure~\ref{VOL2}), les cylindres
+(figure~\ref{VOL1}) et les sections (figure~\ref{VOL3}) qui
+ont été définies à la section précédente. Nous pouvons assumer que la
+densité de la $i^e$ tranche est approximativement constant à
+$\rho(x_i^\ast)$; c'est-à-dire que $\rho(x) = \rho(x_i^\ast)$ pour
+$x_i \leq x \leq x_{i+1}$.  Si $\Delta x$ est très petit, il est
+raisonnable de supposer que la densité $\rho(x)$ ne changera presque
+pas pour $x_i \leq x \leq x_{i+1}$.
+
+Comme la masse d'un objet de densité constante est le produit de sa densité
+par son volume, la masse $M_i$ de la $i^e$ tranche est approximativement la
+masse du solide $S_i$ pour lequel nous assumons que la densité est
+$\rho(x_i^\ast)$; c'est-à-dire,
+\[
+M_i \approx \rho(x_i^\ast) A(x_i^\ast) \Delta x
+\]
+où $A(s)$ est l'aire de la section engendrée par l'intersection du plan $x=s$
+avec le solide $S$.  La somme de la masse de chaque solide $S_i$ donne une
+estimation de la masse $M$ de $S$.
+\[
+M = \sum_{i=0}^{k-1} M_i \approx \sum_{i=0}^{k-1}
+\rho(x_i^\ast) A(x_i^\ast) \Delta x \; .
+\]
+Plus $k$ sera grand (et donc $\Delta x$ petit), plus la somme ci-dessus sera
+près de la masse $M$ du solide $S$.  À la limite, nous obtenons la masse $M$ de
+$S$.
+
+Mais, ces sommes représentent aussi des sommes de Riemann pour l'intégrale
+\[
+\int_a^b \rho(x) A(x)\dx{x} \; .
+\]
+Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
+
+\begin{focus}{\mth} \index{Masse}
+Soit $S$ est solide dont la densité varie seulement dans une
+direction.  Nous pouvons supposer que cet direction est donnée par l'axe
+des $x$ et que $\rho(x)$ est la \lgm densité\rgm\ de la section $x=s$
+engendrée par l'intersection du plan $x=s$ avec le solide $S$.  Si
+$A(s)$ est l'aire de cette section, alors le masse du solide $S$ est
+\begin{equation}\label{comp_mass}
+M = \int_a^b \rho(x)A(x)\dx{x} \; .
+\end{equation}
+\end{focus}
+
+\section{Travail \eng}
+
+La force exercée sur un objet qui se déplace en ligne droite est donnée par
+le produit de sa masse par son accélération.  Ainsi, si $m$ est la masse en
+kilogrammes de l'objet et $x(t)$ est sa position en mètres au temps $t$ en
+secondes, l'accélération de l'objet en m/s$^2$ est
+\[
+a(t) = \dydxn{x}{t}{2}(t)
+\]
+et la force en Newtons exercée sur l'objet au temps $t$ est
+\[
+F(t) = m\ a(t) = m \ \dydxn{x}{t}{2}(t) \; .
+\]
+L'abréviation pour un Newton est la lettre N.  Ainsi, N = kg\ m/s$^2$.
+
+Le travail en joules fait pour déplacer un objet en ligne droite sur une
+distance $d$, lorsque la force $F$ exercée est constante durant tout le
+déplacement, est donnée par
+\begin{equation} \label{force}
+W = F\ d \; .
+\end{equation}
+L'abréviation pour un joule est la lettre J.  Ainsi, J = N\ m.
+
+Avec ces deux résultats de physique, nous sommes en mesure de répondre aux
+questions suivantes.
+
+\subsection{Travail pour déplacer un objet}
+
+Un objet se déplace en ligne droite sous l'effet d'une force qui varie
+avec la distance parcourue.  Si cette force est de $F(x)$ N lorsque
+l'objet est à $x$ m de son point de départ, qu'elle est le travail
+nécessaire pour déplacer l'objet sur une distance de $L$ m à partir de
+l'origine, son point de départ? 
+
+Si la force était constante, la formule (\ref{force}) résoudrait le
+problème.  Malheureusement, ce n'est pas le cas présentement.
+
+Divisons l'intervalle $[0,L]$ en $k$ sous-intervalles de longueur
+$\Delta x = L/k$.  Chaque intervalle est donc de la forme $[x_i,x_{i+1}]$ où
+$x_i= i\,\Delta x$ pour $i=0$, $1$, $2$, \ldots, $k$.
+
+Si le sous-intervalle $[x_i,x_{i+1}]$ est très court, nous pouvons supposer
+que la force $F$ est presque constante sur cet intervalle et est égale
+à $F(x_i^\ast)$ où $x_i^\ast \in [x_i,x_{i+1}]$.  Le travail pour
+déplacer l'objet de $x_i$ à $x_{i+1}$ est donc $F(x_i^\ast)\,\Delta x$
+grâce à la formule (\ref{force}).
+
+Ainsi, le travail $W$ pour déplacer l'objet de $L$ m à partir de
+l'origine est donc approximativement
+\[
+W \approx \sum_{i=0}^{k-1} F(x_i^\ast) \, \Delta x  \; ;
+\]
+la somme du travail fait pour déplacer l'objet sur chacun des
+sous-intervalles $[x_i,x_{i+1}]$.  Cette somme est une somme de Riemann pour
+l'intégrale
+\[
+\int_0^L F(x) \dx{x} \; .
+\]
+Donc, si $k$ tend vers l'infini, nous trouvons que le travail pour déplacer
+l'objet de $L$ m à partir de l'origine est donnée par
+\[
+W = \int_0^L F(x) \dx{x} \; .
+\]
+
+\begin{focus}{\mth} \index{Travail}
+Le travail nécessaire pour déplacer un objet d'un point $x=a$ à un
+point $x=b$ (en ligne droite) est
+\[
+W = \int_a^b F(x) \dx{x} \; ,
+\]
+où $F(x)$ est la force exercée sur l'objet lorsqu'il occupe la
+position $x$.
+\end{focus}
+
+\begin{egg}
+Un objet se déplace en ligne droite sous l'effet d'une force.  Si cette force
+est de $F(x) = 5x^2 +3x+1$ N lorsque l'objet est à $x$ mètres de son point de
+départ, qu'elle est le travail nécessaire pour déplacer l'objet sur une
+distance de $6$ mètres à partir de l'origine?
+
+Le travail est donnée par
+\[
+W = \int_0^6 \left(5x^2 + 3x + 1\right) \dx{x}
+= \left(\frac{5}{3}\,x^3
++ \frac{3}{2}\, x^2 + x\right)\bigg|_{x=0}^6 = 420\ \text{J} \; .
+\]
+\end{egg}
+
+\PDFfig{8_integrales_appl/icecube}{Travail pour lever un bloc de
+glace de $50$ mètres}{Travail pour lever le bloc de glace jusqu`à une
+hauteur de $50$ mètres.  Le bloc de glace est levé à la vitesse de
+$1.5$ m/min et il font à une vitesse de $4$ kg/min.  Il faut aussi
+tenir compte dans ce problème de la masse de la corde qui est de $0.5$
+kg/m.}{ICE}
+
+\begin{egg}
+Nous voulons lever un bloc de glace de $100$ kg à partir du sol jusqu'à une
+hauteur de $50$ mètres.  Le bloc de glace font à une vitesse de $4$ kg/min et
+la vitesse à laquelle nous levons le bloc est de $1.5$ m/min.  Si la
+masse de la corde est de $0.5$ kg/m, quel est le travail nécessaire
+pour lever le bloc à la hauteur désirée?  Le montage est illustré à la
+figure~\ref{ICE}.
+
+Commençons par éliminer le temps dans l'énoncé du problème.  Le bloc de glace
+font à une vitesse de $4$ kg/min et en une minute le bloc monte de $1.5$
+mètres.  La masse du bloc diminue donc de $4$ kg par $1.5$ mètres;
+c'est-à-dire de $8/3$ kg/m. 
+
+Divisons l'intervalle $[0,50]$ en $k$ sous-intervalles de longueur
+$\Delta y = 50/k$.  Chaque intervalle est donc de la forme $[y_i,y_{i+1}]$ où
+$y_i= i\,\Delta y$ pour $i=0$, $1$, $2$, \ldots, $k$.  Nous choisissons
+$y_i^\ast \in [y_i,y_{i+1}]$ pour tout $i$.
+
+Si le sous-intervalle $[y_i,y_{i+1}]$ est très court, nous pouvons
+assumer que le bloc de glace n'a pas le temps de fondre entre $y_i$ et
+$y_{i+1}$ mètres et donc que sa masse est constante et égale à
+$\left(100- (8/3) y_i^\ast\right)$ kg car le bloc font à $8/3$
+kg/m.  Le travail pour lever le bloc de $y_i$ à
+$y_{i+1}$ mètres, une distance de $\Delta y$, est approximativement 
+\[
+9.8 \left(100- \frac{8}{3} y_i^\ast\right) \Delta y \; .
+\]
+
+De même, si le sous-intervalle $[y_i,y_{i+1}]$ est très court, nous pouvons
+assumer que la corde que nous devons lever entre $y_i$ et $y_{i+1}$ est de
+longueur constante égale à $(50-y_i^\ast)$ mètres.  La masse de cette
+portion de la corde est de $0.5\,(50-y_i^\ast)$ kg.  Le travail pour
+lever cette portion de la corde de $y_i$ à $y_{i+1}$ mètres, une
+distance de $\Delta y$, est approximativement
+\[
+9.8  \big( 0.5\,(50-y_i^\ast)\big) \Delta y \; .
+\]
+Le travail pour lever l'ensemble formé du bloc de glace et de la corde
+de $y_i$ à $y_{i+1}$ mètres est donc approximativement
+\[
+9.8 \left(100- \frac{8}{3} y_i^\ast\right) \Delta y +
+9.8 \big( 0.5\,(50-y_i^\ast) \big)\Delta y
+= 9.8 \left(125-\frac{19}{6} y_i^\ast \right) \Delta y \; .
+\]
+
+Ainsi, le travail pour lever l'ensemble formé du bloc de glace et de la corde
+du sol jusqu'à une hauteur de $50$ mètres est approximativement
+\[
+W \approx \sum_{i=0}^{k-1} 9.8 \left(125-\frac{19}{6} y_i^\ast\right)
+\Delta y \; .
+\]
+Cette somme est une somme de Riemann pour l'intégrale
+\[
+\int_0^{50} 9.8 \left(125-\frac{19}{6} y\right) \dx{y} \; .
+\]
+Donc, si $k$ tend vers l'infini, nous trouvons que le travail pour lever
+l'ensemble formé du bloc de glace et de la corde du sol jusqu'à une hauteur
+de $50$ mètres est donnée par
+\[
+W = \int_0^{50} 9.8 \left(125-\frac{19}{6} y\right) \dx{y} \; .
+\]
+Ce qui donne
+\[
+W = 9.8 \, \left(125y - \frac{19}{12}\,y^2\right)\bigg|_{y=0}^{50} =
+22,458.\overline{3} \ \text{J} \; .
+\]
+\end{egg}
+
+Une autre situation où nous pouvons avoir à calculer le travail pour déplacer
+une objet est lorsque cet objet est attaché à un ressort.
+
+\PDFfig{8_integrales_appl/hooke}{Lois de Hooke pour les ressorts}
+{Lois de Hooke pour les ressorts}{ressorT}
+
+Nous considérons un mécanisme comme celui représenté à la
+figure~\ref{ressorT} où nous ignorons toute friction et où la gravité
+peut être négligée.  La {\bfseries lois de Hooke}\index{Lois de Hooke}
+pour les ressorts dit que la force $F(x)$ nécessaire pour maintenir un
+ressort à une longueur de $x$ m est $F(x)= k (x-x_0)$, où $x_0$ est la
+longueur du ressort au repos et $k$ est une constante positive.  Si
+$x>x_0$, la force est dans la direction positive alors que, si
+$x<x_0$, la force est dans la direction négative.
+
+\begin{egg}
+Une force de $20$ N est nécessaire pour maintenir un ressort à une longueur
+de $10$ m.  Si la longueur au repos du ressort est $5$ m, calculons le
+travail nécessaire pour étirer le ressort de $15$ à $20$ m.
+
+Si $F(x) = k(x-5)$ est la force nécessaire pour maintenir un ressort à une
+longueur de $x$ m, nous obtenons de $F(10) = 20 = 5k$.  Donc $k=4$.
+Le travail nécessaire pour étirer le ressort de $15$ à $20$ m est
+\[
+W = \int_{15}^{20} 4(x-5) \dx{x} = 2(x-5)^2\bigg|_{15}^{20}
+= 2(15^2 - 10^2) = 250 \ \text{J} \ .
+\]
+\end{egg}
+
+\subsection{Travail pour vider un réservoir}
+
+Un réservoir rempli d'un liquide non visqueux est enfoui $h_1$ m sous le sol.
+Ce réservoir est illustré à la figure~\ref{RESERVOIR}. Quelle est le
+travail nécessaire pour vider ce réservoir de son contenu si le niveau
+initial du liquide est à $h_2$ m sous le sol?  Pour les besoins de la
+discussion, la distance positive est vers le haut et $0$ est le niveau
+du sol.  Tout autre choix serait acceptable et conduirait à des
+formules équivalents.
+
+\PDFfig{8_integrales_appl/reservoir}{Un réservoir de forme quelconque enfoui
+sous le sol}{Un réservoir de forme quelconque est enfoui à $h_1$ mètres sous
+le sol.}{RESERVOIR}
+
+Pour obtenir une formule qui nous permettra de trouver le travail fait pour
+vider le réservoir, nous divisons l'intervalle $h_3 \leq x \leq h_2$ en $k$
+sous-intervalles de longueur $\Delta x = (h_2-h_3)/k > 0$.  Chaque
+sous-intervalle est de la forme $[x_i,x_{i+1}]$ où $x_i = h_3 + i \Delta x$
+pour $i=0$, $1$, $2$, \ldots, $k-1$.
+
+Utilisons (\ref{force}) pour estimer le travail fait pour retirer du
+réservoir la mince couche de liquide entre $x_i$ et $x_{i+1}$
+(figure~\ref{RESERVOIR2}).
+
+\PDFfig{8_integrales_appl/reservoir2}{Une mince couche de liquide dans un
+réservoir}{Une mince couche de liquide pour $x$ entre $x_i$ et
+$x_{i+1}$}{RESERVOIR2}
+
+Soit $x_i^\ast$ un point de l'intervalle $[x_i,x_{i+1}]$.  Si
+$\Delta x$ est très petit, nous pouvons estimer le volume de la mince
+couche de liquide entre $x_i$ et $x_{i+1}$ (figure~\ref{RESERVOIR2})
+par le volume du solide $V_i$ qui est représenté à la
+figure~\ref{RESERVOIR1}.  $V_i$ est un solide borné par
+les plans $x=x_i$ et $x=x_{i+1}$, et dont les sections horizontales sont
+tous identiques à la section produite par l'intersection du plan
+$x=x_i^\ast$ avec le réservoir.  Nous pouvons assumer que la paroi de
+$V_i$ pour $x_{i+1} \leq x \leq x_i$ est verticale.
+
+Le volume de la mince couche de liquide entre $x_i$ et $x_{i+1}$ est
+donc approximativement le volume du solide $V_i$; c'est-à-dire,
+\begin{equation}\label{vol_couche}
+A(x_i^\ast)\Delta x
+\end{equation}
+où $A(x_i^\ast)$ est l'air de la section produite par l'intersection
+du plan $x=x_i^\ast$ avec le réservoir.
+
+\PDFfig{8_integrales_appl/reservoir1}{Le volume d'une mince couche de liquide
+dans un réservoir}{Le volume de la mince couche de liquide représenté à la
+figure~\ref{RESERVOIR2} peut être estimé par le volume du solide $V_i$ bornée
+par les plans $x=x_i$ et $x=x_{i+1}$, et ayant une paroi
+verticale.}{RESERVOIR1}
+
+En supposant que la densité $\rho(x)$ du liquide à $x$ m sous le sol ne varie
+presque pas pour $x$ entre $x_i$ et $x_{i+1}$, nous pouvons assumer
+que la densité du liquide dans la mince couche est constante et égale
+à $\rho(x_i^\ast)$.  Ainsi, la masse de la mince couche entre $x_i$ et
+$x_{i+1}$ est approximativement $\rho(x_i^\ast) A(x_i^\ast) \Delta x$.
+
+La force exercée sur la mince couche de liquide est approximativement
+\[
+9.8 \rho(x_i^\ast) A(x_i^\ast) \Delta x
+\]
+où $9.8$ m/s$^2$ est l'accélération terrestre.
+
+Grâce au résultat (\ref{force}), le travail fait pour déplacer la mince
+couche de liquide jusqu'au niveau du sol (donc pour retirer cette couche de
+liquide du réservoir) est approximativement
+\[
+9.8 \underbrace{(0-x_i^\ast)}_{\text{profondeur}}
+\rho(x_i^\ast) A(x_i^\ast) \Delta x
+= - 9.8 x_i^\ast) \rho(x_i^\ast) A(x_i^\ast) \Delta x \ .
+\]
+Il ne faut pas oublier que $x_i^\ast <0$ pour tout $i$ par construction.
+
+Si nous faisons cela pour chaque intervalle $[x_i,x_{i+1}]$, nous
+trouvons que le travail $W$ fait pour vider le réservoir est approximativement
+\[
+W \approx -9.8 \sum_{i=0}^{k-1} x_i^\ast \rho(x_i^\ast) A(x_i^\ast)
+\Delta x \ .
+\]
+C'est une somme de Riemann pour l'intégrale
+\[
+-9.8 \int_{h_3}^{h_2} x \rho(x) A(x) \dx{x} \ .
+\]
+Donc, si $k$ tend vers plus l'infini, nous trouvons que le travail fait pour
+vider le réservoir est
+\begin{equation}\label{travail}
+W = -9.8 \int_{h_3}^{h_2} x \rho(x) A(x) \dx{x} \ .
+\end{equation}
+
+\begin{rmk}
+Lors de la discussion précédente, nous avons assumé que la densité du liquide
+variait seulement en fonction de la profondeur.  Cette hypothèse est
+réaliste.  Le lecteur a certainement déjà remarqué la séparation qui se
+produit dans les vinaigrettes à salade où l'eau, le vinaigre et l'huile se
+partage en couches biens distinctes.
+
+De plus, nous supposons qu'il y a une prisse d'aire, qui n'est pas incluse
+dans le dessin du réservoir à la figure~\ref{RESERVOIR}, pour permettre à
+l'aire d'occuper l'espace libérée par le liquide qui s'échappe du
+réservoir par le tuyau.  Autrement, le réservoir se déformerait suite
+au retrait du liquide.
+
+Finalement, le liquide est aspiré près du font du réservoir.  Nous
+pourrions croire que le calcul du travail fait pour retirer la mince
+couche de liquide
+à la profondeur $x_i^\ast$ devrait être fait sur une distance plus grande que
+$x_i^\ast$.  Ce n'est pas le cas.  La pression dû à l'attraction terrestre
+maintient au même niveau le liquide dans le réservoir et dans le tuyau.
+Le niveau du liquide dans le tuyau est la profondeur de la mince
+couche de liquide qui est retirée du réservoir à ce moment.  Aucun
+travail n'est fait par la pompe pour amener le liquide dans le tuyau
+au niveau du liquide dans le réservoir.
+\end{rmk}
+
+\PDFfig{8_integrales_appl/trav_sphere}{Un réservoir sphérique}{Un réservoir
+sphérique de $2$ mètres de rayon enfoui à $3$ mètres sous le
+sol.}{TRAV_SPHERE}
+
+\begin{egg}
+Un réservoir d'eau de forme sphérique est enfoui à $3$ m sous le sol.
+Le rayon du réservoir est de $2$ m (figure~\ref{TRAV_SPHERE}).  Quelle est le 
+travail nécessaire pour vider ce réservoir de son contenu si le niveau
+initial de l'eau est au trois quarts du réservoir?  La densité de
+l'eau est constante et égale à $1000$ kg/m$^3$.
+
+Dans la formule (\ref{travail}), nous avons que $h_3=-7$, $h_2=-4$ et
+$\rho(x) \equiv 1000$.  Il ne manque que $A(x)$ qui, dans le cas présent,
+représente l'aire d'une section où $x$ est constant.  Comme nous
+pouvons le déduire à partir du dessin à droite dans la
+figure~\ref{TRAV_SPHERE}, cette section est un cercle de rayon
+$r(x) = \sqrt{2^2 - (-5-x)^2}$.  Ainsi,
+\[
+A(x) = \pi r^2(x) = \pi (2^2 - (-5-x)^2) = \pi(-21-10x-x^2) \; .
+\]
+Le travail fait pour vider le réservoir est
+\begin{align*}
+W &= -9,800\pi \int_{-7}^{-4} x(-21-10x-x^2) \dx{x}
+= -9,800\pi \left( -\frac{21}{2}x^2 -\frac{10}{3}x^3
+  -\frac{1}{4}x^4\right)\bigg|_{x=-7}^{-4}\\
+&= \pi( 4.6305 \times 10^5) \ \text{J} \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Un réservoir en forme de cône inversé est enfoui à $2$ m sous le
+sol. La base du cône à un rayon de $3$ m et le cône à une hauteur de
+$5$ m (figure~\ref{CONE}).  Si le cône est rempli d'eau dont la densité est
+de $1000$ kg/m$^3$, quel est le travail nécessaire pour vider ce réservoir?
+
+Dans la formule (\ref{travail}), nous avons que
+$h_2=-2$, $h_3=-7$ et $\rho(x) = 1000$ pour tout $x$.  L'attraction
+terrestre est toujours $9.8$ m/s$^2$.  Les sections horizontales sont
+des cercles de rayon $\displaystyle r= \frac{3}{5} (7+x)$.  Donc
+$\displaystyle A(x) = \frac{9\pi}{25} (7+x)^2$.
+
+Le travail nécessaire pour vider le réservoir est
+\begin{align*}
+W & = - \int_{-7}^{-2} 9,800 \left(\frac{9\pi}{25}\right)x(7+x)^2 \dx{x}
+= - 9,800\left(\frac{9\pi}{25}\right) \int_{-7}^{-2}
+\left( x^3 + 14x^2 + 49x \right) \dx{x} \\
+&= - 9,800\left(\frac{9\pi}{25}\right) \left(
+\frac{x^4}{4} + \frac{14 x^3}{3} + \frac{49 x^2}{2} \right)\bigg|_{-7}^{-2}
+= \pi (4.7775 \times 10^5)\ \text{J} \; .
+\end{align*}
+\end{egg}
+
+\PDFfig{8_integrales_appl/cone}{Un réservoir conique}{Un réservoir conique dont
+la base à $3$ mètres de rayon et la hauteur est de $5$ mètres est enfoui
+à $2$ mètres sous le sol.}{CONE}
+
+\begin{egg}
+Un réservoir dont les sections verticales dans une direction sont des
+triangles renversés est enfoui à $2$ m sous le
+sol (figure~\ref{TRIANGLE}).  Si le niveau d'eau initial dans le
+réservoir est au $2/3$ d'eau, quelle est le travail nécessaire pour
+vider ce réservoir?  La densité de l'eau est de $1000$ kg/m$^3$.
+
+Dans la formule (\ref{travail}), nous avons $h_2=-3$ car le réservoir
+est rempli au $2/3$, $h_3=-5$ et $\rho(x) = 1000$ pour tout $x$.  L'attraction
+terrestre est toujours $9.8$ m/s$^2$.  Les sections horizontales
+sont des rectangles dont l'un des côtés est de $8$ m de long et le deuxième
+est de $2r = 5+x$ m de long.  Donc $\displaystyle A(x) = 8(5+x)$.
+
+Le travail nécessaire pour vider le réservoir est
+\begin{align*}
+W & = - \int_{-5}^{-3} 9,800\big( 8\, x(5+x) \big)\dx{x}
+= - 9,800 \times 8 \, \int_{-5}^{-3} \left( x^2 + 5x \right) \dx{x} \\
+&= - 9,800 \times 8 \, \left( \frac{x^3}{3} + \frac{5x^2}{2}
+ \right)\bigg|_{-5}^{-3} 
+= 5.74933\overline{3}\times 10^5\ \text{J} \; .
+\end{align*}
+\end{egg}
+
+\PDFfig{8_integrales_appl/triangle}{Un réservoir dont les sections verticales
+dans une direction sont des triangles renversés}{Un réservoir dont les
+sections verticales dans une direction sont des triangles est enfoui à $2$ m
+sous le sol.  Les triangles ont une hauteur de $3$ m et une basse de $3$ m.}
+{TRIANGLE}
+
+\begin{egg}
+Un réservoir cylindrique est enfoui sur le côté à $5$ mètres de
+profondeur (figure~\ref{CYLINDRE}).  Le cylindre à un rayon de $2$
+mètres et une longueur de $9$ mètres.  Si nous supposons que le cylindre
+est rempli d'eau, quel est le travail nécessaire pour vider le
+réservoir?  La densité de l'eau est de $1000$ kg/m$^3$.
+
+Dans la formule (\ref{travail}), nous avons que
+$h_2=-5$, $h_3=-9$ et $\rho(x) = 1000$ pour tout $x$.  L'attraction
+terrestre est toujours $9.8$ m/s$^2$.  Les sections horizontales sont
+des rectangles dont l'un des côtés
+est de $9$ m de long et le deuxième est de
+$\displaystyle 2r = 2\sqrt{2^2-(x+7)^2}$ m de long.  Donc
+$\displaystyle A(x) = 18\sqrt{2^2-(x+7)^2}$.
+
+Le travail nécessaire pour vider le réservoir est
+\begin{align*}
+W & = - \int_{-9}^{-5} 9,800\big( 18 x \sqrt{2^2-(x+7)^2} \big) \dx{x}
+= - 9,800\times 18 \, \int_{-2}^{2} (u-7) \sqrt{2^2-u^2} \dx{u}
+\end{align*}
+où nous avons utilisé la substitution $u=x+7$ qui donne $u=-2$ lorsque $x=-9$,
+$u=2$ lorsque $x=-7$ et $\dx{u}=\dx{x}$.  Or,
+\[
+\int_{-2}^{2} u \sqrt{2^2-u^2} \dx{u} = 0
+\]
+car $u \sqrt{2^2-u^2}$ est une fonction impaire que nous intégrons sur un
+intervalle symétrique à l'origine.  Pour évaluer
+$\displaystyle -7 \int_{-2}^{2} \sqrt{2^2-u^2} \dx{u}$, nous posons
+$u = 2\sin(t)$ pour $-\pi/2 \leq t \leq \pi/2$.  Donc $u = -2$ pour
+$t = -\pi/2$, $u=2$ pour $t = \pi/2$ et $\dx{u} = 2\cos(t) \dx{t}$.
+Ainsi,
+\begin{align*}
+-7 \int_{-2}^{2} \sqrt{2^2-u^2} \dx{u} &=
+-7 \int_{-\pi/2}^{\pi/2} \sqrt{4-4\sin^2(t)} \; 2\cos(t)\dx{t}
+= -7 \int_{-\pi/2}^{\pi/2} 4\cos^2(t)\dx{t} \\
+&= -7 \int_{-\pi/2}^{\pi/2} 2\left( 1+\cos(2t)\right) \dx{t}
+= -14 \left( t+ \frac{1}{2}\sin(2t)\right)\bigg|_{-\pi/2}^{\pi/2} 
+= -14 \pi \; .
+\end{align*}
+
+Donc
+\[
+W  = - 9,800\times 18 \times (-14 \pi) = 2469600 \pi \ \text{j} \; .
+\]
+\end{egg}
+
+\PDFfig{8_integrales_appl/cylindre}{Un réservoir cylindrique}{Un réservoir
+cylindrique est enfoui sur le côté à $5$ mètres de profondeur.  Le cylindre à
+un rayon de $2$ mètres et une longueur de $9$ mètres.}{CYLINDRE}
+
+\section{Force et pression hydrostatique \eng}
+
+Pour un liquide donné (e.g. l'eau dans l'océan), plus nous sommes
+profond plus la pression exercée par le liquide augmente.  Si
+$\rho(x)$ est la densité d'un
+liquide en kg/m$^3$ à une profondeur de $x$ mètres et $9.8$ m/s$^2$
+est l'attraction terrestre en m/s$^2$, alors la pression $p(x)$ en
+N/m$^2$ à une profondeur de $x$ mètres est donnée par la formule
+\[
+p(x) =  9.8 \; x \; \rho(x) \; .
+\]
+
+La force en Newtons exercée sur une surface de {\it très petite hauteur} à
+la profondeur de $x$ mètres est approximativement
+\[
+F(x) = p(x) A(x)
+\]
+où $A(x)$ est l'aire en m$^2$ de la surface.  Nous avons supposé dans le
+raisonnement précédent que la {\it hauteur} de la surface est très
+petite.  Si la {\it hauteur} de la surface est grande comme celle
+représenté à la figure~\ref{PRESS1},  il faut décomposer la surface en
+minces tranches horizontales de {\it très petite hauteur} et calculer
+la force sur chacune de ces tranches.
+
+\PDFfig{8_integrales_appl/pression}{Vue transversale d'une surface verticale
+soumisse à la force exercée par la pression}{Vue transversale d'une surface
+verticale soumisse à la force exercée par la pression.}{PRESS1}
+
+Supposons que l'origine soit à la surface du liquide et la direction
+positive soit vers le haut comme nous l'avons fait pour le calcul du travail
+à la section précédente.  Nous désirons calculer la force exercée sur une
+surface entre $h_3$ et $h_2$ mètres de profondeur.
+
+Partageons le segment $[h_3,h_2]$ en $k$ sous intervalles
+$[x_i,x_{i+1}]$ de longueur $\Delta x = (h_2-h_3)/k > 0$ où
+$x_i = h_3 + i \Delta x$ pour $i=0$, $1$, $2$, \ldots , $k$.
+
+la pression à une profondeur de $x_i^\ast$ mètres, où
+$x_i \leq x_i^\ast \leq x_{i+1}$, est
+\[
+p(x_i^\ast) =  9.8 \underbrace{(0-x_i^\ast)}_{\text{profondeur}}
+\rho(x_i^\ast) = - 9.8 x_i^\ast \rho(x_i^\ast) \ .
+\]
+Il ne faut pas oublier que $x_i^\ast <0$ par construction. Nous obtenons
+que la force exercée sur la surface entre $x_i$ et $x_{i+1}$ mètres
+est approximativement
+\[
+F(x_i^\ast) = p(x_i^\ast) A(x_i^\ast) = - 9.8 \; x_i^\ast \;
+\rho(x_i^\ast) A(x_i^\ast) \ .
+\]
+où $A(x_i^\ast)$ est approximativement l'aire de la surface entre $x_i$ et
+$x_{i+1}$ mètres.  Puisque l'aire de la surface entre $x_i$ et $x_{i+1}$
+mètres tend vers $0$ lorsque la longueur $\Delta x = x_{i+1}-x_i$
+tend vers $0$, nous pouvons exprimer $A(x_i^\ast)$ comme le produit
+$S(x_i^\ast) \Delta x$ où $S$ est une fonction qu'il faut
+déterminer pour chaque type de surfaces.  Dans les cas simple,
+$S(x_i^\ast)$ sera une longueur.  Cependant, ce ne sera pas toujours le cas
+comme nous verrons dans les exemples qui suivent.
+
+Si nous faisons la somme de la force exercée sur la surface entre
+$x_i$ et $x_{i+1}$ mètres pour $i=0$, $1$, \ldots , $k-1$, nous trouvons
+que la force $F$ exercée sur la surface entre $h_3$ et $h_2$ mètres de
+profondeur est approximativement
+\[
+F \approx \sum_{j=0}^{k-1}
+- 9.8 \; x_i^\ast  \; \rho(x_i^\ast) \; S(x_i^\ast) \Delta x \; .
+\]
+La somme dans l'expression précédente est une somme de Riemann pour
+l'intégrale
+\[
+- \int_{h_3}^{h_2} 9.8\, x\, \rho(x)\, S(x) \dx{x} \; .
+\]
+Ainsi, si nous considérons la limite lorsque $k$ tend vers plus
+l'infini, nous trouvons que la force $F$ exercée sur la surface
+verticale entre $h_3$ et $h_2$ mètres de profondeur est
+\begin{equation}\label{pression}
+F = - \int_{h_3}^{h_2} 9.8 \, x \, \rho(x)\, S(x)\dx{x} \; .
+\end{equation}
+ 
+\begin{egg}
+Un réservoir de forme cylindrique repose sur le côté au font d'un lac de $30$
+mètres de profondeur (figure~\ref{PRESS2}). Le réservoir a $2$ mètres
+de diamètre et $5$ mètres de longueur.  Calculons la force sur les
+deux extrémités du réservoir et sur le long du cylindre si le
+réservoir est vide. L'attraction terrestre est de $9.8$ m/s$^2$ et la
+densité de l'eau est de $1000$ kg/m$^3$.
+
+\PDFfig{8_integrales_appl/pression2}{La force exercée sur une des
+extrémités d'un réservoir circulaire qui repose au font d'un lac}{La
+force exercée sur une des extrémités d'un réservoir circulaire qui
+repose au font d'un lac de $30$ mètres de profondeur.}{PRESS2}
+
+\subQ{i}
+Si nous utilisons l'information fournie dans le dessin à la
+figure~\ref{PRESS2}, nous avons que l'aire $A(x_i^\ast)$ de la surface
+de l'extrémité du réservoir entre $x_i$ et $x_{i+1}$ mètres est
+approximativement l'aire du rectangle $R_i$ de base
+$2\sqrt{1-(x_I^\ast + 29)^2}$ et de hauteur $\Delta x$.  Donc
+$A(x_i^\ast) \approx S(x_i^\ast) \Delta x$ où
+\[
+S(x) = 2\sqrt{1-(x+29)^2} \; .
+\]
+
+La formule (\ref{pression}) avec $h_3=-30$ et $h_2 =-28$ nous donne la
+force $F$ exercée sur une des extrémités du réservoir.
+\[
+F = -\int_{h_3}^{h_2} 9.8 \, x\, \rho(x)\, S(x)\dx{x}
+= - 2\times 9,800 \int_{-30}^{-28} x\sqrt{1-(x+29)^2} \dx{x} \; .
+\]
+Si $y = x+29$, alors $\dx{y} = \dx{x}$, $y=-1$
+pour $x=-30$ et $y=1$ pour $x=-28$.  Donc
+\begin{align*}
+F &= -19,600 \int_{-1}^{1} (y-29)\sqrt{1-y^2} \dx{y} \\
+&= -19,600 \int_{-1}^{1} y\sqrt{1-y^2} \dx{y}
++ 19,600\times 29 \int_{-1}^{1} \sqrt{1-y^2} \dx{y} \; .
+\end{align*}
+
+Or $y\sqrt{1-y^2}$ est une fonction impaire que nous intégrons sur un
+intervalle symétrique à l'origine.  Donc
+\[
+\int_{-1}^{1} y\sqrt{1-y^2} \dx{y} = 0 \; .
+\]
+
+Pour calculer l'intégrale
+\[
+\int_{-1}^{1} \sqrt{1-y^2} \dx{y} \ ,
+\]
+il suffit de noter que c'est la formule pour calculer l'aire d'une
+demi-disque de rayon $1$.  Sa valeur est donc $\pi/2$.
+Nous pouvons aussi vérifier cela en utilisant la substitution
+trigonométrique $y=\sin(\theta)$ pour $-\pi/2 \leq \theta \leq \pi/2$.
+Ainsi, $\dx{y} = \cos(\theta) \dx{\theta}$,
+$\sin(\pi/2) = -1$ et $\sin(\pi/2) = 1$.  Donc 
+\begin{align*}
+\int_{-1}^1 \sqrt{1-y^2} \dx{y}
+&= \int_{-\pi/2}^{\pi/2} \sqrt{1-\sin^2(\theta)} \; \cos(\theta) \dx{\theta}
+= \int_{-\pi/2}^{\pi/2} \cos^2(\theta) \dx{\theta} \\
+&= \frac{1}{2} \int_{-\pi/2}^{\pi/2}
+\left(1 + \cos(2\theta)\right) \dx{\theta}
+= \frac{1}{2} \left(\theta + \frac{1}{2}\sin(2\theta)\right)
+\bigg|_{\theta=-\pi/2}^{\pi/2} \\
+&= \frac{1}{2} \left(\frac{\pi}{2} + \frac{1}{2}\sin(\pi)\right)
+- \frac{1}{2} \left(-\frac{\pi}{2} + \frac{1}{2}\sin(\pi)\right)
+= \frac{\pi}{2} \; .
+\end{align*}
+
+Nous trouvons que
+$\displaystyle F = 19,600\times 29 \times \frac{\pi}{2} = 284,200\pi$
+Newtons.
+
+\PDFfig{8_integrales_appl/pression3}{La force exercée sur la
+surface courbée externe d'un réservoir circulaire qui repose au font
+d'un lac}{La force exercée sur la surface courbée externe
+d'un réservoir circulaire qui repose au font d'un lac de $30$ mètres
+de profondeur.}{PRESS3}
+
+\subQ{ii}
+Pour calculer la force exercée sur le côté courbé du cylindre illustré à la
+figure~\ref{PRESS3}, il faut calculer l'aire $A(x_i^\ast)$ de la surface
+courbée $P_i$ du réservoir entre $x_i$ et $x_{i+1}$ mètres.  Cette surface
+représente un rectangle dont deux des côtés ont $5$ mètres de longueur et la
+longueur des deux autres côtés est la longueur de l'arc de cercle
+$y=\sqrt{1-(x+29)^2}$ pour $x$ entre $x_i$ et $x_{i+1}$.
+
+Nous montrerons à la section sur le calcul de la longueur d'une courbe que, si
+$\Delta x$ est assez petit, la longueur de l'arc de cercle
+$y=\sqrt{1-(x+29)^2}$ pour $x$ entre $x_i$ et $x_{i+1}$ est approximativement
+$\sqrt{1+(y'(x_i^\ast))^2} \, \Delta x$ pour un nombre $x_i^\ast$ entre $x_i$
+et $x_{i+1}$.  Donc
+\[
+A(x_i^\ast) \approx 5 \sqrt{1+(y'(x_i^\ast))^2} \, \Delta x
+= \frac{5}{\sqrt{1-(x_i^\ast+29)^2}} \, \Delta x
+\]
+car $y'(x) = -(x+29)/\sqrt{1-(x+29)^2}$.
+Ainsi, $A(x_i^\ast) \approx S(x_i^\ast) \, \Delta x$ où
+\[
+S(x) = \frac{5}{\sqrt{1-(x+29)^2}} \; .
+\]
+
+Il découle de (\ref{pression}) avec $h_3 = -30$ et $h_2 = -28$ que la
+force exercée sur l'un des deux côtés courbés est
+\[
+F = -\int_{h_3}^{h_2} 9.8 \, x\, \rho(x)\, S(x)\dx{x}
+= - 5\times 9,800 \int_{-30}^{-28} \frac{x}{\sqrt{1-(x+29)^2}} \dx{x} \; .
+\]
+Si $y = x+29$, alors $\dx{y} = \dx{x}$, $y=-1$ pour $x=-30$
+et $y=1$ pour $x=-28$.  Donc
+\[
+F = -49,000 \int_{-1}^{1} \frac{y-29}{\sqrt{1-y^2}} \dx{y}
+= - 49,000 \int_{-1}^{1} \frac{y}{\sqrt{1-y^2}} \dx{y}
++ 49,000\times 29 \int_{-1}^{1} \frac{1}{\sqrt{1-y^2}} \dx{y} \; .
+\]
+
+Puisque $y/\sqrt{1-y^2}$ est une fonction impaire que nous intégrons sur un
+intervalle symétrique à l'origine, nous avons
+\[
+\int_{-1}^{1} \frac{y}{\sqrt{1-y^2}} \dx{y} = 0 \; .
+\]
+De plus,
+\[
+\int_{-1}^{1} \frac{1}{\sqrt{1-y^2}} \dx{y} =
+\arctan(y)\bigg|_{y=-1}^1 = \pi \; .
+\]
+
+Nous trouvons que $F = 49,000\times 29 \; \pi = 1,421,000\pi$ Newtons.
+\end{egg}
+
+\section{Centre de masse \eng}
+
+Pour cette section, nous assumons que le lecteur sait ce qu'est un vecteur
+et connaît les opérations de bases sur les vecteurs.  Le matériel que
+nous retrouvons dans les deux premières sections du
+chapitre~\ref{CHAPvecteurs} suivit amplement.
+
+Le {\bfseries centre de masse}\index{Centre de masse} d'une mince
+surface plane $S$ est le point de la surface pour lequel la surface
+sera en été d'équilibre si nous la déposons sur un cône de telle sorte que
+la pointe du cône soit en contact avec ce point.  
+
+\PDFfig{8_integrales_appl/mass2}{Centre de masse (cas discret)}{Centre de
+masse d'une surface plane dont la masse est concentrée en un nombre fini de
+points}{CDMassA}
+
+Supposons que la masse de la surface plane $S$ soit concentrée en $n$ points
+de $S$ (figure~\ref{CDMassA}).  Si $m_j$ est la masse au point
+$\VEC{v}_j$ pour $1\leq j \leq n$, nous cherchons le point $\VEC{x}$
+de $S$ tel que
+\begin{equation} \label{massequA}
+\sum_{j=1}^n m_j(\VEC{v}_j-\VEC{x}) = \VEC{0} \ .
+\end{equation}
+La somme des forces exercées sur le point $\VEC{x}$ est nulle.  Si
+$\displaystyle \VEC{v}_j = \begin{pmatrix} p_j \\ q_j \end{pmatrix}$ et
+$\VEC{x} = \begin{pmatrix} p \\ q \end{pmatrix}$, nous obtenons des coordonnées
+de (\ref{massequA}) que
+\[
+\sum_{j=1}^n m_j (p_j - p) = 0 \quad \text{et} \quad
+\sum_{j=1}^n m_j (q_j - q) = 0 \ .
+\]
+Donc
+\[
+p = \frac{\sum_{j=1}^n m_j p_j}{\sum_{j=1}^n m_j} \quad \text{et} \quad
+q = \frac{\sum_{j=1}^n m_j q_j}{\sum_{j=1}^n m_j} \ .
+\]
+$\displaystyle M_x = \sum_{j=1}^n m_j q_j$ est le
+{\bfseries moment par rapport à l'axe des $\mathbf x$}\index{Moment par
+  rapport à l'axe des $x$}
+et $\displaystyle M_y = \sum_{j=1}^n m_j p_j$ est le
+{\bfseries moment par rapport à l'axe des $\mathbf y$}\index{Moment par
+  rapport à l'axe des $y$}.  La masse totale est
+$\displaystyle m = \sum_{j=1}^n m_j$.  Le
+{\bfseries centre de masse}\index{Centre de masse} est
+$\displaystyle \left( \frac{M_y}{m} , \frac{M_x}{m}\right)$.
+
+Supposons maintenant que la surface plane $S$ soit de densité
+constante $\rho$.\footnote{Les unités de la densité sont de la forme
+masse/aire car nous assumons que la surface n'a pas d'épaisseur ou, du
+moins, que nous pouvons ignorer l'épaisseur de la surface.}
+De plus, supposons que la surface $S$ soit de la forme
+$\{ (x,y) : g(x) \leq y \leq f(x) , a \leq x \leq b\}$ pour deux
+fonctions continues $f$ et $g$ (figure~\ref{CDMassB}).
+
+\PDFfig{8_integrales_appl/mass1}{Centre de masse (densité constante)}{Centre de
+masse d'une surface plane de densité constante}{CDMassB}
+
+Pour estimer le moment par rapport à l'axe des $y$ de $S$, partageons
+le segment $[a,b]$ en $k$ sous intervalles $[x_j,x_{j+1}]$ de longueur
+$\Delta x = (b-a)/k$ où $x_i = a + j \Delta x$ pour $j=0$, $1$, $2$,
+\ldots , $k$.  Choisissons $x_j^\ast \in [x_j,x_{j+1}]$ pour $j=0$,
+$1$, $2$, \ldots , $k-1$.  Nous avons donc
+\[
+  M_y \approx \sum_{j=0}^{k-1} x_j^\ast \rho\;
+  \left( f(x_j^\ast) - g(x_j^\ast)\right) \Delta x
+\]
+car $x_j^\ast$ est la distance
+approximative entre l'axe des $y$ et les points de la portion
+$S_j = \{ (x,y) : g(x) \leq y \leq f(x) , x_j \leq x \leq x_{j+1}\}$
+de $S$,
+et $\rho \;\left(f(x_j^\ast) - g(x_j^\ast)\right) \Delta x$ est la masse
+approximative de la portion $S_j$ de $S$.
+
+De même, nous pouvons estimer le moment par rapport à l'axe des $x$ de $S$ à
+l'aide de la formule
+\[
+M_x \approx \sum_{j=0}^{k-1} \frac{(f(x_j^\ast)+g(x_j^\ast))}{2}
+\rho\; \left(f(x_j^\ast) - g(x_j^\ast)\right) \Delta x =
+\sum_{j=0}^{k-1}\rho\; \frac{1}{2}
+\left( f^2(x_j^\ast)-g^2(x_j^\ast)\right) \Delta x
+\]
+où $(f\left(x_j^\ast)+g(x_j^\ast)\right)/2$ est la distance moyenne
+entre l'axe des $x$ et les points de la portion $S_j$ de $S$ et, comme
+précédemment, $\rho\; \left(f(x_j^\ast) - g(x_j^\ast)\right) \Delta x$
+est la masse approximative de la portion $S_j$ de $S$.
+
+Lorsque $k\to \infty$, nous obtenons les formules
+\[
+M_y = \rho \int_a^b x(f(x)-g(x)) \dx{x} \qquad \text{et} \qquad
+M_x = \frac{\rho}{2} \int_a^b \left(f^2(x)-g^2(x) \right) \dx{x}
+\]
+pour le
+{\bfseries moment par rapport à l'axe des $\mathbf x$}\index{Moment
+par rapport à l'axe des $y$} et le 
+{\bfseries moment par rapport à l'axe des $\mathbf x$}\index{Moment par
+rapport à l'axe des $x$} respectivement.
+
+La masse de $S$ peut être estimer à l'aide de la formule
+\[
+  m \approx \sum_{j=0}^{k-1} \rho\;
+  \left(f(x_j^\ast) - g(x_j^\ast)\right) \Delta x \ .
+\]
+
+Lorsque $k\to \infty$, nous obtenons, nous obtenons que La masse de
+$S$ est donnée par
+\[
+m = \rho \int_a^b (f(x)-g(x)) \dx{x} \ .
+\]
+
+Le {\bfseries centre de masse}\index{Centre de masse} est
+$\displaystyle \left( \frac{M_y}{m} , \frac{M_x}{m}\right)$.
+
+\begin{egg}
+Trouvons le centre de masse de la surface bornée par les courbes $y=1-x^2$ et
+$y=0$.  La densité de la surface est $\rho = 10$.
+
+La courbe $y=1-x^2$ coupe l'axe des $x$ aux points $x=-1$ et $x=1$.
+La masse de la surface est donc
+\[
+m = \int_{-1}^1 10(1-x^2) \dx{x} = 10
+\left( x - \frac{x^3}{3}\right)\bigg|_{-1}^1 = \frac{40}{3} \ .
+\]
+Le moment par rapport à l'axe des $x$ est
+\[
+M_x = \frac{10}{2}  \int_{-1}^1 (1-x^2)^2 \dx{x}
+= 5 \int_{-1}^1 (x^4 - 2x^2 + 1) \dx{x}
+= 5\left( \frac{x^5}{5} - \frac{2x^3}{3} + x \right)\bigg|_{-1}^1
+= \frac{16}{3} \ .
+\]
+et le moment par rapport à l'axe des $y$ est
+\[
+M_y = 10 \int_{-1}^1 x(1-x^2) \dx{x} = 0
+\]
+car la fonction $h(x) = x(1-x^2)$ est impaire et le domaine d'intégration
+est symétrique par rapport à l'axe des $y$.  Il n'est pas surprenant que
+$M_y$ soit nul car la surface est symétrique par rapport à l'axe des
+$y$ et elle est de densité constante.
+
+Le centre de masse est
+$\displaystyle \left(\frac{M_y}{m},\frac{M_x}{m}\right) = (0, 2/5)$.
+\end{egg}
+
+\section{Débit sanguin \life}
+
+Le modèle de Poiseuille pour la distribution de vélocité d'un liquide visqueux
+et incompressible qui s'écoule dans un tube de rayon constant $R$ cm et de
+longueur $L$ cm (figure~\ref{SANG}) est
+\[
+v(r) = \frac{P}{4\eta L}\big( R^2-r^2\big) \quad , \quad 0 \leq r \leq R \ ,
+\]
+où $v(r)$ cm/s est la vélocité du liquide à un distance $r$ cm de l'axe
+central du tube, $P$ dyn/cm$^2$ est la différence de pression entre les
+deux extrémités du tube et $\eta$ est le coefficient de viscosité du liquide.
+Dans ce modèle, nous supposons que la vélocité varie seulement en fonction de la
+distance par rapport à l'axe du tube.  Nous supposons de plus que la
+vélocité est nulle sur la paroi du tube.  Ce sont de bonnes
+suppositions si le tube est un vaisseau sanguin et le liquide est du
+sang.  La formule pour la vélocité donnée ci-dessus est une
+approximation de la solution de l'équation de Navier et Stokes en
+mécanique des fluides (\cite{BE}).
+
+\PDFfig{8_integrales_appl/sang}{Écoulement laminaire}{La distribution de
+vélocité d'après le modèle de Poiseuille}{SANG}
+
+Calculons le débit dans le tube; c'est-à-dire, le volume de liquide
+qui passe par une section du tube par unité de temps.  Pour ce faire, nous
+utilisons la technique des sommes de Riemann.
+
+Soit $k$, un entier positif.  Posons $\Delta r = R/k$ et
+$r_j = j \Delta r$ pour $j=0$, $1$, $2$, \ldots, $k$.  Nous obtenons une
+partition de l'intervalle $[0,R]$ en sous-intervalles de la forme
+$[r_j,r_{j+1}]$ pour $j=0$, $1$, \ldots, $k-1$.
+
+Nous considérons l'anneau définie par $r_j \leq r \leq r_{j+1}$.  Pour estimer
+$D_j$, le volume de liquide qui passe au travers de cet anneau par unité de
+temps, nous supposons que la vélocité du liquide est presque constante
+dans cet anneau.  L'aire de l'anneau définie par
+$r_j \leq r \leq r_{j+1}$ est
+\[
+\pi r_{j+1}^2 - \pi r_j^2 = 2\pi \left(\frac{r_{j+1}+r_j}{2} \right)
+(r_{j+1}-r_j) = 2\pi r_j^\ast \Delta r \ ,
+\]
+où $r_j^\ast = (r_{j+1}+r_j)/2$.  Ainsi,
+\[
+D_j \approx 2\pi r_j^\ast v(r_j^\ast) \Delta r \ .
+\]
+Nous avons donc que $D$, le volume de liquide qui passe par une
+section du tube par unité de temps, est donné approximativement par
+\[
+D = \sum_{j=0}^{k-1} D_j \approx 2\pi \sum_{j=0}^{k-1} 
+r_j^\ast v(r_j^\ast) \Delta r \ .
+\]
+C'est une somme de Riemann pour l'intégrale
+\[
+2\pi \int_0^R r v(r) \dx{r} \ .
+\]
+Donc, si $k$ tend vers plus l'infini, nous obtenons
+\[
+D = 2\pi \int_0^R r v(r) \dx{r} \ .
+\]
+Pour le modèle de Poiseuille, le débit est donc donné par la formule
+\[
+D = 2\pi \int_0^R r v(r) \dx{r} 
+= \frac{\pi P}{2\eta L} \int_0^R r \big( R^2-r^2\big) \dx{r}
+= \frac{\pi P}{2\eta L} \left(\frac{r^2R^2}{2}-\frac{r^4}{4}\right)\bigg|_0^R
+= \frac{\pi P R^4}{8\eta L} \ .
+\]
+Les unités de $D$ sont les cm$^3$/s.
+
+\begin{egg}
+Nous voulons mesurer le diamètre de l'aorte ascendante d'une
+patiente afin de déterminer le risque de celle-ci d'avoir un accident
+cardio-vasculaire.  Nous ne voulons pas avoir recours à une chirurgie.
+
+Si nous déterminons le débit cardiaque $D$ (i.e.\ le débit sanguin
+dans l'aorte ascendante), alors la formule
+$\displaystyle D = \frac{\pi P  R^4}{8\eta L}$ 
+peut être utilisée pour déterminer le rayon $R$ de l'aorte car la pression
+sanguine $P$ peut être mesurée, $\eta$ est une constante connue pour le sang,
+et $L$ est la longueur de l'aorte ascendante.  Pour un adulte de grandeur
+moyenne, $L \approx 6$ cm, $P \approx 106,658$ dyn/cm$^2$ et
+$\eta \approx 0.027$ \mbox{s\ dyn/cm$^2$}.
+
+Pour mesurer expérimentalement le débit cardiaque, nous injectons $A$ mg d'un
+{\em produit de contraste} dans le coeur (naturellement, pas directement dans
+le coeur) et nous mesurons le débit sanguin dans l'aorte ascendante.  Nous
+estimons qu'il faut $T$ secondes pour que le coeur de la patiente se
+vide du produit de contraste.  Nous allons utiliser les sommes de Riemann
+pour calculer la quantité total du produit de contraste qui passe par
+l'aorte ascendante pendant la période de temps $T$.
+
+Soit $k$, un entier positif.  Posons $\Delta t = T/k$ et
+$t_j = j \Delta t$ pour $j=0$, $1$, $2$, \ldots, $k$.  Nous obtenons une
+partition de l'intervalle $[0,T]$ en sous-intervalles de la forme
+$[t_j,t_{j+1}]$ pour $j=0$, $1$, \ldots, $k-1$.
+
+Soit $c(t)$ la concentration du produit de contraste en mg/cm$^3$ au
+temps $t$ dans l'aorte ascendante.  Si nous supposons que la
+concentration du produit de contraste est presque constante entre
+$t_j$ et $t_{j+1}$, la quantité $Q_i$ du produit de contraste qui passe par
+l'aorte ascendante entre $t_i$ et $t_{i+1}$ est approximativement
+\[
+Q_i \approx c(t_i) \left( \frac{\pi R^4 P}{8\eta L}\right) \Delta t
+\]
+car $\displaystyle \left( \frac{\pi R^4 P}{8\eta L}\right) \Delta t$
+représente le volume de sang qui passe par l'aorte ascendante durant la
+période de temps $\Delta t$.  La quantité total $Q$ du produit de contraste
+qui passe par l'aorte ascendante durant les $T$ secondes est donc donnée
+approximativement par
+\[
+Q = \sum_{i=0}^{k-1} Q_i \approx
+\sum_{i=0}^{k-1} c(t_i) \left( \frac{\pi R^4 P}{8\eta L}\right) \Delta t \ .
+\]
+C'est une somme de Riemann pour l'intégrale
+\[
+\left( \frac{\pi R^4 P}{8\eta L}\right) \int_0^T c(t) \dx{t} \ .
+\]
+Donc, si $k$ tend vers plus l'infini, nous obtenons
+\[
+Q = \frac{\pi R^4 P}{8\eta L} \int_0^T c(t) \dx{t} \ .
+\]
+Or, nous aurons $Q=A$ après $T$ secondes. Le débit est donc
+\[
+D = \frac{\pi R^4 P}{8\eta L} = A\bigg/\left(\int_0^T c(t) \dx{t}\right) \ .
+\]
+
+Supposons que $6$ mg du produit de contraste soit injecté dans le coeur de la
+patiente, et que la concentration du produit de contraste mesurée à
+intervalle régulier donne les résultats suivants.
+\[
+\begin{array}{cr|c|c|c|c|c|c|c|c|c|c|c}
+t &\text{(s)} & 0 & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5 & 4 & 4.5 & 5 \\
+\hline
+c(t) & \text{(mg/cm$^3$)} & 0 & 0.021 & 0.045 & 0.073 & 0.058 & 0.036 &
+0.028 & 0.014 & 0.006 & 0.002 & 0
+\end{array}
+\]
+Évaluons le débit sanguin avec les sommes à droite.  De plus, si
+$P \approx 106,658$ dyn/cm$^2$, $L=6$ cm et $\eta \approx 0.027$,
+déterminons le diamètre de l'aorte ascendante de cette patiente.
+
+Posons $\displaystyle t_i = \frac{i}{2}$ pour $i=0$, $1$, \ldots,
+$10$.  Nous avons
+\[
+\int_0^{5} c(t) \dx{t} \approx \sum_{i=1}^{10} c(t_i) \Delta t
+= \frac{1}{2} \left( 0.021 + 0.045 + \ldots + 0\right) = 0.1415
+\ \text{ s\;mg/cm${^3}$} \ .
+\]
+Le débit est donc
+\[
+D = \frac{6}{0.1415} \approx 42.4028 \quad \text{cm$^3$/s} \ .
+\]
+Nous déduisons de la formule
+$\displaystyle D = \frac{\pi P R^4}{8\eta L}$ que
+\[
+R = \left(\frac{8\eta L D}{\pi P}\right)^{1/4} \approx 0.11317 \
+\text{cm} \ .
+\]
+Le diamètre de l'aorte ascendante est donc approximativement de $0.2263$ cm.
+Pour un adulte de grandeur normale, le diamètre de l'aorte ascendante est
+beaucoup plus grand (au moins $10$ fois plus grand).  La patiente est
+a risque.
+\end{egg}
+
+\section{Applications à l'économie \eco}
+
+Avant de donner un exemple de l'utilité de l'intégrale en économie, il faut
+introduire quelques concepts de base.
+
+Si nous déposons dans un compte en banque la somme de $M_0$ dollars et que le
+taux d'intérêt est de $I$\% par année, après un an nous aurons
+\[
+M_1 = M_0 + \frac{I}{100}\,M_0 = M_0\left(1+\frac{I}{100}\right) \;
+\text{dollars}\; .
+\]
+C'est le montant en banque au début de l'année plus les intérêts pour
+l'année.  Après deux ans nous aurons
+\[
+M_2 = M_1 + \frac{I}{100}\,M_1 = M_1\left(1+\frac{I}{100}\right) \quad
+\text{dollars}\; .
+\]
+C'est le montant en banque au début de la deuxième année plus les intérêts
+pour l'année.  Donc
+\[
+M_2 = M_0\left(1+\frac{I}{100}\right)^2 \quad \text{dollars} \; .
+\]
+Par induction, après $n$ années, nous obtenons le résultat suivant.
+
+\begin{focus}{\mth} \index{Intérêt!Composé annuellement}
+Si $M_0$ est le dépôt initial (en dollars) et si l'intérêt est
+{\bfseries composé annuellement}
+au taux de $I$\%, alors le montant $M_n$ dans le compte après $n$
+années est donnée par la formule
+\[
+M_n = M_0\left(1+\frac{I}{100}\right)^n \quad \text{dollars} \; .
+\]
+\end{focus}
+
+Si nous déposons dans un compte en banque la somme de $M_0$ dollars et que le
+taux d'intérêt est de $I$\% par année calculé $k$ fois par année, à la fin
+de la première période de l'année (i.e. au premier versement des intérêts),
+nous aurons
+\[
+M_{0,1} = M_0+\frac{I}{100k}\,M_0 = M_0\left(1+\frac{I}{100k}\right)
+\quad \text{dollars}\; .
+\]
+C'est le montant en banque au début de la première période plus les intérêts
+pour la période qui sont $1/k$ des intérêts de l'année.  À la fin de la
+deuxième période de l'année (i.e. au deuxième versement des intérêts), nous
+aurons
+\[
+M_{0,2} = M_{0,1}+\frac{I}{100k}\,M_{0,1}
+= M_{0,1}\left(1+\frac{I}{100k}\right)
+\quad \text{dollars}\; .
+\]
+C'est le montant en banque au début de la deuxième période plus les intérêts
+pour la période qui sont encore $1/k$ des intérêts de l'année.  Il est
+naturellement assumé que l'année est divisée en $k$ périodes de même durées.
+Nous avons donc
+\[
+M_{0,2} = M_0\left(1+\frac{I}{100k}\right)^2 \quad  \text{dollars}\; .
+\]
+Par induction, à la fin de l'année (c'est à dire à la fin de la $k^e$
+période ou, si vous préférez, au $k^e$ versement), nous aurons
+\[
+M_1 = M_{0,k} = M_0\left(1+\frac{I}{100k}\right)^k \quad
+\text{dollars}\; .
+\]
+De même, à la fin de la deuxième année, nous aurons
+\[
+M_2 = M_1\left(1+\frac{I}{100k}\right)^k \quad
+\text{dollars}\; .
+\]
+Donc
+\[
+M_2 = M_0\left(1+\frac{I}{100k}\right)^{2k} \quad
+\text{dollars}\; .
+\]
+Par induction, nous obtenons le résultat suivant.
+
+\begin{focus}{\mth} \index{Intérêt!Composé $k$ fois par année}
+Si $M_0$ est le dépôt initial (en dollars) et si l'intérêt est
+{\bfseries composé $k$ fois par année} au taux de $I$\%, alors le
+montant $M_n$ dans le compte après $n$ années est donnée par la formule
+\[
+M_n = M_0\left(1+\frac{I}{100k}\right)^{nk} \quad \text{dollars} \; .
+\]
+\end{focus}
+
+Dans le cas précédent où l'intérêt est composé $k$ fois par année, si le
+nombre $k$ de périodes devient de plus en plus grand (tend vers plus
+l'infini), nous obtenons la formule suivante.
+
+\begin{focus}{\mth} \index{Intérêt!Composé de façon continue} 
+Si $M_0$ est le dépôt initial (en dollars) et si l'intérêt est
+{\bfseries composé de façon continue}
+au taux $I$\% par année, alors le montant $M_n$ dans le compte après $n$
+année est donnée par la formule
+\begin{equation} \label{eco_cont}
+M_n = M_0 \, e^{(nI)/100} \; .
+\end{equation}
+\end{focus}
+
+Dans le cas continue, $n$ peut être un nombre réel.  Nous ne sommes plus
+limité aux entiers comme dans les deux premiers cas.
+
+Pour démontrer la formule (\ref{eco_cont}), il suffit de noter que
+\[
+\lim_{k\rightarrow \infty} M_0\left(1+\frac{I}{100k}\right)^{nk}
+= \lim_{k\rightarrow \infty} M_0\left(
+\underbrace{\left(1+\frac{1}{100k/I}\right)^{100k/I}}_{\rightarrow e
+\text{ lorsque } k \rightarrow \infty} \right)^{nI/100}
+= M_0 \, e^{nI/100} \; .
+\]
+
+\subsection{Valeurs présentes et futures}
+
+\begin{focus}{\dfn} \index{Valeur future}
+La {\bfseries valeur future} d'un montant $M_0$
+est le montant obtenu après $t$ années si le montant $M_0$ est placé
+aujourd'hui dans un compte en banque dont le taux d'intérêt est de
+$I$\% par année.
+\end{focus}
+
+Par exemple, si l'intérêt est composé de façon continue, la valeur
+future après $n$ année est $M_n = M_0 e^{nI/100}$.
+
+\begin{focus}{\dfn} \index{Valeur présente}
+La {\bfseries valeur présente} d'un montant
+$M_t$ est le montant $M_0$ qu'il faut placer aujourd'hui dans un
+compte en banque dont le taux d'intérêt est de $I$\% pour obtenir
+$M_t$ dans $t$ années.
+\end{focus}
+
+Par exemple, si l'intérêt est composé de façon continue, la valeur
+présente de $M_t$ dollars dans $t$ années est
+$M_0 = M_t e^{-I\,n/100}$.  Si l'intérêt est composé $k$ fois par
+année, la valeur présente de $M_n$ dollars dans $n$ 
+années est
+$\displaystyle M_0 = M_n \left(1 + \frac{I}{100k}\right)^{-k\,n}$.
+
+\begin{egg}
+Vous venez de gagner \$$1,000,000$ à la loterie.  Le montant vous est donné
+en quatre versements égaux; le premier versement aujourd'hui, le deuxième
+dans un an à partir d'aujourd'hui, le troisième dans deux ans à partir
+d'aujourd'hui, etc.  En Assumant que le taux d'intérêt pour les
+prochaines années est de $4$\% composé de façon continue,
+avez-vous réellement gagné \$$1,000,000$?  
+
+Il faut déterminer la valeur présente de l'argent qui vous est donné.  La
+valeur présente du montant de \$$250,000$ qui vous sera donné dans un an est
+$\displaystyle 250,000\,e^{-4/100}$, la valeur présente du montant de
+\$$250,000$ qui vous sera donné dans deux ans est
+$\displaystyle 250,000\,\left(e^{-4/100}\right)^2$, etc.
+
+La valeur présente de montant que vous avez gagné à la loterie est donc
+\begin{align*}
+& 250,000 + 250,000\,e^{-4/100} + 250,000\,\left(e^{-4/100}\right)^2
++ 250,000\,\left(e^{-4/100}\right)^3 \\
+&= 250, 000 \left( \frac{1- \left(e^{-4/100}\right)^4}{1-e^{-4/100}} \right)
+= 942,706.56 \quad \text{dollars}\; .
+\end{align*}
+\end{egg}
+
+En raison de leur très grand volume de vente, nous pouvons supposer que le
+taux de revenu d'une grande entreprisse (e.g. Une chaîne de restaurants
+ou de magasins à rayons) est donné par une fonction continue $R(t)$ où
+$t$ est le temps.  Puisque $R(t)$ est un taux de revenu, ses unités
+sont des dollars/jour, des dollars/année, des euros/mois, etc.  Le
+temps $t$ utilise les mêmes unités de temps que ceux utilisé pour le
+taux de revenu.  Par exemple, si le taux de revenu est en
+dollars/jour, le temps $t$ sera en jours.
+
+Si l'entreprisse investi ses revenus dans un compte dont le taux
+d'intérêt est de $I$\% composé de façon continue, quelle sera la valeur
+future $V_f$ des placements de cette entreprisse au temps $T$?
+
+Soit $k$, un entier positif.  Posons
+$\Delta t = T/k$ et $t_i = i \Delta t$
+pour $i=0$, $1$, $2$, \ldots, $k$.  Nous obtenons une partition de l'intervalle
+$[0,T]$ en sous-intervalles de la forme $[t_i,t_{i+1}]$ pour $i=0$, $1$,
+\ldots, $k-1$.
+
+Pour $i=0$, $1$, $2$, \ldots, $k-1$, nous choisissons $t_i^\ast$ dans
+l'intervalle $[t_i,t_{i+1}]$.  Sur l'intervalle $[t_i, t_{i+1}]$, les
+revenus sont approximativement de $R(t_i^\ast)\, \Delta t$.  La valeur
+future de ces revenus est alors approximativement
+$\displaystyle e^{I\,(T-t_i^\ast)/100} \,R(t_i^\ast)\, \Delta t$ car ces
+revenus sont investis pour une période d'environ $T-t_i^\ast$.
+
+La somme des valeurs futures estimées pour chaque intervalle
+$[t_i,t_{i+1}]$ donne l'approximation suivant de la valeur future $V_f$
+des placements de l'entreprisse pour une période $T$.
+\[
+V_f \approx \sum_{i=0}^{k-1} \,e^{I\,(T-t_i^\ast)/100} \,R(t_i^\ast) \Delta t \; .
+\]
+Remarquons que cette somme est une somme de Riemann pour l'intégrale
+\[
+\int_0^T e^{I\,(T-t)/100} \,R(t) \dx{t} \; .
+\]
+Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
+
+\begin{focus}{\mth} \index{Valeur future}
+Si $R(t)$ représente est le taux investi dans un compte au temps $t$
+et si le taux d'intérêt est de $I$\% composé de façon continue, alors la
+valeur future $V_f$ des investissement après une période $T$ est
+donnée par la formule
+\[
+V_f = \int_0^T e^{I\,(T-t)/100} \,R(t) \dx{t} \; .
+\]
+\end{focus}
+
+De façon semblable, nous pouvons obtenir la valeur présente $V_p$ des gains
+d'une grande entreprisse pour une période de temps $T$.  Nous assumons que
+le taux d'intérêt sur les placements est de $I$\% composé de façon
+continue.
+
+Soit $k$, un entier positif.  Posons
+$\Delta t = T/k$ et $t_i = i \Delta t$
+pour $i=0$, $1$, $2$, \ldots, $k$.  Nous obtenons une partition de l'intervalle
+$[0,T]$ en sous-intervalles de la forme $[t_i,t_{i+1}]$ pour $i=0$, $1$,
+\ldots, $k-1$.
+
+Pour $i=0$, $1$, $2$, \ldots, $k-1$, nous choisissons $t_i^\ast$ dans
+l'intervalle $[t_i,t_{i+1}]$.  Sur l'intervalle $[t_i, t_{i+1}]$, les
+revenus sont
+approximativement de $R(t_i^\ast)\, \Delta t$.  La valeur présente de ces
+revenus est alors approximativement
+$\displaystyle e^{-I\,t_i^\ast/100} \,R(t_i^\ast)\, \Delta t$.
+
+La somme des valeurs présentes estimées pour chaque intervalle
+$[t_i,t_{i+1}]$ donne l'approximation suivant de la valeur présente
+$V_p$ des revenus de l'entreprisse pour une période $T$.
+\[
+V_p \approx \sum_{i=0}^{k-1} \,e^{-I\;t_i^\ast/100} \,R(t_i^\ast)
+\Delta t \; .
+\]
+Remarquons que cette somme est une somme de Riemann pour l'intégrale
+\[
+\int_0^T e^{-I\,t/100} \,R(t) \dx{t} \; .
+\]
+Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
+
+\begin{focus}{\mth} \index{Valeur présente}
+Si $R(t)$ représente est le taux investi dans un compte au temps $t$
+et si le taux d'intérêt est de $I$\% composé de façon continue, alors la
+valeur présente $V_p$ des investissement pour une période $T$ est
+donnée par la formule
+\[
+V_p = \int_0^T e^{-I\;t/100} \,R(t) \dx{t} \; .
+\]
+\end{focus}
+
+\begin{egg}
+Si le taux de revenus d'une chaîne de locations de voitures est
+$R(t) = 10,000$ dollars/jour, quelle sera la valeur future des revenus
+de cette chaîne de locations dans $10$ ans si elle investi ses revenus
+à un taux d'intérêt de $5$\% composé de façon continue.
+
+Nous avons que la valeur future $V_f$ est
+\[
+V_f = \int_0^T e^{I\,(T-t)/100} \,R(t) \dx{t} \; ,
+\]
+où $T=10$, $I=5$ et $R(t)=10,000$ pour tout $t$.  Donc
+\begin{align*}
+V_f &= \int_0^{10} 10,000\, e^{5\,(10-t)/100} \dx{t}
+= -2\times 10^5\, e^{5\,(10-t)/100} \bigg|_{t=0}^{10} \\
+&= -2\times 10^5 \left(1-e^{0.5}\right) \approx 129,744.25 \text{ dollars}.
+\end{align*}
+\end{egg}
+
+\subsection{Surplus du consommateur et du producteur} 
+
+Soit $D(q)$ le prix par unité que le consommateur est prêt à payer s'il y a
+$q$ unités d'un certain produit disponibles sur le marché et soit
+$P(q)$ le prix par unité que le producteur (manufacturier, fermier,
+\ldots) est prêt a demander s'il y a $q$ unités de ce produit
+disponibles sur le marché.
+
+Il est raisonnable de penser que $D$ est une fonction décroissante.
+Quand le nombre d'unités disponibles sur le marché est grand, les
+consommateurs espèrent que les vendeurs vont baisser le prix par unité
+pour pouvoir écouler leur stock.  Par contre, la fonction $P$ sera
+probablement croissante.  Si les marchants commandent un grande nombre
+d'unités, les producteurs vont augmenter le prix par unité pour
+bénéficier de l'enjouement pour le produit et pour pouvoir augmenter
+leur production.
+
+Nous retrouvons à la figure~\ref{ECO1} le graphe de $D$ et celui de $P$.  Dans
+cette figure, $q_0$ est le nombre maximal d'unité que le marché peut
+supporter (tous ceux susceptibles d'acheter le produit en ont déjà fait
+l'achat), $p_0$ est le prix minimal par unité que le producteur est
+prêt à demander, et $p_1$ est le prix maximal par unité que le
+consommateur est prêt à payer.  Le point $q^\ast$ est le
+{\bfseries point d'équilibre} pour le nombre d'unités sur le marché.  À ce
+point, les consommateurs et producteurs tirent avantage
+du prix de $p^\ast$ par unité.
+
+\PDFfig{8_integrales_appl/eco1}{Représentation graphique du surplus du
+consommateur et du producteur}{La région en bleu représente le surplus
+du consommateur alors que la région en vert représente le surplus du
+producteur.}{ECO1}
+
+Le {\bfseries surplus du consommateur}\index{Surplus du consommateur}
+$S_c$ est le montant économisé par les consommateurs s'ils payent
+$p^\ast$ au lieu du prix par unité qu'ils auraient été prêt à payer
+normalement pour $q < q^\ast$.
+\[
+S_c = \int_0^{q^\ast} D(q) \dx{q} - p^\ast \, q^\ast \; .
+\]
+C'est l'aire de la région en bleu représenté à la figure~\ref{ECO1}. 
+
+Le {\bfseries surplus du producteur}\index{Surplus du producteur}
+$S_p$ est le revenu additionnel fait par les producteurs ou
+manufacturiers s'ils demandent $p^\ast$ au lieu du prix par unité
+qu'ils auraient été prêt à demander normalement pour $q < q^\ast$.
+\[
+S_c = p^\ast \, q^\ast - \int_0^{q^\ast} P(q) \dx{q} \; .
+\]
+C'est l'aire de la région en vert représenté à la figure~\ref{ECO1}. 
+
+\begin{egg}
+En mai $2003$, nous retrouvions sur le marché $50$ unités d'un
+modèle de voiture de lux que le consommateur (pour ce genre de voitures)
+était prêt à acheter pour \$$370,000$ l'unité.  Nous avons estimé que le point
+d'équilibre pour le nombre d'unités était de $350$ voitures au prix de
+\$$250,000$ par unités.  Quelle a été le surplus du consommateur si le
+prix par unité que le consommateur est prêt à payer est une fonction
+affine du nombre d'unités disponibles?
+
+Le graphe de $D$ est une droite qui passe par les points
+$(50, 370,000)$ et \\
+$(q^\ast, p^\ast) = (350, 250,000)$.
+L'équation de cette droite est
+\[
+P(q) = \frac{370,000-250,000}{50-350} \, (p-350) + 250,000
+= -400 (p-350) + 250,000 \; .
+\]
+Le surplus du consommateur est
+\begin{align*}
+S_c &= \int_0^{350} \left(-400 (p-350) + 250,000\right)\dx{p} -
+350\times 250,000 \\
+&= \left(-200 (p-350)^2 + 250,000 \, p \right)\bigg|_{p=0}^{350}
+- 350\times 250,000
+= 24,500,000 \text{ dollars}.
+\end{align*}
+\end{egg}
+
+\section{Test de l'intégrale \eng}\label{integralTest}
+
+Il est possible de déterminer si une série de termes positifs
+$\displaystyle \sum_{n=1}^\infty a_n$ converge à l'aide d'une intégrale 
+impropre.
+
+\begin{focus}[][Le test de l'intégrale]{\thm} \index{Test de l'intégrale}
+Soit $f:[1,\infty[\rightarrow [0,\infty[$ une fonction continue et
+décroissante.  Si $\displaystyle \sum_{n=1}^\infty a_n$ est une série dont
+les termes sont donnés par $a_n = f(n)$ pour tout $n$, alors la série
+$\displaystyle \sum_{n=1}^\infty a_n$ converge si et seulement si l'intégrale
+impropre $\displaystyle \int_1^\infty f(x)\dx{x}$ converge.
+\end{focus}
+
+La démonstration de ce théorème est simple et repose sur les deux
+graphes donnés à la figure~\ref{int_TEST}.
+
+\PDFfig{8_integrales_appl/int_test}{La justification du test de l'intégrale
+pour déterminer si une série converge}{La justification du test de
+l'intégrale pour déterminer si une série converge.}{int_TEST}
+
+Posons $\displaystyle T_n = \int_1^n f(x)\dx{x}$ et
+$\displaystyle S_n = \sum_{k=1}^n a_k$.  Les sommes $S_n$ sont les
+sommes partielles de la séries.
+
+La région en gris dans le dessin à gauche dans la
+figure~\ref{int_TEST} représente la valeur de la somme
+$\displaystyle \sum_{k=2}^6 a_k = S_6 - a_1$ alors que la région en gris
+dans le dessin à droite dans la figure~\ref{int_TEST} représente la
+valeur de la somme $\displaystyle \sum_{k=1}^6 a_k = S_6$.
+
+\subQ{A} Supposons que $\displaystyle \int_1^\infty f(x)\dx{x}$ diverge. Cela
+implique que $\displaystyle \lim_{n\rightarrow \infty} T_n = +\infty$.
+Or, à partir du dessin à droite dans la figure~\ref{int_TEST}, nous
+obtenons que $0 \leq T_n \leq S_{n-1}$ pour tout $n\geq 2$.  Ainsi
+\[
+\lim_{n\rightarrow \infty} S_n =
+\lim_{n\rightarrow \infty} S_{n-1} = +\infty
+\]
+et nous concluons que la séries $\displaystyle \sum_{n=1}^\infty a_n$ diverge.
+Cela implique que si la série $\displaystyle \sum_{n=1}^\infty a_n$
+converge alors l'intégrale impropre
+$\displaystyle \int_1^\infty f(x)\dx{x}$ converge.
+
+\subQ{B} Supposons que $\displaystyle \int_1^\infty f(x)\dx{x}$ converge.
+Cela implique que la limite $\displaystyle \lim_{n\rightarrow \infty} T_n$
+existe et est réel.  Or, à partir du dessin à gauche dans la
+figure~\ref{int_TEST}, nous obtenons que
+$0 \leq S_n - a_1 \leq T_n$ pour tout $n\geq 2$.  Donc
+$0 \leq S_n \leq T_n + a_1$ pour tout $n\geq 2$.  Ainsi
+$\displaystyle \{S_n\}_{n=1}^\infty$ est une suite croissante (car
+$a_n \geq 0$ pour tout $n$) et bornée par
+\[
+a_1 + \lim_{n\rightarrow \infty} T_n = a_1 + \int_1^\infty f(x)\dx{x}
+\]
+Il découle du théorème~\ref{suiteBORN} que la suite
+$\displaystyle \{S_n\}_{n=1}^\infty$ converge.  C'est à dire que
+$\displaystyle \sum_{n=1}^\infty a_n$ converge.
+
+\begin{rmk}
+Dans la cas où la série $\displaystyle \sum_{n=1}^\infty a_n$
+converge, et donc l'intégrale impropre
+$\displaystyle \int_1^\infty f(x)\dx{x}$ converge, nous pouvons utiliser
+une intégrale pour estimer $S - S_n$ où $S$ est la somme de la
+série $\displaystyle \sum_{n=1}^\infty a_n$.
+Notons en passant que la suite des sommes partielles
+$\displaystyle \{S_n\}_{n=0}^\infty$ est une suite croissante car les
+termes de la série $\displaystyle \sum_{n=1}^\infty a_n$ sont
+positifs,  Donc
+$0 \leq S_1 \leq S_2 \leq \ldots \leq S_n \leq \ldots \leq S$.
+
+Nous pouvons conclure à partir du dessin à la figure~\ref{ITborne} que
+\[
+0 \leq S - S_n = \sum_{k=n+1}^\infty a_n \leq \int_n^\infty f(x) \dx{x} \ .
+\]
+La région en gris représente la somme
+$\displaystyle \sum_{k=n+1}^\infty a_n$.
+\end{rmk}
+
+\PDFfig{8_integrales_appl/ITborne}{Approximation de la somme d'une
+série de termes positifs convergente}{Le test de l'intégrale donne une
+approximation de la somme d'une série de terme positifs convergente.   
+La région en gris représente la différence entre la somme $S$ de la
+série et sa $n^{e}$ somme partielle $S_n$.}
+{ITborne}
+
+\begin{egg}
+Utilisons le test de l'intégrale pour fournir une autre
+démonstration de le proposition~\ref{Pseries}
+
+Si $p \leq 0$, alors la suite $\displaystyle \{n^{-p}\}_{n=1}^\infty$
+ne converge pas vers zéro.  Donc, par le théorème~\ref{NCforCofS},
+la séries $\displaystyle \sum_1^\infty \frac{1}{x^p} \dx{x}$
+diverge.
+
+Nous pouvons donc supposer que $p>0$.  La proposition~\ref{Pseries} est alors
+une conséquence immédiate du résultat que nous avons obtenu à
+la proposition~\ref{impr_comp1}; c'est-à-dire que l'intégrale impropre
+$\displaystyle \int_1^\infty \frac{1}{x^p} \dx{x}$ converge si seulement et
+seulement si $p>1$.
+
+Considérons $f(x) = 1/x^p$.  Nous avons que $f(x)>0$ pour $x>0$ et
+$f(x)$ est un fonction continue et décroissant pour $x>0$ car
+$f'(x) = -p x^{-p+1} <0$ pour $x>0$.  Nous pouvons donc utiliser le test de
+l'intégrale pour conclure que
+\[
+\sum_{n=1}^\infty f(n)= \sum_{n=1}^\infty \frac{1}{n^p}
+\text{ converge} \Leftrightarrow 
+\int_1^\infty f(x) \dx{x} = \int_1^\infty \frac{1}{x^p} \dx{x}
+\text{ converge} \Leftrightarrow
+p>1 \ .
+\]
+\end{egg}
+
+\begin{egg}
+Déterminons si la série $\displaystyle \sum_{n=1}^\infty n 5^{-n}$
+converge ou diverge.
+
+Cette série est de la forme $\displaystyle \sum_{n=1}^\infty a_n$ où
+$a_n = f(n)$ pour $f(x) = x 5^{-x}$.
+
+Nous avons que $f(x) > 0$ pour tout $x\geq 1$ et $f$ est une fonction
+continue et décroissante; en fait,
+$f'(x) = (1 - x\ln(5))5^{-x} < 0$ pour $x\geq 1$.
+
+Considérons l'intégrale $\displaystyle \int_1^q x 5^{-x}\dx{x}$.
+Cette intégrale se calcul à l'aide de la méthode
+d'intégration par parties.  Nous avons que
+$x 5^{-x} = u(x) \; v(x)$ pour $u(x) = x$ et $v'(x) = 5^{-x}$.  Donc
+$u'(x)=1$, $v(x) = -5^{-x}/\ln(5)$ et
+\begin{align*}
+\int_1^q x 5^{-x} \dx{x}
+&= \int_1^q u(x)v'(x)\dx{x}
+= u(x)v(x)\bigg|_{x=1}^q - \int_1^q u'(x) v(x)\dx{x} \\
+&= -\frac{x 5^{-x}}{\ln(5)}\bigg|_{x=1}^q
++ \int_1^q \frac{5^{-x}}{\ln(5)}\dx{x}
+= -\frac{x 5^{-x}}{\ln(5)}\bigg|_{x=1}^q
+- \frac{5^{-x}}{(\ln(5))^2}\bigg|_{x=1}^q \\
+&= -\frac{q 5^{-q}}{\ln(5)} + \frac{1}{5\ln(5)}
+- \frac{5^{-q}}{(\ln(5))^2} + \frac{1}{5(\ln(5))^2} \; .
+\end{align*}
+Grâce à la Règle de l'Hospital,
+$\displaystyle \lim_{q\rightarrow \infty}q 5^{-q} = 
+\lim_{q\rightarrow \infty} \frac{q}{5^q} = 0$.  De plus,
+$\displaystyle \lim_{q\rightarrow \infty} 5^{-q} =
+\lim_{q\rightarrow \infty} \frac{1}{5^q} = 0$.  Donc
+\[
+\lim_{q\rightarrow \infty} \int_1^q x 5^{-x} \dx{x}
+= \frac{1}{5\ln(5)} + \frac{1}{5(\ln(5))^2} \; .
+\]
+Puisque $\displaystyle \int_1^q x 5^{-n}\dx{x}$ converge, la série
+$\displaystyle \sum_{n=1}^\infty n 5^{-n}$ converge.
+\end{egg}
+
+\begin{egg}
+Déterminons si la série
+$\displaystyle \sum_{n=2}^\infty \frac{1}{n\ln{n}}$ converge ou diverge.
+
+Cette série est de la forme $\displaystyle \sum_{n=2}^\infty a_n$ où
+$\displaystyle a_n = f(n)$ pour
+$\displaystyle f(x) = \frac{1}{x\ln(x)}$.
+
+Nous avons que $f(x) > 0$ pour tout $x\geq 2$ et $f$ est une fonction
+continue et décroissante car $x\ln(x)$ est croissante pour $x\geq 2$.
+
+Considérons l'intégrale $\displaystyle \int_2^q \frac{1}{x\ln(x)} \dx{x}$.
+Cette dernière intégrale se calcul à l'aide de la méthode de
+substitution.  Si $u = \ln(x)$, alors
+$\displaystyle \dx{u} = \frac{1}{x} \dx{x}$, $u = \ln(q)$ lorsque
+$x=q$ et $u = \ln(2)$ lorsque $x=2$.  Ainsi,
+\[
+\int_2^q \frac{1}{x\ln(x)} \dx{x}
+= \int_{\ln(2)}^{\ln(q)} \frac{1}{u} \dx{u} \ .
+\]
+Or, cet intégrale diverge d'après la proposition~\ref{impr_comp1};
+c'est le cas $p=1$.  Donc, grâce au test de l'intégrale, la série
+$\displaystyle \sum_{n=2}^\infty \frac{1}{n\ln{n}}$ diverge.
+\end{egg}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Aire entre deux courbes}
+
+\begin{question}
+Calculez l'aire de chacune des régions décrient ci-dessous.
+
+\subQ{a} La région entre la droite $y=2x$ et la courbe
+$y=x^2$ pour $0\leq x \leq 2$.\\
+\subQ{b} La région entre la droite $y=2x$ et la courbe
+$y=x^2$ pour $0\leq x \leq 4$.\\
+\subQ{c} La région entre les courbes $y=e^x$ et
+$\displaystyle y=\frac{e^{2x}}{2}$ pour $0\leq x \leq 1$.\\
+\subQ{d} La région bornée par la droite $\displaystyle y = \frac{3}{2} + x$
+et la courbe $\displaystyle y = \frac{x^2}{2}$.\\
+\subQ{e} La région bornée par la droite $y=x$ et la courbe
+$y=7x-3x^2$.\\
+\subQ{f} La région bornée par la courbe $y^2 = x$ et la droite
+$x -y = 2$.\\
+\subQ{g} La région bornée par la courbe
+$\displaystyle y = f(x)=\frac{x}{1+x}$ et la droite 
+$\displaystyle y=g(x)=\frac{x}{2}$.\\
+\subQ{h} La région bornée par les courbes
+$\displaystyle y = (x-2)^2$ et $\displaystyle y= 10 - x^2$.
+\label{8Q1}
+\end{question}
+
+\begin{question}[\eng \life]
+Trouvez l'aire entre les courbes $y=f(x) = \sin(2x)$ et
+$y=g(x)=\cos(2x)$ pour $0 \leq x \leq \pi$.
+\label{8Q2}
+\end{question}
+
+\begin{question}[\life]
+Le taux de croissance (instantané) d'une population de bactéries au temps
+$t$ en minutes est donné par la formule
+$\displaystyle r(t) = \frac{1000}{(2+3t)^{3/4}}$ bactéries/heure.
+
+\subQ{a} Si la population initiale est de $10^6$ bactéries, quelle est le
+nombre de bactéries après $T$ minutes?
+
+\subQ{b} Est-ce que cette population de bactéries peut supporter ce taux de
+croissance?  En d'autre mots, est-ce que le nombre de bactéries tend
+vers une valeur finie lorsque $T$ tend vers plus l'infini?
+
+\subQ{c} Si la population initiale est toujours de $10^6$ bactéries
+comme en (a), combien de temps s'écoule-t-il avant que nous
+atteignons $2\times 10^6$ bactéries?  Est-ce que ce résultat pourrait
+justifier une réponse différente en (b)?
+\label{8Q3}
+\end{question}
+
+\subsection{Valeur moyenne d'une fonction}
+
+\begin{question}
+Calculez la valeur moyenne de la fonction $f(x) = x-x^3$ pour
+$-1 \leq x \leq 1$.  Tracez le graphe de $f$ sur l'intervalle $[-1,1]$ et la
+droite horizontale qui représente la valeur moyenne.
+\label{8Q4}
+\end{question}
+
+\begin{question}
+Le taux (instantané) auquel l'eau est versé dans un bocal après $t$
+minutes est donné par la formule $r(t) = 4t(3-t)$ litres/minute.
+
+\subQ{a} Quelle est le volume d'eau qui a été versé dans le bocal au
+cours des deux premières minutes (i.e. $0\leq t \leq 2$)?
+
+\subQ{b} Quelle est le taux moyen auquel l'eau est versé dans le bocal
+au cours des deux première minute?
+
+\subQ{c} Comparez le taux moyen calculé en (b) avec le taux au
+cours de la première minute $0 \leq t \leq 1$ minute.  Lequel est le plus
+grand?
+
+\subQ{d} Tracez le graphe du taux instantané en fonction du temps
+(i.e. de $r$) et la droite horizontal qui correspond au taux moyen
+durant les deux premières minutes.
+\label{8Q5}
+\end{question}
+
+\begin{question}
+Le taux (instantané) auquel l'eau entre un réservoir varie dans le temps et
+est donné par la formule $r(t) = 360t -39t^2+t^3$ où $t$ est en heures et $r$
+est en litres/heure.  Quelle est le volume d'eau qui a entré dans le
+réservoir au cours des $15$ premières heures (i.e. pour $0\leq t \leq 15$)?
+Quelle est le taux moyen au cours des $15$ premières heures?
+\label{8Q6}
+\end{question}
+
+\begin{question}[\eng]
+Si le taux d'énergie produite par une réaction (chimique) au temps
+$t$ en heures est donnée par $E(t) = | 360t -39t^2+t^3|$ joules/heure,
+Calculer l'énergie totale produite entre $t=0$ heure et $t= 24$
+heures. Calculez le taux moyen de production d'énergie durant cette
+période.\\
+Suggestion: Les racines du polynôme $360t -39t^2+t^3$ sont
+$0$, $15$ et $24$.
+\label{8Q7}
+\end{question}
+
+\begin{question}[\life]
+Un très mince fils de $2$ mètres de longueur est formé d'une substance
+organique dont la densité linéaire à une distance de $x$ cm d'une de
+ses extrémités est de $\rho(x)$ g/cm où
+\[
+\rho(x) = 1 + 2 \times 10^{-8}\, x^2(240-x) \ .
+\]
+\subQ{a} Trouvez la densité maximale et minimale le long du fils.  À quel
+endroit avons-nous la plus forte densité?
+
+\subQ{b} Quelle est la masse totale du fils?
+
+\subQ{c} Quelle est la densité linéaire moyenne du fils?  Comparez avec la
+valeur maximale et minimale que vous avez trouvée en (a).
+
+\subQ{d} Dans une même figure, tracez le graphe de la densité et la droite
+horizontale qui correspond à la densité moyenne.
+\label{8Q8}
+\end{question}
+
+\subsection{Volume d'un objet}
+
+\begin{question}[\eng]
+Utilisez la méthode des tranches pour trouver le volume du cône droit
+de hauteur $3$ dont la base est un disque de rayon $2$.
+\label{8Q9}
+\end{question}
+
+\begin{question}[\eng]
+Utilisez la méthode des tranches pour trouver {\em un somme de Reimann}
+qui approche le volume d'un cône de hauteur $h$ dont la base est un
+disque de rayon $r$.  Déduire de votre somme une formule exacte pour
+calculer le volume d'un cône.
+\label{8Q10}
+\end{question}
+
+\begin{question}[\eng]
+Utilisez la méthode des tranches pour trouver le volume de la corne
+représentée ci-dessous pour $0\leq x \leq 1$.  Les
+sections transversales sont des cercles.
+\PDFgraph{8_integrales_appl/corne}
+\label{8Q11}
+\end{question}
+
+\begin{question}[\eng]
+Utilisez la méthode des tranches pour trouver le volume d'un ballon de
+football (ayant la forme d'un ellipsoïde) de $30$ cm de longueur et de
+$18$ cm de diamètre dans sa partie la plus large.  Vous devez trouver
+une somme de Riemann qui donne une approximation du volume du ballon
+de football pour en déduire une intégrale définie pour le volume du
+ballon de football.
+\label{8Q12}
+\end{question}
+
+\begin{question}[\eng]
+\subQ{a} Quel est le volume du solide dont la base est la région
+$\displaystyle \{(x,y) | \, x^2 \leq y \leq 1\}$ et dont les sections
+perpendiculaires à l'axe des $y$ sont des demi-cercles?
+
+\subQ{b} Quel est le volume du solide dont la base est la région
+$\displaystyle \{(x,y) | \, y^2 \leq x \leq 2\}$ et dont les sections
+perpendiculaires à l'axe des $x$ sont des demi-cercles?
+
+\subQ{c} Quel est le volume du solide dont la base est la région
+bornée la courbe $y=-x^2$, et les droites $y=3x$ et $x=2$, et 
+dont les sections perpendiculaires à l'axe des $x$ sont des carrés?
+\label{8Q13}
+\end{question}
+
+\begin{question}[\eng]
+Nous considérons la région $R$ bornée par l'axe des $x$, la courbe
+$y = x^{1/3}$ et la droite $x = 1$.
+
+\subQ{a} Trouvez le volume du solide produit en faisant la rotation de
+la région $R$ autour de l'axe des $x$. \\
+\subQ{b} Trouvez le volume du solide produit en faisant la rotation de la
+région $R$ autour de la droite $y = -3$. \\
+\subQ{c} Trouvez le volume du solide produit en faisant la rotation de la
+région $R$ autour de la droite $y = 7$. \\
+\subQ{d} Trouvez le volume du solide dont la base est la région $R$ et
+les sections perpendiculaires à l'axe des $x$ sont des carrés. \\
+\subQ{e} Trouvez le volume du solide dont la base est la région $R$ et
+les sections perpendiculaires à l'axe des $x$ sont des demi-cercles.
+\label{8Q14}
+\end{question}
+
+\begin{question}[\eng]
+Pour chacun des problèmes suivants, trouvez le volume du solide
+produit par la rotation de la région donnée autour de l'axe donné.
+
+\subQ{a} La région est bornée par la courbe $y=\cos(x)$, l'axe des
+$x$, et les droites $x=0$ et $x=\pi$.  L'axe de rotation est l'axe des
+$x$.\\
+\subQ{b} La région est bornée par la courbe $y=\cos(x/2)$, l'axe des
+$x$, et les droites $x=-\pi$ et $x=\pi$.  L'axe de rotation est l'axe
+des $x$.\\
+\subQ{c} La région est bornée par la courbe $y=x^{3/2}$, l'axe des $x$
+et la droite $x=1$.  L'axe de rotation est l'axe des $x$.\\
+\subQ{d} La même région qu'en (c) mais l'axe de rotation est
+l'axe des $y$.\\
+\subQ{e} La région est bornée par la courbe $y=1/x$, l'axe des $x$, et
+les droites $x=1$ et $x=2$.  L'axe de rotation est l'axe des $x$.
+\label{8Q15}
+\end{question}
+
+\begin{question}[\eng]
+Trouvez le volume du solide que nous obtenons dans chacun des cas
+suivants.
+
+\subQ{a} Si nous faisons la rotation de la région bornée par la courbe
+$y=x^2$ et la droite $y=x$ autour de l'axe $y=-1$.\\
+\subQ{b} Si nous faisons la rotation de la région bornée par la courbe
+$y=x^2$ et la droite $y=2x$ autour de l'axe $x=4$.\\
+\subQ{c} Si nous faisons la rotation de la région bornée par la courbe
+$y=\sqrt{x}$ et la droite $y=x$ autour de l'axe des $x$.\\
+\subQ{d} Si nous faisons la rotation de la région bornée par les courbes
+$y=x^2$ et $x=y^2$ autour de l'axe des $y$?\\
+\subQ{e} Si nous faisons la rotation de la région bornée par la courbe
+$y= x^2 -6x+9$ et la droite $y=4$ autour de l'axe $x=-1$.\\
+\subQ{f} Si nous faisons la rotation de la région bornée par la courbe
+$y= x^2 -8x+16$ et la droite $y=4$ autour de l'axe $x=-2$.\\
+\subQ{g} Si nous faisons la rotation de la région bornée par la courbe
+$y= -x^2 +10x-25$ et la droite $y=-4$ autour de l'axe $x=-1$.\\
+\subQ{h} Si nous faisons la rotation de la région bornée par les courbes
+$x = y^2-4y+2$ et $x = -y^2 +4y-4$ autour de la droite $x = 1$.\\
+\subQ{i} Si nous faisons la rotation de la région bornée par la courbe
+$y=2/x$ et la droite $y=3-x$ autour de l'axe des $x$.
+\label{8Q16}
+\end{question}
+
+\begin{question}[\eng]
+Si nous faisons la rotation du cercle $x^2+y^2=1$ autour de l'axe $y=3$, nous
+obtenons un tore (une objet de la forme d'un bagel).  Quelle est le
+volume de ce tore?
+\label{8Q17}
+\end{question}
+
+\subsection{Masse d'un objet}
+
+\begin{question}[\eng]
+La densité de l'huile à une distance de $r$ mètres du centre d'une
+nappe d'huile circulaire sur la surface de l'océan est donnée par
+$\rho(r) = 50/(1+r)$ kg/m$^2$.\\
+\subQ{a} Si la nappe d'huile a un rayon de 1,000 m, donnez une somme
+de Reimann qui approche la masse total de l'huile dans la nappe. \\
+\subQ{b} En transformant la somme donnée en (a) en une intégrale,
+trouvez la valeur exacte de la masse totale d'huile dans la nappe.\\
+\subQ{c} Quelle est la valeur de $r$ pour laquelle nous avons la moitié de
+la masse totale d'huile.
+\label{8Q18}
+\end{question}
+
+\subsection{Travail}
+
+\begin{question}[\eng]
+Un travailleur est en haut d'un échafaudage de $30$ mètres de
+hauteur.  Il doit lever à l'aide d'une corde une chaudière de
+ciment à partir du sol jusqu'à une hauteur de 10 mètres.  La
+chaudière a une masse de $50$ kg et la corde a une masse de $0.5$
+kg/m.  Trouvez le travail total nécessaire pour lever cette
+chaudière.
+\label{8Q19}
+\end{question}
+
+\begin{question}
+Le réservoir représenté ci-dessous est rempli d'eau.
+\PDFgraph{8_integrales_appl/reservoir4}
+Calculez le travail nécessaire pour vider ce réservoir s'il est enfoui
+$2$ m sous le niveau du sol.  La densité de l'eau est de $1000$
+kg/m$^3$ et l'accélération dû à la gravité est $g=9.8$ m/s$^2$.
+\label{8Q20}
+\end{question}
+
+\begin{question}[\eng]
+Une piscine représenté ci-dessous est remplie d'eau.  Calculez
+le travail nécessaire pour vider cette piscine.  La densité de l'eau
+est de $1000$ kg/m$^3$ et l'accélération dû à la gravité est $g=9.8$
+m/s$^2$.
+
+Vous devez trouver une somme de Riemann qui donne une approximation du
+travail fait pour vider le réservoir et en déduire une intégrale
+définie pour calculer le travail fait pour vider le
+réservoir. Finalement vous devez calculer cette intégrale. 
+Vous devez bien définir toutes vos variables.
+\PDFgraph{8_integrales_appl/piscineTravail}
+\label{8Q21}
+\end{question}
+
+\begin{question}[\eng]
+Une citerne de forme rectangulaire possède les dimensions suivantes:
+$3$ m de long, $1$ m de large et $2$ m de haut.  La citerne est plein
+d'eau.  Calculez le travail nécessaire pour pomper la moitié de l'eau
+à une hauteur de $1$ m au-dessus du citerne.  La densité de l'eau est
+de $1000$ kg/m$^3$ et l'accélération dû à la gravité est $g=9.8$
+m/s$^2$.
+\label{8Q22}
+\end{question}
+
+\begin{question}[\eng]
+Un réservoir à la forme d'une demi-sphère renversée dont le rayon est
+de $3$ m.
+\PDFgraph{8_integrales_appl/reservoir3}
+Si ce réservoir est à $2$ m sous le sol et il est plein d'eau,
+calculez le travail nécessaire pour vider ce réservoir.  La densité de
+l'eau est de $1000$ kg/m$^3$ et l'accélération dû à la gravité est
+$g=9.8$ m/s$^2$.
+
+Vous devez trouver une somme de Riemann qui donne une approximation du
+travail fait pour vider le réservoir et en déduire une intégrale
+définie pour calculer le travail fait pour vider le
+réservoir. Finalement vous devez calculer cette intégrale. 
+Vous devez bien définir toutes vos variables.
+\label{8Q23}
+\end{question}
+
+\begin{question}[\eng]
+Les réservoirs ci-dessous sont plein d'huile dont la densité est de
+570 kg/m$^3$.  Quelle est le travail nécessaire pour vider chacun des
+réservoirs? 
+
+Vous devez trouver une somme de Riemann qui donne une approximation du
+travail fait pour vider le réservoir et en déduire une intégrale
+définie pour calculer le travail fait pour vider le
+réservoir. Finalement vous devez calculer cette intégrale. 
+
+\subQ{a} le réservoir est enfoui 2 mètres sous le sol.
+\PDFgraph{8_integrales_appl/huile1}
+
+\subQ{a} le réservoir est enfoui 4 mètres sous le sol.
+\PDFgraph{8_integrales_appl/huile2}
+\label{8Q24}
+\end{question}
+
+\begin{question}[\eng]
+Un réservoir cylindrique de deux mètres de rayon et de six mètres de
+hauteur (donc l'axe du cylindre est vertical) est à moitié rempli
+d'eau.  Trouvez le travail nécessaire pour vider le réservoir si nous
+pompons l'eau a partir d'un point trois mètres au dessus réservoir.  La
+densité de l'eau est de $1000$ kg/m$^3$ et l'accélération dû à la
+gravité est $g=9.8$ m/s$^2$.
+\label{8Q25}
+\end{question}
+
+\subsection{Force}
+
+\begin{question}[\eng]
+Un réservoir rectangulaire de 20 mètres de longueur, 10
+mètres de largeur et 15 mètres de profondeur est rempli d'eau.  Quelle
+est la force totale exercée sur le font et sur chaque coté du
+réservoir?  La densité de l'eau est de $1000$ kg/m$^3$ et
+l'accélération dû à la gravité est $g=9.8$ m/s$^2$.
+\label{8Q26}
+\end{question}
+
+\begin{question}[\eng]
+Un barrage à une porte rectangulaire à sa base.  La porte a une largeur
+de $2$ m et une hauteur de $5$ m.  Quelle est la pression
+hydrostatique (i.e.\ la force) exercée sur la porte si la hauteur de
+l'eau derrière le barrage est de $17$ m.  La densité de l'eau est de
+$1000$ kg/m$^3$ et l'accélération dû à la gravité est $g=9.8$
+m/s$^2$.
+\PDFgraph{8_integrales_appl/dam1}
+Vous devez trouver une somme de Riemann qui donne une approximation de
+la pression sur la porte et en déduire une intégrale définie pour
+calculer la pression sur la porte. Finalement vous devez calculer
+cette intégrale. Vous devez bien définir toutes vos variables.
+\label{8Q27}
+\end{question}
+
+\begin{question}[\eng]
+Une piscine représenté ci-dessous est remplie d'eau.  Calculez
+la force exercée par la pression sur les deux côtés suivants de la
+piscine.
+
+Dans chacun des cas, vous devez trouver une somme de Riemann qui donne
+une approximation de la force exercée sur le cotė et en déduire une
+intégrale définie pour la force exercée sur le coté.  Finalement, vous
+devez évaluer cette intégrale.  Prenez soin de bien définir toutes vos
+variables.
+
+\subQ{a} Pour le coté A de la piscine
+
+\subQ{b} Pour le coté B de la piscine.
+\PDFgraph{8_integrales_appl/piscinePression}
+\label{8Q28}
+\end{question}
+
+\begin{question}[\eng]
+Un cylindre fermé aux extrémités se retrouve sur le côté au font d'un
+lac.  Le diamètre du cylindre est de $10$ cm et sa longueur de $20$
+cm.  Si la profondeur du lac est de $6$ mètres, quelle est la force
+exercée sur les extrémités du cylindre?  Il faut se rappeler que la
+densité de l'eau est de $1000$ kg/m$^3$.
+
+Vous devez trouver une somme de Riemann qui donne une approximation de
+la force exercées sur les extrémités et en déduire une intégrale définie pour
+calculer la force exercées sur les extrémités. Finalement vous devez calculer
+cette intégrale. Vous devez bien définir toutes vos variables.
+\label{8Q29}
+\end{question}
+
+\subsection{Centre de masse}
+
+\begin{question}[\eng]
+Trouvez la position du centre de masse de la région plane bornée par la
+courbe $y=x^2$ et les droites $y=0$, $x=0$ et $x=2$.  La densité est
+constante. 
+\label{8Q30}
+\end{question}
+
+\begin{question}[\eng]
+Trouvez la position du centre de masse de la région bornée par les
+courbes $y=e^x$, $y=0$, $x=0$ et $x=2$.   La densité est constante et
+égale à $3$ kg/m$^2$.
+\label{8Q31}
+\end{question}
+
+\subsection{Applications à l'économie}
+
+\begin{question}[\eco]
+Si \$$5000$ est investit à un taux de $7$\% d'intérêt, quelle est la valeur
+de l'investissement après $2$ ans si l'intérêt est calculé mensuellement?  De
+façon continue?
+\label{8Q32}
+\end{question}
+
+\begin{question}[\eco]
+Un placement garantie un revenu de $100+10t$ dollars par année pour
+une période de dix ans où $t$ est le nombre d'années depuis la
+date du placement que nous assumons comme étant aujourd'hui.  Trouvez
+la valeur présente de ce placement à la fin des dix ans si le taux
+d'intérêt est de $5$\% par année, composé de façon continue.
+\label{8Q33}
+\end{question}
+
+\begin{question}[\eco]
+Nous savons qu'un bon vin prend de la valeur avec l'âge.  Supposer que
+vous êtes un marchant de vin et que vous savez que le prix d'une
+bouteille de votre vin sera de $P(1+20\sqrt{t})$ dollars dans $t$
+années où $P$ dollars est le prix présent d'une bouteille de
+votre vin.  Si le taux d'intérêt est de $5$\% par année, composé de
+façon continue, qu'elle est le meilleur temps pour vendre votre vin?
+\label{8Q34}
+\end{question}
+
+\begin{question}[\eco]
+On vous doit une certaine somme d'argent.  On vous offre deux options
+pour vous rembourser.  Pour la première option, on vous offre de payer
+cette dette en quatre versements de \$5,000 chacun sur une période de
+trois ans en commençant maintenant avec le premier versement de
+\$5,000.  Pour la deuxième option, on vous offre de payer la dette en
+un seul versement de \$23,000 dans exactement trois ans à partir de
+maintenant.  Si on suppose que le taux d'intérêt est de 6\% par
+année, composé de façon continue, quelle option de remboursement est le
+plus profitable?
+\label{8Q35}
+\end{question}
+
+\subsection{Test de l'intégrale}
+
+\begin{question}[\eng]
+Utilisez le test de l'intégrale pour déterminer si les séries
+suivantes converge ou diverge.  Bien justifier que vous pouvez
+utiliser ce test.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \sum_{n=1}^\infty n e^{-2n^2}$ &
+\subQ{b} & $\displaystyle \sum_{n=3}^\infty \frac{1}{n(\ln(n))^2}$
+\end{tabular}
+\end{center}
+\label{8Q36}
+\end{question}
+
+\begin{question}[\eng]
+Utilisez le test de l'intégrale pour déterminer les valeurs de $k$
+pour lesquelles la série
+$\displaystyle \sum_{n=3}^{\infty} \frac{\ln n}{n^k}$ converge.
+\label{8Q37}
+\end{question}
+
+\begin{question}
+Démontrez que la séries $\displaystyle \sum_{n=1}^\infty \frac{1}{n^{8/3}}$
+converge et trouvez une petite valeur $N$ pour que la somme partielle
+$\displaystyle S_N = \sum_{n=1}^N \frac{1}{n^{8/3}}$ soit une
+approximation de la valeur de la série
+$\displaystyle S = \sum_{n=1}^\infty \frac{1}{n^{8/3}}$
+avec une erreur inférieure à $10^{-3}$.
+\label{8Q38}
+\end{question}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End:

@@ -1,0 +1,2303 @@
+\chapter[Dérivée de fonctions de plusieurs variables \life \eng]{Dérivée de fonctions de plusieurs variables\\ \life \eng}
+\label{chapDerFonctMult}
+
+\compileTHEO{
+
+Nous commençons par prolonger aux fonctions de plusieurs variables à valeurs
+réelles la notion de dérivée que nous avons vu pour les fonctions d'une
+variable.  La seconde étape consiste à étudier la dérivée d'une fonction de
+plusieurs variables selon une direction donnée.  Nous verrons que le
+{\em gradient} peut jouer une rôle important pour le calcul des
+dérivées selon une direction donnée.  Nous profiterons de l'occasion pour
+présenter quelques applications utiles du gradient.
+
+Comme nous avons fait pour les fonctions d'une variable, nous étudierons
+l'approximation locale des fonctions de plusieurs variables et les
+points critiques des fonctions de plusieurs variables dans le but de
+pouvoir déterminer les valeurs extrêmes de ces fonctions avec ou sans
+contraintes.  Nous terminons le chapitre avec la dérivée d'une fonction de
+$\RR^n$ dans $\RR^m$ où $m$ et $n$ sont plus grand que $1$.
+
+\section{Dérivées partielles}
+
+Pour les prochaines sections, nous allons seulement considérer les fonctions
+à valeurs réelles.  De plus, sans perte de généralité, nous assumons que les
+fonctions sont des fonctions de deux variables seulement.  Sauf pour une
+légère modification des énoncés, entre autre remplacer $(x_1,x_2)$ par
+$(x_1,x_2,\ldots, x_n)$, les définitions et résultats sur les fonctions de
+deux variables que nous présentons demeurent valides pour les fonctions de
+plus de deux variables.
+
+\begin{focus}{\dfn} \index{Dérivée partielle en un point}
+Soit $D$ un voisinage d'un point $\VEC{c} = (c_1,c_2) \in \RR^2$ et
+$f:D\rightarrow \RR$ une fonction à valeurs réelles.
+
+La {\bfseries dérivée partielle de $f$ au point $\VEC{c}$ par rapport à la
+variable $x_1$} est définie par
+\[
+f_{x_1}(\VEC{c}) = f_{x_1}(c_1,c_2) 
+= \pdydx{f}{x_1}(c_1,c_2)
+= \lim_{h\rightarrow 0}\frac{f(c_1+h,c_2)-f(c_1,c_2)}{h}
+\]
+si cette limite existe.
+
+La {\bfseries dérivée partielle de $f$ au point $\VEC{c}$ par rapport à la
+variable $x_2$} est définie par
+\[
+f_{x_2}(\VEC{c}) = f_{x_2}(c_1,c_2) 
+= \pdydx{f}{x_2}(c_1,c_2)
+= \lim_{h\rightarrow 0}\frac{f(c_1,c_2+h)-f(c_1,c_2)}{h}
+\]
+si cette limite existe.
+
+Dans les limites précédentes, nous assumons que $h$ est assez petit pour que
+$(c_1+h,c_2)$ et $(c_1,c_2+h)$ soient dans $V$ et donc que $f$ soit définie à
+ces points.
+\end{focus}
+
+Comme pour les fonctions d'une variable, si nous considérons tous les points où
+la dérivée partielle d'une fonction $f$ existe, nous pouvons définir
+une fonction que nous appellerons la dérivée partielle de la fonction $f$.
+
+\begin{focus}{\dfn} \index{Dérivée partielle}
+Soit $V\subset \RR^2$ un ensemble ouvert et $f:\RR^2 \rightarrow \RR$.  Si
+la dérivée partielle de $f$ par rapport à $x_1$ existe en tout point de $V$,
+la {\bfseries dérivée partielle de $f$ par rapport à $x_1$ sur $V$} est la
+fonction définie par
+\[
+f_{x_1}(\VEC{x}) = f_{x_1}(x_1,x_2) 
+= \pdydx{f}{x_1}(x_1,x_2)
+= \lim_{h\rightarrow 0}\frac{f(x_1+h,x_2)-f(x_1,x_2)}{h}
+\]
+pour tout $\VEC{x}\in V$.  C'est une nouvelle fonction de deux variables
+définie sur $V$.
+
+De même, si la dérivée partielle de $f$ par rapport à $x_2$ existe en tout
+point de $V$, la {\bfseries dérivée partielle de $f$ par rapport à $x_2$ sur
+$V$} est la fonction définie par
+\[
+f_{x_2}(\VEC{x}) = f_{x_2}(x_1,x_2) 
+= \pdydx{f}{x_2}(x_1,x_2)
+= \lim_{h\rightarrow 0}\frac{f(x_1,x_2+h)-f(x_1,x_2)}{h}
+\]
+pour tout $\VEC{x}\in V$.  C'est une nouvelle fonction de deux variables
+définie sur $V$.
+\end{focus}
+
+Puisque $x_2$ est fixe dans la définition de la dérivée partielle
+$\displaystyle \pdydx{f}{x_1}(x_1,x_2)$, cette dérivée partielle est la
+dérivée d'une fonction d'une seule variable, $x_1$, qui dépend d'un
+paramètre, $x_2$.  De même, $\displaystyle \pdydx{f}{x_2}(x_1,x_2)$ est
+la dérivée d'une fonction d'une seule variable, $x_2$, qui dépend d'un
+paramètre, $x_1$.  Donc toutes les règles de dérivation pour les
+fonctions d'une variable sont valides si nous traitons comme une constante
+la variable qui n'est pas la variable de dérivation.
+
+\begin{egg}
+Si $f(x,y) = \sin(y-x)$ alors
+\[
+\pdydx{f}{x}(x,y) =
+\left(\dfdx{\sin(u)}{u}\bigg|_{u=y-x}\right)
+\left(\pdfdx{(y-x)}{x} \right)
+= \cos(y-x)\,(-1) = -\cos(y-x)
+\]
+grâce à la règle de dérivation des fonctions composées. De plus,
+\[
+\pdydx{f}{y}(x,y) =
+\left(\dfdx{\sin(u)}{u}\bigg|_{u=y-x}\right)
+\left(\pdfdx{(y-x)}{y} \right)
+= \cos(y-x)\,(1) = \cos(y-x) \; .
+\]
+En particulier,
+\[
+\pdydx{f}{x}(2,4) = -\cos(4-2) = -\cos(2) \; .
+\]
+\end{egg}
+
+\begin{egg}
+Si $f(x,y) = (3xy^2-x^4+1)^4$ alors
+\begin{align*}
+\pdydx{f}{x}(x,y) &=
+\left( \dfdx{u^4}{u} \bigg|_{u=3xy^2 -x^4 +1}\right)
+\left( \pdfdx{(3xy^2-x^4+1)}{x} \right)
+= 4 (3xy^2-x^4+1)^3 \, (3y^2-4x^3)
+\intertext{et}
+\pdydx{f}{y}(x,y) &=
+\left( \dfdx{u^4}{u} \bigg|_{u=3xy^2 -x^4 +1}\right)
+\left( \pdfdx{(3xy^2-x^4+1)}{y} \right)
+= 4 (3xy^2-x^4+1)^3 \,(6xy) \; .
+\end{align*}
+\end{egg}
+
+Par induction, nous pouvons définir des dérivées partielles d'ordre deux.
+
+\begin{focus}{\dfn} \index{Dérivée partielle!d'ordre supérieure}
+Soit $V\subset \RR^2$ un ensemble ouvert et $f:V\rightarrow \RR$ une
+fonction qui possède des dérivées partielles d'ordre un sur $V$.  Les
+{\bfseries dérivées partielles d'ordre deux de $f$ sur $V$} sont définies par
+\begin{align*}
+f_{x_1x_1}(x_1,x_2) &= \pdydxn{f}{x_1}{2}(x_1,x_2) =
+\pdfdx{\left(\pdydx{f}{x_1}\right)}{x_1}(x_1,x_2) \; , \\
+f_{x_2x_2}(x_1,x_2) &= \pdydxn{f}{x_2}{2}(x_1,x_2) =
+\pdfdx{\left(\pdydx{f}{x_2}\right)}{x_2}(x_1,x_2) \; , \\
+f_{x_1x_2}(x_1,x_2) &= \pdydxnm{f}{x_1}{x_2}{2}{}{}(x_1,x_2) =
+\pdfdx{\left(\pdydx{f}{x_2}\right)}{x_1}(x_1,x_2)
+\intertext{et}
+f_{x_2x_1}(x_1,x_2) &= \pdydxnm{f}{x_2}{x_1}{2}{}{}(x_1,x_2) =
+\pdfdx{\left(\pdydx{f}{x_1}\right)}{x_2}(x_1,x_2)
+\end{align*}
+si toutes ces dérivées partielles (d'ordre un) existent sur $V$.
+\end{focus}
+
+Nous pourrions aussi définir des dérivées partielles d'ordre supérieure à
+deux.  Par exemple, nous pouvons définir des dérivées partielles
+d'autre trois pour la fonction $f:V \rightarrow \RR$ de la
+définition précédente.  Une de ces dérivées partielles est
+\[
+f_{x_2x_2x_1}(x_1,x_2) = \pdydxnm{f}{x_2}{x_1}{3}{2}{}(x_1,x_2) =
+\pdfdx{\left(\pdydxnm{f}{x_2}{x_1}{2}{}{}\right)}{x_2}(x_1,x_2) \; .
+\]
+si toutes les dérivées d'ordre un et deux existent pour tout
+$(x_1,x_2) \in V$.
+
+\begin{focus}{\dfn} \index{Fonction de classe $C^k$}
+Soit $V\subset \RR^n$ un ensemble ouvert et $f:V\rightarrow \RR$.  Nous
+disons que $f$ est de classe $C^k$ si les dérivées partielles d'ordre $k$ de
+$f$ existent et sont continues.  Nous écrivons $f \in C^k(V)$
+\end{focus}
+
+Si $f \in C^k(V)$, le fait que les dérivées partielles d'ordre $k$ de
+$f$ existent implique que toutes les dérivées partielles de $f$ d'ordre
+inférieure à $k$ existent et sont aussi {\em continues}.
+
+\begin{egg}
+Soit $f(x,y) = \cos(5x+3y)$.  Alors
+\begin{align*}
+\pdfdx{f}{x}(x,y) &= -5\,\sin(5x+3y) \; , \\
+\pdfdx{f}{y}(x,y) &= -3\,\sin(5x+3y) \; , \\
+\pdfdxn{f}{x}{2}(x,y)
+& = \pdfdx{\left(-5\,\sin(5x+3y)\right)}{x} = -25\cos(5x+3y)\; , \\
+\pdfdxn{f}{y}{2}(x,y)
+&= \pdfdx{\left(-3\,\sin(5x+3y)\right)}{y} = -9\cos(5x+3y) \; ,\\
+\pdfdxnm{f}{x}{y}{2}{}{}(x,y)
+&= \pdfdx{\left(-3\,\sin(5x+3y)\right)}{x} = -15\cos(5x+3y)
+\intertext{et}
+\pdfdxnm{f}{y}{x}{2}{}{}(x,y)
+&= \pdfdx{\left(-5\,\sin(5x+3y)\right)}{y} = -15\cos(5x+3y) \; .
+\end{align*}
+\end{egg}
+
+À l'exemple précédent, nous avons que $f_{xy}=f_{yx}$.  Ce n'est pas
+toujours le cas mais il y a une très grande classe de fonctions $f$ pour
+lesquelles $f_{xy}=f_{yx}$,
+
+\begin{focus}{\prp}
+Si $f:\RR^2\rightarrow \RR$ possède des dérivées partielles d'ordre deux qui
+sont continues, alors $f_{x_1x_2} = f_{x_2x_1}$.
+\end{focus}
+
+\begin{rmk}
+Nous pourrions généraliser la proposition précédente.  Si
+$f:\RR^2 \to \RR$ possède des dérivées partielles d'ordre trois qui
+sont continues, alors $f_{x_1x_2x_2}= f_{x_2x_1x_2} = f_{x_2x_2x_1}$ et
+$f_{x_1x_1x_2}= f_{x_1x_2x_1} = f_{x_2x_1x_1}$.  Nous pourrions aussi
+généraliser la proposition à $f:\RR^n \to \RR$ avec $n>2$.
+\end{rmk}
+
+\begin{egg}
+Montrons que les fonctions suivantes satisfont l'équation des ondes
+$u_{tt} = a^2\,u_{xx}$ où $a$ et $k$ sont des constantes.
+
+\subQ{a} Si
+\[
+u(x,t) = \sin(k\,x)\sin(ak\,t) =
+\frac{1}{2}\left( \cos(k\,x -ak\, t)-\cos(k\,x + ak\, t)\right) \ ,
+\]
+alors
+\begin{align*}
+u_{tt} &= \pdfdx{\left(\pdfdx{u}{t}(t,x)\right)}{t}
+= \pdfdx{\big( ak\,\sin(k\,x)\cos(ak\,t)\big)}{t}
+= -a^2k^2\,\sin(k\,x)\sin(ak\,t)
+\intertext{et}
+u_{xx} &= \pdfdx{\left(\pdfdx{u}{x}(t,x)\right)}{x}
+= \pdfdx{\big( k\,\cos(k\,x)\sin(ak\,t)\big)}{x}
+= -k^2\,\sin(k\,x)\sin(ak\,t) \; .
+\end{align*}
+Ainsi,
+\[
+u_{tt} =  -a^2k^2\,\sin(k\,x)\sin(ak\,t) = a^2\,u_{xx} \; .
+\]
+
+\subQ{b} Si
+\[
+u(x,t) = \sin(x-a\,t) + \ln(x+a\,t) \ ,
+\]
+alors
+\begin{align*}
+u_{tt} &= \pdfdx{\left(\pdfdx{u}{t}(t,x)\right)}{t}
+= \pdfdx{\left( -a\,\cos(x-a\,t) + \frac{a}{x+a\,t}\right)}{t}
+= -a^2\,\sin(x-a\,t) - \frac{a^2}{(x+a\,t)^2}
+\intertext{et}
+u_{xx} &= \pdfdx{\left(\pdfdx{u}{x}(t,x)\right)}{x}
+= \pdfdx{\left( \cos(x-a\,t) + \frac{1}{x+a\,t}\right)}{x}
+= -\sin(x-a\,t) - \frac{1}{(x+a\,t)^2} \; .
+\end{align*}
+Ainsi,
+\[
+u_{tt} = -a^2\,\sin(x-a\,t) - \frac{a^2}{(x+a\,t)^2} = a^2\,u_{xx}  \; .
+\]
+
+\subQ{c} Si
+\[
+u(x,t) = f(x+at)+g(x-at)
+\]
+où $f$ et $g$ sont deux fonctions qui possèdent des dérivées d'ordre
+deux, alors
+\begin{align*}
+u_{tt} &= \pdfdx{\left(\pdfdx{u}{t}(t,x)\right)}{t}
+= \pdfdx{\left( a\,f'(x+at)-a\,g'(x-at) \right)}{t}
+= a^2\,f''(x+at) + a^2 g''(x-at)
+\intertext{et}
+u_{xx} &= \pdfdx{\left(\pdfdx{u}{x}(t,x)\right)}{x}
+= \pdfdx{\left( f'(x+at)+ g'(x-at) \right)}{x}
+= f''(x+at)+ g''(x-at) \; .
+\end{align*}
+Ainsi,
+\[
+u_{tt}  = a^2\,f''(x+at)+ a^2\,g''(x-at) = a^2\,u_{xx} \; .
+\]
+\end{egg}
+
+La règle pour dériver la composition de fonctions d'une variable peut être
+utilisée pour dériver la composition de fonctions de plusieurs variables.
+
+\begin{focus}{\prp} \label{ChainRuleND}
+Soit $f:\RR^n\rightarrow \RR$ et $g:\RR^m \to \RR^n$.  Si $f$ et 
+$g_i:\RR^m\rightarrow \RR$ pour $i=1$, $2$, \ldots, $n$ possèdent des
+dérivées partielles, alors la fonction $h:\RR^m\rightarrow \RR$
+définie par $h = f \circ g :\RR^m \to \RR$ possède aussi des dérivées
+partielles.  Plus précisément,
+\begin{align*}
+\pdydx{h}{t_i}(\VEC{t})
+& = \sum_{k=1}^n \pdydx{f}{x_k}(g(\VEC{t}))\,\pdydx{g_k}{t_i}(\VEC{t}) \\
+& = \pdydx{f}{x_1}(g(\VEC{t}))\,\pdydx{g_1}{t_i}(\VEC{t})
++ \pdydx{f}{x_2}(g(\VEC{t}))\,\pdydx{g_2}{t_i}(\VEC{t}) + \ldots
++ \pdydx{f}{x_n}(g(\VEC{t}))\,\pdydx{g_n}{t_i}(\VEC{t})
+\end{align*}
+pour $\VEC{t} \in \RR^m$ et $1\leq i \leq m$.
+\end{focus}
+
+\begin{rmkList}
+\begin{enumerate}
+\item Cette proposition a déjà été utilisé pour $n=1$ et $m=2$ dans
+plusieurs exemples précédents.
+\item Un cas important de la proposition précédente est lorsque $m=1$.
+Nous avons alors la formule
+\begin{equation}\label{specialCR}
+\dydx{h}{t}(t) = \pdydx{f}{x_1}(g(t))\,\dydx{g_1}{t}(t)
++ \pdydx{f}{x_2}(g(t))\,\dydx{g_2}{t}(t) + \ldots
++ \pdydx{f}{x_n}(g(t))\,\dydx{g_n}{t}(t)
+\end{equation}
+pour $t \in \RR$.
+\end{enumerate}
+\end{rmkList}
+
+\begin{egg}
+Soit $z=e^x\cos(y)$, $x=t^2$ et $y=\sin(t)$, évaluons
+$\displaystyle \dydx{z}{t}$.
+
+La notation $\displaystyle \dydx{z}{t}$ peut porter à confusion car
+$z$ n'est pas explicitement une fonction de $t$.  Soit
+$\rho_1(t) = t^2$, $\rho_2(t) = \sin(t)$, $f(x,y) = e^x\cos(y)$ et
+$h(t) = f(\rho_1(t), \rho_2(t))$.   Il faut interpréter 
+$\displaystyle \dydx{z}{t}$ comme étant
+$\displaystyle \dydx{h}{t}$.
+
+Ainsi,
+\begin{align}
+\dydx{h}{t}(t) &= \pdydx{f}{x}(\rho_1(t),\rho_2(t))\,\dydx{\rho_1}{t}(t) +
+\pdydx{f}{y}(\rho_1(t),\rho_2(t)) \, \dydx{\rho_2}{t}(t) \label{ENGchain1} \\
+&=\left(e^x\cos(y)\right)\bigg|_{x=t^2,y=\sin(t)}
+\left(2t\right) + \left(-e^x\sin(y)\right)\bigg|_{x=t^2,y=\sin(t)}
+\left(\cos(t)\right) \nonumber \\
+&=2t\; e^{t^2}\cos(\sin(t) -e^{t^2} \sin(\sin(t))\cos(t) \; . \nonumber
+\end{align}
+
+Si nous posons
+\begin{align*}
+\dydx{z}{t} &= \dydx{h}{t}(t) \quad, \quad
+\pdydx{z}{x} = \pdydx{f}{x}(\rho_1(t),\rho_2(t))\quad, \quad
+\pdydx{z}{y} = \pdydx{f}{y}(\rho_1(t),\rho_2(t))\;,\\
+\dydx{x}{t} &= \dydx{\rho_1}{t}(t)\quad
+\text{et} \quad \dydx{y}{t} = \dydx{\rho_2}{t}(t) \; ,
+\end{align*}
+alors (\ref{ENGchain1}) peut s'exprimer
+\[
+\dydx{z}{t} = \pdydx{z}{x}\,\dydx{x}{t} + \pdydx{z}{y} \,
+\dydx{y}{t} \, .
+\]
+Cette notation est souvent utilisé en mathématiques appliquées
+(physique, génie, etc).
+\end{egg}
+
+\begin{egg}
+Soit $z=\sin(x)\cos(y^2)$, $x=t^2 + s^2$ et $y=e^{st}$, évaluons
+$\displaystyle \pdydx{z}{t}$ et $\displaystyle \pdydx{z}{s}$.
+
+Comme à l'exemple précédent, la notation
+$\displaystyle \pdydx{z}{t}$ et $\displaystyle \pdydx{z}{s}$
+peut porter à confusion.  Soit $\rho_1(t,s) = t^2+s^2$,
+$\rho_2(t,s) = e^{st}$, $f(x,y) = \sin(x)\cos(y^2)$
+et $h(t,s) = f(\rho_1(t,s), \rho_2(t,s))$.  Les expressions
+$\displaystyle \pdydx{z}{t}$ et $\displaystyle \pdydx{z}{s}$ 
+représentent respectivement
+$\displaystyle \pdydx{h}{t}$ et $\displaystyle \pdydx{h}{s}$.
+
+Ainsi,
+\begin{align}
+\pdydx{h}{t}(t,s) &= \pdydx{f}{x}(\rho_1(t,s),\rho_2(t,s))\,
+\pdydx{\rho_1}{t}(t,s) + \pdydx{f}{y}(\rho_1(t,s),\rho_2(t,s)) \,
+\pdydx{\rho_2}{t}(t,s) \label{ENGchain2} \\
+&=\left(\cos(x)\cos(y^2)\right)\bigg|_{x=t^2+s^2,y=e^{ts}}
+\left(2t\right)
++ \left(-2y\sin(x)\sin(y^2)\right)\bigg|_{x=t^2+s^2,y=e^{st}}
+\left(se^{st}\right)  \nonumber  \\
+&= 2t\;\cos\left(t^2+s^2\right)\cos\left(e^{2st}\right)
+-2se^{2st}\sin\left(t^2+s^2\right)\sin\left(e^{2st}\right) \nonumber
+\end{align}
+et
+\begin{align}
+\pdydx{h}{s}(t,s) &= \pdydx{f}{x}(\rho_1(t,s),\rho_2(t,s))\,
+\pdydx{\rho_1}{s}(t,s) + \pdydx{f}{y}(\rho_1(t,s),\rho_2(t,s)) \,
+\pdydx{\rho_2}{s}(t,s) \label{ENGchain3} \\
+&=\left(\cos(x)\cos(y^2)\right)\bigg|_{x=t^2+s^2,y=e^{ts}}
+\left(2s\right)
++ \left(-2y\sin(x)\sin(y^2)\right)\bigg|_{x=t^2+s^2,y=e^{st}}
+\left(te^{st}\right) \nonumber \\
+&=2s\;\cos\left(t^2+s^2\right)\cos\left(e^{2st}\right)
+-2te^{2st}\sin\left(t^2+s^2\right)\sin\left(e^{2st}\right) \; . \nonumber
+\end{align}
+
+Si nous posons
+\begin{align*}
+\pdydx{z}{t} &= \dydx{h}{t}(t,s) \quad , \quad
+\pdydx{z}{s} = \dydx{h}{s}(t,s) \quad , \quad
+\pdydx{z}{x} = \pdydx{f}{x}(\rho_1(t,s),\rho_2(t,s)) \; \\
+\pdydx{z}{y} &= \pdydx{f}{y}(\rho_1(t,s),\rho_2(t,s)) \quad , \quad
+\pdydx{x}{t} = \pdydx{\rho_1}{t}(t,s)\quad , \quad
+\pdydx{y}{t} = \pdydx{\rho_2}{t}(t,s) \; , \\
+\pdydx{x}{s} &= \pdydx{\rho_1}{s}(t,s)\quad \text{et} \quad
+\pdydx{y}{s} = \pdydx{\rho_2}{s}(t,s) \, ,
+\end{align*}
+alors (\ref{ENGchain2}) et (\ref{ENGchain3}) peuvent s'exprimer
+respectivement
+\[
+\pdydx{z}{t} = \pdydx{z}{x}\,\pdydx{x}{t} + \pdydx{z}{y} \,
+\pdydx{y}{t} 
+\qquad \text{et} \qquad
+\pdydx{z}{s} = \pdydx{z}{x}\,\pdydx{x}{s} + \pdydx{z}{y} \,
+\pdydx{y}{s} \ .
+\]
+\end{egg}
+
+\section{Plan tangent à une surface (forme explicite)}
+
+\subsection{Surface donnée par une fonction de $x_1$ et $x_2$}
+
+Soit $f:\RR^2\rightarrow \RR$ une fonction qui possède des dérivées
+partielles et soit $D\subset \RR^2$ une région du plan.  L'ensemble
+\[
+S = \{ (x_1,x_2,f(x_1,x_2)) : (x_1,x_2) \in D \}
+\]
+définit une surface dans $\RR^3$ comme celle que nous retrouvons à la
+figure~\ref{D3_GRAPH}.
+
+Les dérivées partielles de $f$ au point $(a_1,a_2)\in D$ vont nous
+permettre de trouver l'équation du plan tangent à la surface $S$ au
+point $(a_1, a_2, f(a_1,a_2))$.
+
+La courbe produite par l'intersection du plan $x_2=a_2$ avec la
+surface $S$ est donnée par l'ensemble des points de la forme
+$(x_1,a_2, f(x_1,a_2))$ (figure~\ref{PARTIALX}).  Une représentation
+paramétrique de cette courbe est donnée par
+\[
+(x_1,x_2,x_3) = (\alpha, a_2, f(\alpha, a_2))
+\]
+pour tout $\alpha$ tel que $(\alpha,a_2)\in D$.  Un vecteur parallèle à la
+droite tangente à cette courbe au point $(a_1,a_2,f(a_1,a_2))$ (et
+donc parallèle au plan tangent à la surface $S$) est donnée par
+\[
+\VEC{v}_1 = \left( \dfdx{\ \alpha }{\alpha}\bigg|_{\alpha=a_1},
+\dfdx{\ a_2 }{\alpha}\bigg|_{\alpha=a_1},
+\dfdx{f(\alpha,a_2)}{\alpha}\bigg|_{\alpha=a_1} \right)
+= \left(1,0, \pdydx{f}{x_1}(a_1,a_2) \right) \; .
+\]
+
+\PDFfig{15_var_mult_der/partialx}{Courbe produite par l'intersection d'une
+surface et d'un plan où $x_2$ est constant}{Courbe produite par l'intersection
+de la surface $x_3=f(x_1,x_2)$ et du plan $x_2=a_2$.}{PARTIALX}
+
+% La représentation standard de la droite tangente à cette courbe au
+% point $(a_1,a_2,f(a_1,a_2))$ est
+% \[
+% x_1 - a_1 = \frac{x_3 - f(a_1,a_2)}{f_{x_1}(a_1,a_2)} \quad , \quad x_2=a_2
+% \]
+% La première égalité provient de l'équation de la droite tangente à la
+% courbe $x_3=f(x_1,a_2)$ lorsque $x_2=a_2$; c'est-à-dire
+% $x_3-f(a_1,a_2) = f_{x_1}(a_1,a_2) (x_1-a_1)$.
+
+La courbe produite par l'intersection du plan $x_1=a_1$ avec la
+surface $S$ est donnée par l'ensemble des points de la forme
+$(a_1, x_2, f(a_1,x_2))$ (figure~\ref{PARTIALY}).  Une représentation
+paramétrique de cette courbe est donnée par
+\[
+(x_1,x_2,x_3) = (a_1, \beta, f(a_1, \beta))
+\]
+pour tout $\beta$ tel que $(a_1,\beta)\in D$.  Un vecteur parallèle à
+la droite tangente à cette courbe au point $(a_1,a_2,f(a_1,a_2))$ (et donc
+parallèle au plan tangent à la surface $S$) est donnée par
+\[
+\VEC{v}_2 = \left( \dfdx{\ a}{\beta}\bigg|_{\beta=a_2},
+\dfdx{\ \beta }{\beta}\bigg|_{\beta=a_2},
+\dfdx{f(a_1,\beta)}{\beta}\bigg|_{\beta=a_2} \right)
+= \left(0,1, \pdydx{f}{x_2}(a_1,a_2) \right) \; .
+\]
+
+% La représentation standard de la droite tangente à cette courbe au
+% point $(a_1,a_2,f(a_1,a_2))$ est
+% \[
+% x_2 - a_2 = \frac{x_3 - f(a_1,a_2)}{f_{x_2}(a_1,a_2)} \quad , \quad x_1=a_1
+% \]
+% La première égalité provient de l'équation de la droite tangente à la
+% courbe $x_3=f(a_1,x_2)$ lorsque $x_2=a_2$; c'est-à-dire
+% $x_3-f(a_1,a_2) = f_{x_2}(a_1,a_2) (x_2-a_2)$.
+
+\PDFfig{15_var_mult_der/partialy}{Courbe produite par l'intersection d'une
+surface et d'un plan où $x_1$ est constant}{Courbe produite par l'intersection
+de la surface $x_3=f(x_1,x_2)$ et du plan $x_1=a_1$}{PARTIALY}
+
+Un vecteur perpendiculaire au plan tangent $\Pi$ à la surface $S$ au point
+$(a_1,a_2,f(a_1,a_2))$ (figure~\ref{PARTIALXY}) est donné par le produit
+vectoriel de deux vecteurs non colinéaires et parallèles à ce plan.  C'est le
+cas des vecteurs $\VEC{v}_1$ et $\VEC{v}_2$ que nous venons de définir.  Donc
+le vecteur
+\[
+\VEC{n}= \VEC{v}_1 \times \VEC{v}_2
+= 
+\left(-\dydx{f}{x_1}(a_1,a_2), -\dydx{f}{x_2}(a_1,a_2), 1 \right)
+\]
+est perpendiculaire au plan $\Pi$.
+
+L'équation du plan $\Pi$ tangent à la surface $S$
+au point $(a,b,f(a,b))$ est
+\begin{align*}
+&\VEC{n} \cdot \big( (x_1,x_2,x_3)-(a_1,a_2,f(a_1,a_2)) \big)  \\
+& \qquad \qquad = -\pdydx{f}{x_1}f(a_1,a_2) \left(x_1-a_1\right)
+- \pdydx{f}{x_2}f(a_1,a_2) \left(x_2-a_2\right)
++ (x_3-f(a_1,a_2)) = 0 \ .
+\end{align*}
+L'équation du plan tangent à la surface $S$ au point
+$(a_1,a_2,f(a_1,a_2))$ est souvent présentée sous la forme
+\begin{equation}\label{planTANG}
+x_3 = f(a_1,a_2) + \pdydx{f}{x_1}(a_1,a_2) \, \left(x_1-a_1\right)
++ \pdydx{f}{x_2}(a_1,a_2) \, \left(x_2-a_2\right) \ .
+\end{equation}
+
+\PDFfig{15_var_mult_der/partialxy}{Plan tangent à la surface
+$x_3=f(x_1,x_2)$ en un point $(a_1,a_2,f(a_1,a_2))$}{Plan tangent à la
+surface $S$ au point $(a_1,a_2,f(a_1,a_2))$. 
+Les vecteurs $\VEC{v}_1$ et $\VEC{v}_2$ sont parallèles au plan $\Pi$ et
+$\VEC{n}$ est perpendiculaire au plan $\Pi$.  Pour illustrer la relation
+entre les vecteurs $\VEC{v}_1$, $\VEC{v}_2$, $\VEC{n}$ et le plan
+$\Pi$, ces vecteurs sont tracés à partir du point $(a_1,a_2,f(a_1,a_2))$.
+Normalement, ces vecteurs devraient partir de l'origine.}{PARTIALXY}
+
+\begin{egg}
+Trouvons l'équation du plan tangent à la surface décrite par
+$z=x\sin(x^2\, y)$ au point $(1,\pi/2,1)$.
+
+L'équation du plan tangent est donnée par (\ref{planTANG}) où
+$f(x,y)=x\sin(x^2\,y)$, $a=1$, $b=\pi/2$ et $f(a,b) = \sin(\pi/2) =1$.
+Puisque
+\[
+\pdydx{f}{x} = \sin(x^2\,y) + 2x^2\, y\,\cos(x^2\,y)
+\quad \text{et} \quad
+\pdydx{f}{y} = x^3\,\cos(x^2\,y) \ ,
+\]
+nous obtenons
+\[
+\pdydx{f}{x}(1,\pi/2) = \sin(\pi/2) + \pi \cos(\pi/2) = 1
+\quad  \text{et} \quad
+\pdydx{f}{y}(1,\pi/2) = \cos(\pi/2) =0 \ ,
+\]
+Ainsi, l'équation du plan tangent est
+\[
+z = f(1,\pi) + \pdydx{f}{x}(1,\pi) \, (x - 1)
++ \pdydx{f}{y}(1,\pi) \, (y - \pi)
+= 1 + (x-1) = x \ .
+\]
+\end{egg}
+% Même question pour $f(x,y) = (x^3-y^3)/(x^2+y^2)$ et $(1,1,0)$
+
+\begin{egg}
+Trouvons l'équation du plan tangent au point
+$\VEC{p} = (1,2,\sqrt{2})$ de l'ellipsoïde
+$\displaystyle \frac{x^2}{3} + \frac{y^2}{9} + \frac{z^2}{9} = 1$.
+
+Si, dans l'équation de l'ellipsoïde, nous assumons que $z$ est une fonction de
+$x$ et $y$, et nous dérivons implicitement cette équation par rapport à $x$ et
+par rapport à $y$, nous obtenons
+\[
+\frac{2}{3}\,x + \frac{2}{9}\,z\,\pdydx{z}{x} = 0
+\Rightarrow \pdydx{z}{x} = -\frac{3x}{z}
+\qquad \text{et} \qquad
+\frac{2}{9}\,y + \frac{2}{9} \,z \, \pdydx{z}{y} = 0
+\Rightarrow \pdydx{z}{y} = -\frac{y}{z} \; .
+\]
+Ainsi,
+\[
+\pdydx{z}{x}(1,2) = -\frac{3}{\sqrt{2}} \quad \text{et} \quad
+\pdydx{z}{y}(1,2) = -\frac{2}{\sqrt{2}} \; .
+\]
+L'équation du plan tangent est
+\[
+z = \sqrt{2} -\frac{3}{\sqrt{2}}\,(x-1)
+- \frac{2}{\sqrt{2}}\,(y-2) \; .
+\]
+
+Nous aurions pu représenter localement l'ellipse au voisinage du point
+$\VEC{p}$ par
+\[
+  z = f(x,y) = 3 \sqrt{1 - \frac{x^2}{3} - \frac{y^2}{9}}
+\]
+et utiliser la formule (\ref{planTANG}) pour trouver l'équation du
+plan tangent au point $\VEC{p}$ de l'ellipse.
+\label{TPellipsoide}
+\end{egg}
+
+\subsection{Surface donnée par une représentation paramétrique}
+
+Ce ne sont pas toutes les surfaces qui sont décrite par l'image d'une
+fonction $f:\RR^2 \to \RR$.  Il suffit de penser à la sphère ou au
+taure.  Ce genre de surface possède une représentation
+paramétrique.
+
+\begin{focus}{\dfn} \index{Représentation paramétrique d'une surface}
+Une fonction $\rho :\RR^2 \to \RR^3$ est la représentation
+paramétrique d'une surface $S$ dans $\RR^3$ si:
+\begin{enumerate}
+\item $\rho_i$ est de classe $C^1$ pour $i=1$, $2$ et $3$.
+\item $\displaystyle \pdydx{\rho}{u_1}(u_1,u_2)$ et
+$\displaystyle \pdydx{\rho}{u_2}(u_1,u_2)$ sont deux vecteurs
+non colinéaires dans $\RR^3$ pour tout $(u_1,u_2)$. 
+\end{enumerate}
+\end{focus}
+
+La deuxième condition est requise pour assurer qu'il y a un vecteur
+normal (perpendiculaire) à la surface $S$ en tout point $\rho(u_1,u_2)$
+de la surface.  Nous pouvons vérifier, comme cela a été fait à la
+section~\ref{DTcourbe} pour la représentation paramétrique des
+courbes, que les vecteurs
+\begin{align*}
+\VEC{w}_1 &= \pdydx{\rho}{u_1}(a_1,a_2)
+    = \left(\pdydx{\rho_1}{u_1}(a_1,a_2), \pdydx{\rho_2}{u_1}(a_1,a_2),
+      \pdydx{\rho_3}{u_1}(a_1,a_2) \right) 
+\intertext{et}
+\VEC{w}_2 &= \pdydx{\rho}{u_2}(a_1,a_2)
+    = \left(\pdydx{\rho_1}{u_2}(a_1,a_2), \pdydx{\rho_2}{u_2}(a_1,a_2),
+      \pdydx{\rho_3}{u_2}(a_1,a_2) \right) 
+\end{align*}
+sont tangent à la surface $S$ au point $\rho(a_1,a_2) \in S$.  Ainsi,
+$\VEC{m} = \VEC{w}_1 \times \VEC{w}_2$ est un vecteur normal à la
+surface $S$ au point $\rho(a_1,a_2)$ de la surface.  Notons que
+$\VEC{m} \neq \VEC{0}$ car $\VEC{w}_1$ et $\VEC{w}_2$ ne sont pas
+colinéaires.
+
+\begin{egg}
+Cherchons le plan tangent à la surface $S$ donnée par la
+représentation paramétrique
+$\rho(u,v) = \left( u+v, u\sin(v), v \cos(u) \right)$ au point
+$(2\pi,0,-\pi)$.
+
+Notons premièrement que $\rho(u,v) = (2\pi,0,-\pi)$ si et seulement
+si $(u,v) =(\pi.\pi)$.  En effet, $u\sin(v) = 0$ est vrai si $u=0$ ou
+$v = n\pi$ pour $n \in \ZZ$.  Il découle de $u+v=2\pi$
+que $(u,v) = (0,2\pi)$ et $(u,v) = (2\pi - n\pi,n \pi)$ sont les
+seules solutions possibles.  Si $(u,v) = (0,2\pi)$, alors
+$v \cos(u) = 2\pi \neq -\pi$.  Donc $(u,v) = (0,2\pi)$
+est exclus.  Si $(u,v) = (2\pi - n\pi,n \pi)$, alors
+$v \cos(u) = n \pi \cos(2\pi -n\pi) = (-1)^n n\pi$ et il faut choisir
+$n=1$ pour avoir $v \cos(u) = -\pi$.  Donc
+$(u,v) =(\pi.\pi)$ est la seule solution.
+
+Pour trouver un vecteur normal $\VEC{m}$ à la surface $S$ au point
+$(2\pi,0,\pi)$, nous utilisons les vecteurs
+\begin{align*}
+\VEC{w}_1 &= \pdydx{\rho}{u}(\pi,\pi)
+= \left(1, \sin(v) , -v\sin(u)\right)\bigg|_{(u,v) = (\pi,\pi)}
+= (1, 0, 0) \\
+\intertext{et}
+\VEC{w}_2 &= \pdydx{\rho}{v}(\pi,\pi)
+= \left( 1, u\cos(v), \cos(u) \right)\bigg|_{(u,v) = (\pi,\pi)}
+= (1,-\pi, -1) \ .
+\end{align*}
+Nous trouvons
+\[
+  \VEC{m} = \VEC{w}_1 \times \VEC{w}_2
+= \begin{pmatrix}
+\ii & \jj & \kk \\
+1 & 0 & 0 \\
+1 & -\pi & -1
+\end{pmatrix} = 0 \ii + \jj - \pi \kk = (0, 1, -\pi)
+\]
+si nous développons le déterminant selon la première ligne.
+Ainsi, l'équation du plan tangent à la surface $S$ au point
+$(2\pi,0,-\pi)$ est donnée par
+\[
+  \VEC{m} \cdot (x_1-2\pi,x_2,x_3+\pi) = x_2 - \pi (x_3+\pi) = 0 \ .
+\]
+\end{egg}
+
+\section{Dérivées selon une direction donnée \eng}
+
+Si nous regardons les figures~\ref{PARTIALX} et \ref{PARTIALY}, nous
+remarquons que le calcul des dérivées partielles assume que le
+déplacement ce fait seulement selon une direction parallèle à l'axe
+des $x_1$ ou à l'axe des $x_2$.  Il n'y a aucune raison de se limité à ces
+deux seules directions.
+
+En fait, il est très utile de définir des dérivées selon d'autres
+directions.
+
+\begin{focus}{\dfn} \index{Dérivée directionnelle}
+Soit $V\subset \RR^n$ un ensemble ouvert et $f:V\rightarrow \RR$ une
+fonction a valeurs réelles.  Soit 
+$\VEC{u} \in \RR^n$ un vecteur de longueur euclidienne $1$.  La
+{\bfseries dérivée de $f$ selon la direction $\VEC{u}$ au point
+$\VEC{a} \in V$}, que nous dénotons
+$\displaystyle \pdydx{f}{\VEC{u}}(\VEC{a})$, est définie par
+\[
+\pdydx{f}{\VEC{u}}(\VEC{a}) =
+\lim_{h\rightarrow 0} \frac{1}{h}\left(f(\VEC{a}+h\VEC{u})-f(\VEC{a})\right)
+\]
+si cette limite existe.  Dans la limite précédente, nous assumons que
+$h$ est assez petit pour que $\VEC{a}+h\VEC{u} \in V$ et ainsi que $f$
+soit définie à $\VEC{a}+h\VEC{u}$.
+\end{focus}
+
+Nous pouvons donner une interprétation graphique de la dérivée selon une
+direction semblable à celle que nous connaissons pour la dérivée d'une
+fonction d'une seule variable.  Les figures~\ref{DIRDER1} et
+\ref{DIRDER2} fournissent cette interprétation pour les fonctions de
+deux variables.
+
+Soit $\Pi$ le plan qui est parallèle au vecteur $(u_1,u_2,0)$ et à
+l'axe des $x_3$, et qui contient le point $(a_1,a_2,f(a_1,a_2))$.
+Soit $\Gamma$ la courbe donnée par l'intersection du plan $\Pi$ et de
+la surface $x_3 = f(x_1,x_2)$.  La sécante à la courbe $\Gamma$ qui
+passe par les points $(a_1,a_2,f(a_1,a_2))$
+et $(a_1+h\,u_1,a_2+h\,u_2,f(a_1+h\,u_1,a_2+h\,u_2))$ (figure~\ref{DIRDER1})
+est contenue dans le plan $\Pi$ et sa pente est
+\[
+\frac{1}{h}\left(f(\VEC{a}+h\VEC{u})-f(\VEC{a})\right) \; ,
+\]
+où $\VEC{u}=(u_1,u_2)$, $\VEC{a}=(a_1,a_2)$ et
+$\VEC{a}+h\VEC{u} = (a_1+h\,u_1,a_2+h\,u_2)$.
+À la limite, lorsque $h$ tend vers $0$, nous obtenons la pente de la
+droite tangente à la courbe $\Gamma$ au point $(a_1,a_2,f(a_1,a_2))$
+(figure~\ref{DIRDER2}).  La tangent est aussi contenue dans le plan $\Pi$.
+
+\PDFfig{15_var_mult_der/dirder}{Représentation graphique de la
+définition de la dérivée dans la direction d'un vecteur}{La sécante
+à la courbe $\Gamma$ qui passe par les points $(a_1,a_2,f(a_1,a_2))$ et
+$(a_1+h\,u_1,a_2+h\,u_2,f(a_1+h\,u_1,a_2+h\,u_2))$.  Le plan $\Pi$ est
+parallèle au vecteur $(u_1,u_2,0))$ et à l'axe des $z$, et contient le
+point $(a_1,a_2,f(a_1,a_2))$.}{DIRDER1}
+
+\PDFfig{15_var_mult_der/dirder2}{La tangente à la courbe d'intersection d'un
+plan et d'une surface}{La tangente à la courbe $\Gamma$ au point
+$(a_1,a_2,f(a_1,a_2))$.}{DIRDER2}
+
+\begin{egg}
+Calculons la dérivée de la fonction $f(x,y) = xy/(x^2+y^2)$ selon la
+direction $(1,1)$ au point $(1,0)$.
+
+Remarquons que le vecteur $(1,1)$ n'est pas de longueur $1$.  C'est un abus
+de langage qui est très commun dans la littérature scientifique.  Il faut
+alors comprendre que nous demandons de calculer la dérivée selon la direction
+d'un vecteur $\VEC{u}$ de longueur $1$ qui pointe dans la même direction que
+le vecteur donné.
+
+Le vecteur $\VEC{u} = (1/\sqrt{2},1/\sqrt{2})$ pointe dans la
+même direction que le vecteur $(1,1)$ et ait de longueur $1$.  Nous
+calculons la dérivée de $f$ au point $(1,0)$ selon la direction $\VEC{u}$.
+
+Posons $\VEC{a} = (1,0)$, alors
+\[
+\VEC{a}+h\VEC{u} = (1,0)+h(1/\sqrt{2},1/\sqrt{2}) =
+(1+h/\sqrt{2},1/\sqrt{2})
+\]
+et 
+\begin{align*}
+\pdydx{f}{\VEC{u}}(1,0) &=
+\lim_{h\rightarrow 0} \frac{f(\VEC{a}+h\VEC{u}) - f(\VEC{a})}{h} 
+= \lim_{h\rightarrow 0} \frac{f(1+h/\sqrt{2},h/\sqrt{2})-f(1,0)}{h} \\
+&= \lim_{h\rightarrow 0} \frac{1}{h}
+\left(\frac{(1+h/\sqrt{2})\,(h/\sqrt{2})}
+{(1+h/\sqrt{2})^2 +(h/\sqrt{2})^2} \right)
+= \lim_{h\rightarrow 0} \frac{1/\sqrt{2}+h/2} {h^2+h\sqrt{2}+1}
+= \frac{1}{\sqrt{2}} \; .
+\end{align*}
+\end{egg}
+
+Calculer la dérivée selon une direction donnée à partir de la définition
+n'est généralement pas simple.  Nous pouvons utiliser notre
+connaissance des dérivées partielles pour calculer la dérivée selon
+une direction donnée.
+
+Soit $\VEC{u} = (u_1,u_2, \ldots, u_n)$ un vecteur de longueur $1$ dans
+$\RR^n$ et $\VEC{a}=(a_1,a_2,\ldots,a_n)$ un vecteur de $\RR^n$. De plus,
+soit $\RR^n:D\rightarrow \RR$ une fonction qui possède des dérivées
+partielles.
+Posons $g(t) = f(a_1+t\,u_1,a_2+t\,u_2, \ldots, a_n + t\, u_n)$. 
+À l'aide des règles de dérivation de fonctions composées, en
+particulier (\ref{specialCR}), nous obtenons
+\begin{align*}
+g'(t) &= \pdydx{f}{x_1}(a_1+t\,u_1,a_2+t\,u_2, \ldots, a_n + t\,u_n)\;u_1 \\
+&+ \pdydx{f}{x_2}(a_1+t\,u_1,a_2+t\,u_2, \ldots, a_n + t\,u_n)\;u_2 + \ldots \\
+&+ \pdydx{f}{x_n}(a_1+t\,u_1,a_2+t\,u_2, \ldots, a_n + t\,u_n)\;u_n \; .
+\end{align*}
+Mais, par définition
+\begin{align*}
+g'(0) &= \lim_{h\rightarrow 0} \frac{g(h)-g(0)}{h}
+= \lim_{h\rightarrow 0}
+\frac{f(a_1+h\,u_1,a_2+h\,u_2, \ldots, a_n + h\, u_n)
+- f(a_1,a_2, \ldots, a_n)}{h} \\
+&= \pdydx{f}{\VEC{u}}(a_1,a_2, \ldots, a_n) \; .
+\end{align*}
+Donc
+\[
+\pdydx{f}{\VEC{u}}(\VEC{a}) = g'(0)
+= \pdydx{f}{x_1}(\VEC{a})\;u_1 +
+\pdydx{f}{x_2}(\VEC{a})\;u_2 +
+\ldots + \pdydx{f}{x_n}(\VEC{a})\;u_n \; .
+\]
+Nous obtenons donc le résultat suivant.
+
+\begin{focus}{\prp} \index{Gradient}
+Soit $V\subset \RR^n$ un ensemble ouvert et $f:V\rightarrow \RR$ une
+fonction a valeurs réelles.  Posons
+\begin{equation}\label{gradient}
+\nabla f(\VEC{a}) = \left(\pdydx{f}{x_1}(\VEC{a}),
+\pdydx{f}{x_2}(\VEC{a}), \ldots, \pdydx{f}{x_n}(\VEC{a}) \right)
+\end{equation}
+pour $\VEC{a} \in V$.  Nous avons que
+\begin{equation}\label{dirderGrad}
+\pdydx{f}{\VEC{u}}(\VEC{a}) =
+\nabla f(\VEC{a}) \cdot \VEC{u} \; .
+\end{equation}
+$\nabla f(\VEC{a})$ est appelé le {\bfseries gradient} de $f$ au point
+$\VEC{a}$.
+\end{focus}
+
+\begin{rmk}
+Pour être consistant avec la représentation algébrique des vecteurs (i.e. un
+vecteur est une matrice de dimension \nm{n}{1}), nous devrions définir le
+gradient de $f$ à $\displaystyle \VEC{a} = \begin{pmatrix}
+a_1 & a_2 & \cdots & a_n \end{pmatrix}^\top$ comme la matrice de dimension
+\nm{1}{n}
+\[
+\nabla f(\VEC{a}) =
+\begin{pmatrix}\displaystyle \pdydx{f}{x_1}(\VEC{a}) &
+\displaystyle \pdydx{f}{x_2}(\VEC{a}) & \ldots &
+\displaystyle \pdydx{f}{x_n}(\VEC{a}) \end{pmatrix} \; .
+\]
+Puisque $\displaystyle \VEC{u} = \begin{pmatrix} u_1 & u_2 & \cdots &
+u_n \end{pmatrix}^\top$, nous avons que
+\[
+\pdydx{f}{\VEC{u}}(\VEC{a}) =
+\nabla f(\VEC{a})\ \VEC{u} \ ,
+\]
+le produit d'une matrice de dimension \nm{1}{n} par une matrice de
+dimension \nm{n}{1}.
+
+De plus, en utilisant cette convention, le gradient
+$\nabla f(\VEC{a})$ n'est rien d'autre que la dérivée de $f:V\to \RR$
+au point $\VEC{a}$ comme nous verrons à la fin du chapitre.
+\end{rmk}
+
+\begin{egg}
+Calculons la dérivée de la fonction $f(x,y) = \sqrt{x^2+y^2}$ selon la
+direction $(1,\sqrt{3})$ au point $(2,1)$.
+
+Puisque $(1,\sqrt{3})$ n'est pas de longueur $1$ mais de longueur $2$,
+nous utilisons le vecteur $\VEC{u} = (1/2 , \sqrt{3}/2)$ et calculons la
+dérivée selon la direction $\VEC{u}$.
+
+Le gradient de $f$ au point $\VEC{a}=(2,1)$ est
+\begin{align*}
+\nabla f(\VEC{a}) &= \left( \pdydx{f}{x}(\VEC{a}),
+\pdydx{f}{y})(\VEC{a}) \right)
+= \left( \frac{x}{\sqrt{x^2+y^2}}\bigg|_{(x,y)=(2,1)} ,
+\frac{y}{\sqrt{x^2+y^2}}\bigg|_{(x,y)=(2,1)} \right) \\
+&= \left( \frac{2}{\sqrt{5}}, \frac{1}{\sqrt{5}} \right) \; .
+\end{align*}
+Ainsi,
+\[
+\pdydx{f}{\VEC{u}}(\VEC{a}) = \nabla f(\VEC{a})\cdot \VEC{u}
+= \left( \frac{2}{\sqrt{5}}, \frac{1}{\sqrt{5}} \right)
+\cdot \left(\frac{1}{2} , \frac{\sqrt{3}}{2}\right)
+= \frac{1}{2\sqrt{5}}\left(2+\sqrt{3}\right)\; .
+\]
+\end{egg}
+
+\begin{egg}
+Calculons la dérivée de la fonction $f(x,y) = x^2+y^2+z^2$ selon la
+direction $(1,-1,-1)$ au point $(1,1,1)$.
+
+Puisque $(1,-1,-1)$ n'est pas de longueur $1$ mais de longueur $\sqrt{3}$,
+nous utilisons le vecteur
+$\VEC{u} = (1/\sqrt{3} , -1/\sqrt{3},-1/\sqrt{3})$
+et calculons la dérivée selon la direction $\VEC{u}$.
+
+Le gradient de $f$ au point $\VEC{a}=(1,1,1)$ est
+\begin{align*}
+\nabla f(\VEC{a}) &= \left( \pdydx{f}{x}(\VEC{a}),
+\pdydx{f}{y}(\VEC{a}), \pdydx{f}{z}(\VEC{a}) \right) \\
+& = \left( 2x\big|_{(x,y,z)=(1,1,1)} , 2y\big|_{(x,y,z)=(1,1,1)} ,
+2z\big|_{(x,y,z)=(1,1,1)} \right)
+= \left( 2, 2, 2 \right) \; .
+\end{align*}
+Ainsi,
+\[
+\pdydx{f}{\VEC{u}}(\VEC{a}) = \nabla f(\VEC{a})\cdot \VEC{u}
+= \big(2,2,2\big)\cdot \left(\frac{1}{\sqrt{3}} , -\frac{1}{\sqrt{3}}, 
+-\frac{1}{\sqrt{3}} \right)
+= -\frac{2}{\sqrt{3}} \; .
+\]
+\end{egg}
+
+\section{Propriétés du gradient \eng}
+
+\subsection{Plan tangent à une surface (forme implicite)}\label{planTangExpl}
+
+Soit $F:\RR^3 \rightarrow \RR$ une fonction différentiable et $C$ une
+constante.  Une équation de la forme $F(x_1,x_2,x_3)=C$ définit une
+surface $S$ dans l'espace.
+
+\begin{egg}
+Si $F(x,y,z) = x^2 + y^2 + z^2$ et $C=4$, alors $F(x,y,z)=4$ est l'équation
+$x^2+y^2+z^2=4$ qui représente une sphère de rayon $2$ centrée à l'origine.
+\end{egg}
+
+Soit $\VEC{a} = (a_1,a_2,a_3)$ un point de la surface $S$ et $\Gamma$
+une courbe sur la surface $S$ qui panse par $\VEC{a}$.
+De plus, soit $\phi:\RR \rightarrow \RR^3$ une
+représentation paramétrique de $\Gamma$.  Supposons que $\VEC{a} = \phi(t)$
+pour $t=\alpha$.  Nous retrouvons une représentation de $S$ et $\Gamma$ à la
+figure~\ref{XYPLAN1}.
+
+\PDFfig{15_var_mult_der/plan1}{Courbe appartenant à une surface}{La courbe
+$\Gamma$ appartient à la surface $S$.}{XYPLAN1} 
+
+Puisque $\phi$ définit une courbe sur $S$, nous avons que
+\[
+F(\phi(t)) = F(\phi_1(t), \phi_2(t), \phi_3(t)) = C
+\]
+pour tout $t$.  Si nous dérivons cette équation par rapport à $t$,
+nous obtenons
+\[
+\pdydx{F}{x}(\phi(t))\,\phi_1'(t) + \pdydx{F}{y}(\phi(t))\,\phi_2'(t) +
+\pdydx{F}{x}(\phi(t))\,\phi_3'(t) =0 \; .
+\]
+Cette expression n'est nulle autre que
+\[
+\nabla F(\phi(t))\cdot \phi'(t) = 0 \; .
+\]
+À $t=\alpha$, nous obtenons
+\[
+\nabla F(\VEC{a})\cdot \phi'(\alpha) = 0 \; .
+\]
+Le vecteur $\nabla F(\VEC{a})$ est perpendiculaire à la tangente à la courbe
+$\Gamma$ au point $\phi(\alpha)= \VEC{a}$.
+
+Puisque $\phi'(\alpha)$ est une vecteur parallèle au plan tangent à la
+surface $S$ au point $\phi(\alpha)= \VEC{a}$ et que le raisonnement précédent
+est vrai quelle que soit la courbe $\Gamma$ sur la surface $S$ qui passe par
+$\VEC{a}$, nous pouvons conclure que $\nabla F(\VEC{a})$ est une vecteur
+perpendiculaire au plan tangent à la surface $S$ au point $\VEC{a}$
+(figure~\ref{XYPLAN2}).  Nous avons donc le résultat suivant.
+
+\PDFfig{15_var_mult_der/plan2}{Le gradient en un point d'une surface
+donnée implicitement est perpendiculaire au plan tangent à la surface}
+{$S$ est la surface décrite par l'équation $F(\VEC{x})= C$.   Le
+vecteur $\nabla F(\VEC{a})$ est perpendiculaire au plan tangent à la
+surface $S$ au point $\VEC{a} \in S$.}{XYPLAN2}
+
+\begin{focus}{\prp}
+Soit $F:\RR^3\rightarrow \RR$ une fonction différentiable et $C$ une
+constante.  Si $S$ est la surface définie par l'équation
+$F(\VEC{x})=F(x_1,x_2,x_3)=C$ et $\VEC{a}=(a_1,a_2,a_3)$ est une point
+de $S$, alors $\nabla F(\VEC{a})$ est perpendiculaire au plan tangent à
+la surface $S$ au point $\VEC{a}$.  C'est-à-dire,
+\[
+\nabla F(\VEC{a})\cdot \VEC{v} = 0
+\]
+pour tous les vecteurs $\VEC{v}$ qui sont parallèles au plan tangent.
+\end{focus}
+
+\begin{rmk}
+Le résultat précédent est aussi vrai dans $\RR^n$ où $n$ est différent
+de $3$.  La démonstration ne change pas.  Si $n\neq 3$ et
+$F:\RR^n \rightarrow \RR$ est une fonction différentiable alors
+$S = \{ \VEC{x} : F(\VEC{x})=C \}$ définit une \flqq surface\frqq\ 
+dans $\RR^n$.  Le cas $n=2$ nous donne une courbe dans le plan.  Nous
+reverrons le cas $n=2$ à la prochaine section.
+\label{orthogGRAD}
+\end{rmk}
+
+Ayant un vecteur perpendiculaire à un plan, il est maintenant facile de
+donner une équation représentant ce plan.
+
+\begin{focus}{\prp}
+Soit $F:\RR^3\rightarrow \RR$ une fonction différentiable et $C$ une
+constante.  Si $S$ est la surface définie par l'équation $F(\VEC{x})=C$ et
+$\VEC{a}$ est une point de $S$, alors l'équation du plan tangent à la
+surface $S$ au point $\VEC{a}$ est 
+\[
+\nabla F(\VEC{a})\cdot (\VEC{x} - \VEC{a}) =
+\pdydx{F}{x_1}(\VEC{a})(x_1-a_1) + \pdydx{F}{x_2}(\VEC{a})(x_2-a_2)
++\pdydx{F}{x_3}(\VEC{a})(x_3-a_3)=0 \ .
+\]
+\end{focus}
+
+\begin{rmk}
+Soit $S$ une surface donnée par $x_3=f(x_1,x_2)$ où
+$f:\RR^2\rightarrow \RR$.  Si nous définissons la fonction
+$F:\RR^3 \rightarrow \RR$ par $F(x_1,x_2,x_3) = f(x_1,x_2) - x_3$,
+alors la surface $S$ est donnée par $F(x_1,x_2,x_3)=0$.
+
+Si $a_3=f(a_1,a_2)$, alors $(a_1,a_2,a_3)$ est un point de $S$ et
+l'équation du plan tangent à $S$ au point $(a_1,a_2,a_3)$ est
+\begin{align*}
+0 &= \nabla F(a_1,a_2,a_3)\cdot (x_1-a_1,x_2-a_2,x_3-a_3) \\
+&= \left(\pdydx{f}{x_1}(a_1,a_2), \pdydx{f}{x_2}(a_1,a_2), -1\right)
+\cdot (x_1-a_1,x_2-a_2,x_3-a_3) \\
+&= \pdydx{f}{x_1}(a_1,a_2) \,(x_1-a_1) + \pdydx{f}{x_2}(a_1,a_2)\,(x_2-a_2)
+-(x_3-a_3)
+\end{align*}
+qui donne
+\[
+x_3 = a_3 + \pdydx{f}{x_1}(a_1,a_2) \,(x_1-a_1)
++ \pdydx{f}{x_2}(a_1,a_2)\,(x_2-a_2) \; .
+\]
+C'est la formule (\ref{planTANG}) car $a_3 = f(a_1,a_2)$.
+\end{rmk}
+
+\begin{egg}
+Reprenons l'exemple~\ref{TPellipsoide} qui était de trouver l'équation du
+plan tangent au point $\VEC{p} = (1,2,\sqrt{2})$ de l'ellipsoïde
+$\displaystyle F(x,y,z) = \frac{x^2}{3} + \frac{y^2}{9} + \frac{z^2}{9} = 1$.
+
+Un vecteur perpendiculaire au plan tangent à l'ellipsoïde au point
+$\VEC{p}$ est donnée par le gradient de $F$ au point $\VEC{p}$;
+c'est-à-dire, par
+\begin{align*}
+\VEC{n} &= \nabla F(1,2,\sqrt{2}) \\
+&= \left(\pdydx{F}{x}(x,y,z)\bigg|_{(x,y,z)=(1,2,\sqrt{2})} ,
+\pdydx{F}{y}(x,y,z)\bigg|_{(x,y,z)=(1,2,\sqrt{2})},
+\pdydx{F}{z}(x,y,z)\bigg|_{(x,y,z)=(1,2,\sqrt{2})} \right) \\
+&= \left( \left(\frac{2x}{3}\right)\bigg|_{(x,y,z)=(1,2,\sqrt{2})} ,
+\left(\frac{2y}{9}\right)\bigg|_{(x,y,z)=(1,2,\sqrt{2})},
+\left(\frac{2z}{9}\right)\bigg|_{(x,y,z)=(1,2,\sqrt{2})} \right)
+= \left(\frac{2}{3} ,\frac{4}{9}, \frac{2\sqrt{2}}{9} \right) \; .
+\end{align*}
+
+L'équation du plan tangent est
+\begin{align*}
+0 &= \nabla F(1,2,\sqrt{2})\cdot(x-1, y-2, z- \sqrt{2})
+= \left( \frac{2}{3} , \frac{4}{9}, \frac{2\sqrt{2}}{9} \right)
+\cdot (x-1, y-2, z- \sqrt{2}) \\
+&= \frac{2}{3} \, (x-1) + \frac{4}{9} \, (y-2) +
+\frac{2\sqrt{2}}{9}\,(z- \sqrt{2}) \; .
+\end{align*}
+Cette équation peut s'écrire sous la forme
+\[
+z = \sqrt{2} + \frac{9}{2\sqrt{2}} \left(
+-\frac{2}{3} \, (x-1) - \frac{4}{9} \, (y-2) \right)
+= \sqrt{2} - \frac{3}{\sqrt{2}} \, (x-1) - \frac{2}{\sqrt{2}} \, (y-2) \; .
+\]
+C'est la réponse donnée à l'exemple~\ref{TPellipsoide}.
+\end{egg}
+
+\subsection{Direction de croissance maximale}
+
+En plus d'être utile pour calculer des dérivées selon une direction donnée et
+pour trouver l'équation d'un plan tangent à une surface, le gradient d'une
+fonction a d'autres propriétés importantes que nous ne pouvons pas ignorer.
+
+\begin{focus}{\prp}
+\begin{enumerate}
+\item Soit $f:\RR^n\rightarrow \RR$ une fonction différentiable et
+$\VEC{a} \in \RR^n$ un point quelconque.  La valeur maximale de la dérivée de
+$f$ selon une direction au point $\VEC{a}$ est atteinte lorsque la direction
+est $\nabla f(\VEC{a})$ (le gradient de $f$ à $\VEC{a}$).  La valeur maximale
+$M$ est alors
+\[
+M = \|\nabla f(\VEC{a}) \| =
+\sqrt{\left(\pdydx{f}{x_1}(\VEC{a})\right)^2 +
+\left(\pdydx{f}{x_2}(\VEC{a})\right)^2 + \ldots +
+\left(\pdydx{f}{x_n}(\VEC{a})\right)^2 } \; .
+\]
+\item De même, La valeur minimale de la dérivée de $f$ selon une direction au
+point $\VEC{a}$ est atteinte lorsque la direction est donnée par
+$-\nabla f(\VEC{a})$.  La valeur minimale est $-M$.
+\end{enumerate}
+\label{SteepestG}
+\end{focus}
+
+Pour démontrer cette proposition (dans $\RR^2$ ou $\RR^3$), il faut utiliser
+un résultat que nous avons vu lors de l'étude des vecteurs.  Si $\VEC{a}$ et
+$\VEC{b}$ sont deux vecteurs et $\theta$ est le plus petit angle entre ces
+deux vecteurs, alors
+\[
+\ps{\VEC{a}}{\VEC{b}} = \|\VEC{a}\|\,\|\VEC{b}\| \, \cos(\theta) \; .
+\]
+Ainsi, pour tout vecteur $\VEC{u}$ de longueur $1$,
+\begin{equation}\label{newtMAX}
+\dydx{f}{\VEC{u}}(\VEC{a}) = \nabla f(\VEC{a}) \cdot \VEC{u}
+=\|\nabla f(\VEC{a})\|\,\|\VEC{u}\|\,\cos(\theta)
+=\|\nabla f(\VEC{a})\|\,\cos(\theta)
+\end{equation}
+où $\theta$ est le plus petit angle entre $\VEC{u}$ et $\nabla f(\VEC{a})$.
+Il découle de (\ref{newtMAX}) que la valeur maximale de
+$\displaystyle \dydx{f}{\VEC{u}}(\VEC{a})$ est lorsque
+$\cos(\theta)=1$; c'est-à-dire, $\theta =0$.  Donc les vecteurs
+$\VEC{u}$ et $\nabla f(\VEC{a})$ pointent dans la même
+direction.  Puisque $\VEC{u}$ est de longueur $1$, nous obtenons
+\[
+\VEC{u} = \frac{1}{\|\nabla f(\VEC{a})\|}\,\nabla f(\VEC{a}) \; .
+\]
+Il s'en suit de (\ref{newtMAX}) que la valeur maximale de la dérivée
+selon une direction donnée est $\|\nabla f(\VEC{a})\|$ lorsque $\theta = 0$
+
+La démonstration de la deuxième partie de la proposition précédente est très
+semblable à celle de la première partie et est laissée aux lecteurs.
+
+Nous avons montré à la section précédente que, pour toute surface $S$
+définie par $F(\VEC{x})=C$ et tout point $\VEC{a}$ sur cette surface,
+$\nabla F(\VEC{a})$ est une vecteur perpendiculaire au plan tangente à $S$ au
+point $\VEC{a}$.  Comme mentionné à la remarque~\ref{orthogGRAD}, ce
+résultat est aussi vrai pour $\RR^2$ et dans ce cas il faut
+remplacer les surfaces par des courbes.  En d'autres mots, nous
+obtenons le résultat suivant.
+
+\begin{focus}{\prp}
+Soit $\Gamma$ une courbe du plan définie par $f(\VEC{x})=C$ où
+$f:\RR^2\rightarrow \RR$ est une fonction différentiable et $C$ est une
+constante.  Si $\VEC{a} = (a_1,a_2)$ est une point de cette courbe,
+alors $\nabla f(\VEC{a})$ est perpendiculaire à la droite tangente à
+$\Gamma$ au point $\VEC{a}$.
+\end{focus}
+
+La démonstration de ce dernier résultat dans $\RR^2$ est identique à la
+démonstration que nous avons donné dans $\RR^3$ à la section précédente.
+Néanmoins, vu l'importance de ce résultat, nous répétons cette démonstration
+ci-dessous.
+
+Soit $f:\RR^2\rightarrow \RR$ une fonction différentiable et
+\[
+\Gamma = \{ (x_1,x_2) : f(x_1,x_2)= C \}
+\]
+une courbe dans l'espace (en fait une courbe de niveau de $f$).  Si
+$\phi:\RR\rightarrow \RR^2$ est une représentation paramétrique de la
+courbe $\Gamma$, alors
+\[
+f(\phi(t)) = f(\phi_1(t) , \phi_2(t)) = C
+\]
+pour tout $t\in\RR$.  Si nous dérivons cette expression par rapport à
+$t$, nous obtenons
+\begin{align*}
+0 &= \pdydx{f}{x_1}(\phi_1(t),\phi_2(t))\, \phi_1'(t)
++ \pdydx{f}{x_2}(\phi_1(t),\phi_2(t))\, \phi_2'(t) \\
+&= \left(\pdydx{f}{x_1}(\phi_1(t),\phi_2(t)),
+\pdydx{f}{x_2}(\phi_1(t),\phi_2(t))\right) \cdot (\phi_1'(t),\phi_2'(t)) \\
+&= \nabla f(\phi(t))\cdot \phi'(t) \; .
+\end{align*}
+Si $\VEC{a} = (a_1,a_2)$ est une point de la courbe $\Gamma$ et
+$\phi(t) = \VEC{a}$ pour  $t=\alpha$, alors
+\[
+0 = \nabla f(\phi(\alpha))\cdot \phi'(\alpha)
+= \nabla f(\VEC{a})\cdot \phi'(\alpha) \; .
+\]
+Or, $\phi'(\alpha)$ est une vecteur parallèle à la droite tangente à la
+courbe $\Gamma$ au point $\phi(\alpha)=\VEC{a}$.  Le gradient
+$\nabla f(\VEC{a})$ est donc perpendiculaire à la tangente à la courbe
+$\Gamma$ au point $\VEC{a}$.
+
+Si nous combinons le résultat énoncé ci-dessus et le résultat de la
+proposition~\ref{SteepestG}, nous obtenons le résultat suivant.
+
+\begin{focus}{\prp}
+Soit $\Gamma$ une courbe de niveau d'une fonction différentiable
+$f:\RR^2\rightarrow \RR$ définie par
+\[
+\Gamma = \{ (x_1,x_2) : f(x_1,x_2) = C \}
+\]
+où $C$ est une constante.  Soit $\VEC{a}=(a_1,a_2)$ une point de
+$\Gamma$.  À partir de $\VEC{a}$, la direction dans laquelle la
+fonction $f$ croît le plus rapidement (i.e.\ la dérivée selon une
+direction au point $\VEC{a}$ est maximale) est perpendiculaire à la
+courbe de niveau $\Gamma$ (figure~\ref{LVLCURVE}.)
+\end{focus}
+
+\PDFfig{15_var_mult_der/level}{Les trajectoires le long desquelles une
+fonction croît le plus rapidement coupent les courbes de niveau
+perpendiculairement}{Les trajectoires (i.e.\ courbes) le long
+desquelles $f$ croît le plus rapidement coupent les courbes de niveau
+de $f$ perpendiculairement.}{LVLCURVE}
+
+\begin{egg}
+Soit $f(x,y,z) = 5x^2z+3x^2y+\sin(yz)$.  Dans quelle direction la fonction
+$f$ croît-elle le plus rapidement au point $(2,1,0)$ et quelle est ce taux de
+croissance maximal?
+
+La direction dans laquelle la fonction $f$ croît le plus rapidement est
+$\nabla f(2,1,0)$.  Or
+\begin{align*}
+\nabla f(x,y,z) &= \left(\pdydx{f}{x}(x,y,z), \pdydx{f}{y}(x,y,z), 
+\pdydx{f}{z}(x,y,z) \right)\\
+&=\left( 10xz +6xy, 3x^2 + z\,\cos(yz) , 5x^2 + y \cos(yz) \right)
+\end{align*}
+Donc $\nabla f(2,1,0) = (12, 12, 21)$ est la direction dans laquelle $f$
+croît le plus rapidement.  Le taux de croissance maximal (i.e. le taux de
+croissance dans la direction $\nabla f(2,1,0)$\ ) est
+\[
+\|\nabla f(2,1,0)\| = \sqrt{12^2+12^2 + 21^2} = 27 \; .
+\]
+\end{egg}
+
+\subsection{Théorème de la moyenne}
+
+le Théorème de la moyenne (\ref{MVT}) pour les fonctions d'une
+variable a une généralisation aux fonctions de plusieurs variables.
+
+\begin{focus}[][Théorème de la moyenne]{\thm}
+Soit $D$, un sous-ensemble de $\RR^n$, qui contient les points
+$\VEC{a}$ et $\VEC{b}$ ainsi que le segment de droite $L$ de $\VEC{a}$
+à $\VEC{b}$.  Soit $f:D \to \RR$ une fonction différentiable en tout
+point de $L$.  Alors il existe un point $\VEC{c}$ de $L$ tel que
+\[
+  f(\VEC{b}) - f(\VEC{a}) = \nabla f(\VEC{c})\cdot (\VEC{b}-\VEC{a}) \ .
+\]
+\end{focus}
+
+Pour énoncer le prochain résultat, nous aurons besoin de la
+définition suivante.
+
+\begin{focus}{\dfn} \index{Ensemble convexe}
+Soit $D$ un sous-ensemble de $\RR^n$.  Nous disons que $D$ est un
+{\bfseries ensemble convexe} si, quel que soit les points $\VEC{a}$
+et $\VEC{b}$ dans $D$, le segment de droite de $\VEC{a}$ à
+$\VEC{b}$ est aussi inclus dans $D$.
+\end{focus}
+
+Le concept d'ensembles convexes est illustré à la figure~\ref{ensConv}.
+
+\PDFfig{15_var_mult_der/ens_convexe}{Ensembles convexes et
+non convexes}{L'ensemble à gauche est convexe alors que celui à
+droite ne l'est pas.}{ensConv}
+
+\begin{focus}{\cor} \label{CorMVT}
+Soit $D$ un sous-ensemble ouvert et convexe de $\RR^n$.  S'il existe
+une constante $M$ telle que $||\nabla f(\VEC{x})\| \leq M$ pour tout
+$\VEC{x} \in D$, alors
+$|f(\VEC{b}) - f(\VEC{a}| \leq M \|\VEC{b} - \VEC{a}\|$ pour tout
+$\VEC{a}$ et $\VEC{b}$ dans $D$.
+\end{focus}
+
+Nous avons vu que pour une fonction d'une variable $f$, si $f'(x) = 0$ pour
+tout $x$ sur un intervalle, alors $f$ est une fonction constante sur
+l'intervalle.  Le corollaire précédent généralise ce concept aux
+fonctions de plusieurs variables.
+
+\begin{focus}{\cor}
+Soit $D$ un sous-ensemble ouvert et convexe de $\RR^n$.  Si $f:D \to
+\RR$ satisfait $\nabla f(\VEC{x}) = 0$ pour tout $\VEC{x}$ dans $D$,
+alors $f$ est constante sur $D$.
+\end{focus}
+
+En effet, le Corrolaire~\ref{CorMVT} avec $M=0$ donne
+$f(\VEC{b}) = f(\VEC{a})$ pour tout $\VEC{a}$ et $\VEC{b}$ dans $D$.
+
+\section{Approximation locale des fonctions de plusieurs
+  variables \eng}
+
+Nous avons vu à la Section~\ref{approx_local} que nous pouvons estimer la
+valeur d'une fonction $f:\RR \to \RR$ au voisinage d'un point $a \in \RR$
+à l'aide de l'approximation linéaire $f(x) \approx f(a) + f'(a) (x-a)$
+pour $x$ près de $a$.  Cela correspondait à utiliser la droite
+tangente pour estimer les valeurs de $f(x)$ pour $x$ près de $a$.  De
+la même manière, nous pouvons utiliser le plan tangent pour estimer la
+valeur d'une fonction $f:\RR^n \to \RR$ au voisinage d'une point
+$\VEC{a} \in \RR^n$.  Nous avons
+\begin{equation}
+f(\VEC{x}) \approx f(\VEC{a}) + \nabla f(\VEC{a})\cdot (\VEC{x} - \VEC{a})
+= f(\VEC{a}) + \sum_{j=1}^n \pdydx{f}{x_j}(\VEC{a}) (x_j - a_j) \ .
+\label{linApproDimN}
+\end{equation}
+C'est un polynôme de degré $1$ en $x_1$, $x_2$, \ldots, $x_n$.
+
+Comme pour les fonctions d'une variable, nous obtenons une meilleure
+approximation locale d'une fonction $f:\RR^n \to \RR$ si nous utilisons un
+polynôme de degré plus grand que un.   Il existe une version du Théorème de
+Taylor, théorème~\ref{theoTaylor}, pour les fonctions de plusieurs
+variables.  Il est nécessaire d'introduire quelques notations afin
+d'énoncer cette version du théorème.
+
+Soit $\alpha \in \NN^n$; c'est-à-dire, $\alpha$ est un vecteur dont
+les $n$ composantes sont des nombres naturels.   Posons
+\[
+  \pdydxn{f}{\VEC{x}}{\alpha} = \pdfdxn{}{x_1}{\alpha_1} \left(
+  \pdfdxn{}{x_2}{\alpha_2} \left( \ldots \left(
+  \pdfdxn{f}{x_n}{\alpha_n}\right)\right)\right)
+\]
+ou, par convention, nous ignorons
+$\displaystyle \pdfdxn{}{x_j}{\alpha_j}$ lorsque $\alpha_j = 0$.
+De plus, définissons $\alpha!$, $|\alpha|$ et $\VEC{y}^{\alpha}$ pour
+$\VEC{y}\in \RR^n$ de la façon suivante.
+\[
+\alpha! = \alpha_1! \alpha_2! \ldots \alpha_n! \quad , \quad
+|\alpha| = \alpha_1 + \alpha_2 + \ldots + \alpha_n \quad
+\text{et} \quad
+\VEC{y}^{\alpha} = y_1^{\alpha_1} y_2^{\alpha_2}\ldots y_n^{\alpha_n} \ .
+\]
+
+\begin{egg}
+Si $f:\RR^4 \to \RR$ et $\alpha = (2,0,1,3)$, alors
+$\displaystyle \pdfdxn{f}{\VEC{x}}{\alpha} = \pdfdxn{}{x_1}{2} \left(
+\pdfdx{}{x_3} \left( \pdfdxn{f}{x_4}{3}\right)\right)$,
+$\alpha! = 2!\ 0!\ 1!\ 3!= 12$, $|\alpha| = 2 + 0 + 1 + 3 = 6$ et
+$\VEC{y}^{\alpha} = y_1^2\ y_2^0\ y_3^1\ y_4^3 = y_1^2 y_3^{} y_4^3$.
+\end{egg}
+
+\begin{focus}[][Théorème de Taylor]{\thm} \index{Théorème de Taylor}
+Soit $f:\RR^n\to \RR$ une fonction de classe $C^{k+1}$.  Quel que soit
+$\VEC{x}$ et $\VEC{a}$ dans $\RR^n$, il existe $\xi = \xi(k,\VEC{a},\VEC{x})$
+sur le segment de droite de $\VEC{x}$ à $\VEC{a}$ tel que
+\[
+f(\VEC{x}) = p_k(x) + r_k(x)
+\]
+où
+\[
+p_k(\VEC{x}) = \sum_{|\alpha|\leq k} \frac{1}{\alpha !}
+  \pdfdxn{f}{\VEC{x}}{\alpha}(\VEC{a}) (\VEC{x}- \VEC{a})^{\alpha} 
+\quad \text{et} \quad
+r_k(\VEC{x}) = \sum_{|\alpha|=k+1} \frac{1}{\alpha !}
+  \pdfdxn{f}{\VEC{x}}{\alpha}(\xi) (\VEC{x}- \VEC{a})^{\alpha} \; .
+\]
+Le polynôme $p_k$ est appelé le {\bfseries polynôme de Taylor de degré
+$\mathbf{k}$ de $\mathbf{f}$ pour $\VEC{x}$ près de
+$\VEC{c}$}\index{Polynôme de Taylor} et $r_k$
+est {\bfseries l'erreur de troncature}\index{Erreur de troncature}.
+\label{theoTaylorNdim}
+\end{focus}
+
+Par la suite, nous aurons besoin de seulement deux cas particuliers du
+Théorème de Taylor.
+
+Pour $k=1$, nous avons
+\[
+  p_1(\VEC{x}) = f(\VEC{a}) + \sum_{j=1}^n
+  \pdfdx{f}{x_j}(\VEC{a}) (x_j - a_j) \ .
+\]
+C'est l'approximation linéaire en (\ref{linApproDimN}).
+
+Pour $k=2$, nous avons
+\[
+  p_2(\VEC{x}) = f(\VEC{a}) + \sum_{j=1}^n
+  \pdfdx{f}{x_j}(\VEC{a}) (x_j - a_j) 
++ \frac{1}{2} \sum_{\substack{1\leq i \leq n\\1\leq j \leq n}}
+\pdfdxnm{f}{x_i}{x_j}{2}{}{}(\VEC{a})
+(x_i-a_i)(x_j-a_j) \ .
+\]
+Cette dernière expression possède une très jolie représentation
+algébrique qui nous sera très utile par la suite.  Posons
+
+\begin{align*}
+\diff f(\VEC{x}) &=
+\begin{pmatrix}
+\displaystyle \pdydx{f}{x_1}(\VEC{x}) &
+\displaystyle \pdydx{f}{x_2}(\VEC{x}) &
+\cdots & \displaystyle \pdydx{f}{x_n}(\VEC{x})
+\end{pmatrix}
+\intertext{et}
+  H(\VEC{x}) &=
+\begin{pmatrix}
+\displaystyle \pdydxn{f}{x_1}{2}(\VEC{x}) &
+\displaystyle \pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{x}) &
+\cdots & \displaystyle \pdydxnm{f}{x_n}{x_1}{2}{}{}(\VEC{x}) \\[0.8em]
+\displaystyle \pdydxnm{f}{x_1}{x_2}{2}{}{}(\VEC{x}) &
+\displaystyle \pdydxn{f}{x_2}{2}(\VEC{x}) & 
+\cdots & \displaystyle \pdydxnm{f}{x_n}{x_2}{2}{}{}(\VEC{x}) \\
+\vdots & \vdots & \ddots & \vdots \\
+\displaystyle \pdydxnm{f}{x_1}{x_n}{2}{}{}(\VEC{x}) &
+\displaystyle \pdydxnm{f}{x_2}{x_n}{2}{}{}(\VEC{x}) & 
+\cdots & \displaystyle \pdydxn{f}{x_n}{2}(\VEC{x})
+\end{pmatrix}
+\end{align*}
+
+La matrice $H(\VEC{x})$ est appelée la {\bfseries matrice Hessian} de
+$f$ au point $\VEC{x}$.  Elle va jouer un rôle important quand nous
+ferons l'étude des valeurs extrêmes pour une fonction de plusieurs
+variables à la section suivante.
+
+$\diff f(\VEC{x})$ est seulement $\nabla f(\VEC{x})$ dans le format
+utilisé en algèbre linéaire; c'est-à-dire, une matrice de dimension
+$1 \times n$ (une ligne et n colonnes).
+
+De même, si nous représentons le vecteur $\VEC{x}-\VEC{a}$ sous la forme
+d'une matrice colonne
+\[
+\VEC{x} - \VEC{a} =
+\begin{pmatrix}
+x_1 - a_1 \\
+x_2 - a_2 \\
+\vdots \\
+x_n - a_n
+\end{pmatrix} \ ,
+\]
+nous pouvons alors écrire
+\[
+  p_2(\VEC{x}) = f(\VEC{a}) + \diff f(\VEC{a}) (\VEC{x} - \VEC{a}) +
+  \frac{1}{2} (\VEC{x} - \VEC{a})^\top H(\VEC{a}) (\VEC{x} - \VEC{a}) \ .
+\]
+
+\section{Points critiques et valeurs extrêmes \eng}
+
+Nous avons vu que pour trouver les minimums et maximums locaux d'une
+fonction $f:\RR \to \RR$, il fallait trouver les points critiques de
+la fonction; c'est-à-dire, les points $p$ où $f$ n'est pas
+différentiable ou $f'(p) = 0$.  Cette procédure est
+aussi valable pour les fonctions de plusieurs variables après avoir
+défini ce qu'est un point critique pour une fonction de plusieurs
+variables.
+
+\begin{focus}{\dfn} \index{Point critique}
+Une fonction continue $f : \RR^n \to \RR$ possède un
+{\bfseries point critique} $\VEC{p} \in \RR^n$ si une des deux
+conditions suivantes est satisfaite.
+\begin{enumerate}
+\item Au moins une des dérivées partielles de $f$ n'existe pas à $\VEC{p}$.
+\item $\nabla f(\VEC{p}) = \VEC{0}$ (ou $\diff f(\VEC{p}) = 0$ si nous
+utilisons la notation algébrique).
+\end{enumerate}
+\end{focus}
+
+Nous avons vu que si $p$ est un maximum (ou minimum) local d'une fonction
+différentiable $f:\RR \to \RR$ alors $f'(0) = 0$.  La droite tangente
+à la courbe $y=f(x)$ au point $(p,f(p))$ est horizontal donc sa pente
+est nulle.  Le même raisonnement nous donne le résultat suivant
+pour les fonctions à valeurs réelles définies sur $\RR^n$.
+
+\begin{focus}{\prop}
+Soit $f : \RR^n \to \RR$ une fonction différentiable.  Si $f$ a une
+maximum (ou minimum) local au point $\VEC{p}$, alors
+$\nabla f(\VEC{p}) = \VEC{0}$; c'est-à-dire, $\VEC{p}$ est un point
+critique.
+\end{focus}
+
+\PDFfig{15_var_mult_der/localMax}{Exemple d'un maximum local}
+{La fonction $f$ a un maximum local au point $\VEC{p}$.  Le plan tangent à
+la courbe $y = f(\VEC{x})$ au point $(\VEC{p},f(\VEC{p}))$ est
+horizontal.}{LocalMax}
+
+Considérons la fonction $f:\RR^2 \to \RR$ dont le graphe est donné à
+la figure~\ref{LocalMax}.  Elle possède un maximum local au point
+$\VEC{p} = (p_1,p_2)$.  De plus, le plan tangent à la surface $x_3= f(x_1,x_2)$
+au point $(x_1,x_2,x_3) = (p_1,p_2,f(p_1,p_2))$ est donné par
+$x_3 = M$ où $M = f(\VEC{p})$ est la valeur maximale.  Nous avons donc que
+$\displaystyle \pdydx{f}{x_1}(\VEC{p}) = \pdydx{f}{x_2}(\VEC{p}) = 0$;
+c'est-à-dire, $\nabla f(\VEC{p}) = \VEC{0}$.
+
+Pour compléter notre comparaison avec les fonctions d'une variable, nous
+généralisons le test de la dérivée seconde,
+proposition~\ref{Test2ndder}.   Pour cela, il nous faut le
+développement de Taylor de degré $2$ de la fonction $f:\RR^n \to \RR$
+au voisinage d'un point critique $\VEC{p}$ de $f$.  Nous supposons
+naturellement que la fonction est suffisamment différentiable au
+voisinage du point critique $\VEC{p}$.  Il découle du
+théorème~\ref{theoTaylorNdim} que
+\begin{align*}
+f(\VEC{x}) &= p_2(\VEC{x})  + r_2(\VEC{x}) \\
+&= f(\VEC{p}) + \diff f(\VEC{p}) (\VEC{x} - \VEC{p}) +
+  \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p}) (\VEC{x} - \VEC{p})
+  + r_2(\VEC{x}) \\
+&= f(\VEC{p})
+  + \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p}) (\VEC{x} - \VEC{p})
+  + r_2(\VEC{x})
+\end{align*}
+où nous avons utilisé le fait que  $\diff f(\VEC{p}) = 0$ au
+point critique $\VEC{p}$.
+
+Intuitivement, puisque $r_2(\VEC{x})$ contient seulement des termes de
+la forme $(\VEC{x} - \VEC{p})^{\alpha}$ avec $|\alpha| = 3$ alors que
+$\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p}) 
+(\VEC{x} - \VEC{p})$ contient seulement des termes de la forme
+$(\VEC{x} - \VEC{p})^{\alpha}$ avec $|\alpha| = 2$, nous pouvons supposer
+que cette dernière expression est dominante lorsque $\VEC{x}$ est près
+de $\VEC{p}$.  Ainsi, à toute fin pratique, nous pouvons écrire
+\[
+  f(\VEC{x}) \approx f(\VEC{p}) + \frac{1}{2} (\VEC{x} - \VEC{p})^\top
+  H(\VEC{p})(\VEC{x} - \VEC{p}) 
+\]
+pour $\VEC{x}$ prêt de $\VEC{p}$.
+
+Donc, si $\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
+(\VEC{x} - \VEC{p}) > 0$ pour tout $\VEC{x} \neq \VEC{p}$, alors
+$f$ possède le minimum local $f(\VEC{p})$ au point
+$\VEC{x} = \VEC{p}$.  De même, si
+$\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
+(\VEC{x} - \VEC{p}) < 0$ pour tout $\VEC{x} \neq \VEC{p}$, alors
+$f$ possède le maximum local $f(\VEC{p})$ au point
+$\VEC{x} = \VEC{p}$.  Mais comment pouvons-nous savoir si 
+$\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
+(\VEC{x} - \VEC{p})$ est toujours négative ou positive pour
+$\VEC{x} \neq \VEC{p}$.
+
+Commençons par une définition.
+
+\begin{focus}{\dfn}
+Soit $A$ une matrice de dimension \nm{n}{n}.  Nous disons que $A$ est 
+{\bfseries strictement définie positive} si
+$q(\VEC{x}) = \VEC{x}^\top A \VEC{x} > 0$ pour tout $\VEC{x} \neq \VEC{0}$, et
+$A$ est {\bfseries strictement définie négative} si
+$q(\VEC{x}) = \VEC{x}^\top A \VEC{x} < 0$ pour tout $\VEC{x} \neq \VEC{0}$,
+\index{Strictement définie positive}\index{Strictement définie négative}
+\end{focus}
+
+Nous pouvons résumer le contenu du paragraphe qui précédent cette définition
+en disant que $f$ possède le minimum local $f(\VEC{p})$ en
+$\VEC{x} = \VEC{p}$ si $H(\VEC{p})$ est strictement définie positive,
+et $f$ possède le maximum local $f(\VEC{p})$ en $\VEC{x} = \VEC{p}$
+si $H(\VEC{p})$ est strictement définie négative.
+
+\begin{rmk}[\theory]
+Notons que l'énoncé de la définition de strictement définie positive
+requière $q(\VEC{x}) = \VEC{x}^\top A \VEC{x} > 0$ pour tout
+$\VEC{x} \neq \VEC{0}$ et non pas seulement pour $\VEC{x}$ près de
+$\VEC{0}$.  En fait, cela n'est pas plus restrictif.  
+
+Supposons qu'il existe $\delta >0$ tel que $q(\VEC{x})>0$ pour
+$\VEC{x} \neq \VEC{0}$ et $\|\VEC{x}\| < \delta$.  Soit $\VEC{y}$
+quelconque.  Choisissons $\lambda >0$ assez petit pour avoir
+$\|\lambda \VEC{y}\| = |\lambda| \|\VEC{y}\| < \delta$.  On a alors
+que 
+\[
+  q(\VEC{y}) = q\left( \lambda^{-1} (\lambda \VEC{y})\right)
+  = \lambda^{-2} \underbrace{q(\lambda \VEC{y})}_{>0} > 0 \ .
+\]
+Notons que $q(\alpha \VEC{x}) = \alpha^2 q(\VEC{x})$ pour tout
+$\VEC{x}$ and tout $\alpha$.
+\end{rmk}
+
+Le théorème suivant donne une condition nécessaire et suffisante pour
+déterminer si une matrice carré $A$ est strictement définie positive
+ou négative.
+
+\begin{focus}{\thm}
+Soit $A$ une matrice de dimension \nm{n}{n}.  La matrice $A$ est 
+strictement définie positive si et seulement si toutes ses valeurs
+propres sont positives.  La matrice $A$ est strictement définie
+négative si et seulement si toutes ses valeurs propres sont négatives.
+\end{focus}
+
+Il peut s'avérer difficile de trouver toutes les valeurs propres d'une
+matrice, en particulier si la dimension de la matrice est grande.
+Le critère suivante donne une condition suffisante pour déterminer si
+une matrice est définie positive.
+
+\begin{focus}{\prop}
+Soit $A$ une matrice de dimension \nm{n}{n}.   Soit $A_k$ la matrice
+formée des $k$ premières colonnes et rangés de $A$.  La matrice $A$
+est strictement définie positive si $\det(A_k) > 0$ pour $k=1$, $2$,
+\ldots, $n$.
+\end{focus}
+
+Nous laissons au lecteur le soin d'énoncer une proposition semblable à la
+proposition précédente pour le cas d'une matrice strictement définie
+négative.
+
+Nous concluons de la proposition précédente qu'un matrice
+$A = \begin{pmatrix}   a_{i,1} & a_{1,2} \\   a_{2,1} & a_{2,2} \end{pmatrix}$
+est définie positive si
+$a_{1,1} >0$ et $a_{1,1} a_{2,2} - a_{1,2}a_{2,1} > 0$.
+Dans le cas où la matrice $A$ est la matrice Hessian 
+\[
+H(\VEC{p}) = \begin{pmatrix} \displaystyle \pdydxn{f}{x_1}{2}(\VEC{p})
+& \displaystyle \pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{p}) \\[0.9em]
+\displaystyle \pdydxnm{f}{x_1}{x_2}{2}{}{}(\VEC{p}) &
+\displaystyle \pdydxn{f}{x_2}{2}(\VEC{p})
+\end{pmatrix}
+\]
+d'une fonction $f:\RR^2 \to \RR$ suffisamment différentiable ayant un
+point critique en $\VEC{x} = \VEC{p}$, nous pouvons conclure que
+$H(\VEC{p})$ est strictement définie positive si
+\[
+\pdydxn{f}{x_1}{2}(\VEC{p}) > 0 \quad \text{et} \quad
+\pdydxn{f}{x_1}{2}(\VEC{p}) \pdydxn{f}{x_2}{2}(\VEC{p}) -
+\left(\pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{p})\right)^2 > 0 \ .
+\]
+Dans ce cas, la fonction $f$ possède un minimum local au
+point $\VEC{x} = \VEC{p}$.
+
+En raisonnant avec la matrice Hessian $H(\VEC{a})$, nous pouvons en fait
+obtenir plus d'information sur le comportement de $f:\RR^2 \to \RR$ au
+voisinage d'un point critique $\VEC{a}$ de $f$.
+
+\begin{focus}{\prop}\label{R2HessCases}
+Soit $f:\RR^2 \to \RR$ une fonction qui est trois fois continûment
+différentiable et $\VEC{p}$ un point critique de $f$.
+\begin{enumerate}
+\item Si
+$\displaystyle \det\left(H(\VEC{p})\right)
+= \pdydxn{f}{x_1}{2}(\VEC{p}) \pdydxn{f}{x_2}{2}(\VEC{p}) -
+\left(\pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{p})\right)^2 < 0$,
+alors $f$ à un col au point $(x,y) = \VEC{p}$ (figure~\ref{f2col}).
+\item Si
+$\displaystyle \pdydxn{f}{x_1}{2}(\VEC{p}) > 0$ et
+$\displaystyle \det\left(H(\VEC{p})\right) > 0$,
+alors $f$ à un minimum local au point $(x,y) = \VEC{p}$.
+\item Si
+$\displaystyle \pdydxn{f}{x_1}{2}(\VEC{p}) < 0$ et
+$\displaystyle \det\left(H(\VEC{p})\right) > 0$,
+alors $f$ à un maximum local au point $(x,y) = \VEC{p}$.
+\item Si
+$\displaystyle \det\left(H(\VEC{p})\right) = 0$,
+alors nous ne pouvons rien conclure (figure~\ref{f2col}).
+\end{enumerate}
+\end{focus}
+
+\MATHfigD{15_var_mult_der/f2col}{7cm}{15_var_mult_der/f2Mcol}{7cm}
+{Deux exemples de col, un cas que nous pouvons prédire et un que nous
+ne pouvons pas.}{À gauche: un col prédit par la première condition de la
+Proposition~\ref{R2HessCases}.  À droite: un col que nous ne pouvons pas
+prédire.  C'est une situation possible lorsque la quatrième condition
+de la Proposition~\ref{R2HessCases} est satisfaite.}{f2col}
+
+\begin{egg}
+Soit $f(x,y) = x^3 - 6 x y + 8 y^3$.  Cherchons les points
+critiques de cette fonction et, pour chacun d'eux, déterminons s'il
+représente un maximum local, un minimum local, un col, ou aucun des
+cas précédents.
+
+Puisque la dérivée de la fonction $f$ existe en tout point,
+les points critiques sont les racines de $\nabla f(x,y) = (0,0)$;
+c'est-à-dire,
+\begin{align}
+\pdydx{f}{x}(x,y) = 0 &\Rightarrow 3 x^2 - 6 y = 0 \label{eggMMA1a}
+\intertext{et}
+\pdydx{f}{y}(x,y) = 0 &\Rightarrow -6 x + 24 y^2 = 0 \ . \label{eggMMA1b}
+\end{align}
+Nous obtenons $y = x^2/2$ de (\ref{eggMMA1a}).  Si nous substituons cette
+expression pour $y$ dans (\ref{eggMMA1b}), nous obtenons
+$-6x + 6 x^4 = 6(x^3-1)x = 0$ qui nous donne $x =0$ ou $1$.
+Il y a deux points critiques: $(0,0)$ et $(1, 1/2)$.
+
+Pour déterminer si un point critique est associé à un maximum local,
+un minimum local ou un col, nous évaluons la matrice Hessian à ce
+point.
+\[
+H(x,y) = \begin{pmatrix}
+\displaystyle \pdydxn{f}{x}{2}(x,y) &
+\displaystyle \pdydxnm{f}{y}{x}{2}{}{}(x,y) \\[0.9em]
+\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(x,y) &
+\displaystyle \pdydxn{f}{y}{2}(x,y)
+\end{pmatrix}
+= \begin{pmatrix}
+  6 x & -6 \\
+  -6 & 48y
+\end{pmatrix}
+\]
+
+Puisque $\displaystyle \det H(0,0)
+= \det \begin{pmatrix} 0 & -6 \\ -6 & 0 \end{pmatrix} = - 36 < 0$,
+il y a un col au point $(0,0)$.
+
+Puisque $\displaystyle \det H(1,1/2)
+= \det \begin{pmatrix} 6 & -6 \\ -6 & 24 \end{pmatrix} = 108 > 0$ et
+$\displaystyle \pdydxn{f}{x}{2}(1,1/2) = 6 >0$, il y a un
+minimum local au point $(1,1/2)$.
+\end{egg}
+
+\section{Multiplicateurs de Lagrange \eng}
+
+À la Section~\ref{Optim1D}, nous avons vu comment trouver le maximum et
+minimum (s'ils existent) d'une fonction $f(x,y)$ sous une contrainte
+$g(x,y) = 0$.  Par exemple, trouvez les points de l'ellipse
+$x^2+ 2y^2=9$ qui sont les plus loin du point $(0,1)$.  Cela revient à
+demander de trouver les points $(x,y)$ qui donnent la valeur maximale
+de $f(x,y) = x^2 + (y-1)^2$, le carré de la distance entre les points
+$(x,y)$ et $(0,1)$, tout en satisfaisant $g(x,y) = x^2 + 2 y^2 - 9 = 0$.
+
+La technique présentée à la Section~\ref{Optim1D} serait d'exprimer $y$
+en fonction de $x$ (ou l'inverse) à partir de $x^2 + 2 y^2 - 9 = 0$ et
+de substituer cette expression pour $y$ dans $f(x,y) = x^2 + (y-1)^2$
+pour obtenir une fonction d'une variable en $x$ pour laquelle nous
+pouvons trouver les points où elle atteint son maximum absolu.
+Cette technique est valable dans le cas d'une fonction $f$ de deux
+variables puisque le problème peut être réduit à l'étude d'une fonction
+d'une variable après la substitution.  Si $f$ est une fonction de plus
+de deux variables, la fonction obtenue après substitution aura
+toujours plus d'une variable.  Le problème de trouver le maximum ou
+minimum absolu demeure difficile.
+
+Considérons le problème de trouver le maximum ou minimum absolu d'une
+fonction $f:\RR^n \to \RR$ sous la contrainte que $g(\VEC{x}) = 0$ où
+$g:\RR^n \to \RR$.
+
+l'équation $g(\VEC{x}) = 0$ représente une surface $S$ dans $\RR^n$.
+Nous assumerons que $f$ et $g$ sont différentiables et que
+$\nabla g(\VEC{x}) \neq \VEC{0}$ pour tout $\VEC{x} \in S$.   Comme
+nous avons vu à la Section~\ref{planTangExpl}, cela implique que le plan
+tangent à la surface $S$ est bien défini en tout point de $S$.
+
+Supposons que la fonction $f$ ait son maximum absolu (et donc
+local) au point $\VEC{a}$ de la surface $S$.  Soit $\phi:\RR \to \RR^n$
+un courbe sur $S$ qui passe par $\VEC{a}$; c'est-à-dire,
+$g(\phi(t)) = 0$ pour tout $t \in \RR$ et $\phi(0)= \VEC{a}$.
+La fonction $g = f \circ \phi:\RR \to \RR$ a donc un maximum local en
+$t=0$.  Donc $0$ est un point critique de $g$.  Il découle de la
+proposition~\ref{ChainRuleND} que
+\[
+  0 = g'(0) = \sum_{j=1}^n \pdfdx{f}{x_j}(\phi(0)) \dfdx{\phi_i}{t}(0)
+  = \nabla f(\VEC{a})\cdot \phi'(0) \ .
+\]
+Comme cela est vrai pour toute courbe de $S$ qui passe par $\VEC{a}$,
+nous avons que $\nabla f(\VEC{a})$ est perpendiculaire à tous les vecteurs
+du plan tangent à $S$ au point $\VEC{a}$.  Donc $\nabla f(\VEC{a})$
+est perpendiculaire au plan tangent à $S$ au point $\VEC{a}$.
+
+Or, nous avons vu que $\nabla g(\VEC{a})$ est aussi perpendiculaire au plan
+tangent à $S$ au point $\VEC{a}$.  Donc $\nabla f(\VEC{a})$ et
+$\nabla f(\VEC{a})$ sont parallèles.  Nous obtenons donc
+\[
+ \nabla f(\VEC{a}) = \lambda \nabla g(\VEC{a})
+\]
+pour un nombre réel $\lambda$.  Le paramètre $\lambda$ est appelé le
+{\bfseries multiplicateur de Lagrange}\index{Multiplicateur de Lagrange}.
+
+\begin{focus}[][Méthode de Lagrange]{\mth} \index{Méthode de Lagrange}
+Pour trouver le maximum ou minimum absolu d'une fonction
+$f:\RR^n \to \RR$ sous la contrainte que $g(\VEC{x}) = 0$\footnotemark
+\ où $g:\RR^n \to \RR$, il suffit de résoudre pour $\VEC{x}$ et
+$\lambda$ le système
+\begin{equation}\label{MultLGsystem}
+ \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x}) \ .
+\end{equation}
+Nous trouvons ainsi les points possibles où $f$ aura son minimum ou
+maximum absolu.
+\end{focus}
+\footnotetext{Nous supposons que l'ensemble $\{\VEC{x} : g(\VEC{x}) = 0\}$
+est fermé et borné.}
+
+Remarquons que (\ref{MultLGsystem}) est un système de $n$ équations
+avec $n+1$ inconnues: $x_1$, $x_2$, \ldots, $x_n$ et $\lambda$.  Nous
+semblons avoir compliqué le problème initial en ajoutant la variable
+$\lambda$.  Cependant, dans plusieurs situations, il est plus simple
+de résoudre (\ref{MultLGsystem}) que d'utiliser une méthode classique
+de substitution.   Il ne faut pas oublier qu'il n'est généralement pas
+facile d'isoler une des variables de $g(\VEC{x})= 0$.
+
+\begin{egg}
+Revenons à notre exemple du début de la section.  Nous allons trouver les
+points de l'ellipse $x^2+ 2y^2 = 9$ qui sont les plus loin du point
+$(0,1)$.  Comme nous avons mentionné, cela revient à trouver le points
+$(x,y)$ qui donnent la valeur maximale de $f(x,y) = x^2 + (y-1)^2$
+tout en satisfaisant $g(x,y) = x^2 + 2 y^2 - 9 = 0$.
+
+L'équation $\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align}
+\pdydx{f}{x}(x,y) = \lambda \pdydx{g}{x}(x,y) &
+\Rightarrow 2x = 2 \lambda x  \Rightarrow x(1 - \lambda) = 0
+\label{eggLM1a}
+\intertext{et}                                                
+\pdydx{f}{y}(x,y) = \lambda \pdydx{g}{y}(x,y) &
+\Rightarrow 2(y-1) = 4 \lambda y \Rightarrow   y( 1 - 2 \lambda) = 1 \ .
+\label{eggLM1b}
+\end{align}
+
+Si $\lambda \neq 1$, (\ref{eggLM1a}) donne $x = 0$.   L'équation
+$x^2 + 2 y^2 - 9 = 0$ devient $2 y^2 = 9$ et nous trouvons
+$y = \pm 3/\sqrt{2}$.   Nous obtenons deux points: $(0, \pm 3/\sqrt{2})$.
+
+Si $\lambda = 1$, (\ref{eggLM1b}) donne $y = -1$.   L'équation
+$x^2 + 2 y^2 - 9 = 0$ devient $x^2 = 7$ et nous trouvons
+$x = \pm \sqrt{7}$.   Nous obtenons deux autres points: $(\pm \sqrt{7}, -1)$.
+
+Puisque l'ellipse $S$ est un ensemble borné et fermé de $\RR^2$ et que
+$f:\RR^2 \to \RR$ est une fonction continue, nous pouvons conclure du
+Théorème~\ref{TVEnD}, Théorème des valeurs extrêmes, que $f$ atteint
+sa valeur maximale (et minimale) en au moins un point de l'ellipse.
+Puisque le maximum absolu est aussi un maximum local, il faut donc que
+ce maximum absolu soit atteint à au moins un des quatre points que
+nous avons trouvé.
+
+Or
+\begin{align*}
+f(0,3/\sqrt{2}) &= \left(\frac{3}{\sqrt{2}} - 1\right)^2 \approx 1.25736
+\quad , \quad
+f(0,-3/\sqrt{2}) = \left(-\frac{3}{\sqrt{2}} - 1\right)^2 \approx 9.74264
+\ , \\
+f(\sqrt{7},-1) &= (\sqrt{7})^2 + (-1-1)^2 = 11
+\quad \text{et} \quad
+f(-\sqrt{7},-1) = (-\sqrt{7})^2 + (-1-1)^2 = 11 \ .
+\end{align*}
+La distance maximal est donc $\sqrt{11}$ aux points $(\pm\sqrt{7}, -1)$.
+
+Les quatre points d'intérêt sont représentés dans le dessin de
+l'ellipse ci-dessous.
+\PDFgraph{15_var_mult_der/eggLM1pict}
+
+De plus, la figure suivante contient l'ellipse $S$ et quelques courbes
+de niveau de $f$.
+\MATHgraph{15_var_mult_der/eggLM1contour}{8cm}
+
+Nous pouvons bien voir que $f$ atteint son maximum absolu aux points
+$(\pm\sqrt{7}, -1)$.  Nous notons aussi que $f$ a un minimum local au
+point $(0,-3/\sqrt{2})$ mais son minimum absolu est bien au point
+$(0,3/\sqrt{2})$.
+\label{eggLM1}
+\end{egg}
+
+En raisonnant comme nous venons de la faire, nous pouvons montrer que la méthode
+de Lagrange se généralise au cas où il y a plus d'une contrainte.
+
+\begin{focus}[][Méthode de Lagrange]{\mth} \index{Méthode de Lagrange}
+Pour trouver le maximum ou minimum absolu d'une fonction
+$f:\RR^n \to \RR$ sous les contraintes que $g_i(\VEC{x}) = 0$ pour
+$1\leq i \leq m$ où $g_i:\RR^n \to \RR$, il suffit de résoudre pour
+$\VEC{x}$ et $\lambda_i$ le système
+\[
+ \nabla f(\VEC{x}) = \sum_{i=1}^m \lambda_i \nabla g_i(\VEC{x}) \ .
+\]
+Nous trouvons ainsi les points possibles où $f$ aura son minimum ou
+maximum absolu.
+\end{focus}
+
+Pour la méthode précédente, nous supposons que le système d'équations
+algébriques $g_i(\VEC{x}) =0$ pour $1 \leq i \leq m$ a un ensemble de
+solutions non triviales.  Il n'y a malheureusement pas de méthode
+générale pour résoudre un système d'équations algébriques de degré
+plus grand que un comme nous avons pour les systèmes d'équations linéaires.
+
+\section{Dérivées des fonctions de $\mathbf{\RR^n}$ dans
+  $\mathbf{\RR^m}$ \theory \life}
+
+Nous aimerions bien que la définition de la dérivée d'une fonction
+$f:\RR^n\rightarrow \RR^m$ soit très semblable à la définition de la dérivée
+d'une fonction $f:\RR\rightarrow \RR$.
+
+Si $f:\RR\rightarrow \RR$ a une dérivée au point $c\in \RR$, alors
+(\ref{RigDfn}) est satisfait.  C'est-à-dire,
+\[
+\frac{|f(c+h)-f(c)-f'(c)\,h|}{|h|} \rightarrow 0 \quad \text{lorsque} \quad
+h\rightarrow 0 \; .
+\]
+Donc $f'(c)$ est le nombre $A$ tel que
+\begin{equation}\label{defderToX}
+\lim_{h\rightarrow 0} \frac{|f(c+h)-f(c)-A\,h|}{|h|} = 0 \; .
+\end{equation}
+C'est cette dernière formulation de la dérivée d'une fonction
+$f:\RR\rightarrow \RR$ au point $c$ que nous généraliserons aux fonctions
+$f:\RR^n\rightarrow \RR^m$.  Nous devons remplacer
+\begin{enumerate}
+\item $c\in \RR$ par $\VEC{c} \in \RR^n$,
+\item $h\rightarrow 0$ dans $\RR$ par $\VEC{h} \rightarrow \VEC{0}$
+dans $\RR^n$ et
+\item $|f(c+h)-f(c)-A\,h|$ par
+$\|f(\VEC{c}+\VEC{h})-f(\VEC{c})-A\,\VEC{h}\|$ où $A$ est une matrice
+de dimension \nm{m}{n}.
+\end{enumerate}
+Le produit $Ah$ dans l'expression (\ref{defderToX}) est remplacé
+par le produit de la matrice $A$ de dimension \nm{m}{n} avec le
+vecteur $\VEC{h}$ de dimension \nm{n}{1}.
+Nous avons que $A \VEC{h} \in \RR^m$
+comme il se doit car $f:\RR^n \to \RR^m$ et donc 
+$f(\VEC{c}+\VEC{h})-f(\VEC{c}) \in \RR^m$.  Naturellement, la valeur
+absolue dans $\RR$ est remplacée par la norme euclidienne dans $\RR^n$
+et $\RR^m$.
+
+Nous obtenons donc la définition suivante.
+
+\begin{focus}{\dfn} \index{Dérivée d'une fonction}
+Soit $f:\RR^n\rightarrow \RR^m$ et $\VEC{c} \in \RR^n$.  S'il existe
+une matrice $A$ de dimension \nm{m}{n} telle que
+\begin{equation}\label{defderRNRM}
+\lim_{\VEC{y}\rightarrow \VEC{0}}
+\frac{\|f(\VEC{c}+\VEC{y})-f(\VEC{c})- A\,\VEC{y}\|}{\|\VEC{y}\|} = 0\; ,
+\end{equation}
+nous disons que $f$ est {\bfseries différentiable au point} $\VEC{c}$ et
+nous écrivons $\diff f(\VEC{c}) = A$.
+\end{focus}
+
+Si (\ref{defderRNRM}) est satisfait, alors
+$f(\VEC{c}+\VEC{y})-f(\VEC{c})- A\,\VEC{y}$ converge vers $\VEC{0}$
+plus rapidement que $\VEC{y}$ lorsque $\VEC{y}$ converge vers
+$\VEC{0}$.  Donc, pour $\VEC{y}$ près de $\VEC{0}$, nous avons
+\[
+  f(\VEC{c}+\VEC{y})\approx f(\VEC{c}) + A\,\VEC{y} \ .
+\]
+En d'autres mots, $f(\VEC{c}) + A\,\VEC{y}$ est
+{\bfseries l'approximation linéaire}\index{Approximation linéaire} de
+$f(\VEC{c}+\VEC{y})$ pour $\VEC{y}$ près de $\VEC{0}$.  Si nous posons
+$\VEC{x} = \VEC{c} + \VEC{y}$, nous pouvons reformuler l'expression
+précédente pour obtenir
+\[
+  f(\VEC{x})\approx f(\VEC{c}) + A\,\left(\VEC{x} - \VEC{c}\right)
+\]
+pour $\VEC{x}$ près de $\VEC{c}$.
+
+Il est très rare que nous ayons à calculer la dérivée d'une fonction
+$f:\RR^n\rightarrow \RR^m$ en un point $\VEC{c}\in \RR^n$ à partir de la
+définition.  Nous utilisons le résultat suivant pour calculer la dérivée.
+
+\begin{focus}{\thm}
+Soit $V\subset \RR^n$ un voisinage de $\VEC{c}$ et $f:V\rightarrow \RR^m$.
+Si $f$ est différentiable au point $\VEC{c}$ alors les dérivées partielles
+$\displaystyle \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
+$1\leq j \leq n$ existent.  De plus,
+\[
+\diff f(\VEC{c}) =
+\begin{pmatrix}
+\displaystyle \pdydx{f_1}{x_1}(\VEC{c}) &
+\displaystyle \pdydx{f_1}{x_2}(\VEC{c}) & \ldots &
+\displaystyle \pdydx{f_1}{x_n}(\VEC{c}) \\[1em]
+\displaystyle \pdydx{f_2}{x_1}(\VEC{c}) &
+\displaystyle \pdydx{f_2}{x_2}(\VEC{c}) & \ldots &
+\displaystyle \pdydx{f_2}{x_n}(\VEC{c}) \\[1em]
+\vdots & \vdots & \ddots & \vdots & \\[1em]
+\displaystyle \pdydx{f_m}{x_1}(\VEC{c}) &
+\displaystyle \pdydx{f_m}{x_2}(\VEC{c}) & \ldots &
+\displaystyle \pdydx{f_m}{x_n}(\VEC{c})
+\end{pmatrix} \; .
+\]
+\end{focus}
+
+Le résultat suivant est le plus près d'un énoncé dans le sens inverse
+du théorème précédent que nous puisons avoir.  C'est ce résultat qui
+est très utile pour calculer les dérivées de fonctions de $\RR^n$ dans
+$\RR^m$.
+
+\begin{focus}{\prp}
+Soit $V\subset \RR^n$ un voisinage de $\VEC{c}$ et $f:V\rightarrow \RR^m$.
+Si les dérivée partielles
+$\displaystyle \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
+$1\leq j \leq n$ existent et sont continues sur $V$, alors $f$ est
+différentiable pour tout $\VEC{x} \in V$ et
+\[
+\diff f(\VEC{x}) =
+\begin{pmatrix}
+\displaystyle \pdydx{f_1}{x_1}(\VEC{x}) &
+\displaystyle \pdydx{f_1}{x_2}(\VEC{x}) & \ldots &
+\displaystyle \pdydx{f_1}{x_n}(\VEC{x}) \\[1em]
+\displaystyle \pdydx{f_2}{x_1}(\VEC{x}) &
+\displaystyle \pdydx{f_2}{x_2}(\VEC{x}) & \ldots &
+\displaystyle \pdydx{f_2}{x_n}(\VEC{x}) \\[1em]
+\vdots & \vdots & \ddots & \vdots & \\[1em]
+\displaystyle \pdydx{f_m}{x_1}(\VEC{x}) &
+\displaystyle \pdydx{f_m}{x_2}(\VEC{x}) & \ldots &
+\displaystyle \pdydx{f_m}{x_n}(\VEC{x})
+\end{pmatrix} \; .
+\]
+\end{focus}
+
+\begin{egg}
+Soit $f:\RR^2\rightarrow \RR^2$ une fonction définie par
+$\displaystyle f_1(x,y) = \frac{1}{x^2+y^2}$ et
+$f_2(x,y) = \sin(\pi(x^2+y^2))$.  Calculons la dérivée de $f$ au point
+$\VEC{c} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.
+
+Puisque
+\begin{align*}
+\pdydx{f_1}{x}(x,y) &= \frac{-2x}{(x^2+y^2)^2} \quad , \quad 
+\pdydx{f_1}{y}(x,y) = \frac{-2y}{(x^2+y^2)^2} \ , \\
+\pdydx{f_2}{x}(x,y) &= 2x \pi \cos(\pi(x^2+y^2))
+\quad \text{et} \quad 
+\pdydx{f_2}{y}(x,y) = 2y \pi \cos(\pi(x^2+y^2)) \; ,
+\end{align*}
+nous obtenons
+\begin{align*}
+\diff f(\VEC{c}) &=
+\begin{pmatrix}
+\displaystyle \frac{-2x}{(x^2+y^2)^2}\bigg|_{(x,y)=(1,2)} &
+\displaystyle \frac{-2y}{(x^2+y^2)^2}\bigg|_{(x,y)=(1,2)} \\[1em]
+2x \pi \cos(\pi(x^2+y^2))\bigg|_{(x,y)=(1,2)} &
+2y \pi \cos(\pi(x^2+y^2))\bigg|_{(x,y)=(1,2)}
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+-2/25 & -4/25 \\ -2\pi & -4\pi
+\end{pmatrix} \; .
+\end{align*}
+\end{egg}
+
+\begin{rmkList}
+\begin{enumerate}
+\item Si $f:\RR^n\rightarrow \RR$ ($m=1$), alors
+\[
+\diff f(\VEC{c}) =
+\begin{pmatrix}
+\displaystyle \pdydx{f}{x_1}(\VEC{c}) &
+\displaystyle \pdydx{f}{x_2}(\VEC{c}) & \ldots &
+\displaystyle \pdydx{f}{x_n}(\VEC{c})
+\end{pmatrix}
+= \nabla f(\VEC{c})
+\]
+où le gradient est exprimé dans sa forme algébrique.
+La définition de dérivée d'une fonction $f:\RR^n\rightarrow \RR^m$ est
+donc un prolongement de la définition du gradient d'une fonction
+$f:\RR^n\rightarrow \RR$.
+\item Si $\phi:\RR\rightarrow \RR^m$ ($n=1$), alors
+est la représentation paramétrique d'une courbe dans $\RR^m$.  De
+plus, le vecteur $\VEC{c}$ est remplacé par une nombre réel que nous pouvons
+simplement appeler $c$.  Ainsi,
+\[
+\diff \phi(c) =
+\begin{pmatrix}
+\displaystyle \dydx{\phi_1}{t}(c) \\[2ex]
+\displaystyle \dydx{\phi_2}{t}(c) \\ \vdots \\
+\displaystyle \dydx{\phi_m}{t}(c)
+\end{pmatrix}
+= \phi'(c)
+\]
+où $\phi'(c) \in \RR^m$ est un vecteur parallèle à la tangente à la
+courbe
+\[
+\Gamma = \{ \phi(t) : t \in \RR \}
+\]
+au point $\phi(c)$ comme nous avons vu lors de l'étude de la représentation
+paramétrique des courbes.
+\end{enumerate}
+\end{rmkList}
+
+\begin{focus}{\dfn} \index{Fonction de classe $C^k$}
+Soit $U \subset \RR^n$ un ensemble ouvert et $f:U \rightarrow \RR^m$.
+Nous disons que $f$ est de classe $C^k$ si, pour tout $i$, les dérivées
+partielles d'ordre $k$ de $f_i$ existent et sont continues en tout
+point du domaine de $f$.  Nous écrivons $f \in C^k(U)$
+\end{focus}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Dérivées partielles}
+
+\begin{question}
+Évaluez toutes les dérivées premières des fonction suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle f(x,y,z,t) = xy^2z^3t^4$ &
+\subQ{b} & $\displaystyle f(x,y) = \frac{2x+y}{x-y}$ &
+\subQ{c} & $\displaystyle h(x,y) = f(x)g(y)$ \\[0.8em]
+\subQ{d} & $\displaystyle h(x,y) = f(xy)$ &
+\subQ{e} & $\displaystyle h(x,y) = f\left(\frac{x}{y}\right)$ & &
+\end{tabular}
+\end{center}
+\label{15Q1}
+\end{question}
+
+\begin{question}
+La figure suivante donne quelques courbes de niveau de la fonction
+$f(x,y)$.  Utilisez ces courbes de niveau pour estimer
+$\displaystyle \frac{\partial f(0.6,0.4)}{\partial x}$
+et $\displaystyle \frac{\partial f(0.2,0.3)}{\partial y}$.
+\PDFgraph{15_var_mult_der/questbasic}
+\label{15Q2}
+\end{question}
+
+\begin{question}
+Soit la fonction $\displaystyle f(x,y,z) = \frac{1}{1+xyz}$.  Si
+$x= \cos(\theta+\phi)$, $y=\sin(\theta+\phi)$ et
+$z=\cos(\phi)$, évaluez
+$\displaystyle \pdydx{f}{\theta}(\theta,\phi)$ au point
+$(\theta, \phi) = (\pi, 0)$.
+\label{15Q3}
+\end{question}
+
+\begin{question}[\eng]
+Si $\displaystyle w = f(x,y,z) = 2x^2 + y^2 + 2z^3$ où
+$x=s+t^2$, $y=st$ et $z=s^2+t$, calculez
+$\displaystyle \pdydx{w}{s}$ et
+$\displaystyle \pdydx{w}{t}$ au point $(s,t) = (1,2)$.
+\label{15Q4}
+\end{question}
+
+\begin{question}[\eng]
+Calculez les dérivées partielles $f_{xyy}$ et $f_{xyz}$ de la fonction
+\[
+f(x,y,z) = 2x^2y^3z^2 + 3x^3y^2z^4 \ .
+\]
+\label{15Q5}
+\end{question}
+
+\begin{question}[\eng]
+La figure suivante donne quelques courbes de niveau d'une fonction
+$f:\RR^2 \rightarrow \RR$.
+\PDFgraph{15_var_mult_der/geom_pder}
+
+Déterminez le signe (possible) des dérivées partielles suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \pdydx{f}{x}(\VEC{p})$ &
+\subQ{b} & $\displaystyle \pdydx{f}{y}(\VEC{p})$ &
+\subQ{c} & $\displaystyle \pdydxn{f}{x}{2}(\VEC{p})$ \\[0.8em]
+\subQ{d} & $\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(\VEC{p})$ &
+\subQ{e} & $\displaystyle \pdydxn{f}{y}{2}(\VEC{p})$ & &
+\end{tabular}
+\end{center}
+\label{15Q6}
+\end{question}
+
+\subsection{Plan tangent à une surface}
+
+\begin{question}
+La figure suivante donne quelques courbes de niveau d'une fonction
+$f:\RR^2 \rightarrow \RR$.
+\PDFgraph{15_var_mult_der/approx_tang}
+
+\subQ{a} Utilisez cette information pour obtenir une équation approximative
+de l'équation du plan tangent à la surface $z=f(x,y)$ au point
+$(x,y,z) = (40,20,28)$.
+
+\subQ{b} Utilisez le résultat en (a) pour estimer $f(43,24)$. 
+\label{15Q7}
+\end{question}
+
+\begin{question}[\eng]
+Pour chacune des surfaces données ci-dessous, trouvez l'équation du
+plan tangent au point donné.
+
+\subQ{a} La surface $z=f(x,y) = \sin(x\,y)$ au point $(1,0,0)$.\\
+\subQ{b} La surface $z=f(x,y) = 1 - \cos(x) + \sin(y)$ au point $(0,\pi,0)$.
+\label{15Q8}
+\end{question}
+
+\begin{question}[\eng]
+Soit $S$ une surface donnée par la représentation paramétrique
+$x = u - v$, $y = u + v$ et $z = u^2$.  Trouvez l'équation du plan
+tangent à cette surface au point $(0,2,1)$.
+\label{15Q9}
+\end{question}
+
+\subsection{Dérivées selon un direction donnée}
+
+\begin{question}[\eng]
+Pour chacune des fonctions ci-dessous, calculez la dérivée au point
+donnés et dans la direction données.
+
+\subQ{a} $\displaystyle f(x,y)=x^2y+4y^2$ au point $(2,1)$ et dans la
+direction du vecteur $(1,\sqrt{3})$. \\
+\subQ{b} $\displaystyle f(x,y,z) = xyz + \ln(x^2+y^2+z^2)$ au point
+$(1,1,2)$ et dans la direction du vecteur
+$\displaystyle \VEC{v} = 2\ii + \jj - \kk$.\\
+\subQ{c} $\displaystyle f(x,y,z) = (x+y+z) e^{xyz}$ au point $(1,0,3)$
+et dans la direction du vecteur $(2,1,-2)$.
+\label{15Q10}
+\end{question}
+
+\begin{question}[\eng]
+Soit $f(x,y) = xy$, utilisez la définition (avec la
+limite) de la dérivée selon une direction pour calculer la dérivée
+de $f(x,y)$ au point $(2,-1)$ dans la direction $\VEC{u} = (1,-2)$.
+\label{15Q11}
+\end{question}
+
+\begin{question}[\eng]
+La figure ci-dessous contient quelques courbes de niveaux d'une
+fonction $f(x,y)$.  Utilisez ces courbes de niveau pour estimer la
+dérivée de $f$ dans la direction $\VEC{u} = (-1,1)$ au point $(5,4)$. 
+\PDFgraph{15_var_mult_der/niveaudirect}
+\label{15Q12}
+\end{question}
+
+\subsection{Propriétés du gradient}
+
+\begin{question}[\eng]
+Les courbes $y =x^3$ et $x^2 + 3 y^2 = 4$ se coupent aux points $(1,1)$
+et $(-1,-1)$.  Utilisez le gradient pour déterminer si elles se
+coupent orthogonalement.
+\label{15Q13}
+\end{question}
+
+\begin{question}[\eng]
+Trouvez l'équation du plan tangent à la surface
+$z^2 + x^2 - 4xy + y^2 = 2$ au point $(1,1,2)$.
+\label{15Q14}
+\end{question}
+
+\begin{question}[\eng]
+Pour chacune des fonctions $f(x,y)$ suivantes, trouvez l'équation du
+plan tangent à la surface $z=f(x,y)$ au point $(x_0,y_0,z_0)$ donné,
+et déterminez dans quelle direction la fonction $f$ augmente le
+plus rapidement à partir de $(x_0,y_0)$.
+
+\subQ{a} $f(x,y) = x^2 y^4$ et $(x_0,y_0,z_0) = (1,-1,1)$.\\
+\subQ{b} $f(x,y) = x^2y - xy^3 + 3$ et $(x_0,y_0,z_0) = (1,1,3)$.\\
+\subQ{c} $f(x,y) = \sqrt{4+4x^2+2y^2}$ et $(x_0,y_0,z_0) = (1,2,4)$.
+\label{15Q15}
+\end{question}
+
+\begin{question}[\eng]
+Quels sont les points $(x_0,y_0,z_0)$ de l'ellipsoïde $x^2+2y^2+3z^2 = 1$
+dont le plan tangent à l'ellipsoïde au point $(x_0,y_0,z_0)$ est
+parallèle au plan $3x - y + 3z = 1$?
+\label{15Q16}
+\end{question}
+
+\begin{question}[\eng]
+Si la dérivée de $f(x,y)$ au point $(1,2)$ dans la direction $(1,1)$
+est $4$ et la dérivée de $f(x,y)$ au point $(1,2)$ dans la direction
+$(-1,1)$ est $3$, calculez le gradient $\nabla f(1,2)$.  De plus, si
+$f(1,2) = 5$, donner l'équation du plan tangent à la surface
+$z=f(x,y)$ au point $(1,2,5)$.
+\label{15Q17}
+\end{question}
+
+\subsection{Approximation locale des fonctions}
+
+\begin{question}
+Utilisez l'approximation linéaire de la fonction $f$ au point suggéré
+pour obtenir l'estimation demandée.
+
+\subQ{a} $\displaystyle f(x,y)=2x^2y^2+3xy+x$ au point $(1,1)$ pour
+estimer $f(0.9,1.1)$.\\
+\subQ{b} $\displaystyle f(x,y) =  \ln\left(\frac{2x^2+5y^2}{7}\right)$
+au point $(1,1)$ pour estimer $f(0.98,1.01)$.\\
+\subQ{c} $\displaystyle f(x,y) = (x^2-y^5)^{4/3}$ au point $(3,1)$
+pour estimer $f(3.2,1.2)$.\\
+\subQ{d} $\displaystyle f(x,y)= 1- \frac{2x}{y}+3y-4xy^2+e^{3x}$ au
+point $(0,1)$ pour estimer $f(-0.1,0.9)$.
+\label{15Q18}
+\end{question}
+
+\subsection{Points critiques et valeurs extrêmes}
+
+\begin{question}[\eng]
+Soit $f(x,y) = xy -x^2y -xy^2$.  Les points $(0,1)$ et $(1/3,1/3)$
+sont des points critique de $f$.  Pour chacun de ces points,
+déterminez s'il est un maximum local, un minimum local, un col ou
+autre chose.
+\label{15Q19}
+\end{question}
+
+\begin{question}[\eng]
+Pour chacune des fonctions suivantes, trouvez les points critiques de
+cette fonction et, pour chacun des points critiques, déterminez s'il
+représente un maximum local, un minimum local, un col, ou aucun des
+cas précédents.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $f(x,y) = x^3 + y^3 - 3 x -12 y + 20$ &
+\subQ{b} & $h(x,y)=x^3 - y^3- 3xy + 290$ \\
+\subQ{c} & $f(x,y) = x^3 + 3 x y - y^3$ &
+\subQ{d} & $\displaystyle h(x,y)=x^3+y^3+3xy+\frac{1}{8}$ \\
+\subQ{e} & $f(x,y) = 2 x^3 + x y^2 + 5 x^2 + y^2$ & &
+\end{tabular}
+\end{center}
+\label{15Q20}
+\end{question}
+
+\begin{question}[\eng]
+Est-ce que $f(x,y) = 4xy^2 -x^2y^2 - xy^3$ a un maximum absolu sur la
+région $S$ bornée par l'axe des $x$, l'axe des $y$ et la droite
+$y=6-x$.  Si oui, trouvez ce maximum absolu.  
+\label{15Q21}
+\end{question}
+
+\subsection{Multiplicateurs de Lagrange}
+
+\begin{question}[\eng]
+L'aire d'une ellipse de demi axes $a$ et $b$ est donnée par $A=\pi ab$.
+Si $a+b=2$, pour quelles valeurs de $a$ et $b$ avons-nous l'aire maximale?
+\label{15Q22}
+\end{question}
+
+\begin{question}[\eng]
+Pour chacune des fonctions ci-dessous, trouvez le minimum et maximum
+absolu de la fonction sous la contrainte donnée.
+
+\subQ{a} $f(x,y) = xy$ avec la contrainte $x^2 + y^2 = 2$. \\
+\subQ{b} $f(x,y) = 9y^2 + 4x^2$ avec la contrainte $x^2 + y^2 = 1$. \\
+\subQ{c} $f(x,y,z) = x + 3 y - z$ avec la contrainte
+$x^2 + 4 y^2 + z^2 = 17$.
+\label{15Q23}
+\end{question}
+
+\begin{question}[\eng]
+Trouvez le volume maximal de la boite ayant des côtés parallèles aux
+axes de coordonnées qui est contenu à l'intérieur de l'ellipsoïde
+d'équation $\displaystyle x^2 + \frac{y^2}{4} + \frac{z^2}{9} = 1$.
+\label{15Q24}
+\end{question}
+
+\begin{question}[\eng]
+La base d'un aquarium de volume $V$ est faite de marbre et les côtés
+sont fait de verre.  Le coût par unité de surface du marbre est cinq
+fois celui du verre.  Trouvez les dimensions de l'aquarium qui
+minimisent le coût de l'aquarium
+\label{15Q25}
+\end{question}
+
+\begin{question}[\eng]
+Trouvez la valeur maximale de la fonction
+$\displaystyle f(x,y) = \frac{1}{x} + \frac{1}{y}$ sous la contrainte
+que $\displaystyle \frac{1}{x^2} + \frac{1}{y^2} = 1$.
+\label{15Q26}
+\end{question}
+
+\begin{question}[\eng]
+Pour chacune des fonctions suivante, déterminez si elle possède un
+maximum et minimum absolu sur le domaine $D$ donnée.  Si oui, trouvez
+ce maximum et minimum absolu.     
+
+\subQ{a} $f(x,y) = x^2 + y + 2y^2 +1$ et  $D = \{(x,y) : x^2 + y^2 \leq 4\}$\\
+\subQ{b} $f(x,y) = y+x^2$ et $D = \{(x,y) : x^2 + y^2 \leq 1\}$
+\label{15Q27}
+\end{question}
+
+\begin{question}[\eng]
+Est-ce que $f(x,y) = x^2 + y + 2y^2 +1$ a un maximum absolu sur le
+disque $D = \{(x,y) : x^2 + y^2 \leq 4\}$?  Si oui, trouvez ce maximum
+absolu.  
+\label{15Q28}
+\end{question}
+\subsection{Dérivées des fonctions de $\mathbf{\RR^n}$ dans
+  $\mathbf{\RR^m}$}
+
+\begin{question}[\theory \life]
+Pour chacune des fonctions $f:\RR^2 \rightarrow \RR^2$ ci-dessous,
+
+\subI{I} Calculez la dérivée de la fonction $f$ au point $(-1,1)$.\\
+\subI{II} Donnez l'approximation linéaire de $f$ autour du point $(-1,1)$\\
+\subI{III} Comparez la valeur de $f$ au point $(-0.9, 1.05)$ avec la valeur
+donnée par l'approximation linéaire au point $(-0.9, 1.05)$.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle f(x,y) = \begin{pmatrix} x/y \\
+  2xy \end{pmatrix}$ &
+\subQ{b} & $\displaystyle f(x,y) = \begin{pmatrix} x^2y+2xe^y \\
+\displaystyle \frac{x}{y}-3ye^{-x} \end{pmatrix}$
+\end{tabular}
+\end{center}
+\label{15Q29}
+\end{question}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

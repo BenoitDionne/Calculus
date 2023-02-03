@@ -1,0 +1,719 @@
+\section{Applications de l'intégrale}
+
+\subsection{Aire entre deux courbes}
+
+\compileSOL{\SOLUb}{\ref{8Q1}}{
+\subQ{a} Notons que $x^2 < 2x$ pour $0 < x < 2$.  Ainsi, l'aire de la
+région pour $0\leq x \leq 2$ est
+\[
+\int_0^2 |2x-x^2| \dx{x}
+= \int_0^2 (2x-x^2) \dx{x} = \left( x^2 - \frac{x^3}{3}\right)\bigg|_0^2
+= 4 - \frac{8}{3} = \frac{4}{3} \ .
+\]
+
+\subQ{b} Notons que $x^2>2x$ pour $2< x \leq 4$.  Ainsi, l'aire de la
+région pour $0\leq x \leq 4$ est
+\begin{align*}
+\int_0^4 |2x-x^2| \dx{x}
+&= \int_0^2 (2x-x^2) \dx{x} + \int_2^4 (x^2-2x) \dx{x} \\
+&= \left( x^2 - \frac{x^3}{3}\right)\bigg|_0^2 +
+\left( \frac{x^3}{3} - x^2 \right)\bigg|_2^4
+= \frac{4}{3} + \left(\frac{4^3}{3} - 4^2\right) + \frac{4}{3}
+= 8 \ .
+\end{align*}
+
+\subQ{c} Notons que $e^{2x}/2 < e^x$ pour $x < \ln(2)$ et $\ln(2)>1$.
+Ainsi, l'aire de la région pour $0\leq x \leq 1$ est
+\[
+\int_0^1 \left|e^x- \frac{e^{2x}}{2}\right| \dx{x} =
+\int_0^1 \left(e^x- \frac{e^{2x}}{2}\right) \dx{x} =
+\left( e^x - \frac{e^{2x}}{4}\right)\bigg|_0^1
+= e - \frac{e^2}{4} - \frac{3}{4} \approx 0.12101780\ . 
+\]
+
+\subQ{d} Les valeurs de $x$ aux points où la parabole
+$\displaystyle y=\frac{x^2}{2}$ et la droite
+$\displaystyle y=\frac{3}{2}+x$ se
+coupent sont les solutions de
+\[
+  \frac{x^2}{2} = \frac{3}{2}+x \Leftrightarrow 
+  x^2-2x-3=0 = (x-3)(x+1)=0 \ .
+\]
+Donc la parabole et la droite se coupent lorsque $x=-1$ et $x=3$.  Puisque
+$\displaystyle \frac{3}{2} + x > \frac{x^2}{2}$ pour $-1 < x < 3$,
+l'aire de la région bornée par la droite et la parabole est
+\[
+A = \int_{-1}^3 \left( \frac{3}{2} + x - \frac{1}{2}x^2 \right)\dx{x}
+= \left( \frac{3}{2}x + \frac{1}{2}x^2 - \frac{1}{6}x^3
+\right)\big|_{-1}^3 = \frac{16}{3} \ .
+\]
+
+\subQ{e} Les valeurs de $x$ aux points où la parabole
+$\displaystyle y=7x -x^2$ et la droite $\displaystyle y=x$ se
+coupent sont les solutions de $7x-3x^2 = x$;
+c'est-à-dire, de $0 = 6x-3x^2 = 3x(2-x)$.  Nous trouvons
+$x=0$ et $x=2$.  Entre $0$ et $2$, nous avons que $7x - x^2 > x$.
+Donc, l'aire de la région bornée par la droite et la parabole est
+\[
+A = \int_0^{2} \left( 7x - 3x^2 - x \right) \dx{x}
+= \left( - x^3 + 3 x^2 \right)\bigg|_0^{2} = 4 \ .
+\]
+
+\subQ{f} Les valeurs de $y$ aux points où la parabole
+$\displaystyle x=y^2$ et la droite $\displaystyle x-y=2$ se
+coupent sont les solutions de $y^2 = x = y+2$;
+c'est-à-dire, $y^2 -y - 2 = (y-2)(y+1) = 0$.  On obtient
+$y = -1$ et $y = 2$.  Nous obtenons la figure suivante.
+\PDFgraph{8_integrales_appl/aire4}
+
+Ainsi, l'aire $A$ de la région bornée par la droite et la parabole est
+\[
+A = \int_0^1 \left( \sqrt{x} - (- \sqrt{x})\right) \dx{x} +
+\int_1^4 \left( \sqrt{x} - (x-2)\right) \dx{x} \ .
+\]
+nous ne sommes pas obligé d'intégrer par rapport à $x$.  Le calcul de l'aire
+devient beaucoup plus simple si nous intégrons par rapport à $y$.  Ainsi,
+\[
+A = \int_{-1}^2 \left( (y+2) - y^2 \right) \dx{y}
+= \left( \frac{y^2}{2} + 2 y - \frac{y^3}{3} \right)\bigg|_{-1}^2
+= \frac{9}{2} \ .
+\]
+
+\subQ{g} Les valeurs de $x$ aux points où la courbe
+$\displaystyle y=\frac{x}{1+x}$ et la droite $\displaystyle y=\frac{x}{2}$ se
+coupent sont les solutions de 
+$\displaystyle \frac{x}{1+x} = \frac{x}{2}$.  Nous avons la solution $x=0$.
+Si $x\neq 0$, nous pouvons diviser les deux côtés de l'équation par $x$ pour
+obtenir $\displaystyle \frac{1}{1+x} = \frac{1}{2}$.  Une seconde
+solution de l'équation est donc $x=1$.
+
+Puisque $f(1/2) = 1/3 > 1/4 = g(1/2)$, nous avons que $f(x)>g(x)$ pour $0<x<1$.
+Donc, l'aire de la région entre la courbe et la droite est
+\begin{align*}
+A &= \int_0^1 \left( \frac{x}{1+x} - \frac{x}{2} \right) \dx{x}
+= \int_0^1 \left( 1 - \frac{1}{1+x} - \frac{x}{2} \right) \dx{x}
+= \left( x - \ln(1+x) - \frac{x^2}{4} \right)\bigg|_0^1 \\
+&= \frac{3}{4} - \ln(2) \approx 0.056852819  \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{8Q2}}{
+Notons que $\sin(2x)$ et $\cos(2x)$ sont de période $\pi$.  Nous
+retrouvons le graphe de ces deux fonctions dans la figure ci-dessous.
+\PDFgraph{8_integrales_appl/sin_cos}
+
+Pour être en mesure de calculer l'aire entre les courbes $\sin(2x)$ et
+$\cos(2x)$ pour $0\leq x \leq \pi$, il faut déterminer sur quels
+intervalles $\cos(x)>\sin(x)$ et sur quels intervalles nous avons l'inégalité
+inverse.  Il faut donc trouver $x$ entre $0$ et $\pi$ tel que
+$\cos(2x) = \sin(2x)$.  C'est-à-dire,
+\[
+\tan(2x) = \frac{\cos(2x)}{\sin(2x)} = 1
+\]
+et $0\leq x \leq \pi$.  Puisque $\tan(\theta)=1$ pour $\theta = \pi/4$,
+$5\pi/4$, $9\pi/4$, \ldots\ (nous pouvons ignorer les valeurs
+négatives de $\theta$ car $x\geq 0$), nous obtenons
+$2x = \pi/4$, $5\pi/4$, \ldots\  La restriction
+$0\leq x \leq \pi$ donne seulement deux valeurs $x= \pi/8$ et $x = 5\pi/8$.
+
+L'aire entre $y=\cos(2x)$ et $y=\sin(2x)$ est la somme de l'aire des
+trois régions $A$, $B$ et $C$ représentées dans la figure précédente.
+\begin{align*}
+\text{aire de A } &= \int_0^{\pi/8} (\cos(2x)-\sin(2x)) \dx{x} \ .\\
+\text{aire de B } &= \int_{\pi/8}^{5\pi/8} (\sin(2x)-\cos(2x)) \dx{x} \ .\\
+\text{aire de C } &= \int_{5\pi/8}^{\pi} (\cos(2x)-\sin(2x)) \dx{x} \ .
+\end{align*}
+Nous avons
+\begin{align*}
+\text{aire de A } &= \left(\frac{1}{2}\sin(2x) +
+  \frac{1}{2}\cos(2x)\right)\bigg|_0^{\pi/8}
+= \frac{1}{2}\sin(\pi/4) + \frac{1}{2} \cos(\pi/4) - \frac{1}{2}
+= \frac{\sqrt{2}-1}{2} \ , \\
+\text{aire de B } &= \left(-\frac{1}{2}\cos(2x)
+ -\frac{1}{2}\sin(2x)\right)\bigg|_{\pi/8}^{5\pi/8} \\
+&= -\frac{1}{2}\sin(5\pi/4) - \frac{1}{2} \cos(5\pi/4)
++ \frac{1}{2}\sin(\pi/4) + \frac{1}{2} \cos(\pi/4)
+= \sqrt{2}
+\intertext{et}
+\text{aire de C } &= \left(\frac{1}{2}\sin(2x) +
+  \frac{1}{2}\cos(2x)\right)\bigg|_{5\pi/8}^\pi
+= \frac{1}{2} - \frac{1}{2}\sin(5\pi/4) - \frac{1}{2} \cos(5\pi/4)
+= \frac{1+\sqrt{2}}{2} \ .
+\end{align*}
+L'aire total est donc
+\[
+\frac{\sqrt{2}-1}{2} + \sqrt{2} + \frac{1+\sqrt{2}}{2}
+= 2 \sqrt{2} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{8Q3}}{
+\subQ{a}
+Le nombre de bactéries est
+\begin{align*}
+n(T) &= 10^6 + \int_0^T r(t) \dx{t}
+= 10^6 + \int_0^T \frac{1000}{(2+3t)^{3/4}} \dx{t} \\
+&= 10^6 + \frac{4000}{3} (2+3t)^{1/4}\bigg|_0^T
+= 10^6 + \frac{4000}{3} \left( (2+3T)^{1/4} - 2^{1/4}\right) \ .
+\end{align*}
+
+\subQ{b}
+Puisque $\displaystyle \lim_{T\to \infty} (2+3T)^{1/4} = +\infty$, nous avons que
+$\displaystyle \lim_{T\to \infty} n(T) = +\infty$.  Cette population de
+bactéries ne peut pas supporter le taux de croissance.
+
+\subQ{c}
+Nous cherchons $T$ tel que $n(T) = 2\times 10^6$.  Donc,
+\begin{align*}
+& 10^6 + \frac{4000}{3} \left( (2+3T)^{1/4} - 2^{1/4}\right) = 2\times 10^6
+ \Leftrightarrow (2+3T)^{1/4} - 2^{1/4} = \frac{3}{4000} \times 10^6
+= 750\\
+& \qquad \Leftrightarrow  T =
+\frac{1}{3}\left(\left(750 + 2^{1/4}\right)^4-2\right)
+\approx 1.06139271674 \times 10^{11} \ \text{min} \ .
+\end{align*}
+Concrètement, nous pourrions dire que la population supporte le taux de
+croissance car le nombre de bactéries augmente très lentement; il faut
+plus de $73,707,827$ jours pour que la population double.
+}
+
+\subsection{Valeur moyenne d'une fonction}
+
+\compileSOL{\SOLUb}{\ref{8Q4}}{
+La valeur moyenne est
+\[
+M = \frac{1}{2} \int_{-1}^1 (x - x^3) \dx{x} =
+\frac{1}{2}\left(\frac{x^2}{2} - \frac{x^4}{4} \right)\bigg|_{-1}^1 = 0 \ .
+\]
+Cela ne devrait pas surprendre personne car la fonction $f$ est
+impaire et le domaine d'intégration $[-1,1]$ est un intervalle symétrique
+par rapport à l'origine, donc l'intégrale est nulle.
+
+\MATHgraph{8_integrales_appl/moyenne1}{8cm}
+}
+
+\compileSOL{\SOLUa}{\ref{8Q5}}{
+\subQ{a}
+Le volume d'eau qui a été versé dans le bocal au cours des deux
+premières minutes est
+\[
+V = \int_0^2 r(t) \dx{t} = 4 \int_0^2 (3t-t^2) \dx{t}
+= 4 \left( \frac{3t^2}{2} - \frac{t^3}{3} \right)\bigg|_0^2
+= 4 \left(6 - \frac{8}{3} \right)= \frac{40}{3} \quad \text{litres}.
+\]
+\subQ{b} Le taux moyen pour les deux premières minutes est
+\[
+M_2 = \frac{1}{2} \int_0^2 r(t) \dx{t} = \frac{20}{3} \quad
+\text{litres/minute}.
+\]
+\subQ{c} le taux moyen pour la première minute est
+\[
+M_1 = \frac{1}{1} \int_0^1 r(t) \dx{t} 
+= 4 \left( \frac{3t^2}{2} - \frac{t^3}{3} \right)\bigg|_0^1 
+= 4 \left( \frac{3}{2} - \frac{1}{3} \right) =
+\frac{14}{3}  \quad \text{litres/minute}.
+\]
+Il n'est pas surprenant que $M_1$ soit plus petit que $M_2$ car l'aire sous
+le graphe de $r$ et au-dessus de l'axe des $t$ augmente plus rapidement
+lorsque $t$ est près du milieu de l'intervalle $[0,3]$.
+
+\subQ{d}
+\MATHgraph{8_integrales_appl/moyenne2}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{8Q6}}{
+Notons que $r(0)=r(15)=0$ et $r(t)>0$ pour $0 < t < 15$.
+
+Le volume d'eau qui a entré dans le réservoir au cours des $15$
+premières heures est
+\[
+V = \int_0^{15} r(t) \dx{t} = \int_0^{15} (360t-39 t^2 + t^3) \dx{t}
+= \left( 180 t^2 - 13 t^3 + \frac{t^4}{4} \right)\bigg|_0^{15}
+= 9,281.25 \quad \text{litres}.
+\]
+Le taux moyen pour les $15$ premières heures est
+\[
+M_2 = \frac{1}{15} \int_0^{15} r(t) \dx{t} = \frac{9,281.25}{15}
+= 618.75 \quad \text{litres/heure}. 
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{8Q7}}{
+Puisque $E(t) = 360t -39t^2+t^3$ est un polynôme de degré trois dont le
+coefficient de $t^3$ est positif, nous avons que
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+t & t < 0 & 0 & 0 <t < 15 & 15 & 15 < t < 24 & 24 & 24 < 4 \\
+\hline
+E(t) & - & 0 & + & 0 & - & 0 & +
+\end{array}
+\]
+Donc,
+\[
+| 360t -39t^2+t^3| =
+\begin{cases}
+360t -39t^2+t^3 & \quad \text{si}\quad  0\leq t \leq 15 \\
+-360t +39t^2-t^3 & \quad \text{si} \quad 15\leq t \leq 24
+\end{cases}
+\]
+L'énergie totale produite est
+\begin{align*}
+T &= \int_0^{15} (360t-39t^2+t^3) \dx{t}
++ \int_{15}^{24} (-360t+39t^2-t^3) \dx{t} \\
+&= \left(180t^2-13t^3+\frac{t^4}{4}\right)\bigg|_0^{15}
++ \left(-180t^2+ 13t^3- \frac{t^4}{4}\right)\bigg|_{15}^{24}
+= 11650.5 \ \text{J}.
+\end{align*}
+Le taux moyen de production d'énergie est
+$\displaystyle M = \frac{T}{24} = \frac{11650.5}{24} = 485.4375$ J/hr.
+}
+
+\compileSOL{\SOLUb}{\ref{8Q8}}{
+\subQ{a} Il faut trouver le maximum absolu et le minimum absolu de
+$\rho$ sur l'intervalle $0\leq x \leq 200$ où la variable $x$ est
+mesurée en cm.
+\begin{align*}
+\rho'(x) &= 4\times 10^{-8}\, x(240-x)- 2\times10^{-8}x^2 \\
+&= 6\times 10^{-8} x ( 160 - x) \ .
+\end{align*}
+Les points critiques dans l'intervalle $[0,200]$ sont
+$x=0$ et $x= 160$.
+
+Puisque $\rho(0)=1$, $\rho(160)=1.04096$ et $\rho(200) = 1.032$,
+le maximum absolu est $1.04096$ g/cm lorsque $x=1.60$ m et le minimum absolu
+est $1$ g/cm lorsque $x=0$ cm.
+
+\subQ{b} La masse $m$ du fils est
+\begin{align*}
+m &= \int_0^{200}\rho(x) \dx{x}
+= \int_0^{200} (1+2\times10^{-8}x^2(240-x) )\dx{x} \\
+&= \int_0^{200} (1+4.8\times 10^{-6}\,x^2-2\times10^{-8}\,x^3)\dx{x}
+= \left(x+1.6\times10^{-6}x^3-5\times10^{-9}x^4\right)\bigg|_0^{200} \\
+&= 200+12.8-8 = 204.8 \ \text{g.}
+\end{align*}
+
+\subQ{c} Remarquons que la densité moyen du fils est $204.8/200=1.024$
+g/cm.  C'est bien une valeur entre la densité minimale $1$ g/cm et la densité
+maximale $1.0496$ g/cm du fils.
+
+\subQ{d}
+\MATHgraph{8_integrales_appl/average}{8cm}
+}
+
+\subsection{Volume d'un objet}
+
+\compileSOL{\SOLUb}{\ref{8Q9}}{
+Les tranches perpendiculaires à l'axe du cône sont des disques.  Le
+rayon de ces disques varie de $2$ à la base du cône à $0$ au sommet du
+cône.  L'aire des disques est donc $A(h) = \pi (r(h))^2$ où le rayon $r$
+est une fonction linéaire de la hauteur $h$ à laquelle se trouve la
+tranche.  L'équation qui définit $r$ est donc l'équation de la droite
+qui passe par les points $(h,r)=(0,2)$ et $(h,r) = (3,0)$.  La pente
+de cette droite est $(0-2)/(3-0) = -2/3$.  L'équation de cette droite
+dans la forme point-pente  est $(r-2) = (-2/3) (h-0) = -2h/3$.  Donc,
+$r= 2 - 2h/3$ et ainsi $A(h) = \pi (2 - 2h/3)^2$.  Le volume $V$ du
+cône est
+\[
+V = \int_0^3 A(h)\dx{h} = \pi \int_0^3 (2-2h/3)^2 \dx{h} \ .
+\]
+Si $u= 2 -2 h/3$, alors $\dx{u} = (-2/3) \dx{h}$,
+$u=2$ lorsque $h=0$ et $u=0$ lorsque $h=3$.  Ainsi,
+\[
+V = -\frac{3\pi}{2} \int_2^0 u^2 \dx{u} = \frac{3\pi}{2} \int_0^2 u^2 \dx{u}
+= \frac{\pi}{2} u^3 \bigg|_{u=0}^2 = 4 \pi \ ,
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{8Q11}}{
+L'aire d'une section transverse est donnée par la formule
+$\displaystyle A(x) = \pi \left(\frac{e^{2x}-e^x}{2}\right)^2$.
+Le volume est donc
+\begin{align*}
+V &= \int_0^1 A(x) \dx{x}
+= \frac{\pi}{4} \int_0^1 (e^{2x}-e^x)^2 \dx{x}
+= \frac{\pi}{4} \int_0^1 (e^{4x} - 2 e^{3x} + e^{2x}) \dx{x} \\
+&= \frac{\pi}{4} \left( \frac{1}{4}e^{4x} - \frac{2}{3}e^{3x}
+ + \frac{1}{2}e^{2x}\right)\bigg|_0^1
+= \frac{\pi}{4} \left(\frac{e^4}{4} - \frac{2e^3}{3}
++ \frac{e^2}{2} - \frac{1}{12} \right) \approx 3.03978 \ .
+\end{align*}                                                                  
+}
+
+\compileSOL{\SOLUb}{\ref{8Q12}}{
+Si nous assumons que l'origine est au centre du ballon et que l'axe des
+$z$ est l'axe principal du ballon, le ballon peut alors être décrit
+par l'équation
+\[
+  \frac{x^2}{9^2} + \frac{y^2}{9^2} + \frac{z^2}{15^2} = 1 \ .
+\]
+Nous représentons le ballon dans la figure ci-dessous.
+\PDFgraph{8_integrales_appl/football}
+
+Nous allons calculer le volume de la moitié du ballon; c'est-à-dire, pour
+$z \geq 0$.  Le volume du ballon sera donc le double de la valeur que
+nous trouverons.
+
+Soit $k$, un entier positif.  Posons $\Delta z = 15/k$ et
+$z_i = i \Delta z = 15 i/k$ pour $i=0$, $1$, $2$, \ldots, $k$.  Nous
+obtenons une partition de l'intervalle $[0,15]$ en sous-intervalles de
+la forme $[z_i,z_{i+1}]$ pour $i=0$, $1$, \ldots, $k-1$.
+
+La $i^e$ tranche du ballon est donnée par l'intersection du ballon
+avec la région définie par $\{ (x,y,z) : z_i \leq z \leq z_{i+1}\}$.
+Pour estimer le volume $V_i$ de la $i^e$ tranche, nous choisissons $z_i^\ast$
+dans l'intervalle $[z_i,z_{i+1}]$ et nous considérons le cylindre $S_i$,
+qui sont représentés dans la figure ci-dessus.  La hauteur de ce
+cylindre est $\Delta z$ et son rayon est
+$\displaystyle 9 \sqrt{1 - \frac{(z_i^\ast)^2}{15^2}}$.  Le volume du
+cylindre $S_i$ est donc
+\[
+  9^2 \pi \left(1 - \frac{(z_i^\ast)^2}{15^2}\right) \Delta z
+= \frac{9\pi}{25} \left(15^2 - (z_i^\ast)^2\right) \Delta z \ .
+\]
+Pour $\Delta z$ très petit, le volume de la $i^e$ tranche du ballon
+est approximativement le volume de $S_i$.  La somme du volume de
+chaque cylindre $S_i$ donne donc un estimé du volume $V$ de l'a
+moitié du ballon.
+\[
+  V \approx \sum_{i=0}^{k-1} \frac{9\pi}{25} \left( 15^2 - (z_i^\ast)^2\right)
+  \Delta z \ .
+\]
+C'est une somme de Riemann.  Si $k \to \infty$, nous obtenons
+\[
+V = \int_0^{15} \frac{9\pi}{25} \left( 15^2 - z^2\right) \dx{z} \ .
+\]
+Ainsi, le volume de la moitié du ballon est
+\[
+V = \frac{9\pi}{25} \int_0^{15} \left( 15^2 - z^2\right) \dx{z}
+= \frac{9\pi}{25} \left( 15^2z - \frac{z^3}{3}\right)\bigg|_0^{15}
+= \frac{9\pi}{25} \left( \frac{2\times 15^3}{3}\right)
+= 810 \pi \ \text{cm}^3 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{8Q13}}{
+\subQ{b} Nous intégrons pour $0 \leq x \leq 2$.  La tranche à $x$ est un
+demi-cercle de rayon $\sqrt{x}$.  Donc l'aire de la
+tranche est
+$\displaystyle A(x) = \frac{1}{2} \pi (\sqrt{x})^2 = \frac{1}{2} \pi x$.
+Ainsi,
+\[
+V = \frac{1}{2} \int_0^2 \pi x \dx{x}
+= \left( \frac{1}{4} \pi x^2 \right)\bigg|_0^2
+= \pi \ .
+\]
+
+\subQ{c}
+Nous avons la situation suivante.
+\PDFgraph{8_integrales_appl/vol6}
+
+L'aire d'un tranche est $\displaystyle A(x) = (3x+x^2)^2$.
+Ainsi, le volume est donné par
+\[
+V = \int_0^2 A(x) \dx{x} = \int_0^2 (9x^2+6x^3+x^4)\dx{x}
+=\left( 3x^3 + \frac{3x^4}{2} + \frac{x^5}{5}\right)\bigg|_0^2
+= 54.4 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{8Q15}}{
+\subQ{b} Le volume $V$ obtenu par la rotation de la région bornée par
+la courbe $y=\cos(x/2)$, l'axe des $x$, et les droites $x=-\pi$ et
+$x=\pi$ est donné par
+\[
+V = \pi\int_{-\pi}^{\pi}\cos^2\left(\frac{x}{2}\right)\dx{x} \ .
+\]
+Puisque
+\[
+\cos^2(\theta) = \frac{1}{2}\left( 1 + \cos(2\theta)\right) \ ,
+\]
+nous obtenons
+\[
+V = \frac{\pi}{2}\int_{-\pi}^{\pi} \left(1 + \cos(x)\right)\dx{x}
+= \frac{\pi}{2} \left(x + \sin(x)\right)\bigg|_{-\pi}^{\pi}
+= \frac{\pi}{2} \left( 2\pi \right) = \pi^2 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{8Q16}}{
+\subQ{a} Nous devons premièrement trouver l'intersection de la droite avec
+la parabole.  Les valeurs de $x$ aux points où la droite et la
+parabole se coupent sont les solutions de $x^2 = x$; c'est-à-dire,
+$x= 0$ ou $1$. 
+
+Puisque $x > x^2$ pour $0<x<1$, le volume est donné par
+\begin{align*}
+V &= \pi \int_0^1 \left( \left( x - (-1) \right)^2 -
+\left( x^2 - (-1) \right)^2 \right) \dx{x} \\
+&= \pi \int_0^1 \left( -x^4 - x^2 + 2x \right) \dx{x}
+= \pi \left( -\frac{x^5}{5} - \frac{x^3}{3} + x^2 \right)\bigg|_0^1
+= \frac{7 \pi}{15} \ .
+\end{align*}
+
+\subQ{b} 
+Nous devons premièrement trouver l'intersection de la droite avec la
+parabole.  Les valeurs de $x$ aux points où les deux courbes se
+coupent sont les solutions de $x^2 = 2x$; c'est-à-dire, $x = 0$ ou $2$.
+
+Nous obtenons la figure ci-dessous.
+\PDFgraph{8_integrales_appl/rot16}
+
+Nous utilisons la méthode des cylindres,
+\[
+V = 2\pi \int_a^b |x-c||f(x)-g(x)|\dx{x} \ ,
+\]
+pour calculer le volume du solide de révolution.  Nous avons
+$f(x) = 2x$, $g(x) = x^2$, $c=4$, $a=0$ et $b=2$.  Ainsi,
+\[
+V = 2\pi \int_0^2 (4-x)(2x -x^2) \dx{x}
+=2\pi \int_0^2 (8x -6x^2 +x^3) \dx{x}
+=2\pi \left( 4x^2 - 2x^3 + \frac{x^4}{4} \right)\bigg|_0^2
+= 8\pi \ .
+\]
+}
+
+\subsection{Masse d'un objet}
+
+\subsection{Travail}
+
+\compileSOL{\SOLUb}{\ref{8Q23}}{
+\PDFgraph{8_integrales_appl/reservoir3_sol}
+
+Partageons l'intervalle $[-5,-2]$ en $N$ sous-intervalles de longueur
+$\Delta x = 3/N$ pour obtenir des sous-intervalles de la forme
+$[x_i,x_{i+1}]$ où $x_i = -5 + i \Delta x$ pour $i=0$, $1$, \ldots,
+$N$.  De plus, choisissons $x_i^\ast$ entre $x_i$ et $x_{i+1}$ pour $i=0$,
+$1$, \ldots, $N-1$.
+
+Le travail nécessaire pour retirer du réservoir la mince couche d'eau
+entre $x_i$ et $x_{i+1}$ est approximativement
+\[
+9.8 \times 1000 \times \underbrace{0-x_i^\ast}_{\text{profondeur}} \times
+\underbrace{\pi (9 - (-2 - x_i^\ast)^2)
+\Delta x}_{\text{volume de la couche d'eau}} \ .
+\]
+Il ne faut pas oublier que $x_i^\ast<0$ par construction.
+
+Donc, le travail pour vider le réservoir est approximativement
+\[
+W \approx \sum_{i=0}^{N-1} -9.8 \times 1000 \times x_i^\ast \times
+\pi (9 - (-2 - x_i^\ast)^2) \Delta x
+= -9,800 \pi \sum_{i=0}^{N-1} x_i^\ast (9 - (-2 -x_i^\ast)^2) \Delta x
+\ .
+\]
+C'est une somme de Riemann pour
+$\displaystyle -9,800 \pi \int_{-5}^{-2} x (9 - (-2-x)^2)\dx{x}$.
+Donc, si $N \to \infty$, nous obtenons
+que le travail pour vider le réservoir est
+\begin{align*}
+W &= -9,800 \pi \int_{-5}^{-2} x (9 - (-2-x)^2)\dx{x}\\
+& = -9,800 \pi \int_{-5}^{-2} (5x - 4x^2 - x^3)\dx{x}
+= -9,800 \pi \left( \frac{5x^2}{2} - \frac{4x^3}{3} +
+  \frac{x^4}{4}\right) \bigg|_{-5}^{-2} \\
+&= 9,800 \pi \times 56.25 \approx 1.731 \times 10^6 \ \text{J.}
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{8Q25}}{
+Si l'axe des $x$ est vertical et l'origine se trouve à trois mètres
+au dessus du citerne, il faut intégrer de $-9$ à $-3$.
+De plus, une tranche horizontal est un disque de $2$ m de
+rayon.  Son aire est donc $A(x) = \pi \times 2^2$.  Le travail pour vider le
+réservoir est
+\[
+W = 9.8 \times 1000 \times \pi \times 2^2 \int_{-9}^{-3} (0-x) \dx{x}
+= 39200  \pi \left( -\frac{x^2}{2} \right) \bigg|_{-9}^{-3}
+= 1411200 \pi \ \text{J.}
+\]
+}
+
+\subsection{Force}
+
+\compileSOL{\SOLUb}{\ref{8Q27}}{
+\PDFgraph{8_integrales_appl/dam1_sol}
+
+Partageons le segment $[-17,-12]$ en $N$ sous intervalles
+$[x_i,x_{i+1}]$ de longueur $\Delta x = 5/N$ où
+$x_i = -17 + i \Delta x$ pour $i=0$, $1$, $2$, \ldots , $N$.
+De plus, choisissons $x_i^\ast$ entre $x_i$ et $x_{i+1}$ pour $i=0$, $1$, $2$,
+\ldots , $N-1$.
+
+La pression sur la petite section (en blanc) d'une largeur de $2$ m
+et d'une hauteur de $\Delta x$ à une profondeur de $x_i^\ast$ est
+approximativement
+\[
+9.8 \times 1000 \times \underbrace{(0-x_i^\ast)}_{\text{profondeur}}
+\times \underbrace{2 \Delta x}_{\text{aire de la section}} \ .
+\]
+Comme toujours, il ne faut pas oublier que $x_i^\ast <0$ par
+construction.
+
+Donc la pression totale sur la porte est approximativement
+\[
+\sum_{j=0}^{N-1} -9.8 \times 1000\times x_i^\ast \times 2 \Delta x
+= -19,600 \sum_{i=0}^{N-1} x_i^\ast \Delta x \ .
+\]
+C'est une somme de Riemann pour l'intégrale
+$\displaystyle -19,800 \int_{-17}^{-12} x \dx{x}$.
+Donc, si $n \to \infty$, nous obtenons que la pression sur la porte
+est
+\[
+P = -19,800 \int_{-17}^{-12} x \dx{x} =
+-9,800 x^2 \bigg|_{-17}^{-12} = 1.421 \times 10^6 \ \text{N.}
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{8Q29}}{
+Supposons que l'origine est au niveau de l'eau du lac et que la
+direction positive est vers le haut.  Il faut calculer la force
+exercée sur le côté du cylindre pour $-6 \leq x \leq -5.90$.
+
+Partageons l'intervalle $[-6,-5.9]$ en $k$ sous intervalles
+$[x_i,x_{i+1}]$ de longueur $\Delta x = 0.1/k$ où
+$x_i = -6 + i \Delta x$ pour $i=0$, $1$, $2$, \ldots , $k$.
+\PDFgraph{8_integrales_appl/cylindreQuestion}
+
+la pression à une profondeur de $x_i^\ast$ mètres, où
+$x_i \leq x_i^\ast \leq x_{i+1}$, est
+$-9.8 \times 1000 \times x_i^\ast = -9800\, x_i^\ast$.  Comme
+toujours, il ne fait pas oublier que $x_i^\ast <0$ par construction.
+
+La force $F_i$ exercée sur la surface entre $x_i$ et
+$x_{i+1}$ mètres est approximativement la force exercée sur le
+rectangle (en bleu dans la figure ci-dessus) de hauteur $\Delta x$ et
+de longueur $2\sqrt{0.0025 - (x_i^\ast + 5.95)^2}$.  Donc,
+\begin{align*}
+F_i &\approx \underbrace{\left(- 9800 \, x_i^\ast\right)}_{\text{pression}}
+\underbrace{ \left( 2\sqrt{0.0025 - (x_i^\ast + 5.95)^2}
+  \Delta x \right)}_{\text{aire}} \\
+&= -19600 x_i^\ast \sqrt{0.0025 - (x_i^\ast + 5.95)^2} \Delta x \ .
+\end{align*}
+Ainsi, la force $F$ à une des extrémités est approximativement
+\[
+  F \approx \sum_{i=0}^{k-1} F_i
+  = -19600 x_i^\ast \sqrt{0.0025 - (x_i^\ast + 5.95)^2} \Delta x \ .
+\]
+Cette somme approche la valeur de $F$ si $k\to \infty$.  Comme
+c'est aussi une somme de Reimann pour
+$\displaystyle -19600  \int_{-6}^{-5.9} x \sqrt{0.0025 - (x + 5.95)^2} \dx{x}$,
+nous obtenons
+\[
+  F = -19600  \int_{-6}^{-5.9} x \sqrt{0.0025 - (x + 5.95)^2} \dx{x}
+\]
+lorsque $k \to \infty$.
+
+Si $u = x+5.95$, alors $\dx{u} = \dx{x}$, $u=-0.05$ lorsque
+$x=-6$ et $u=0.05$ lorsque $x = -5.95$.  Donc
+\begin{align*}
+  F &= -19600  \int_{-0.05}^{0.05} (u-5.95) \sqrt{0.0025 - u^2} \dx{u} \\
+&= -19600  \int_{-0.05}^{0.05} u\sqrt{0.0025 - u^2} \dx{u}
++ 19600 \times 5.95 \int_{-0.05}^{0.05} \sqrt{0.0025 - u^2} \dx{u} \ .
+\end{align*}
+Puisque la première intégrale est l'intégrale d'une fonction
+impaire sur un intervalle symétrique à l'origine, cette intégrale est
+nul.  La deuxième intégrale est l'aire d'un demi-disque de rayon
+$0.05$, donc sa valeur est $\pi \frac{0.0025}{2}$.
+
+Donc $\displaystyle F = 19600 \times 5.95 \times \frac{0.0025}{2}
+=145.775\pi$ N.
+}
+
+\subsection{Centre de masse}
+
+\compileSOL{\SOLUb}{\ref{8Q31}}{
+La masse de la région est
+\[
+  m = 3 \int_0^2 e^x \dx{x} = 3 e^x\bigg|_0^2 = 3 (e^2 - 1) \ .
+\]
+Le moment par rapport à l'axe des $y$ est
+\[
+M_y = 3 \int_0^2 x e^x \dx{x} \ .
+\]
+Utilisons la méthode d'intégration par parties pour évaluer cette
+intégrale.  Si $f(x)=x$ et $g'(x)= e^x$, alors $f'(x) = 1$ et $g(x)=e^x$.
+Donc
+\[
+  M_y = 3 \left( xe^x\bigg|_0^2 - \int_0^2 e^x \dx{x} \right)
+  = 3\left( 2 e^2 - e^x\bigg|_0^2 \right) = 3\left( 2e^2 - e^2+1\right) =
+  3(e^2 - 1) \ .
+\]
+Le moment par rapport à l'axe des $x$ est
+\[
+  M_x = \frac{3}{2} \int_0^2 \left(e^{x}\right)^2 \dx{x}
+  = \frac{3}{4} e^{2x}\bigg|_0^2 = \frac{3(e^4-1)}{4} \ .
+\]
+Ainsi, le centre de masse est
+\[
+\left( \frac{M_y}{m} , \frac{M_x}{m}\right)
+= \left( \frac{3(e^2 -1)}{3(e^2 -1)} , \frac{3(e^4-1)/4}{3(e^2-1)} \right)
+= \left( 1 , \frac{e^2+1}{4} \right)
+\approx ( 1 , 2.097265 ) \ .
+\]
+}
+
+\subsection{Applications à l'économie}
+
+\subsection{Test de l'intégrale}
+
+\compileSOL{\SOLUb}{\ref{8Q36}}{
+\subQ{a}
+Nous avons la séries $\displaystyle \sum_{n=1}^\infty a_n$ où $a_n = g(n)$
+pour $\displaystyle g(x) = x e^{-2x^2}$.
+
+Puisque $g$ est une fonction positive et décroissante pour $x>0.5$ car
+$g'(x) = (1-4x^2)e^{-2x^2} < 0$ pour $x>0.5$, nous pouvons utiliser le
+test de l'intégrale.
+
+Évaluons l'intégrale
+\[
+  \int_1^N x e^{-2x^2} \dx{x} \ .
+\]
+Soit $u = -2x^2$, alors $\dx{u} = -4x \dx{x}$, $u= -2N^2$ lorsque
+$x=N$ et $u = -2$ lorsque $x=1$.  Donc
+\[
+\int_1^N x e^{-2x^2} \dx{x} = -\frac{1}{4} \int_1^{-2N^2} e^{u} \dx{u}
+= \frac{1}{4} \int_{-2N^2}^{-2} e^{u} \dx{u}
+= \frac{1}{4} e^{u} \bigg|_{-2N^2}^{-2} = 
+\frac{1}{4} \left(e^{-2} - e^{-2N^2} \right)  \ .
+\]
+Ainsi,
+\[
+\int_1^\infty x e^{-2x^2} \dx{x}
+= \lim_{N\rightarrow \infty} \int_1^N x e^{-x^2} \dx{x}
+= \lim_{N\rightarrow \infty} \frac{1}{4} \left(e^{-2} -e^{-2N^2} \right) 
+= \frac{e^{-2}}{4} \ .
+\]
+Donc, puisque l'intégrale $\displaystyle \int_1^\infty x e^{-2x^2} \dx{x}$
+converge, la série converge.
+}
+
+\compileSOL{\SOLUb}{\ref{8Q38}}{
+Nous avons la séries $\displaystyle \sum_{n=1}^\infty a_n$ où $a_n = f(n)$
+pour $\displaystyle f(x) = \frac{1}{x^{8/3}}$.
+
+Puisque $f(x)$ est une fonction positive décroissante qui converge vers
+$0$ lorsque $x\to \infty$ et
+$\displaystyle \int_1^\infty f(x) \dx{x} = \frac{3}{5}$, il découle
+du test de l'intégrale que la séries
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^{8/3}}$
+converge car $\displaystyle \int_1^\infty f(x) \dx{x}$ converge.
+
+De plus,
+\[
+0 \leq S - S_N \leq \int_N^\infty \frac{1}{x^{8/3}} \dx{x}
+= \left( -\frac{3}{5x^{5/3}} \right)\bigg|_N^\infty
+= \frac{3}{5N^{5/3}} \ .
+\]
+Il faut choisir $N$ assez grand (mais pas inutilement grand) pour que
+$\displaystyle \frac{3}{5N^{5/3}} < 10^{-3}$.  Donc, il faut avoir
+\[
+600 < N^{5/3} \Rightarrow
+\left(600\right)^{3/5} \approx 46.4398 < N \ .
+\]
+Nous pouvons prendre $N = 47$.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

@@ -1,0 +1,919 @@
+\section{Fonctions}
+
+\subsection{Algèbre}
+
+\compileSOL{\SOLUb}{\ref{2Q1}}{
+\subQ{a} $\displaystyle (3^4)^{0.5} = 3^2 = 9$
+
+\subQ{b}
+$\displaystyle 2^{2^3} \times 2^{2^2} = 2^{2^3 + 2^2} = 2^{8+4} = 2^{12}$
+
+\subQ{c} $\displaystyle \log_3(1) = 0$ car $3^0 = 1$.
+
+\subQ{d} $\displaystyle \log_{10}(5) + \log_{10}(20)
+= \log_{10}(5\times 20) = \log_{10}(100) = 2$
+
+\subQ{e} $\displaystyle \log_{10}(500) - \log_{10}(50)
+= \log_{10}(500/50) = \log_{10}(10) = 1$
+
+\subQ{f} $\displaystyle \log_{42.3}(42.3^7) = 7$
+}
+
+\compileSOL{\SOLUb}{\ref{2Q2}}{
+\subQ{a}
+\[
+\frac{(x^4 y^{1/4})^{1/2}}{y^{1/2}} \Rightarrow
+\frac{(x^4)^{1/2} (y^{1/4})^{1/2}}{y^{1/2}} \Rightarrow
+\frac{x^{4/2} y^{1/8}}{y^{1/2}} \Rightarrow
+x^2 y^{1/8- 1/2} \Rightarrow x^2 y^{-3/8} \ .
+\]
+
+\subQ{b}
+\begin{align*}
+\frac{x+1}{x-2} + \frac{x+1}{x-3} + \frac{-9x+21}{x^2-5x+6}
+&= \frac{x+1}{x-2} + \frac{x+1}{x-3} + \frac{-9x+21}{(x-2)(x-3)} \\
+&= \frac{(x+1)(x-3) + (x+1)(x-2) -9x+21}{(x-2)(x-3)} \\
+&= \frac{2x^2 -12 x +16}{(x-2)(x-3)}
+= \frac{2(x-4)(x-2)}{(x-2)(x-3)}
+= \frac{2(x-4)}{(x-3)} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{2Q3}}{
+\[
+\begin{array}{lll}
+\multicolumn{2}{l|}{x^3 + 2 x^2 + x + 3} & x+2 \\
+\cline{3-3}\\[-0.8em]
+-(x^3 + 2 x^2) & & x^2 +1 \\
+\cline{1-2} \\[-0.8em]
+ & x+3 & \\
+ & -(x+2) & \\
+\cline{2-2} \\[-0.8em]
+ & 1 &
+\end{array}
+\]
+Donc
+\[
+  \frac{x^3 + 2x^2 +x+3}{x+2} = x^1 + 1 + \frac{1}{x+2} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{2Q4}}{
+Les racines du polynôme $a x^2 + b x + c$ sont données par la formule
+\[
+x_{\pm} = \frac{-b \pm \sqrt{b^2 - 4 a c }}{2 a}
+\]
+si $b^2 - 4 a c \geq 0$.  Dans ce cas, nous avons
+$a x^2 + b x + c = a(x-x_-)(x-x_+)$.  Si $b^2 - 4 a c <0$, il n'y a
+pas de racine réelle et nous ne pouvons pas factoriser le polynôme.
+
+\subQ{a}
+Les racines du polynôme $x^2+x-6$ sont
+\[
+x_+ = \frac{-1 + \sqrt{1 +24}}{2} = \frac{-1 + 5}{2} = 2
+\quad \text{et} \quad x_- = \frac{-1 - \sqrt{1 +24}}{2} =
+\frac{-1 - 5}{2} = -3 \ .
+\]
+Donc $x^2+x-6 = (x-2)(x+3)$.
+
+\subQ{b}
+Les racines du polynôme $3x^2 - 5 x -2$ sont
+\[
+x_+ = \frac{5 +\sqrt{25 + 24}}{6} = \frac{5 + 7}{6} = 2
+\quad \text{et} \quad
+x_- = \frac{5 - \sqrt{25 + 24}}{6} = \frac{5 - 7}{6} = -\frac{1}{3} \ .
+\]
+Donc $\displaystyle 3x^2 - 5 x -2 = 3
+(x-2)\left(x+\frac{1}{3}\right)=(x-2)(3x + 1)$.
+
+\subQ{c}  Nous avons
+\[
+x^{3/2} + x^{1/2}-12 x^{-1/2} = x^{-1/2} \left( x^2 + x -12\right)
+= x^{-1/2} (x+4)(x-3)
+\]
+car les racines du polynôme $x^2 + x -12$ sont
+\[
+x_+ = \frac{-1 + \sqrt{1 + 48}}{2} = \frac{-1 + 7}{2} = 3
+\quad \text{et} \quad
+x_- = \frac{-1 -\sqrt{1 + 48}}{2} = -4 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{2Q5}}{
+\subQ{a} Les racines d'une polynôme de la forme $ax^2 +bx + c$ sont
+\[
+x_\pm = \frac{-b \pm \sqrt{b^2-4ac}}{2a} \ .
+\]
+Donc les racines cherchées sont 
+\begin{align*}
+x_+ &= \frac{-2 + \sqrt{2^2-4(-2)}}{2} = \frac{-2 + \sqrt{12}}{2}
+= \frac{-2 + 2\sqrt{3}}{2} = -1 + \sqrt{3}
+\intertext{et}
+x_- &= \frac{-2 - \sqrt{2^2-4(-2)}}{2} = \frac{-2 - \sqrt{12}}{2}
+= \frac{-2 - 2\sqrt{3}}{2} = -1 - \sqrt{3} \ .
+\end{align*}
+
+\subQ{b} Puisque le coefficient de $x^2$ est positif, nous avons une
+parabole ouverte vers le haut (i.e. convexe).  Cette parabole coupe
+l'axe des $x$ aux points $(x,0)$ où $x^2+2x-2=0$; c'est-à-dire, aux
+points $(x_-,0)$ et $(x_+,0)$.  La parabole coupe l'axe des $y$ au
+point $(0,-2)$.  La parabole à un minimum lorsque
+$\displaystyle x = \frac{x_-+x_+}{2} = -1$; le point milieu entre
+$x_-$ et $x_+$.  Nous obtenons la figure ci-dessous.
+\PDFgraph{2_fonctions/parabola}
+}
+
+\compileSOL{\SOLUb}{\ref{2Q7}}{
+\subQ{a}
+\[
+7\times 5^{3x} = 21 \Leftrightarrow 5^{3x} = 3
+\Leftrightarrow \ln\left(5^{3x}\right) = \ln(3)
+\Leftrightarrow 3x \ln(5) = \ln(3) 
+\Leftrightarrow x = \frac{\ln(3)}{3\ln(5)}
+\]
+
+\subQ{b}
+\begin{align*}
+4\times 3^{-2x+1} = 7\times 3^{3x} &
+\Leftrightarrow \frac{3^{-2x+1}}{3^{3x}} = \frac{7}{4} 
+\Leftrightarrow 3^{-5x+1} = \frac{7}{4} \\
+& \Leftrightarrow \ln\left(3^{-5x+1}\right) = \ln\left(\frac{7}{4}\right)
+\Leftrightarrow (-5x + 1)\ln(3) = \ln(7) - \ln(4) \\
+& \Leftrightarrow x = -\frac{1}{5}
+\left(-1 + \frac{\ln(7) - \ln(4)}{\ln(3)}\right)
+\end{align*}
+
+\subQ{c}
+\[
+\log_{10}(100^x) = 3 \Rightarrow \log_{10}(10^{2x}) = 3
+\Rightarrow 2x = 3 \Rightarrow x = \frac{3}{2} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{2Q8}}{
+Si nous multiplions des deux côtés par $e^x$, nous obtenons
+\[
+e^x + 2e^{-x} = 3 \Rightarrow e^{2x} + 2 = 3e^x
+\Rightarrow e^{2x} - 3e^x + 2 = 0 \Rightarrow (e^x-2)(e^x-1) = 0 \ .
+\]
+Donc $e^x=1$ donne $x=0$ et $e^x =2$ donne $x=\ln(2)$.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q9}}{
+\subQ{a}
+Pour $x \neq 0$ et $-1$,  
+\[
+  \frac{2x}{x+1} = \frac{2x-1}{x} \Leftrightarrow
+  2x^2 = (2x-1)(x+1)=2x^2 +x - 1 \Leftrightarrow x = 1 \ .
+\]
+
+\subQ{b} Pour $x \neq \pm 1$,
+\begin{align*}
+\frac{1}{x+1} + \frac{3}{x-1} = 4
+&\Leftrightarrow \frac{(x-1)+3(x+1)}{(x+1)(x-1)}
+= \frac{4x + 2}{(x+1)(x-1)} = 4 \\
+&\Leftrightarrow 4x + 2 = 4(x+1)(x-1) = 4x^2 -4 \\
+&\Leftrightarrow 4x^2 - 4 x - 6 = 4 \left( x^2 - x -
+\frac{3}{2}\right) = 0  \ .
+\end{align*}
+Ainsi, $\displaystyle x = \frac{1 \pm \sqrt{7}}{2}$.
+
+\subQ{c} Nous devons avoir $x>5$ pour que les trois logarithmes soient
+bien définis.  Donc
+\begin{align*}
+\ln(x-3)+\ln(x-5) = \ln(2x-6)
+& \Leftrightarrow \ln( (x-3)(x-5) ) = \ln(x^2 - 8x +15) = \ln(2x-6) \\
+& \Leftrightarrow x^2 - 8x +15 = 2x-6 \\
+& \Leftrightarrow x^2 - 10x + 21 = (x-3)(x-7) = 0
+\Leftrightarrow x = 7
+\end{align*}
+pour $x>5$.  La racine $3$ ne satisfait pas $x>5$.
+
+\subQ{d}
+$|x-2| = 5$ si $x - 2 = 5$ ou $x-2 = -5$; c'est-à-dire, si $x = 7$ ou $-3$.
+
+\subQ{e} Ce cas n'est pas beaucoup plus difficile que le précédent.
+Si nous assumons que $x \neq 5/2$, qui n'est pas une solution de toute
+façon, alors
+\[
+|x - 2| = |2x-5| \Leftrightarrow \frac{|x-2|}{|2x -5|} =
+\left|\frac{x-2}{2x-5}\right| = 1
+\Leftrightarrow \frac{x-2}{2x-5} = 1 \text{ ou } \frac{x-2}{2x-5} = -1\; .
+\]
+Si $\displaystyle \frac{x-2}{2x-5} = 1$, nous obtenons
+$x-2 = 2x-5$ et ainsi $x = 3$.
+Si $\displaystyle \frac{x-2}{2x-5} = -1$, nous obtenons
+$x-2 = -2x+5$ et ainsi $x = 7/3$.
+
+\subQ{f}
+\[
+|x^2 - 4| = 4 \Leftrightarrow x^2 - 4 = 4 \text{ ou } x^2 - 4 = -4
+\Leftrightarrow x^2 = 8 \text{ ou } x^2=0 \Leftrightarrow
+x = \pm 2\sqrt{2} \text{ ou } x = 0 \ .
+\]
+
+\subQ{g} Nous devons avoir $0<x<3$ pour que les deux logarithmes soient
+bien définis.  Donc
+\begin{align*}
+\ln(2) - \ln(x) &= \ln(3-x) \Leftrightarrow
+\ln(2) - \ln(x) - \ln(3-x) = 0 \Leftrightarrow
+\ln\left(\frac{2}{x(3-x)}\right) = 0 \\
+&\Leftrightarrow \frac{2}{x(3-x)} = 1 \Leftrightarrow 2 = x(3-x)
+\Leftrightarrow x^2 -3x + 2 = 0 \\
+&\Leftrightarrow (x-2)(x-1) = 0 \Leftrightarrow x = 1 \text{ et } x=2
+\end{align*}
+pour $0<x<3$.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q10}}{
+\subQ{a} Nous avons
+\[
+  5 -\frac{6}{x} < 4 \Leftrightarrow 1 - \frac{6}{x} < 0
+  \Leftrightarrow \frac{x-6}{x} < 0 \ .
+\]
+La fonction $f(x) = (x-6)/x$ peut changer de signe seulement aux
+points $x$ où $f(x) = 0$ ou $f(x)$ n'est pas définie; c'est-à-dire, aux
+points $0$ et $6$.  Il suffit donc de déterminer le signe de $f(x)$
+dans les intervalles délimités par ces points pour trouver les
+intervalles où $f(x) < 0$. 
+\[
+\begin{array}{c|c|c|c}
+x & x<0 & 0<x<6 & x>6 \\
+\hline
+x-6 & - & - & + \\
+\hline
+x & - & + & + \\
+\hline
+f(x) = (x-6)/x & + & - & +
+\end{array}
+\]
+Donc $5 - 6/x < 4$ pour $0<x<6$.
+  
+\subQ{b} Nous avons $x^2 -4x + 3 = (x-1)(x-3)$.  La fonction
+$f(x) = (x-1)(x-3)$ peut changer de signe seulement aux points $x$ où
+$f(x) = 0$; c'est-à-dire, aux points $1$ et $3$.  Il suffit donc
+de déterminer le signe de $f(x)$ dans les intervalles délimités par
+ces points pour trouver les intervalles où $f(x) > 0$.
+\[
+\begin{array}{c|c|c|c}
+x & x<1 & 1<x<3 & x>3 \\
+\hline
+x-1 & - & + & + \\
+\hline
+x-3 & - & - & + \\
+\hline
+f(x) = (x-1)(x-3) & + & - & +
+\end{array}
+\]
+Donc $x^2 -4x + 3 > 0$ pour $x<1$ ou $x>3$.
+
+\subQ{c} Nous avons
+\[ 
+\frac{2}{x+1} >\frac{1}{x-3} \Leftrightarrow \frac{2}{x+1} -\frac{1}{x-3} > 0
+\Leftrightarrow \frac{x-7}{(x+1)(x-3)} > 0 \ .
+\]
+La fonction $\displaystyle f(x) = \frac{x-7}{(x+1)(x-3)}$ peut changer de
+signe seulement aux points $x$ où $f(x) = 0$ ou $f(x)$ n'est pas
+définie.  Nous parlons des points $-1$, $3$ et $7$.  Il suffit donc
+de déterminer le signe de $f(x)$ dans les intervalles délimités par
+ces points pour trouver les intervalles où $f(x) > 0$.
+\[
+\begin{array}{c|c|c|c|c}
+ & x<-1 & -1<x<3 & 3<x<7 & x>7 \\
+\hline
+x+1 & - & + & + & + \\
+\hline
+x-3 & - & - & + & + \\
+\hline
+x-7 & - & - & - & + \\
+\hline
+\rule{0em}{1.5em} \displaystyle f(x) = \frac{x-7}{(x+1)(x-3)} & - & + & - & +
+\end{array}
+\]
+Donc $\displaystyle f(x) > 0$ si $-1<x<3$ ou $x>7$.
+
+\subQ{d} Nous avons
+\[
+  \frac{x^2}{x+2}  < 1 \Leftrightarrow 0 < 1 - \frac{x^2}{x+2} 
+= - \frac{x^2 -x - 2}{x+2} = -\frac{(x-2)(x+1)}{x+2} \ .
+\]
+La fonction $\displaystyle f(x) = -\frac{(x-2)(x+1)}{x+2}$ peut changer de
+signe seulement aux points $x$ où $f(x) = 0$ ou $f(x)$ n'est pas
+définie.  Nous parlons des points $-2$, $-1$ et $2$.  Il suffit donc
+de déterminer le signe de $f(x)$ dans les intervalles délimités par
+ces points pour trouver les intervalles où $f(x) > 0$.
+\[
+\begin{array}{c|c|c|c|c}
+x & x < -2 & -2 < x <-1 & -1 < x < 2 & x > 2 \\
+\hline
+x-2 & - & - & - & + \\
+\hline
+x+1 & - & - & + & + \\
+\hline
+x+2 & - & + & + & + \\
+\hline
+f(x) & + & - & + & -
+\end{array}
+\]
+L'inégalité est donc vrai pour $x < -2$ ou $-1<x < 2$.
+
+\subQ{e} Nous avons
+\[
+\frac{x}{x-3}  < \frac{-6}{x+1} \Leftrightarrow 
+0 < \frac{-6}{x+1} - \frac{x}{x-3}
+= - \frac{x^2 + 7x - 18}{(x-3)(x+1)}
+= - \frac{(x+9)(x-2)}{(x-3)(x+1)} \ .
+\]
+La fonction $\displaystyle f(x) = -\frac{(x+9)(x-2)}{(x-3)(x+1)}$
+peut changer de signe seulement aux points $x$ où $f(x) = 0$ ou $f(x)$
+n'est pas définie.  Nous parlons des points $-9$, $-1$, $2$ et $3$.  Il
+suffit donc de déterminer le signe de $f(x)$ dans les intervalles
+délimités par ces points pour trouver les intervalles où $f(x) > 0$.
+\[
+\begin{array}{c|c|c|c|c|c}
+x & x < -9 & -9 < x <-1 & -1 < x < 2 & 2 < x < 3 & x > 3 \\
+\hline
+x+9 & - & + & + & + & + \\
+\hline
+x-2 & - & - & - & + & + \\
+\hline
+x-3 & - & - & - & - & + \\
+\hline
+x+1 & - & - & + & + & + \\
+\hline
+f(x) & - & + & - & + & - 
+\end{array}
+\]
+L'inégalité est donc vrai pour $-9<x<-1$ ou $2<x<3$.
+
+\subQ{f} Nous avons
+\[
+|x-2| < 5 \Leftrightarrow -5 < x-2 < 5
+\Leftrightarrow -5 <x-2 \text{ et } x-2<5
+\Leftrightarrow -3 <x \text{ et } x<7 \ .
+\]
+L'inégalité est donc vrai pour $-3 < x < 7$.
+
+\subQ{g} Si nous assumons que $x \neq 1$, qui n'est pas une solution de toute
+façon, alors
+\[
+|x^2-2x - 5| < |x-1| \Leftrightarrow
+\frac{|x^2-2x - 5|}{|x-1|} = \left|\frac{x^2-2x - 5}{x-1}\right| < 1
+\Leftrightarrow 
+-1 < \frac{x^2-2x - 5}{x-1} < 1 \ .
+\]
+Nous avons deux inégalité à résoudre simultanément.
+
+\subI{i} Nous commençons avec l'inégalité
+\[
+  -1 < \frac{x^2-2x - 5}{x-1} \Leftrightarrow
+  0 < 1 + \frac{x^2-2x - 5}{x-1} = \frac{x^2 -x - 6}{x-1}
+  = \frac{(x-3)(x+2)}{x-1} \ .
+\]
+La fonction $\displaystyle f(x) = \frac{(x-3)(x+2)}{x-1}$ peut
+changer de signe seulement aux points $x$ où $f(x) = 0$ ou $f(x)$ n'est
+pas définie.  Nous parlons des points $-2$, $1$ et $3$.  Il
+suffit de déterminer le signe de $f(x)$ dans les intervalles
+délimités par ces points pour trouver les intervalles où $f(x) > 0$.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+x & x < -2 & -2 & -2 < x <1 & 1 & 1 < x < 3 & 3 & x > 3 \\
+\hline
+f(x) & - & 0 & + & \text{N.D.} & - & 0 & + 
+\end{array}
+\]
+L'inégalité est donc vrai pour $]-2, 1[ \cup ]3,\infty[$.
+
+\subI{ii} Nous considérons maintenant
+\[
+ \frac{x^2-2x - 5}{x-1} < 1 \Leftrightarrow
+  0 < 1 - \frac{x^2-2x - 5}{x-1} = -\frac{x^2 - 3x - 4}{x-1}
+  = -\frac{(x-4)(x+1)}{x-1} \ .
+\]
+La fonction $\displaystyle f(x) = -\frac{(x-4)(x+1)}{x-1}$ peut
+changer de signe seulement aux points $x$ où $f(x) = 0$ ou $f(x)$ n'est
+pas définie.  Nous parlons des points $-1$, $1$ et $4$.  Il
+suffit de déterminer le signe de $f(x)$ dans les intervalles
+délimités par ces points pour trouver les intervalles où $f(x) > 0$.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+x & x < -1 & -1 & -1 < x <1 & 1 & 1 < x < 4 & 4 & x > 4 \\
+\hline
+f(x) & + & 0 & - & \text{N.D.} & + & 0 & - 
+\end{array}
+\]
+L'inégalité est donc vrai pour $]-\infty, -1[ \cup ]1,4[$.
+
+Pour répondre à la question initiale, il faut trouver les valeurs de
+$x$ qui satisfont les deux cas simultanément.  Il faut donc trouver
+l'intersection des deux ensembles de solutions que nous avons.
+Nous obtenons $]-2, -1[ \cup ]3,4[$.
+}
+
+\subsection{Functions}
+
+\compileSOL{\SOLUb}{\ref{2Q11}}{
+Puisque $f(x) = 3 + 2x-x^2 = 4 - (x-1)^2$, nous avons que
+$f(x)$ peut prendre toutes les valeurs plus petites ou égales à $4$
+car $(x-1)^2$ peut prendre toutes les valeurs plus grandes ou égales
+à $0$.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q13}}{
+\subQ{a} La fonction $g$ est définie pour tout $x$ réel.  Le
+domaine de $g$ est donc $\RR$.  Puisque $x^3$ peut prendre toutes les
+valeurs entre $-\infty$ et $+\infty$, on a que l'image de $g$ est
+l'image de $5^x$ pour $x \in \RR$; c'est-à-dire que l'image de $g$
+est $]0,\infty[$.
+
+Puisque
+\[
+  g(x_1) = g(x_2) \Leftrightarrow 5^{x_1^3} = 5^{x_2^3}
+  \Leftrightarrow x_1^3 = x_2^3 \Leftrightarrow x_1 = x_2 \ ,
+\]
+nous avons que $g$ est une fonction injective sur $\RR$, son domaine.
+Nous pouvons donc inverser $g: \RR \rightarrow ]0,\infty[$.  L'inverse de $g$
+est donné par
+\[
+y = g(x) \Leftrightarrow y = 5^{x^3} \Leftrightarrow \log_5(y) = x^3
+\Leftrightarrow x = (\log_5(y))^{1/3} \ .
+\]
+Par convention, nous écrivons
+$\displaystyle y = g^{-1}(x) = \sqrt[3]{\log_5(x)}$.
+Le domaine de $g^{-1}$ est $]0,\infty[$, l'image de $g$, et l'image de
+$g^{-1}$ est $\RR$, le domaine de $g$.
+
+\subQ{b} Déterminons les valeurs de $x$ pour lesquelles
+$(x+1)/(x-1) \geq 0$.  L'expression $(x+1)/(x-1)$ peut changer de
+signe seulement aux points $x$ où elle est nul ou elle n'est pas
+définie.  C'est-à-dire aux points $-1$ et $1$.  Il suffit donc de
+déterminer le signe de $(x+1)/(x-1)$ dans les intervalles délimités
+par ces points pour trouver les intervalles où $(x+1)/(x-1) > 0$.
+\[
+\begin{array}{c|c|c|c|c|c}
+x & x < -1 & -1 & -1 < x <1 & 1 & x > 1 \\
+\hline
+x+1 & - & 0 & + & 2 & + \\
+\hline
+x-1 & - & 2 & - & 0 & + \\
+\hline
+(x+1)/(x-1) & + & 0 & - & \text{N.D} & + 
+\end{array}
+\]
+Le domaine de $f$ est donc $]-\infty,-1] \cup ]1,\infty[$.  L'image
+de $f$ est $[0,1[\cup ]1, \infty[$ car
+\[
+\frac{x+1}{x-1} = \frac{x-1 + 2}{x-1} = 1 + \frac{2}{x-1}
+\]
+où $2/(x-1)$ prend toutes les valeurs plus grande que $0$
+lorsque $1 <x < \infty$ et $2/(x-1)$ prend toutes les valeurs
+entre $-1$ et $0$ ($-1$ inclus) lorsque $-\infty < x \leq -1$.  Ne pas oublier
+que la racine carrée est positive ou nulle.
+
+Puisque
+\begin{align*}
+f(x_1) = f(x_2) &\Rightarrow
+\sqrt{ \frac{x_1+1}{x_1-1} } = \sqrt{ \frac{x_2+1}{x_2-1} }
+\Rightarrow \frac{x_1+1}{x_1-1} = \frac{x_2+1}{x_2-1} \\
+&\Rightarrow (x_1+1)(x_2-1) = (x_2+1)(x_1-1) \\
+&\Rightarrow x_1 x_2 + x_2 - x_1 - 1 = x_1 x_2 - x_2 + x_1 -1 \\
+&\Rightarrow x_2 - x_1 = - x_2 + x_1 \Rightarrow 2 x_2 = 2 x_1
+\Rightarrow x_2 = x_1 \ ,
+\end{align*}
+nous avons que $f$ est une fonction injective sur son domaine.
+Nous pouvons donc inverser
+\[
+f: \DO f \rightarrow \IM f \ .
+\]
+L'inverse de $f$ est donné par
+\begin{align*}
+y = f(x) &\Leftrightarrow y = \sqrt{ \frac{x+1}{x-1} }
+\Leftrightarrow y^2 = \frac{x+1}{x-1}
+\Leftrightarrow y^2 (x-1) = x + 1 \\
+&\Leftrightarrow y^2 x - x = y^2 + 1
+\Leftrightarrow x( y^2 - 1) = y^2 + 1 \\
+&\Leftrightarrow x = \frac{y^2+1}{y^2-1} \ .
+\end{align*}
+Notez que la deuxième équivalence ci-dessus est vrai seulement
+parce que nous assumons que $y$ est dans l'image de $f$;
+c'est-à-dire, $y \in [0,1[\cup ]1, \infty[$.
+
+Par convention, nous écrivons
+$\displaystyle y = f^{-1}(x) = \frac{x^2+1}{x^2-1}$.  Le domaine de
+$f^{-1}$ est l'image de $f$ et l'image de $f^{-1}$ est le domaine de
+$f$.
+
+\subQ{c}  La fonction $h$ est définie pour tout $x$ sauf $x=-1$.
+Le domaine de $h$ est donc $\RR \setminus \{-1\}$.  Puisque
+$y^{10} \geq 0$ pour tout $y \in \RR$, et
+$\displaystyle \frac{x}{x+1}$ peut prendre toutes les valeurs
+réelles sauf $1$ (pourquoi?) en variant $x$, nous avons que l'image de $h$
+est $[0,1[ \cup ]1,\infty[$. 
+
+La fonction $h$ n'est pas injective car
+\[
+h(1) = \left( \frac{1}{2} \right)^{10} = \left( -\frac{1}{2} \right)^{10} = 
+h\left(-\frac{1}{3}\right) \ .
+\]
+En fait, le lecteur peut vérifier que $h(x_1) = h(x_2)$ si
+$x_1 + 2x_1 x_2 + x_2 = 0$.  Donc $h$ n'est pas inversible sur son
+domaine.
+
+\noindent {\bfseries Note}: Si nous restreignons la fonction $h$ à
+$[0,\infty[$, alors $h:[0,\infty[ \rightarrow [0,1[$ est inversible.
+Plus précisément, puisque
+\begin{align*}
+h(x_1) = h(x_2) &\Rightarrow \left( \frac{x_1}{x_1+1} \right)^{10} =
+\left( \frac{x_2}{x_2+1} \right)^{10}
+\Rightarrow \frac{x_1}{x_1+1} = \frac{x_2}{x_2+1} \\
+&\Rightarrow x_1(x_2+1) = x_2(x_1+1)
+\Rightarrow x_1 x_2 + x_1 = x_1 x_2 + x_2
+\Rightarrow x_1 = x_2 \ ,
+\end{align*}
+nous avons que $h$ est injective sur $[0, \infty[$.  Nous avons utilisé le fait
+que $\displaystyle \frac{x_1}{x_1+1} \geq 0$ et
+$\displaystyle = \frac{x_2}{x_2+1} \geq 0$ pour obtenir la deuxième
+implication ci-dessus.  L'inverse de $h$ est donné par
+\begin{align*}
+y = h(x) & \Leftrightarrow y = \left( \frac{x}{x+1} \right)^{10}
+\Leftrightarrow y^{1/10} = \frac{x}{x+1} \Leftrightarrow 
+y^{1/10} (x+1) = x\\
+&\Leftrightarrow y^{1/10} x - x = -y^{1/10} \Leftrightarrow
+x( y^{1/10} - 1) = -y^{1/10}
+\Leftrightarrow x = \frac{y^{1/10}}{1 - y^{1/10}} \ .
+\end{align*}
+Nous avons utilisé le fait que $\displaystyle \frac{x}{x+1} \geq 0$ pour
+obtenir la deuxième équivalence ci-dessus.  Par convention, nous écrivons
+$\displaystyle y=h^{-1}(x)= \frac{x^{1/10}}{1 - x^{1/10}}$.  Le
+domaine de $h^{-1}$ est l'image de $h$ où $h$ est restreint à
+$[0,\infty[$.  C'est-à-dire que le domaine de $h^{-1}$ est $[0,1[$.
+L'image de $h^{-1}$ est $[0,\infty[$, le domaine que nous avons assigné à
+$h$.
+
+Nous pourrions montrer que si nous restreignons la fonction $h$ à
+$]-\infty,-1[$, alors $h:]-\infty,-1[ \rightarrow ]1,\infty[$ est
+aussi inversible.  De même, si nous restreignons la fonction $h$ à $]-1,0]$,
+alors $h:]-1,0] \rightarrow [0,\infty[$ est inversible.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q14}}{
+\[
+(f\circ g)(x) = f(g(x)) = \sqrt{g^2(x) - 1}
+= \sqrt{ (\sqrt{x^2+1})^2 - 1}
+= \sqrt{ (x^2+1) - 1} = \sqrt{x^2} = |x| \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{2Q15}}{
+\subQ{a} Nous avons $\displaystyle f(x) = f_1(f_2(x))$ où $f_1(y) = 5 y^{-1}$
+et $f_2(x) = 1+5^x$.
+
+\subQ{b} Nous avons $\displaystyle h(t) = h_1(h_2(t))$ où $h_1(x) = x^{-4}$
+et $h_2(t) = 1-t^2$.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q16}}{
+Nous avons que $\displaystyle g(x) = g_1(g_2(g_3(x)))$ où $g_1(x) = \cos(x)$,
+$g_2(x) = \sqrt{x} = x^{1/2}$ et $g_3(x) = 1+x^2$.
+}
+
+\subsection{Trigonométrie}
+
+\compileSOL{\SOLUb}{\ref{2Q18}}{
+Puisque $\theta$ est un angle connu (i.e. $\theta = \pm \pi/3 + 2n\pi$),
+nous utilisons le cercle unité pour répondre à cette question.
+\PDFgraph{2_fonctions/unitCircle}
+Nous trouvons donc $\sin(\theta) = \pm \sqrt{3}/{2}$.
+
+Nous aurions pu utiliser l'identité $\cos^2(\theta) + \sin^2(\theta) = 1$
+pour obtenir le même résultat.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q19}}{
+\subQ{a} La fonction est de la forme
+\[
+x = f(t) = M + A \cos\left(\frac{2\pi}{P}\, (t-T) \right)
+\]
+où l'amplitude est $A = (9-(-1))/2= 5$, la moyenne est $M=(9+(-1))/2= 4$,
+la période est $P=2$ et la phase est $T=0$.  Donc
+\[
+x = f(t) = 4 + 5 \cos\left(\frac{2\pi}{2}(t-0)\right)
+= 4 + 5 \cos\left(\pi t\right) \ .
+\]
+
+\subQ{b} La fonction est de la forme
+\[
+x = g(t) = M + A \cos\left(\frac{2\pi}{P}\, (t-T) \right)
+\]
+où l'amplitude est $A=(8-(-2))/2= 5$, la moyenne est $M=(8+(-2))/2= 3$,
+la période est $P=2$ et la phase est $T=0.5$. Donc
+\[
+x = g(t) = 3 + 5 \cos\left(\frac{2\pi}{2}(t- 0.5)\right)
+= 3 + 5 \cos\left(\pi (t-0.5) \right) \ .
+\]
+
+\subQ{c} La fonction est de la forme
+\[
+x = V(t) = M + A \cos\left(\frac{2\pi}{P}\, (t-T) \right)
+\]
+où la moyenne est $M = (2.2+1.8)/2 = 2$, l'amplitude
+$A = (2.2-1.8)/2 = 0.2$, la période est $0.2$, et la phase est
+$T = 0.1$.  Donc
+\begin{align*}
+x = V(t) &= M + A\;\cos\left( \frac{2\pi}{P} \left( t - T\right) \right)
+= 2 + 0.2\;\cos\left( \frac{2\pi}{0.2} \left( t - 0.1\right) \right) \\
+&= 2 + 0.2\;\cos\left(10\pi (t - 0.1)\right) \ .
+\end{align*}
+
+\subQ{d} La fonction est de la forme
+\[
+x = h(t) = M + A \cos\left(\frac{2\pi}{P}\, (t-T) \right)
+\]
+où la moyenne est $M=3$, l'amplitude est $A=2$, la période est $P=10$
+et la phase est $T = 1$.  Donc
+\[
+x = h(t) = 3 + 2 \cos\left(\frac{2\pi}{10}\, (t-1) \right)
+= 3 + 2 \cos\left(\frac{\pi}{5}\, (t-1) \right) \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{2Q20}}{
+\subQ{a} Puisque $\cos(t) = -\cos(t-\pi)$, nous pouvons écrire
+\[
+f(t) = 2 - \cos(t) = 2 + \cos(t-\pi) =
+M + A \cos\left( \frac{2\pi}{P}\left( t- T\right)\right)
+\]
+avec $M=2$, $A=1$, $P=2\pi$ et $T = \pi$.
+
+\subQ{b} Nous avons
+\[
+f(t) = 2 + \sin(t) = 2 + \cos\left( t - \frac{\pi}{2}\right)
+= M + A\;\cos\left( \frac{2\pi}{P} \left( t - T\right) \right) \ ,
+\]
+où $M=2$ est la moyenne, $A=1$ est l'amplitude, $P=2\pi$ est la
+période et $\displaystyle T = \frac{\pi}{2}$ est la phase.
+
+\subQ{c} Puisque $\sin(\pi/2 - \theta) = \cos(\theta)$, nous avons que
+\[
+\sin\left(\frac{\pi}{2}(2-t)\right) =
+\sin\left(\frac{\pi}{2} - \frac{\pi}{2}(t-1)\right) =
+\cos\left(\frac{\pi}{2}(t - 1)\right) \ .
+\]
+Ainsi
+\[
+f(t) = -5 + 7\sin\left(\frac{\pi}{2}(2-t)\right)
+= -5 + 7 \cos\left(\frac{\pi}{2}(t - 1)\right)
+= M + A \cos\left( \frac{2\pi}{P} (t - T)\right)
+\]
+où $M= -5$ est la moyenne, $A=7$ est l'amplitude, $P=4$ est la
+période et $T=1$ est la phase.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q21}}{
+\subQ{a}
+\[
+  h(z) = 1 + 5 \cos\left(\frac{\pi z}{2} - \frac{3\pi}{2}\right)
+  = 1 + 5 \cos\left(\frac{2\pi}{4}(z -3)\right)
+  = M + A \cos\left( \frac{2\pi}{P}(z - Z)\right)
+\]
+où $M=1$ est la moyenne, $A=5$ est l'amplitude, $P=4$ est la période
+et $Z=3$ est la phase.
+\PDFgraph{2_fonctions/sinusoid3}
+
+\subQ{b}
+\begin{align*}
+f(x) &= 6 \sin(3x-6) -4 = -4 + 6 \cos\left((3x-6) - \frac{\pi}{2}\right) \\
+& = -4 + 6 \cos\left(\frac{2\pi}{2\pi/3}
+\left( x - \left(2 + \frac{\pi}{6}\right)\right)\right)
+= M + A \cos\left( \frac{2\pi}{P} \left( x - Z\right)\right) \ .   
+\end{align*}
+L'amplitude est $A = 6$.  La période est $P = 2 \pi/3$, la moyenne est
+$M = -4$ et la phase est $\displaystyle Z = 2 + \frac{\pi}{6}$.  
+Remarque que $\displaystyle Z = 2 - \frac{\pi}{2}$ serait préférable
+et acceptable car la période est $2\pi/3$.
+\PDFgraph{2_fonctions/ass2Y}
+
+\subQ{c}
+\[
+W(y) = -2.0 + 3.0\cos\left( \frac{2\pi}{0.5}(y + 0.1)\right) =
+M + A\;\cos\left( \frac{2\pi}{P} ( y - Z) \right)
+\]
+où $M=-2$ est la moyenne, $A=3$ est l'amplitude, $P=0.5$ est la période et
+$\displaystyle Z = 0.4$ est la phase.  Remarquons que $Z=-0.1$
+serait aussi acceptable pour la phase car la période est $0.5$.
+
+Le graphe de $W$ est donnée ci-dessous.
+\PDFgraph{2_fonctions/ass2Z}
+}
+
+\compileSOL{\SOLUb}{\ref{2Q22}}{
+La période $P$ est $24$ heures, la moyenne $M$ est $(37.2+36.6)/2 = 36.9$,
+l'amplitude $A$ est $(37.2-36.6)/2 = 0.3$ et la phase $T$ est $13$.
+Ainsi,
+\[
+T(t) = 36.9 + 0.3 \cos\left( \frac{2\pi}{24} (t - 13) \right)
+= 36.9 + 0.3 \cos\left(\frac{\pi}{12}(t - 13)\right)
+\]
+Le graphe de cette fonction est
+\MATHgraph{2_fonctions/sinusoidale3}{8cm}
+}
+
+\compileSOL{\SOLUa}{\ref{2Q23}}{
+Nous avons la figure ci-dessous où le Théorème de Pythagore a été
+utilisé pour trouver la longueur de la diagonale du rectangle.
+\PDFgraph{2_fonctions/triangle2}
+Nous trouvons donc que
+$\sin(\theta/2) = 2/\sqrt{13}$ et $\cos(\theta/2) = 3/\sqrt{13}$.
+Ainsi
+\[
+\cos(\theta) = \cos\left(\frac{\theta}{2} + \frac{\theta}{2}\right)
+= \cos\left(\frac{\theta}{2}\right)\cos\left(\frac{\theta}{2}\right)
+- \sin\left(\frac{\theta}{2}\right)\sin\left(\frac{\theta}{2}\right)
+= \frac{9}{13} - \frac{4}{13} = \frac{5}{13} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{2Q24}}{
+Nous pourrions toujours utiliser les identités trigonométriques pour
+résoudre cette question.  Mais si vous êtes comme l'auteur de ce
+manuel et avez de la difficulté à mémoriser toutes ces formules, un
+retour à la définition du cosinus et du sinus à partir d'un triangle
+peut résoudre cette question.
+
+Nous obtenons le dessin suivant de $\displaystyle \sin(\theta)=\frac{1}{x}$.
+\PDFgraph{2_fonctions/triangle3}
+
+Ainsi, $\displaystyle \tan(\theta) = \frac{1}{\sqrt{x^2-1}}$.  La valeur
+négative est donnée par l'angle obtus.
+}
+
+\compileSOL{\SOLUa}{\ref{2Q25}}{
+Soit $\theta = \arcsin(x)$ où $-\pi/2 < \theta < \pi/2$.  Donc
+$\sin(\theta) = x$ et nous obtenons la figure suivante.
+\PDFgraph{2_fonctions/trig8}
+Ainsi, $\tan(\arcsin(x)) = \tan(\theta) = x/\sqrt{1-x^2}$.
+}
+
+\subsection{Fonctions exponentielles}
+
+\compileSOL{\SOLUb}{\ref{2Q26}}{
+Si $f(x) = p b^x$, alors
+\begin{align*}
+b^2 &= \frac{p b^4}{p b^2} = \frac{f(4)}{f(2)}
+ = \frac{0.1875}{0.75} \Rightarrow b = 0.5 \\
+b^2 &= \frac{p b^6}{p b^4} = \frac{f(6)}{f(4)}
+= \frac{0.046875}{0.1875} \Rightarrow b = 0.5
+\intertext{et}
+b^2 &= \frac{p b^8}{p b^6} = \frac{f(8)}{f(6)} 
+= \frac{0.011719}{0.046875} \Rightarrow b \approx 0.50000533
+\end{align*}
+Nous pouvons supposer que $f(x) = p (1/2)^x$.  Puisque
+$f(2) = p (1/2)^2 = 0.75$ par hypothèse, nous obtenons $p = 3$.
+Ainsi, $f(x)= 3 (1/2)^x$.
+
+Si $g(x) = m x + b$, alors
+\begin{align*}
+2m &= (4m+b) - (2m+b) = g(4) - g(2) = 10.3 - 5.7 = 4.6 \Rightarrow
+m = 2.3 \\
+2m &= (6m+b) - (4m+b) = g(6) - g(4) = 14.9 - 10.3 = 4.6 \Rightarrow
+m = 2.3
+\intertext{et}
+2m &= (8m+b) - (6m+b) = g(8) - g(6) = 19.5 - 14.9 = 4.6 \Rightarrow
+m = 2.3
+\end{align*}
+Nous pouvons supposer que $g(x) = 2.3 x + b$.  Puisque
+$g(2) = 2.3 \times 2 + b = 5.7$, nous obtenons $b = 1.1$.  Ainsi,
+$g(x)= 2.3 x + 1.1$ .
+}
+
+\compileSOL{\SOLUa}{\ref{2Q27}}{
+Nous avons $\displaystyle S(t) = S_0 10^{0.693 t}$.  Pour répondre à la
+première question, il faut trouer $t$ tel que $S(t) = 2 S(0)$.  Donc
+\begin{align*}
+S_0 10^{0.693 t} = 2 S_0 & \Rightarrow 10^{0.693 t} = 2
+\Rightarrow \log_{10}\left(10^{0.693 t}\right) = \log_{10}(2)
+\Rightarrow 0.693 \; t = \log_{10}(2) \\
+&\Rightarrow t = \frac{\log_{10}(2)}{0.693} = 0.4343876\ldots
+\end{align*}
+Remarquons que la solution ne dépend pas de la valeur de $S_0$.
+
+Pour répondre à la deuxième question, il faut trouer $t$ tel que
+$S(t) = 10 S(0)$.  Donc
+\[
+S_0 10^{0.693 t} = 10 S_0 \Rightarrow 10^{0.693 t} = 10
+\Rightarrow 0.693\; t = 1
+\Rightarrow t = \frac{1}{0.693} = 1.443001\ldots
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{2Q28}}{
+Puisque la population double tous les $24$ ans, nous avons que
+$p(24) = 2 p(0)$.  Ainsi,
+\begin{align*}
+p_0 e^{24 \alpha} = 2 p_0 & \Rightarrow e^{24 \alpha} = 2
+\Rightarrow \ln\left(e^{24 \alpha}\right) = \ln(2)
+\Rightarrow 24 \alpha = \ln(2) \\
+&\Rightarrow \alpha = \frac{\ln(2)}{24} = 0.02888\ldots
+\end{align*}
+
+Donc $\displaystyle p(t) \approx p_0 e^{0.02888\; t}$.  Puisque
+$\displaystyle p(12) \approx 500 e^{0.02888\times 12} = 707.1067\ldots$, 
+nous avons donc approximativement $707$ individus (par km$^2$) après
+$12$ ans.
+}
+
+\compileSOL{\SOLUa}{\ref{2Q29}}{
+Pour trouver les unités de $\alpha$, nous écrivons l'équation
+$V(t) = V_0 e^{\alpha t}$ en termes des unités seulement.
+\[
+\text{cm}^3 = \text{cm}^3\ e^{(\text{unités de }\alpha) \times s} \ .
+\]
+Pour que l'équation soit satisfaite, il faut que
+$\displaystyle e^{(\text{unités de }\alpha) \times s}$ n'est pas d'unités.  Il
+faut donc que les unités de $\alpha$ soient $s^{-1}$.
+
+La valeur initiale n'est pas nécessaire pour déterminer le temps qu'il
+faut pour que le volume double, quadruple, etc.  Pour
+déterminer le temps nécessaire pour que le volume double, nous cherchons
+$t$ tel que $V_0 e^{1.1 t} = 2 V_0$; c'est-à-dire, $e^{1.1 t} = 2$.
+Donc $\displaystyle t = \frac{\ln(2)}{1.1} \approx 0.63013380$ s.
+Ainsi, le volume double à tous les $0.63013380$ s.  Le volume sera quatre
+fois plus grand après $2 \times 0.63013380$ s, le volume sera huit
+fois plus grand après $2 \times 2 \times 0.63013380$ s, etc.
+}
+
+\compileSOL{\SOLUb}{\ref{2Q30}}{
+Nous cherchons $t$ tel que
+$\displaystyle Q(t) = Q_0 e^{-0.000122\; t} = \frac{1}{2} Q_0$.
+Comme $Q_0 \neq 0$, nous pouvons diviser des deux côtés pour obtenir
+\begin{align*}
+Q_0 e^{-0.000122\; t} = \frac{1}{2} Q_0 &\Rightarrow
+e^{-0.000122\; t} = \frac{1}{2} = 2^{-1} \\
+&\Rightarrow -0.000122\; t = \ln\left(2^{-1}\right) = - \ln(2) \\
+&\Rightarrow t = \frac{-\ln(2)}{-0.000122} = 5,681.53426\ldots
+\ \text{années.}
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{2Q31}}{
+Puisque $\displaystyle 200 = \frac{1}{2^3} \times 1600$, nous pouvons
+utiliser un raisonnement élémentaire pour répondre à la première
+question.  Après $43$ ans, la population sera de $800$ individus
+(par m$^2$).  Après un autre $43$ ans, la population sera de $400$
+individus (par m$^2$).  Finalement, après un autre $43$ ans, la
+population sera de $200$ individus (par m$^2$).  Il faut donc
+$3\times  43 = 129$ ans pour que la population atteigne $200$
+individus (par m$^2$). 
+
+La méthode que nous venons d'utiliser ne peut pas déterminer le nombre
+d'années pour atteindre une population de $437$ individus.  Il faut
+trouver $P(t)$.
+
+Nous savons que $P(t) = P_0 e^{\alpha t}$, où $\alpha$ est le taux de
+croissance relatif et $P_0$ est le nombre initial d'individus (par
+m$^2$) dans la population.  Pour déterminer $\alpha$, nous utilisons le
+fait que la demie-vie est de $43$ ans. Donc
+\[
+P_0 e^{43 \alpha} = \frac{1}{2} P_0
+\Rightarrow e^{43 \alpha} = \frac{1}{2}
+\Rightarrow 43 \alpha = \ln\left(\frac{1}{2}\right) = - \ln(2)
+\Rightarrow \alpha = \frac{- \ln(2)}{43} \approx
+-0.0161197
+\]
+
+Nous cherchons $t$ tel que $\displaystyle 1600 e^{\alpha t} = 437$.  Donc
+\begin{align*}
+1600 e^{\alpha t} = 437
+&\Rightarrow e^{\alpha t} = \frac{437}{1600}
+\Rightarrow \alpha t = \ln\left(\frac{437}{1600}\right)
+= \ln(437)-\ln(1600) \\
+&\Rightarrow t = \frac{\ln(437)-\ln(1600)}{\alpha}
+\approx \frac{\ln(437)-\ln(1600)}{-0.0161197}
+\approx 80.511768 \ \text{ans}.
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{2Q32}}{
+Nous pouvons \lgm imaginer\rgm \ que $g$ est la fonction $\cos(2 \pi t)$
+avec une amplitude $e^t$ qui augmente lorsque $t \to \infty$ et
+converge vers zéro lorsque $t \to -\infty$..
+La fonction $\cos(2\pi t)$ est une fonction périodique de période
+$1$.  De plus, $\cos(2\pi t) =0$ pour $t = (2n+1)/4$ avec
+$n \in \ZZ$.  Le graphe de $g$ est donnée ci-dessous.
+\MATHgraph{2_fonctions/expcos_a}{8cm}
+}
+
+\compileSOL{\SOLUa}{\ref{2Q33}}{
+Nous pouvons \lgm imaginer\rgm \ que $W$ est la fonction $\cos(2 \pi t)$
+avec une amplitude $e^{-t}$ qui augmente lorsque $t \to -\infty$ et
+converge vers zéro lorsque $t \to \infty$.  La fonction
+$\cos(2\pi t)$ est une fonction périodique de période $1$.  De plus,
+$\cos(2\pi t) =0$ pour $t = (2n+1)/4$ avec $n \in \ZZ$.
+Le graphe de $W$ est donnée ci-dessous.
+\MATHgraph{2_fonctions/expcos_b}{8cm}
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

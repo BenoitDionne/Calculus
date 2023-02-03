@@ -1,0 +1,17 @@
+\begin{picture}(0,0)%
+\includegraphics{17_vector_calculus/Div.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(4768,1351)(586,-1480)
+\put(3826,-961){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$Q$}}}}
+\put(4846,-276){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\VEC{n}$}}}}
+\put(1484,-661){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$S = \partial Q$}}}}
+\put(601,-1411){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\iint_S F \cdot \dx{\VEC{S}} = \iiint_Q \diV\; F \dx{V}$}}}}
+\end{picture}%

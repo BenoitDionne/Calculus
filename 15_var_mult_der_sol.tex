@@ -1,0 +1,1067 @@
+\section{Dérivée de fonctions de plusieurs variables}
+
+\subsection{Dérivées partielles}
+
+\compileSOL{\SOLUb}{\ref{15Q1}}{
+\subQ{a}
+$\displaystyle f_x(x,y,z,t) = y^2z^3t^4$ car $y$, $z$ et $t$ se
+comportent comme des constantes.
+
+$\displaystyle f_y(x,y,z,t) = 2xyz^3t^4$ car $x$, $z$ et $t$ se
+comportent comme des constantes.
+
+$\displaystyle f_z(x,y,z,t) = 3xy^2z^2t^4$ car $x$, $y$ et $t$ se
+comportent comme des constantes.
+
+$\displaystyle f_t(x,y,z,t) = 4xy^2z^3t^3$ car $x$, $y$ et $z$ se
+comportent comme des constantes.
+
+\subQ{b}
+$\displaystyle f_x(x,y) = \frac{2 (x-y) - (2x+y)}{(x-y)^2} =
+\frac{-3y}{(x-y)^2}$ car $y$ se comporte comme une constante.
+
+$\displaystyle f_y(x,y) = \frac{(x-y) + (2x+y)}{(x-y)^2} =
+\frac{3x}{(x-y)^2}$ car $x$ se comporte comme une constante.
+
+\subQ{c}
+$\displaystyle \pdydx{h}{x} = \pdfdx{\big(f(x)g(y)\big)}{x} = f'(x)g(y)$ car
+$y$ (et donc $g(y)$) se comporte comme une constante.
+
+$\displaystyle \pdydx{h}{y} = \pdfdx{\big(f(x)g(y)\big)}{y} = f(x)g'(y)$ car
+$x$ (et donc $f(x)$) se comporte comme une constante.
+
+\subQ{d}
+$\displaystyle \pdydx{h}{x} = \pdfdx{ f(xy) }{x} = f'(xy)
+\pdfdx{\big(xy\big)}{x} = f'(xy)\, y$ car $y$ se comporte comme une constante.
+
+$\displaystyle \pdydx{h}{y} = \pdfdx{ f(xy) }{y} = f'(xy)
+\pdfdx{\big(xy\big)}{y} = f'(xy)\, x$ car $x$ se comporte comme une constante.
+
+\subQ{e}
+\[
+\pdydx{h}{x} = \pdfdx{f\left(\frac{x}{y}\right)}{x} 
+= f'\left(\frac{x}{y}\right) \pdfdx{\left(\frac{x}{y}\right)}{x}
+= f'\left(\frac{x}{y}\right) \left(\frac{1}{y}\right)
+\]
+car $y$ se comporte comme une constante.
+\[
+\pdydx{h}{y} = \pdfdx{f\left(\frac{x}{y}\right)}{y} 
+= f'\left(\frac{x}{y}\right) \pdfdx{\left(\frac{x}{y}\right)}{y}
+= f'\left(\frac{x}{y}\right) \left(-\frac{x}{y^2}\right)
+\]
+car $x$ se comporte comme une constante.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q4}}{
+Si $g:\RR^2 \to \RR^3$ est la fonction définie par
+\[
+g(s,t) = \begin{pmatrix} s+t^2 \\ st \\ s^2+t \end{pmatrix} \ ,
+\]
+alors $w(s,t) = (f\circ g)(s,t) = f(g(s,t))$.  Ainsi,
+\begin{align*}
+\pdydx{w}{s}(s,t) &= \pdydx{f}{x}(g(s,t)) \pdydx{g_1}{s}(s,t)
++ \pdydx{f}{y}(g(s,t)) \pdydx{g_2}{s}(s,t)
++ \pdydx{f}{z}(g(s,t)) \pdydx{g_3}{s}(s,t) \\
+&= 4 g_1(s,t) + 2t g_2(s,t) + 12s g_3^2(s,t)
+= 4(s+t^2) + 2st^2 + 12s (s^2+t)^2 \ .
+\end{align*}
+De même,
+\begin{align*}
+\pdydx{w}{t}(s,t) &= \pdydx{f}{x}(g(s,t)) \pdydx{g_1}{t}(s,t)
++ \pdydx{f}{y}(g(s,t)) \pdydx{g_2}{t}(s,t)
++ \pdydx{f}{z}(g(s,t)) \pdydx{g_3}{t}(s,t) \\
+&= 8t g_1(s,t) + 2s g_2(s,t) + 6 g_3^2(s,t)
+= 4t(s+t^2) + 2s^2t + 6(s^2+t)^2 \ .
+\end{align*}
+Nous obtenons donc
+\[
+\pdydx{w}{s}(1,2) = 136 \quad \text{et} \quad \pdydx{w}{t}(1,2) = 98 \ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{15Q5}}{
+Puisque $f_x(x,y,z) = 4x y^3 z^2 + 9x^2 y^2 z^4$ et
+$f_{xy}(x,y,z) = 12 x y^2 z^2 + 18 x^2 y z^4$, nous obtenons
+$f_{xyy}(x,y,z) = 24 xy z^2 + 18 x^2 z^4$ et
+$f_{xyz}(x,y,z) = 24 x y^2 z + 72 x^2 y z^3$.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q6}}{
+Comme nous avons toujours fait, nous supposons que les coordonnées du
+point $\VEC{p}$ sont $(p_1,p_2)$, les coordonnées du point $\VEC{a}$
+sont $(a_1,a_2)$, etc.
+
+\subQ{a} Puisque
+\[
+f_x(\VEC{p}) \cong \frac{f(\VEC{b}) - f(\VEC{p})}{b_1-p_1} =
+\frac{8 - 6}{b_1-p_1} < 0
+\]
+car $b_1<p_1$, nous pouvons assumer que $f_x(\VEC{p}) < 0$.
+Remarquons que $f(x,p_2)$ est donc une fonction décroissante pour $x$ au
+voisinage de $p_1$.
+
+\subQ{b} Puisque
+\[
+f_y(\VEC{p}) \cong \frac{f(\VEC{f}) - f(\VEC{p})}{f_1-p_1} =
+\frac{8 - 6}{f_1-p_1} > 0
+\]
+car $f_1>p_1$, nous pouvons assumer que $f_y(\VEC{p}) > 0$.
+Remarquons que $f(p_1,y)$ est donc une fonction croissante pour $y$ près de
+$p_2$.
+
+\subQ{c} Puisque
+\begin{align*}
+\frac{f(\VEC{a}) - f(\VEC{b})}{a_1-b_1} &= \frac{2}{a_1-b_1}
+> \frac{f(\VEC{b}) - f(\VEC{p})}{b_1-p_1} = \frac{2}{b_1-p_1} \\
+& > \frac{f(\VEC{p}) - f(\VEC{c})}{p_1-c_1} = \frac{2}{p_1-c_1}
+> \frac{f(\VEC{c}) - f(\VEC{d})}{c_1-d_1} = \frac{2}{c_1-d_1}
+\end{align*}
+car $a_1-b_1 < b_1-p_1 < p_1-c_1 < c_1-d_1 <0$, nous pouvons supposer que
+$0> f_x(\VEC{b}) > f_x(\VEC{p}) > f_x(\VEC{c}) > f_x(\VEC{d})$ et donc que
+$f_x(x,p_2)$ est décroisant lorsque $x$ est près de $p_1$.  Donc
+$f_{xx}(\VEC{p}) < 0$.
+
+\subQ{d} Puisque
+\begin{align*}
+\frac{f(\VEC{g}) - f(\VEC{j})}{g_1-j_1} &= \frac{2}{g_1-j_1}
+< \frac{f(\VEC{f}) - f(\VEC{i})}{f_1-i_1} = \frac{2}{f_1-i_1} \\
+&< \frac{f(\VEC{p}) - f(\VEC{c})}{p_1-c_1} = \frac{2}{p_1-c_1}
+< \frac{f(\VEC{e}) - f(\VEC{h})}{e_1-h_1} = \frac{2}{e_1-h_1} < 0
+\end{align*}
+car $0 > g_1-j_1 > f_1-i_1 > p_1-c_1 > e_1-h_1$, nous pouvons supposer que
+$f_x(\VEC{g}) < f_x(\VEC{f}) < f_x(\VEC{p}) < f_x(\VEC{e}) < 0 $ et donc que
+$f_x(p_1,y)$ est décroisant lorsque $y$ est près de $p_2$.  Donc
+$\displaystyle f_{xy}(\VEC{p}) =
+\pdfdx{\left( \pdydx{f}{x} \right)}{y}(\VEC{p}) < 0$.
+
+\subQ{e} Puisque
+\begin{align*}
+\frac{f(\VEC{g}) - f(\VEC{f})}{g_2-f_2} &= \frac{2}{g_2-f_2}
+> \frac{f(\VEC{f}) - f(\VEC{p})}{f_2-p_2} = \frac{2}{f_2-p_2} \\
+&> \frac{f(\VEC{p}) - f(\VEC{e})}{p_2-e_2} = \frac{2}{p_2-e_2}
+\end{align*}
+car $0 < g_2-f_2 < f_2-p_2 < p_2-e_2$, nous pouvons supposer que
+$f_y(\VEC{f}) > f_y(\VEC{p}) > f_y(\VEC{e}) > 0$ et donc que $f_y(p_1,y)$
+est croissante lorsque $y$ est près de $p_2$.  Donc
+$f_{yy}(\VEC{p}) > 0$.
+}
+
+\subsection{Plan tangent à une surface}
+
+\compileSOL{\SOLUb}{\ref{15Q7}}{
+\subQ{a} L'approximation linéaire de $z=f(x,y)$ au point $(x,y) = (40,20)$
+est donnée par
+\[
+z = f(40,20) + f_x(40,20) (x-40) + f_y(40,20) (y-20) \ .
+\]
+C'est aussi l'équation du plan tangent à la courbe $z=f(x,y)$ au point
+$(x,y,f(x,y)) = (40,20,f(40,20)) = (40,20,28)$.
+
+Commençons par estimer les dérivées partielles.
+\begin{equation} \label{ApprTG}
+f_x(40,20) = \pdydx{f}{x}(40,20)
+\approx \frac{f(45,20) - f(40,20)}{45-40} = \frac{40-28}{45-40}
+= 2.4 \ .
+\end{equation}
+Nous pouvons aussi utiliser
+\[
+f_x(40,20) = \pdydx{f}{x}(40,20)
+\approx \frac{f(35,20) - f(40,20)}{35-40} 
+\approx \frac{25-28}{35-40} = 0.6
+\]
+et faire la moyenne de cette pente avec la pente obtenue en (\ref{ApprTG})
+pour obtenir une nouvelle approximation $f_x(40,20) \approx 1.5$.  Il
+n'y a rien qui garantit que cette moyenne donne une meilleure approximation
+de $f_x(40,20)$ mais nous pouvons espérer que c'est le cas.  C'est donc
+l'approximation que nous allons utiliser par la suite.
+
+De même.
+\[
+f_y(40,20) = \pdydx{f}{y}(40,20)
+\approx \frac{f(40,25) - f(40,20)}{25-20} = \frac{25-28}{25-20}
+= -0.6 \ .
+\]
+Nous pourrions utiliser d'autres points pour estimer les dérivées
+partielles mais nous allons nous contenter des valeurs que nous avons
+trouvées.
+
+Ainsi, l'équation du plan tangent est approximativement
+\begin{equation} \label{appr_appro_lin}
+z = 28 + 1.5 (x-40) - 0.6 (y-20) \ .
+\end{equation}
+
+\subQ{b}
+\[
+f(43,24) \approx 28 + 1.5 (43-40) - 0.6 (24-20) =  30.1 \ .
+\]
+Les courbes de niveau de $f$ semblent indiquer que $f(43,24)$ est une
+estimation raisonnable de $f(43,24)$.  Comme notre méthode donne
+seulement une approximation de l'équation du plan tangent à la courbe
+$z=f(x,y)$ au point $(40,20,28)$, il est toujours prudent de vérifier
+à partir de nos données que notre réponse est raisonnable.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q8}}{
+\subQ{a} La forme générale de l'équation du plan tangent à une surface
+$z=f(x,y)$ au point $(x_0,y_0)$ est
+\[
+z = f(x_0,y_0) + \pdydx{f}{x}(x_0,y_0)\,(x-x_0) +
+\pdydx{f}{y}(x_0,y_0)\,(y-y_0) \ .
+\]
+Dans le cas présent, $f(x,y) = \sin(xy)$ et $(x_0,y_0)=(1,0)$.  Ainsi,
+\[
+\pdydx{f}{x} = y\cos(xy) \qquad \text{et} \qquad \pdydx{f}{y} = x\cos(xy)
+\]
+donne
+\[
+\pdydx{f}{x}(1,0) = 0 \qquad \text{et} \qquad \pdydx{f}{y}(1,0) = 1 \ .
+\]
+De plus $f(1,0)=0$.  L'équation du plan tangent est donc
+\[
+z = 0 + 0\,(x-1) + 1 \, (y - 0) = y \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{15Q9}}{
+Nous avons la représentation paramétrique $\rho(u,v) = ( u - v, u + v, u^2)$.
+
+Il faut trouver $(u,v)$ tel que $\rho(u,v) = (0,2,1)$.  Nous obtenons
+de $u - v = 0$ que $u=v$.  Si nous substituons $v=u$ dans
+$u+v =2$, nous obtenons $2u=2$ et donc $u = v =1$.  La relation
+$u^2=1$ est bien satisfaite.
+
+Pour trouver un vecteur normal $\VEC{m}$ à la surface $S$ au point
+$(0,2,1)$, nous utilisons les deux vecteurs suivants qui sont tangent
+à la surface $S$ au point $(0,2,1)$
+\begin{align*}
+\VEC{w}_1 &= \pdydx{\rho}{u}(1,1) = (1, 1 , 2u )\bigg|_{(u,v) = (1,1)}
+= (1, 1, 2) \\
+\intertext{et}
+\VEC{w}_2 &= \pdydx{\rho}{v}(1,1)
+= ( -1, 1, 0)\bigg|_{(u,v) = (\pi,\pi)} = (-1,1,0) \ .
+\end{align*}
+Ainsi,
+\[
+  \VEC{m} = \VEC{w}_1 \times \VEC{w}_2
+= \det \begin{pmatrix}
+\ii & \jj & \kk \\
+1 & 1 & 2 \\
+-1 & 1 & 0
+\end{pmatrix} =  -2\ii - 2 \jj +2 \kk = (-2,-2, 2)
+\]
+où le déterminant a été développé selon la première ligne.
+
+Ainsi, l'équation du plan tangent à la surface $S$ au point $(0,1,2)$
+est donnée par
+\[
+  \ps{\VEC{m}}{(x,y-2,z-1)} = -2x -2(y-2) + 2(z-1) =
+  -2x -2y +2z +2 = 0
+\]
+ou simplement $x+y-z-1=0$.
+}
+
+\subsection{Dérivées selon un direction donnée}
+
+\compileSOL{\SOLUb}{\ref{15Q10}}{
+\subQ{a} Premièrement, pour calculer la dérivée dans la direction de
+$\VEC{v} = (1,\sqrt{3})$, il nous faut le vecteur unitaire $\VEC{n}$ dans
+cette direction.
+\[
+\VEC{n} = \frac{1}{\| \VEC{v} \|} \VEC{v}
+= \left(\frac{1}{2}, \frac{\sqrt{3}}{2} \right) \ .
+\]
+Puisque
+\[
+\nabla f(2,1) = (2xy, x^2 + 8y)\big|_{(2,1)}
+= ( 4 , 12 ) \ ,
+\]
+nous obtenons
+\[
+\pdydx{f}{\VEC{u}}(2,1) = \nabla f(2,1) \cdot \VEC{n}
+= 2 + 6\sqrt{3} \ .
+\]
+
+\subQ{b} Avant de calculer la dérivée dans la direction du vecteur
+$\VEC{v}$, il faut normaliser ce vecteur.  Le vecteur $\VEC{n}$ de
+longueur $1$ qui pointe dans la direction de $\VEC{v}$ est
+\[
+\VEC{n} = \frac{1}{\|\VEC{v}\|} \, \VEC{v} = \frac{1}{\sqrt{6}} \VEC{v}
+= \left( \frac{2}{\sqrt{6}} , \frac{1}{\sqrt{6}} , -\frac{1}{\sqrt{6}}
+\right) \ .
+\]
+Puisque
+\begin{align*}
+\nabla f(1,1,2) &=
+\left( yz + \frac{2x}{x^2+y^2+z^2} , xz + \frac{2y}{x^2+y^2+z^2} ,
+xy + \frac{2z}{x^2+y^2+z^2} \right) \bigg|_{(1,1,2)} \\
+&= \left( \frac{7}{3} , \frac{7}{3} , \frac{5}{3}\right) \ .
+\end{align*}
+nous avons
+\[
+\pdydx{f}{\VEC{u}}(1,1,2) = \nabla f(1,1,2) \cdot \VEC{n} 
+= \left( \frac{7}{3} , \frac{7}{3} , \frac{5}{3}\right) \cdot
+\left( \frac{2}{\sqrt{6}} , \frac{1}{\sqrt{6}} , - \frac{1}{\sqrt{6}} \right)
+= \frac{16}{3\sqrt{6}} \ .
+\]
+
+\subQ{c} Premièrement, pour calculer la dérivée dans la direction de
+$\VEC{v} = (2,1,-2)$, il nous faut le vecteur unitaire $\VEC{n}$ dans cette
+direction.
+\[
+\VEC{n} = \frac{1}{\| \VEC{v} \|} \VEC{v}
+= \left(\frac{2}{3}, \frac{1}{3}, -\frac{2}{3} \right)
+\]
+Puisque
+\begin{align*}
+\nabla f(1,0,3) 
+&= e^{xyz} \left( 1+(x+y+z)yz, 1+(x+y+z)xz, 1 +(x+y+z)xy
+\right)\bigg|_{(1,0,3)}\\
+&= (1, 13, 1) \quad ,
+\end{align*}
+nous avons
+\[
+\pdydx{f}{\VEC{u}} (1,0,3)
+= \nabla f(1,0,3) \cdot \VEC{n} = \frac{13}{3} \ .
+\]
+}
+
+\subsection{Propriétés du gradient}
+
+\compileSOL{\SOLUb}{\ref{15Q14}}{
+La surface est décrite par l'équation
+$\displaystyle F(x,y,z) = x^2 -4xy + y^2 + z^2 = 2$.
+
+Un vecteur perpendiculaire au plan tangent à cette surface au
+point $(1,1,2)$ est donné par
+\begin{align*}
+  \nabla F(1,1,2) &= \left( \pdydx{F}{x}(x,y,z) , \pdydx{F}{y}(x,y,z) ,
+\pdydx{F}{z}(x,y,z) \right) \bigg|_{(1,1,2)} \\
+& = (2x-4y , -4x +2y, 2z ) \big|_{(1,1,2)} = (-2, -2, 4) \ .
+\end{align*}
+Ainsi, l'équation du plan tangent au point $(1,1,2)$ est donnée par
+\[
+0 = \ps{\nabla F(1,1,2)}{(x-1,y-1,z-2)} = -2(x-1) -2(y-1) +4(z-2)
+\]
+ou, plus simplement, par $2z -x -y -2=0$.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q16}}{
+Il faut trouver les points $(x_0,y_0,z_0)$ de l'ellipsoïde
+$x^2+2y^2+3z^2 = 1$ où le plan tangent à l'ellipsoïde au point
+$(x_0,y_0,z_0)$ est parallèle au plan $3x - y + 3z = 1$.  Ce qui
+revient à trouver les points $(x_0,y_0,z_0)$ de l'ellipsoïde
+$x^2+2y^2+ 3z^2 = 1$ où la perpendiculaire du plan tangent à
+l'ellipsoïde au point $(x_0,y_0,z_0)$ est parallèle à la
+perpendiculaire au plan $3x - y + 3z = 1$.
+
+Soit $(3,-1,3)$ le vecteur formé des coefficients de $x$, $y$ et $z$
+dans l'équation du plan $3x - y + 3z = 1$.  Ce vecteur
+est perpendiculaire au plan $3x - y + 3z = 1$.
+De plus, si $F(x,y,z) = x^2 + 2y^2 + 3z^2$, alors
+$\nabla F(x_0,y_0,z_0)$ est un vecteur perpendiculaire au plan tangent
+de la surface de niveau $F(x,y,z) = 1$ au point $(x_0,y_0,z_0)$ de
+cette surface, donc perpendiculaire au plan tangent de l'ellipsoïde
+$x^2+2y^2+ 3z^2 = 1$ au point $(x_0,y_0,z_0)$.
+
+Il faut donc trouver les points $(x_0,y_0,z_0)$ tels que
+$F(x_0,y_0,z_0) = 1$ (les points sont sur l'ellipsoïde $x^2+2y^2+3z^2 = 1$) 
+et
+\begin{align*}
+\nabla F(x_0,y_0,z_0) &= \left(\pdydx{F}{x}(x,y,z), \pdydx{F}{y}(x,y,z),
+\pdydx{F}{z}(x,y,z) \right) \bigg|_{(x,y,z)=(x_0,y_0,z_0)} \\
+& = (2x , 4y, 6z) \bigg|_{(x,y,z)=(x_0,y_0,z_0)}
+= (2x_0,4y_0,6z_0)
+\end{align*}
+est parallèle au vecteur $(3,-1,3)$.
+
+Si $(2x_0,4y_0,6z_0)$ est parallèle au vecteur $(3,-1,3)$, alors
+$(2x_0,4y_0,6z_0) = \lambda (3,-1,3)$ pour $\lambda \in \RR$.
+Donc $\displaystyle x_0 = \frac{3}{2}\lambda$,
+$\displaystyle y_0 = -\frac{1}{4}\lambda$ et
+$\displaystyle z_0 = \frac{1}{2}\lambda$.
+Si nous substituons $x=x_0$, $y=y_0$ et $z=z_0$ dans $F(x,y,z)=1$,
+nous obtenons
+\[
+\left(\frac{3}{2}\lambda\right)^2
++ 2\left(\frac{1}{4}\lambda\right) +
++ 3\left(\frac{1}{2}\lambda\right)^2 =
+\left(\frac{9}{4} + \frac{1}{8} + \frac{3}{4}\right) \lambda^2
+= \frac{25}{8} \lambda^2 = 1 \ .
+\]
+Donc $\displaystyle \lambda = \pm \frac{2\sqrt{2}}{5}$.
+
+Les points cherchés sont
+\[
+(x_0,y_0,z_0) = \pm \left( \frac{3}{2}\left( \frac{2\sqrt{2}}{5}\right),
+-\frac{1}{4} \left(\frac{2\sqrt{2}}{5}\right) ,
+\frac{1}{2} \left( \frac{2\sqrt{2}}{5}\right) \right)
+= \pm \left( \frac{3\sqrt{2}}{5}, -\frac{\sqrt{2}}{10},
+\frac{\sqrt{2}}{5} \right) \ .
+\]
+}
+
+\subsection{Approximation locale des fonctions}
+
+\compileSOL{\SOLUb}{\ref{15Q18}}{
+La forme générale de l'approximation linéaire d'une fonction
+$f(x,y)$ près de $(x_0,y_0)$ est
+\[
+p(x,y) = f(x_0,y_0) + \pdydx{f}{x}(x_0,y_0)\,(x-x_0) +
+\pdydx{f}{y}(x_0,y_0)\,(y-y_0) \ .
+\]
+
+\subQ{a} L'approximation linéaire de $f$ près du point $(1,1)$ est
+\begin{align*}
+p(x,y) &= f(1,1) + \pdydx{f}{x}(1,1) (x-1) + \pdydx{f}{y}(1,1) (y-1) \\
+&= \left(2x^2y^2+3xy+x\right)\big|_{(1,1)}
++\left(4xy^2 + 3y + 1\right)\big|_{(1,1)} (x-1) \\
+& \qquad + \left(4x^2y +3x\right)\big|_{(1,1)} (y-1)
+= 6 + 8(x-1) + 7(y-1) \ .
+\end{align*}
+Ainsi, $f(0.9, 1.1) \approx p(0.9, 1.1) = 5.9$.
+
+\subQ{b} L'approximation linéaire de $f$ près du point $(1,1)$ est
+\begin{align*}
+p(x,y) &= f(1,1) + \pdydx{f}{x}(1,1) (x-1) + \pdydx{f}{y}(1,1) (y-1) \\
+&= \left(\ln\left(\frac{2x^2+5y^2}{7}\right)\right)\big|_{(1,1)}
+ + \left(\frac{4x}{2x^2+5y^2}\right)\big|_{(1,1)} (x-1) \\
+& \qquad + \left(\frac{10y}{2x^2+5y^2}\right)\big|_{(1,1)} (y-1)
+= 0 + \frac{4}{7}(x-1) + \frac{10}{7} (y-1) \ .
+\end{align*}
+Ainsi, $f(0.98,1.01) \approx p(0.98,1.01) \approx 0.13142857$.
+
+\subQ{c} L'approximation linéaire de $f(x,y)$ près du point $(3,1)$ est
+\begin{align*}
+p(x,y) &= f(3,1) + \pdydx{f}{x}(3,1) (x - 3)
++ \pdydx{f}{x}(3,1) (y - 1) \\
+&= \left((x^2-y^5)^{4/3}\right)\bigg|_{(3,1)}
++ \left(\frac{8x}{3}(x^2-y^5)^{1/3}\right)\bigg|_{(3,1)} (x-3) \\
+& \qquad + \left( -\frac{20y^4}{3}(x^2-y^5)^{1/3}\right)\bigg|_{(3,1)} (y-1)
+= 16 + 16 (x-3) - \frac{40}{3} (y-1) \ .
+\end{align*}
+Ainsi, $f(3.2,1.2) \approx p(3.2,1.2) = 16 + 16 (0.2) - (40/3) (0.2)
+= 16 + 8/15$.
+
+\subQ{d} L'approximation linéaire de $f(x,y)$ près du point $(0,1)$ est
+\begin{align*}
+p(x,y) &= f(0,1) + \pdydx{f}{x}(0,1) ( x- 0) +
+  \pdydx{f}{y}(0,1) (y-1) \\
+&= \left(1- \frac{2x}{y}+3y-4xy^2+e^{3x}\right)\bigg|_{(0,1)}
++ \left(-\frac{2}{y} - 4 y^2 + 3 e^{3x}\right)\bigg|_{(0,1)} x \\
+& \qquad + \left(\frac{2x}{y^2} +3 - 8xy\right)\bigg|_{(0,1)} (y-1)
+= 5 - 3 x + 3(y-1) \ .
+\end{align*}
+Ainsi, $f(-0.1,0.9) \approx p(-0.1,0.9) = 5 -3 (-0.1)+ 3(-0.1)
+= 4.4$.
+}
+
+\subsection{Points critiques et valeurs extrêmes}
+
+\compileSOL{\SOLUb}{\ref{15Q19}}{
+Pour déterminer s'il y a un maximum local, un minimum local ou un col
+en un point, il faut utiliser la matrice Hessian.  Puisque
+$\displaystyle \pdydx{f}{x} = y -2xy -y^2$ et
+$\displaystyle \pdydx{f}{y} = x -x^2 -2xy$, nous obtenons
+\[
+H(x,y) = \begin{pmatrix}
+\displaystyle \pdydxn{f}{x}{2}(x,y) &
+\displaystyle \pdydxnm{f}{y}{x}{2}{}{}(x,y) \\[0.9em]
+\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(x,y) &
+\displaystyle \pdydxn{f}{y}{2}(x,y)
+\end{pmatrix}
+= \begin{pmatrix}
+  -2y & 1-2x-2y \\
+  1-2x-2y & -2x
+\end{pmatrix} \ .
+\]
+
+Puisque $\displaystyle \det H(0,1)
+= \det \begin{pmatrix} -2 & -1 \\ -1 & 0 \end{pmatrix} = - 1 < 0$,
+il y a un col au point $(0,1)$.
+
+Puisque $\displaystyle \det H(1/3,1/3)
+= \det \begin{pmatrix} -2/3 & -1/3 \\ -1/3 & -2/3 \end{pmatrix} = 1/3 > 0$
+et $\displaystyle \pdydxn{f}{x}{2}(1/3,1/3) = -2 < 0$, il y a un
+minimum local au point $(1/3,1/3)$.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q20}}{
+\subQ{a} Comme la dérivée de la fonction $f$ existe en tout point,
+les points critiques sont les racines de $\nabla f(x,y) = (0,0)$.
+Puisque
+\begin{align*}
+\pdydx{f}{x}(x,y) = 0 &\Rightarrow 3 x^2 -3 = 0 \Rightarrow x = \pm 1
+\intertext{et}
+\pdydx{f}{y}(x,y) = 0 &\Rightarrow 3 y^2 -12 = 0 \Rightarrow y = \pm 2 \ ,
+\end{align*}
+les points critiques sont $(\pm 1,\pm 2)$.  Pour déterminer si un
+point critique est associé à un maximum local, un minimum local ou un
+col, nous évaluons la matrice Hessian à ce point.
+\[
+H(x,y) = \begin{pmatrix}
+\displaystyle \pdydxn{f}{x}{2}(x,y) &
+\displaystyle \pdydxnm{f}{y}{x}{2}{}{}(x,y) \\[0.9em]
+\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(x,y) &
+\displaystyle \pdydxn{f}{y}{2}(x,y)
+\end{pmatrix}
+= \begin{pmatrix}
+  6 x & 0 \\
+  0 & 6 y
+\end{pmatrix} \ .
+\]
+
+Puisque $\displaystyle \det H(1,2)
+= \det \begin{pmatrix} 6 & 0 \\ 0 & 12 \end{pmatrix} = 72 > 0$
+et $\displaystyle \pdydxn{f}{x}{2}(1,2) = 6 > 0$, il y a un 
+un minimum local au point $(1,2)$.
+
+Puisque $\displaystyle \det H(1,-2)
+= \det \begin{pmatrix} 6 & 0 \\ 0 & -12 \end{pmatrix} = -72 < 0$,
+i y a un col au point $(1,-2)$.
+
+Puisque $\displaystyle \det H(-1,2)
+= \det \begin{pmatrix} -6 & 0 \\ 0 & 12 \end{pmatrix} = -72 < 0$,
+i y a un col au point $(-1,2)$.
+
+Puisque $\displaystyle \det H(-1,-2)
+= \det \begin{pmatrix} -6 & 0 \\ 0 & -12 \end{pmatrix} = 72 > 0$
+et $\displaystyle \pdydxn{f}{x}{2}(-1,-2) = -6 < 0$, il y a un
+maximum local au point $(-1,-2)$.
+
+\subQ{c} Comme la dérivée de la fonction $f$ existe en tout point,
+les points critiques sont les racines de $\nabla f(x,y) = (0,0)$.
+Nous avons
+\begin{align}
+\pdydx{f}{x}(x,y) = 0 &\Rightarrow 3 x^2 + 3 y = 0
+\Rightarrow y = - x^2  \label{QuestMMCQ1a}
+\intertext{et}
+\pdydx{f}{y}(x,y) = 0 &\Rightarrow 3 x - 3 y^2 = 0
+  \Rightarrow x = y^2 \ . \label{QuestMMCQ1b}
+\end{align}
+Si nous substituons (\ref{QuestMMCQ1b}) dans (\ref{QuestMMCQ1a}), nous
+obtenons $y = -y^4$.  Donc $y=0$ ou $1$.  Il y a deux points
+critiques $(x,y) = (0,0)$ et $(1,-1)$.
+Pour déterminer si un point critique est associé à un maximum local,
+un minimum local ou un col, nous évaluons la matrice Hessian à ce
+point.
+\[
+H(x,y) = \begin{pmatrix}
+\displaystyle \pdydxn{f}{x}{2}(x,y) &
+\displaystyle \pdydxnm{f}{y}{x}{2}{}{}(x,y) \\[0.9em]
+\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(x,y) &
+\displaystyle \pdydxn{f}{y}{2}(x,y)
+\end{pmatrix}
+= \begin{pmatrix}
+  6x & 3 \\
+  3 & -6y
+\end{pmatrix} \ .
+\]
+
+Puisque $\displaystyle \det H(0,0)
+= \det \begin{pmatrix} 0 & 3 \\ 3 & 0 \end{pmatrix}  = -9 < 0$,
+il y a un col au point $(0,0)$.
+
+Puisque $\displaystyle \det H(1,-1)
+= \det \begin{pmatrix} 6 & 3 \\ 3 & 6 \end{pmatrix} = 27 > 0$ et
+$\displaystyle \pdydxn{f}{x}{2}(1,-1) = 6 >0$, il y a un
+minimum local au point $(1,-1)$.
+
+\subQ{e} Comme la dérivée de la fonction $f$ existe en tout point,
+les points critiques sont les racines de $\nabla f(x,y) = (0,0)$.
+Nous avons
+\begin{align}
+\pdydx{f}{x}(x,y) = 0 &\Rightarrow 6 x^2 + y^2 + 10 x = 0 \label{QuestEL1}
+\intertext{et}
+\pdydx{f}{y}(x,y) = 0 &\Rightarrow 2 xy + 2 y = 0
+  \Rightarrow 2(x+1) y = 0 \ . \label{QuestEL2}
+\end{align}
+Nous obtenons $x = -1$ ou $y=0$ de (\ref{QuestEL2}).
+Si $x = -1$, (\ref{QuestEL1}) donne $y^2 = 4$ et donc $y = \pm 2$.
+Nous obtenons les points critiques $(-1,\pm 2)$.  Si $y = 0$,
+(\ref{QuestEL1}) donne $6x(x + 5/3) = 0$ et donc $x=0$ ou
+$x=-5/3$.  Nous obtenons les points critiques $(0,0)$ et $(-5/3,0)$.   
+Pour déterminer si un point critique est associé à un maximum local,
+un minimum local ou un col, nous évaluons la matrice Hessian à ce
+point.
+\[
+H(x,y) = \begin{pmatrix}
+\displaystyle \pdydxn{f}{x}{2}(x,y) &
+\displaystyle \pdydxnm{f}{y}{x}{2}{}{}(x,y) \\[0.9em]
+\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(x,y) &
+\displaystyle \pdydxn{f}{y}{2}(x,y)
+\end{pmatrix}
+= \begin{pmatrix}
+  12 x + 10 & 2 y \\
+  2 y & 2 x + 2
+\end{pmatrix} \ .
+\]
+
+Puisque $\displaystyle \det H(-1,2)
+= \det \begin{pmatrix} -2 & 4 \\ 4 & 0 \end{pmatrix} = - 16 < 0$,
+il y a un col au point $(-1,2)$.
+
+Puisque $\displaystyle \det H(-1,-2)
+= \det \begin{pmatrix} -2 & -4 \\ -4 & 0 \end{pmatrix} = - 16 < 0$,
+il y a un col au point $(-1,-2)$.
+
+Puisque $\displaystyle \det H(0,0)
+= \det \begin{pmatrix} 10 & 0 \\ 0 & 2 \end{pmatrix} = 20 > 0$ et
+$\displaystyle \pdydxn{f}{x}{2}(0,0) = 10 >0$, il y a un
+minimum local au point $(0,0)$.
+
+Puisque $\displaystyle \det H(0,0)
+= \det \begin{pmatrix} 10 & 0 \\ 0 & 2 \end{pmatrix} = 40/3 > 0$ et
+$\displaystyle \pdydxn{f}{x}{2}(-5/3,0) = -10 < 0$, il y a un maximum
+local au point $(-5/3,0)$.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q21}}{
+Puisque $f$ est une fonction continue sur l'ensemble fermé et borné
+$S$, nous avons que $f$ possède un maximum absolu grâce au Théorème des
+valeurs extrêmes, théorème~~\ref{TVEnD}.  
+
+\PDFgraph{15_var_mult_der/questLM2}
+
+Comme le maximum absolu est aussi un maximum local, le maximum absolu
+de $f$ sera atteint soit à un maximum local de $f$ sur la frontière de
+la région $S$ ou soit à un maximum local de $f$ à l'intérieur de la
+région $S$.
+
+Commençons par trouver les points critiques de $f$ à l'intérieur de
+$S$.  Comme la dérivée de la fonction $f$ existe en tout point,
+il faut résoudre $\nabla f(x,y) = (0,0)$; c'est-à-dire,
+\begin{align*}
+\pdydx{f}{x}(x,y) =0 &\Rightarrow 4y^2 - 2xy^2 - y^3 = 0 \Rightarrow
+(4 -2x -y)y^2 = 0
+\intertext{et}
+\pdydx{f}{y}(x,y) = 0 &\Rightarrow 8xy -2x^2 y -3xy^2 = 0 \Rightarrow
+(8-2x -3y)xy = 0 \ .                        
+\end{align*}
+Puisque $x\neq 0$ et $y\neq 0$ à l'intérieur de $S$, nous devons avoir
+$2x + y = 4$ et $2x + 3y = 8$.  La solution de ce système d'équations
+linéaires est $(x,y) = (1,2)$.  C'est bien un point à
+l'intérieur de la région $S$.
+
+Nous cherchons maintenant les points sur la frontière de la région $S$ où
+$f$ pourrait atteint un maximum local.
+
+Pour $x=0$ et $0 \leq y \leq 6$, nous avons $f(x,y) = 0$.  De même,
+pour $y=0$ et $0 \leq x \leq 6$, nous avons $f(x,y) = 0$.  Si nous
+restreignons $f$ au segment de droite défini par
+$y = 6 - x$ et $0 \leq x \leq 6$, nous obtenons la fonction
+\[
+  g(x) = f(x,6-x) = 4x(6-x)^2 - x^2(6-x)^2 - x(6-x)^3
+  = -2x (6-x)^2
+\]
+pour $0 \leq x \leq 6$.  Les points critique de $g$ sont les solutions
+de $g'(x) = -2 (6-x)^2 + 4x(6-x) = 6(6-x)(x-2) = 0$.  Les deux points
+critiques, $x=2$ et $x=6$, sont dans l'intervalle $[0,6]$.
+Selon le Théorème des valeurs extrêmes pour $g$ sur l'intervalle
+$[0,6]$, le maximum de $g$ est atteint à un des points critiques où à
+une des extrémités de l'intervalle $[0,6]$.
+
+Finalement, selon le Théorème des valeurs extrêmes pour $f$ définie
+sur $S$, le maximum absolu de $f$ sur $S$ est atteint à un des points
+suivants: $(0,6)$, $(2,4)$, $(6,0)$ et $(1,2)$.   Puisque $f(0,6) =
+f(6,0) = 0$, $f(2,4) = -24$ et $f(1,2) = 4$, le maximum global est $4$
+lorsque $(x,y) = (1,2)$.
+}
+
+\subsection{Multiplicateurs de Lagrange}
+
+\compileSOL{\SOLUb}{\ref{15Q23}}{
+\subQ{a} Utilisons la méthode des multiplicateurs de Lagrange avec
+$g(x,y) = x^2 + y^2 - 2$.  L'équation
+$\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align}
+\pdydx{f}{x}(x,y) = \lambda \pdydx{g}{x}(x,y) &
+\Rightarrow y = 2 \lambda x \label{questLM3a}
+\intertext{et}                                                
+\pdydx{f}{y}(x,y) = \lambda \pdydx{g}{y}(x,y) &
+\Rightarrow x = 2 \lambda y \ . \label{questLM3b}
+\end{align}
+Si nous substituons (\ref{questLM3b}) dans (\ref{questLM3a}), nous obtenons
+\[
+  y = 4 \lambda^2 y = 0  \Rightarrow (1-4\lambda^2) y = 0 \ .
+\]
+Il y a trois possibilités: $y=0$ , $\lambda = 1/2$ ou
+$\lambda = -1/2$.
+
+Si $y=0$, alors (\ref{questLM3b}) donne $x=0$.  Puisque $g(0,0) \neq 0$,
+nous avons que $(0,0)$ n'est pas un point de notre domaine.
+
+Si $\lambda = 1/2$, alors (\ref{questLM3b}) donne $x=y$.  Avec $x=y$,
+$g(x,y)=0$ donne $2y^2 = 2$ et ainsi $y = \pm 1$.  Nous avons deux points:
+$(1,1)$ et $(-1,-1)$.
+
+Si $\lambda = -1/2$, alors (\ref{questLM3b}) donne $x=-y$.  Avec $x=-y$,
+$g(x,y)=0$ donne $2y^2 = 2$ et ainsi $y = \pm 1$.  Nous avons deux points:
+$(1,-1)$ et $(-1,1)$.
+
+Puisque $f(1,1) = f(-1,-1) = 1$ et $f(1,-1) = f(-1,1) = -1$, le minimum
+absolu est $-1$ aux points $(1,-1)$ et $(-1,1)$, et le maximum absolu
+est $1$ au point $(1,1)$ et $(-1,-1)$.
+
+\subQ{b} Utilisons la méthode des multiplicateurs de Lagrange avec
+$g(x,y) = x^2 + y^2 - 1$.  L'équation
+$\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align}
+\pdydx{f}{x}(x,y) = \lambda \pdydx{g}{x}(x,y) &
+\Rightarrow 8x = 2 \lambda x \label{questLM4a}
+\intertext{et}
+\pdydx{f}{y}(x,y) = \lambda \pdydx{g}{y}(x,y) &
+\Rightarrow 18y = 2 \lambda y \ . \label{questLM4b}
+\end{align}
+L'équation (\ref{questLM4a}) est satisfaite pour $x=0$.  Si nous
+substituons $x=0$ dans $x^2 + y^2 =1$, nous obtenons $y = \pm 1$.
+Nous avons donc deux points: $(0,1)$ et $(0,-1)$.  Pour accepter ces
+deux points, il faut que (\ref{questLM4b}) soit aussi satisfait pour
+ces deux points.  C'est le cas si $\lambda = 9$.
+
+De même, l'équation (\ref{questLM4b}) est satisfaite pour $y=0$.  Si
+nous substituons $y=0$ dans $x^2 + y^2 =1$, nous obtenons $x = \pm 1$.
+Nous avons donc deux points: $(1,0)$ et $(-1,0)$.  Pour accepter ces
+deux points, il faute que (\ref{questLM4a}) soit aussi satisfait pour
+ces deux points.  C'est le cas si $\lambda = 4$.
+
+Comme il est impossible de satisfaire (\ref{questLM4a}) et
+(\ref{questLM4b}) simultanément si $x$ et $y$ sont non nuls.  Nous avons
+donc trouvé tous les points d'intérêt.
+
+Puisque $f(0, \pm 1) = 4$ et $f(\pm 1,0) = 9$, le maximum
+absolu est $9$ aux points $(\pm 1,1)$ et le minimum absolu est $4$ aux
+points $(0, \pm 1)$.
+
+\subQ{c} Nous utilisons la méthode des multiplicateurs de Lagrange avec
+$g(x,y,z) = x^2 + 4 y^2 + z^2 -17$.  L'équation
+$\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align*}
+\pdydx{f}{x}(x,y,z) = \lambda \pdydx{g}{x}(x,y,z) &
+\Rightarrow 1 = 2 \lambda x \Rightarrow x = \frac{1}{2\lambda} \ , \\
+\pdydx{f}{y}(x,y,z) = \lambda \pdydx{g}{y}(x,y,z) &
+\Rightarrow 3 = 8 \lambda y \Rightarrow y = \frac{3}{8\lambda}
+\intertext{et}
+\pdydx{f}{z}(x,y,z) = \lambda \pdydx{g}{z}(x,y,z) &
+\Rightarrow -1 = 2 \lambda z \Rightarrow y = \frac{-1}{2\lambda}
+\end{align*}
+Si nous substituons ces valeurs de $x$, $y$ et $z$ dans $g(x,y,z) = 0$,
+nous obtenons
+\[
+  \left(\frac{1}{2\lambda}\right)^2
+  + 4 \left(\frac{3}{8\lambda}\right)^2
+  + \left(\frac{-1}{2\lambda}\right)^2 = 17
+  \Rightarrow \frac{17}{16\lambda^2} = 17
+  \Rightarrow \lambda = \pm \frac{1}{4} \ .
+\]
+Nous obtenons $(x,y,z) = (2, 3/2, -2)$. pour $\lambda = 1/4$ et
+$(x,y,z) = (-2, -3/2, 2)$ pour $\lambda = -1/4$.  Puisque
+$f(2, 3/2, -2) = 17/2$ et $f(-2, -3/2, 2) = -17/2$, 
+le maximum absolu est $17/2$ et le minimum absolu est $-17/2$.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q24}}{
+Soit $(x,y,z)$ un coin de la boite qui se trouve naturellement
+sur l'ellipsoïde puisque nous cherchons la boite de volume maximal
+connue dans l'ellipsoïde.  Nous pouvons assumer que $x,y,z \geq 0$.
+
+\PDFgraph{15_var_mult_der/questLM4}
+
+Il faut maximiser la fonction $f(x,y,z) = 8x y z$ sous la contrainte
+que $\displaystyle g(x,y,z) = x^2 + \frac{y^2}{4} + \frac{z^2}{9} - 1 = 0$.
+
+Utilisons la méthode des multiplicateurs de Lagrange.  L'équation
+$\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align}
+\pdydx{f}{x}(x,y,z) = \lambda \pdydx{g}{x}(x,y,z) &
+\Rightarrow 8yz = 2 \lambda x \label{LMQ4a} \ , \\
+\pdydx{f}{y}(x,y,z) = \lambda \pdydx{g}{y}(x,y,z) &
+\Rightarrow 8xz = \frac{1}{2} \lambda y \label{LMQ4b}
+\intertext{et}
+\pdydx{f}{z}(x,y,z) = \lambda \pdydx{g}{z}(x,y,z) &
+\Rightarrow 8xy = \frac{2}{9} \lambda z \label{LMQ4c} \ .
+\end{align}
+Si nous soustrayons $y$ fois (\ref{LMQ4b}) de $x$ fois (\ref{LMQ4a}), nous
+obtenons
+\[
+  2\lambda x^2 - \frac{1}{2} \lambda y^2 = 0 \Rightarrow
+  y^2 = 4 x^2 \Rightarrow y = 2 x
+\]
+si $\lambda \neq 0$.  Nous reviendrons sur le cas $\lambda = 0$ par la
+suite.
+Si nous soustrayons $z$ fois (\ref{LMQ4c}) de $x$ fois (\ref{LMQ4a}), nous
+obtenons
+\[
+  2\lambda x^2 - \frac{2}{9} \lambda z^2 = 0 \Rightarrow
+  z^2 = 9 x^2 \Rightarrow z = 3 x
+\]
+si $\lambda \neq 0$.  Si nous substituons $y = 2 x$ et $z = 3 x$
+dans l'équation de l'ellipsoïde 
+$\displaystyle x^2 + \frac{y^2}{4} + \frac{z^2}{9} = 1$, nous obtenons
+$3x^2 = 1$.  Donc $x = 1/\sqrt{3}$.  Cela donne le point
+$\displaystyle \left( \frac{1}{\sqrt{3}}, 
+\frac{2}{\sqrt{3}}, \frac{3}{\sqrt{3}} \right)$.
+C'est un des huit coins d'une boite contenue dans l'ellipsoïde.
+
+Si $\lambda = 0$, alors $(0,0,3)$, $(0,2, 0)$ et $(1, 0 ,0)$
+sont les seules points de l'ellipsoïde avec des coordonnées non
+négatives qui satisfont (\ref{LMQ4a}), (\ref{LMQ4b}) et (\ref{LMQ4c}).
+Ils sont associés aux cas extrêmes lorsque la boite devient un des
+axes de l'ellipsoïde.
+
+Le volume maximal de $f$ est donc $\displaystyle \frac{16}{\sqrt{3}}$
+aux points $\displaystyle \left( \frac{1}{\sqrt{3}}, 
+\frac{2}{\sqrt{3}}, \frac{3}{\sqrt{3}} \right)$,
+$\displaystyle \left( -\frac{1}{\sqrt{3}}, 
+-\frac{2}{\sqrt{3}}, \frac{3}{\sqrt{3}} \right)$
+$\displaystyle -\left( \frac{1}{\sqrt{3}}, 
+  \frac{2}{\sqrt{3}}, -\frac{3}{\sqrt{3}} \right)$
+et
+$\displaystyle \left( \frac{1}{\sqrt{3}}, 
+  -\frac{2}{\sqrt{3}}, -\frac{3}{\sqrt{3}} \right)$.
+Le minimum absolu de $f$ est $\displaystyle -\frac{16}{\sqrt{3}}$
+et est atteint aux autres coins de la boite.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q25}}{
+Si la base de l'aquarium est de $x$ unités par $y$ unités, et sa
+hauteur est de $z$ unité, alors le coût de l'aquarium
+est $C(x,y,z) = 5 xy + 2xz + 2 yz$.  Il faut minimiser $C$ sous la
+contrainte que $g(x,y,z) = xyz -V = 0$, le volume de l'aquarium est
+$V$.
+
+Utilisons la méthode des multiplicateurs de Lagrange.  L'équation
+$\displaystyle \nabla C(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align}
+\pdydx{f}{x}(x,y,z) = \lambda \pdydx{g}{x}(x,y,z) &
+\Rightarrow 5y + 2z = \lambda yz \Rightarrow 5y + 2z - \lambda yz = 0
+\ , \label{LMAqua} \\
+\pdydx{f}{y}(x,y,z) = \lambda \pdydx{g}{y}(x,y,z) &
+\Rightarrow 5x + 2z = \lambda xz \Rightarrow 5x + 2z - \lambda xz = 0
+\label{LMAqub}
+\intertext{et}
+\pdydx{f}{z}(x,y,z) = \lambda \pdydx{g}{z}(x,y,z) &
+\Rightarrow 2x + 2y = \lambda xy \Rightarrow 2x + 2y - \lambda xy = 0 \ .
+\label{LMAquc}
+\end{align}
+Si nous soustrayons $x$ fois (\ref{LMAqua}) de $y$ fois
+(\ref{LMAqub}), nous obtenons $2z(y-x)=0$.  Puisque $z \neq 0$ car
+$xyz=V$, nous avons $x=y$.  Si $y=x$ dans (\ref{LMAquc}), alors
+$(4-\lambda x)x = 0$.  Comme précédemment, puisque $x\neq 0$
+car $xyz=V$, nous avons $x = y = 4/\lambda$.  Si nous substituons cela dans
+(\ref{LMAqua}) ou (\ref{LMAqub}), nous obtenons
+\[
+  5\, \frac{4}{\lambda} + 2 z - \lambda z \, \frac{4}{\lambda} = 0
+  \Rightarrow z = \frac{10}{\lambda} \ .
+\]
+Finalement, si nous substituons $x = y = 4/\lambda$ et
+$z = 10/\lambda$ dans $xyz=V$, nous trouvons
+\[
+  \left(\frac{4}{\lambda}\right)^2 \frac{10}{\lambda} = V
+  \Rightarrow \lambda = \frac{2^{5/3} 5^{1/3}}{V^{1/3}} \ .
+\]
+Il y a donc un seul point qui satisfait
+$\displaystyle \nabla C(\VEC{x}) = \lambda \nabla g(\VEC{x})$ et c'est
+\[
+(\tilde{x},\tilde{y},\tilde{z})
+= \left( \frac{4}{\lambda}, \frac{4}{\lambda},\frac{10}{\lambda} \right)
+= \left( \frac{2^{1/3} V^{1/3}}{5^{1/3}}, \frac{2^{1/3} V^{1/3}}{5^{1/3}},
+\frac{5^{2/3} V^{1/3}}{2^{2/3}} \right) \ .
+\]
+
+Soit $S = \{ (x,y,z) : xyz = V \text{ pour } x,y,z >0 \}$.  Comme
+l'ensemble $S$ sur lequel il faut maximiser la fonction $C$ n'est pas
+un ensemble fermé et borné, le Théorème des valeurs extrêmes ne peu
+pas être utilisé.  Pour déterminer si $C$ a un minimum ou un minimum
+absolu au point que l'on vient de trouver, nous considérons
+la fonction
+\[
+f(x,y) = C\left(x,y,\frac{V}{xy}\right) = 5xy + \frac{2V}{y} + \frac{2V}{x} \ .
+\]
+Puisque $f \to \infty$ lorsque $\|(x,y)\| \to 0$ ou lorsque
+$\|(x,y)\|\to \infty$ pour $(x,y,V/(xy)) \in S$, la fonction $C$
+doit donc avoir un minimum absolu au point 
+$(\tilde{x},\tilde{y},\tilde{z})$.   Le coût minimal est donc
+\[
+C\left( \frac{2^{1/3} V^{1/3}}{5^{1/3}}, \frac{2^{1/3} V^{1/3}}{5^{1/3}},
+    \frac{5^{2/3} V^{1/3}}{2^{2/3}} \right)
+  = 2^{5/3} 5^{1/3} V^{1/3} \ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{15Q26}}{
+Nous cherchons les points $(x,y)$ qui satisfont
+$\displaystyle g(x,y) = \frac{1}{x^2} + \frac{1}{y^2} - 1 = 0$ et qui
+donnent le maximum de $\displaystyle f(x,y) = \frac{1}{x} + \frac{1}{y}$.
+
+Utilisons la méthode des multiplicateurs de Lagrange.
+L'équation $\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align}
+\pdydx{f}{x}(x,y) = \lambda \pdydx{g}{x}(x,y) &
+\Rightarrow -\frac{1}{x^2} = -2 \lambda \frac{1}{x^3}
+\Rightarrow x = 2 \lambda
+\label{questLM1a}
+\intertext{et}  
+\pdydx{f}{y}(x,y) = \lambda \pdydx{g}{y}(x,y) &
+\Rightarrow -\frac{1}{y^2} = -2\lambda \frac{1}{x^3}
+\Rightarrow  y = 2\lambda \ .
+\label{questLM1b}
+\end{align}
+Si nous substituons (\ref{questLM1b}) et (\ref{questLM1b}) dans
+$g(x,y) = 0$, nous obtenons $\displaystyle \lambda^2 = 1/2$.
+Ainsi, nous avons $(x,y) = (2/\sqrt{2}, 2/\sqrt{2})$ lorsque
+$\lambda = 1/\sqrt{2}$ et $(x,y) = (-2/\sqrt{2}, -2/\sqrt{2})$
+lorsque $\lambda = -1/\sqrt{2}$.
+
+Comme $f(2/\sqrt{2}, 2/\sqrt{2}) = \sqrt{2}$ et
+$f(-2/\sqrt{2}, -2/\sqrt{2}) = -\sqrt{2}$, le maximum absolu
+devrait être $\sqrt{2}$ au point $(2/\sqrt{2}, 2/\sqrt{2})$.
+Malheureusement, l'ensemble
+$E = \{ (x,y) : g(x,y) = 0$ n'est pas borné.  Nous ne pouvons donc pas
+utiliser le Théorème des valeurs extrêmes, théorème~\ref{TVEnD},
+pour conclure que nous avons trouvé le maximum absolu.
+
+Nous avons dessiné l'ensemble $E$ dans la figure ci-dessous.  Ce sont
+les quatre paraboles représentées par une ligne noire continue.
+\PDFgraph{15_var_mult_der/questLM1}
+
+Remarquons que $f(x,y) \to 1$ sur $E$ lorsque
+$(x,y) \to (\pm \infty,1)$ avec $y>1$ ou $(x,y) \to (1,\pm\infty)$
+avec $x >1$, et $f(x,y) \to -1$ sur $E$ lorsque
+$(x,y) \to (\pm \infty,-1)$ avec $y<-1$ ou
+$(x,y) \to (-1,\pm\infty)$ avec $x<-1$.   Nous pouvons donc utiliser le
+théorème~\ref{TVEnD} sur l'ensemble fermé et borné défini
+par $\displaystyle E \cap \{(x,y) : \|(x,y)\| \leq M \}$ pour $M$
+assez grand.  Par exemple, nous pouvons prendre $M$ tel que
+$|f(x,y)| < 1.1$ pour $(x,y) \in E$ et $\|(x,y)\| > M$.
+}
+
+\compileSOL{\SOLUb}{\ref{15Q28}}{
+Puisque $f$ est une fonction continue sur l'ensemble fermé et borné
+$D$, alors $f$ possède un maximum absolu grâce au Théorème des
+valeurs extrêmes, théorème~\ref{TVEnD}.  
+
+Comme le maximum absolu est aussi un maximum local, le maximum absolu
+de $f$ sera atteint soit à un maximum absolu de $f$ sur la frontière du
+disque $D$ ou soit à un maximum local de $f$ à l'intérieur du disque $D$. 
+
+Commençons par trouver les points critiques de $f$ à l'intérieur de
+$D$.  L'intérieur de $D$ est donné par $x^2 + y^2 < 4$.  Il faut donc
+résoudre $\nabla f(x,y) = (0,0)$ pour $x^2 + y^2 < 4$.  Nous avons
+\[
+\pdydx{f}{x}(x,y) =0 \Rightarrow 2x = 0 \Rightarrow x = 0
+\qquad \text{et} \qquad
+\pdydx{f}{y}(x,y) = 0 \Rightarrow 4y +1 = 0 \Rightarrow
+y = \frac{-1}{4} \ .                        
+\]
+Le point critique est $(0, -1/4)$ qui est bien un point à
+l'intérieur du disque.
+
+Cherchons maintenant le maximum absolu de $f$ sur la frontière du
+disque $D$.  La frontière de $D$ est le cercle $x^2 + y^2 = 4$.
+Posons $g(x,y) = x^2 + y^2 - 4$.  Il faut donc trouver le maximum
+absolu de $f$ sous la contrainte que $g(x,y) = 0$.  Pour cela,
+utilisons la méthode des multiplicateurs de Lagrange.
+
+L'équation $\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+donne
+\begin{align}
+\pdydx{f}{x}(x,y) = \lambda \pdfdx{g}{x}(x,y) &
+\Rightarrow 2x = 2 \lambda x \Rightarrow 2x(1 - \lambda) = 0
+\label{questLM5a}
+\intertext{et}
+  \pdydx{f}{y}(x,y) = \lambda \pdfdx{g}{y}(x,y) &
+\Rightarrow 4y + 1 = 2 \lambda y \Rightarrow 2y(\lambda - 2) = 1 \ .
+\label{questLM5b}
+\end{align}
+Si $\lambda \neq 1$, l'équation (\ref{questLM5a}) donne $x = 0$
+L'équation $g(x,y) = 0$ avec $x=0$ donne $y^2 = 4$ et ainsi $y = \pm 2$.
+L'équation (\ref{questLM5b}) est satisfaite avec $y = 1$ si
+$\lambda = 1/2$, et avec $y=-1$ si $\lambda = 3/2$.  Dans les deux cas,
+$\lambda$ est différente de $1$ comme il est requis.   Nous obtenons
+donc deux points: $(0, \pm 2)$.
+
+Si $\lambda = 1$, l'équation (\ref{questLM5a}) est naturellement
+satisfaite et (\ref{questLM5b}) donne $y = -1/2$.
+L'équation $g(x,y) = 0$ avec $y = -1/2$ donne $x^2 = 15/4$ et ainsi
+$x = \pm \sqrt{15}/2$.  Nous obtenons deux autres points:
+$(\pm \sqrt{15}/2, -1/2)$.
+
+Puisque $f(0, -1/4) = 7/8$, $f(0,2) = 11$, $f(0,-2) = 7$,
+$f(\sqrt{15}/2,-1/2) = 35/8$ et $f(-\sqrt{15}/2,-1/2) = 35/8$, la
+maximum absolu est $11$ au point $(x,y) = (0,2)$.
+}
+
+\subsection{Dérivées des fonctions de $\mathbf{\RR^n}$ dans
+ $\mathbf{\RR^m}$}
+
+\compileSOL{\SOLUb}{\ref{15Q29}}{
+\subQ{a}\\
+\subQ{I} Nous avons
+\[
+Df(x,y) =
+\begin{pmatrix}
+\displaystyle \pdydx{f_1}{x}(x,y) & \displaystyle \pdydx{f_1}{y}(x,y) \\[1em]
+\displaystyle \pdydx{f_2}{x}(x,y) & \displaystyle \pdydx{f_2}{y}(x,y)
+\end{pmatrix}
+\]
+où $f_1(x,y) = x/y$ et $f_2(x,y) = 2xy$.  Ainsi,
+\[
+Df(x,y) =
+\begin{pmatrix} 1/y & -x/y^2 \\ 2y & 2x \end{pmatrix}
+\qquad \text{et} \qquad
+Df(-1,1) =
+\begin{pmatrix} 1 & 1 \\ 2 & -2 \end{pmatrix} \ .
+\]
+
+\subI{II} La formule générale pour l'approximation linéaire est
+\[
+f(x,y) \approx p(x,y) = f(x_0, y_0)
++ Df(x_0,y_0) \, \begin{pmatrix} x-x_0 \\ y-y_0 \end{pmatrix} \ .
+\]
+Pour $(x_0,y_0) = (-1,1)$, nous avons
+\begin{align*}
+f(x,y) \approx p(x,y) &= f(-1, 1)
++ Df(-1,1) \, \begin{pmatrix} x + 1 \\ y-1 \end{pmatrix} \\
+&= \begin{pmatrix} -1 \\ -2 \end{pmatrix}
++ \begin{pmatrix} 1 & 1 \\ 2 & -2 \\ \end{pmatrix}
+\begin{pmatrix} x+1 \\ y-1 \end{pmatrix}
+= \begin{pmatrix}
+-1 + x + y \\ 2 + 2x - 2y
+\end{pmatrix} \ .
+\end{align*}
+
+\subI{III} La valeur exacte de $f$ au point $(-0.9, 1.05)$ est
+\[
+f(-0.9, 1.05) =
+\begin{pmatrix}
+-0.9/1.05 \\ 2(-0.9)(1.05)
+\end{pmatrix}
+=
+\begin{pmatrix}
+-0,\overline{857142} \\ -1.89
+\end{pmatrix}
+\]
+et la valeur donnée par l'approximation linéaire de $f$
+au point $(-0.9, 1.05)$ est
+\[
+f(-0.9, 1.05) \approx p(-0.9, 1.05) =
+\begin{pmatrix}
+-1 -0.9 +1.05 \\ 2 + 2(-0.9) - 2(1.05)
+\end{pmatrix}
+=
+\begin{pmatrix}
+-0.85 \\ -1.9
+\end{pmatrix} \ .
+\]
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

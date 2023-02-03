@@ -1,0 +1,1293 @@
+\section{Calcul vectoriel}
+
+\subsection{Intégrale le long d'une courbe}
+
+\compileSOL{\SOLUb}{\ref{17Q1}}{
+Nous avons que $\sigma(0) = (1,1,1)$ et $\sigma(1) = (e, e^{-1}, e^2)$.
+Ainsi, $0 \leq t \leq 1$ et
+\begin{align*}
+\int_C F \cdot \dx{\VEC{s}} &=
+\int_0^1 F(\sigma(t)) \cdot \sigma'(t) \dx{t} \\
+&= \int_0^1 (e^{3t}, e^{-t} + e^{2t}, e^t)\cdot
+(e^t, -e^{-t}, 2e^{2t}) \dx{t}
+= \int_0^1 \left( e^{4t} -e^{-2t} - e^t + 2e^{3t}\right) \dx{t} \\
+&= \left( \frac{1}{4}e^{4t} +\frac{1}{2}e^{-2t}
+- e^t + \frac{2}{3}e^{3t}\right)\bigg|_0^1
+=  \frac{1}{4}e^4 +\frac{1}{2}e^{-2} - e + \frac{2}{3}e^{3}
+- \frac{5}{12} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q2}}{
+Partageons le trajet en deux sections: $C_1$ est le quart de
+cercle de rayon $2$ centré à l'origine de $(-2,0)$ et $(0,2)$, et
+$C_2$ est la segment de droite de $(0,2)$ à $(3,1)$. 
+
+Nous choisissons une représentation paramétrique pour chacune des sections.
+Pour $C_1$,
+\[
+  (x,y) = (2\cos(\pi-\theta),2\sin(\pi-\theta))
+  = (-2 \cos(\theta),2 \sin(\theta))
+\]
+pour $0\leq \theta \leq \pi/2$.  Pour $C_2$,
+\[
+  (x,y) = (2-t, 3t)
+\]
+pour $0 \leq t \leq 1$. Ainsi,
+\begin{align*}
+\int_{C_1} \sqrt{y} x \dx{x} + 2xy \dx{y}
+&= - 4\sqrt{2} \int_0^{\pi/2} \cos(\theta) (\sin(\theta))^{3/2}
+    \dx{\theta}
+- 16 \int_0^{\pi/2} \sin(\theta) \cos^2(\theta) \dx{\theta} \\
+&= -\frac{8\sqrt{2}}{5} (\sin(\theta))^{5/2}\bigg|_0^{\pi/2}
++ \frac{16}{3} \cos^3(\theta)\bigg|_0^{\pi/2}
+= - \frac{16}{3} - \frac{8\sqrt{2}}{5}
+\end{align*}
+et
+\begin{align*}
+\int_{C_2} \sqrt{y} x \dx{x} + 2xy \dx{y} &=
+-\sqrt{3} \int_0^1 \sqrt{t}(2-t)\dx{t}
++ 18 \int_0^1 (2-t)t\dx{t} \\
+&= -\sqrt{3} \int_0^1 \left(2 t^{1/2} - t^{3/2}\right) \dx{t}
++ 18 \int_0^1 \left(2t-t^2\right) \dx{t} \\
+&= -\sqrt{3} \left(\frac{4}{3} t^{3/2} - \frac{2}{5}t^{5/2}\right)\bigg|_0^1
++ 18 \left( t^2 - \frac{t^3}{3} \right)\bigg|_0^1 
+= -\frac{14\sqrt{3}}{15} + 12 \ .
+\end{align*}
+Nous avons donc
+\begin{align*}
+\int_C \sqrt{y} x \dx{x} + 2xy \dx{y} &=
+\int_{C_1} \sqrt{y} x \dx{x} + 2xy \dx{y}
++ \int_{C_2} \sqrt{y} x \dx{x} + 2xy \dx{y} \\
+&= \frac{20}{3} -\frac{14\sqrt{3}}{15} - \frac{8\sqrt{2}}{5} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q4}}{
+Nous pouvons partager le trajet en trois segments de droite: $C_1$ de
+$(0,0,0)$ à $(0,3,0)$, $C_2$ de $(0,3,0)$ à $(2,3,1)$, et $C_3$
+de $(2,3,1)$ à $(2,0,0)$.
+
+Nous choisissons une représentation paramétrique pour chacun des segments.
+Pour $C_1$,
+\[
+  (x,y,z) = (0, t, 0)
+\]
+pour $0\leq t \leq 3$.  Pour $C_2$,
+\[
+  (x,y,z) = (2t, 3, t)
+\]
+pour $0 \leq t \leq 1$.  Finalement, pour $C_3$,
+\[
+  (x,yz) = (2,3-3t, 1-t)
+\]
+pour $0 \leq t \leq 1$.  Ainsi,
+\[
+\int_{C_1} F \cdot \dx{s}
+= \int_{C_1} yz \dx{x} + xz \dx{y} + y \dx{z}
+= \int_0^1 0 \dx{t} = 0 \ .
+\]
+Ceci n'est pas surprenant car la force $F(x,y,z) = (0,0,y)$ est
+perpendiculaire à la direction du déplacement sur $C_1$.
+\[
+\int_{C_2} F \cdot \dx{s}
+= \int_{C_2} yz \dx{x} + xz \dx{y} + y \dx{z}
+= \int_0^1 (6t+3) \dx{t} = 6 \ .
+\]
+Finalement,
+\[
+\int_{C_3} F \cdot \dx{s}
+= \int_{C_3} yz \dx{x} + xz \dx{y} + y \dx{z}
+= -9 \int_0^1 (1-t) \dx{t} = -\frac{9}{2} \ .
+\]
+Nous avons donc
+\[
+\int_C F \cdot \dx{s} =
+\int_{C_1} F \cdot \dx{s} + \int_{C_2} F \cdot \dx{s}
++ \int_{C_3} F \cdot \dx{s}
+= \frac{3}{2} \ .
+\]
+}
+
+\subsection{Rotationnel et divergence}
+
+\compileSOL{\SOLUb}{\ref{17Q6}}{
+\subQ{a} Nous avons $F = F_1 \ii + F_2 \jj + F_3 \kk$ où
+$F_1(x,y,z) = e^x\cos(z)$, $F_2(x,y,z) = y$ et
+$F_3(x,y,z) = -e^x\sin(z)$.  Donc
+\begin{align*}
+\curl\,F & = \left( \pdydx{F_3}{y} - \pdydx{F_2}{z} \right) \ii +
+\left( \pdydx{F_1}{z} - \pdydx{F_3}{x} \right) \jj +
+\left( \pdydx{F_2}{x}- \pdydx{F_1}{y} \right) \kk \\
+&= \left( 0 - 0 \right) \ii + \left(-e^x\sin(z) + e^x \sin(z) \right) \jj +
+\left(0  - 0\right) \kk = \VEC{0} \ .
+\end{align*}
+Ce qui confirme que $F$ est conservateur grâce à la
+proposition~\ref{rotFzero}.  De plus, $F = \nabla f$ pour une fonction $f$.
+
+\subQ{b} Si $f:\RR^3 \to \RR$ satisfasse $F = \nabla f$, alors
+\[
+  \pdydx{f}{x} = F_1(x,y,z) = e^x\cos(z) \Rightarrow
+  f(x,y,z) = e^x\cos(z) + g(y,z)
+\]
+pour une certaine fonction $g:\RR^2 \to \RR$.  De plus,
+\[
+  \pdydx{f}{y} = F_2(x,y,z) = y \Rightarrow
+  \pdydx{g}{y}(y,z) = y \Rightarrow g(y,z) = \frac{y^2}{2} + h(z)
+\]
+pour une certaine fonction $h:\RR \to \RR$.  Nous avons donc
+$\displaystyle f(x,y,z) = e^x\cos(z) + \frac{y^2}{2} + h(z)$.
+Finalement,
+\[
+  \pdydx{f}{z} = F_3(x,y,z) \Rightarrow
+  -e^x \sin(z) + h'(z) = -e^x \sin(z) \Rightarrow
+  h'(z) = 0 \Rightarrow h(z) = C
+\]
+où $C$ est une constante d'intégration.  La fonction cherchée est
+$\displaystyle f(x,y,z) = e^x\cos(z) + \frac{y^2}{2} + C$.
+}
+
+\compileSOL{\SOLUb}{\ref{17Q7}}{
+\subQ{a} Nous avons que $F = F_1 \ii + F_2\jj$ où $F_1(x,y) = e^{2y}$ et
+$F_2(x,y) = 1 + 2x e^{2y}$.  Grâce à la proposition~\ref{rotFzero}
+(exemple~\ref{rotFzeroD2}), il suffit de vérifier que
+$\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ pour démontrer que $F$
+est conservateur.  Puisque
+\[
+  \pdydx{F_2}{x} = \pdfdx{\left(1 + 2x e^{2y}\right)}{x} = 2 e^{2y}
+\quad \text{et} \quad
+  \pdydx{F_1}{y} = \pdfdx{\left( e^{2y} \right)}{y} = 2 e^{2y} \ ,
+\]
+nous avons bien que $\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et
+$F$ est conservateur.  Il découle du théorème~\ref{Fnablaf1}
+que $F = \nabla f$ pour une fonction $f:\RR^2 \to \RR$.  En effet,
+\[
+  \pdydx{f}{x} = F_1(x,y) = e^{2y} \Rightarrow f(x,y) = x e^{2y} + g(y)
+\]
+pour une certaine fonction $g:\RR \to \RR$.  Ainsi,
+\[
+  \pdydx{f}{y} = F_2(x,y) = 1 + 2x e^{2y} \Rightarrow
+  2x e^{2y} + g'(y) = 1 + 2 x e^{2y} \Rightarrow
+  g'(y) = 1 \Rightarrow g(y) = y + C
+\]
+où $C$ est une constante d'intégration.  La fonction cherchée est
+$f(x,y) = x e^{2y} + y + C$.  Comme pour les intégrales
+définies, nous pouvons poser $C=0$.
+
+Si $\Gamma$ est une courbe quelconque qui va du point
+$\sigma(0) = (0,1)$ au point $\sigma(1) = (e,2)$, donc en particulier
+la courbe $C$, nous avons que
+\[
+  \int_{\Gamma} F \cdot \dx{\VEC{s}}
+  = \int_{\Gamma} \nabla f \cdot \dx{\VEC{s}}
+  = f(e,2)-f(0,1) = e^5 - 1
+\]
+grâce au Théorème fondamental des intégrales le long de courbes.
+
+\subQ{c} Nous avons que $F = F_1 \ii + F_2\jj$ où $F_1(x,y) = 2x+y^2+3x^2y$ et
+$F_2(x,y) = 2xy + x^3 + 3y^2$.  Grâce à la proposition~\ref{rotFzero}
+(exemple~\ref{rotFzeroD2}), il suffit de vérifier que
+$\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ pour démontrer que $F$ est
+conservateur.  Puisque
+\[
+  \pdydx{F_2}{x} = \pdfdx{\left(2xy + x^3 + 3y^2\right)}{x} = 2y +3x^2
+\quad \text{et} \quad
+  \pdydx{F_1}{y} = \pdfdx{\left(2x+y^2+3x^2y\right)}{y} = 2y + 3x^2 \ ,
+\]
+nous avons bien que $\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et $F$
+est conservateur.  Il découle du théorème~\ref{Fnablaf1}
+que $F = \nabla f$ pour une fonction $f:\RR^2 \to \RR$.  En effet,
+\[
+\pdydx{f}{x} = F_1(x,y) = 2x+y^2+3x^2y
+\Rightarrow f(x,y) = x^2 +xy^2 + x^3y + g(y)
+\]
+pour une certaine fonction $g:\RR \to \RR$.  Ainsi,
+\begin{align*}
+\pdydx{f}{y} = F_2(x,y) = 2xy + x^3 + 3y^2 &\Rightarrow
+2xy + x^3 + g'(y) = 2xy + x^3 + 3y^2 \\
+& \Rightarrow g'(y) = 3y^2 \Rightarrow g(y) = y^3 + C
+\end{align*}
+où $C$ est une constante d'intégration.  La fonction cherchée est donc
+$f(x,y) = x^2 + xy^2 +x^3y + y^3 + C$.  Comme pour les intégrales
+définies, nous pouvons prendre $C=0$.
+
+Si $\Gamma$ est une courbe quelconque qui va du point $(0,0)$ au point
+$(\pi,2)$, donc en particulier la courbe $C$, nous avons que
+\[
+  \int_{\Gamma} F \cdot \dx{\VEC{s}}
+  = \int_{\Gamma} \nabla f \cdot \dx{\VEC{s}}
+  = f(\pi,0)-f(0,0) = \pi^2
+\]
+grâce au Théorème fondamental des intégrales le long de courbes.
+
+\subQ{e} 
+Nous avons $F = F_1\; \ii + F_2\; \jj + F_3\; \kk$ où $F_1(x,y,z) = 2xyz$,
+$F_2(x,y,z) = x^2z + z\cos(yz)$ et $F_3(x,y,z) = x^2y + y \cos(yz) + 2z$.
+Grâce à la proposition~\ref{rotFzero}, il suffit de vérifier que
+$\displaystyle \curl F = \VEC{0}$ pour démontrer que $F$ est
+conservateur.  Or,
+\begin{align*}
+\curl\,F & = \left( \pdydx{F_3}{y} - \pdydx{F_2}{z} \right) \ii +
+\left( \pdydx{F_1}{z} - \pdydx{F_3}{x} \right) \jj +
+\left( \pdydx{F_2}{x}- \pdydx{F_1}{y} \right) \kk \\
+&= \big( \left(x^2 +\cos(yz) - yz\sin(yz)\right) -
+\left( x^2 + \cos(yz) - yz\sin(yz)\right) \big) \ii \\
+&\qquad + \left( 2xy - 2xy \right) \jj +
+\left(2xz  - 2xz\right) \kk = \VEC{0} \ .
+\end{align*}
+Donc $F$ est conservateur.  De plus, $F = \nabla f$ pour une fonction
+$f:\RR^3 \to \RR$.
+
+Si $f:\RR^3 \to \RR$ satisfasse $F = \nabla f$, alors
+\[
+  \pdydx{f}{x} = F_1(x,y,z) = 2xyz \Rightarrow
+  f(x,y,z) = x^2yz + g(y,z)
+\]
+pour une certaine fonction $g:\RR^2 \to \RR$.  Donc
+\begin{align*}
+  \pdydx{f}{y} = F_2(x,y,z) = x^2z + z\cos(yz) &\Rightarrow
+  x^2z + \pdydx{g}{y}(y,z) = x^2z + z\cos(yz) \\
+ & \Rightarrow
+  \pdydx{g}{y}(y,z) = z\cos(yz) \Rightarrow
+  g(y,z) = \sin(yz) + h(z)
+\end{align*}
+pour une certaine fonction $h:\RR \to \RR$.  Nous avons donc
+$\displaystyle f(x,y,z) = x^2yz  +\sin(yz) + h(z)$.  Finalement,
+\begin{align*}
+  \pdydx{f}{z} = F_3(x,y,z) &\Rightarrow
+  x^2y + y \cos(yz) + h'(z) = x^2y + y \cos(yz) + 2z \\
+&\Rightarrow  h'(z) = 2z \Rightarrow h(z) = z^2 + C
+\end{align*}
+où $C$ est une constante d'intégration.  La fonction cherchée est donc
+$\displaystyle f(x,y,z) = x^2yz  +\sin(yz) + z^2 + C$.
+Nous pouvons poser $C=0$.
+
+Si $\Gamma$ est une courbe quelconque qui va du point $(0,0,0)$ au point
+$(2,\pi,1/2)$, nous avons que
+\[
+  \int_{\Gamma} F \cdot \dx{\VEC{s}}
+  = \int_{\Gamma} \nabla f \cdot \dx{\VEC{s}}
+  = f(2,\pi,1/2)-f(0,0,0) = 2\pi + \frac{5}{4}
+\]
+grâce au Théorème fondamental des intégrales le long de courbes.
+}
+
+\compileSOL{\SOLUb}{\ref{17Q8}}{
+Les champs de vecteurs qui sont de divergence nulle sont B, C et D. 
+Le volume d'une petite région ne change pas sous l'influence du champ
+de vecteurs.
+
+Les champs de vecteurs qui sont irrotationel sont A et D.  Une petite
+région ne tourne pas sur elle même sous l'influence du champ 
+de vecteurs.
+}
+
+\subsection{Intégrale sur une surface}
+
+\compileSOL{\SOLUb}{\ref{17Q9}}{
+\PDFgraph{17_vector_calculus/surfQ6}
+Une représentation paramétrique de la surface $S$ est donnée par
+\[
+  (x,y,z) = (2\cos(\theta), y, 2\sin(\theta))
+\]
+pour $(y,\theta) \in D = \left\{ (y,\theta) : 0\leq \theta < 2\pi \
+\text{et} \ 0 \leq y \leq 4 -x = 4 - 2\cos(\theta) \right\}$.
+Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{x}{y} , \pdydx{y}{y} ,
+\pdydx{z}{y} \right) \times
+\left( \pdydx{x}{\theta} , \pdydx{y}{\theta} , \pdydx{z}{\theta} \right) 
+\right\| \dx{A}
+= \left\| (0, 1, 0) \times
+\left( -2 \sin(\theta) , 0, 2 \cos(\theta) \right) \right\| \dx{A}\\
+&= \left\| \left( 2 \cos(\theta) , 0 , 2 \sin(\theta)
+ \right) \right\| \dx{A}
+= \sqrt{ 4 \cos^2(\theta) + 4 \sin^2(\theta) } \dx{A}
+= 2 \dx{A} \ ,
+\end{align*}
+nous avons
+\begin{align*}
+\iint_S xy \dx{S} &= \iint_D  4 y \cos(\theta) \dx{A}
+= \int_0^{2\pi} \int_0^{4-2\cos(\theta)} 4 y \cos(\theta) \dx{y} \dx{\theta} \\
+&= \int_0^{2\pi} \left( 2y^2 \cos(\theta)\right)\bigg|_{y=0}^{4 -2\cos(\theta)}
+\dx{\theta}
+= \int_0^{2\pi} 8(2-\cos(\theta))^2\cos(\theta) \dx{\theta} \\
+&= 8\int_0^{2\pi} \left( 4\cos(\theta) -4 \cos^2(\theta) + \cos^3(\theta)
+\right) \dx{\theta} \\
+& = -16 \int_0^{2\pi}\left ( 1 + \cos(2\theta)\right) \dx{\theta}
+= -16 \left(\theta + \frac{1}{2} \sin(2\theta)\right)\bigg|_0^{2\pi}
+= -32 \pi
+\end{align*}
+car $\displaystyle \int_0^{2\pi} \cos(\theta) \dx{\theta} = 0$
+et $\displaystyle \int_0^{2\pi} \cos^3(\theta) \dx{\theta} = 0$.
+}
+
+\compileSOL{\SOLUa}{\ref{17Q10}}{
+L'intersection de la sphère et du cylindre est l'ensemble des points
+$(x,y,z)$ qui satisfont
+\[
+x^2 + y^2 + z^2 = 4 \text{ et } x^2 + y^2 = 2 \Rightarrow
+2 + z^2 = 4 \text{ et } x^2 + y^2 = 2 \Rightarrow z^2 = 2 \text{ et }
+x^2 + y^2 = 2 \ .
+\]
+Puisque nous considérons la partie supérieure de la sphère, nous obtenons
+$z = \sqrt{2}$.  L'intersection est donc le cercle $x^2 + y^2 = 2$ avec
+$z= \sqrt{2}$.
+
+Le dessin de la surface $S$ est donné ci-dessous
+\PDFgraph{17_vector_calculus/surfQ2}
+Une représentation paramétrique de la surface $S$ est donnée par
+\[
+  (x,y,z) = (2 \sin(\phi) \cos(\theta), 2 \sin(\phi) \sin(\theta),
+  2 \cos(\phi))
+\]
+pour $(\theta, \phi) \in D = \{ (\theta,\phi) : 0 \leq \theta < 2\pi
+\ \text{et} \ 0 \leq \phi \leq \pi/4\}$.
+Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{x}{\theta} , \pdydx{y}{\theta} ,
+\pdydx{z}{\theta} \right) \times
+\left( \pdydx{x}{\phi} , \pdydx{y}{\phi} , \pdydx{z}{\phi} \right) 
+\right\| \dx{A}\\
+&= \left\| \left(-2\sin(\phi)\sin(\theta), 2\sin(\phi)\cos(\theta), 0 \right)
+\times
+\left( 2\cos(\phi)\cos(\theta) , 2\cos(\phi)\sin(\theta) ,
+-2 \sin(\phi) \right) \right\| \dx{A}\\
+&= \left\| \left( -4 \sin^2(\phi)\cos(\theta) ,
+-4 \sin^2(\phi)\sin(\theta) , -4 \sin(\phi)\cos(\phi) \right) \right\| \dx{A}\\
+&= \sqrt{ 16 \sin^2(\phi)} \dx{A}
+= 4 \sin(\phi) \dx{A}
+\end{align*}
+car $\sin(\phi) \geq 0$ pour $0 \leq \phi \leq \pi/4$, nous avons
+\begin{align*}
+\iint_S (x^2+y^2)z \dx{S} &= \iint_D  32 \sin^3(\phi)\cos(\phi) \dx{A}
+= \int_0^{2\pi} \int_0^{\pi/4} 32 \sin^3(\phi)\cos(\phi) \dx{\phi} \dx{\theta} \\
+&= \int_0^{2\pi} \left( 8 \sin^4(\phi) \bigg|_{\phi=0}^{\pi/4}\right) \dx{\theta}
+= 2 \int_0^{2\pi} \dx{\theta}
+= 4 \pi \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q11}}{
+Le dessin de l'entonnoir est donné ci-dessous.
+\PDFgraph{17_vector_calculus/MassQ1}
+Une représentation paramétrique de $S$ est donnée par
+\[
+  (x,y,z) = (r \cos(\theta), r \sin(\theta), 2r)
+\]
+pour
+$(r,\theta) \in D = \{ (r,\theta) : 1 \leq r \leq 3 \ \text{et}
+\ 0 \leq \theta < 2\pi\}$.
+Chaque tranche horizontal de $S$ est un cercle de rayon $r$.  Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{x}{r} , \pdydx{y}{r} , \pdydx{z}{r} \right)
+\times \left( \pdydx{x}{\theta} , \pdydx{y}{\theta} ,
+\pdydx{z}{\theta} \right)\right\| \dx{A} \\
+&= \left\|\left( \cos(\theta), \sin(\theta), 2 \right)
+\times
+\left( -r\sin(\theta) , r\cos(\theta) , 0 \right) \right\|\dx{A}
+= \left\| \left( -2r\cos(\theta) , -2r \sin(\theta) , r\right)
+\right\| \dx{A} \\
+& = 3 r \dx{A}  \ ,
+\end{align*}
+la masse est donnée par 
+\begin{align*}
+\iint_S \rho \dx{S} &= \iint_D 3( 8 -2 r)r \dx{A}
+= 6\int_0^{2\pi} \int_1^3 (4r - r^2) \dx{r} \dx{\theta} \\
+&= 6\int_0^{2\pi} \left( 2r^2 - \frac{r^3}{3}\right)\bigg|_{r=1}^3 \dx{\theta}
+= 44 \int_0^{2\pi} \dx{\theta} = 88 \pi \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{17Q12}}{
+\PDFgraph{17_vector_calculus/surfQ4}
+Une représentation paramétrique de la surface $S$ est donnée par
+\[
+  (x,y,z) = (r\cos(\theta), r^2, r \sin(\theta))
+\]
+pour $(r,\theta) \in D = \{ (r,\theta) : 0 \leq r \leq 3 \ \text{et}
+\ 0\leq \theta < 2\pi\}$.  Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{x}{r} , \pdydx{y}{r} ,
+\pdydx{z}{r} \right) \times
+\left( \pdydx{x}{\theta} , \pdydx{y}{\theta} , \pdydx{z}{\theta} \right) 
+\right\| \dx{A}\\
+&= \left\| \left( cos(\theta), 2r, \sin(\theta) \right)
+\times
+\left( -r \sin(\theta), 0, r \cos(\theta) \right) \right\| \dx{A}\\
+&= \left\| \left( 2 r^2 \cos(\theta), -r, 2 r^2 \sin(\theta)
+ \right) \right\| \dx{A}\\
+&= \sqrt{ r^2 + 4r^4 \cos^2(\theta) + 4r^4 \sin^2(\theta) }\ \dx{A}
+= r \sqrt{1 + 4r^2}\ \dx{A}
+\end{align*}
+car $r \geq 0$, l'aire de $S$ est 
+\begin{align*}
+\iint_S \dx{S} &= \iint_D  r \sqrt{1 + 4r^2} \dx{A}
+= \int_0^{2\pi} \int_0^3 r (1 + 4r^2)^{1/2} \dx{r} \dx{\theta} \\
+&= \int_0^{2\pi} \left( \frac{ (1+4r^2)^{3/2}}{12}
+ \bigg|_{r=0}^3\right) \dx{\theta}
+= \frac{37^{3/2}-1}{12} \int_0^{2\pi} \dx{\theta}
+= \frac{(37^{3/2}-1)\pi}{6} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q14}}{
+Le solide est représenté dans la figure ci-dessous.
+\PDFgraph{17_vector_calculus/surfQ1}
+Il faut premièrement trouver l'intersection de la sphère
+$x^2 + y^2 + z^2 =8$ et du paraboloïde $z = (x^2 + y^2)/2$.  Après
+avoir substitué l'expression pour $z$ donnée par le paraboloïde dans
+l'équation de la sphère, nous obtenons
+\begin{align*}
+x^2 + y^2 + \left( \frac{x^2+y^2}{2}\right)^2 = 8 &\Rightarrow
+(x^2 + y^2) + \frac{1}{4} (x^2 + y^2)^2 = 8 \\
+&\Rightarrow (x^2 + y^2)^2 + 4(x^2 + y^2) - 32 = 0 \\ 
+&\Rightarrow \left((x^2 + y^2)+8\right)\left((x^2 + y^2) -4\right) = 0
+\ .
+\end{align*}
+Puisque $x^2 + y^2 \geq 0$, la seule solution possible est
+$x^2 + y^2 = 4$.   Dans ce cas $z = (x^2 + y^2)/2 = 2$.
+L'intersection est le cercle $x^2+y^2=4$ avec $z=2$.
+
+Divisons la surface $S$ en deux sections: la surface supérieure du
+solide, dénoté $S_1$, qui est formée par la partie de la sphère
+$x^2 + y^2 + z^2 = 8$ et surface inférieure du solide, dénotée $S_2$,
+qui est formée par la partie du paraboloïde $z = (x^2 + y^2)/2$.
+
+Commençons par la surface supérieure $S_1$.  Une
+représentation paramétrique est donnée par
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), \sqrt{8 - r^2})
+\]
+pour $(t,\theta) \in D = \{ (r,\theta) : 0 \leq r \leq 2 \ \text{et}
+\ 0 \leq \theta < 2\pi\}$.  Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{x}{r} , \pdydx{y}{r} , \pdydx{z}{r} \right)
+\times
+\left( \pdydx{x}{\theta} , \pdydx{y}{\theta} , \pdydx{z}{\theta} \right) 
+\right\| \dx{A}\\
+&= \left\| \left(\cos(\theta) , \sin(\theta) , \frac{-r}{\sqrt{8-r^2}} \right)
+\times
+\left( -r\sin(\theta) , r \cos(\theta) , 0 \right) \right\| \dx{A}\\
+&= \left\| \left( \frac{-r^2 \cos(\theta)}{\sqrt{8 - r^2}} ,
+\frac{-r^2 \sin(\theta)}{\sqrt{8 - r^2}} , r \right) \right\| \dx{A}\\
+&= \sqrt{ \frac{r^4 \cos^2(\theta)}{8 - r^2} +
+\frac{r^4 \sin^2(\theta)}{8 - r^2} + r^2}\ \dx{A}
+= \frac{2\sqrt{2}\ r}{\sqrt{8 - r^2}} \dx{A} \ ,
+\end{align*}
+l'aire de la surface supérieure $S_1$ est donnée par
+\begin{align*}
+\iint_{S_1} \dx{S} &= \iint_D \frac{2\sqrt{2}\ r}{\sqrt{8 - r^2}} \dx{A}
+= \int_0^{2\pi} \int_0^2 \frac{2\sqrt{2}\ r}{\sqrt{8 - r^2}} \dx{r}
+\dx{\theta} \\
+& \int_0^{2\pi} \left( -2\sqrt{2} \sqrt{8 - r^2}\bigg|_{r=0}^2\right) \dx{\theta}
+= 4(2 - \sqrt{2}) \int_0^{2\pi} \dx{\theta} = 8 \pi (2 - \sqrt{2}) \ .
+\end{align*}
+
+Pour la surface inférieure $S_2$, une représentation
+paramétrique est donnée par
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), r^2/2)
+\]
+pour $(r,\theta) \in D$ défini ci-dessus.  Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{x}{r} , \pdydx{y}{r} , \pdydx{z}{r} \right)
+\times
+\left( \pdydx{x}{\theta} , \pdydx{y}{\theta} , \pdydx{z}{\theta} \right) 
+\right\| \dx{A}\\
+&= \left\| \left(\cos(\theta) , \sin(\theta) , r \right)
+\times
+\left( -r\sin(\theta) , r \cos(\theta) , 0 \right) \right\| \dx{A}\\
+&= \left\| \left( -r^2 \cos(\theta) , -r^2 \sin(\theta) ,
+  r \right) \right\| \dx{A}\\
+&= \sqrt{ r^4 \cos^2(\theta) + r^4 \sin^2(\theta) + r^2}\ \dx{A}
+= r\sqrt{r^2+1} \dx{A} \ ,
+\end{align*}
+l'aire de la surface inférieure $S_2$ est donnée par
+\begin{align*}
+\iint_{S_2} \dx{S} &= \iint_D r\sqrt{r^2+1} \dx{A}
+= \int_0^{2\pi} \int_0^2 r\sqrt{r^2+1} \dx{r} \dx{\theta} \\
+&= \int_0^{2\pi} \left( \frac{1}{3}
+(r^2+ 1)^{3/2}\bigg|_{r=0}^2\right) \dx{\theta}
+= \frac{1}{3}(5\sqrt{5}-1) \int_0^{2\pi} \dx{\theta}
+= \frac{2\pi}{3}(5\sqrt{5}-1) \ .
+\end{align*}
+L'aire total de la surface $S$ du solide est
+$\displaystyle 8 \pi (2 - \sqrt{2}) + \frac{2\pi}{3}(5\sqrt{5}-1)$.
+}
+
+\compileSOL{\SOLUa}{\ref{17Q15}}{
+Le dessin de la partie de la surface $S$ qui se trouve dans la région
+définie par $x,y,z \geq 0$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/surfQ5}
+La surface $S$ est formée de huit pièces de cette forme.
+Une représentation paramétrique est donnée par
+\[
+  (x,y,z) = (a\cos(\theta), y, a\sin(\theta))
+\]
+pour $0 \leq \theta < 2\pi$ et
+$0 \leq y \leq \sqrt{a^2 - x^2} = a\sin(\theta)$.  Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{x}{\theta} , \pdydx{y}{\theta} ,
+\pdydx{z}{\theta} \right) \times
+\left( \pdydx{x}{y} , \pdydx{y}{y} , \pdydx{z}{y} \right) 
+\right\| \dx{A}
+= \left\| \left(-a \sin(\theta) , 0, a\cos(\theta) \right)
+\times \left( 0, 1, 0 \right) \right\| \dx{A}\\
+&= \left\| \left( -a \cos(\theta) , 0 , -a \sin(\theta) \right)
+ \right\| \dx{A}
+= a \dx{A} \ ,
+\end{align*}
+l'aire de la surface $S$ est donnée par
+\begin{align*}
+\iint_S \dx{S} &= 8 \int_0^{\pi/2} \int_0^{a\sin(\theta)} a \dx{y} \dx{\theta}
+= 8\int_0^{\pi/2} \left( a y\bigg|_{y=0}^{a\sin(\theta)}\right) \dx{\theta} \\
+&= 8a^2 \int_0^{2\pi} \sin(\theta)\dx{\theta}
+= -8a^2 \cos(\theta)\bigg|_0^{\pi/2} = 8a^2 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q16}}{
+Le dessin de la surface de la sphère pour $z >0$ qui se
+trouve à à l'intérieur du cylindre est donné ci-dessous.
+\PDFgraph{17_vector_calculus/surfQ8}
+Il y a une partie identique pour $z<0$.
+
+L'équation $x^2 + y^2 = ax$ représente bien un cylindre car
+\[
+  x^2 + y^2 = ax \Leftrightarrow \left( x - \frac{a}{2}\right)^2 + y^2
+  = \frac{a^2}{4} \  .
+\]
+C'est un cylindre de rayon $a/2$ dont l'axe est la droite parallèle à
+l'axe des $z$ qui passe pas $(a/2,0,0)$.  La première représentation
+paramétrique à laquelle nous pourrions pensée est celle donnée par les
+coordonnées cylindriques centrées sur la droite parallèle à l'axe des
+$z$ qui passe par le point $(a/2,0,0)$; c'est-à-dire,
+$x = a/2 + r \cos(\theta)$, $y = r\sin(\theta)$ et
+$z = (a^2 - (a/2+r\cos(\theta))^2 - r^2 \sin^2(\theta))^{1/2}$
+pour $0\leq \theta \leq 2\pi$ et $0 \leq r \leq a/2$.
+Malheureusement, ce n'est pas un bon choix.  Le calcul de l'intégrale
+est beaucoup plus compliqué avec cette représentation qu'avec la
+représentation paramétrique en coordonnées cylindrique centrées sur
+l'axe des $z$.  C'est cette dernière représentation que nous allons
+utiliser.  La représentation paramétrique est donnée par
+\[
+  (x,y,z) = \rho(\theta, r) = (r\cos(\theta), r\sin(\theta),  \sqrt{a^2 - r^2} )
+\]
+pour $(\theta,r) \in D = \{ (\theta,r) : -\pi/2 \leq \theta \leq \pi/2
+\ \text{et} \ 0 \leq r \leq a \cos(\theta)\}$.
+Pour déterminer les bornes pour $r$, notons que $x^2 + y^2 = ax$ avec
+$x=r\cos(\theta)$ et $y=r\sin(\theta)$ donne $r^2 = a r\cos(\theta)$ et
+donc $r=a\cos(\theta)$.  Puisque
+\begin{align*}
+\dx{S} &= \left\| \left( \pdydx{\rho_1}{\theta} , \pdydx{\rho_2}{\theta} ,
+\pdydx{\rho_3}{\theta} \right) \times
+\left( \pdydx{\rho_1}{y} , \pdydx{\rho_2}{y} , \pdydx{\rho_3}{y} \right) 
+\right\| \dx{A} \\
+&= \left\| \left(-r \sin(\theta) , r\cos(\theta), 0 \right)
+\times \left( \cos(\theta), \sin(\theta), \frac{-r}{\sqrt{a^2-r^2}}
+\right) \right\| \dx{A} \\
+&= \left\| \left( -\frac{r^2\cos(\theta)}{\sqrt{a^2-r^2}},
+-\frac{r^2\sin(\theta)}{\sqrt{a^2-r^2}}, -r \right)
+\right\| \dx{A}
+= \frac{ar}{\sqrt{a^2-r^2}} \dx{A} \ ,
+\end{align*}
+l'aire de la surface $S$ est donnée par
+\begin{align*}
+\iint_S \dx{S} &= 2 \int_{\pi/2}^{\pi/2} \int_0^{a\cos(\theta)}
+\frac{ar}{\sqrt{a^2-r^2}} \dx{r} \dx{\theta}
+= -2 \int_{\pi/2}^{\pi/2} \left(a\sqrt{a^2-r^2}\bigg|_0^{a\cos(\theta)}
+\right) \dx{\theta} \\
+&= -2 \int_{\pi/2}^{\pi/2} \left(a^2\sqrt{\sin^2(\theta)} - a^2
+\right) \dx{\theta}
+=  -4 a^2 \int_0^{\pi/2} \left(\sqrt{\sin^2(\theta)} - 1\right) \dx{\theta} \\
+&=  -4 a^2\int_0^{\pi/2} \left(\sin(\theta) - 1\right) \dx{\theta}
+= 4 a^2\left( \cos(\theta) + \theta \right) \bigg|_0^{\pi/2}
+= 4 a^2 \left(\frac{\pi}{2} -1\right)
+\end{align*}
+car $a^2\sqrt{\sin^2(\theta)} - a^2$ est une fonction paire et
+$\sin(\theta) \geq 0$ pour $0 \leq \theta \leq \pi/2$.
+}
+
+\compileSOL{\SOLUb}{\ref{17Q18}}{
+Le dessin de la surface $S$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/surfQ7}
+Une représentation paramétrique est donné par
+\[
+(x,y,z) = (2\cos(\theta)\sin(\phi), 2\cos(\phi),
+2\sin(\theta)\sin(\phi))
+\]
+pour $0 \leq \phi \leq \pi/2$ et $0 \leq \theta < 2\pi$.  Soit
+\begin{align*}
+\VEC{m} &= \left( \pdydx{x}{\theta} , \pdydx{y}{\theta} ,
+\pdydx{z}{\theta} \right)
+\times \left( \pdydx{x}{\phi} , \pdydx{y}{\phi} ,
+\pdydx{z}{\phi} \right) \\
+&= \left( -2 \sin(\theta)\sin(\phi), 0, 2\cos(\theta)\sin(\phi) \right)
+\times
+\left( 2\cos(\theta)\cos(\phi) , -2\sin(\phi) , 2\sin(\theta)\cos(\phi)
+\right) \\
+&= \left( 4\cos(\theta)\sin^2(\phi) , 4 \sin(\phi)\cos(\phi),
+4 \sin(\theta)\sin^2(\phi) \right) \ .
+\end{align*}
+Puisque $4 \sin(\phi)\cos(\phi) >0$ pour $0\leq \phi \leq \pi/2$, le
+vecteur $\displaystyle \VEC{m}$ est un vecteur normal à la surface $S$
+qui pointe dans la direction de l'orientation de la surface $S$.
+Notre représentation paramétrique est donc compatible avec
+l'orientation sur $S$.  Le flux est
+\begin{align*}
+\iint_S F \cdot \dx{\VEC{S}}
+&= \int_0^{2\pi}\int_0^{\pi/2} F\left(
+2\cos(\theta)\sin(\phi),2\cos(\phi),2\sin(\theta)\sin(\phi)\right) \\
+&\cdot \left( 4\cos(\theta)\sin^2(\phi) , 4 \sin(\phi)\cos(\phi) ,
+4 \sin(\theta)\sin^2(\phi)  \right) \dx{\phi}\dx{\theta} \\
+&= \int_0^{2\pi}\int_0^{\pi/2} \left(
+4\cos(\theta)\sin(\phi)\cos(\phi), 4\cos^2(\phi),
+4\sin(\theta)\cos(\phi)\sin(\phi)\right) \\
+&\cdot \left( 4\cos(\theta)\sin^2(\phi) , 4 \sin(\phi)\cos(\phi) ,
+4 \sin(\theta)\sin^2(\phi)  \right) \dx{\phi}\dx{\theta} \\
+&= 16 \int_0^{2\pi}\int_0^{\pi/2} \left(
+\sin^3(\phi)\cos(\phi) + \cos^3(\phi) \sin(\phi) \right)
+\dx{\phi}\dx{\theta} \\
+&= 4 \int_0^{2\pi} \left( \sin^4(\phi)
+- \cos^4(\phi) \right)\bigg|_{\phi=0}^{\pi/2}  \dx{\theta}
+= 8 \int_0^{2\pi} \dx{\theta} = 16 \pi \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q20}}{
+Le dessin de la surface $S$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/surfQ3}
+Soit
+\begin{align*}
+\VEC{m} &= \pdydx{\rho}{u} \times \pdydx{\rho}{v}
+= \left( \cos(v), \sin(v), 0 \right) \times
+\left( -u\sin(v) , u\cos(v) , 1 \right) \\
+& = \left( \sin(v) , -\cos(v) , u \right) \ .
+\end{align*}
+Puisque $u \geq 0$, le vecteur $\VEC{m}$
+est un vecteur normal à la surface $S$ qui pointe dans la direction de
+l'orientation de la surface $S$.  La représentation paramétrique est
+compatible avec l'orientation sur la surface $S$.
+Le flux est donc
+\begin{align*}
+\iint_S F \cdot \dx{\VEC{S}} &=  
+\iint_D \left( u\sin(v) , u\cos(v), v\right) \cdot
+\left( \sin(v) , -\cos(v), u\right) \dx{A} \\
+&= \int_0^{2\pi} \int_0^1 \left( u\sin^2(v) - u\cos^2(v) + uv \right)
+\dx{u} \dx{v}
+= \int_0^{2\pi} \int_0^1 \left( -u\cos(2v) + uv \right)\dx{u} \dx{v} \\
+&= \int_0^{2\pi} \left(-\cos(2v) + v \right)
+\left(\frac{u^2}{2}\bigg|_{u=0}^1\right) \dx{v}
+= \frac{1}{2} \int_0^{2\pi} \left(-\cos(2v) + v \right) \dx{v} \\
+&= \frac{1}{2} \left( \frac{1}{2}\sin(2v) + \frac{v^2}{2}\right)\bigg|_0^{2\pi}
+= \pi^2 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q21}}{
+Le dessin de la partie de la surface $S$ pour $x \geq 0$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/surfQ9}
+Il y a une partie semblable pour $x \leq 0$.
+
+Une représentation paramétrique est donnée par
+\[
+  (x,y,z) = (a\cos(\theta), y, a\cos(\theta))
+\]
+pour $0 \leq \theta < 2\pi$ et
+$-a |\cos(\theta)| \leq y \leq a |\cos(\theta)|$.  Pour déterminer
+le domaine d'intégration de $y$, notons que l'intersection des
+deux cylindres est donnée par
+\[
+  y^2 + z^2 = a^2 = x^2 + z^2 \Rightarrow y^2 = x^2 \Rightarrow |y| =
+  |x| \ .
+\]
+% L'intersection des deux cylindre est donc formée des deux courbes
+% fermées possédant les représentations paramétriques
+% \[
+% \sigma_1(\theta) = (a\cos(\theta), a|\cos(\theta)|, a\sin(\theta) )
+% \quad \text{et} \quad
+% \sigma_2(\theta) = (a\cos(\theta), -a|\cos(\theta)|, a\sin(\theta) )
+% \]
+% pour $0 \leq \theta < 2\pi$.
+
+Soit
+\begin{align*}
+\VEC{q} &= \left( \pdydx{x}{\theta} , \pdydx{y}{\theta} ,
+\pdydx{z}{\theta} \right)
+\times \left( \pdydx{x}{y} , \pdydx{y}{y} , \pdydx{z}{y} \right)
+= \left( -a \sin(\theta), 0, a\cos(\theta) \right)
+\times \left(0 , 1, 0 \right) \\
+&= \left( -a\cos(\theta) , 0, -a \sin(\theta) \right) \ .
+\end{align*}
+Le vecteur $\displaystyle \VEC{q}$ est un vecteur normal à la surface $S$
+qui pointe dans la direction opposée à la direction de l'orientation
+de la surface $S$.  Il faut donc utiliser $\VEC{m} = - \VEC{q}$ pour
+respecter l'orientation sur la surface $S$ ou remplacer la
+représentation paramétrique par
+\[
+  (x,y,z) = (a\cos(-\theta), y, a\cos(-\theta)) \ .
+\]
+Ce qui revient au même.
+
+Puisque $\cos$ et $\sin$ sont des fonctions périodique de période
+$2\pi$, le flux est donné par
+\[
+\iint_S F \cdot \dx{\VEC{S}}
+= \int_{-\pi/2}^{3\pi/2}\int_{-a|\cos(\theta)|}^{a|\cos(\theta)|}
+F\left(a\cos(\theta),y,a\sin(\theta)\right)
+\cdot \left( a\cos(\theta), 0 , a \sin(\theta) \right)
+\dx{y}\dx{\theta} \ .
+\]
+Pour calculer l'intégrale, nous devons diviser le
+domaine d'intégration pour $\theta$ afin de traiter les bornes
+d'intégration $\pm a|\cos(\theta)|$ pour $y$.
+Puisque $|\cos(\theta)| = \cos(\theta)$
+pour $-\pi/2 < \theta < \pi/2$ et $|\cos(\theta)| = -\cos(\theta)$ pour
+$\pi/2 < \theta < 3\pi/2$, l'intégrale
+pour $-\pi/2 < \theta \leq 3\pi/2$ sera la somme de
+l'intégrale pour $-\pi/2 < \theta \leq \pi/2$ et de l'intégrale
+pour $\pi/2 < \theta \leq 3\pi/2$.  Nous avons donc
+\begin{align*}
+\iint_S F \cdot \dx{\VEC{S}}
+&=\int_{-\pi/2}^{\pi/2}\int_{-a\cos(\theta)}^{a\cos(\theta)}
+F\left(a\cos(\theta),y,a\sin(\theta)\right)
+\cdot \left(a\cos(\theta), 0 , a \sin(\theta) \right) \dx{y}\dx{\theta} \\
+&\quad + \int_{\pi/2}^{3\pi/2}\int_{a\cos(\theta)}^{-a\cos(\theta)}
+F\left(a\cos(\theta),y,a\sin(\theta)\right)
+\cdot \left( a\cos(\theta), 0 , a \sin(\theta) \right) \dx{y}\dx{\theta} \ .
+\end{align*}
+La première intégrale est
+\begin{align*}
+&  \int_{-\pi/2}^{\pi/2}\int_{-a\cos(\theta)}^{a\cos(\theta)}
+F\left(a\cos(\theta),y,a\sin(\theta)\right)
+\cdot \left( a\cos(\theta), 0 , a \sin(\theta) \right) \dx{y}\dx{\theta} \\
+& \qquad = \int_{-\pi/2}^{\pi/2}\int_{-a\cos(\theta)}^{a\cos(\theta)}
+\left(a\cos(\theta),\cos(a\cos(\theta) y),a\sin(\theta)\right)
+\cdot \left( a\cos(\theta), 0 , a \sin(\theta) \right) \dx{y}\dx{\theta} \\
+& \qquad = a^2 \int_{-\pi/2}^{\pi/2}\int_{-a\cos(\theta)}^{a\cos(\theta)}
+\dx{y}\dx{\theta}
+= 2 a^3 \int_{-\pi/2}^{\pi/2}\cos(\theta)\dx{\theta}
+= 2 a^3 \sin(\theta)\bigg|_{-\pi/2}^{\pi/2} = 4 a^3
+\end{align*}
+et la deuxième intégrale est
+\begin{align*}
+& \int_{\pi/2}^{3\pi/2}\int_{a\cos(\theta)}^{-a\cos(\theta)}
+F\left(a\cos(\theta),y,a\sin(\theta)\right)
+\cdot \left( a\cos(\theta), 0 , a \sin(\theta) \right) \dx{y}\dx{\theta} \\
+& \qquad = \int_{\pi/2}^{3\pi/2}\int_{a\cos(\theta)}^{-a\cos(\theta)}
+\left(a\cos(\theta),\cos(a\cos(\theta) y),a\sin(\theta)\right)
+\cdot \left( a\cos(\theta), 0 , a \sin(\theta) \right) \dx{y}\dx{\theta} \\
+& \qquad = a^2 \int_{\pi/2}^{3\pi/2}\int_{a\cos(\theta)}^{-a\cos(\theta)}
+\dx{y}\dx{\theta}
+= -2 a^3 \int_{\pi/2}^{3\pi/2}\cos(\theta)\dx{\theta}
+= -2 a^3 \sin(\theta)\bigg|_{\pi/2}^{3\pi/2} = 4 a^3 \ .
+\end{align*}
+Notons que la deuxième intégrale peut être réduite à la première avec
+la substitution $\theta = \phi - \pi$.  Le flux est donc
+\[
+  \iint_S F \cdot \dx{\VEC{S}} = 8 a^3 \ .
+\]
+}
+
+\subsection{Théorèmes de Stokes et de Green}
+
+\compileSOL{\SOLUb}{\ref{17Q23}}{
+Le dessin de la région $D$ et de sa frontière $C$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/GreenQ1}
+
+Nous pourrions penser évaluer directement l'intégrale
+\[
+  \int_C(y+e^{x^2})\dx{x} + (2x + \cos(y^2))\dx{y}
+\]
+mais cela demanderait de longs et complexes calculs, sans compter le
+fait que l'intégrale doit être calculée sur deux sections de la courbe
+$C$, la section lorsque $y=x^2$ et celle lorsque $x=y^2$.
+
+Une autre approche est d'utiliser le Théorème de Green.  Notons que
+l'orientation de $C$ est l'orientation positive associée à la région
+$D$ comme il est requis pour le Théorème de Green.  Ainsi,
+\begin{align*}
+\int_C(y+e^{x^2})\dx{x} + (2x + \cos(y^2))\dx{y} &=
+\iint_D \left( \pdfdx{(2x + \cos(y^2))}{x} -
+  \pdfdx{ (y+e^{x^2})}{y} \right) \dx{A} \\
+&= \iint_D \dx{A}
+= \int_0^1 \int_{x^2}^{\sqrt{x}} \dx{y}\dx{x}
+= \int_0^1 \left( \sqrt{x} - x^2\right) \dx{x} \\
+&= \left( \frac{2}{3} x^{3/2} - \frac{1}{3}x^3\right)\bigg|_0^1
+= \frac{1}{3} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{17Q24}}{
+Le dessin du parcoure $C$ de la particule incluant la direction de son
+déplacement est donné ci-dessous.
+\PDFgraph{17_vector_calculus/GreenQ2}
+
+Le travail du champ de vecteur sur la particule est
+\[
+  W =  \int_C F \cdot \dx{\VEC{s}} =
+  \int_Cx \dx{x} + (x^3 + 3xy^2)\dx{y} \ .
+\]
+Grâce au Théorème de Green, nous pouvons remplacer le calcul de cette
+intégrale le long de la courbe $C$ par l'intégrale double suivante.
+\[
+W =  \iint_S \left( \pdfdx{\left(x^3 + 3 xy^2\right)}{x} -
+  \pdfdx{ (x)}{y} \right) \dx{A}
+= \iint_S \left( 3x^2 + 3y^2 \right) \dx{A} \ .
+\]
+Notons que l'orientation de $C$ est l'orientation positive associée à
+la région $S$ comme il est requis pour le Théorème de Green.
+
+Pour évaluer cette dernière intégrale, il est raisonnable d'utiliser
+les coordonnées polaires
+\[
+  (x,y) = (r \cos(\theta), r \sin(\theta))
+\]
+pour $0 \leq r \leq 2$ et $0 \leq \theta \leq \pi$.  Puisque
+$\displaystyle \frac{\partial(x,y)}{\partial(r,\theta)} = r $ et
+$3x^2 + 3y^2 = 3r^2$, nous obtenons
+\[
+  W = 3 \int_0^{\pi} \int_0^2 r^3 \dx{r}\dx{\theta}
+= 3 \int_0^{\pi} \left(\frac{r^4}{4}\right)\bigg|_0^2 \dx{\theta}
+= 12 \int_0^{\pi} \dx{\theta} = 12 \pi \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{17Q25}}{
+Le dessin de la courbe $C$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/StokesQ2}
+
+Nous pourrions calculer directement cette intégrale.  Il faudrait
+décomposer le rectangle $C$ en quatre segments qui connectent les
+quatre points.  Nous laissons au lecteur le soin de faire ce calcul.
+Il est simple.  Nous allons utiliser le Théorème de Stokes qui dit que
+\[
+  \int_C F \cdot \dx{\VEC{s}}
+  = \iint_S \curl  F \cdot \dx{\VEC{S}}
+\]
+où $S$ est la région du plan $z=2$ délimitée par le rectangle $C$.
+Nous avons $C = \partial S$.  L'orientation sur $S$ est dans la direction
+positive de l'axe des $z$ pour qu'elle soit consistante avec la
+direction de $C$.  Une représentation paramétrique de $S$ est
+\[
+  (x,y,z) = \rho(x,y) = (x,y,2)
+\]
+pour $0 \leq x,y \leq 1$.  Soit
+\[
+\VEC{m} = \pdydx{\rho}{x} \times \pdydx{\rho}{y}
+= \left( 1, 0, 0 \right) \times \left( 0 , 1, 0 \right)
+= \left( 0 , 0 , 1 \right) \ .
+\]
+Le vecteur $\VEC{m}$ est le vecteur normal unitaire à la surface $S$
+qui pointe vers le haut, donc dans la direction de l'orientation de la
+surface $S$.  Notre choix de représentation paramétrique pour $S$ est
+donc consistant avec la direction de $S$.
+
+Puisque
+\[
+\curl\,F = \nabla \times F
+= \begin{vmatrix}
+\ii & \jj & \kk \\
+\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
+\displaystyle \pdydx{}{z} \\
+yz & xy & xz
+\end{vmatrix}
+= \left( 0, -z + y, y -z \right)
+\]
+si nous développons le déterminant selon la première ligne,
+nous avons
+\begin{align*}
+\int_C F \cdot \dx{\VEC{s}}
+&= \iint_S \curl F \cdot \dx{\VEC{S}}
+= \int_0^1\int_0^1 \curl F(\rho(x,y)) \cdot
+\left(\pdydx{\rho}{x} \times \pdydx{\rho}{y}\right) \dx{y}\dx{x} \\
+&=\int_0^1\int_0^1 \left( 0, -2 + y, y - 2 \right) \cdot (0,0,1) \dx{y}\dx{x}
+= \int_0^1\int_0^1 (y -2) \dx{y}\dx{x} \\
+&= \int_0^1 \left(\frac{y^2}{2} - 2y\right)\bigg|_{y=0}^1\dx{x}
+= -\frac{3}{2} \int_0^1 \dx{x}
+= -\frac{3}{2} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q26}}{
+Il faut premièrement trouver l'équation du plan contenant les trois
+points donnés.  Un vecteur normal $\VEC{v}$ au plan est donné par le
+produit vectoriel de deux vecteurs non colinéaires $\VEC{v}_1$ et
+$\VEC{v}_2$ qui sont parallèles au plan.  Un choix possible est
+$\VEC{v}_1 = (1,1,1)- (0,2,0) = (1,-1,1)$ et
+$\VEC{v}_2 = (-1,1,2) - (0,2,0) = (-1,-1,2)$.  Ainsi,
+\[
+  \VEC{v}= \VEC{v}_1 \times \VEC{v}_2
+  = \det \begin{pmatrix}
+\ii & \jj & \kk \\
+1 & -1 & 1 \\
+-1 & -1 & 2 \end{pmatrix}
+= - \ii - 3\; \jj - 2\; \kk
+\]
+si nous développons le déterminant selon la première ligne.
+L'équation du plan tangent est donc donnée par
+\begin{align*}
+  (-1,-3,-2)\cdot \left( (x,y,z) - (0,2,0)\right) = 0
+  &\Rightarrow -x -3(y-2) -2z = 0
+  \Rightarrow z = -\frac{x}{2} -\frac{3y}{2} + 3 \ .
+\end{align*}
+
+La courbe $C$ est le résultat de l'intersection du cylindre
+$x^2 + y^2 = 4$ et du plane $z = -x/2 -3y/2 + 3$.   Le dessin de cette
+courbe est donné ci-dessous.
+\PDFgraph{17_vector_calculus/StokesQ4}
+Nous pourrions calculer directement l'intégrale
+$\displaystyle \int_C F \cdot \dx{\VEC{s}}$ en utilisant la
+représentation paramétrique de la courbe $C$ donnée par
+\[
+  (x,y,z) = \rho(\theta) = (2 \cos(\theta), -2 \sin(\theta) ,
+  -\frac{1}{2}\cos(\theta) + \frac{3}{2}\sin(\theta) + 3 )
+\]
+pour $0 \leq \theta \leq 2\pi$.  Nous laissons le soin au lecteur de
+vérifier que cette représentation paramétrique est bien consistante
+avec la direction sur $C$.  Nous allons utiliser le Théorème de Stokes
+qui dit que
+\[
+  \int_C F \cdot \dx{\VEC{s}}
+  = \iint_S \curl  F \cdot \dx{\VEC{S}}
+\]
+où $S$ est la région du plan $z= -x/2 -3y/2 + 3$ qui est contenue à
+l'intérieur du cylindre $x^2 + y^2 = 4$.  L'orientation sur $S$ est
+donnée par un vecteur normal qui pointe dans la direction de
+$z$ négatif pour qu'elle soit consistante avec la direction sur
+$C$.  Une représentation paramétrique de $S$ est
+\[
+  (x,y,z) = \rho(\theta,r) = (r\cos(\theta), r\sin(\theta),
+-\frac{r}{2} \cos(\theta) - \frac{3r}{2} \sin(\theta) + 3)
+\]
+pour $0 \leq \theta < 2\pi$ et $0 \leq r \leq 2$.  Soit
+\begin{align*}
+\VEC{m} &= \pdydx{\rho}{\theta} \times \pdydx{\rho}{r} \\
+&= \left( -r\sin(\theta), r\cos(\theta),
+  \frac{r}{2}\sin(\theta) - \frac{3r}{2}\cos(\theta) \right) \times
+\left( \cos(\theta) , \sin(\theta), -\frac{1}{2}\cos(\theta)
+- \frac{3}{2} \sin(\theta) \right) \\
+&= \left( -\frac{r}{2} , -\frac{3r}{2} , -r \right) \ .
+\end{align*}
+le vecteur $\VEC{m}$ est un vecteur normal à la surface $S$
+qui pointe dans la direction de $z$ négatif car $r\geq 0$.
+La représentation paramétrique pour $S$ est donc
+consistant avec l'orientation sur $S$.
+
+Puisque
+\[
+\curl F = \nabla \times F
+= \begin{vmatrix}
+\ii & \jj & \kk \\
+\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
+\displaystyle \pdydx{}{z} \\
+y^2 & x & z
+\end{vmatrix}
+= \left( 0, 0, 1 - 2y \right)
+\]
+si nous développons le déterminant selon la première ligne, nous avons
+\begin{align*}
+\int_C F \cdot \dx{\VEC{s}}
+&= \iint_S \curl  F \cdot \dx{\VEC{S}}
+= \int_0^{2\pi}\int_0^2 \curl  F(\rho(\theta,r)) \cdot
+\left(\pdydx{\rho}{\theta} \times \pdydx{\rho}{r}\right)
+\dx{r}\dx{\theta} \\
+&=\int_0^{2\pi}\int_0^2 \left( 0, 0, 1 - 2r\sin(\theta)\right)
+ \cdot \left(-\frac{r}{2}, -\frac{3r}{2},-r\right) \dx{r}\dx{\theta} \\
+&= \int_0^{2\pi}\int_0^2 \left(-r + 2r^2\sin(\theta)\right) \dx{r}\dx{\theta}
+= \int_0^{2\pi} \left(-\frac{r^2}{2}
++ \frac{2r^3}{3}\sin(\theta) \right)\bigg|_{r=0}^2\dx{\theta} \\
+& = \int_0^{2\pi} \left( -2 + \frac{16}{3} \sin(\theta)\right)\dx{\theta}
+= \left( -2\theta - \frac{16}{3} \cos(\theta)\right)\bigg|_0^{2\pi} 
+= - 4 \pi \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{17Q27}}{
+Le dessin de la surface $S$ avec sa frontière $C = \partial S$ est
+donné ci-dessous.
+\PDFgraph{17_vector_calculus/StokesQ3}
+Le dessin inclus aussi le vecteur normal unitaire $\VEC{n}$ qui défini
+l'orientation de la surface $S$ associée à la direction positive sur
+le courbe $C$.
+
+Nous pourrions calculer directement l'intégrale le long de la courbe $C$
+en faisant la somme de l'intégrale le long de la courbe $C$ dans le
+plan $z=0$, puis dans le plan $x=0$ et finalement
+dans le plan $y=0$.  Ce n'est pas cette approche qui sera utilisée.
+Grâce au Théorème de Stokes, nous avons que
+\[
+  \int_C F\cdot \dx{\VEC{s}} = \iint_S \curl\,F \cdot \dx{\VEC{S}} \ .
+\]
+C'est cette dernière intégrale que nous allons évaluer.
+
+Une représentation paramétrique de $S$ est
+\[
+  (x,y,z) = \rho(r,\theta) = (r\cos(\theta) , r\sin(\theta), 4 - r^2)
+\]
+pour $0 \leq r \leq 2$ et $0 \leq \theta \leq \pi/2$.  Soit
+\begin{align*}
+\VEC{m} &= \pdydx{\rho}{r} \times \pdydx{\rho}{\theta}
+= \left( \cos(\theta), \sin(\theta), -2r \right) \times
+\left( -r\sin(\theta) , r\cos(\theta), 0 \right) \\
+&= \left( 2r^2\cos(\theta) , 2r^2\sin(\theta) , r \right) \ .
+\end{align*}
+le vecteur $\VEC{m}$ est un vecteur normal à la surface $S$
+qui pointe dans la direction de l'orientation de la
+surface $S$.  Notre choix de représentation paramétrique pour $S$ est
+donc consistant avec l'orientation de $S$.
+
+Puisque
+\[
+\curl\,F = \nabla \times F
+= \begin{vmatrix}
+\ii & \jj & \kk \\
+\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
+\displaystyle \pdydx{}{z} \\
+-yz(1-z) & xz & xyz
+\end{vmatrix}
+= \left( x(z-1), y(z-1), 2z -z^2 \right)
+\]
+si nous développons le déterminant selon la première ligne seulement,
+nous avons
+\begin{align*}
+\int_C F \cdot \dx{\VEC{s}}
+&= \iint_S \curl  F \cdot \dx{\VEC{S}}
+= \iint_D \curl  F(\rho(r,\theta)) \cdot
+\left(\pdydx{\rho}{r} \times \pdydx{\rho}{\theta}\right) \dx{A} \\
+&=\int_0^{\pi/2}\int_0^2 \left( r\cos(\theta)(3-r^2), r\sin(\theta)
+(3 -r^2) , -8 + 6r^2 -r^4 \right) \\
+& \qquad \cdot (2r^2\cos(\theta), 2r^2\sin(\theta),r)
+  \dx{r}\dx{\theta} \\
+& = \int_0^{\pi/2}\int_0^2 (-3r^5  + 12r^3 -8r) \dx{r}\dx{\theta}
+= \int_0^1 \left(-\frac{y^6}{2} + 3r^4 -4 r^2\right)\bigg|_{r=0}^2\dx{\theta}
+= 0 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q28}}{
+Le dessin de la surface $S$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/StokesQ5}
+Grâce au Théorème de Stokes, nous avons que
+\[
+  \iint_S \curl  F \cdot \dx{\VEC{S}}
+  = \int_C F \cdot \dx{\VEC{s}}
+\]
+où $C = \partial S$ est la frontière de $S$.  En fait, $C$ est le
+cercle $x^2+y^2=4$ pour $z=4$.  L'orientation positive sur $C$ qui est
+associée à l'orientation sur $S$ est dans le sens 
+contraire aux aiguilles d'une montre quand nous regardons $C$ à partir
+d'une point $(0,0,z)$ avec $z > 4$.
+
+Une représentation paramétrique pour $C$ est
+\[
+  (x,y,z) = \sigma(\theta) = (2\cos(\theta), 2\sin(\theta), 4)
+\]
+pour $0 \leq \theta < 2\pi$.  Nous avons
+\begin{align*}
+\iint_S \curl  F \cdot \dx{\VEC{S}}
+&= \int_C F \cdot \dx{\VEC{s}}
+= \int_0^{2\pi} \sigma(\theta) \cdot \sigma'(\theta) \dx{\theta} \\
+& = \int_0^{2\pi} \left(2\cos(\theta), 0, -2\sin(\theta)\right)\cdot
+\left( -2\sin(\theta), 2\cos(\theta), 0\right) \dx{\theta} \\
+& = -4 \int_0^{2\pi} \cos(\theta)\sin(\theta)\dx{\theta}
+= -2 \sin^2(\theta)\bigg|_0^{2\pi}  = 0 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{17Q29}}{
+Le dessin de la surface $S$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/StokesQ1}
+
+Nous pourrions calculer directement cette intégrale.  Cependant
+\begin{align*}
+\curl\,F &= \nabla \times F
+= \begin{vmatrix}
+\ii & \jj & \kk \\
+\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
+\displaystyle \pdydx{}{z} \\
+z^3 e^{xz^2} & z^4 e^{yz^2} & xy
+\end{vmatrix} \\
+&= \left( x - (4z^3 +2 yz^5)e^{yz^2} ,   -y + (3z^2 +2 xz^4)e^{xz^2},
+ 0 \right)
+\end{align*}
+si nous développons le déterminant selon la première ligne seulement.
+Ceci n'est pas très encourageant pour le calcul de l'intégrale.
+
+Nous allons donc utiliser le Théorème de Stokes qui dit que
+\[
+  \iint_S \curl\,F \cdot \dx{\VEC{S}}
+  = \int_C F\cdot \dx{\VEC{s}}
+\]
+où $C = \partial S$, la frontière de $S$.  Nous décomposons $C$ en deux
+courbes: $C_1$ est le cercle $x^2+y^2 =4$ avec $z=2$ et $C_2$ est le
+cercle $x^2+y^2 =4$ avec $z=4$.  L'orientation positive sur $C_1$ et
+$C_2$ imposée par l'orientation de $S$ est indiquée dans la figure
+ci-dessus; dans le sens contraire des aiguilles d'une montre sur
+$C_1$ et dans le sens des aiguilles d'une montre sur $C_2$ lorsque que
+vu d'un point $(0,0,z)$ avec $z > 4$.
+
+Une représentation paramétrique pour $C_1$ est
+\[
+  (x,y,z) = \sigma_1(\theta) = (2 \cos(\theta), 2\sin(\theta), 2)
+\]
+pour $0 \leq \theta \leq 2\pi$.  Puisque
+$\sigma_1'(\theta) = (-2\sin(\theta), 2\cos(\theta), 0)$,
+la représentation paramétrique est consistante avec l'orientation de $C_1$.
+
+Une représentation paramétrique pour $C_2$ est
+\[
+  (x,y,z) = \sigma_2(\theta) = (2 \cos(\theta), 2\sin(\theta), 4)
+\]
+pour $0 \leq \theta \leq 2\pi$.  Puisque
+$\sigma'(\theta) = (-2\sin(\theta), 2\cos(\theta), 0)$,
+cette représentation paramétrique est associée à
+l'orientation inverse de $C_2$.  Il faudra donc prendre la valeur
+négative de l'intégrale.
+
+Nous avons donc
+\begin{align*}
+\int_C F\cdot \dx{\VEC{s}} &=
+\int_{C_1} F\cdot \dx{\VEC{s}} + \int_{C_2} F\cdot
+\dx{\VEC{s}} \\
+&= \int_0^{2\pi} \left(
+8 e^{8\cos(\theta)}, 16 e^{8\sin(\theta)}, 4\cos(\theta)\sin(\theta)\right)
+\cdot (-2\sin(\theta), 2\cos(\theta), 0) \dx{\theta} \\
+&\qquad - \int_0^{2\pi} \left(
+64 e^{32\cos(\theta)}, 256 e^{32\sin(\theta)}, 16\cos(\theta)\sin(\theta)\right)
+\cdot (-2\sin(\theta), 2\cos(\theta), 0) \dx{\theta} \\
+&= -16 \int_0^{2\pi} \sin(\theta) e^{8\cos(\theta)} \dx{\theta}
++ 32 \int_0^{2\pi} \cos(\theta) e^{8\sin(\theta)} \dx{\theta} \\
+& \qquad +128 \int_0^{2\pi} \sin(\theta) e^{32\cos(\theta)} \dx{\theta}
+- 512 \int_0^{2\pi} \cos(\theta) e^{32\sin(\theta)}\dx{\theta} \\
+&= \left(2e^{8\cos(\theta)} \right)\bigg|_0^{2\pi} 
++ \left(4 e^{8\sin(\theta)} \right)\bigg|_0^{2\pi} 
+- \left( 4 e^{32\cos(\theta)} \right)\bigg|_0^{2\pi} 
+- \left( 16 e^{32\sin(\theta)}\right)\bigg|_0^{2\pi}
+= 0 \ .
+\end{align*}
+}
+
+\subsection{Théorème de la divergence}
+
+\compileSOL{\SOLUb}{\ref{17Q30}}{
+Le dessin du tétraède $E$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/DivQ2}
+
+Le Théorème de la divergence nous donne
+\[
+  \iint_S F \cdot \dx{\VEC{S}} = \iiint_E \diV  F \dx{V}
+\]
+où $S = \partial E$.  Puisque $\diV  F(x,y,z) = 3$, nous obtenons
+\begin{align*}
+\iiint_E \diV F \dx{V} &=
+3\int_0^1\int_0^{1-x}\int_{z=0}^{1-x-y} \dx{z}\dx{y}\dx{x}
+= 3\int_0^1\int_0^{1-x} \left(z\bigg|_0^{1-x-y}\right) \dx{z}\dx{y}\dx{x} \\
+& = 3\int_0^1\int_0^{1-x} (1-x-y) \dx{y}\dx{x} 
+  = 3\int_0^1\left(y-xy-\frac{y^2}{2}\right)\bigg|_{y=0}^{1-x} \dx{x} \\
+& = 3\int_0^1\left( \frac{x^2}{2} - x + \frac{1}{2}\right) \dx{x}
+= 3\left( \frac{x^3}{6} - \frac{x^2}{2} + \frac{x}{2}\right)\bigg|_0^1
+= \frac{1}{2} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{17Q31}}{
+Le dessin du solide $E$ est dooné ci-dessous.
+\PDFgraph{17_vector_calculus/DivQ1}
+
+Grâce au Théorème de la divergence, le flux de $F$ qui
+s'échappe de $E$ est donné par
+\[
+  \iint_S F \cdot \dx{\VEC{S}} = \iiint_E \diV  F \dx{V}
+\]
+où $S = \partial E$.  Pour calculer l'intégrale triple, utilisons les
+coordonnées cylindriques
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq \theta \leq 2\pi$, $0 \leq r \leq 1$ et
+$0 \leq z \leq 2$.  Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(\theta,r,z)} \right| =
+\left| \det \begin{pmatrix}
+  \displaystyle \pdydx{x}{\theta} & \displaystyle \pdydx{x}{r}
+  & \displaystyle \pdydx{x}{z} \\[0.8em]
+  \displaystyle \pdydx{y}{\theta} & \displaystyle \pdydx{y}{r}
+  & \displaystyle \pdydx{y}{z} \\[0.8em]
+  \displaystyle \pdydx{z}{\theta} & \displaystyle \pdydx{z}{r}
+  & \displaystyle \pdydx{z}{z}
+\end{pmatrix} \right|
+= 
+\left| \det \begin{pmatrix}
+  -r\sin(\theta) & \cos(\theta) & 0 \\
+  r\cos(\theta) & \sin(\theta) & 0 \\
+  0 & 0 & 1 \end{pmatrix} \right|
+= r
+\]
+et
+\[
+  \diV F(x,y,z) = 3 x^2 + 3 y^2 + 3 z^2 = 3(x^2 + y^2 + z^2) \ ,
+\]
+nous obtenons
+\begin{align*}
+\iiint_E \diV  F \dx{V} &=
+\int_0^{2\pi} \int_0^1 \int_0^2 3 (r^2 + z^2) r \dx{z} \dx{r} \dx{\theta}
+= \int_0^{2\pi} \int_0^1 \left( 3r^3 z + z^3 r \right)\bigg|_{z=0}^2
+\dx{r}\dx{\theta} \\
+&= \int_0^{2\pi} \int_0^1 \left(6 r^3 + 8r \right) \dx{r} \dx{\theta}
+= \int_0^{2\pi} \left(\frac{3}{2} r^4 + 4r^2 \right)\bigg|_{r=0}^1 \dx{\theta}
+= \frac{11}{2} \int_0^{2\pi} \dx{\theta} = 11\pi \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{17Q32}}{
+Le dessin du solide $E$ est donné ci-dessous.
+\PDFgraph{17_vector_calculus/DivQ3}
+
+Grâce au Théorème de la divergence, Le flux de $F$ qui
+s'échappe de $E$ est donné par
+\[
+  \iint_S F \cdot \dx{\VEC{S}} = \iiint_E \diV  F \dx{V}
+\]
+où $S = \partial E$.  Pour calculer l'intégrale triple, nous utilisons les
+coordonnées cylindriques
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq \theta \leq 2\pi$, $0 \leq r \leq 2$ et
+$0 \leq z \leq 4-r^2$.  Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(\theta,r,z)} \right| =
+\left| \det \begin{pmatrix}
+  \displaystyle \pdydx{x}{\theta} & \displaystyle \pdydx{x}{r}
+  & \displaystyle \pdydx{x}{z} \\[0.8em]
+  \displaystyle \pdydx{y}{\theta} & \displaystyle \pdydx{y}{r}
+  & \displaystyle \pdydx{y}{z} \\[0.8em]
+  \displaystyle \pdydx{z}{\theta} & \displaystyle \pdydx{z}{r}
+  & \displaystyle \pdydx{z}{z}
+\end{pmatrix} \right|
+= 
+\left| \det \begin{pmatrix}
+  -r\sin(\theta) & \cos(\theta) & 0 \\
+  r\cos(\theta) & \sin(\theta) & 0 \\
+  0 & 0 & 1 \end{pmatrix} \right|
+= r
+\]
+et $\displaystyle \diV F(x,y,z) = x^2 + y^2$, nous obtenons
+\begin{align*}
+\iiint_E \diV  F \dx{V} &=
+\int_0^{2\pi} \int_0^2 \int_0^{4-r^2}  r^3 \dx{z} \dx{r} \dx{\theta}
+= \int_0^{2\pi} \int_0^2 \left( r^3 z \right)\bigg|_{z=0}^{4-r^2}
+\dx{r}\dx{\theta} \\
+&= \int_0^{2\pi} \int_0^2 \left(4 r^3 - r^5 \right) \dx{r} \dx{\theta}
+= \int_0^{2\pi} \left( r^4 - \frac{r^6}{6} \right)\bigg|_{r=0}^2 \dx{\theta}
+= \frac{16}{3} \int_0^{2\pi} \dx{\theta}
+= \frac{32\pi}{3} \ .
+\end{align*}
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

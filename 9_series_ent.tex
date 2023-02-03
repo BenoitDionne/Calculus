@@ -1,0 +1,1656 @@
+\chapter[Séries entières \eng]{Séries entières\\ \eng}\label{chapSerEnt}
+
+\compileTHEO{
+
+Ce chapitre est d'une nature plus théorique que les chapitres
+précédents.  Les séries entières vont nous permettre de définir
+plusieurs fonctions qui sont solutions
+{\em d'équations différentielles}, le sujet du 
+chapitre~\ref{chap_equ_diff} et qui est normalement étudié plus
+profondément après les premiers cours de calcul différentiel et
+intégral.  Nous présentons dans ce chapitre plusieurs techniques pour
+déterminer si une série entière converge.  Finalement, ceux pour qui
+la théorie les intéresse pourront apprécier la définition rigoureuse
+de la fonction $e^x$ donnée dans la dernière section du chapitre.
+  
+\section{Convergence des séries entières} 
+
+\begin{focus}{\dfn}
+Une {\bfseries série entière au voisinage de $c \in \RR$} (ou
+{\bfseries près de $c$})\index{Série entière} est une séries de la forme
+\[
+\sum_{n=0}^\infty a_n (x-c)^n \; .\,
+\]
+où $\displaystyle \left\{a_n\right\}_{n=0}^\infty$ est une suite de
+nombres réels.  Les nombres $a_n$ pour $n=0$, $1$, $2$, \ldots sont
+appelés les {\bfseries coefficients} \index{Série entière!coefficient}
+de la série et $a_n (x-c)^n$ pour $n=0$, $1$, $2$, \ldots\ sont les
+{\bfseries termes de la série}. \index{Série entière!terme}
+\end{focus}
+
+Pour chaque valeur de $x$, nous avons une série de nombres réels pour
+laquelle il faut déterminer la convergence.
+
+\begin{focus}{\dfn}
+Soit
+\[
+\sum_{n=0}^\infty a_n (x-c)^n
+\]
+une série entière au voisinage de $c$.  Nous disons que la série entière
+{\bfseries converge} pour une valeur de $x$ si la limite
+\[
+\lim_{k\rightarrow \infty} \sum_{n=0}^k a_n (x-c)^n
+\]
+existe pour cette valeur de $x$.  Nous dénotons cette limite par
+$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$.
+\index{Série entière!convergence}  La somme
+$\displaystyle \sum_{n=0}^k a_n (x-c)^n$ est une {\bfseries somme partielle}
+de la série. \index{Série entière!somme partielle}
+
+le contexte détermine si $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ fait
+référence à la série entière où la limite de la série entière pour une valeur
+de $x$.
+\end{focus}
+
+Selon la valeur de $x$, la série peut converger (absolument ou
+conditionnellement) ou diverger.
+
+\begin{egg}
+La série entière $\displaystyle \sum_{n=0}^\infty \frac{x^n}{n!}$ converge
+absolument pour tout $x$.
+
+Les termes de cette série sont $\displaystyle a_n = \frac{x^n}{n!}$.
+Ainsi,
+\[
+\lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}
+= \lim_{n\rightarrow \infty} \frac{|x|^{n+1}/(n+1)!}{|x|^n/n!}
+= \lim_{n\rightarrow \infty} \frac{|x|}{n+1} = 0 < 1
+\]
+pour tout $x$.  Donc, par le test du quotient, la série converge absolument
+pour tout $x$.
+\label{exp_serie_egg}
+\end{egg}
+
+\begin{egg}
+Montrons que la série
+$\displaystyle \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ converge
+absolument pour $9/5 < x < 11/5$.
+
+Les termes de la série sont de la forme
+$\displaystyle a_n = \frac{(-5)^n(x-2)^n}{n^2+1}$.
+Ainsi,
+\begin{align*}
+\lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}
+&= \lim_{n\rightarrow \infty} \frac{5^{n+1}|x-2|^{n+1}/((n+1)^2+1)}
+{5^n|x-2|^n/(n^2+1)} \\
+&= \lim_{n\rightarrow \infty} \frac{5\,|x-2|(n^2+1)}{n^2+2n+2}
+= \lim_{n\rightarrow \infty} \frac{5\,|x-2|(1+1/n^2)}{1+2/n+2/n^2}
+ = 5\,|x-2| < 1
+\end{align*}
+pour $9/5 < x < 11/5$.  Donc, par le test du quotient, la
+série converge absolument pour $9/5 < x < 11/5$.
+De plus, le test du quotient dit que la série diverge pour $x<9/5$ et
+$x>11/5$ car nous avons alors que
+\[
+\lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} > 1 \; .
+\]
+\label{entiere_egg}
+\end{egg}
+
+À l'exemple précédent, nous avons montrer que la série convergeait
+pour $|x-2|<1/5$ et divergeait pour $|x-2|>1/5$.  Le théorème suivant
+confirme que c'est typique des séries entières.
+
+\begin{focus}{\thm}
+Soit $\displaystyle \left\{a_n\right\}_{n=0}^\infty$ une suite de nombres
+réels et $c$ un nombre réelle.  Soit que la séries entière
+$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ diverge pour toute valeur
+de $x \neq c$ ou il existe un nombre $R>0$ ($R=\infty$ est admissible)
+tel que la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
+converge absolument pour $|x-c|<R$ et diverge pour $|x-c|>R$.
+\end{focus}
+
+\begin{rmk}
+Le théorème précédent ne dit rien au sujet de la convergence de la série
+$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ pour $|x-c|=R$.  Il
+faut utiliser les tests de convergence qui ont été présentés aux
+sections~\ref{conv_tests} et \ref{serie_alt} pour déterminer la convergence
+de $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ pour ces valeurs de $x$.
+\end{rmk}
+
+\begin{egg}[][Suite de l'exemple~\ref{entiere_egg}] \label{entiere_eggS}
+Nous avons montré que la série
+$\displaystyle \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ convergeait
+pour $|x-2|<1/5$ et divergeait pour $|x-2|>1/5$.  Avons-nous convergence
+pour $x=9/5$ et $x=11/5$?
+
+Si $x=9/5$, nous obtenons la série de termes positifs
+\[
+\sum_{i=0}^\infty \frac{1}{n^2+1} = 1 + \sum_{i=1}^\infty \frac{1}{n^2+1} \; .
+\]
+Cette dernière série converge car
+$\displaystyle \frac{1}{n^2+1} < \frac{1}{n^2}$ et la série
+$\displaystyle \sum_{i=1}^\infty \frac{1}{n^2}$ converge d'après la
+proposition~\ref{Pseries}.
+
+Si $x=11/5$, nous obtenons la série alternée
+\[
+\sum_{i=0}^\infty \frac{(-1)^n}{n^2+1} \; .
+\]
+Cette série satisfait le test des séries alternées et donc converge.  En
+effet, c'est une série de la forme
+$\displaystyle \sum_{i=0}^\infty (-1)^n a_n$ avec $a_n = 1/(n^2+1)$.  Nous avons
+$a_n>0$ et $a_{n+1} < a_n$ pour tout $n$.  De plus
+$\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
+\end{egg}
+
+\begin{focus}{\dfn}
+Le {\bfseries rayon de convergence} d'une série entière
+$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ est le nombre $R$ tel que la
+série converge pour $|x-c|<R$ et diverge pour $|x-c|>R$.
+\index{Série entière!rayon de convergence}
+
+L'{\bfseries intervalle de convergence} est
+$\displaystyle \left\{x : \sum_{n=0}^\infty a_n (x-c)^n
+\text{ converge} \right\}$.
+\index{Série entière!intervalle de convergence}
+\end{focus}
+
+\begin{egg}[][Suite de l'exemple~\ref{entiere_eggS}]
+Le rayon de convergence de la série
+$\displaystyle \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ est
+$1/5$ et l'intervalle de convergence est
+$\displaystyle \left[\frac{9}{5} , \frac{11}{5}\right]$.
+\end{egg}
+
+Le théorème suivant est une conséquence du test du quotient pour les séries
+de nombres.
+
+\begin{focus}{\thm} \label{RadiusConvComp}
+Le rayon de convergence $R$ de la série entière
+$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ est donnée par
+\[
+\frac{1}{R} = \lim_{n\rightarrow \infty} \left|\frac{a_{n+1}}{a_n}\right|
+\]
+si cette limite existe.  Si la limite est $0$, alors $R=\infty$.
+\end{focus}
+
+\begin{egg}
+Trouvons le rayon de convergence et l'intervalle de convergence de la série
+\begin{equation}\label{exSRSone}
+\sum_{n=1}^\infty \frac{2\times 4 \times \ldots \times (2n)}
+{1 \times 3 \times \ldots \times (2n-1)} \, x^n \; .
+\end{equation}
+
+C'est une série de la forme $\displaystyle \sum_{n=1}^\infty a_n x^n$ où
+\[
+a_n = \frac{2 \times 4 \times \ldots \times (2n)}
+{1 \times 3 \times \ldots \times (2n-1)} \; .
+\]
+Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n}\right|
+= \lim_{n\rightarrow \infty} \left|
+\frac{\displaystyle \frac{2 \times 4 \times \ldots \times (2n+2)}
+{\displaystyle 1 \times 3 \times \ldots \times (2n+1)}}
+{\displaystyle \frac{2 \times 4 \times \ldots \times (2n)}
+{\displaystyle 1 \times 3 \times \ldots \times (2n-1)}} \right|
+= \lim_{n\rightarrow \infty} \left| \frac{2n-2}{2n+1} \right| = 1 \ ,
+\]
+le rayon de convergence de (\ref{exSRSone}) est $R=1$.
+
+Pour $x=1$, nous obtenons la série
+\begin{equation}\label{exSRSoneA}
+\sum_{n=1}^\infty \frac{2\times 4 \times \ldots \times (2n)}
+{1 \times 3 \times \ldots \times (2n-1)} \; .
+\end{equation}
+C'est une série de la forme $\displaystyle \sum_{n=1}^\infty a_n$ où
+\[
+a_n = \frac{2\times 4 \times \ldots \times (2n)}
+{1 \times 3 \times \ldots \times (2n-1)}
+ = \frac{2}{1}\times \frac{4}{3} \times \ldots \times \frac{2n}{2n-1}
+>1
+\]
+pour tout $n$.  Puisque la suite
+$\displaystyle \left\{ a_n \right\}_{n=1}^\infty$ des termes de la
+série ne tend pas vers $0$, la série (\ref{exSRSoneA}) ne converge
+pas.
+
+Pour $x=-1$, nous obtenons la série
+\begin{equation}\label{exSRSoneB}
+\sum_{n=1}^\infty (-1)^n \,\frac{2\times 4 \times \ldots \times (2n)}
+{1 \times 3 \times \ldots \times (2n-1)} \; .
+\end{equation}
+C'est une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n$ où
+\[
+a_n = (-1)^n \, \frac{2\times 4 \times \ldots \times (2n)}
+{1 \times 3 \times \ldots \times (2n-1)}
+ = (-1)^n \,\frac{2}{1}\times \frac{4}{3} \times \ldots \times
+\frac{2n}{2n-1} \; .
+\]
+Donc $a_n > 1$ pour $n$ pair et $a_n<-1$ pour $n$ impair.  Comme pour la
+série précédente, la suite
+$\displaystyle \left\{ a_n \right\}_{n=1}^\infty$ des termes de la
+série ne converge pas vers $0$.  La série (\ref{exSRSoneB}) ne
+converge donc pas.
+
+L'intervalle de convergence est $]-1,1[$.
+\end{egg}
+
+\section{Fonctions définies par des séries}
+
+\begin{focus}{\thm} \label{der_int_series}
+Considérons la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
+dont le rayon de convergence est $R>0$, et la fonction
+$f:]c-R,c+R[\rightarrow \RR$ définie par
+\[
+f(x) = \sum_{n=0}^\infty a_n (x-c)^n \quad , \quad c-R<x<c+R \; .
+\]
+Alors $f$ est différentiable sur l'intervalle $]c-R,c+R[$ et
+\begin{equation}\label{derseries}
+f'(x) = \sum_{n=1}^\infty n\,a_n (x-c)^{n-1} \quad , \quad c-R<x<c+R \; .
+\end{equation}
+Cette série converge au moins pour $c-R<x<c+R$.
+
+De plus, si $c-R<a<b<c+R$, l'intégrale de $f$ entre $a$
+à $b$ existe et est donnée par
+\begin{equation}\label{intseries}
+\int_a^b f(x) \dx{x} =
+\sum_{n=1}^\infty \left(\frac{a_n}{n+1} (x-c)^{n+1}\right) \bigg|_{x=a}^b \; .
+\end{equation}
+Cette série numérique converge.
+\end{focus}
+
+\begin{rmk}
+En d'autres mots, l'équation (\ref{derseries}) dit que pour dériver une
+fonction donnée par une série entière, il suffit de dériver chacun des termes
+de la série car
+\[
+\dfdx{a_n (x-c)^n}{x} = n\, a_n (x-c)^{n-1} \; .
+\]
+Alors que l'équation (\ref{intseries}) dit que pour intégrer
+une fonction donnée par une série entière il suffit d'intégrer chacun des
+termes de la série car
+\[
+\int_a^b a_n (x-c)^n \dx{x} 
+= \frac{a_n}{n+1} (x-c)^{n+1} \bigg|_{x=a}^b \; .
+\]
+\end{rmk}
+
+Si nous remplaçons $x$ par $t$, $a$ par $c$ et $b$ par $x$ dans l'équation
+(\ref{intseries}), nous obtenons
+\[
+\int_c^x f(t) \dx{t} =
+\sum_{n=1}^\infty \frac{a_n}{n+1} (t-c)^{n+1} \bigg|_{t=c}^x
+= \sum_{n=1}^\infty \frac{a_n}{n+1} (x-c)^{n+1} \;.
+\]
+Puisque $\displaystyle F(x) = \int_c^x f(t) \dx{t}$ est une primitive
+de $f$, nous pouvons énoncer le corollaire suivant.
+
+\begin{focus}{\cor}
+Considérons la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
+dont le rayon de convergence est $R>0$, et la fonction
+$f:]c-R,c+R[\rightarrow \RR$ définie par
+\[
+f(x) = \sum_{n=0}^\infty a_n (x-c)^n \quad , \quad c-R<x<c+R \; .
+\]
+Une primitive de $f$ sur l'intervalle $]c-R,c+R[$ est donnée
+par
+\[
+\int f(x) \dx{x} = \sum_{n=1}^\infty \frac{a_n}{n+1} (x-c)^{n+1} +C
+\]
+où $C$ est une constante.  La série précédente converge au moins pour
+$c-R<x<c+R$.
+\end{focus}
+
+\begin{egg}
+La série géométrique que nous avons vu à l'exemple~\ref{geoseries} est
+\begin{equation}\label{derintgeo}
+\frac{1}{1-x} = \sum_{n=0}^\infty x^n  \quad , \quad |x|<1 \; .
+\end{equation}
+En dérivant des deux cotés, nous obtenons
+\[
+\frac{1}{(1-x)^2} = \sum_{n=1}^\infty nx^{n-1}  \quad , \quad |x|<1 \; .
+\]
+C'est une série convergente pour $|x|<1$ qui représente la fonction
+$1/(1-x)^2$ pour $|x|<1$.  En intégrant des deux cotés de
+(\ref{derintgeo}), nous obtenons
+\[
+- \ln|1-x| = \sum_{n=0}^\infty \frac{x^{n+1}}{n+1} + C
+  \quad , \quad |x|<1 \; .
+\]
+Pour $x=0$, cette équation donne $0 = -\ln(1) = C$.  Donc
+\[
+\ln|1-x| = - \sum_{n=0}^\infty \frac{x^{n+1}}{n+1}   \quad , \quad |x|<1 \; .
+\]
+C'est une série convergente pour $|x|<1$ qui représente la
+fonction $\ln|1-x|$ pour $|x|<1$.
+\end{egg}
+
+\section{Séries de Taylor et de MacLaurin}
+
+À la section~\ref{approx_local}, nous avons vu le théorème de Taylor
+qui, pour une fonction donnée, donne un polynôme qui permet d'estimer
+cette fonction.  Plus 
+précisément, si $f:[a,b]\rightarrow \RR$ est une fonction continue sur
+l'intervalle $[a,b]$, $f$ est $(k+1)$ fois différentiables sur $]a,b[$ où
+$k\geq 0$, et $x$ et $c$ sont dans l'intervalle $]a,b[$, alors il existe
+$\xi = \xi(k,c,x)$ entre $x$ et $c$ tel que
+\begin{equation}\label{TPfourTS1}
+f(x) = p_k(x) + r_k(x)  \ ,
+\end{equation}
+où
+\begin{equation}\label{TPfourTS2}
+p_k(x) = \sum_{n=0}^k \frac{1}{n!} f^{(n)}(c)(x-c)^n
+\quad \text{et} \quad
+r_k(x) = \frac{1}{(k+1)!} f^{(k+1)}(\xi)\, (x-c)^{k+1} \ . 
+\end{equation}
+
+Si $f$ est infiniment différentiable, est-il vrai que
+\begin{equation}\label{problTaylor}
+f(x) = \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(c)(x-c)^n
+\end{equation}
+pour $x \in ]a,b[$?  Non, ce n'est pas toujours vrai.  L'expression en
+(\ref{problTaylor}) peut être fausse de plusieurs façons.
+\begin{enumerate}
+\item La série en (\ref{problTaylor}) peut ne pas converger pour $x\neq c$.
+\item La série en (\ref{problTaylor}) peut converger pour certaines valeurs
+de $x$ mais la limite de la série peut être différente de $f(x)$ à ces
+valeurs de $x$.
+\end{enumerate}
+
+\begin{egg}
+Pour illustrer la deuxième cas où (\ref{problTaylor}) peut être faux,
+considérons la fonction
+\[
+f(x) = \begin{cases}
+e^{-1/x^2} & \quad \text{pour} \quad x\neq 0 \\
+0 & \quad \text{pour}\quad x = 0
+\end{cases}
+\]
+A partir de la définition de la dérivée d'une fonction, nous pouvons montrer que
+$\displaystyle \dydxn{f}{x}{n}(0) = 0$ pour tout $n>0$.
+Donc
+\[
+\sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)x^n = 0 \quad , \quad
+x \in \RR \; .
+\]
+C'est une série qui converge pour tout $x\in \RR$.  En fait, cette série
+converge vers $0$ pour tout $x\in \RR$.  Malheureusement, pour
+$x \neq 0$, cette série ne converge pas vers $f(x) \neq 0$.
+\end{egg}
+
+% \begin{egg}
+% L'exemple suivant illustre le premier cas où (\ref{problTaylor}) peut
+% être faux.
+
+% À venir.
+% \end{egg}
+
+\begin{egg}
+Bien souvent l'intervalle de convergence de la série de Taylor est une
+fraction du domaine de la fonction.  Considérons la série
+\[
+\sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)x^n
+\]
+pour $\displaystyle f(x) = \frac{1}{1-x}$.  Puisque
+\[
+f^{(n)}(x) = \frac{n!}{(1-x)^{n+1}} \quad \text{pour} \quad n=0, 1, 2,
+\ldots
+\]
+nous avons que $\displaystyle f^{(n)}(0) = n!$ pour $n=0$, $1$, $2$,
+\ldots\quad  Donc
+\[
+\sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)x^n = \sum_{n=0}^\infty x^n
+\; .
+\]
+C'est la série géométrique qui converge seulement pour $|x| <1$
+(l'exemple~\ref{geoseries}).  Pour $|x|< 1$, la série converge bien
+vers $f(x)$ mais la fonction $f$ est définie pour tout $x\neq 1$.
+\label{eggtaylorgeom}
+\end{egg}
+
+Malgré les points négatifs que nous venons de soulever, l'expression
+(\ref{problTaylor}) est très importante.
+
+\begin{focus}{\dfn} \index{Série de Taylor}\index{Série de MacLaurin}
+Soit $f;]a,b[\rightarrow \RR$ une fonction infiniment différentiable.  La
+{\bfseries série de Taylor de $f$ près de $c \in ]a,b[$} est la série
+\begin{equation}\label{TaylorSeries}
+f(x) \sim \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(c)(x-c)^n \; .
+\end{equation}
+Lorsque $c=0$, cette série est aussi appelée la
+{\bfseries série de MacLaurin de $f$}.
+
+Le symbole $\sim$ indique seulement que la série est associée à la fonction
+$f$.  Nous ne savons pas si la série converge ou si elle converge vers $f(x)$
+pour $x\in]a,b[$ près de $c$.
+\end{focus}
+
+\begin{focus}{\mth}
+Soit $f:]a,b[\rightarrow \RR$ une fonction infiniment différentiable et
+$c \in ]a,b[$.  Pour déterminer si la série de Taylor de $f$ près de $c$
+converge et si elle converge vers $f(x)$ pour $x\in]a,b[$ près de $c$, il
+faut démontrer que le reste $r_k(x)$ définie en (\ref{TPfourTS2}) satisfait
+\[
+\lim_{k\rightarrow \infty} r_k(x) =
+\lim_{k\rightarrow \infty}
+\frac{1}{(k+1)!} f^{(k+1)}(\xi(k,c,x)) (x-c)^{k+1} = 0
+\]
+pour $x$ près de $c$.
+\end{focus}
+
+\begin{rmk}[\theory]
+Le reste $r_k$ pour le Théorème de Taylor, théorème~\ref{theoTaylor}, est
+aussi donné par la formule suivante.
+\begin{equation}\label{TRest}
+r_k(x) = \frac{1}{k!} \int_c^x (x-t)^k f^{(k+1)}(t) \dx{t} \; .
+\end{equation}
+Le Théorème de Taylor est parfois présenté avec cette formule pour le 
+reste.
+
+La démonstration de la formule (\ref{TRest}) est une suite d'intégrations par
+parties.  Si $f$ est suffisamment différentiable, alors
+\[
+r_k(x) = \frac{1}{k!} \int_c^x (x-t)^k f^{(k+1)}(t) \dx{t} 
+= \int_c^x g(t)h'(t) \dx{t}
+\]
+où $\displaystyle g(t) = \frac{(x-t)^k}{k!}$ et $h'(t) = f^{(k+1)}(t)$.
+Donc $\displaystyle g'(t) = -\frac{(x-t)^{k-1}}{(k-1)!}$, 
+$h(t) = f^{(k)}(t)$ et
+\begin{align}
+r_k(x) &= g(t)h(t)\bigg|_c^x - \int_c^x g'(t)h(t)\dx{t} =
+\left(\frac{(x-t)^k}{k!} f^{(k)}(t)\right)\bigg|_c^x +
+\int_c^x \frac{(x-t)^{k-1}}{(k-1)!} f^{(k)}(t) \dx{t} \nonumber \\
+&= -\frac{(x-c)^k}{k!} f^{(k)}(c)
++\int_c^x \frac{(x-t)^{k-1}}{(k-1)!} f^{(k)}(t) \dx{t} \ . \label{TRestA}
+\end{align}
+Nous utilisons encore une fois la méthode d'intégration par parties.
+Nous avons
+\[
+\int_c^x \frac{(x-t)^{k-1}}{(k-1)!} f^{(k)}(t) \dx{t}
+= \int_c^x g(t)h'(t) \dx{t}
+\]
+où $\displaystyle g(t) = \frac{(x-t)^{k-1}}{(k-1)!}$ et
+$h'(t) = f^{(k)}(t)$.  Donc
+$\displaystyle g'(t) = -\frac{(x-t)^{k-2}}{(k-2)!}$, 
+$h(t) = f^{(k-1)}(t)$ et
+\begin{align*}
+\int_c^x \frac{(x-t)^{k-1}}{(k-1)!} f^{(k)}(t) \dx{t}
+&= g(t)h(t)\bigg|_0^x - \int_0^x g'(t)h(t)\dx{t} \\
+&= \left(\frac{(x-t)^{k-1}}{(k-1)!} f^{(k-1)}(t)\right)\bigg|_c^x +
+\int_c^x \frac{(x-t)^{k-2}}{(k-2)!} f^{(k-1)}(t) \dx{t} \\
+&= -\frac{(x-c)^{k-1}}{(k-1)!} f^{(k-1)}(c) 
++\int_c^x \frac{(x-t)^{k-2}}{(k-2)!} f^{(k-1)}(t) \dx{t} \ .
+\end{align*}
+En combinant ce dernier résultat avec (\ref{TRestA}), nous obtenons
+\[
+r_k(x) = -\frac{(x-c)^k}{k!} f^{(k)}(c)
+-\frac{(x-c)^{k-1}}{(k-1)!} f^{(k-1)}(c) 
++\int_c^x \frac{(x-t)^{k-2}}{(k-2)!} f^{(k-1)}(t) \dx{t} \ .
+\]
+Après $k$ intégrations par parties, nous obtenons
+\[
+r_k(x) = -\frac{(x-c)^k}{k!} f^{(k)}(c)
+-\frac{(x-c)^{k-1}}{(k-1)!} f^{(k-1)}(c) -
+\ldots - (x-c) f'(c) +\int_c^x f'(t) \dx{t} \ .
+\]
+Puisque $\displaystyle \int_c^x f'(t)\dx{t} = f(x)-f(c)$, nous obtenons
+finalement
+\begin{align*}
+f(x) &= f(c) +  f'(c) (x-c) + \frac{f''(c)}{2!}(x-c)^2
++ \frac{f^{(3)}(c)}{3!} (x-c)^3 + \ldots \\
+&\qquad
++ \frac{(x-c)^{k-1}}{(k-1)!} f^{(k-1)}(c) + \frac{(x-c)^k}{k!} f^{(k)}(c)
++ r_k(x) \ .
+\end{align*}
+
+Pour la formule du reste donnée au théorème~\ref{theoTaylor},
+supposons que $c<x$.  La démonstration dans le cas $c>x$ est
+identique.  Soit
+\[
+m = \min \{ f^{k+1}(t) : c \leq t \leq x \} \quad \text{et} \quad
+M = \max \{ f^{k+1}(t) : c \leq t \leq x \} \ .
+\]
+Nous avons donc
+\[
+\frac{m}{k!} \int_c^x (x-t)^k \dx{t} \leq
+r_k(x) = \frac{1}{k!} \int_c^x (x-t)^k f^{(k+1)}(t) \dx{t} \leq
+\frac{M}{k!} \int_c^x (x-t)^k \dx{t} \ .
+\]
+Ce qui donne
+\[
+-\frac{m}{(k+1)!}\; (x-t)^{k+1}\bigg|_c^x \leq r_k(x) \leq
+-\frac{M}{(k+1)!}\; (x-t)^{k+1}\bigg|_c^x
+\]
+et, plus précisément,
+\[
+\frac{m}{(k+1)!}\; (x-c)^{k+1} \leq r_k(x) \leq
+\frac{M}{(k+1)!}\; (x-c)^{k+1} \ .
+\]
+Finalement, nous avons
+\[
+m \leq \frac{(k+1)!}{(x-c)^{k+1}}\; r_k(x) \leq M \ .
+\]
+Le théorème des valeurs intermédiaires peut être utilisé pour trouver
+$\xi = \xi(k,c,x)$ entre $c$ et $x$ tel que
+\[
+f^{(k+1)}(\xi) = \frac{(k+1)!}{(x-c)^{k+1}}\; r_k(x) \ .
+\]
+Ainsi,
+\[
+r_k(x) = \frac{f^{(k+1)}(\xi)}{(k+1)!}\; (x-c)^{k+1}  \ .
+\]
+\end{rmk}
+
+\begin{egg}
+À l'exemple~\ref{eggtaylorgeom}, nous avons vu que la série de MacLaurin de
+$\displaystyle f(x) = \frac{1}{1-x}$ est la série géométrique
+$\displaystyle \sum_{n=0}^\infty x^n$.  À l'exemple~\ref{geoseries}, 
+nous avons aussi vu que cette série tend vers $f(x)$ pour $-1< x < 1$.
+
+Utilisons la formule du reste $r_k$ donnée en (\ref{TPfourTS2}) pour
+démontrer d'une autre façon que la série géométrique tend vers $f(x)$
+pour $x$ près de $0$.  En effet, puisque
+\[
+f^{(n)}(x) = \frac{n!}{(1-x)^{n+1}} \quad \text{pour} \quad n=0, 1, 2, \ldots
+\]
+nous avons que
+\[
+|r_k(x)| =
+\left| \frac{1}{(k+1)!} f^{(k+1)}(\xi) x^{k+1} \right|
+= \left| \frac{1}{(1-\xi)^{k+2}} x^{k+1} \right|
+= \frac{|x|^{k+1}}{|1-\xi|^{k+2}}  \; .
+\]
+Pour $-1<x<0$, nous avons que $\xi <0$ car $\xi$ est entre $x$ et $0$
+pour tout $k$.  Ainsi,
+\[
+0 \leq |r_k(x)|
+= \frac{|x|^{k+1}}{|1-\xi|^{k+2}} < |x|^{k+1} \rightarrow 0
+\quad \text{lorsque} \quad k \rightarrow \infty
+\]
+car $|x|<1$.  Par le théorème des gendarmes,
+\[
+\lim_{k\rightarrow \infty} |r_k(x)| = 0 \quad \text{pour} \quad -1<x<0 \; .
+\]
+Pour $0\leq x <1/2$, toujours en utilisant le fait que $\xi$ est entre
+$0$ et $x$, nous avons que
+\[
+0 \leq \frac{|x|^{k+1}}{|1-\xi|^{k+2}} < \frac{|x|^{k+1}}{|1-x|^{k+2}}
+= \left(\frac{x}{1-x}\right)^{k+1} \frac{1}{1-x} \rightarrow 0
+\quad \text{lorsque} \quad k \rightarrow \infty
+\]
+car
+\[
+0 \leq \frac{x}{1-x} < 1 \quad \text{pour} \quad 0\leq x <1/2 \; .
+\]
+Par le théorème des gendarmes,
+\[
+\lim_{k\rightarrow \infty} |r_k(x)| = 0 \quad \text{pour} \quad 0\leq x< 1/2 \; .
+\]
+
+Démontrer à l'aide de la formule du reste que la série converge aussi pour
+$1/2 \leq x <1$ demande une analyse plus poussée que nous ne ferons pas.
+\end{egg}
+
+\begin{egg}
+Trouvons la séries de MacLaurin de $\cos(x)$ et montrons qu'elle
+converge vers $\cos(x)$ pour tout $x$.  Nous allons faire de même pour
+$\sin(x)$.
+
+\subQ{i} Soit $f(x) = \cos(x)$.  Puisque
+\[
+f'(x) = -\sin(x) \ , \ f''(x) = -\cos(x) \ , \ f^{(3)}(x) =
+\sin(x) \ \text{et} \ f^{(4)}(x) = \cos(x) = f(x) \ ,
+\]
+nous avons que
+\[
+f^{(4m)}(x) = \cos(x) \ , \ f^{(4m+1)}(x) = -\sin(x) \ , \ 
+f^{(4m+2)}(x) = -\cos(x) \ \text{et} \ f^{(4m+3)}(x) = \sin(x)
+\]
+pour $m=0$, $1$, $2$, \ldots\quad  Donc
+\begin{align*}
+f^{(4m)}(0) &= \cos(0) = 1 \ , \ f^{(4m+1)}(0) = -\sin(0) = 0 \ , \ 
+f^{(4m+2)}(0) = -\cos(0) = -1 \\
+&\text{et} \ f^{(4m+3)}(0) = \sin(0) = 0
+\end{align*}
+pour $m=0$, $1$, $2$, \ldots\quad  En résumé, $f^{(n)}(0) = 0$ lorsque $n$ est
+impaire, $f^{(n)}(0) = 1$ lorsque $n=0$, $4$, $8$, \ldots \  et
+$f^{(n)}(0) = -1$ lorsque $n=2$, $6$, $10$, \ldots \  La série de MacLaurin
+de $\cos(x)$ est donc
+\[
+\cos(x) \sim \sum_{n=0}^\infty \frac{1}{n!}\,f^{(n)}(0) \, x^n
+= \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} \, x^{2n}
+\; .
+\]
+
+Montrons que cette série converge vers $\cos(x)$ pour tout $x$ en
+montrant que
+\[
+\lim_{k\rightarrow \infty} r_k(x) =
+\lim_{k\rightarrow \infty}
+\frac{1}{(k+1)!} f^{(k+1)}(\xi) x^{k+1} = 0
+\]
+pour tout $x$.  Puisque
+$\displaystyle \left| f^{(k+1)}(\xi) \right|
+= \left| (-1)^{(k+1)/2} \cos(\xi) \right| \leq 1$ pour $k$ impaire et
+$\displaystyle \left| f^{(k+1)}(\xi) \right|
+= \left| (-1)^{k/2+1} \sin(\xi) \right| \leq 1$ pour $k$ pair, nous avons
+\[
+0 \leq \left| r_k(x) \right| \leq \left| \frac{x^{k+1}}{(k+1)!} \right|
+\rightarrow 0 \quad \text{lorsque} \quad k \rightarrow \infty
+\]
+quel que soit $x$ (remarque~\ref{r_sin_cos} ci-dessous).  Il
+découle du théorème des gendarmes que
+$\displaystyle \lim_{k\rightarrow \infty} r_k(x) = 0$ pour tout $x$.
+
+\subQ{ii} Soit $g(x) = \sin(x)$.  Puisque
+\[
+g'(x) = \cos(x) \ , \ g''(x) = -\sin(x) \ , \ g^{(3)}(x) = -\cos(x) \ 
+\text{et} \ g^{(4)}(x) = \sin(x) = g(x) \ , 
+\]
+nous avons que
+\[
+g^{(4m)}(x) = \sin(x) \ , \ g^{(4m+1)}(x) = \cos(x) \ , \ g^{(4m+2)}(x) =
+-\sin(x) \ \text{et} \ g^{(4m+3)}(x) = -\cos(x)
+\]
+pour $m=0$, $1$, $2$, \ldots\quad  Ainsi,
+\begin{align*}
+g^{(4m)}(0) &= \sin(0) = 0 \ , \ g^{(4m+1)}(0) = \cos(0) = 1 \ , \ 
+g^{(4m+2)}(0) = -\sin(0) = 0 \\ 
+&\text{et} \quad
+g^{(4m+3)}(0) = -\cos(0) = -1
+\end{align*}
+pour $m=0$, $1$, $2$, \ldots\quad  En résumé, $g^{(n)}(0) = 0$ lorsque $n$ est
+paire, $g^{(n)}(0) = 1$ lorsque $n=1$, $5$, $9$, \ldots \ et
+$g^{(n)}(0) = -1$ lorsque $n=3$, $7$, $11$, \ldots \  La série de MacLaurin
+de $\sin(x)$ est donc
+\[
+\sin(x) \sim \sum_{n=0}^\infty \frac{1}{n!}\,g^{(n)}(0) \, x^n
+= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}\, x^{2n+1}
+\; .
+\]
+
+Montrons que cette série converge vers $\sin(x)$ pour tout $x$ en
+montrant que
+\[
+\lim_{k\rightarrow \infty} r_k(x) =
+\lim_{k\rightarrow \infty}
+\frac{1}{(k+1)!} g^{(k+1)}(\xi) x^{k+1} = 0
+\]
+pour tout $x$.  Puisque $\displaystyle \left| g^{(k+1)}(\xi) \right|
+= \left| (-1)^{(k+1)/2} \sin(\xi) \right| \leq 1$ pour $k$ impaire et
+$\displaystyle \left| g^{(k+1)}(\xi) \right|
+= \left| (-1)^{k/2} \cos(\xi) \right| \leq 1$ pour $k$ pair, nous avons
+\[
+0 \leq \left| r_k(x) \right| \leq \left| \frac{x^{k+1}}{(k+1)!} \right|
+\rightarrow 0 \quad \text{lorsque} \quad k \rightarrow \infty
+\]
+quel que soit $x$ (remarque~\ref{r_sin_cos} ci-dessous).  Il
+découle du théorème des gendarmes que
+$\displaystyle \lim_{k\rightarrow \infty} r_k(x) = 0$ pour tout $x$.
+\label{sin_cos_series}
+\end{egg}
+
+\begin{rmk}
+Dans l'exemple précédent, nous avons utilisé le fait que
+\[
+\lim_{k\rightarrow \infty}
+\left| \frac{1}{(k+1)!} x^{k+1}\right| = 0
+\]
+pour tout $x$.  Pour démontrer ce résultat, il faut faire référence
+à l'exemple~\ref{exp_serie_egg} où il a été démontré que la série
+$\displaystyle \sum_{n=0}^\infty \frac{x^n}{n!}$ convergeait pour
+tout $x$.  Il découle du théorème~\ref{NCforCofS} que le terme général
+$\displaystyle \frac{x^n}{n!}$ de la série tend vers $0$ pour tout $x$
+lorsque $n$ tend vers plus l'infini; c'est-à-dire,
+\[
+\lim_{k\rightarrow \infty} \frac{x^n}{n!} = 0 \quad \text{pour} \quad x\in\RR \; .
+\]
+\label{r_sin_cos}
+\end{rmk}
+
+\begin{egg}
+Trouvons la série de Taylor de $f(x)=\sin(x)$ près de $\pi/4$ et
+montrons qu'elle converge vers $f(x)$ pour tout $x$.
+
+Nous avons vu à l'exemple précédent que
+\[
+f^{(4m)}(x) = \sin(x) \ , \ f^{(4m+1)}(x) = \cos(x) \ , \ 
+f^{(4m+2)}(x) = -\sin(x) \ \text{et} \ f^{(4m+3)}(x) = -\cos(x)
+\]
+pour $m=0$, $1$, $2$, \ldots.  Ainsi,
+\begin{align*}
+f^{(4m)}\left(\frac{\pi}{4}\right) &= \sin\left(\frac{\pi}{4}\right) =
+\frac{\sqrt{2}}{2} \ , \
+f^{(4m+1)}\left(\frac{\pi}{4}\right) = \cos\left(\frac{\pi}{4}\right)
+= \frac{\sqrt{2}}{2} \ , \\
+f^{(4m+2)}\left(\frac{\pi}{4}\right) &= -\sin\left(\frac{\pi}{4}\right)
+= -\frac{\sqrt{2}}{2}  \ \text{et} \ 
+f^{(4m+3)}\left(\frac{\pi}{4}\right) = -\cos\left(\frac{\pi}{4}\right)
+= -\frac{\sqrt{2}}{2}
+\end{align*}
+pour $m=0$, $1$, $2$, \ldots.  Nous remarquons de plus que
+\begin{align*}
+n=4m & \Rightarrow \frac{n(n-1)}{2} = \frac{4m(4m-1)}{2} = 2m(4m-1)
+\quad \text{est pair},\\
+n=4m+1 & \Rightarrow \frac{n(n-1)}{2} = \frac{(4m+1)\,4m}{2} =
+2m(4m+1) \quad \text{est pair},\\
+n=4m+2 & \Rightarrow \frac{n(n-1)}{2} = \frac{(4m+2)(4m+1)}{2} =
+(2m+1)(4m-1) \quad \text{est impair et}\\
+n=4m+3 & \Rightarrow \frac{n(n-1)}{2} = \frac{(4m+3)(4m+2)}{2} =
+(4m+3)(2m+1) \quad \text{est impair}.
+\end{align*}
+Ceci nous permet d'écrire
+\[
+\sin(x) \sim \sum_{n=0}^\infty \frac{1}{n!} \,
+f^{(n)}\left(\frac{\pi}{4}\right) \, \left(x-\frac{\pi}{4}\right)^n
+= \sum_{n=0}^\infty (-1)^{n(n-1)/2} \frac{\sqrt{2}}{2} \,
+\frac{1}{n!} \, \left(x-\frac{\pi}{4}\right)^n \; .
+\]
+Pour démontrer la convergence, nous montrons que le reste $r_k(x)$ dans le
+Théorème de Taylor tend vers $0$ lorsque $k$ tend vers plus l'infini
+quel que soit le choix de $x$; c'est-à-dire,
+\[
+\lim_{k\rightarrow \infty} r_k(x) =
+\lim_{k\rightarrow \infty}
+\frac{1}{(k+1)!} f^{(k+1)}(\xi) x^{k+1} = 0
+\]
+pour tout $x$.  Puisque
+$\displaystyle \left| f^{(k+1)}(\xi) \right|
+= \left| (-1)^{(k+1)/2} \sin(\xi) \right| \leq 1$ pour $k$ impaire et
+$\displaystyle \left| f^{(k+1)}(\xi) \right|
+= \left| (-1)^{k/2} \cos(\xi) \right| \leq 1$ pour $k$ pair, nous avons
+\[
+0 \leq \left| r_k(x) \right| \leq \left| \frac{1}{(k+1)!}\,
+\left(x-\frac{\pi}{4}\right)^{k+1} \right|
+\rightarrow 0 \quad \text{lorsque} \quad k \rightarrow \infty
+\]
+quel que soit $x$ (remarque~\ref{r_sin_cos}).
+\end{egg}
+
+\begin{egg}
+Trouvons la série de McLaurin de $f(x)=\ln(1-x)$ et montrons
+qu'elle converge vers $f(x)$ pour $|x|<1/2$.
+
+Nous avons
+\[
+f'(x) = -\frac{1}{1-x} \ , \ f''(x) = -\frac{1}{(1-x)^2} \ , \ 
+f^{(3)}(x) = -\frac{2}{(1-x)^3} \ , \  f^{(4)}(x) = -\frac{6}{(1-x)^4}
+\ , \ldots
+\]
+Par induction, nous pouvons montrer que
+\[
+f^{(n)}(x) = -\frac{(n-1)!}{(1-x)^n} \quad , \quad n>0 \ .
+\]
+Puisque $f(0)=0$ et $f^{(n)}(0)= -(n-1)!$ pour $x=0$, nous avons
+\[
+\ln(1-x) \sim \sum_{n=1}^\infty \left(-\frac{(n-1)!}{n!}\right) x^n 
+= - \sum_{n=1}^\infty \frac{x^n}{n} \ .
+\]
+Pour démontrer la convergence, il faut montrer que le reste $r_k(x)$ dans le
+Théorème de Taylor tend vers $0$ lorsque $k$ tend vers plus l'infini
+quel que soit $x \in ]-1/2,1/2[$; c'est-à-dire, 
+\[
+\lim_{k\rightarrow \infty} r_k(x) =
+\lim_{k\rightarrow \infty} \frac{1}{(k+1)!} f^{(k+1)}(\xi) x^{k+1} = 0
+\]
+pour tout $x \in ]-1/2,1/2[$.  C'est une conséquence de la relation
+suivante.
+\begin{equation} \label{lnconV}
+0 \leq \left| r_k(x) \right|
+= \left|\frac{1}{k+1} \, \left(\frac{x}{1-\xi}\right)^{k+1} \right|
+\leq \frac{1}{k+1} \rightarrow 0 \quad \text{lorsque} \quad
+k \rightarrow \infty
+\end{equation}
+quel que soit $x \in ]-1/2,1/2[$.  Pour obtenir l'inégalité en
+(\ref{lnconV}), nous remarquons que $|x| < 1/2 < 1-\xi$ pour tout
+$x \in ]-1/2,1/2[$ car $\xi$ est entre $0$ et $x$.
+\end{egg}
+
+Considérons une fonction $f$ définie par
+\[
+f(x) = \sum_{n=0}^\infty a_n \, (x-c)^n \quad \text{pour} \quad |x-c|<R
+\]
+où $R>0$.  Est-ce que cette série est la série de Taylor de $f$ près de $c$?
+C'est à dire, est-ce que $a_n = f^{(n)}(c) \big/n!$ pour $n=0$, $1$, $2$,
+\ldots
+
+Nous avons
+\[
+f(c) = \sum_{k=0}^\infty a_k \, (x-c)^k \bigg|_{x=c}
+= \lim_{n\rightarrow \infty}
+\left( \sum_{k=0}^n a_k (x-c)^k \bigg|_{x=c} \right)
+= \lim_{n\rightarrow \infty} \left( a_0 \right) = a_0 \; .
+\]
+Grâce à la règle de dérivation des séries, nous avons que
+\begin{align*}
+f'(c) &= \sum_{k=1}^\infty k\,a_k (x-c)^{k-1} \bigg|_{x=c}
+= \lim_{n\rightarrow \infty}
+\left( \sum_{k=1}^n k a_k (x-c)^{k-1} \bigg|_{x=c}\right)
+= \lim_{n\rightarrow \infty} \left( a_1 \right) = a_1 \; , \\
+f''(c) &= \sum_{k=2}^\infty k(k-1)\,a_k (x-c)^{k-2} \bigg|_{x=c}
+= \lim_{n\rightarrow \infty}
+\left( \sum_{k=2}^n k(k-1)\,a_k (x-c)^{k-2} \bigg|_{x=c} \right) \\
+&= \lim_{n\rightarrow \infty} \left( 2\, a_2 \right) = 2\, a_2 \; , \\
+f^{(3)}(c) &= \sum_{k=3}^\infty k(k-1)(k-2)\,a_k (x-c)^{k-3} \bigg|_{x=c} \\
+&= \lim_{n\rightarrow \infty}
+\left( \sum_{k=3}^n k(k-1)(k-2)\, a_k (x-c)^{k-3} \bigg|_{x=c} \right)
+= \lim_{n\rightarrow \infty} \left( 3\times 2 \,a_3 \right) = 3!\, a_3
+\end{align*}
+et, en générale,
+\begin{align*}
+f^{(m)}(c) &= \sum_{k=m}^\infty k(k-1)(k-2)\ldots(k-m+1)\,a_k
+(x-c)^{k-m} \bigg|_{x=c} \\
+&= \lim_{n\rightarrow \infty}
+\left( \sum_{k=m}^n k(k-1)(k-2)\ldots(k-m+1)\,a_k (x-c)^{k-m}
+\bigg|_{x=c} \right) \\
+&= \lim_{n\rightarrow \infty} \left( m! \,a_m \right)
+= m! \, a_m \; .
+\end{align*}
+
+Nous avons donc démontré le résultat suivant.
+
+\begin{focus}{\prop}
+Soit $f$ une fonction définie par
+\[
+f(x) = \sum_{n=0}^\infty a_n \, (x-c)^n \quad \text{pour} \quad |x-c|<R
+\]
+où $R>0$.  Alors
+\[
+a_n = \frac{1}{n!}\, f^{(n)}(c) \quad , \quad n=0,1,2,3,\ldots
+\]
+\end{focus}
+
+En d'autres mots, la série qui définit la fonction $f$ est la série de Taylor
+de $f$ près de $c$.  Un corollaire de la proposition précédente est le
+suivant.
+
+\begin{focus}{\cor} \label{uniqueSeries}
+Si
+\[
+\sum_{n=0}^\infty a_n \, (x-c)^n = \sum_{n=0}^\infty b_n \, (x-c)^n
+\quad \text{pour} \quad |x-c|<R
+\]
+où $R>0$, alors,
+\[
+a_n = b_n  \quad , \quad n=0,1,2,3,\ldots
+\]
+En fait, si
+\[
+f(x) = \sum_{n=0}^\infty a_n \, (x-c)^n = \sum_{n=0}^\infty b_n \, (x-c)^n
+\quad \text{pour} \quad |x-c|<R \; ,
+\]
+alors
+\[
+a_n = b_n = \frac{1}{n!}\,f^{(n)}(c) \quad , \quad n=0,1,2,3,\ldots
+\]
+En d'autres mots, une fonction $f:\RR \rightarrow \RR$ peut avoir au
+plus une représentation en série entière près de $c$.
+\end{focus}
+
+Ce dernier corollaire peut nous aider à trouver la série de Taylor de
+certaines fonction sans avoir à calculer une dérivée.
+
+\begin{egg}
+Trouvons la série de MacLaurin de la fonction
+$\displaystyle f(x) = \frac{1}{1+x^3}$.
+
+La série géométrique est
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n \quad , \quad |u|<1 \; .
+\]
+Si $u=-x^3$, alors
+\[
+f(x) = \frac{1}{1+x^3} = \frac{1}{1-\left(-x^3\right)}
+= \sum_{n=0}^\infty \left(-x^3\right)^n
+= \sum_{n=0}^\infty (-1)^n x^{3n} \quad , \quad |x|<1 \; .
+\]
+C'est la série cherchée.
+\end{egg}
+
+\begin{egg}
+Trouvons la série de MacLaurin de la fonction
+$\displaystyle f(x) = \frac{1}{7+2x}$.
+
+Remarquons que
+\[
+f(x) = \frac{1}{7+2x} = \frac{1}{7}
+\left( \frac{1}{1-\left(-\frac{2x}{7}\right)} \right) \; .
+\]
+Si nous substituons $u= -2x/7$ dans la série géométrique
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n \quad , \quad |u|<1 \; ,
+\]
+nous trouvons
+\[
+f(x) = \frac{1}{7} \sum_{n=0}^\infty \left(-\frac{2x}{7}\right)^n
+= \sum_{n=0}^\infty (-1)^n \frac{2^n}{7^{n+1}} \, x^n
+\quad , \quad \left|\frac{2x}{7}\right| <1 \; .
+\]
+C'est la série cherchée.  Elle converge vers $f(x)$ pour $|x| < 7/2$.
+\end{egg}
+
+\begin{egg}
+Soit $f(x) = \sin(x/3)$.  Trouvons la série de MacLaurin de
+cette fonction et montrons que cette série converge vers $f(x)$ pour tout
+$x\in \RR$.
+
+Si nous substituons $u=x/3$ dans la série de MacLaurin
+\[
+\sin(u) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}\, u^{2n+1} \quad
+\text{pour} \quad u \in \RR \; ,
+\]
+nous trouvons
+\[
+f(x) = \sin\left(\frac{x}{3}\right)
+= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}\,
+\left(\frac{x}{3}\right)^{2n+1}
+= \sum_{n=0}^\infty \frac{(-1)^n}{3^{2n+1}\,(2n+1)!}\,x^{2n+1}
+\quad , \quad x\in \RR \; ,
+\]
+\end{egg}
+
+\begin{egg}
+Trouvons la série de MacLaurin de la fonction
+$\displaystyle f(x) = \frac{1}{(x-1)(1-2x)}$.
+
+La méthode des fractions partielles nous permet d'exprimer $f$ de la façon
+suivante.
+\[
+f(x) = \frac{1}{(x-1)(1-2x)} = \frac{A}{x-1} + \frac{B}{1-2x}
+\]
+où $A$ et $B$ sont des constantes.  Pour déterminer $A$ et $B$, nous exprimons
+les fractions sur un dénominateur commun.
+\[
+\frac{1}{(x-1)(1-2x)} = \frac{A(1-2x)}{(x-1)(1-2x)} +
+\frac{B(x-1)}{(1-2x)(x-1)} \; .
+\]
+Les numérateurs de chaque coté de l'égalité doivent donc être égaux;
+c'est-à-dire,
+\[
+1 = A(1-2x) + B(x-1) \; .
+\]
+Si nous substituons $x=1/2$ dans cette équation, nous trouvons $1= -B/2$.  Donc
+$B=-2$.  De même, si nous substituons $x=1$ dans cette équation, nous trouvons
+$1= -A$.  Donc $A=-1$.  Nous avons ainsi que
+\[
+f(x) = -\frac{1}{x-1} - \frac{2}{1-2x} \; .
+\]
+Le premier terme peut être représenté par la série géométrique.
+\[
+-\frac{1}{x-1} = \frac{1}{1-x} = \sum_{n=0}^\infty x^n \quad , \quad
+|x|<1 \; .
+\]
+Pour trouver la série représentant le deuxième terme, nous utilisons encore la
+série géométrique
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n \quad , \quad |u|<1
+\]
+avec $u=2x$ pour obtenir
+\[
+\frac{2}{1-2x} = 2 \left(\frac{1}{1-2x}\right) = 2 \sum_{n=0}^\infty (2x)^n
+= \sum_{n=0}^\infty 2^{n+1} x^n \quad , \quad |2x|<1 \; .
+\]
+Cette dernière série converge pour $|x|<1/2$ alors que la série pour le
+premier terme de $f$ converge pour $|x|<1$.  Donc
+\[
+f(x) = \sum_{n=0}^\infty x^n - \sum_{n=0}^\infty 2^{n+1} x^n
+= \sum_{n=0}^\infty \left( 1 - 2^{n+1}\right) x^n \quad ,
+\quad |x|<1/2 \; .
+\]
+Nous avons additionné les séries en additionnant les coefficients de
+$x^n$ pour $n=0$, $1$, $2$, \ldots.
+\end{egg}
+
+\begin{egg}
+Si $\displaystyle f(x) = \frac{1}{(x-1)(1-2x)}$, quelle est la valeur
+de $f^{(100)}(0)$?
+
+Nous avons vu à l'exemple précédent que
+\[
+f(x) = \sum_{n=0}^\infty \left( 1 - 2^{n+1}\right) x^n \quad ,
+\quad |x|<1/2 \; .
+\]
+Or, d'après le corollaire~\ref{uniqueSeries}, le coefficient de $x^{100}$ est
+\[
+\frac{1}{100!}\,f^{(100)}(0) = \left( 1 - 2^{101}\right) \; .
+\]
+Donc
+\[
+f^{(100)}(0) = 100!\,\left( 1 - 2^{101}\right) \; .
+\]
+\end{egg}
+
+Il est aussi possible d'utiliser les séries entières pour évaluer des
+intégrales.
+
+\begin{egg}
+Évaluons l'intégrale $\displaystyle \int_0^{0.5} \cos(x^2) \dx{x}$ avec une
+précision de $10^{-8}$.
+
+La série de MacLaurin de $\cos(u)$ est
+\[
+\cos(u) = \sum_{n=0}^\infty (-1)^n \frac{1}{(2n)!}\,u^{2n} \quad , \quad
+u \in \RR \; .
+\]
+Si nous substituons $u=x^2$, nous trouvons
+\[
+\cos\left(x^2\right) = \sum_{n=0}^\infty (-1)^n
+\frac{1}{(2n)!}\,\left(x^2\right)^{2n}
+= \sum_{n=0}^\infty (-1)^n \frac{1}{(2n)!}\,x^{4n} \quad , \quad
+x \in \RR \; .
+\]
+Ainsi,
+\begin{align*}
+\int_0^{0.5} \cos\left(x^2\right) \dx{x} 
+&= \sum_{n=0}^\infty (-1)^n \frac{1}{(2n)!}\,\int_0^{0.5} x^{4n} \dx{x}
+= \sum_{n=0}^\infty (-1)^n \frac{1}{(2n)!}\,
+\frac{x^{4n+1}}{4n+1}\bigg|_0^{0.5} \\
+&= \sum_{n=0}^\infty (-1)^n \frac{1}{2^{4n+1}\,(4n+1)\,(2n)!} \; .
+\end{align*}
+C'est une série alternée de la forme
+$\displaystyle \sum_{n=0}^\infty (-1)^n a_n$ où
+$\displaystyle a_n = \frac{1}{2^{4n+1}\,(4n+1)\,(2n)!}$.  Notez que cette
+série satisfait le Test des séries alternées (i.e. le théorème~\ref{altTest}),
+ce qui prouve qu'elle converge en accord avec la conclusion du
+théorème~\ref{der_int_series}.  De plus, si
+$\displaystyle S = \sum_{n=0}^\infty (-1)^n a_n$ et
+$\displaystyle S_N = \sum_{n=0}^N (-1)^n a_n$ est la $N^{e}$ somme
+partiel, alors $\displaystyle |S-S_N| \leq a_{N+1}$.
+
+La somme partiel $S_N$ donnera une approximation de
+$\displaystyle \int_0^{0.5} \cos(x^2) \dx{x}$ avec
+une précision de $10^{-8}$ si nous choisissons $N$ tel que
+$\displaystyle |S-S_N| \leq a_{N+1} < 10^{-8}$.
+Nous avons
+\[
+a_{N+1} = a_3 = \frac{1}{13\times 2^{13}\times 6!} \approx 1.3042
+\times 10^{-8} \not< 10^{-8}
+\]
+pour $N=2$ et
+\[
+a_{N+1} = a_4 = \frac{1}{17\times 2^{17}\times 8!} \approx 1.1
+\times 10^{-11} < 10^{-8}
+\]
+pour $N=3$.  La somme partiel
+\begin{align*}
+S_3 &= \sum_{n=0}^3 (-1)^n \frac{1}{2^{4n+1}\,(4n+1)\,(2n)!}
+= \frac{1}{2} - \frac{1}{5\times 2^5\times 2!}
++\frac{1}{9\times 2^9\times 4!} - \frac{1}{13\times 2^{13}\times 6!} \\
+&\approx 0.4968840292 \; .
+\end{align*}
+est donc l'approximation cherchée.
+\end{egg}
+
+\section{Série du binôme}
+
+Pour $k \in \ZZ$, posons
+\begin{align*}
+\binom{k}{n} &= \frac{k(k-1)(k-2)\ldots(k-n+1)}{n!} \quad \text{pour}
+\quad n=1,2,3,\ldots
+\intertext{et}
+\binom{k}{0} &= 1 \; .
+\end{align*}
+
+Si $k$ est un entier non négatif, la {\bfseries formule du binôme}
+\index{Binôme!Formule du binôme} est
+\begin{equation}\label{finitebin}
+(1+x)^k = 1 + k\,x + \frac{k(k-1)}{2}\,x^2 + \ldots + k\,x^{k-1} + x^k
+= \sum_{n=0}^k \binom{k}{n} x^n \; .
+\end{equation}
+Pour cette raison, $\displaystyle \binom{k}{n}$ est appelé un
+{\bfseries coefficient du binôme}\index{Binôme!Coefficient du binôme}.
+Ceux qui auraient déjà étudié la combinatoire reconnaissent
+certainement le coefficient du binôme puisqu'il représente le nombre
+de possibilités de choisir $n$ éléments d'un ensemble de 
+$k$ éléments distincts en ignorant l'ordre.
+
+De plus, la série géométrique
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n \quad , \quad |u|<1 \; ,
+\]
+avec $u=-x$ donne
+\[
+(1+x)^{-1} = \sum_{n=0}^\infty \binom{-1}{n} x^n \quad , \quad |x|<1\; ,
+\]
+car
+\begin{align*}
+\binom{-1}{n} &= \frac{(-1)(-1-1)(-1-2)\ldots(-1-n+1)}{n!} \\
+&= \frac{(-1)(-2)(-3)\ldots(-n)}{n!} = \frac{(-1)^n n!}{n!} = (-1)^n
+\quad , \quad n>0 \;.
+\end{align*}
+
+Qu'arrive-t-il si $k$ est un nombre réel?  Existe-t-il une formule semblable
+à la formule du binôme si $k$ est un nombre réel quelconque?  Le théorème
+suivant répond à ces questions.
+
+\begin{focus}[][Série du binôme]{\thm}\label{bin_series}
+\index{Série du binôme}
+Soit $k\in \RR$.  Alors
+\begin{equation}\label{infinitebin}
+(1+x)^k = \sum_{n=0}^\infty \binom{k}{n} \, x^n \quad , \quad |x|<1 \; .
+\end{equation}
+\end{focus}
+
+\begin{rmk}
+La formule (\ref{finitebin}) où $k$ est un entier non négatif est
+incluse dans la formule (\ref{infinitebin}).  En effet, si $k$ est un
+entier positif,
+\[
+\binom{k}{n} = \frac{k(k-1)(k-2)\ldots(k-n+1)}{n!} = 0
+\quad \text{pour} \quad n > k
+\]
+car un des facteurs au numérateur est nul.
+\end{rmk}
+
+\begin{proof}[\theory][Théorème~\ref{bin_series}]
+Soit $f(x)=(1+x)^k$ où $k\in \RR$.  Nous avons
+\begin{align*}
+f'(x) &= k\,(1+x)^{k-1} \; ,\\
+f''(x) &= k(k-1)\,(1+x)^{k-2} \; , \\
+f^{(3)}(x) &= k(k-1)(k-2)\,(1+x)^{k-3} \; , \\
+\vdots & \qquad \vdots
+\end{align*}
+Par induction, nous trouvons
+\[
+f^{(n)}(x) = k(k-1)(k-2)\ldots(k-n+1)\,(1+x)^{k-n} \quad , \quad
+n=1,2,3,\ldots
+\]
+La série de MacLaurin de $f$ est donc
+\[
+f(x) \sim \sum_{n=0}^\infty \frac{1}{n!}\,f^{(n)}(0)\, x^n
+= \sum_{n=0}^\infty \frac{1}{n!}\,k(k-1)(k-2)\ldots(k-n+1)\, x^n
+= \sum_{n=0}^\infty \binom{k}{n} \, x^n \; .
+\]
+
+Montrons que cette série converge pour $|x|<1$.  Pour ce faire, nous
+calculons le rayon de convergence $R$.  Nous avons une série de la forme
+$\displaystyle \sum_{n=0}^\infty a_n x^n$ où
+$\displaystyle a_n = \binom{k}{n}$.  Donc 
+\[
+\frac{1}{R} = \lim_{n\rightarrow \infty} \left|\frac{a_{n+1}}{a_n}\right|
+= \lim_{n\rightarrow \infty} \left|
+\frac{\displaystyle \frac{k(k-1)(k-2)\ldots(k-n)}{(n+1)!}}
+{\displaystyle \frac{k(k-1)(k-2)\ldots(k-n+1)}{n!}} \right|
+= \lim_{n\rightarrow \infty} \left| \frac{k-n}{n+1} \right| = 1
+\]
+et ainsi $R=1$.
+
+Il reste à montrer que la série du binôme converge bien vers
+$(1+x)^k$.  Pour ce faire, nous ne prouverons pas que le reste
+$r_k(x)$ définie en (\ref{TPfourTS2}) tend vers $0$ lorsque $k$ tend
+vers plus l'infini pour $x \in ]-1,1[$.  Nous allons utiliser le fait
+que l'équation différentielle
+\begin{equation} \label{binODE}
+(1+x) y'= k\ y \quad , \quad y(0)=1
+\end{equation}
+à une unique solution près de l'origine.
+
+Remarquons que $f(x) = (1+x)^k$ est une solution de (\ref{binODE})
+pour $|x|<1$.  De plus, si nous posons
+\[
+g(x) = \sum_{n=0}^\infty \binom{k}{n} \, x^n \quad , \quad |x|<1 \; ,
+\]
+nous avons que
+\[
+g'(x) = \sum_{n=1}^\infty \binom{k}{n}\,n \, x^{n-1}
+\quad , \quad |x|<1 \; .
+\]
+Ainsi,
+\[
+(1+x) g'(x) = (1+x) \sum_{n=1}^\infty \binom{k}{n}\,n \, x^{n-1} \\
+= \sum_{n=1}^\infty \binom{k}{n}\,n \, x^{n-1} +
+\sum_{n=1}^\infty \binom{k}{n}\,n \, x^n \quad , \quad |x|<1 \; .
+\]
+Si nous remplaçons $n$ par $m+1$ dans la première série, nous obtenons
+\begin{align*}
+(1+x) g'(x)
+&= \sum_{m=0}^\infty \binom{k}{m+1}\,(m+1) \, x^m +
+\sum_{n=1}^\infty \binom{k}{n}\,n \, x^n \\
+&= k + \sum_{m=1}^\infty \binom{k}{m+1}\,(m+1) \, x^m +
+\sum_{n=1}^\infty \binom{k}{n}\,n \, x^n \quad , \quad |x|<1 \; .
+\end{align*}
+Comme le nom $m$ donné à l'indice de la première série est arbitraire, nous
+pouvons remplacer $m$ par $n$ dans cette série.  Nous obtenons
+\begin{align*}
+(1+x) g'(x)
+&= k + \sum_{n=1}^\infty \binom{k}{n+1}\,(n+1) \, x^n +
+\sum_{n=1}^\infty \binom{k}{n}\,n \, x^n \\
+&= k + \sum_{n=1}^\infty \left( \binom{k}{n+1}\,(n+1)
++ \binom{k}{n}\,n \right) \, x^n \quad , \quad |x|<1 \; .
+\end{align*}
+Or
+\begin{align*}
+& \binom{k}{n+1}\,(n+1) + \binom{k}{n}\,n \\
+& \qquad = \frac{k(k-1)(k-2)\ldots(k-n+1)(k-n)}{(n+1)!} \, (n+1)
++ \frac{k(k-1)(k-2)\ldots(k-n+1)}{n!} \, n \\
+& \qquad = \frac{k(k-1)(k-2)\ldots(k-n+1)}{n!} \, (k-n) +
+\frac{k(k-1)(k-2)\ldots(k-n+1)}{n!} \, n \\
+& \qquad = k\,\frac{k(k-1)(k-2)\ldots(k-n+1)}{n!} = k\, \binom{k}{n}
+\quad , \quad n=1,2,3,\ldots
+\end{align*}
+Ainsi,
+\[
+(1+x) g'(x)
+= k + k \,\sum_{n=1}^\infty \binom{k}{n} \, x^n
+= k\, \sum_{n=0}^\infty \binom{k}{n} \, x^n
+= k\, g(x) \quad , \quad |x|<1 \; .
+\]
+Puisque $g(0) =1$, nous avons que $g$ est une solution de (\ref{binODE}) pour
+$|x|<1$.  Par unicité des solutions $f(x)=g(x)$ pour $|x|<1$; c'est-à-dire,
+\[
+(1+x)^k = \sum_{n=0}^\infty \binom{k}{n} \, x^n \quad , \quad |x|<1 
+\; .
+\]
+\end{proof}
+
+\begin{egg}
+Trouvons la série de MacLaurin de la fonction
+$\displaystyle \frac{x^2}{(1-x^3)^{1/2}}$.
+
+Si nous substituons $u=-x^3$ et $k=-1/2$ dans la série du binôme
+\[
+(1+u)^k = \sum_{n=0}^\infty \binom{k}{n} \, u^n \quad , \quad |u|<1 \; ,
+\]
+nous trouvons
+\[
+(1-x^3)^{-1/2} = \sum_{n=0}^\infty \binom{-1/2}{n} \, (-x^3)^n
+= \sum_{n=0}^\infty (-1)^n\,\binom{-1/2}{n} \, x^{3n} \quad ,
+\quad |x|<1 \; .
+\]
+Or
+\begin{align*}
+(-1)^n\,\binom{-1/2}{n} &=
+(-1)^n\,\frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)
+\left(-\frac{1}{2}-2\right)\ldots\left(-\frac{1}{2}-n+1\right)}{n!} \\
+&= \frac{\frac{1}{2}\left(\frac{1}{2}+1\right)\left(\frac{1}{2}+2\right)\ldots
+\left(\frac{1}{2}+n-1\right)}{n!} \\
+&= \frac{\frac{1}{2}\left(\frac{3}{2}\right)\left(\frac{5}{2}\right)\ldots
+\left(\frac{2n-1}{2}\right)}{n!}
+= \frac{3\times 5 \times 7 \times \ldots \times (2n-1)}{2^n\,n!} \; .
+\end{align*}
+Donc
+\[
+(1-x^3)^{-1/2} = \sum_{n=0}^\infty
+\frac{3\times 5 \times 7 \times \ldots \times (2n-1)}{2^n\,n!} \, x^{3n} \; ,
+\quad |x|<1 \; ,
+\]
+et
+\[
+\frac{x^2}{(1-x^3)^{1/2}} = \sum_{n=0}^\infty
+\frac{3\times 5 \times 7 \times \ldots \times (2n-1)}{2^n\,n!} \, x^{3n+2}
+\quad , \quad |x|<1 \; .
+\]
+\end{egg}
+
+\section{Définition de l'exponentiel et de son inverse \theory}\label{DEFofE}
+
+Donnons une définition rigoureuse de $b^x$ pour $b>0$ et
+$x\in \RR$ dans le but d'illustrer le niveau de sophistication mathématique
+associé à $b^x$.  Cette définition a l'avantage d'être mieux adaptée au
+calcul algébrique que la Définition~\ref{pr_def_of_exp}. 
+
+La définition de $b^x$ pour $b>0$ et $x\in \RR$ requière la série entière de
+la fonction exponentielle $e^x$.
+
+\begin{focus}{\prop}
+Soit $E: \RR \rightarrow ]0,+\infty[$, la fonction définie par
+\[
+E(x) \equiv \sum_{n=0}^\infty \frac{x^n}{n!}
+= \lim_{N\rightarrow \infty} \sum_{n=0}^N \frac{x^n}{n!}
+\]
+pour $x\in \RR$.  Cette série converge pour tout $x\in \RR$ comme nous
+avons démontré à l'aide du test de d'Alembert à
+l'exemple~\ref{exp_serie_egg}.
+
+La fonction $E$ possède les propriétés suivantes.
+\begin{enumerate}
+\item $E(0)=1$.
+\item $E(a+b) = E(a)\, E(b)$ pour tous nombres réels $a$ et $b$.
+\item $\displaystyle \dydx{E}{x}(x) = E(x)$ pour tout $x$.
+\end{enumerate}
+\end{focus}
+
+\begin{focus}{\dfn}
+Le nombre $e$ est définie par
+\[
+e \equiv E(1) = \sum_{n=0}^\infty \frac{1}{n!}
+= \lim_{N\rightarrow \infty} \sum_{n=0}^N \frac{1}{n!} \; .
+\]
+\end{focus}
+
+Nous pouvons montrer que c'est le même nombre $e$ que nous avons
+défini précédemment par la formule
+\[
+e = \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^n \; .
+\]
+Le nombre $e$ est irrationnel; c'est-à-dire que $e$ ne peut être écrit comme
+une fraction $m/n$ avec $m$ et $n$ des entiers.
+
+À l'aide des deux premières propriétés de la proposition précédente,
+nous pouvons vérifier que $e^x = E(x)$ pour $x$ un nombre rationnel,
+Pour cette raison,
+et puisque $E$ est continue et croissante, nous pouvons montrer que la
+définition suivante de $e^x$ correspond à la Définition~\ref{pr_def_of_exp}.
+
+\begin{focus}{\dfn}
+\[
+e^x \equiv E(x) = \sum_{n=0}^\infty \frac{x^n}{n!} \quad , \quad x \in \RR \; .
+\]
+\end{focus}
+
+Il découle de cette définition que $e^x$ satisfait les propriétés des
+exposants: $e^{x+y} = e^x\, e^y$, $e^{xy} = (e^x)^y$, etc.
+
+\begin{focus}{\dfn}
+La fonction inverse de $e^x$ est alors définie par
+\[
+y = \ln (x) \quad \Leftrightarrow \quad e^y=x
+\]
+pour $x>0$.
+\end{focus}
+
+Nous pouvons montrer avec cette définition que $\ln(x)$ satisfait les
+propriétés des logarithmes:
+$\ln(xy) = \ln(x)+\ln(y)$, $\ln(x^y) = y\ln(x)$, etc.
+
+\begin{focus}{\dfn}
+Pour $x\in \RR$ et $b>0$, nous définissons $b^x$ par
+\[
+b^x \equiv e^{x\ln(b)}
+\]
+Pour $x > 0$ et $b>0$, nous définissons $\log_b(x)$ par
+\[
+\log_b{x} \equiv \frac{\ln(x)}{\ln(b)} \; .
+\]
+\end{focus}
+
+Ces définitions coïncident avec les définitions traditionnelles de $b^x$ et
+$\log_b(x)$ respectivement.  Par exemple, si $x$ est un entier positif,
+\[
+e^{x\ln(b)} = \underbrace{e^{\ln(b)} \times e^{\ln(b)} \times
+  \ldots \times e^{\ln(b)}}_{x \text{ fois}}
+= \underbrace{b \times b \times \ldots \times b}_{x \text{ fois}}
+= b^x \; .
+\]
+
+De plus, puisque $\displaystyle b^{1/\ln(b)} = e$ car
+\[
+\ln( b^{1/\ln(b)} ) = \frac{1}{\ln(b)} \, \ln(b) = 1 = \ln(e) \;,
+\]
+nous obtenons que
+\[
+b^{\ln(x)/\ln(b)} = \left(b^{1/\ln(b)}\right)^{\ln(x)}
+= e^{\ln(x)} = x \; .
+\]
+$\ln(x)/\ln(b)$ est donc bien l'exposant qu'il faut donner à $b$ pour obtenir
+$x$.
+
+Comme nous avons vu lors de l'étude de la dérivée des fonctions
+exponentielles, le nombre $e$ joue un rôle très important en
+mathématiques.  Comme le nombre $\pi$, le nombre $e$ est une des
+valeurs fondamentales en mathématiques.
+
+\begin{egg}
+Trouvons la série de MacLaurin de la fonction $f(x) = (1+x)e^{-2x}$.
+
+Si nous substituons $u=-2x$ dans la série
+\[
+e^u= \sum_{n=0}^\infty \frac{1}{n!}\, u^n \quad , \quad u \in \RR
+\; ,
+\]
+nous obtenons
+\[
+e^{-2x} = \sum_{n=0}^\infty \frac{1}{n!}\, (-2x)^n
+= \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n \quad , \quad x \in \RR
+\; .
+\]
+Ainsi,
+\begin{align*}
+(1+x)e^{-2x} &= (1+x) \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n
+= \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n +
+\sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^{n+1} \quad , \quad x \in \RR
+\; .
+\end{align*}
+Si nous posons $m=n+1$ dans la deuxième série, nous obtenons
+\begin{align*}
+(1+x)e^{-2x} &= \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n +
+\sum_{m=1}^\infty \frac{(-2)^{m-1}}{(m-1)!}\, x^m  \quad , \quad x \in
+\RR \; .
+\end{align*}
+Notons que $m=1$ lorsque $n=0$.  Comme le nom $m$ de l'indice utilisé dans
+la deuxième série est arbitraire, nous pouvons remplacer $m$ par $n$ dans cette
+série.  Nous obtenons
+\begin{align*}
+(1+x)e^{-2x} &= \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n +
+\sum_{n=1}^\infty \frac{(-2)^{n-1}}{(n-1)!}\, x^n
+=  1 + \sum_{n=1}^\infty \frac{(-2)^n}{n!}\, x^n +
+\sum_{n=1}^\infty \frac{(-2)^{n-1}}{(n-1)!}\, x^n \\
+&=  1 + \sum_{n=1}^\infty \left( \frac{(-2)^n}{n!} +
+\frac{(-2)^{n-1}}{(n-1)!} \right)\, x^n
+=  1 + \sum_{n=1}^\infty \frac{(-2)^{n-1}}{(n-1)!} \left(
+\frac{n-2}{n} \right)\, x^n
+\end{align*}
+pour $x \in \RR$.
+\end{egg}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Convergence des séries entières}
+
+\begin{question}
+Déterminez le rayon et l'intervalle de convergence des séries suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{x^n}{n^2}$ &
+\subQ{b} & $\displaystyle \sum_{n=0}^\infty \frac{n^2 x^n}{10^n}$ &
+\subQ{c} & $\displaystyle \sum_{n=0}^\infty \frac{x^n}{n!}$ \\[1em]
+\subQ{d} & $\displaystyle \sum_{n=0}^\infty \sqrt{n}(x+2)^n$ &
+\subQ{e} & $\displaystyle \sum_{n=1}^\infty (-1)^n \,\frac{(x-1)^n}{n\,4^n}$ &
+\subQ{f} & $\displaystyle \sum_{n=1}^\infty
+\frac{n x^n}{ 1 \cdot 3 \cdot 5 \cdot \ldots \cdot (2n-1)}$  \\[1em]
+\subQ{g} & $\displaystyle \sum_{n=0}^\infty (-1)^n \frac{(5x-1)^n}{\sqrt{n+1}}$
+&
+\subQ{h} & $\displaystyle   \sum_{n=1}^\infty\;(-1)^n\frac{(5x-1)^n}{3^n\,n^2}$
+&
+\subQ{i} & $\displaystyle \sum_{n=1}^\infty \frac{(-5)^n (x+3)^n}{n}$  \\[1em]
+\subQ{j} & $\displaystyle \sum_{n=1}^\infty \frac{3^n(x-2)^n}{n^2}$ &
+\subQ{k} & $\displaystyle \sum_{n=1}^\infty \frac{(x-2)^n}{3^n\sqrt{n}}$ &
+&
+\end{tabular}
+\end{center}
+\label{9Q1}
+\end{question}
+
+\begin{question}
+Déterminez le rayon et l'intervalle de convergence des séries suivantes:
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}$ &
+\subQ{b} & $\displaystyle \sum_{n=0}^\infty (-1)^n \,\frac{x^{2n+1}}{2n+1}$ &
+\subQ{c} & $\displaystyle \sum_{n=1}^\infty\frac{4^nx^{2n}}{n^2}$
+\end{tabular}
+\end{center}
+\noindent Note: Nous ne pouvons pas utiliser directement le
+théorème~\ref{RadiusConvComp}.  Il faut retourner à la source.
+\label{9Q2}
+\end{question}
+
+\subsection{Fonctions définies par des séries}
+
+\begin{question}
+Utilisez la série géométrique pour déterminer le rayon de convergence,
+l'intervalle de convergence, et la somme de chacune des séries
+suivantes.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \sum_{n=0}^\infty x^{n+1}$ &
+\subQ{b} & $\displaystyle \sum_{n=1}^\infty x^{2n}$
+\end{tabular}
+\end{center}
+\label{9Q3}
+\end{question}
+
+\begin{question}
+Utilisez la série géométrique pour déterminer la somme de la série
+$\displaystyle \sum_{n=1}^\infty n 2^{n-1} x^{n+1}$ sur son intervalle de
+convergence?  Expliquez pourquoi nous ne pouvons pas utiliser la série
+géométrique pour déterminer le rayon de convergence et l'intervalle de
+convergence de cette série?  Déterminez le rayon de convergence et
+l'intervalle de convergence de cette série.
+\label{9Q4}
+\end{question}
+
+\begin{question}
+La fonction $g(x)$ est définie par la série suivante.
+\begin{equation} \label{questDefg}
+  g(x) = \sum_{n=0}^\infty \frac{n x^n}{3^n} \ .
+\end{equation}
+
+\subQ{a} Quelle est le domaine de cette fonction?  En d'autres mots,
+qu'elle est l'intervalle de convergence de la série?\\
+\subQ{b} Pouvons-nous calculer $g'(2)$?  Si oui, calculez la valeur de
+$g'(2)$.\\
+\subQ{c} Trouvez la série qui représente
+$\displaystyle \int_0^2 g(x) \dx{x}$ si cela est possible.  Justifiez
+si c'est possible.
+\label{9Q5}
+\end{question}
+
+\begin{question}
+Donnez la série entière de la fonction $\displaystyle f(x) = \ln (1 + x^2)$
+pour $x$ près de l'origine.  Quel est le rayon de convergence de cette
+série?  Combien de termes de la série entière doivent être utilisés
+pour obtenir une approximation de $\ln(5/4)$ avec une précision d'au
+moins $5 \times 10^{-5}$ (i.e. avec une erreur plus petite que
+$5 \times 10^{-5}$)?\\
+\noindent Note: Vous ne devez pas calculer $\ln(5/4)$ avec votre
+calculatrice pour comparer avec les sommes partielles.
+\label{9Q6}
+\end{question}
+
+\begin{question}
+Utilisez la série de MacLaurin de chacune des fonctions suivantes pour
+calculer $\displaystyle \dydxn{f}{x}{9}(0)$.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{4em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle f(x) = e^{x^3}$ &
+\subQ{b} & $\displaystyle f(x) = x^3\,e^{x^2}$ &
+\subQ{c} & $\displaystyle f(x) = \frac{x}{4+x^2}$
+\end{tabular}
+\end{center}
+\label{9Q7}
+\end{question}
+
+\begin{question}
+Trouvez les trois premiers termes non nuls de la série de MacLaurin de
+$f(x) = e^{x^2}\cos(x)$.
+\label{9Q8}
+\end{question}
+
+\begin{question}
+Pour chacune des pairs de fonctions $g(x)$, $f(x)$ ci-dessous,
+utilisez la série de Maclaurin de de la fonction $g(x)$ pour obtenir
+la série de Maclaurin de la fonction $f(x)$.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $g(x) = \sin(x)$ et $f(x) = \sin(2x^3)$ &
+\subQ{b} & $g(x) = \cos(x)$ et $f(x) = \sin^2(x)$
+\end{tabular}
+\end{center}
+\label{9Q9}
+\end{question}
+
+\begin{question}
+Trouvez les séries de MacLauren de
+$\displaystyle f(x) = \frac{x^2}{1+x^2}$ et
+$\displaystyle \int f(x)\dx{x}$.  Pour chaque série, donnez
+l'intervalle de convergence.
+\label{9Q10}
+\end{question}
+
+\begin{question}
+Utilisez la série de MacLaurin de la fonction $\arctan(x)$ pour
+trouver la série de MacLaurin de la fonction $x^2 \arctan(x^2)$.
+Utilisez cette série pour obtenir une approximation de
+\[
+\displaystyle \int_0^{0.5} x^2 \arctan(x^2) \dx{x}
+\]
+avec une erreur inférieure à $10^{-6}$.
+\label{9Q11}
+\end{question}
+
+\begin{question}
+Exprimez sous la forme d'une série de MacLauren la function
+$\displaystyle f(x) = \frac{x}{(x^2-4)^2}$ pour $|x| <2$..
+\label{9Q12}
+\end{question}
+
+\begin{question}
+Utilisez les série de Taylor près de l'origine pour mettre en
+ordre croissance les fonctions suivantes.
+\[
+\ln(1+x^2) \quad , \quad \sin(x^2) \quad \text{et} \quad 1-\cos(x)
+\]
+\label{9Q13}
+\end{question}
+
+\begin{question}
+La figure ci-dessous contient le graphe de plusieurs fonctions.
+Utiliser les séries de Taylor près de l'origine pour associer chacune
+des fonctions suivantes à son graphe.\\
+Suggestion: Il est possible de répondre à cette question avec
+l'approximation linéaire.\\
+\begin{center}
+\begin{tabular}{*{3}{l@{\hspace{0.5em}}l@{\hspace{4em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \frac{1}{1+x}$ &
+\subQ{b} & $\displaystyle (1+x)^{1/8}$ &
+\subQ{c} & $\displaystyle \sqrt{1+\frac{x}{2}}$ &
+\subQ{d} & $\displaystyle \frac{1}{\sqrt{1+x}}$
+\end{tabular}
+\end{center}
+\MATHgraph{9_series_ent/ordering}{8cm}
+\label{9Q14}
+\end{question}
+
+\subsection{Série du binôme}
+
+\begin{question}
+Si $\displaystyle (1+x^3)^{3/5} = \sum_{n=0}^\infty b_n x^n$, quelle
+est la valeur de $b_6$?
+\label{9Q15}
+\end{question}
+
+\begin{question}
+Utilisez la série du binôme pour obtenir la série de MacLaurin de
+$\displaystyle f(x) = \sqrt{8+x^3}$.
+\label{9Q16}
+\end{question}
+
+\begin{question}
+Utilisez la série du binôme pour obtenir la série de
+Maclaurin de $f(x) = \left(1+x^2\right)^{1/3}$.
+\label{9Q17}
+\end{question}
+
+\begin{question}
+Soit la fonction $\displaystyle f(x) = \frac{1}{\sqrt{1+x^3}}$.
+
+\subQ{a} Utilisez la série du binôme pour obtenir la série de
+MacLaurin de $f$.
+
+\subQ{b} Utilisez la série que vous avez trouvée en (a) pour
+estimer $\displaystyle \int_0^{0.1} f(x) \dx{x}$ avec une précision de
+$10^{-8}$ (i.e.\ l'erreur est plus petite que $10^{-8}$).
+\label{9Q18}
+\end{question}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

@@ -1,0 +1,118 @@
+\section{Vecteurs}
+
+\subsection{Équation d'une droite}
+
+\compileSOL{\SOLUb}{\ref{11Q1}}{
+La direction de la droite est donnée par le vecteur
+$\VEC{q} = (2,-5,5) - (-4,3,4) = (6,-8,1)$.  Si nous choisissons
+$\VEC{p} = (2,-5,5)$ comme point sur la droite, nous obtenons la
+représentation vectorielle
+\[
+  (x_1,x_2,x_3) = \VEC{p} + \alpha \VEC{q}
+\]
+pour $\alpha \in \RR$.  La représentation paramétrique correspondante
+est
+\[
+  x_1= 6 \alpha + 2 \quad , \quad x_2 = -8 \alpha  - 5 \quad \text{et} \quad
+  x_3 = \alpha + 5
+\]
+pour $\alpha \in \RR$.  Une représentation standard est donnée par   
+\[
+  \frac{x_1-2}{6} = \frac{x_2+5}{-8} = x_3-5 \ .
+\]
+}
+
+\subsection{Équation d'un plan}
+
+\compileSOL{\SOLUb}{\ref{11Q2}}{
+Le plan parallèle que nous cherchons doit être perpendiculaire au vecteur
+$(2,3,-1)$.  Puisque ce plan doit contenir le point $(2,3,2)$, le plan
+est décrit par l'équation
+\begin{align*}
+\ps{(x_1,x_2,x_3)-(2,3,2))}{(2,3,-1)} & = 2(x_1-2) +3(x_2-3) - (x_3-2) \\
+& = 2x_1 +3x_2 -x_3 -11 = 0 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{11Q3}}{
+La direction de la droite $\ell$ est donnée par $\VEC{t} = (2,3,-2)$.
+Comme la droite est dans le plan $\cal M$, le vecteur $\VEC{t}$ est
+donc parallèle au plan $\cal M$.
+
+Il nous faut un autre vecteur $\VEC{s}$ parallèle au plan $\cal M$ qui
+ne soit pas colinéaire avec $\VEC{t}$ pour que nous puissions
+trouver un vecteur perpendiculaire $\VEC{m}$ au plan $\cal M$.  Le
+point $(2,-3,3)$ est un point de la droite $\ell$ et donc du plan
+$\cal M$.  Puisque $(1,2,1)$ est aussi un point de $\cal M$, nous avons que
+\[
+  \VEC{s} = (2,-3,3) - (1,2,1) = (1,-5,2)
+\]
+est un autre vecteur parallèle au plan $\cal M$.  Il n'est pas
+colinéaire avec $\VEC{t}$.  Un vecteur perpendiculaire au
+plan $\cal M$ est
+\[
+  \VEC{m} = \VEC{t} \times \VEC{s} = (-4, -6, -13) \ .
+\]
+
+Le plan que nous cherchons doit être perpendiculaire au vecteur
+$(-4,-6,-13)$ et doit contenir le point $(1,2,1)$, le plan est donc
+décrit par l'équation
+\begin{align*}
+\ps{(x_1,x_2,x_3)-(1,2,1)}{(-4,-6,-13)}  &= -4(x_1-1) -6 (x_2-2) - 13(x_3-1) \\
+&  = -4x_1 - 6x_2 - 13x_3 + 29 = 0 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{11Q4}}{
+Le vecteur $\VEC{m} = (2,0,5)$ est perpendiculaire au plan $\cal M$
+donné par $2x_1 + 5x_3  + 3 = 0$ et le vecteur $\VEC{n} = (1,-3,1)$ est
+perpendiculaire au plan $\cal N$ donné par $x_1 - 3x_2 + x_3 + 2 = 0$.
+
+Puisque $\VEC{m}$ et $\VEC{n}$ ne sont pas colinéaires, nous avons que
+l'intersection des deux plans est une droite $\ell$.
+
+\subI{1$^{er}$ méthode} Le vecteur
+$\VEC{r} = \VEC{m} \times \VEC{n} = (15, 3, -6)$ est
+parallèle à la droite $\ell$.  Il est facile de vérifier que
+$(1, 2/3, -1)$ est un point de la droite $\ell$ puisque c'est une
+point qui appartient aux deux plans.  La représentation standard de
+$\ell$ est donc
+\[
+  \frac{ x_1 -1}{15} = \frac{x_2 - 2/3}{3} = \frac{x_3 +1}{-6} \ .
+\]
+
+\subI{2$^e$ méthode} Nous résolvons le système d'équations linéaires
+\begin{align}
+  2x_1 + 5x_3  + 3 &= 0 \label{QintPlan1a} \\
+  x_1 - 3x_2 + x_3 + 2 &= 0 \label{QintPlan1b}
+\end{align}
+Nous obtenons $\displaystyle x_3 = - \frac{3}{5} - \frac{2}{5} x_1$ de
+l'équation (\ref{QintPlan1a}).  Si nous substituons dans l'équation
+(\ref{QintPlan1b}), nous obtenons
+\[
+x_1 - 3x_2 + \left( - \frac{3}{5} - \frac{2}{5}x_1 \right) + 2 = 0
+\Rightarrow
+x_2 = \frac{7}{15} + \frac{1}{5} x_1  \ .
+\]
+La droite $\ell$ est donc donné par la représentation paramétrique
+\[
+ x_1 = \alpha \quad , \quad x_2 = \frac{7}{15} + \frac{1}{5} \alpha
+ \quad \text{et} \quad x_3 = -\frac{3}{5} - \frac{2}{5} \alpha \ .
+\]
+
+Nous avons bien obtenu deux représentations équivalentes de la droite
+$\ell$.  En effet, notons que les deux représentations décrivent des
+droites qui ont la même direction.  La direction pour la
+représentation standard est $\VEC{r} = (15,3,-6)$ alors que la
+direction pour la représentation paramétrique est
+$\VEC{s} = (1, 1/5, -2/5)$.  Nous avons $\VEC{r} = 15 \VEC{s}$.  De plus,
+$(1, 2/3, -1)$ est un élément des deux droites.  La représentation
+paramétrique donne $(1, 2/3, -1)$ lorsque $\alpha = 1$.  Puisque
+nous avons deux droites parallèles qui passent par le même point, nous
+avons donc la même droite.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

@@ -1,0 +1,4118 @@
+\section{Applications de la dérivée}
+
+\subsection{Dérivées d'ordres supérieures}
+
+\compileSOL{\SOLUb}{\ref{6Q1}}{
+\subQ{a} $h'(y) = 10y^9 - 9 y^8$ et $h''(y) = 90y^8 - 72 y^7$.
+
+\subQ{b}  Puisque $\displaystyle f(x) = \frac{3+x}{2x}
+= \frac{3}{2}x^{-1} + \frac{1}{2}$, nous avons
+$\displaystyle f'(x) = -\frac{3}{2} x^{-2}$ et
+$\displaystyle f''(x) = 3 x^{-3}$.
+
+\subQ{c} Si nous utilisons la règle de la dérivée d'un produit,
+nous obtenons
+\[
+f'(x) = \left(\dfdx{x^2}{x}\right) e^x + x^2\left(\dfdx{e^x}{x}\right)
+= 2x e^x + x^2 e^x = (2x+x^2)e^x
+\]
+et
+\begin{align*}
+f''(x) &= \left(\dfdx{(2x+x^2)}{x}\right) e^x + (2x +x^2)
+\left(\dfdx{e^x}{x}\right) \\
+&= (2+2x) e^x + (2x +x^2) e^x = (2 + 4x + x^2)e^x \; .
+\end{align*}
+
+\subQ{d} Si nous utilisons seulement la règle de la dérivée d'un quotient,
+nous obtenons
+\[
+f'(x) = \frac{\displaystyle \left(\dfdx{(1+x)}{x}\right) e^x  -
+(1+x)\left(\dfdx{e^x}{x}\right)}{(e^x)^2} =
+\frac{e^x  - (1+x)e^x}{e^{2x}} = \frac{-x}{e^x}
+\]
+et
+\[
+f''(x) = \frac{\displaystyle \left(\dfdx{(-x)}{x}\right) e^{x}
++ x \left(\dfdx{e^x}{x}\right)}{e^{2x}} =
+\frac{-e^x + x e^x}{e^{2x}} = \frac{x-1}{e^x} \ .
+\]
+
+\subQ{e} Si nous utilisons la règle de la dérivée d'un produit,
+nous obtenons
+\[
+g'(z) = \left(\dfdx{(z+4)}{z}\right) \ln(z) +
+(z+4)\left(\dfdx{\ln(z)}{z}\right) = \ln(z) + (z+4)\left(\frac{1}{z}\right)
+= \ln(z) + 1 +\frac{4}{z}
+\]
+et
+\[
+  g''(z) = \frac{1}{z} - \frac{4}{z^2} \quad .
+\]
+
+\subQ{f} Si nous utilisons la règle de la dérivée d'un produit,
+nous obtenons
+\[
+F'(w) = \left(\dfdx{e^w}{w}\right) \ln(w) +
+e^w \left(\dfdx{\ln(w)}{w}\right) = e^w \ln(w) + e^w \left(\frac{1}{w}\right) =
+e^w \left( \ln(w) + \frac{1}{w}\right)
+\]
+et
+\begin{align*}
+F''(w) &= \left(\dfdx{e^w}{w}\right) \left( \ln(w) + \frac{1}{w}\right) +
+e^w \left(\dfdx{\left( \ln(w) + \frac{1}{w}\right)}{w}\right) \\
+&= e^w \left( \ln(w) + \frac{1}{w}\right) + e^w
+\left( \frac{1}{w} - \frac{1}{w^2}\right)
+= e^w \left( \ln(w) + \frac{2}{w} - \frac{1}{w^2} \right) \ .
+\end{align*}
+
+\subQ{g}
+Puisque $f(x) = \ln(x^7) = 7 \ln(x)$, nous avons
+$\displaystyle f'(x) = \frac{7}{x}$ et
+$\displaystyle f''(x) = -\frac{7}{x^2}$.
+
+\subQ{h}  Il faut premièrement remarquer que $e^{-z} = g_1(g_2(z))$ où
+$g_1(w)=e^w$ et $g_2(z) = -z$.  Puisque $g_1'(w) = e^w$ et
+$g_2'(z) = -1$, nous obtenons
+\[
+  \dfdx{\left( e^{-z} \right)}{z} = g_1'(g_2(z)) g_2'(z)
+= e^{-z} \times (-1) = - e^{-z} \ .
+\]
+Ainsi
+\begin{align*}
+f'(z) &= \frac{\displaystyle \left(\dfdx{(1+e^{-z})}{z}\right)
+(1+e^z) -(1+e^{-z})\left(\dfdx{(1+e^z)}{z}\right)}{(1+e^z)^2} \\
+&= \frac{-e^{-z}(1+e^z) -(1+e^{-z})e^z}{(1+e^z)^2}
+= -\, \frac{e^{-z} +2 + e^z}{1+2 e^z + e^{2z}} \ .
+\end{align*}
+
+Nous avons que $e^{2z} = g_1(g_2(z))$ où $g_1(w)=e^w$ et $g_2(z) = 2z$.
+Puisque $g_1'(w) = e^w$ et $g_2'(z) = 2$, nous obtenons
+\[
+  \dfdx{\left( e^{2z} \right)}{z} = g_1'(g_2(z)) g_2'(z)
+= e^{2z} \times (2) = 2 e^{2z} \ .
+\]
+Ainsi,
+\begin{align*}
+f''(z) &= -\frac{\displaystyle \left(\dfdx{(e^{-z}+2+e^z)}{z}\right)
+(1+2e^z+e^{2z}) -(e^{-z} +2 + e^z)\left(\dfdx{(1+2e^z+e^{2z})}{z}\right)}
+{(1+2e^z+e^{2z})^2} \\
+&= -\frac{(-e^{-z} +e^z)(1+2e^z+e^{2z}) -(e^{-z}+2+e^z)(2e^x +2e^{2z})}
+{(1+2e^z+e^{2z})^2} \\
+&= \frac{e^{-z} +4 +6 e^z +4 e^{2z} + e^{3z}}{(1+2e^z+e^{2z})^2} \ .
+\end{align*}
+
+\subQ{k}
+Grâce à la règle de la dérivée d'un quotient, nous avons
+\begin{align*}
+f'(x) &=
+\frac{\displaystyle \left(\dfdx{(2+x^3)}{x}\right)
+(1+x^2) -(2+x^3)\left(\dfdx{(1+x^2)}{x}\right)}{(1+x^2)^2} \\
+&= \frac{(3x^2)(1+x^2)-(2+x^3)(2x)}{(1+x^2)^2}
+= \frac{x^4+3x^2-4x}{1+2x^2 +x^4}
+\end{align*}
+et
+\begin{align*}
+f''(x) &=
+\frac{\displaystyle \left(\dfdx{(x^4+3x^2-4x)}{x}\right)
+(1+2x^2+x^4) -(x^4+3x^2-4x)\left(\dfdx{(1+2x^2+x^4)}{x}\right)}
+{(1+2x^2+x^4)^2} \\
+&= \frac{(4x^3+6x-4)(1+2x^2+x^4)-(x^4+3x^2-4x)(4x+4x^3)}{(1+2x^2+x^4)^2} \\
+&= \frac{-2x^5+12x^4+4x^3-8x^2+22x-4}{(1+2x^2 +x^4)^2} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q2}}{
+$H'(\theta) = \theta\cos(\theta) + \sin(\theta)$ et
+$H''(\theta) = 2\cos(\theta) -\theta \sin(\theta)$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q3}}{
+Assumons que la distance positive est vers le haut.
+Si $d(t)$ est la distance entre le sol et l'objet au temps $t$ , alors
+$d''(t) = -22.88$.  Le signe négatif devant $22.88$ provient du fait
+que la direction positive est vers le haut.  Donc
+$d'(t) = -22.88 t + C_1$ et $d(t) = -11.44 t^2 + C_1 t + C_2$ où $C_1$
+et $C_2$ sont des constantes qui sont déterminées par les conditions
+initiales.  Nous laissons tomber un objet d'une hauteur de $100$ m.  Donc
+$d(0)=100$ et $d'(0)=0$.  $d'(0)=0$ donne $C_1=0$ et $d(0)=100$ donne
+$C_2=100$.  Nous obtenons $\displaystyle d(t) = -11.44 t^2 + 100$.
+
+Nous cherchons $t$ tel que $d(t) = 0$; c'est-à-dire,  tel que
+$-11.44 t^2 + 100 = 0$.  La solution positive de cet équation est
+$t \approx 2.9566$ s.  La vélocité
+à ce moment est $d'(2.95656198) \approx -67.6461$ m/s.  Comme la
+direction positive est vers le haut, cela veut dire que l'objet frappe
+le sol à une vitesse de $67.6461$ m/s.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q4}}{
+Assumons que la distance positive est vers le haut.
+Si $d(t)$ est la distance entre le sol et l'objet au temps $t$, alors
+$d''(t) = -22.88$.  Le signe négatif devant $22.88$ provient du fait
+que la direction positive est vers le haut.  Donc
+$d'(t) = -22.88 t + C_1$ et $d(t) = -11.44 t^2 + C_1 t + C_2$ où $C_1$
+et $C_2$ sont des constantes qui sont déterminées par les conditions
+initiales.  Nous avons que $d'(0)=10$ m/s car nous lançons l'objet vers le haut.
+Donc $C_1 = 10$.  De plus, $d(0)=100$.  Donc $C_2=100$.  Ainsi,
+\[
+d(t) = 100 + 10 t - 11.44 t^2 \  \text{m},
+\]
+où le temps $t$ est en secondes.  
+
+Au moment où l'objet atteint sa hauteur maximale, la vélocité est
+nulle.  C'est-à-dire, $d'(t)= -22.88 t + 10 = 0$.  Donc
+$t \approx 0.43703$ s.  Il s'écoule $0.43703$ s avant que l'objet
+atteigne sa hauteur maximale. À ce moment, l'objet est à
+$d(0.43703) \approx 102.1853$ m.
+
+L'objet frappe le sol lorsque $d(t)=0$.  Les deux racines du polynôme
+$100 + 10 t - 11.44 t^2$ sont
+\begin{align*}
+t_1 &= \frac{-10 - \sqrt{10^2 + 4\times 100\times 11.44}}{-2\times 11.44}
+\approx 3.425755
+\intertext{et}
+t_2 &= \frac{-10 + \sqrt{10^2 + 4\times 100\times 11.44}}{-2\times 11.44}
+\approx -2.551629 \ .
+\end{align*}
+Naturellement, la seule réponse plausible est $t=3.425755$ s.  À ce
+moment, l'objet a une vélocité de $d'(3.425755)\approx -68.3813$ m/s.
+Comme la direction positive est vers le haut, cela veut dire que
+l'objet frappe le sol à une vitesse de $68.3813$ m/s.
+}
+
+\subsection{Graphes de fonctions}
+
+\compileSOL{\SOLUb}{\ref{6Q5}}{
+Nous savons que la valeur de $f'$ en un point est donné par la pente
+de la droite tangente à la courbe en ce point.  En particulier, $f'>0$
+sur un intervalle si et seulement si $f$ est croissante sur cet
+intervalle, et $f'<0$ sur un intervalle si et seulement si $f$ est
+décroissante sur cet intervalle.  De plus, $f''<0$ sur un
+intervalle si et seulement si $f$ est concave sur cet intervalle,
+et $f''>0$ sur un intervalle si et seulement si $f$ est convexe
+sur cette intervalle.  Avec cette information, nous obtenons les résultats
+suivants.
+
+\subQ{a} Les points critiques sont $-3$, $-2$, $-1$, $-0.5$, $1$, $2$,
+$4$ et $5$.
+
+\subQ{b} $f'>0$ ( la fonction est strictement croissante) sur les intervalles
+$]-\infty, -3[$, $]-2,-1[$, $]-0.5,1[$, $]2,4[$ et $]5,\infty[$.
+
+\subQ{c} $f'<0$ ( la fonction est strictement décroissante) sur les intervalles
+$]-3, -2[$, $]-1, -0.5[$, $]1,2[$ et $]4,5[$.
+
+\subQ{d} $f''>0$ (la fonction est convexe) sur les intervalles
+$]-2.5, -1.5[$, $]-0.8, 0.2[$, $]1.5, 3[$ et $]4.5, \infty[$.
+
+\subQ{e} $f''<0$ (la fonction est concave) sur les intervalles
+$]-\infty,-2.5[$, $]-1.5,-0.8[$, $]0.2, 1.5[$ et $]3, 4.5[$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q6}}{
+\subQ{a} Si la dérivée $f'$ est strictement croissante alors $f''>0$
+et donc la fonction est convexe.
+\PDFgraph{6_derivees_appl/graph_funct2}
+
+\subQ{b} Si $f'< 0$ alors la fonction $f$ est strictement
+décroissante.  Si la dérivée $f'$ est strictement croissante alors
+$f''>0$ et la fonction est convexe. 
+\PDFgraph{6_derivees_appl/graph_funct3}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q7}}{
+La voiture se déplace le plus rapidement lorsque $t\approx 15$ s et
+$t\approx 45$ s.  C'est lorsque la pente de la tangente à la courbe est la
+plus grande (i.e.\ $x'(t)$ a sa plus grande valeur). 
+
+La voiture accélère le plus rapidement au voisinage de $t=6$ s et
+$t=42$ s.  C'est lorsque la pente de la tangente à la courbe augmente le plus
+rapidement tout en étant positive (i.e.\ $x''(t)>0$ a sa plus grande
+valeur et $x'(t)>0$).
+
+La voiture décélère le plus rapidement au voisinage de $t=22$ s.
+C'est lorsque la pente de la tangente à la courbe diminue le plus
+rapidement tout en étant positive (i.e.\ $x''(t)<0$ a sa plus petite
+valeur et $x'(t)>0$).
+}
+
+\compileSOL{\SOLUa}{\ref{6Q8}}{
+\subQ{a} La vélocité au temps $t$ est $p'(t) = -10.4 t -2$ m/s et
+l'accélération au temps $t$ est $p''(t) = -10.4$ m/s$^2$.
+
+\subQ{b} $p(t)$ est un simple polynomial de degré deux.  Nous pourrions
+facilement tracer le graphe de $p$ sans faire appel aux dérivées de
+$p$.  Mais, comme nous voulons nous pratiquer à tracer des graphes à l'aide
+de l'information fournie par les dérivées d'ordre un et deux, nous
+ignorerons le fait que $p(t)$ est un simple polynomial.
+
+Les solutions de $p(t)= 0$ sont $t=t_1=2.91451\ldots$ et
+$t=t_2=-3.299133\ldots$.  Nous pouvons ignorer $t_2$ puisque nous sommes
+simplement intéressé aux valeurs positives de $t$.
+
+Il n'y a qu'un seul point critique; c'est $t = -0.1923\ldots$ s.
+Comme le point critique est négatif, nous pouvons nous douter que l'objet a
+été lancé vers le sol.  Nous pouvons ignorer ce point critique puisqu'il
+est négatif.  Pour $t\geq 0 $, nous aurons toujours $p'(t)<0$.  Donc la
+fonction est strictement décroissante.
+
+Puisque $p''(t) = -10.4 <0$ pour tout $t$, la fonction sera concave
+sur toute la droite réelle.
+
+Le graphe de $p$ est
+\MATHgraph{6_derivees_appl/graph_funct5}{8cm}
+
+\subQ{c} La hauteur de la tour est $p(0)=50$ m.  Puisque $p'(0)= - 2$
+m/s, l'objet est lancé vers le bas à une vitesse de $2$ m/s.  Puisque
+$p''(t)=-10.4$ m/s$^2$, l'accélération dû à la gravité sur cette
+planète est $10.4$ m/s$^2$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q9}}{
+Pour cette question, assumons que la direction positive est vers le haut.
+\subQ{a}
+Soit $d(t)$ la distance entre le sol et l'objet au temps $t$.  Nous avons
+que $d''(t) = -2.15\times 10^{-3}$.  l'accélération est négative car
+nous assumons que la direction positive est vers le haut.
+Donc $d'(t) = -2.15\times 10^{-3} t + C_1$ et
+$d(t) = -1.075\times 10^{-3} t^2 + C_1 t + C_2$ où $C_1$ et $C_2$ sont
+des constantes qui sont déterminées par les conditions initiales.
+
+L'objet a été lancé vers le haut à une vitesse de $5$ m/s.  Donc
+$d'(0)=5$ m/s.  Ce qui donne $C_1 = 5$.  L'objet est lancé d'une
+hauteur de $100$ m. Donc $d(0)=100$ m.  Ce qui donne $C_2 = 100$.
+
+La vélocité de l'objet en fonction du temps est
+$\displaystyle v(t) = d'(t) = -2.15\times 10^{-3} t + 5$ m/s et le
+déplacement en fonction du temps est
+$\displaystyle d(t) = -1.075\times 10^{-3} t^2 + 5 t + 100$ m.
+
+\subQ{b} Pour déterminer la hauteur maximale, il faut trouver les
+points critiques de $d$; c'est-à-dire, les valeurs de $t$ telles que
+$v(t)=-2.15\times 10^{-3} t + 5=0$. Donc
+$\displaystyle t = 5/( 2.15 \times 10^{-3}) \approx 2,325.581$ s.
+Puisque $d''(t) < 0$ pour tout $t$, la fonction $d$ atteint son
+maximum absolu à $t = t_1 \approx 2,325.581$ qui est
+$d(t_1) \approx 5,913.95$ m.
+
+\subQ{c} Nous cherchons $t>0$ tel que
+$\displaystyle d(t)= -1.075\times 10^{-3} t^2 + 5 t + 100 = 100$ où,
+si vous préférez, $\displaystyle -1.075\times 10^{-3} t^2 + 5 t = 0$.
+La seule solution positive est $t = t_2 \approx 4,651.16$ s.  À ce
+moment, la vélocité est $v(t_2) = -5$ m/s.  Ceci n'est pas surprenant
+car le déplacement de l'objet est décrit par une parabole.  À cause de
+la symétrie de la parabole par rapport à son axe, la pente de la
+tangente à la parabole au point $(0,100)$ est l'inverse additif de la
+pente à la parabole au point $(t_2,100)$.
+
+\subQ{d} Nous cherchons $t>0$ tel que
+$d(t)=-1.075\times 10^{-3} t^2 + 5 t + 100 = 0$.  La seule solution
+positive est $t_3 \approx 4,671.0775$ s.  La vélocité lorsque l'objet
+frappe le sol est donc $v(t_3) \approx -5.0428$ m/s
+
+\subQ{e}
+\MATHgraph{6_derivees_appl/lune}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q10}}{
+Nous avons l'information suivante pour la fonction $g$.
+\[
+\begin{array}{c|c|c|c|c|c|}
+t & 0 < t < 0.5 & 0.5 & 0.5 < t < 1 & 1 & 1 < t < 2 \\
+\hline
+g'(t) & - & 0 & + & + & + \\
+\hline
+& \text{décroît} & \text{min. local} & \text{croît} & \text{point} &
+\text{croît} \\
+& \text{et convexe} & \text{et convexe} & \text{et convexe}
+& \text{d'inflexion} & \text{et concave}
+\end{array} \quad \ldots
+\]
+\[
+\ldots \quad \begin{array}{|c|c|c|c|c|c|}
+2 & 2 < t < 3  & 3 & 3 <t<4 & 4 & 4 < t < 5 \\
+\hline
+0 & -  & - & - & 0 & + \\
+\hline
+\text{max. local} & \text{décroît} & \text{point} & \text{décroît} & \text{min. local} & \text{croît} \\
+\text{et concave} & \text{et concave} & \text{d'inflexion} &
+\text{et convexe} & \text{et convexe} & \text{et convexe}
+\end{array} \quad \ldots
+\]
+\[
+\ldots \quad \begin{array}{|c|c|c|c}
+5 & 5 < t < 6 & 6 & t > 6 \\
+\hline
++ & + & 0 & - \\
+\hline
+\text{point} & \text{croît} & \text{max. local} & \text{décroît} \\
+\text{d'inflexion} & \text{et concave} & \text{et concave} & \text{et concave}
+\end{array}
+\]
+Ne pas oublier que $g$ est convexe lorsque $g'$ est croissante et
+$g$ est concave lorsque $g'$ est décroissante.
+
+Nous obtenons le graphe de $g$ suivant.
+\PDFgraph{6_derivees_appl/derivative2_sol}
+}
+
+\compileSOL{\SOLUa}{\ref{6Q11}}{
+Nous avons l'information suivante pour la fonction $w$.
+\[
+\begin{array}{c|c|c|c|c|c}
+t & 0 < t < 0.5 & 0.5 & 0.5 < t < 1 & 1 & \ldots \\
+\hline
+w'(t) & + & 0 & - & - & \ldots \\
+\hline
+& \text{croît} & \text{max. local} & \text{décroît} & \text{plus petite}
+&\ldots \\
+& \text{et concave} & \text{et concave} & \text{et concave}
+& \text{pemte} & \ldots
+\end{array}
+\]
+Ne pas oublier que $w$ est convexe lorsque $w'$ est croissante et
+$w$ est concave lorsque $w'$ est décroissante.
+
+Nous obtenons le graphe suivant.
+\PDFgraph{6_derivees_appl/derivative3_sol}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q12}}{
+\subQ{a} Le volume total des déchets au temps $t$ est
+$V(t) = V_a(t)+V_b(t) = t^2 + 36$ m$^3$.  La masse du produit toxique
+au temps $t$ sera $M(t) = V(t) \rho(t) = (t^2 + 36)(1.2 - 0.1 t)$ g.
+
+\subQ{b} le taux de variation de la masse en fonction du temps est
+\begin{align*}
+M'(t) &= V'(t) \rho(t) + V(t)\rho'(t) =
+(2t)(1.2-0.1 t) -0.1 (t^2+36) \\
+&= -0.3 t^2 + 2.4 t - 3.6 \text{ g/année.}
+\end{align*}
+
+\subQ{c}
+La seul solution de $M(t)= 0$ est $t=12$.  Les points critiques de $M$ sont
+les points où
+\[
+M'(x) = -0.3 t^2 + 2.4 t - 3.6 = -0.3( t^2 -8t +12) = -0.3( t-2)(t-6) = 0 \ .
+\]
+Nous trouvons $x=2$ et $6$.
+De plus, $\displaystyle \lim_{t\rightarrow \infty} M(t) = -\infty$.
+
+Nous avons l'information suivante pour la fonction $M$.
+\[
+\begin{array}{c|c|c|c|c|c|c|}
+t & 0 & 0<t<2 & 2& 2 < t <6 & 6 & 6<x<12 \\
+\hline
+M(t) & 43.2 & + & 40 & + & 43.2 & + \\
+M'(t) & - & - & 0 & + & 0 & - \\
+\hline
+& \text{décroît} & \text{décroît} & \text{min. loc.} & \text{croît} &
+\text{max. loc.} & \text{décroît} \\
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots \quad 
+\begin{array}{|c|c|c}
+12 & 12 < x & +\infty  \\
+\hline
+0 & - & -\infty \\
+- & - &  \\
+\hline
+\text{décroît} & \text{décroît} &
+\end{array}
+\]
+
+Le graphe de $M$ a l'allure suivante.
+\PDFgraph{6_derivees_appl/graph_funct7}
+
+Les efforts ne sont pas encourageants au début mais le produit toxique
+sera complètement éliminé des déchets après 12 ans.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q13}}{
+\subQ{a} La densité au temps $t$ est
+$\displaystyle \rho(t) = \frac{M(t)}{V(t)} = \frac{1 + t^2}{1+t}$ g/cm$^3$.
+
+\subQ{b}
+\begin{align*}
+\rho'(t) &= \frac{\displaystyle \left(\dfdx{(1+t^2)}{t}\right) (1+t) - (1+t^2)
+\left(\dfdx{(1+t)}{t}\right)}{(1+t)^2}
+= \frac{2t(1+t) - (1+t^2)}{(1+t)^2}\\
+&=\frac{t^2+2t-1}{(1+t)^2}
+\end{align*}
+
+\subQ{c} Nous cherchons les valeurs de $t$ pour lesquelles $\rho'(t)>0$.
+Puisque $(1+t)^2>0$ pour tous $t\neq -1$, il suffit de trouver les valeurs de
+$t$ pour lesquelles $t^2+2t-1>0$.
+
+Les racines du polynôme $t^2+2t-1$ sont
+$t_1 = -1+\sqrt{2} = 0.41421356\ldots$ et
+$t_2 = -1 - \sqrt{2} = -2.41421356\ldots$.  Puisque le coefficient
+de $t^2$ dans le polynôme $t^2+2t-1$ est positif, nous avons que
+$t^2+2t-1>0$ pour $t<t_2$ et $t>t_1$.
+
+Si nous considérons seulement les valeurs de $t\geq 0$, nous avons que
+$\rho'(t)>0$ pour $t>t_1$.  La densité $\rho$ est donc strictement
+croissante sur l'intervalle $]t_1,+\infty[$.
+
+\subQ{d} Nous traçons le graphe de $\rho$ seulement pour $t\geq 0$.
+C'est l'intervalle où $\rho(t)>0$.  Nous avons calculé les
+points critiques de $\rho$ en (c); c'est-à-dire, les points $t$ tels que
+$\rho'(t)=0$.  Le seul point critique positif et est $t=t_1$.  De plus,
+$\displaystyle \lim_{t\rightarrow \infty} \rho(t)
+= \lim_{t\rightarrow \infty} \frac{1 + t^2}{1+t} = +\infty$.
+
+Nous obtenons les données suivantes.
+\[
+\begin{array}{c|c|c|c|c|c}
+t & 0 & 0<t<t_1 & t_1& t_1\approx 0.4142 < t & \infty \\
+\hline
+\rho(t) & 1 & + & \approx 0.828 & + & \infty \\
+\rho'(t) & - & - & 0 & + &  \\
+\hline
+& \text{décroît} & \text{décroît} & \text{min. loc.} & \text{croît} & \\
+\end{array}
+\]
+Le graphe de $\rho$ a l'allure suivante.
+\PDFgraph{6_derivees_appl/graph_funct8}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q14}}{
+\subQ{a} La taille de la population après un an est la somme de la
+population initiale et de la production annuelle pour l'ensemble de la
+population.  Donc
+\[
+  T(p) = p + pf(p) = p + 2p\left( 1- \frac{p}{1000}\right)
+  = 3p - \frac{p^2}{500} \ .
+\]
+
+\subQ{b} $\displaystyle T'(p) = 3 -\frac{p}{250}$.
+
+\subQ{c} $T(p)$ est un simple polynomial de degré deux.  Nous pourrions
+facilement tracer le graphe de $T$ sans faire appel à la dérivée de $T$.
+Mais, comme nous voulons nous pratiquer à tracer des graphes à l'aide
+de la dérivée, nous ignorerons le fait que $T(p)$ est un simple polynomial.
+
+Les solutions de $T(p)= 0$ sont $p=0$ et $p=1500$.  Il n'y a qu'un seul
+point critique pour $T$ (lorsque $T'(p) = 0$) et c'est $p=750$.
+De plus, $p$ et $T(p)$ doivent être positifs car $p$ est le nombre
+d'individus dans la population initialement et $T(p)$ est la  
+taille de la population après un an.  Nous devons donc assumer que
+$0 \leq p \leq 1500$.
+
+Nous obtenons le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c}
+p & 0 & 0<p<750 & 750 & 750<p<1500 & 1500\\
+\hline
+T(p) & 0 & + & 1125 & + & 0 \\
+T'(p) & + & + & 0 & - & - \\
+\hline
+& \text{croît} & \text{croît} & \text{max. loc.} & \text{décroît} &
+\text{décroît} \\
+\end{array}
+\]
+Le graphe de $T$ a l'allure suivante.
+\PDFgraph{6_derivees_appl/graph_funct9}
+}
+
+\compileSOL{\SOLUa}{\ref{6Q15}}{
+$f\,'(x)>0$ si $-2<x<1$ veut dire que $f$ est (strictement)
+croissante pour $x$ entre $-2$ et $1$.
+$f\,'(x)<0$ si $x<-2$ ou si $x>1$ veut dire que $f$ est (strictement)
+décroissante pour $x<-2$ et $x>1$.
+
+Nous obtenons le graphe suivant.
+\PDFgraph{6_derivees_appl/graphQ1}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q16}}{
+Nous avons
+\[
+f'(x) = \frac{4x^2 e^{x^2} - e^{x^2}}{x^2}
+= \frac{4e^{x^2}(x^2 - 1/4)}{x^2}  \ .
+\]
+Nous résumons dans le tableau suivant l'information que nous pouvons
+déduire de $f$ et de sa dérivée.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+x & x<-1/2 & -1/2 & -1/2<x<0 & 0 & 0<x<1/2 & x>1/2 \\
+\hline
+f(x) & - & - & - & \text{N.D.} & + & + & + \\
+\hline
+f'(x) & + & 0 & - & \text{N.D.} & - & 0 & + \\
+\hline
+& & \text{max.} & & \text{asymptote} & & \text{min.} & \\
+& & \text{local} & & \text{vertical} & & \text{local} & \\
+\end{array}
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{6Q17}}{
+Pour répondre à cette question, il faut savoir que 
+\[
+  f'(x) = \frac{10-3x}{2\sqrt{5-x}} \qquad \text{et} \qquad
+  f''(x) = \frac{3x-20}{4(5-x)^{3/2}} \ .
+\]
+Nous résumons dans le tableau suivant l'information que nous pouvons
+déduire de $f$, $f'$ et $f''$.
+\[
+\begin{array}{c|c|c|c|c|c}
+x & x<0 & 0 & 0<x<10/3 & 10/3 & 10/5<x<5 \\
+\hline
+f(x) & - & 0 & + & + & + \\
+\hline
+f'(x) & + & + & + & 0 & - \\
+\hline
+f''(x) & - & - & - & - & - \\
+\hline
+& \multicolumn{3}{|c|}{\text{croît et}} & \text{max.} & \text{décroît et} \\
+& \multicolumn{3}{|c|}{\text{concave}} & \text{local} & \text{concave} \\
+\end{array}
+\]
+\subQ{a} La fonction est strictement croissante sur $]-\infty, 10/3[$
+et strictement décroissante sur $]10/3,5[$.
+
+\subQ{b} Le seul maximum local est $f(10/3) = 10\sqrt{15}/9$.
+
+\subQ{c} La fonction est concave sur $]-\infty,5[$.
+
+\subQ{d}
+\MATHgraph{6_derivees_appl/figFX1}{8cm}
+}
+
+\compileSOL{\SOLUa}{\ref{6Q18}}{
+Pour répondre à cette question, il faut utiliser
+\[
+  f'(x) = 1-2\cos(x) \qquad \text{et} \qquad
+  f''(x) = 2\sin(x)
+\]
+pour produire un tableau contenant l'information sur la croissance, la
+concavité, les points critiques, \ldots de $f$.  Nous laissons aux
+lecteurs le soin de produire ce tableau.
+
+\subQ{a} La fonction est strictement croissante sur $]\pi/3, 5\pi/3[$
+et $]7\pi/3,3\pi[$ et strictement décroissante sur $]0,\pi/3[$ et
+$]5\pi/3,7\pi/3[$.
+
+\subQ{b} Le seul maximum local est $f(5\pi/3) = 5\pi/3 + \sqrt{3}$.
+Il y a deux minimums locaux: $f(\pi/3) = \pi/3-\sqrt{3}$ et
+$f(7\pi/3) = 7\pi/3+\sqrt{3}$.
+
+\subQ{c} La fonction est convexe sur $]0,\pi[$ et $]2\pi,3\pi[$ et
+concave sur $]\pi,2\pi[$.  Les points $(\pi,\pi)$ et
+$(2\pi,2\pi)$. sont des points d'inflexion.
+
+\subQ{d}
+\MATHgraph{6_derivees_appl/figFX2}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q19}}{
+  \PDFgraph{6_derivees_appl/graphQ2}
+}
+
+\compileSOL{\SOLUa}{\ref{6Q20}}{
+\subQ{d}
+\PDFgraph{6_derivees_appl/graph_funct27}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q21}}{
+\subQ{a}
+Les solutions de $h(x)= x^3-3x + 3 = 0$ sont les points où $h$ coupe
+l'axe des $x$.  Malheureusement, nous n'avons pas de formule pour les
+calculer comme c'est le cas pour les équation quadratiques.  Les points
+critiques de $h$ sont les points où $h'(x) = 3x^2 -3 = 3(x^2-1) =0$.  nous
+trouvons $x=1$ et $-1$.
+
+Les points critiques de $h'(x)$ sont les solutions de $h''(x) = 6x = 0$.
+Donc $x=0$ est un candidat pour un point d'inflexion.  Finalement,
+$\displaystyle \lim_{x\rightarrow \infty} h(x) = +\infty$ et
+$\displaystyle \lim_{x\rightarrow -\infty} h(x) = -\infty$.
+
+Nous avons de plus que $h(-3) = - 15 < 0$ et $h(-2) = 1 >0$.  Comme la
+fonction $h$ change de signe entre $-3$ et $-2$, il doit donc y avoir
+un point $c$ entre $-3$ et $-2$ où $h(c) = 0$ selon le Théorème des
+valeurs intermédiaires.  Comme nous pouvons voir dans le tableau
+ci-dessous, le seul minimum local pour $x > c$ est positif.  Donc $h$
+coupe l'axe des $x$ en un seul point.
+
+Nous résumons dans le tableau suivant l'information que nous pouvons
+déduire de $h$, $h'$ et $h''$.
+\[
+\begin{array}{c|c|c|c|c|c|c|}
+x & -\infty & x<c & c & c < x -1 & -1 & -1< x <0  \\
+\hline
+h(x) & -\infty & - & 0 & + & 5 & + \\
+h'(x) & & + & + & + & 0 & - \\
+h''(x) & & - & - & - & - & - \\
+\hline
+& & \multicolumn{3}{|c|}{\text{croît et}} & \text{max. loc.}
+& \text{décroît et}\\
+& & \multicolumn{3}{|c|}{\text{concave}} & \text{et concave} & \text{concave}
+\end{array} \quad \ldots
+\]
+\[ \ldots \quad 
+\begin{array}{|c|c|c|c|c}
+0 & 0<x<1 & 1 & 1 < x & +\infty  \\
+\hline
+0 & - & 1 & - &  +\infty \\
+- & - & 0 & + & \\
+0 & + & + & + & \\
+\hline
+\text{point} & \text{décroît et} & \text{min. loc.} &
+\text{croît et} & \\
+\text{d'inflexion} & \text{et convexe} & \text{et convexe} &
+\text{convexe} &  
+\end{array}
+\]
+Le graphe de $h$ est
+\MATHgraph{6_derivees_appl/graph_funct10}{8cm}
+
+\subQ{b} Nous avons $\displaystyle h'(x) = 3x^2 -12 x -15 = 3(x-5)(x+1)$ et
+$\displaystyle h''(x)=6x-12$.
+
+$h'(x)$ est définie pour tout $x$ et $h'(x) = 0$ pour $x=-1$ et $x=5$.
+Les points critiques sont $x=-1$ et $x=5$.  $h''(x) = 0$ pour $x=2$.  Donc
+$x=2$ est un candidat pour un point d'inflexion.  Finalement,
+$\displaystyle \lim_{x\rightarrow \infty} h(x) = +\infty$ et
+$\displaystyle \lim_{x\rightarrow -\infty} h(x) = -\infty$.
+
+Nous résumons l'information que nous avons obtenues dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|}
+x & -\infty & x<-1 & -1 & -1<x<2 & 2 \\
+\hline
+f(x) & -\infty & -|+ & 11 & +|- & -43 \\
+f'(x) &  & + & 0 & - & - \\
+f''(x) &  & - & - & - & 0 \\
+\hline
+& & \text{croît et} & \text{max. local} & \text{décroît et} & \text{point} \\
+& & \text{concave} & \text{et concave} & \text{concave} & \text{d'inflexion}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots \begin{array}{|c|c|c|c}
+2<x<5 & 5 & 5<x & +\infty \\
+\hline
+- & -97 & -|+ & +\infty \\
+- & 0 & + & \\
++ & + & + & \\
+\hline
+\text{décroît et} & \text{min. loc.} & \text{croît} &  \\
+\text{convexe} & \text{et convexe} & \text{convexe} &
+\end{array}
+\]
+La fonction $f$ change de signe dans les intervalles où nous retrouvons un des
+symboles $+|-$ ou $-|+$.  Comme $f$ est continue, il existe un point dans
+un tel intervalle où la fonction $f$ est nulle.
+
+Le graphe de $f$ est
+\MATHgraph{6_derivees_appl/graph_funct6}{8cm}
+
+\subQ{c} Nous avons
+\[
+f(x) = x + \frac{4}{x^2} \quad , \quad
+f'(x) = 1 - \frac{8}{x^3} \quad \text{et} \quad f''(x) = \frac{24}{x^4} \; .
+\]
+Ainsi, la fonction $f$ n'est pas définie en $x=0$, elle est
+positive pour $x > -4^{1/3}$ et négative pour $x<-4^{1/3}$.
+
+La fonction $f'$ n'est pas définie en $x=0$.  Elle est égale à $0$ au point
+$x=2$.  De plus, sauf au point $x=0$ où la dérivée n'existe pas,
+$f'(x)$ est négatif pour $0<x<2$ et positif pour $x<0$ et $x>2$.
+
+La fonction $f''$ n'est pas définie en $x=0$ et est positive pour tout
+$x\neq 0$.
+
+Puisque
+\[
+\lim_{x\rightarrow \infty} f(x) = \infty  \quad \text{et} \quad
+\lim_{x\rightarrow -\infty} f(x) = -\infty \; ,
+\]
+il n'y a aucune asymptote horizontale.  Par contre,
+\[
+\lim_{x\rightarrow 0^-} f(x) = \lim_{x\to 0^+} f(x) = +\infty  \ .
+\]
+La partie positive de l'axe des $x$ est donc une asymptote verticale.
+
+Nous résumons l'information que nous avons obtenues le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|}
+x & -\infty & -\infty<x<-4^{1/3} & -4^{1/3} & -4^{1/3}<x<0 & 0 \\
+\hline
+f(x) & -\infty & - & 0 & + & \text{N.D.} \\
+f'(x) & & + & + & + & \text{N.D.} \\
+f''(x) &  & + & + & + & \text{N.D.} \\
+\hline
+& & \multicolumn{3}{|c|}{\text{croît et}} & \text{asymptote} \\
+& & \multicolumn{3}{|c|}{\text{convexe}} & \text{verticale}
+\end{array} \quad \ldots
+\]
+\[ \quad \ldots  \quad
+\begin{array}{|c|c|c|c}
+ 0<x<2 & 2 & 2<x<\infty & \infty \\
+\hline
++ & + & + & +\infty \\
+- & 0 & + & \\
++ & + & + & \\
+\hline
+\text{décroît et} & \text{min. local} & \text{croît et} & \\
+\text{convexe} & \text{et convexe} & \text{convexe} &
+\end{array}
+\]
+Le graphe de $f$ est donné ci-dessous.
+\MATHgraph{6_derivees_appl/figFX3}{8cm}
+
+\subQ{d} Nous avons $\displaystyle f'(x) = -e^x + (1-x)e^x = - x e^x$ et
+$\displaystyle f''(x) = - e^x - x e^x = -(1+x)e^x$.
+
+La fonction $f(x)$ est nulle pour $x=1$, positive pour $x<1$ et
+négative pour $x>1$.
+
+La fonction $f'$ est définie sur toute la droite réelle et $f'(x)=0$
+seulement pour $x=0$.  Donc $x=0$ est le seul point critique de $f$.
+Nous avons $f'(x) < 0$ pour $x>0$ et $f'(x) >0$ pour $x<0$.
+
+La fonction $f''$ est définie sur toute la droite réelle et $f''(x) = 0$
+seulement pour $x=-1$.  Donc $x=-1$ est un candidat pour un point
+d'inflexion.  Nous avons que $f''(x) < 0$ pour $x>-1$ et $f''(x)>0$ pour $x<-1$.
+
+Finalement,
+\[
+\lim_{x\rightarrow \infty} f(x) = \lim_{x\rightarrow \infty} (1-x)e^x =
+-\infty
+\quad \text{et} \quad 
+\lim_{x\rightarrow -\infty} f(x) = \lim_{x\rightarrow -\infty}
+(1-x)e^x = 0 \ .
+\]
+Nous pouvons vérifier numériquement ces limites à l'aide de suites
+$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ qui tendent vers plus ou
+moins l'infini selon le cas.
+
+Nous résumons l'information que nous avons obtenues dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|}
+x & -\infty & x<-1 & -1 \\
+\hline
+f(x) & 0 & + & 2e^{-1} \\
+f'(x) &  & + & + \\
+f''(x) & & + & 0 \\ 
+\hline
+& \text{asymptote} & \text{croît et} & \text{point} \\
+& \text{horizontale} & \text{convexe} & \text{d'inflexion}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots  \quad 
+\begin{array}{|c|c|c|c|c|c}
+-1<x<0 & 0 & 0<x<1 & 1 & 1<x & +\infty \\
+\hline
++ & 1 & + & 0 & - & -\infty \\
++ & 0 & - & - & - & \\
+- & - & - & - & - & \\
+\hline
+\text{croît et} & \text{max. local} &
+\multicolumn{3}{|c|}{\text{décroît et}} \\
+\text{concave} & \text{et concave} &
+\multicolumn{3}{|c|}{\text{concave}}
+\end{array}
+\]
+Le graphe de $f$ est ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct11}{8cm}
+
+\subQ{e} Nous avons $\displaystyle g(z) = \frac{e^z}{z^2} = z^{-2} e^z$.
+Ainsi,
+\begin{align*}
+g'(z) &= -2z^{-3}e^x + z^{-2}e^z = \left(z^{-2} -2z^{-3}\right) e^z
+= \left( z-2\right) z^{-3} e^z
+\intertext{et}
+g''(z) &= \left( -2z^{-3} + 6z^{-4}\right)e^z + \left(z^{-2} -2z^{-3}\right) e^z
+= \left(z^{-2} - 4z^{-3} + 6z^{-4}\right)e^z \\
+&= \left(z^2 - 4z + 6\right) z^{-4}e^z \ .
+\end{align*}
+La fonction $g$ est définie sur toute la droite réelle sauf à l'origine.
+De plus, $g(z)>0$ pour tout $z \neq 0$.
+
+La fonction $g'$ est aussi définie sur toute la droite réelle sauf à
+l'origine.  De plus $g'(z) = 0$ si $z=2$.  Nous avons donc un point critique
+à $x=2$.
+
+Comme $g$ et $g'$, la fonction $g''$ est aussi définie sur toute la droite
+réelle sauf à l'origine.  De plus, $g''(z)\neq 0$ pour tout $z \neq 0$
+car $z^2 - 4 z + 6$ n'a pas de racines réelles.  Comme $g''(z)$  est
+positif pour $z = 0$, nous avons donc que $g''(z)>0$ pour toutes valeurs de
+$z$.
+
+À l'aide de suites de nombres, nous pouvons vérifier que
+\begin{align*}
+\lim_{x\rightarrow \infty} g(x) &= \lim_{x\rightarrow \infty} \frac{e^z}{z^2}
+= \infty
+\intertext{et}
+\lim_{x\rightarrow -\infty} f(x) &= \lim_{x\rightarrow -\infty}
+\frac{e^z}{z^2} = 0 \ .
+\end{align*}
+De plus,
+\[
+\lim_{x\rightarrow 0} g(x) = \lim_{x\rightarrow 0} \frac{e^z}{z^2}
+= \infty \ .
+\]
+
+Nous résumons l'information que nous avons obtenues dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+z & -\infty & x<0 & 0 & 0 < x < 2 & 2 & 2 < x & \infty \\
+\hline
+g(z) & 0 & + & \text{N.D.} & + & e^2/4 & + & +\infty \\
+g'(z) & & + & \text{N.D.} & - & 0 & + & \\
+g''(z) & & + & \text{N.D.} & + & + & + &  \\ 
+\hline
+& \text{asymptote} & \text{croît et} & \text{asymptote} &
+\text{décroît et} & \text{min. loc.} & \text{croît et} & \\
+& \text{horizontale} & \text{convexe} & \text{verticale} & 
+\text{convexe} & \text{convexe} & \text{convexe} &
+\end{array}
+\]
+
+Le graphe de $g$ est ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct12}{8cm}
+
+\subQ{g} Nous avons
+\begin{align*}
+T'(t) &= -2 t e^t + (1-t^2)e^t = (1-2t-t^2) e^t
+\intertext{et}
+T''(t) &= (-2-2t)e^t +(1-2t-t^2) e^t = (-1-4t-t^2)e^x \ .
+\end{align*}
+La fonction $T$ ainsi que ses dérivées sont définies sur toute la droite
+réelle.  Nous avons que $T'(t)=0$ pour $t_1 = -1+\sqrt{2} \approx 0.41421$ et
+$t_2 = -1 - \sqrt{2}$.  Puisque $t_2 < -1$, le point $t_1$ est le seul
+point critique dans l'intervalle $[-1,1]$.  Nous avons que
+$T''(t)=0$ pour $s_1 = -2+\sqrt{3} \approx -0.267949$ et
+$s_2 = -2 - \sqrt{3}$.  Puisque $s_2<-1$, le point.$s_1$ est le
+seul point dans l'intervalle $[-1,1]$ où $T''(s_1)=0$.  C'est un
+candidat pour être un point d'inflexion.
+
+Nous résumons l'information que nous avons obtenues dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+t & -1 & -1<t<s_1 & s_1 & s_1 < t < t_1 & t_1 & t_1 < t <1 & 1 \\
+\hline
+T(t) & 0 & + & (1-s_1^2)e^{s_1} & + & (1-t_1^2)e^{t_1} & + & 0 \\
+T'(t) & + & + & + & + & 0 & + & + \\
+T''(t) & + & + & 0 & - & - & - & -  \\ 
+\hline
+& \multicolumn{2}{c|}{\text{croît et}} & \text{croît et} & \text{croît et} &
+\text{max. local} & \multicolumn{2}{|c}{\text{décroît et}} \\
+& \multicolumn{2}{c|}{\text{convexe}} & \text{point} & 
+\text{concave} & \text{et concave} & \multicolumn{2}{c}{\text{concave}} \\
+& \multicolumn{2}{c|}{} & \text{d'inflexion} & & & \multicolumn{2}{|c}{}
+\end{array}
+\]
+Le graphe de $T$ est ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct14}{8cm}
+
+\subQ{h} Puisque $G(x) = \sqrt{x} \, e^{-x} = x^{1/2} e^{-x}$, nous obtenons
+\begin{align*}
+G'(x) &= \frac{1}{2} x^{-1/2} e^{-x} - x^{1/2} e^{-x} =
+\left( \frac{1}{2} x^{-1/2} - x^{1/2}\right) e^{-x} =
+\left( \frac{1}{2} -x \right) x^{-1/2} e^{-x}
+\intertext{et}
+G''(x) &= \left( -\frac{1}{4} x^{-3/2} - \frac{1}{2} x^{-1/2} \right) e^{-x}
+- \left( \frac{1}{2} x^{-1/2} - x^{1/2}\right) e^{-x}
+= \frac{1}{4} \left( -1 - 4x + 4x^2\right) x^{-3/2} e^{-x} \ .
+\end{align*}
+
+La fonction $G$ est définie sur l'intervalle $[0,\infty[$ alors que les
+fonctions $G'$ et $G''$ sont définie sur $]0,\infty[$.  Nous allons
+tracer le graphe de $G$ pour $x\geq 0$.
+
+Nous avons que $G(x) \geq 0$ pour tout $x\geq 0$.
+
+$G'(x)=0$ pour $x = 1/2$ et $G'$ n'est pas définie à l'origine.
+Le seul point critique est $x=1/2$.  De plus,
+$G''(x)=0$ pour $x = x_1 = (1+\sqrt{2})/2 \approx 1.20711$ (la racine
+positive du polynôme $4x^2- 4x-1$.  C'est un candidat pour être un point
+d'inflexion.
+
+À l'aide de suites de nombres, nous pouvons vérifier que
+\[
+\lim_{x\rightarrow \infty} G(x) = \lim_{x\rightarrow \infty} \sqrt{x}\,
+e^{-x} = 0 \ .
+\]
+Nous résumons l'information que nous avons obtenues dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+x & 0 & 0<x<1/2 & 1/2 & 1/2 < x < x_1 & x_1 & x_1 < x & +\infty \\
+\hline
+G(x) & 0 & + & \rule{0em}{1em} e^{-1/2}/\sqrt{2} & + &
+\sqrt{x_1} \, e^{-x_1} & + & 0 \\
+G'(x) & \text{N.D.} & + & 0 & - & - & - & \\
+G''(x) & \text{N.D.} & - & - & - & 0 & + & \\ 
+\hline
+& & \text{croît et} & \text{max. local} & \text{décroît et} & \text{décroît} &
+\text{décroît et} & \\
+& & \text{concave} & \text{et concave} & \text{concave} & \text{et point}
+& \text{convexe} & \\
+& & & & & \text{d'inflexion} & &
+\end{array}
+\]
+Le graphe de $G$ est ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct15}{8cm}
+
+\subQ{i} Nous avons $\displaystyle f'(x) = \frac{3x^2}{(1+x^3)^2}$ et
+$\displaystyle f''(x) = \frac{6x(1-2x^3)}{(1+x^3)^3}$.
+
+La fonction $f$ est définie sur toute la droite réelle sauf à $-1$.
+$f(x)>0$ pour $x>0$ et $x<-1$, $f(x)<0$ pour $-1<x<0$ et $f(x)=0$
+seulement pour $x=0$.
+
+La fonction $f'$ est aussi définie sur toute la droite réelle sauf à $-1$.
+$f'(x) = 0$ à $x=0$ et $f'(x) > 0$ pour tout $x$ différent de $-1$ et $0$.
+
+La fonction $f''$ est définie sur toute la droite réelle sauf à $-1$.
+$f''(x)=0$ pour $x=0$ et $x=2^{-1/3}$.  $f''(x)>0$ pour $x<-1$ et
+$0<x< 2^{-1/3}$.  $f''(x)<0$ pour $-1<x<0$ et $x>2^{-1/3}$.
+
+De plus,
+\begin{align*}
+\lim_{x\rightarrow \pm\infty} f(x) &=\lim_{x\rightarrow \pm\infty} \frac{x^3}{1+x^3}
+=\lim_{x\rightarrow \pm\infty} \frac{1}{(1/x^3) + 1}
+=\frac{1}{\displaystyle \lim_{x\rightarrow \pm\infty}(1/x^3) + 1} = 1 \ , \\
+\lim_{x\rightarrow -1^+} f(x) &= +\infty
+\intertext{et}
+\lim_{x\rightarrow -1^-} f(x) &= -\infty \ .
+\end{align*}
+Nous ne pouvons pas utiliser la Règle de l'Hospital pour évaluer les
+limites $\displaystyle \lim_{x\rightarrow -1^+} f(x)$ et
+$\displaystyle \lim_{x\rightarrow -1^-} f(x)$.  Pourquoi?
+
+Nous résumons l'information que nous avons obtenues dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|}
+x & -\infty & x<-1 & -1 & -1 < x < 0 & 0 \\
+\hline
+f(x) & 1 & + & \text{N.D.} & - & 0 \\
+f'(x) &  & + & \text{N.D.} & + & 0 \\
+f''(x) & & + & \text{N.D.} & - & 0 \\
+\hline
+& \text{asymptote} & \text{croît et} & \text{asymptote} & \text{croît et} &
+\text{point} \\
+& \text{horizontale} & \text{convexe} & \text{verticale} & \text{concave}
+& \text{critique et} \\
+& & & & & \text{d'inflexion}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots  \quad
+\begin{array}{|c|c|c|c}
+0<x<2^{-1/3} & 2^{-1/3} & 2^{-1/3} <x & +\infty \\
+\hline
++ & 1/3 & + & 1 \\
++ & + & + & \\
++ & 0 & - & \\
+\hline
+\text{croît et} & \text{point} & \text{croît et} & \text{asymptote} \\
+\text{convexe} & \text{d'inflexion} & \text{concave} & \text{horizontale}
+\end{array}
+\]
+Le graphe de $f$ est ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct16}{8cm}
+
+\subQ{j} Le domaine de la fonction est $\RR\setminus \{0\}$.
+Nous avons que
+\[
+\lim_{x\rightarrow \infty} f(x)
+= \lim_{x\rightarrow \infty} \frac{2}{x^2} - \lim_{n\to \infty} \frac{3}{x^3}
+= 0
+\quad \text{et} \quad
+\lim_{x\rightarrow -\infty} f(x) =
+\lim_{x\rightarrow -\infty} \frac{2}{x^2} - \lim_{n\to -\infty} \frac{3}{x^3} = 0
+\ .
+\]
+L'axe des $x$ est une asymptote horizontale lorsque $x\to \infty$ et
+$x\to -\infty$.  De plus, à l'aide d'un tableau de valeurs, nous pouvons
+vérifier que
+\[
+\lim_{x\rightarrow 0^+} f(x) = 
+\lim_{x\rightarrow 0^+} \left( \frac{2x-3}{x^3} \right) = -\infty
+\quad \text{et} \quad
+\lim_{x\rightarrow 0^-} f(x) = 
+\lim_{x\rightarrow 0^-} \left( \frac{2x-3}{x^3} \right) = +\infty \ .
+\]
+La partie positive de la droite $x=0$ est donc une asymptote verticale
+lorsque $x$ converge vers $0$ par la gauche et la partie négative de la
+droite $x=0$ est une asymptote verticale lorsque $x$ converge vers $0$
+par la droite.
+
+Nous avons que $\displaystyle f(x)= \frac{2x-3}{x^3} = 0$ pour $x = 3/2$.
+Il découle de
+\[
+f'(x) = -4x^{-3} + 9 x^{-4} = -\frac{4x-9}{x^4}
+\quad \text{et} \quad
+f''(x) = 12x^{-4} - 36 x^{-5} = 12 \left(\frac{x-3}{x^5}\right)
+\]
+que le point $x=9/4$ où $f'(x)=0$ est le seul point critique pour $f$
+et le point $x=3$ où $f''(x)=0$ est le seul point critique pour $f'$.
+Ce dernier point est possiblement un point d'inflexion.
+
+Nous résumons dans les tableaux suivants l'information que nous avons pu
+déduire de $f$, $f'$ et $f''$.
+\[
+\begin{array}{c|c|c|c|c|c|c|}
+x & -\infty & x<0 & 0 & 0<x<3/2 & 3/2 & 3/2<x<9/4 \\
+\hline
+f(x) & 0 & + & \text{N.D.} & - & 0 & + \\
+\hline
+f'(x) & & + & \text{N.D.} & + & + & + \\
+\hline
+f''(x) & & + & \text{N.D.} & - & - & - \\
+\hline
+& \text{asymptote} & \text{croît et} & \text{asymptote} &
+\multicolumn{3}{|c|}{\text{croît et}} \\
+& \text{horizontale} & \text{convexe} & \text{verticale} &
+\multicolumn{3}{|c|}{\text{concave}}
+\end{array} \quad \ldots
+\]
+\[
+\ldots \quad 
+\begin{array}{|c|c|c|c|c}
+9/4 & 9/4<x<3 & 3 & 3<x<\infty & \infty \\
+\hline
++ & + & + & + & 0 \\
+\hline
+0 & - & - & - & \\
+\hline
+- & - & 0 & + & \\
+\hline
+\text{max. local} & \text{décroît et} & \text{point} &
+\text{décroît et} & \text{asymptote} \\
+\text{et concave} & \text{concave} & \text{d'inflexion} &
+\text{convexe} & \text{horizontale}
+\end{array}
+\]
+\MATHgraph{6_derivees_appl/graph_funct23}{8cm}
+
+\subQ{k} Le domaine de la fonction est $\RR$ au complet.
+Nous avons que $f(x)=0$ seulement à $x=-4$ et $f(0) = 4$.
+
+Il découle de
+\[
+f'(x) = e^{-x}-(x+4)e^{-x} = -(x+3)e^{-x} \quad \text{et} \quad
+f''(x) = -e^{-x} + (x+3)e^{-x} = (x+2)e^{-x}
+\]
+que la fonction $f$ a un seul point critique à $x=-3$ et la fonction $f'$
+a un seul point critique à $x=-2$.  Ce dernier point est un candidat
+possible pour un point d'inflexion.
+
+Grâce à la Règle de l'Hospital, nous avons
+\[
+\lim_{x\rightarrow \infty} f(x)
+= \underbrace{\lim_{x\rightarrow \infty} \frac{x+4}{e^x}
+}_{\text{type }\infty/\infty}
+= \lim_{x\rightarrow \infty} \frac{1}{e^x} = 0 \ .
+\]
+De plus,
+\[
+\lim_{x\rightarrow -\infty} f(x) = \lim_{x\rightarrow -\infty} (x+4)e^{-x}
+= -\infty
+\]
+car
+\[
+\lim_{x\rightarrow -\infty} e^{-x} = \lim_{x\rightarrow \infty} e^x
+= \infty \quad \text{et} \quad
+\lim_{x\rightarrow -\infty} x+4 = -\infty \ .
+\]
+
+Nous résumons dans le tableau suivant l'information que nous avons pu
+déduire de $f$, $f'$ et $f''$
+\[
+\begin{array}{c|c|c|c|c|c|c|}
+x & -\infty & x<-4 & -4 & -4<x<-3 & -3 & -3<x<-2 \\
+\hline
+f(x) & -\infty & - & 0 & + & e^3 & + \\
+\hline
+f'(x) & & + & + & + & 0 & - \\
+\hline
+f''(x) & & - & - & - & - & - \\
+\hline
+& & \multicolumn{3}{|c|}{\text{croît et}} & \text{max. local} &
+\text{décroît et} \\
+& & \multicolumn{3}{|c|}{\text{concave}} & \text{et concave} &
+\text{concave}
+\end{array}\quad \ldots
+\]
+\[
+\ldots \quad \begin{array}{|c|c|c}
+-2 & -2<x & +\infty \\
+\hline
+2e^2 & + & 0 \\
+\hline
+- & - & \\
+\hline
+0 & + & \\
+\hline
+\text{point} & \text{décroît et} & \text{asymptote} \\
+\text{d'inflexion} & \text{convexe} & \text{horizontale}
+\end{array}
+\]
+
+Nous obtenons le graphe suivant.
+\MATHgraph{6_derivees_appl/graph_funct21}{8cm}
+
+\subQ{l} Le domaine de la fonction est $\RR \setminus \{0\}$.
+Nous avons que
+\begin{align*}
+\lim_{x\rightarrow \infty} f(x) &= 
+\lim_{x\rightarrow \infty} \frac{2}{x} - \lim_{x\rightarrow \infty} \frac{6}{x^3}
+= 0 - 0 = 0
+\intertext{et}
+\lim_{x\rightarrow -\infty} f(x) &= 
+\lim_{x\rightarrow -\infty} \frac{2}{x} - \lim_{x\rightarrow -\infty} \frac{6}{x^3}
+= 0 - 0 = 0 \quad.
+\end{align*}
+L'axe des $x$ est donc une asymptote horizontale lorsque $x$ converge
+vers plus ou moins l'infini.
+De plus,
+\[
+\lim_{x\rightarrow 0^+} f(x) =
+\lim_{x\rightarrow 0^+} \frac{2(x^2-3)}{x^3} = -\infty
+\quad \text{et} \quad
+\lim_{x\rightarrow 0^-} f(x) = 
+\lim_{x\rightarrow 0^-} \frac{2(x^2-3)}{x^3} = +\infty \ .
+\]
+La partie positive de l'axe des $y$ est donc une asymptote verticale
+lorsque $x$ converge vers $0$ par la droite et la partie négative de
+l'axe des $y$ est une asymptote verticale lorsque $x$ converge vers
+$0$ par la gauche.
+
+Nous avons que $\displaystyle f(x)= \frac{2(x^2-3)}{x^3} = 0$ à
+$x=\pm\sqrt{3}$.  Il découle de
+\[
+f'(x) = -\frac{2}{x^2} + \frac{18}{x^4} = -\frac{2(x^2-9)}{x^4} \quad
+\text{et} \quad 
+f''(x) = \frac{4}{x^3} - \frac{72}{x^5}
+= \frac{4(x^2-18)}{x^5}
+\]
+que les points $x=\pm 3$ où $f'(x)=0$ sont les seuls points critiques
+de $f$ et les points $x=\pm 3\sqrt{2}$ où $f''(x)=0$ sont les seuls
+points critiques de $f'$.  C'est deux derniers points sont possiblement
+des points d'inflexion. 
+
+Nous résumons dans les tableaux suivants l'information que nous avons pu
+déduire de $f$, $f'$ et $f''$.  Notons que la fonction $f$ est impaire
+$f(-x)=-f(x)$.  Il suffit donc de tracer le graphe de $f(x)$ pour
+$x>0$.  Le graphe de $f(x)$ pour $x<0$ est la réflection par rapport à
+l'origine du graphe de $f(x)$ pour $x > 0$.
+\[
+\begin{array}{c|c|c|c|c|c|}
+x & -\infty & x< -3\sqrt{2} & -3\sqrt{2} & -3\sqrt{2} <x< -3 & -3 \\
+\hline
+f(x) & 0 & - & 0 & - & - \\
+\hline
+f'(x) & & - & - & - & 0  \\
+\hline
+f''(x) & & - & 0 & + & + \\
+\hline
+& \text{asymptote} & \text{décroît et} & \text{point} & \text{décroît et} &
+\text{min. local}  \\
+& \text{horizontale} & \text{concave} & \text{d'inflexion} & \text{convexe} &
+\text{et convexe}
+\end{array} \quad \ldots
+\]
+\[
+\ldots \begin{array}{|c|c|c|c|c|c|c|}
+-3 <x< -\sqrt{3} & -\sqrt{3} & \sqrt{3} <x< 0 & 0 & 0 <x< \sqrt{3}
+& \sqrt{3} & \sqrt{3} <x< 3  \\
+\hline
+- & 0 & + & \text{N.D.} & - & 0 & + \\
+\hline
++ & + & + & \text{N.D.} & + & + & + \\
+\hline
++ & + & + & \text{N.D.} & - & - & - \\
+\hline
+\multicolumn{3}{|c|}{\text{croît et}} & \text{asymptote}
+& \multicolumn{3}{|c|}{\text{croît et}} \\
+\multicolumn{3}{|c|}{\text{convexe}} & \text{verticale}
+& \multicolumn{3}{|c|}{\text{concave}}
+\end{array} \ldots
+\]
+\[
+\ldots \quad \begin{array}{|c|c|c|c|c}
+3 & 3 <x< 3\sqrt{3} & 3\sqrt{2} & 3\sqrt{2} <x & +\infty \\
+\hline
++ & + & + & + & 0 \\
+\hline
+0 & - & - & - & \\
+\hline
+- & - & 0 & + & \\
+\hline
+\text{max. local} & \text{décroît et} & \text{point} & \text{décroît et} &
+\text{asymptote} \\
+\text{et concave} & \text{concave} & \text{d'inflexion} & \text{convexe} &
+\text{horizontale}
+\end{array}
+\]
+
+Le graphe de la fonction est donné ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct22}{8cm}
+
+\subQ{m} Le domaine de la fonction est $\RR\setminus \{1\}$.
+À l'aide de la Règle de l'Hospital, nous avons que
+\[
+\lim_{x\rightarrow \infty} f(x) =
+\underbrace{\lim_{x\rightarrow \infty} \frac{e^x}{x-1}}_{\text{type }\infty/\infty}
+= \lim_{x\rightarrow \infty} \frac{e^x}{1} = +\infty \ .
+\]
+De plus,
+\[
+\lim_{x\rightarrow -\infty} f(x)
+= \left(\lim_{x\rightarrow -\infty} \frac{1}{x}\right)
+\left(\lim_{x\rightarrow -\infty} e^x\right) = 0 \times 0 = 0 \ .
+\]
+L'axe des $x$ est une asymptote horizontale lorsque $x\to -\infty$.
+
+À l'aide d'un tableau de valeurs, nous pouvons vérifier que
+\[
+\lim_{x\rightarrow 1^+} f(x) = +\infty \quad \text{et} \quad
+\lim_{x\rightarrow 1^-} f(x) = -\infty \ .
+\]
+La partie positive de la droite $x=1$ est donc une asymptote verticale
+lorsque $x$ converge vers $1$ par la droite et la partie négative de la
+droite $x=1$ est une asymptote verticale lorsque $x$ converge vers $0$
+par la gauche.
+
+Nous avons que $\displaystyle f(x)= \frac{e^x}{x-1} \neq 0$ pour tout $x$.
+Il découle de
+\begin{align*}
+f'(x) &= \frac{e^x (x-1) - e^x}{(x-1)^2} = \frac{(x-2)e^x}{(x-1)^2}
+\intertext{et}
+f''(x) &= \frac{(e^x+(x-2)e^x)(x-1)^2 - 2(x-2)(x-1)e^x}{(x-1)^4} \\
+&= \frac{(x-1)^3 e^x - 2(x-2)(x-1)e^x}{(x-1)^4}
+= \frac{(x-1)^2 e^x - 2(x-2)e^x}{(x-1)^3}
+= \frac{(x^2-4x+5) e^x}{(x-1)^3}
+\end{align*}
+que $x=2$ est le seul point critique pour $f$ et que
+$f'$ a aucun point critique.
+
+Nous résumons dans le tableau suivant l'information que nous avons pu
+déduire de $f$, $f'$ et $f''$.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+x & -\infty & x<1 & 1 & 1<x<2 & 2 & 2<x & +\infty \\
+\hline
+f(x) & 0 & - & \text{N.D.} & + & + & + & +\infty \\
+\hline
+f'(x) & & - & \text{N.D.} & - & 0 & + & \\
+\hline
+f''(x) & & - & \text{N.D.} & + & + & + & \\
+\hline
+& \text{asymptote} & \text{décroît et} & \text{asymptote} &\text{décroît et} &
+\text{min. local} & \text{croît et} & \\
+& \text{horizontal} & \text{concave} & \text{vertical} & \text{convexe}
+& \text{et convexe} & \text{convexe} &
+\end{array}
+\]
+
+\MATHgraph{6_derivees_appl/graph_funct24}{8cm}
+
+\subQ{n}  Le domaine de la fonction est $\RR\setminus \{-1\}$.
+Puisque
+\[
+\lim_{x\to \infty} f(x) = \lim_{x\to \infty} \frac{x}{x^3+1}
+= \lim_{x\to \infty} \frac{1/x^2}{1+1/x^3} = 0
+\]
+car $\displaystyle \lim_{x\to \infty} 1/x^r = 0$ pour $r>0$, nous avons que
+l'axe des $x$ est une asymptote horizontale pour $x>0$.  De même, nous
+avons que l'axe des $x$ est aussi une asymptote horizontale pour $x<0$.
+
+De plus, à l'aide de suites numériques, nous pouvons voir que
+$\displaystyle \lim_{x\to -1^-} f(x)
+= \lim_{x\to -1^-} \frac{x}{x^3+1} = +\infty$
+car $x$ approche $-1$ et $x^3+1<0$ approche $0$ lorsque $x \to -1^-$.
+De même, $\displaystyle \lim_{x\to -1^+} f(x)
+= \lim_{x\to -1^+} \frac{x}{x^3+1} = -\infty$
+car $x$ approche $-1$ et $x^3+1>0$ approche $0$ lorsque $x \to -1^+$.
+La droite $x=1$ est donc une asymptote verticale.
+
+Il découle de $\displaystyle f'(x) = \frac{-2x^3+1}{(x^3+1)^2}$ et
+$\displaystyle f''(x) = \frac{6x^2(x^3-2)}{(x^3+1)^3}$ que
+$x = 2^{-1/3}$ est le seul point critique pour $f$ et que
+$x=0$ et $x = 2^{1/3}$ sont les seuls points critiques pour
+$f'$.  C'est deux dernier points sont des candidats possibles pour
+être des points d'inflexion.
+
+Nous résumons dans le tableau suivant l'information que nous avons pu
+déduire de $f$, $f'$ et $f''$.
+\[
+\begin{array}{c|c|c|c|c|c|c|c|}
+x & -\infty & x< -1&-1& -1 <x< 0 & 0 & 0 <x< 2^{-1/3} & 2^{-1/3} \\
+\hline
+f(x) & 0 &+ & \text{N.D.} & - & 0 &+ & + \\
+\hline
+f'(x) & & + & \text{N.D.} & + & + & + & 0  \\
+\hline
+f''(x) & & + & \text{N.D.} & - & 0 & - & - \\
+\hline
+& & \text{croît et} & \text{asymptote} & \text{croît et} & \text{croît}
+& \text{croît et} & \text{max. local}  \\
+& & \text{convexe} & \text{verticale} & \text{concave} & &
+\text{concave} & \text{et concave}
+\end{array} \quad \ldots
+\]
+\[
+\ldots \quad \begin{array}{|c|c|c|c}
+2^{-1/3} <x< 2^{1/3} & 2^{1/3}& 2^{1/3} <x & +\infty\\
+\hline
+ + & + & + & 0\\
+\hline
+ - & - & - & \\
+\hline
+ - & 0 & + & \\
+\hline
+\text{décroît et} & \text{point} & \text{décroît et} & \text{asymptote} \\
+\text{concave} & \text{d'inflexion} & \text{convexe} & \text{horizontale}
+\end{array}
+\]
+\MATHgraph{6_derivees_appl/graph_funct25}{8cm}
+
+\subQ{o} Le domaine de $f$ est $]0,\infty[$ car $\ln(x)$
+est seulement définie pour $x>0$.
+
+Puisque $x>0$, nous avons que $f(x) = x \ln(x) = 0$ seulement lorsque
+$\ln(x) = 0$; c'est-à-dire, lorsque $x=1$.
+
+Nous avons que $\displaystyle \lim_{x \to +\infty} f(x) = \infty$ car
+$x \to \infty$ et $\ln(x) \to \infty$ lorsque $x \to \infty$.
+Nous avons une limite du type $(0\cdot\infty)$ lorsque $x\to 0^+$.  Or
+\[
+\lim_{x\to 0^+}  x \ln(x) = \lim_{x\to 0^+} \frac{\ln(x)}{1/x} \ .
+\]
+Nous avons maintenant une limite du type $(\infty/\infty)$ pour laquelle nous
+pouvons utiliser la Règle de l'Hospital pour obtenir
+\[
+\lim_{x\to 0^+} \frac{\ln(x)}{1/x}
+= \lim_{x\to 0^+} \frac{1/x}{-1/x^2}
+= \lim_{x\to 0^+} -x = 0 \ .
+\]
+
+Il découle de $f'(x) = \ln(x) + 1$ et $f''(x) = 1/x$ que $x= 1/e$
+est le seul point critique pour $f$.  Il n'y a pas de point critique
+pour $f'$.
+
+Nous résumons dans le tableau suivante l'information que nous avons pu obtenir
+de $f'$ et $f''$.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+x & 0 & x< 1/e & 1/e & 1/e <x< 1 & 1 & 1 < x & +\infty\\
+\hline
+f(x) & 0 & - & - & -  & 0 & + & \infty\\
+\hline
+f'(x) & & - & 0 & + & + & + &  \\
+\hline
+f''(x) & & + & + & + & + & + &  \\
+\hline
+& & \text{décroît et} & \text{min local.} &
+\multicolumn{3}{|c|}{\text{croît et}} & \\
+& & \text{convexe} & \text{et convexe} & \multicolumn{3}{|c|}{\text{convexe}} &
+\end{array}
+\]
+
+Le graphe de $f$ est donné ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct26}{8cm}
+
+Le point $(0,0)$ ne fait pas parti du graphe de $f$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q22}}{
+\subQ{a} Puisque $f(x) = \sin^2(x) - 2 \cos(x)$ est une fonction de
+période $2\pi$, il suffit d'étudier la fonction entre $0$ et $2\pi$.
+\[
+  f'(x) = 2 \sin(x) \cos(x) + 2\sin(x) = 2\sin(x) (\cos(x) + 1)
+\]
+et
+\begin{align*}
+  f''(x) &= 2 \cos^2(x) -2\sin^2(x) + 2\cos(x)
+  = 2\cos^2(x) -2(1-\cos^2(x)) + 2\cos(x) \\
+ & = 4 \cos^2(x) + 2\cos(x) - 2 \ .
+\end{align*}
+Nous avons que
+\[
+  f'(x)=0 \Rightarrow \sin(x) = 0 \text{ ou } \cos(x) = -1
+  \Rightarrow x=0, \pi \text{ ou } x = \frac{3\pi}{2} \ .
+\]
+Il y a trois points critiques dans l'intervalle $[0,2\pi[$: $0$, $\pi$
+et $3\pi/2$.  Nous avons que $f'(x) > 0$ pour $0 < x < \pi$ 
+et $f'(x) < 0$ pour $\pi < x < 3\pi/2$ et $3\pi/2 <x < 2\pi$.
+Donc $f$ a un maximum local à $x=\pi$ et un minimum local à
+$x = 2\pi$, alors que $x=3\pi/2$ n'est ni un maximum ou un minimum local.
+
+Les points critiques de $f'$ sont les solutions de $z = \cos(x)$ pour
+$x$ dans l'intervalle $[0,2\pi[$ où $z$ est une racine de
+$2z^2 + z -1$.  Les racines de ce polynôme sont $z=-1$ ou $1/2$.
+Ainsi, $\cos(x) = -1$ pour $x=\pi$, et $\cos(x) = 1/2$ pour $x=\pi/3$
+et $5\pi/3$.  Ce sont nos candidats pour les points d'inflexion.  Nous avons
+$f''(x) > 0$ pour $0 < x < \pi/3$ et $5\pi/3 < x < 2\pi$, et $f'(x)<0$
+pour $\pi/3 < x < \pi$ et $\pi < x < 5\pi/3$.  Nous avons deux points
+d'inflexion: $x=\pi/3$ et $x = 5\pi/3$.
+
+Nous résumons l'information que nous venons de déduire dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|c|}
+\rule[-0.5em]{0em}{1em}
+x & 0 & 0<x<\frac{\pi}{3} & \frac{\pi}{3} & \frac{\pi}{3} < x < \pi
+& \pi & \pi < x < \frac{3\pi}{2} \\
+\hline
+f(x) & -2 & - & - & -|+ & + & 2 \\
+f'(x) & 0 & + & + & + & 0 & - \\
+f''(x) & + & + & 0 & - & 0 & - \\ 
+\hline
+& \text{min. local} & \text{croît et} & \text{croît}
+& \text{croît et} & \text{max. local} & \text{décroît et} \\
+& \text{et convexe} & \text{convexe} & \text{et point}
+& \text{concave} & \text{et concave} & \text{concave} \\
+& & & \text{d'inflexion} & & &
+\end{array}
+\ldots
+\]
+\[
+\ldots
+\begin{array}{|c|c|c|c|c}
+\rule[-0.5em]{0em}{1em}
+\frac{3\pi}{2} & \frac{3\pi}{2} < x < \frac{5\pi}{3} & \frac{5\pi}{3}
+  & \frac{5\pi}{3} < x < 2\pi & 2\pi \\
+\hline
++  & +|- & - & - & -2 \\
+0 & - & - & - &  0 \\
+- & - & 0 & + & + \\
+\hline
+& \text{décroît et} & \text{décroît} &
+\text{décroît et} & \text{min. local} \\
+\text{concave} & \text{concave} & \text{et point} &
+\text{convexe} & \text{et convexe} \\
+& & \text{d'inflexion} & &
+\end{array}
+\]
+La fonction $f$ change de signe dans les intervalles où nous retrouvons un des
+symboles $+|-$ ou $-|+$.  Comme $f$ est continue, il existe un point dans
+un tel intervalle où la fonction $f$ est nulle.
+
+Il y a aucune asymptote.
+
+La fonction est strictement croissante sur les intervalles
+$]2n\pi,(2n+1)\pi[$ pour $n \in \ZZ$.  Elle est
+strictement décroissante sur les intervalles $](2n+1)\pi,(2n+2)\pi[$
+pour $n \in \ZZ$.   Les maximums locaux sont aux points $x= (2n+1)\pi$
+où nous avons $f( (2n+1)\pi) = 2$.  Les minimums locaux sont aux
+points
+$x= 2n\pi$ où nous avons $f(2n\pi) = -2$.  La fonction est convexe sur les
+intervalles $]2n\pi - \pi/3, 2n\pi + \pi/3[$ pour
+$n \in \ZZ$.  Elle est concave sur les intervalles
+$]2n\pi + \pi/3, (2n+1)\pi[$ et
+$](2n+1)\pi, 2n\pi + 5\pi/3[$ pour $n\in \ZZ$.
+
+\MATHgraph{6_derivees_appl/figFX4}{8cm}
+
+\subQ{b}
+Nous avons $\displaystyle f'(\theta) = 1 - 3\sin(\theta)$ et
+$\displaystyle f''(\theta)= -3\cos(\theta)$.  La fonction $f$ et ses dérivées
+sont définies sur toute la droite réelle.
+
+Les valeurs de $\theta \in [0, 4\pi]$ pour lesquelles $f'(\theta) = 0$ sont
+$\theta_1 = \arcsin(1/3) \approx 0.3398$, $\theta_2 = \theta_1+2\pi$,
+$\theta_3 = (\pi -\arcsin(1/3)) \approx 2.8018$ et
+$\theta_4 = \theta_3 + 2\pi$ comme nous pouvons voir dans la figure
+ci-dessous. Les points $\theta_i$'s sont les points critiques de $f$
+sur l'intervalle $[0,4\pi]$.
+\PDFgraph{6_derivees_appl/problTrig}
+
+Les valeurs de $\theta \in [0,4\pi]$ pour lesquelles $f''(\theta)=0$ sont
+$\pi/2$, $3\pi/2$, $5\pi/2$ et $7\pi/2$.  Ce sont donc nos candidats pour
+être des points d'inflexion.
+
+Nous résumons l'information que nous venons de déduire dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|}
+\rule[-0.5em]{0em}{1em}
+\theta & 0 & 0<\theta < \theta_1 & \theta_1 &
+\theta_1 < \theta < \frac{\pi}{2} & \frac{\pi}{2} \\
+\hline
+f(\theta) & 3 & + & + & + & + \\
+f'(\theta) & 1 & + & 0 & - & - \\
+f''(\theta) & -3 & - & - & - & 0 \\
+\hline
+& \multicolumn{2}{|c|}{\text{croît et}} & \text{max. local} &
+\text{décroît et} & \text{décroît et} \\
+& \multicolumn{2}{|c|}{\text{concave}} & \text{et concave} &
+\text{concave} & \text{et point} \\
+& \multicolumn{2}{|c|}{} & & & \text{d'inflexion}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots \quad 
+\begin{array}{|c|c|c|c|}
+\rule[-0.5em]{0em}{1em}
+\frac{\pi}{2} < \theta < \theta_3 & \theta_3 &
+\theta_3 < \theta < \frac{3\pi}{2} & \frac{3\pi}{2} \\
+\hline
++|- & - & -|+ & + \\
+- & 0 & + & 4 \\
++ & + & + & 0 \\
+\hline
+\text{décroît et} & \text{min. local} & \text{croît} & \text{croît} \\
+\text{convexe} & \text{et convexe} & \text{convexe} & \text{et point} \\
+& & & \text{d'inflexion}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots \quad
+\begin{array}{|c|c|c|c|}
+\rule[-0.5em]{0em}{1em}
+\frac{3\pi}{2} <\theta < \theta_2 & \theta_2 &
+\theta_2 < \theta < \frac{5\pi}{2} & \frac{5\pi}{2} \\
+\hline
++ & + & + & + \\
++ & 0 & - & - \\
+- & - & - & 0 \\
+\hline
+\text{croît et} & \text{max. local} & \text{décroît} & \text{décroît} \\
+\text{concave} & \text{et concave} & \text{concave} & \text{et point} \\
+& & & \text{d'inflexion}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots \quad
+\begin{array}{|c|c|c|c|c|c}
+\rule[-0.5em]{0em}{1em}
+\frac{5\pi}{2} < \theta < \theta_4 & \theta_4 &
+\theta_4 < \theta < \frac{7\pi}{2} & \frac{7\pi}{2} &
+\frac{7\pi}{2} < \theta < 4\pi & 4\pi\\
+\hline
++ & + & + & + & + & + \\
+- & 0 & + & + & + & + \\
++ & + & + & 0 & - & - \\
+\hline
+\text{décroît et} & \text{min. local} & \text{croît et} &
+\text{croît et} & \multicolumn{2}{|c}{\text{croît et}} \\
+\text{convexe} & \text{et convexe} & \text{convexe} & \text{et point} &
+\multicolumn{2}{|c}{\text{concave}} \\
+& & & \text{d'inflexion} & \multicolumn{2}{|c}{}
+\end{array}
+\]
+La fonction $f$ change de signe dans les intervalles où nous retrouvons un des
+symboles $+|-$ ou $-|+$.  Comme $f$ est continue, il existe un point dans
+un tel intervalle où la fonction $f$ est nulle.
+
+Le graphe de $f$ est
+\MATHgraph{6_derivees_appl/graph_funct17}{8cm}
+
+\subQ{c}
+Nous avons $\displaystyle h'(t) = \left(\cos(t)- \sin(t)\right) e^{-t}$ et
+$\displaystyle h''(t)= -2\cos(t)e^{-t}$.  La fonction $h$ et ses dérivées
+sont définies sur toute la droite réelle.
+
+Les valeurs de $t \in [0, 4\pi]$ pour lesquelles $h(t) = 0$ sont les valeurs
+de $t$ telles que $\sin(t) = 0$; c'est-à-dire, $n \pi$ pour $n=0$, $1$, $2$,
+$3$ et $4$.
+
+Les valeurs de $t \in [0, 4\pi]$ pour lesquelles $h'(t) = 0$ sont les valeurs
+de $t$ telles que $\tan(t) = 1$ puisque $\cos(t)-\sin(t) \neq 0$ pour
+$t=\pi/2$, $3\pi/2$, $5\pi/2$ et $7\pi/2$.  Les points critiques de $h$
+sur l'intervalle $[0,4\pi]$ sont donc $\pi/4$, $5\pi/4$, $9\pi/4$ et $13\pi/4$.
+Le valeurs de $t \in [0,4\pi]$ pour lesquelles $h''(t)=0$ sont
+$(2n+1)\pi/2$ pour $n=0$, $1$, $2$ et $3$.   Ce sont donc nos candidats pour
+être des points d'inflexion.
+
+Nous résumons l'information que nous venons de déduire dans le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|c|c|}
+\rule[-0.5em]{0em}{1em}
+t & 0 & 0<t<\frac{\pi}{4} & \frac{\pi}{4} &
+\frac{\pi}{2}<t<\frac{\pi}{2} & \frac{\pi}{2} &
+\frac{\pi}{2}<t<\pi & \pi \\
+\hline
+h(t) & 0 & + & + & + & + & + & 0 \\
+h'(t) & 1 & + & 0 & - & - & - & - \\
+h''(t) & -2 & - & - & - & 0 & + & + \\
+\hline
+& \multicolumn{2}{|c|}{\text{croît et}} & \text{max. local} &
+\text{décroît et} & \text{décroît} &
+\multicolumn{2}{|c|}{\text{décroît et}} \\
+& \multicolumn{2}{c|}{\text{concave}} & \text{et concave} &
+\text{et concave} & \text{et point} & \multicolumn{2}{|c|}{\text{convexe}} \\
+& \multicolumn{2}{|c|}{} & & & \text{d'inflexion} &
+\multicolumn{2}{|c|}{}
+\end{array} \ \ldots
+\]
+\[
+\qquad \ldots \quad 
+\begin{array}{|c|c|c|c|c|c|}
+\rule[-0.5em]{0em}{1em}
+\pi<t<\frac{5\pi}{4} & \frac{5\pi}{4} &
+\frac{5\pi}{4}<t<\frac{3\pi}{2} & \frac{3\pi}{2} &
+\frac{3\pi}{2}<t<2\pi & 2\pi \\
+\hline
+- & - & - & - & - & 0 \\
+- & 0 & + & + & + & + \\
++ & + & + & 0 & - & - \\
+\hline
+\text{décroît et} & \text{min. local} & \text{croît et} & \text{croît} &
+\multicolumn{2}{|c|}{\text{croît et}} \\
+\text{convexe} & \text{convexe} & \text{convexe} & \text{et point} &
+\multicolumn{2}{|c|}{\text{concave}}  \\
+& & & \text{d'inflexion} & \multicolumn{2}{|c|}{}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots \quad
+\begin{array}{|c|c|c|c|c|c|}
+\rule[-0.5em]{0em}{1em}
+2\pi<t<\frac{9\pi}{4} & \frac{9\pi}{4} & \frac{9\pi}{4}<t<\frac{5\pi}{2} &
+\frac{5\pi}{2} & \frac{5\pi}{2}<t<3\pi & 3\pi \\
+\hline
++ & + & + & + & + & 0 \\
++ & 0 & - & - & - & - \\
+- & - & - & 0 & + & + \\
+\hline
+\text{croît et} & \text{max. local} & \text{décroît et} & \text{décroît} &
+\multicolumn{2}{|c|}{\text{décroît}} \\
+\text{concave} & \text{concave} & \text{concave} & \text{et point} &
+\multicolumn{2}{|c|}{\text{convexe}} \\
+ & & & \text{d'inflexion} & \multicolumn{2}{|c|}{}
+\end{array} \quad \ldots
+\]
+\[
+\qquad \ldots \quad
+\begin{array}{|c|c|c|c|c|c}
+\rule[-0.5em]{0em}{1em}
+3\pi<t<\frac{13\pi}{4} & \frac{13\pi}{4} &
+\frac{13\pi}{4}<t<\frac{7\pi}{2} & \frac{7\pi}{2} & \frac{7\pi}{2}<t<4\pi &
+4\pi \\
+\hline
+- & - & - & - & - & 0 \\
+- & 0 & + & + & + & + \\
++ & + & + & 0 & - & - \\
+\hline
+\text{décroît et} & \text{min. local} & \text{croît et} & \text{croît}
+& \multicolumn{2}{|c}{\text{croît}} \\
+\text{convexe} & \text{convexe} & \text{convexe} & \text{et point}
+& \multicolumn{2}{|c}{\text{concave}} \\
+ & & & \text{d'inflexion} & \multicolumn{2}{|c}{\text{concave}}
+\end{array}
+\]
+La fonction $f$ change de signe dans les intervalles où nous retrouvons un des
+symboles $+|-$ ou $-|+$.  Comme $f$ est continue, il existe un point dans
+un tel intervalle où la fonction $f$ est nulle.
+
+Le graphe de $f$ est donné ci-dessous.  Puisque $e^{-t}$ tend très
+rapidement vers $0$ lorsque $t$ tend vers plus l'infini, nous avons aussi tracé
+le graphe de $f$ sur des intervalles de plus en plus éloigné de l'origine.
+Portez attention à l'amplitude de $f$ dans chacun des graphes
+ci-dessous.
+\MATHgraph{6_derivees_appl/graph_funct18}{9cm}
+}
+
+\subsection{Optimisation}
+
+\compileSOL{\SOLUb}{\ref{6Q24}}{
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\hline
+$x$ (nombre d'oeufs pondus) & $5$ & $10$ & $20$ \\
+\hline
+$S(x)=xP(x)$ (nombre & & & \\
+de poussins qui survivent) & $0.\overline{370}$ & $0.196\ldots$ &
+$0.0995\ldots$ \\
+\hline
+\end{tabular}
+\end{center}
+Nous avons $\displaystyle S(x) = \frac{x}{1+0.5x^2}$ et
+$\displaystyle S'(x) = \frac{1-0.5x^2}{(1+0.5x^2)^2}$.
+La seul solution de $S(x)= 0$ est $x=0$.  En fait, $S(x)>0$ pour tout
+$x>0$.  Le seul point critique (positif) de $S$ est $x = \sqrt{2}$.
+De plus,
+\[
+\lim_{x\rightarrow \infty} S(x) = \lim_{x\rightarrow \infty} \frac{x}{1+0.5x^2}
+= \lim_{x\rightarrow \infty} \frac{(1/x)}{(1/x^2)+0.5}
+= \frac{ \big(\lim_{x\rightarrow \infty} (1/x)\big)}
+{\big(\lim_{x\rightarrow \infty} (1/x^2)\big)+0.5} = \frac{0}{0+5} = 0 \ .
+\]
+Nous obtenons le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c}
+x & 0 & 0<x< \sqrt{2} & \sqrt{2} & \sqrt{2} < x & \infty \\
+\hline
+S(x) & 0 & + & \sqrt{2}/2 & + & 0 \\
+S'(x) & + & + & 0 & - & \\
+\hline
+& \text{croît} & \text{croît} & \text{max. loc.} & \text{décroît} \\
+\end{array}
+\]
+Le graphe de $S$ a l'allure suivante.
+\PDFgraph{6_derivees_appl/graph_funct13}
+
+La meilleure stratégie est de pondre $\sqrt{2}$ oeufs en moyenne car
+cela donne la valeur maximale de $S$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q25}}{
+Le nombre $N$ de pommiers vendus est une fonction linéaire du prix $x$
+de vente d'un pommier.  Nous avons $N(50) = 100$, $N(49)=104$ et
+$N(51) = 96$.  C'est plus d'information que nécessaire pour trouver
+l'équation de la droite représentant le graphe de $N(x)$.  Donc
+$N(x) = m x + b$ où
+$\displaystyle m = \frac{104-100}{49-50} = -4$ et $b=300$ (pour avoir
+$N(50)=100$).
+
+Ainsi, le revenu est donné par la formule $R(x) = x N(x) = -4x^2 + 300x$
+où $x$ est le prix de vente d'un pommier.  Le coût de production pour
+les $N(x)$ pommiers vendus est $C(x) = 9 N(x) = -36x + 2700$.  Le
+profit est donc donné par $P(x) = R(x) - C(x) = -4x^2 + 336 x - 2700$.
+
+Il y a un seul point critique qui est donné par
+$P'(x) = -8x + 336 = -8 (x - 42) = 0$.  Donc $x= 42$.
+Puisque $P''(x) = -8 < 0$, la fonction est concave pour tout $x$. Ce
+n'est pas surprenant car $P(x)$ est un polynôme de degré $2$ avec le
+coefficient de $x^2$ négatif.  Donc $P(x)$ a un maximum absolu 
+lorsque le jardinier vent ses pommiers à \$42.00 l'unité.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q26}}{
+\PDFgraph{6_derivees_appl/graph_funct19}
+La fonction en (b) est strictement décroissante.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q27}}{
+\subQ{a} Puisque $f$ est une belle fonction continue sur un intervalle
+fermé et borné, nous pouvons utiliser le Théorème des valeurs extrêmes.
+
+Le seul point critique de $f$, lorsque $f'(x) = (1-x) e^{-x} = 0$, est
+$x=1$.  C'est un point dans l'intervalle $[0.5,2]$.  Nous devons donc
+le considérer.
+
+Nous comparons les valeurs de $f(x)$ au points $x=0.5$, $x=1$ et $x=2$.
+Puisque $f(0.5)= 2.303265330$, $f(1) = 2.367879441$ et $f(2) =
+2.270670566$, le maximum absolue est $2.367879441$ et le minimum
+absolue est $2.270670566$.
+
+\subQ{b} Comme $f$ est une fonction continue sur l'intervalle borné et
+fermé $[-2,2]$, nous pouvons utiliser le Théorème des valeurs extrêmes pour
+trouver le maximum absolu et le minimum absolu de $f$ sur $[-2,2]$.
+
+Les points critiques de $f$, lorsque $f'(x) = 3x^2-3 = 3(x^2-1)=0$,
+sont $x=\pm 1$.  Ces points critiques sont bien dans l'intervalle $[-2,2]$.
+Nous avons $f(-2) = -2$, $f(-1) = 2$, $f(1) = -2$ et $f(2) = 2$.
+Ainsi, le maximum absolu est $2$ que $f$ atteint à $x=-1$ et $x=2$.
+Le minimum absolu est $-2$ que $f$ atteint à $x=-1$ et $x=2$.
+
+\subQ{c} Comme $f$ est une fonction continue sur l'intervalle borné et
+fermé $[-2,0]$, nous pouvons utiliser le Théorème des valeurs extrêmes pour
+trouver le maximum absolu et le minimum absolu de $f$ sur $[-2,2]$.
+
+Les points critiques de $f$, lorsque
+$\displaystyle f'(x) = \frac{1-x^2}{(x^2+x+1)^2}=0$, sont $x=\pm 1$.
+Le point $1$ n'est pas dans l'intervalle $[-2,0]$,  Nous considérons
+seulement $x = -1$.  Nous avons $f(-2) = -2/3$, $f(-1) = -1$ et
+$f(0) = 0$.  Ainsi, le maximum absolu est $f(0)=0$.  Le minimum absolu
+est $f(-1)=-1$.  C'est aussi un minimum local.
+
+\subQ{d} Puisque $f$ est une fonction continue sur l'intervalle fermé
+$[0,1]$, nous pouvons utiliser le Théorème des valeurs extrêmes
+pour conclure qu'il existe $c \in [0,1]$ tel que $f(c) \geq f(x)$ pour
+tout $x \in [0,1]$ et $d \in [0,1]$ tel que $f(d) \leq f(x)$ pour tout
+$x \in [0,1]$.  $f(c)$ est le maximum absolu de $f$ sur l'intervalle
+$[0,1]$ et $f(d)$ est le minimum absolu.
+
+Nous avons $\displaystyle f'(x) = 15x^2 - 30x + 10$.  Les points
+critiques de $f$ sont $x= 1 \pm 1/\sqrt{3}$.   Le point $1+1/sqrt{3}$
+n'est pas dans l'intervalle $[0,1]$,  Par contre
+$1-1/\sqrt{3} \approx 0.42265$ est dans l'intervalle $[0,1]$. 
+Nous avons $f(0) = -1$, $f(1-1/\sqrt{3}) \approx 0.9245$ et $f(1) = -1$.
+Ainsi, le maximum absolu est $f(1-1/sqrt{3})$.  Le minimum absolu est
+$f(0)=f(1) =-1$.
+
+\subQ{e} Puisque $f$ est une fonction continue sur l'intervalle fermé
+$[0,1]$, nous pouvons utiliser le Théorème des valeurs extrêmes.
+Il découle de
+\begin{align*}
+f'(x) &= \frac{1}{2} \, x^{-1/2}(x-4)^2 + 2 x^{1/2} (x-4)
+= \frac{1}{2} \, x^{-1/2} (x-4) \left( (x-4) + 4 x \right) \\
+&= \frac{1}{2} \, x^{-1/2} (x-4)(5x-4) \ .
+\end{align*}
+que les points critiques de $f$ sur l'intervalle $[0.6, 6]$ sont
+$4/5$ et $4$.
+
+Puisque $f(0.5) = 8.662\ldots$, $f(0.8)=9.1589\ldots$, $f(4)=0$ et
+$f(6)=9.7979\ldots$, le maximum global est $9.7979$ et le minimum
+global est $0$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q30}}{
+Il faut minimiser la distance $\sqrt{x^2+y^2}$ lorsque $y=4x+7$.  Comme le
+point $(x,y)$ où $\sqrt{x^2+y^2}$ atteint son minimum est aussi le point où
+$x^2+y^2$ atteint son minimum (car la racine carrée est une fonction
+strictement croissante), nous allons minimiser $D(x) = x^2 + y^2$
+lorsque $y=4x+7$.
+Donc $D(x) = x^2 + (4x+7)^2 = 17x^2 + 56x + 49$,  $D'(x) = 34x+56$ et
+$D''(x) = 34$.  Nous avons un seul point critique lorsque $x=-28/17$.  Puisque
+$D''(x) > 0$ pour tout $x$, la fonction est convexe pour tout
+$x$ et le point critique est un minimum absolu.
+
+La distance minimum est donc atteinte au point
+\[
+(x,y) = (-28/17 , 4(-28/17)+7) = (-28/17 , 7/17 ) \ .
+\]
+La distance minimal est $\sqrt{(-28/17)^2+(7/17)^2} =  7/\sqrt{17} $.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q32}}{
+\PDFgraph{6_derivees_appl/fence_sol}
+
+L'aire $A$ de l'enclos est donné par $A = x y$.  Nous avons la contrainte que
+$4 x + 2 y = 3\,600$.  Donc $y = 1\,800 - 2x$ avec $0 \leq x \leq 900$
+car $x$ et $y$ doivent être non négatifs.
+
+Ainsi, $A(x) = x(1\,800-2x) = 1\,800x - 2 x^2$.
+Puisque $A$ est une fonction continue sur l'intervalle fermé
+$[0,900]$, nous pouvons utiliser le Théorème des valeurs extrêmes.
+Le seul point critique est donné par $A'(x) = 1\,800 -4 x = 0$.  Donc
+$x = 450$.
+
+Puisque $A(0) = A(900) = 0$ et $A(450) = 405\,000$ m$^2$.  L'aire
+maximale est $405\,000$ m$^2$ lorsque $x= 450$ m et $y = 900$ m, et
+chaque section est d'aire $135\,000$ m$^2$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q36}}{
+Soit $\displaystyle f(q) = \frac{q}{P(q)} = \frac{q}{1+q^2}$.  Nous avons
+$q \geq 0$.  Nous ne pouvons pas utiliser le théorème des valeurs extrême
+car l'intervalle n'est pas borné.  Nous devons donc étudier le graphe de
+$f$ sur l'intervalle $[0,\infty[$.
+
+Nous avons $\displaystyle f'(q) = \frac{1-q^2}{(1+q^2)^2}$.  La fonction $f$
+a un seul point critique positif, c'est $q=1$.  De plus,
+$\displaystyle \lim_{q\to \infty} f(q) = 0$.  Nous obtenons le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c}
+q & 0 & 0<q<1 & 1 & 1<q & \infty \\
+\hline
+f(q) & 0 & + & 1/2 & + & 0 \\
+f'(q) & + & + & 0 & - &  \\
+\hline
+& \text{croît} & \text{croît} & \text{max. local} & \text{décroît} & \\
+\end{array}
+\]
+Puisqu'il n'y a pas de points critiques autres que $1$, le maximum
+local est aussi le maximum absolu (tracez le graphe de $f$ pour vous
+en convaincre).
+}
+
+\compileSOL{\SOLUa}{\ref{6Q37}}{
+Si un cylindre a une hauteur de $H$ unités et un rayon de $R$ unités, l'aire
+de sa surface est la somme de l'aire du dessus, l'aire du dessous et
+l'aire du côté circulaire du cylindre.  C'est-à-dire,
+$S(H) = 2\pi R^2 + 2\pi R H$ où $0 \leq H \leq 2r$ car le cylindre est à
+l'intérieur de la sphère de rayon $r$.
+
+Or, si nous regardons une coupe transversal de la sphère passant par l'axe du
+cylindre, nous voyons (encore et toujours par le théorème de Pythagore) que
+$(H/2)^2 + R^2 = r^2$ où, si vous préférez, $R^2 = r^2 - (H/2)^2$.  Donc
+\begin{align*}
+S(H) &= 2\pi R^2 + 2\pi R H
+= 2\pi\left(r^2-\left(\frac{H}{2}\right)^2\right) +
+2\pi H \sqrt{r^2-\left(\frac{H}{2}\right)^2} \\
+&= \frac{1}{2} \pi(4 r^2-H^2) + \pi H\sqrt{4r^2-H^2} \ .
+\end{align*}
+If faut trouver la valeur de $H$ dans l'intervalle fermé $0 \leq H \leq 2r$
+où $S(H)$ est maximal.  Les points critiques de $S(H)$ sont donnés par
+\[
+S'(H) = -\pi H - \frac{\pi H^2}{\sqrt{4 r^2 - H^2}} + \pi \sqrt{4r^2-H^2}
+=  -\pi H + \frac{\pi (4r^2-2H^2)}{\sqrt{4 r^2 - H^2}} = 0 \ .
+\]
+Donc
+\begin{align*}
+\pi H = \frac{\pi (4r^2-2H^2)}{\sqrt{4 r^2 - H^2}} & \Rightarrow
+H^2 = \frac{(4r^2-2H^2)^2}{4 r^2 - H^2}
+\Rightarrow (4 r^2 - H^2) H^2 = (4r^2-2H^2)^2 \\
+&\Rightarrow 0 = 5(H^2)^2 -20 r^2 (H^2) + 16 r^4 \ .
+\end{align*}
+C'est une équation quadratique en $H^2$.  Les racines sont
+\[
+H^2 = \frac{ 20 r^2 \pm \sqrt{(-20r^2)^2 - 4\times 5 \times
+    16r^4}}{10}
+= \left(2 \pm \frac{2}{\sqrt{5}}\right)r^2 \ .
+\]
+Nous trouvons deux points critiques:
+$\displaystyle H_1 = r\sqrt{2 + \frac{2}{\sqrt{5}}} = 1.7013\ldots r$ et
+$\displaystyle H_2 = r\sqrt{2 - \frac{2}{\sqrt{5}}} = 1.05146\ldots r$.
+
+Puisque $S(0) = 2\pi r^2$, $S(H_1) \approx 7.35648 r^2$,
+$S(H_2) \approx 10.16640 r^2$ et $S(2r)=0$, la surface maximal est de
+$10.16640\ldots r^2$ lorsque la hauteur du cylindre est de
+$\displaystyle r\sqrt{2 - \frac{2}{\sqrt{5}}}$ unités.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q38}}{
+L'illumination totale sur l'objet au point $x$ est
+\[
+I(x) = \frac{k P}{x^2} + \frac{3kP}{(3-x)^2}
+\]
+où $k$ est la constance de proportionnalité.  Les points critiques sont
+donnés par
+\[
+I'(x) = 2kP\left( \frac{-1}{x^3} + \frac{3}{(3-x)^3} \right) = 0 \ .
+\]
+Donc $\displaystyle \frac{1}{x^3} = \frac{3}{(3-x)^3}$.  Si nous
+prenons la racine cubique des deux côtés de l'égalité, nous trouvons
+$\displaystyle \frac{1}{x} = \frac{\sqrt[3]{3}}{(3-x)}$ et ainsi
+$\displaystyle x = \frac{3}{1+\sqrt[3]{3}}$.
+
+Grâce aux données du tableau suivant, nous pouvons conclure que $I$ atteint un
+maximum absolu à $\displaystyle x = \frac{3}{1+\sqrt[3]{3}}$.
+\[
+\begin{array}{c|c|c|c}
+\rule[-0.7em]{0em}{1.5em}
+x & x < \frac{3}{1+\sqrt[3]{3}} & x=\frac{3}{1+\sqrt[3]{3}} &
+\frac{3}{1+\sqrt[3]{3}}<x <3 \\
+\hline
+I'(x) & - & 0 & +
+\end{array}
+\]
+L'illumination maximale est lorsque
+$\displaystyle x=\frac{3}{1+\sqrt[3]{3}} = 1.228375690$ et la valeur de
+l'illumination est
+$\displaystyle I\left(\frac{3}{1+\sqrt[3]{3}}\right) = 1.618555576\,kP$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q39}}{
+Nous avons $\displaystyle F(t) = \frac{\beta t}{t+\alpha}$ avec $\beta=1$ et
+$\alpha = 0.5$.  De plus, nous avons montré dans le manuel que
+$T=\sqrt{\alpha \tau}$ où $\tau$ est le temps en minutes que prend une
+abeille pour se rendre d'une fleur à un autre fleur.  Comme $T=1$,
+nous obtenons $1=\sqrt{0.5\tau}$ et donc $\tau = 2$ minutes.
+\MATHgraph{6_derivees_appl/bees5}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q40}}{
+La quantité de nectar récoltée par une abeille après $t$ minutes sur une même
+fleur est $\displaystyle F(t) = \frac{t^2}{1+t^2}$
+La vitesse moyenne à laquelle l'abeille aspire le nectar d'une fleur sur
+laquelle elle demeure pendant $t$ minutes est
+$\displaystyle R(t) = \frac{F(t)}{t+1}$.  Puisque
+\[
+R(t) = \frac{t^2}{(1+t^2)(t+1)} \; ,
+\]
+nous obtenons
+\[
+R'(t) = \frac{-t(t^3-t-2)}{(1+t^2)^2(1+t)^2} \; .
+\]
+Les points critiques positifs de $R$ sont les racines du polynôme
+$p(t) = t^3-t-2$.  Comme nous n'avons pas de formule exacte pour
+trouver ces racines, il faut utiliser la méthode de Newton pour les
+estimer.  Puisque $p(1)= -2 <0$ et $p(2) = 4>0$, il 
+y a une racine entre $1$ et $2$.  Avec $t_0=1.5$, nous obtenons
+\[
+\begin{array}{c|c|c}
+n & t_n & \displaystyle t_{n+1} \approx t_n - \frac{p(t_n)}{p'(t_n)} \\[0.7em]
+\hline
+0 & 1.5 & 1.5217391304 \\
+1 & 1.5217391304 & 1.5213798060 \\
+2 & 1.5213798060 & 1.5213797068 \\
+3 & 1.5213797068 & 1.5213797068
+\end{array}
+\]
+Un point critique de $p$ est $T\approx 1.5213797068$\; .
+Ils n'existent pas d'autres racines positives de $p(t)$ et donc
+d'autres points critiques positifs de $R$ car $p'(t) = 3t^2-1$ nous donne le
+tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+t & 0 & 0<t< 1/\sqrt{3} & 1/\sqrt{3} & 1/\sqrt{3} < t <T & T & T< t & \infty \\
+\hline
+p(t) & -1 & - & - & - & 0 & + & +\infty \\
+p'(t) & - & - & 0 & + & + & + & \\
+\hline
+& \multicolumn{2}{|c|}{\text{décroît}} & \text{min. local}
+& \multicolumn{3}{|c|}{\text{croît}}
+\end{array}
+\]
+Nous obtenons le graphe de $p$ qui suit.
+\MATHgraph{6_derivees_appl/bees6_a}{8cm}
+
+Montrons que $R$ a un maximum absolu à $t=T$.  Nous avons le tableau suivant.
+\[
+\begin{array}{c|c|c|c|c|c}
+t & 0 & 0 < t < T & T & T < t < +\infty & +\infty \\
+\hline
+R(t) & 0 & + & T^2(1+T^2)^{-1}(1+T)^{-1} & + & 0 \\
+R'(t) & 0 & + & 0 & - & \\
+\hline
+& \text{point} & \text{croît} & \text{max. local} & \text{décroît}
+& \text{asymptote} \\
+&\text{critique} & & & & \text{horizontal}
+\end{array}
+\]
+Donc $t=T$ est le temps optimal pour maximiser la récolte de nectar.
+\MATHgraph{6_derivees_appl/bees6_b}{8cm}
+Comme il est prédit par la règle des valeurs marginales, nous avons que
+$R(T)= F'(T)$.
+}
+
+\subsection{Taux liées}
+
+\compileSOL{\SOLUb}{\ref{6Q41}}{
+La question peut se résumer en une figure.
+\PDFgraph{6_derivees_appl/quai}
+D'après le théorème de Pythagore, nous avons $y^2 + 2^2 = x^2$ où $x$ et $y$
+sont des fonctions de $t$.  Si nous dérivons cette dernière équation par
+rapport à $t$, nous obtenons
+\[
+2 y \dydx{y}{t} = 2 x \dydx{x}{t} \ .
+\]
+Ainsi,
+\[
+\dydx{y}{t} = \frac{x}{y}\; \dydx{x}{t} \ .
+\]
+Au temps $t=\tau$ où $y(\tau) = 6$ m, nous avons
+$x(\tau) = \sqrt{y^2(\tau) + 2^2} = \sqrt{6^2 + 2^2} = 2\sqrt{10}$ m.
+Puisque $\displaystyle \dydx{x}{t}(t) = 0.5$ m/s pour tout $t$, nous avons
+\[
+\dydx{y}{t}(\tau) = \frac{x(\tau)}{y(\tau)}\; \dydx{x}{t}(\tau)
+= \frac{2\sqrt{10}}{6} \times \frac{1}{2} = \frac{\sqrt{10}}{6} \approx
+0.527 \ \text{m/s} \ .
+\]
+
+La vitesse d'approche du bateau n'est pas constante car
+\[
+\frac{x(t)}{y(t)} = \frac{\sqrt{y^2(t)+2^2}}{y(t)}
+\]
+n'est pas constant.  Par exemple, lorsque $y(\tau) = 10$ m, nous obtenons
+$x(\tau) = \sqrt{y^2(\tau) + 2^2} = \sqrt{10^2 + 2^2} = 2\sqrt{26}$ m et
+\[
+\dydx{y}{t}(\tau) = \frac{x(\tau)}{y(\tau)}\; \dydx{x}{t}(\tau)
+= \frac{2\sqrt{26}}{10} \times \frac{1}{2} = \frac{\sqrt{26}}{10} \approx
+0.5099 \ \text{m/s} \ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{6Q42}}{
+Il faut trouver une relation entre le volume d'eau dans la piscine et la
+profondeur $h$ de l'eau à l'endroit le plus profond.
+
+Considérons une section transversale de la piscine.
+\PDFgraph{6_derivees_appl/piscine2}
+Pour déterminer la longueur du segment $\overline{eb}$, comparons les
+triangles semblables $\triangle abe$ et $\triangle acd$.  Nous avons
+$\displaystyle \frac{|\overline{eb}|}{|\overline{ab}|} =
+\frac{|\overline{dc}|}{|\overline{ac}|}$; c'est-à-dire,
+$\displaystyle \frac{|\overline{eb}|}{h} = \frac{6}{4}$.  Donc
+$|\overline{eb}| = 3h/2$.
+
+Le volume d'eau dans la piscine est alors donnée par la formule
+\[
+V = \underbrace{\frac{(3h/2)\times h\times 10}{2}}
+_{(\text{aire du triangle }A)\times 10} +
+\underbrace{h\times 5 \times 10}_{(\text{aire du rectangle }B) \times 10}
+= \frac{15h^2}{2} + 50 h
+\]
+lorsque $h<4$ m.  Donc
+\[
+\dydx{V}{t}(t) = 15h(t)\; \dydx{h}{t}(t) + 50 \dydx{h}{t}(t)
+= 5\left( 3h(t)+ 10\right) \dydx{h}{t}(t) \ .
+\]
+Au temps $t=\tau$ où $h(\tau) = 3$ m, nous avons
+\[
+0.1 = 5\left( 3\times 3 + 10\right) \dydx{h}{t}(\tau)
+\]
+puisque $\displaystyle \dydx{V}{t}(t) = 0.1$ m$^3$/min pour tout $t$.
+Ainsi, $\displaystyle \dydx{h}{t}(\tau) \approx 0.00105$ m/min.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q43}}{
+$5$ révolutions par minute se traduit par
+$\displaystyle \dydx{\theta}{t}(t) = 10\pi$ radians/min pour tout $t$.
+
+Si nous dérivons la relation $\displaystyle \tan(\theta) = \frac{x}{4}$,
+nous obtenons
+\[
+\sec^2(\theta(t)) \; \dydx{\theta}{t}(t) = \frac{1}{4} \dydx{x}{t}(t) \ .
+\]
+Donc
+\[
+\dydx{x}{t}(t) = 4 \sec^2(\theta(t)) \; \dydx{\theta}{t}(t) 
+= 4\left( \frac{\sqrt{x^2(t) + 4^2}}{4}\right)^2 \; \dydx{\theta}{t}(t) \ .
+\]
+Au temps $t=\tau$ lorsque $x(\tau) = 1$, nous avons
+\[
+\dydx{x}{t}(\tau) = 4\left( \frac{\sqrt{x^2(\tau) + 4^2}}{4}\right)^2
+\; \dydx{\theta}{t}(\tau) 
+= 4\left( \frac{\sqrt{1 + 4^2}}{4}\right)^2 (10\pi)
+= \frac{85\pi}{2} \approx 133.518 \ \text{km/min} \ .
+\]
+}
+
+\subsection{Dérivées implicites}
+
+\compileSOL{\SOLUb}{\ref{6Q44}}{
+Si nous dérivons des deux côtés de l'égalité par rapport à $x$, nous obtenons
+\[
+4 (f(x))^3 f'(x) + 6 f'(x) = 2x
+\]
+Pour $x=3$, nous obtenons
+\[
+4 (f(3))^3 f'(3) + 6 f'(3) = 2
+\Rightarrow f'(3) (4\times 1^3 + 6) = 2
+\Rightarrow f'(3) = \frac{2}{10} = \frac{1}{5} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{6Q45}}{
+\subQ{a} $\displaystyle y' = \frac{3-2xy-y^2}{x^2+2xy}$
+
+\subQ{b} $\displaystyle y' = \frac{4xy\sqrt{xy} - y}{x-2x^2\sqrt{xy}}$
+
+\subQ{c} $\displaystyle y' = \frac{1-y^4-2xy}{4xy^3 + x^2 -3}$
+}
+
+\subsection{Approximation locale des fonctions}
+
+\compileSOL{\SOLUb}{\ref{6Q46}}{
+\subQ{a} Considérons $f(x) = x^{2001}$.  Nous cherchons à estimer $f(1.002)$.
+L'approximation linéaire de $f$ au voisinage de $x=1$ est
+$p(x) = f(1) + f'(1) ( x -1 ) = 1 + 2001(x-1)$.  Ainsi,
+\[
+f(1.002) \approx p(1.002) =2001(1.002 - 1) +1 = 5.002 \ .
+\]
+Ce n'est pas une bonne approximation car 
+$1.002^{2001} \approx 54.489244196998690$.
+
+\subQ{b} Considérons $f(x) = \sin(x)$.  Nous cherchons à estimer $f(0.02)$.
+L'approximation linéaire de $f$ au voisinage de l'origine est
+$p(x) = f(0) + f'(0) ( x -0 ) = x$.  Ainsi,
+\[
+f(0.02) \approx p(0.02) = 0.02 \ .
+\]
+C'est une bonne approximation car $\sin(0.02) \approx 0.019998667$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q47}}{
+Nous utilisons l'approximation linéaire de $f$ au voisinage de $x=1$.
+\[
+f(x) \approx p(x) = f(1) + f'(1) (x-1) = 1 + 2(x-1) \ .
+\]
+Ainsi $f(1.1) \approx 1 + 2(1.1-1) = 1.2$ et
+$f(0.9) \approx 1 + 2(0.9-1) = 0.8$.
+\MATHgraph{6_derivees_appl/approxlin1}{8cm}
+
+Les approximations obtenues de l'approximation linéaire sous-estime les
+valeurs exactes de $f(0.9)$ et $f(1.1)$ car $f$ est
+convexe.  La droite tangente à la courbe $y=f(x)$ est donc
+en dessous de la courbe $y=f(x)$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q50}}{
+\subQ{a} L'approximation linéaire de $g(x) = \ln(x)$ au voisinage
+du point $x=1$ est $p_1(x) = g(1) + g'(1) (x-1)$.  Or
+$\displaystyle g'(1) = \frac{1}{x}\bigg|_{x=1} = 1$ et $g(1) = \ln(1) = 0$.
+Ainsi $p_1(x) = x-1$.
+
+\subQ{b} L'approximation linéaire de $h(x) = x^2-1$ au voisinage
+du point $x=1$ est $q_1(x) = h(1) + h'(1) (x-1)$.  Or
+$\displaystyle h'(1) = 2x\big|_{x=1} = 2$ et $h(1) = 0$.
+Ainsi $q_1(x) = 2(x-1)$.
+
+\subQ{c} Nous avons
+\[
+\lim_{x\to 1} \frac{p_1(x)}{q_1(x)} = \lim_{x\to 1} \frac{x-1}{2x-2}
+= \lim_{x\to 1} \frac{1-(1/x)}{2-(2/x)}
+= \frac{\displaystyle 1-\lim_{x\to 1} (1/x)}
+{\displaystyle 2-\lim_{x\to 1} (2/x)} = \frac{1}{2} \ .
+\]
+De plus, grâce à la Règle de l'Hospital, nous obtenons
+\[
+\underbrace{\lim_{x\to 1} \frac{\ln(x)}{x^2-1}}_{\text{forme $0/0$}}
+= \lim_{x\to 1} \frac{1/x}{2x} = \lim_{x\to 1} \frac{1}{2x^2} 
+= \frac{1}{2} \ .
+\]
+Les deux limites sont biens égales.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q51}}{
+L'approximation linéaire de $f$ pour $x$ près de $x=1$ est
+\[
+f(x) \approx p_1(x) = f(1) + f'(1) (x-1) \ .
+\]
+Puisque $f'(x) = -3 x^{-4}$, nous obtenons $f'(1)= -3$.
+Donc
+\[
+f(x) \approx p_1(x) = 1 -3 (x-1) = -3 x + 4
+\]
+pour $x$ près de $1$ est l'approximation linéaire cherchée.
+
+Nous cherchons un polynôme $p_2(x) = a + bx + c x^2$ tel que
+$p_2(1) = f(1)$, $p_2'(1) = f'(1)$ et $p_2''(1) = f''(1)$.  Puisque
+$f(1)=1$, $f'(1)=-3$ et $f''(1)= 12$, nous obtenons le système
+d'équations linéaires
+\begin{align*}
+  p_2(1) = f(1) &\Rightarrow a+b+c = 1 \\
+  p_2'(1) = f'(1) &\Rightarrow b+2c = -3 \\
+  p_2''(1) = f''(1)&\Rightarrow 2c = 12
+\end{align*}
+La solution de ce système est $a= 10$, $b=-15 $ et $c=6$.  Donc
+\[
+p_2(x) = 10 -15 x + 6x^2 \ .
+\]
+\MATHgraph{6_derivees_appl/taylor1}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q52}}{
+\subQ{a} Considérons $f(x) = x^{2001}$.  Nous cherchons à estimer $f(1.002)$.
+L'approximation quadratique de $f$ pour $x$ près de $x=1$ est
+\begin{align*}
+p(x) &= f(1) + f'(1) ( x -1 ) + \frac{1}{2} f''(1)(x-1)^2
+= 1 + 2001(x-1) + \frac{2001\times 2000}{2}\, (x-1)^2 \\
+&= 1 + 2001(x-1) + 2.001\times 10^6 (x-1)^2 \ .
+\end{align*}
+Ainsi,
+\[
+f(1.002) \approx p(1.002) = 1 + 2001(1.002 - 1) +2.001\times 10^6 (1.002-1)^2
+\approx 13.006 \ .
+\]
+Ce n'est pas une bonne approximation de
+$1.002^{2001} \approx 54.489244196998690$ mais elle est meilleure que celle 
+obtenue avec l'approximation linéaire.
+
+\subQ{b} Considérons $f(x) = \sin(x)$.  Nous cherchons à estimer $f(0.02)$.
+L'approximation quadratique de $f$ pour $x$ près de $x=0$ est
+\[
+p(x) = f(0) + f'(0) ( x -0 ) + \frac{1}{2} f''(0)(x-1)^2 = x
+\]
+Il n'y a pas d'approximation quadratique de $\sin(x)$ pour $x$ près de
+l'origine.
+
+\subQ{c} Le polynôme de Taylor de degré deux d'une fonction $f$ pour
+$x$ près du point $a$ est
+\[
+p(x) = f(a) + f'(a) (x-a) + \frac{1}{2} f''(a) (x-a)^2 \ .
+\]
+Dans le cas présent, nous avons $f(x) = x^{3/4}$ et nous choisissons la valeur
+$a=16$ qui est près de $16.2$ et pour laquelle il est facile de
+calculer $f(a)$, $f'(a)$ et $f''(a)$.  Puisque
+$\displaystyle f'(x) = \frac{3}{4} x^{-1/4}$ et
+$\displaystyle f''(x) = -\frac{3}{16} x^{-5/4}$, nous obtenons
+\[
+p_2(x) = 16^{4/3} + \frac{3}{4} 16^{-1/4}(x-16) - \frac{3}{32} 16^{-5/4} (x-16)^2
+= 8 + \frac{3}{8} (x-16) - \frac{3}{32^2}(x-16)^2 \ .
+\]
+Donc
+\[
+16.2^{4/3} = f(16.2) \approx p_2(16.2)
+= 8 + \frac{3}{8} (16.2-16) - \frac{3}{32^2}(16.2-16)^2
+= 8.07488281 \ldots
+\]
+La valeur exacte est $16.2^{4/3} \approx 8.074883419$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q53}}{
+\subQ{a} Le polynôme de Taylor de degré trois de $f$ pour $x$ près de
+$x=1$ est
+\[
+p_3(x) = f(1) + f'(1) (x-1) + \frac{f''(1)}{2}\, (x-1)^2 +
+\frac{f'''(1)}{3!}(x-1)^3 \ .
+\]
+Puisque $f(x) = \ln(x)$, $f'(x) = 1/x$, $f''(x) = -1/x^2$ et
+$f'''(x)= 2/x^3$, nous obtenons
+\[
+p_3(x) = 0 + (x-1) - \frac{1}{2}\, (x-1)^2 + \frac{2}{3!}(x-1)^3 
+= (x-1) - \frac{1}{2}\, (x-1)^2 + \frac{1}{3}(x-1)^3 \ .
+\]
+Ainsi,
+\[
+\ln(1.2) = f(1.2) \approx p_3(1.2) = (1.2-1) - \frac{1}{2}\, (1.2-1)^2
++ \frac{1}{3}\,(1.2-1)^3 = 0.1826666\ldots
+\]
+
+\subQ{b}  Puisque $f(x) = x^{1/4}$, nous avons
+\[
+f'(x) =  \frac{1}{4} x^{-3/4} = \frac{1}{4\,x^{3/4}} \ , \ 
+f''(x) =  \frac{-3}{16} x^{-7/4} = \frac{-3}{16\,x^{7/4}} \ 
+\text{et} \ 
+f'''(x) =  \frac{21}{64} x^{-11/4} = \frac{21}{64\,x^{11/4}} \ .
+\]
+Le polynôme de Taylor de degré trois de $f$ pour $x$ près de
+$1$ est
+\begin{align*}
+p_3(x) &= f(1) + f'(1)(x-1) + \frac{1}{2!} f''(1) (x-1)^2 + \frac{1}{3!}
+f'''(1) (x-1)^3 \\
+&= 1 + \frac{1}{4} \, (x-1) - \frac{3}{32} \,(x-1)^2 +
+\frac{21}{384}\,(x-1)^3 \ .
+\end{align*}
+Ainsi,
+\[
+1.4^{1/4} = f(1.4) \approx p_3(1.4)
+= 1 + \frac{1}{4} (0.4)  - \frac{3}{32} (0.4^2)
++ \frac{21}{384} (0.4^3) = 1.0885 \ .
+\]
+
+\subQ{c} Puisque $\displaystyle f(x) = (1+x)^{-1/2}$,
+$\displaystyle f'(x) = -\frac{1}{2}(1+x)^{-3/2}$,
+$\displaystyle f''(x) = \frac{3}{4}(1+x)^{-5/2}$ et
+$\displaystyle f'''(x) = -\frac{15}{8}(1+x)^{-7/2}$, le polynôme
+de Taylor de degré trois de $f$ pour $x$ près de $3$ est
+\begin{align*}
+p_3(x) &= f(3) + f'(3) (x-3) + \frac{f''(3)}{2} (x-3)^2 +
+\frac{f'''(3)}{3!} (x-3)^2 \\
+& =\frac{1}{2} - \frac{1}{16} (x-3) + \frac{3}{128} (x-3)^2
+- \frac{15}{1024} (x-3)^3 \ .
+\end{align*}
+Ainsi,
+\[
+f(3.1) \approx p(3.1) = \frac{1}{2} - \frac{1}{16} (3.1-3) +
+\frac{3}{128} (3.1-3)^2 - \frac{15}{1024} (3.1-3)^3 \approx
+0.49396973 \ .
+\]
+
+\subQ{d} Le polynôme de Taylor de degré trois de $f$ pour $x$ près de
+$a$ est 
+\[
+p_3(x) = f(a) + f'(a)(x-a) + \frac{1}{2!} f''(a)(x-a)^2
++ \frac{1}{3!} f''(a)(x-a)^3 \ .
+\]
+Dans le cas présent, $f(x) = x^{4/3}$ et $a=8$.  Puisque
+\[
+f'(x) = \frac{4}{3}x^{1/3} \ , \ f''(x) = \frac{4}{9} x^{-2/3} \
+\text{et} \ f'''(x) = - \frac{8}{27} x^{-5/3} \quad ,
+\]
+nous obtenons
+\[
+x^{4/3} = f(x) \approx p_3(x) = 16 + \frac{8}{3}\,(x-8) +
+\frac{1}{18}\, (x-8)^2  - \frac{1}{648} \, (x-8)^3 \ .
+\]
+Ainsi,
+\[
+8.1^{4/3} = f(8.1) \approx p(8.1) = 16 + \frac{8}{30} + \frac{1}{1800}
+- \frac{1}{648000} = 16.2672206790\ldots
+\]
+
+\subQ{e} Puisque
+\begin{align*}
+f'(x) &= \left(\dfdx{\arcsin(y)}{y} \bigg|_{y=x^2-1}\right) \dfdx{(x^2-1)}{x}
+= \left(\frac{1}{\sqrt{1-y^2}} \bigg|_{y=x^2-1}\right) (2x) \\
+&= \frac{2x}{\sqrt{1-(x^2-1)^2}}
+= \frac{2x}{\sqrt{2 x^2 - x^4}}
+= \frac{2}{\sqrt{2 - x^2}} \ , \\
+f''(x) &= \dfdx{ \left(2(2 - x^2)^{-1/2}\right)}{x} = 2x (2-x^2)^{-3/2}
+\intertext{et}
+f'''(x) &= 2 (2-x^2)^{-3/2} + 2x \left( 3 x (2-x^2)^{-5/2}\right) \\
+&= \left( 2 (2-x^2) + 6x^2\right) (2-x^2)^{-5/2}
+= (4 + 4 x^2) (2-x^2)^{-5/2}
+\end{align*}
+pour $0<x<\sqrt{2}$, le polynôme de Taylor de $f$ de degré trois pour
+$x$ près de $1$ est
+\begin{align*}
+p_3(x) &= f(1) + f'(1) (x-1) + \frac{f''(1)}{2!} (x-1)^2 + 
+\frac{f'''(1)}{3!})x-1)^3 \\
+&= 2(x-1) + (x-1)^2 + \frac{4}{3} (x-1)^3 \ .
+\end{align*}
+Ainsi,
+\[
+\arcsin(0.21) = f(1.1) \approx p_3(1.1)
+= 2(1.1-1) + (1.1-1)^2 + \frac{4}{3} (1.1-1)^3
+= 0.211\overline{3} \ .
+\]
+La valeur exacte est $\arcsin(0.21) = 0.21157496\ldots$
+}
+
+\compileSOL{\SOLUb}{\ref{6Q54}}{
+Par définition, nous avons
+\[
+p_4(x) = f(3) + f'(3) (x-3) + \frac{f''(3)}{2} (x-3)^2 +
+\frac{f'''(3)}{6} (x-3)^3 + \frac{f^{(4)}(3)}{24} (x-3)^4 \ .
+\]
+Donc $\displaystyle \frac{f''(3)}{2} = 0$ et
+$\displaystyle \frac{f^{(4)}(3)}{24} = \frac{1}{3}$.  nous obtenons
+$f''(3) = 10$ et $f^{(4)}(3) = 8$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q55}}{
+Comme le polynôme de Taylor d'une fonction au voisinage d'un point donné est
+unique, le polynôme de Taylor de $p$ au voisinage de l'origine est $p$
+lui-même.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q56}}{
+Puisque $\displaystyle \dfdxn{\left(x^k\right)}{x}{9} = 0$ pour $k < 9$ et
+$\displaystyle \dfdxn{\left(x^9\right)}{x}{9} = 9!$, nous avons que
+$\displaystyle \dydxn{p}{x}{9}(x) = 7\times 9! >0$ pour tout $x$.
+}
+
+\subsection{Comportement asymptotique}
+
+\compileSOL{\SOLUb}{\ref{6Q63}}{
+Pour répondre à cette question, nous utilisons la Règle de l'Hospital.
+
+\subQ{a}
+Nous avons $\displaystyle \lim_{x\to\infty} f(x) = +\infty$ et
+$\displaystyle \lim_{x\to\infty} g(x) = +\infty$.  Ainsi,
+\[
+\lim_{x\to \infty} \frac{f(x)}{g(x)} 
+= \underbrace{\lim_{x\to \infty} \frac{0.1 x^{0.5}}{30\ln(x)}}_{
+\text{forme $\infty/\infty$}}
+= \lim_{x\to \infty} \frac{0.05 x^{-0.5}}{30/x}
+= \lim_{x\to \infty} \frac{0.05 x^{0.5}}{30} = +\infty \ .
+\]
+Donc $f$ croît plus rapidement que $g$.
+
+\subQ{b}
+Nous avons $\displaystyle \lim_{x\to\infty} f(x) = 0$ et
+$\displaystyle \lim_{x\to\infty} g(x) = 0$.  Ainsi,
+\[
+\lim_{x\to \infty} \frac{f(x)}{g(x)} 
+= \lim_{x\to \infty} \frac{e^{-2x}}{x^{-2}}
+= \underbrace{\lim_{x\to \infty} \frac{x^2}{e^{2x}}}_
+{\text{forme $\infty/\infty$}}
+= \underbrace{\lim_{x\to \infty} \frac{2x}{2e^{2x}}}_
+{\text{forme $\infty/\infty$}}
+= \lim_{x\to \infty} \frac{2}{4e^{2x}}
+= \lim_{x\to \infty} \frac{1}{2} e^{-2x} = 0
+\]
+Donc $f$ tend vers $0$ plus rapidement que $g$.
+
+\subQ{c}
+Nous avons $\displaystyle \lim_{x\to 0^+} f(x) = +\infty$ et
+$\displaystyle \lim_{x\to 0^+} g(x) = +\infty$.  Ainsi,
+\[
+\lim_{x\to 0^+} \frac{f(x)}{g(x)} 
+= \underbrace{\lim_{x\to 0^+} \frac{x^{-1}}{-\ln(x)}}_
+{\text{forme $\infty/\infty$}}
+= \lim_{x\to 0^+} \frac{-2x^{-2}}{-1/x}
+= \lim_{x\to 0^+} \frac{2}{x} = \infty
+\]
+Donc $f$ tend vers $+\infty$ plus rapidement que $g$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q64}}{
+\subQ{a} La limite est du type $\infty/\infty$.  Nous pouvons appliquer la
+Règle de l'Hospital.
+\[
+\lim_{x\rightarrow \infty} \frac{\ln(x)}{e^{3x}}
+= \lim_{x\rightarrow \infty} \frac{1/x}{3e^{3x}}
+= \lim_{x\rightarrow \infty} \frac{1}{3xe^{3x}} = 0
+\]
+car $3xe^{3x} \rightarrow \infty$ lorsque $x\rightarrow \infty$.
+
+\subQ{b}  Puisque
+$\displaystyle \lim_{t\rightarrow \infty} \frac{1}{t^n} = 0$ pour
+$n>0$, nous avons
+\[
+\lim_{t\rightarrow \infty} \frac{1+t}{1+t+t^2}
+= \lim_{t\rightarrow \infty} \frac{(1/t^2)+(1/t)}{(1/t^2)+(1/t)+1}
+= \frac{\displaystyle
+  \lim_{t\rightarrow \infty} (1/t^2)+\lim_{t\rightarrow \infty} (1/t)}
+{\displaystyle
+  \lim_{t\rightarrow \infty} (1/t^2)+\lim_{t\rightarrow \infty} (1/t)+1}
+= \frac{0}{1} = 0 \ .
+\]
+
+\subQ{c} La limite est du type $0/0$.  Nous pouvons utiliser la
+Règle de l'Hospital.
+\[
+\lim_{x\rightarrow 0} \frac{\sin(x) - x}{\cos(x) -1}
+= \lim_{x\rightarrow 0} \frac{\cos(x) - 1}{-\sin(x)} \ .
+\]
+La limite à droite est encore une limite du type $0/0$.  Nous pouvons
+encore utiliser la Règle de l'Hospital.
+\[
+\lim_{x\rightarrow 0} \frac{\sin(x) - x}{\cos(x) -1}
+= \lim_{x\rightarrow 0} \frac{\cos(x) - 1}{-\sin(x)}
+= \lim_{x\rightarrow 0} \frac{-\sin(x)}{-\cos(x)}
+= \lim_{x\rightarrow 0} \tan(x) = 0 \ .
+\]
+
+\subQ{d} La limite est du type $\infty/\infty$. Nous pouvons utiliser
+la Règle de l'Hospital.
+\[
+\underbrace{\lim_{z\rightarrow \infty} \frac{3z}{1+\ln(1+z)}}_
+{\text{forme $\infty/\infty$}}
+= \lim_{z\rightarrow \infty} \frac{3}{1/(1+z)}
+= \lim_{z\rightarrow \infty} 3(1+z) = \infty  \ .
+\]
+
+\subQ{e} Nous avons une limite du type $0/0$.  Nous pouvons donc utiliser la
+Règle de l'Hospital pour calculer cette limite.
+\[
+\lim_{x\rightarrow 0} \frac{\sin(3x^2)}{x^2}
+= \lim_{x\rightarrow 0} \frac{6x\cos(3x^2)}{2x}
+= \lim_{x\rightarrow 0} 3\cos(3x^2) = 3 \cos(0) = 3 \ .
+\]
+
+\subQ{f} $\displaystyle \lim_{x\to \pi/2} \frac{\cos^2(x)}{(x-\pi/2)^2}$
+est une limite du type $0/0$.  Nous utilisons la Règle de l'Hospital pour
+obtenir
+\[
+\lim_{x\to \pi/2} \frac{\cos^2(x)}{(x-\pi/2)^2} =
+\lim_{x\to \pi/2} \frac{\dfdx{\cos^2(x)}{x}}{\dfdx{(x-\pi/2)^2}{x}} =
+\lim_{x\to \pi/2} \frac{-2\cos(x)\sin(x)}{2(x-\pi/2)} =
+\lim_{x\to \pi/2} \frac{-\cos(x)\sin(x)}{(x-\pi/2)} \ .
+\]
+Nous avons encore une limite du type $0/0$.  Nous utilisons une seconde
+fois la Règle de l'Hospital pour obtenir
+\begin{align*}
+\lim_{x\to \pi/2} \frac{\cos^2(x)}{(x-\pi/2)^2}
+&= \lim_{x\to \pi/2} \frac{-\cos(x)\sin(x)}{(x-\pi/2)}
+= \lim_{x\to \pi/2} \frac{\dfdx{\left(-\cos(x)\sin(x)\right)}{x}}
+{\dfdx{(x-\pi/2)}{x}} \\
+&= \lim_{x\to \pi/2} \frac{\sin^2(x)-\cos^2(x)}{1} =
+\sin^2(\pi/2)-\cos^2(\pi/2) = 1 \ .
+\end{align*}
+
+\subQ{g}
+$\displaystyle \lim_{x\to \infty} \frac{e^{1/x}-1}{1/x}$ est une limite du
+type $0/0$.  Nous utilisons la Règle de l'Hospital pour obtenir
+\[
+\lim_{x\to \infty} \frac{e^{1/x}-1}{1/x} =
+\lim_{x\to \infty} \frac{\dfdx{(e^{1/x}-1)}{x}}{\dfdx{(1/x)}{x}} =
+\lim_{x\to \infty} \frac{ e^{1/x} (-1/x^2)}{-1/x^2} =
+\lim_{x\to \infty} e^{1/x} = 1 \ .
+\]
+
+\subQ{h} Nous avons une limite du type $\infty/\infty$.  Nous pouvons donc
+utiliser la Règle de l'Hospital.
+\[
+\lim_{x\to 0^+} \frac{\ln(\sin(x))}{\ln(x^4)}
+= \underbrace{\lim_{x\to 0^+} \frac{\ln(\sin(x))}{4\ln(x)}}_{\infty/\infty}
+= \lim_{x\to 0^+} \frac{\cos(x)/\sin(x)}{4/x}
+= \lim_{x\to 0^+} \frac{x\cos(x)}{4\sin(x)} \ .
+\]
+Nous avons maintenant une limite du type $0/0$.  Nous pouvons encore utiliser la
+Règle de l'Hospital.
+\[
+\lim_{x\to 0^+} \frac{\ln(\sin(x))}{\ln(x^4)}
+= \underbrace{\lim_{x\to 0^+} \frac{x\cos(x)}{4\sin(x)}}_{0/0}
+= \lim_{x\to 0^+} \frac{\cos(x)-x\sin(x)}{4\cos(x)}
+= \frac{1-0}{4} = \frac{1}{4} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{6Q65}}{
+\subQ{a}
+La limite est du type $0\cdot \infty$.  Par contre,
+\[
+\lim_{x\rightarrow \pi^+} \csc(5x)\sin(3x)
+= \lim_{x\rightarrow \pi^+} \frac{\sin(3x)}{\sin(5x)}
+\]
+où la limite de droite est du type $0/0$.  Nous pouvons donc utiliser
+la Règle de l'Hospital pour obtenir.
+\[
+\lim_{x\rightarrow \pi^+} \csc(5x)\sin(3x)
+= \lim_{x\rightarrow \pi^+} \frac{\sin(3x)}{\sin(5x)}
+= \lim_{x\rightarrow \pi^+} \frac{3\cos(3x)}{5\cos(5x)}
+= \frac{3\cos(3\pi)}{5\cos(5\pi)} = \frac{3}{5} \ .
+\]
+
+\subQ{b}
+Nous avons une limite du type $\infty - \infty$.  Par contre,
+\[
+\lim_{x\rightarrow 0^+} \left( \frac{1}{\sin(x)} -\frac{1}{x} \right) =
+\lim_{x\rightarrow 0^+} \frac{x-\sin(x)}{x\sin(x)}
+\]
+où la limite de droite est du type $0/0$.  Nous pouvons utiliser la Règle de
+l'Hospital pour obtenir
+\[
+\lim_{x\rightarrow 0^+} \left( \frac{1}{\sin(x)} -\frac{1}{x} \right)
+= \lim_{x\rightarrow 0^+} \frac{x-\sin(x)}{x\sin(x)}
+= \lim_{x\rightarrow 0^+} \frac{1-\cos(x)}{\sin(x) +x\cos(x)} \ .
+\]
+Cette dernière limite est encore du type $0/0$.  Un deuxième appel à la Règle
+de l'Hospital donne
+\begin{align*}
+\lim_{x\rightarrow 0^+} \left( \frac{1}{\sin(x)} -\frac{1}{x} \right)
+&= \lim_{x\rightarrow 0^+} \frac{1-\cos(x)}{\sin(x) +x\cos(x)}
+= \lim_{x\rightarrow 0^+} \frac{\sin(x)}{2\cos(x) -x\sin(x)} \\
+&= \frac{\sin(0)}{2\cos(0) -0\sin(0)} = 0 \ .
+\end{align*}
+
+\subQ{c} Nous avons une limite du type $\infty - \infty$.  Par contre
+\[
+\left(\csc(x) - \cot(x)\right) = \left(\frac{1}{\sin(x)}
+- \frac{\cos(x)}{\sin(x)}\right) = \frac{1-\cos(x)}{\sin(x)}
+\]
+transforme la limite en une limite du type $0/0$.  Ainsi,
+\[
+\lim_{x\rightarrow 0^+} \left(\csc(x) - \cot(x)\right)
+= \lim_{x\rightarrow 0^+} \frac{1-\cos(x)}{\sin(x)}
+= \lim_{x\rightarrow 0^+} \frac{\sin(x)}{\cos(x)} 
+= \frac{\sin(0)}{\cos(0)} = 0
+\]
+où la deuxième égalité est une conséquence de la Règle de l'Hospital.
+
+\subQ{d} Après une petite manipulation algébrique, nous pouvons
+utiliser la Règle de l'Hospital.
+\begin{align*}
+\underbrace{\lim_{x\to 0^+} 7x \cot(3x)}_{\text{type }0\cdot \infty} &
+= \lim_{x\to 0^+} 7\cos(3x)\ \frac{x}{\sin(3x)}
+= \left(\lim_{x\to 0^+} 7\cos(3x) \right) 
+\underbrace{\left( \lim_{x\to 0^+}\frac{x}{\sin(3x)}\right)}_{ \text{type }(0/0)} \\
+&= 7 \lim_{x\to 0^+} \frac{1}{3\cos(3x)} = \frac{7}{3\cos(0)} =
+\frac{7}{3} \ .
+\end{align*}
+Nous avons utilisé le fait que $\cos(3x)$ est une fonction continue à
+l'origine et donc que $\displaystyle \lim_{x\to 0}\cos(3x) = \cos(0) = 1$.
+
+Un autre approche est d'utiliser
+$\displaystyle \lim_{y\to 0} \frac{y}{\sin(y)} = 1$.  Donc
+\begin{align*}
+\lim_{x\to 0^+} 7x \cot(3x) &
+= \lim_{x\to 0^+} \frac{7\cos(x)}{3}\ \frac{3x}{\sin(3x)}
+= \left(\lim_{x\to 0^+} \frac{7\cos(x)}{3}\right)
+\left( \lim_{x\to 0^+}\frac{3x}{\sin(3x)}\right) \\
+&= \frac{7}{3} \underbrace{\left(\lim_{y\to 0^+}\frac{y}{\sin(y)}\right)}_{y=3x}
+= \frac{7}{3} \ .
+\end{align*}
+
+\subQ{f} Après une petite manipulation algébrique, nous pouvons
+utiliser la Règle de l'Hospital.
+\begin{align*}
+\underbrace{\lim_{x\to \pi} \cot^2(x) (x-\pi)^2}_{\infty \cdot 0} &
+= \lim_{x\to \pi} \cos^2(x) \frac{(x-\pi)^2}{\sin^2(x)}
+= \left( \lim_{x\to \pi} \cos^2(x) \right)
+\underbrace{\left(\lim_{x\to \pi}\frac{(x-\pi)^2}{\sin^2(x)
+}\right)}_{ \text{type }(0/0)} \\
+&= \underbrace{\lim_{x\to  \pi}
+\frac{2(x-\pi)}{2\sin(x)\cos(x)}}_{\text{type }(0/0)}
+= \lim_{x\to \pi}\frac{2}{2\cos^2(x) - 2\sin^2(x)} = \frac{2}{2} = 1 \ . 
+\end{align*}
+Nous avons utilisé le fait que $\cos(x)$ et $\sin(x)$ sont des fonctions
+continues à $x= \pi$ et donc
+que $\displaystyle \lim_{x\to \pi}\cos(x) = \cos(\pi) = -1$ et
+$\displaystyle \lim_{x\to \pi}\sin(x) = \sin(\pi) = 0$.
+
+\subQ{g} Nous avons une limite du type $(\infty - \infty)$.  Nous
+avons cependant que
+\[
+\lim_{x\to +\infty} \left( x  \cos\left(\frac{1}{x}\right) - x \right)
+= \lim_{x\to +\infty} \frac{\cos(1/x)-1}{1/x}
+\]
+où la limite à droite est une limite du type $0/0$.  Nous pouvons donc
+utiliser la Règle de l'Hospital.
+\[
+\lim_{x\to +\infty} \frac{\cos(1/x)-1}{1/x}
+= \lim_{x\to +\infty} \frac{(1/x^2) \sin(1/x)}{-1/x^2}
+= \lim_{x\to +\infty} -\sin\left(\frac{1}{x}\right) = -\sin(0) = 0 \ .
+\]
+
+\subQ{h} Puisque
+\[
+(\cos(x))^{1/x^2} = e^{\ln( (\cos(x))^{1/x^2})} =  e^{(1/x^2)\ln(\cos(x))}
+\]
+pour $-\pi/2 < x < \pi/2$, et la fonction exponentielle est continue
+sur la droite réelle, nous avons 
+\[
+\lim_{x\to 0} (\cos(x))^{1/x^2}
+= e^{\lim_{x\to 0} (1/x^2)\ln(\cos(x))} \ .
+\]
+Il suffit donc de calculer la limite que nous retrouvons comme exposant.
+Pour ce faire, nous utilisons la Règle de l'Hospital.
+\begin{align*}
+\underbrace{\lim_{x\to 0} \frac{\ln(\cos(x))}{x^2}}_{\text{type }0/0}
+&= \lim_{x\to 0} \frac{-\sin(x) / \cos(x)}{2x}
+= \underbrace{\lim_{x\to 0} \frac{-\sin(x)}{2x \cos(x)}}_{\text{type }0/0} \\
+&= \lim_{x\to 0} \frac{-cos(x)}{2\cos(x) - 2x \sin(x)}
+= \frac{-1}{2}
+\end{align*}
+car la fonction impliquée dans la dernière limite est continue à
+$x=0$, il suffit donc d'évaluer cette fonction pour 
+obtenir la limite.  Finalement
+\[
+\lim_{x\to 0} (\cos(x))^{1/x^2} = e^{\lim_{x\to 0} (1/x^2)\ln(\cos(x))}
+= e^{-1/2} \ .
+\]
+}
+
+\subsection{Méthode de Newton}
+
+\compileSOL{\SOLUb}{\ref{6Q66}}{
+La première itération est
+\[
+x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} = x_0 - \frac{x_0^4 -20}{4x_0^3}
+= 2.125
+\]
+Puisque $|x_1 - x_0| = 0.125 > 10^{-4}$, nous calculons l'itération
+suivante.
+\[
+x_2 = x_1 - \frac{f(x_1)}{f'(x_1)} = x_1 - \frac{x_1^4 -20}{4x_1^3}
+\approx 2.11481856
+\]
+Puisque $|x_2 - x_1| \approx 0.01018 > 10^{-4}$, nous calculons l'itération
+suivante.
+\[
+x_3 = x_2 - \frac{f(x_2)}{f'(x_2)} = x_2 - \frac{x_2^4 -20}{4x_2^3}
+\approx 2.11474253
+\]
+Puisque $|x_3 - x_2| \approx 5.40273 \times 10^{-5} < 10^{-4}$, nous
+pouvons utiliser $x_3 \approx 2.11474253$ comme approximation de la
+solution de $x^4 -20 = 0$.
+
+La solution exacte est $2.11474253\ldots$
+}
+
+\compileSOL{\SOLUb}{\ref{6Q68}}{
+\subQ{a} Nous pourrions tracer le graphe de $f$.  Nous invitons le lecteur à
+le faire.  Puisque nous cherchons la solution de $e^x = x+2$, il est
+préférable de tracer les graphes de $e^x$ et de $x +2$ pour trouver
+approximativement où elles se coupent.  De plus, comme ce sont deux
+graphes bien connus, nous pouvons utiliser cette information pour confirmer
+le nombre de points d'intersection.
+\MATHgraph{6_derivees_appl/newton2}{8cm}
+
+En regardant le graphe ci-dessus, il est claire qu'il y a une seul
+solution positive entre $1$ et $1.5$\;.
+
+\subQ{b} $x=c$ est une solution de $e^x = x+2$ si et seulement si
+$x=c$ est une solution de $f(x) = e^x-x-2 = 0$.  Pour répondre à la
+question. il suffit donc de trouver la solution de $f(x)=0$.
+
+Pour choisir $x_0$, nous remarquons que $f(1) \approx -0.2817 <0$ et
+$f(1.5) \approx 0.981689 >0$.  Puisque $f$ est une fonction continue sur
+l'intervalle $[1, 1.5]$, le Théorème des valeurs intermédiaires
+garantit qu'il existe une valeur $c$ entre $1$ et 
+$1.5$ telle que $f(c)=0$.  C'est effectivement ce que nous avions
+observé à l'aide de la figure ci-dessus.  Nous choisissons donc
+$x_0 \in [1, 1.5]$.
+
+\subQ{c} Prenons $x_0 = 1.5$ pour résoudre numériquement $f(x) = 0$
+à l'aide de la méthode de Newton
+\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \quad , \quad n=0,1,2,3,\ldots 
+\]
+Nous avons les quatre itérations suivantes:
+\begin{align*}
+x_1 &= x_0 - \frac{f(x_0)}{f'(x_0)} = x_0 - \frac{e^{x_0}-x_0-2}{e^{x_0} -1}
+\approx 1.218042\\
+x_2 &= x_1 - \frac{f(x_1)}{f'(x_1)} = x_1 - \frac{e^{x_1}-x_1-2}{e^{x_1} -1}
+\approx 1.1497723\\
+x_3 &= x_2 - \frac{f(x_2)}{f'(x_2)} = x_2 - \frac{e^{x_2}-x_2-2}{e^{x_2} -1}
+\approx 1.1462025\\
+x_4 &= x_3 - \frac{f(x_3)}{f'(x_3)} = x_3 - \frac{e^{x_3}-x_3-2}{e^{x_3} -1}
+\approx 1.1461932
+\end{align*}
+Donc $c \approx 1.1461932$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q69}}{
+\subQ{a}
+L'équation de la sécante qui passe par $(x_i, f(x_i)$ et
+$(x_{i-1}, f(x_{i-1})$ est
+\[
+y = \frac{f(x_{i-1}) - f(x_i)}{x_{i-1} - x_i}\, (x-x_i) + f(x_i) \ .
+\]
+Lorsque cette droite coupe l'axe des $x$ (c'est-à-dire, lorsque $y=0$),
+nous avons
+\[
+0 = \frac{f(x_{i-1}) - f(x_i)}{x_{i-1} - x_i}\, (x-x_i) + f(x_i) \ .
+\]
+Si nous résolvons cette équation pour $x$, nous trouvons
+\[
+x = x_i - f(x_i) \left(\frac{f(x_{i-1}) - f(x_i)}{x_{i-1} - x_i}\right)^{-1}
+\ .
+\]
+C'est la formule qui donne $x_{i+1}$.
+\PDFgraph{6_derivees_appl/secante1}
+
+\subQ{b}
+Comme à la question~\ref{6Q68}, nous considérons la fonction
+$f(x) = e^x-x-2$.  Nous choisissons $x_0$ et $x_1$ dans l'intervalle
+$[1,2]$ où $f$ change de signe.  Soit $x_0=1.6$ et $x_1=1.7$.  Nous
+obtenons les quatre itérations suivantes:
+\begin{align*}
+x_2 & = x_1 - f(x_1)\left(\frac{f(x_1)- f(x_0)}{x_1-x_0}\right)^{-1}
+= f(1.7) - f(1.7) \left(\frac{f(1.7)-f(1.6)}{1.7-1.6}\right)^{-1} \\
+&\approx 1.2785497 \\
+x_3 & = x_2 - f(x_2)\left(\frac{f(x_2)- f(x_1)}{x_2-x_1}\right)^{-1}
+\approx 1.1882991 \\
+x_4 & = x_3 - f(x_3)\left(\frac{f(x_3)- f(x_2)}{x_3-x_2}\right)^{-1}
+\approx 1.150012 \\
+x_5 & = x_4 - f(x_4)\left(\frac{f(x_4)- f(x_3)}{x_4-x_3}\right)^{-1}
+\approx 1.1463089
+\end{align*}
+Donc $e^c = c+ 2$ pour $c \approx 1.1463089$.  Remarquons que la méthode de
+la sécante tend vers la solution de $f(x)=0$ plus lentement que la méthode
+de Newton.
+}
+
+\subsection{Systèmes dynamiques discrets}
+
+\compileSOL{\SOLUb}{\ref{6Q70}}{
+La solution du système dynamique discret est
+$v_n = 1.5^n v_0 = 1350 \times 1.5^n$.  Nous cherchons le plus petit entier $n$
+tel que $v_n \geq 3250$.
+\begin{align*}
+1350 \times 1.5^n \geq 3250
+&\Leftrightarrow 1.5^n \geq \frac{3250}{1350} = \frac{65}{27}
+\Leftrightarrow \ln(1.5^n) \geq \ln\left(\frac{65}{27}\right) \\
+&\Leftrightarrow n \ln(1.5) \geq \ln(65)-\ln(27)
+\Leftrightarrow n \geq \frac{\ln(65)-\ln(27)}{\ln(1.5)} = 2.1667719\ldots
+\end{align*}
+car $\ln(1.5)>0$.  Puisque $n$ doit être un entier, nous choisissons $n=3$
+pour être certain que le volume sera plus grand que $3250\ \mu m^3$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q71}}{
+\subQ{a}  Nous cherchons $p_9$ tel que $10^8 < p_{10} = 2 p_9 < 10^9$.
+Donc
+\[
+5 \times 10^7 = \frac{10^8}{2} < p_9 < \frac{10^9}{2} = 5 \times 10^8 \ .
+\]
+
+\subQ{b} La solution du système dynamique discret est de la forme
+$p_n = 2^n p_0$ où $p_0$ est le nombre initial d'individus.
+Nous cherchons $p_0$ tel que $10^8 < p_{10} = 2^{10} p_0 < 10^9$.
+Donc
+\[
+\frac{5^8}{4} = \frac{10^8}{2^{10}} < p_0 < \frac{10^9}{2^{10}}
+= \frac{5^9}{2} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{6Q72}}{
+La solution est $y_i = 0.5^i y_0 =1200 \times 0.5^i$ pour $i \geq 0$ et
+$y_{20} = 1200\times 0.5^{20} = 0.00114440\ldots$ 
+
+Voici le graphe de la solution avec la condition initiale $y_0 = 1$.
+\MATHgraph{6_derivees_appl/linear3_a}{8cm}
+
+Voici le graphe de la fonction itérative $z = f(y) = 0.5 y$.
+\MATHgraph{6_derivees_appl/linear3_b}{8cm}
+
+Notons que la fonction itérative est strictement croissante alors que la
+solution est strictement décroissante.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q73}}{
+La solution générale est de la forme
+$b_i = 0.7^i b_0 = 5.0\times 10^5 \times 0.7^i$ pour $i = 0$, $1$, $2$, \ldots
+
+Si  $b_i \approx 10^5$, nous obtenons
+\begin{align*}
+0.7^i \times 5 \times 10^5 \approx 10^5
+&\Leftrightarrow 0.7^i \times 5 \approx 1
+\Leftrightarrow 0.7^i \approx \frac{1}{5} \\
+&\Leftrightarrow i\ln(0.7) = \ln(0.7^i) \approx \ln\left(\frac{1}{5}\right)
+= - \ln(5) \ .
+\end{align*}
+Donc $\displaystyle i \approx \frac{-\ln(5)}{\ln(0.7)} = 4.512338026$.
+Nous choisissons l'entier le plus près de $4.512338026$, soit $i=5$.
+
+Le graphe de la solution du système dynamique
+$b_{i+1} = 0.7 b_i$ est donné ci-dessous.
+\MATHgraph{6_derivees_appl/linear6}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q74}}{
+La solution générale du premier système est
+$x_n = 10^2\times 2.5^n$ pour $n \geq 0$ et la solution générale du
+second système $y_n = 10^3 \times 2^n$ pour $n\geq 0$.  Ainsi,
+\[
+\lim_{n\to \infty} \frac{y_n}{x_n}
+= \lim_{n\to \infty} \frac{10^3 \times 2^n}{10^2\times 2.5^n} 
+= \lim_{n\to \infty} 10\,\left(\frac{2}{2.5}\right)^n
+= \lim_{n\to \infty} 10\,\left(\frac{4}{5}\right)^n = 0
+\]
+car $\displaystyle \lim_{n\to \infty} r^n = 0$ pour $|r|<1$.  La
+population associée au système (\ref{sect26eq1}) tend donc plus rapidement
+vers plus l'infini que la population associée au système (\ref{sect26eq2}).
+}
+
+\compileSOL{\SOLUa}{\ref{6Q75}}{
+La fonction itérative est $f(x) = 4-x$.  Nous avons
+$x_0 = 1$, $x_1 = 4-x_0 = 3$, $x_2 = 4-x_1 = 1$, $x_3 = 4-x_2 = 3$, \ldots
+La solution est
+\[
+x_i = 
+\begin{cases}
+1 & \quad \text{si $i$ est pair} \\
+3 & \quad \text{si $i$ est impair}
+\end{cases}
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{6Q76}}{
+Nous avons $h_0 = 1$, $h_1 = h_0 +1 =2$, $h_2 = h_1 +1 =3$, $h_3 = h_2 +1 =4$,
+\ldots\ La solution est donc $h_i = i+1$ pour $i=0$, $1$, $2$,
+\ldots\ En effet, 
+\[
+h_i + 1 = (i+1)+1 = i + 2 = h_{i+1} \quad \text{pour}\quad
+ i = 0, 1, 2, \ldots
+\]
+Ainsi, $h_{20} = 21$.
+
+Le modèle est plausible pour les premières années mais n'est pas
+valable après plusieurs années.  La croissance de l'arbre devrait
+ralentir avec le temps.  L'arbre devrait arrêter de grandir après un
+certain nombre d'années.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q77}}{
+La fonction itérative est $f(x) = 2x + 30$.  Pour obtenir la solution, il
+faut trouver le point d'équilibre; c'est-à-dire, $p$ tel que $p=f(p)$.
+\[
+p = f(p) \Leftrightarrow p = 2 p + 30 \Leftrightarrow p = -30 \ .
+\]
+La solution est
+\[
+x_i = 2^i(x_0 -p) + p = 2^i(10 + 30) - 30 = 40\times 2^i - 30 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{6Q78}}{
+Le tableau nous donne plusieurs valeurs $v_0$ (colonne de gauche) et $v_1$
+(colonne de droite).  Ces valeurs doivent satisfaire
+$v_1 = a v_0 + b$.  Si nous prenons les deux premières pairs, nous
+obtenons le système d'équations linéaires suivant.
+\begin{align*}
+1830 & = 1220 a  + b \\
+2790 &= 1860 a + b
+\end{align*}
+La solution pour $a$ et $b$ de ce système est $a=3/2$ et
+$b=0$. Nous avons donc $\displaystyle v_{i+1} = (3/2) v_i$.
+
+Pour compléter le tableau, notons que
+$\displaystyle v_1 = (3/2) \times 1420 = 2130$.
+
+Si le valeur initial est $v_0 = 1420$, le valeur après une heure sera
+donné par $v_6$ car chaque itération représente $10$ minutes.  La
+solution du système dynamique discret $\displaystyle v_{i+1} = (3/2) v_i$ est
+$\displaystyle v_i = (3/2)^i v_0 = 1420 \times (3/2)^i$ pour $i\geq 0$.  Donc
+$\displaystyle v_6 = 1420 \times (3/2)^6 = 16174.6875$.
+
+Le modèle est valide pour une certaine période de temps mais il est
+clair qu'il n'est pas valide à long terme car $v_n \to \infty$ lorsque
+$n\to \infty$.  Le nombre de moyen bactéries ne peut pas augmenter
+indéfiniment.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q79}}{
+Le tableau nous donne $p_0$, $p_1$, $p_2$ et $p_3$.  Ces valeurs doivent
+satisfaire $p_{i+1} = a p_i + b$.  Si nous utilisons les valeurs $p_0$, $p_1$,
+$p_2$, nous obtenons le système d'équations linéaires suivant.
+\begin{align*}
+p_1 = a p_0 + b &\Rightarrow 16 = 20 a  + b \\
+p_2 = a p_1 + b &\Rightarrow 13 = 16 a + b
+\end{align*}
+La solution de ce système pour $a$ et $b$ est $a=3/4$ et $b=1$.
+Nous avons donc $\displaystyle p_{i+1} = (3/4) p_i + 1$.
+
+La fonction itérative est $\displaystyle f(x) = (3/4) x + 1$.  Pour
+obtenir la solution, il faut trouver le point d'équilibre;
+c'est-à-dire, le point $p$ tel que $p=f(p)$.
+\[
+p = f(p) \Leftrightarrow p = \frac{3}{4} p + 1 \Leftrightarrow p = 4 \ .
+\]
+La solution est
+\[
+p_i = \left(\frac{3}{4}\right)^i(p_0 -p) + p
+= \left(\frac{3}{4}\right)^i(20 -4 ) + 4
+= 16\times \left(\frac{3}{4}\right)^i + 4 \ .
+\]
+\MATHgraph{6_derivees_appl/linear4}{8cm}
+
+Le modèle est réaliste.  La concentration peut devenir nulle.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q80}}{
+\subQ{a} Nous trouvons le point fixe $M$ pour le système dynamique discret
+(\ref{sdd18}); c'est-à-dire, nous cherchons $M$ tel que $M=0.75 M + 2$.  La
+solution de cette équation est $M=8$.  Ainsi la solution générale est
+\[
+M_i = 0.75^i(M_0-8)+8 \ .
+\]
+
+% Les premières valeurs de $M_i$ sont
+% \begin{align*}
+% M_0 &= 16 \\
+% M_1 &= 0.75 M_0 + 2 = 0.75(16-8)+8 = 14\\
+% M_2 &= 0.75 M_1 + 2 = 0.75 (0.75 M_0 + 2) + 2
+% = 0.75^2 M_0 + 0.75 \times 2 + 2 \\
+% M_3 &= 0.75 M_2 + 2 = 0.75 (0.75^2 M_0 + 0.75\times 2 + 2) + 2\\
+% &= 0.75^3 M_0 + 0.75^2 \times 2 + 0.75 \times 2 + 2 \\
+% M_4 &= 0.75 M_3 + 2 = 0.75 (0.75^3 M_0 + 0.75^2 \times 2 +0.75\times 2 + 2)
+% + 2 \\
+% &= 0.75^4 M_0 + 0.75^3 \times 2 + 0.75^2 \times 2 + 0.75 \times 2 + 2 \\
+% & \vdots
+% \end{align*}
+% Par induction, nous trouvons que
+% \begin{align*}
+% M_i &= 0.75^i M_0 + 2 \sum_{k=0}^{i-1} 0.75^k 
+% = 0.75^i M_0 + 2 \left( \frac{1-0.75^i}{1-0.75}\right) \\
+% &= 0.75^i (M_0 - 8) + 8
+% \end{align*}
+% Puisque $0.75^i$ approche $0$ lorsque $i$ devient de plus en plus
+% grand, nous avons que $M_i$ approche $8$ lorsque $i$ tend vers plus infini.
+
+\subQ{b} Nous avons
+\begin{align*}
+M_0 & =16  \\
+M_1 &= 0.75(16-8)+8 = 14 \\
+M_2 &= 0.75^2(16-8)+8 = 12.5 \\
+M_3 &= 0.75^3(16-8)+8 = 11.375 \\
+M_4 &= 0.75^4(16-8)+8 = 10.53125 \\
+M_5 &= 0.75^5(16-8)+8 = 9.8984375
+\end{align*}
+
+\subQ{c}
+Le dessin à droite dans la figure ci-dessous représente la solution du
+système (\ref{sdd18}) pour $M_0 = 16$.
+
+\subQ{d}
+Le dessin à gauche dans la figure ci-dessous représente le graphe de
+la fonction itérative du système dynamique discret.
+\PDFgraph{6_derivees_appl/linear7}
+
+\subQ{e} Nous utilisons le résultat en (a) pour obtenir
+\[
+M_{60} = 0.75^{60} (10 - 8) + 8 = 0.75^{60}\times 2 + 8 \approx
+8.000000064 \ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{6Q81}}{
+La fonction itérative est $y=f(x) = 2x-5$.  Nous avons dessiné le graphe de la
+fonction itérative ci-dessous.
+\PDFgraph{6_derivees_appl/linear18}
+
+Le point d'équilibre $p$ du système dynamique discret est la solution
+de l'équation $p = 2p-5$; c'est-à-dire, $p = 5$.  Le graphe de la
+fonction itérative est au-dessus de la droite $y=x$ pour $x>5$ et
+en dessous de la droite $y=x$ pour $x<5$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q82}}{
+\MATHgraph{6_derivees_appl/linear10}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q83}}{
+La fonction itérative est $f(w) = -0.5 w + 3$.
+
+Pour obtenir la solution, il faut trouver le point d'équilibre;
+c'est-à-dire, le point $p$ tel que $p=f(p)$.
+\[
+p = f(p) \Leftrightarrow p = -0.5 p + 3 \Leftrightarrow p = 2 \ .
+\]
+La solution est
+\[
+  w_i = (-0.5)^i(w_0 -p) + p = (-0.5)^i(0.2 - 2 ) + 2
+  = -1.8 \times (-0.5)^i + 2 \ .
+\]
+Le graphe de la fonction itérative est la droite de pente $-0.5$ et
+d'ordonnée à l'origine $3$.  Le graphe en forme de toile d'araignée
+est donnée ci-dessous.
+\MATHgraph{6_derivees_appl/linear11}{8cm}
+
+Puisque $(-0.5)^i \rightarrow 0$ lorsque $i\rightarrow \infty$, il n'est pas
+surprenant que $w_i \rightarrow 2$ lorsque $i\rightarrow \infty$.
+Nous avons que $-1.8 \times (-0.5)^i$ est positif pour $i$ impair et
+négatif pour $i$ pair.  Cela explique pourquoi les $x_i$ alternent
+entre plus petit et plus grand que $2$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q84}}{
+La fonction itérative est $\displaystyle f(z) = 0.5 z + 8$.
+
+Pour obtenir la solution, il faut trouver le point d'équilibre;
+c'est-à-dire, le point $p$ tel que $p=f(p)$.
+\[
+p = f(p) \Leftrightarrow p = 0.5 p + 8 \Leftrightarrow p = 16 \ .
+\]
+La solution est
+\[
+z_i = 0.5^i(z_0 -p) + p = 0.5^i(2 - 16 ) + 16 = -14\times 0.5^i + 16 \ .
+\]
+Le graphe de la fonction itérative est la droite de pente 0.5 et
+d'ordonnée à l'origine 8 qui est tracé en noire dans la figure
+ci-dessous.  La figure contient aussi le graphe en forme de toile
+d'araignée.
+\MATHgraph{6_derivees_appl/linear12}{8cm}
+}
+
+\compileSOL{\SOLUa}{\ref{6Q85}}{
+Nous avons trouver à la question~\ref{6Q79} que la concentration
+$p_n$ d'un médicament après $n$ heures satisfait le système dynamique
+discret $p_{n+1} = 0.75 p_n + 1$.  Nous avons aussi montré que $p=4$
+était le point d'équilibre et que la solution était
+$\displaystyle p_n = 16\times 0.75^n + 4$.
+
+Le graphe en forme de toile d'araignée est donné ci-dessous.
+\MATHgraph{6_derivees_appl/linear13}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q86}}{
+Pour la première partie de la question, le nombre de bactéries $x_i$
+que nous avons après $i$ heures satisfait le système dynamique discret
+\[
+x_{i+1}  = 2 x_i - 10^6 \quad \text{pour} \quad i=0.1.2.3.\ldots
+\]
+Le point d'équilibre de ce système est donné par la solution de
+l'équation $\displaystyle x = 2 x - 10^6$, soit $x= 10^6$.  La solution du
+système dynamique discret est donc
+\[
+x_i = 2^i \left(x_0 - 10^6\right) + 10^6
+\quad \text{pour} \quad i=0, 1, 2, 3, \ldots
+\]
+Le graphe en forme de toile d'araignée est donné ci-dessous.
+\MATHgraph{6_derivees_appl/linear14}{8cm}
+
+Pour la deuxième partie de la question, le système dynamique discret est
+\[
+x_{i+1} = 2 (x_i - 10^6) \ .
+\]
+En d'autres mots, avant de doubler le nombre de bactéries, nous retirons
+$10^6$ bactéries.  Le point d'équilibre de ce système est donné par la
+solution de l'équation $\displaystyle x = 2 ( x - 10^6)$, soit
+$x= 2 \times 10^6$.  La solution du système dynamique discret est donc
+\[
+x_i = 2^i \left(x_0 - 2\times 10^6\right) + 2\times 10^6
+\quad \text{pour} \quad i=0, 1, 2, 3, \ldots
+\]
+Le graphe en forme de toile d'araignée est donné ci-dessous.
+\MATHgraph{6_derivees_appl/linear15}{8cm}
+
+Les deux graphes en forme de toile d'araignée sont légèrement
+différents si nous comparons les valeurs de $x_i$ mais, qualitativement,
+ils sont identique.  Dans les deux cas, le nombre de bactéries croit
+sans borne supérieure; c'est-à-dire, $x_i\rightarrow \infty$ lorsque
+$i\rightarrow \infty$.
+
+Dans les deux cas, le système n'est pas vraiment réaliste à long terme
+même si la croissance est exponentielle au départ.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q87}}{
+Le système dynamique discret est de la forme
+\[
+x_{i+1} = f(x_i) = m x_i + b \quad \text{pour} \quad i=0, 1, 2, 3, \ldots
+\]
+où $f(x) = mx + b$ est la fonction itérative.   Nous utilisons les deux
+premiers itérations pour déterminer $m$ et $b$;
+c'est-à-dire, nous utilisons $x_1 = f(x_0) = m x_0 + b$ et
+$x_2 = f(x_1) = m x_1 + b$.  Il faut donc résoudre le système d'équations
+linéaires suivant.
+\begin{align*}
+2 &= m \times 0 + b \\
+3.2 &= m \times 2 + b
+\end{align*}
+La solution pour $m$ et $b$ est $m= 0.6$ et $b=2$.
+La fonction itérative est donc $f(x) = 0.6 x + 2$.  Le système
+dynamique discret est
+\[
+x_{i+1} = 0.6 x_i + 2  \quad \text{pour} \quad i=0, 1, 2, 3, \ldots
+\]
+Le point d'équilibre du système dynamique discret
+\[
+x_{i+1} = 0.6 x_i + 2 \quad \text{pour} \quad i=0,1,2,3,\ldots
+\]
+est la solution de l'équation $p=f(p) = 0.6p+2$ soit $p=5$.
+
+Le graphe de la fonction itérative (en noire) du système dynamique
+discret $x_{i+1} = 0.6 x_i + 2$ avec le graphe en forme de toile
+d'araignée associé à la condition initiale $x_0 =0$ se retrouve dans
+la figure suivante.
+\PDFgraph{6_derivees_appl/linear16}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q88}}{
+La fonction itérative du système dynamique discret est $f(x) = 0.9 x + 8$.
+le point d'équilibre est la solution de $p=0.9 p + 8$, soit $p = 80$.
+
+Puisque la pente de la droite $y=f(x)$ est entre $-1$ et $1$, le point
+d'équilibre sera (asymptotiquement) stable d'après le théorème sur la
+stabilité des points d'équilibre.
+
+Nous avons tracé le graphe en forme de toile d'araignée pour $x_0=10$
+ci-dessous.  Nous voyons bien que les orbites tendent vers le point
+d'équilibre.
+\MATHgraph{6_derivees_appl/linear17}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q90}}{
+Si $45$\% du médicament est éliminé en un jour, alors, après un jour,
+nous avons $55$\% de la quantité du médicament que nous avions au début de la
+journée.  Nous ajoutons $50$ mg/l à chaque jour avant de mesurer la
+quantité du médicament dans l'organisme du patient.
+Donc $x_{t+1} = 0.55 x_t + 50$ pour $t=0$, $1$, $2$, \ldots
+La condition initiale est $42$ mg/l.  Donc $x_0 = 42$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q91}}{
+\subQ{a}  S'il y a $p_n$ g de graines au début de la semaine et les
+oiseaux en manche 75\%, il en reste donc $0.25 p_n$ g à la fin de la
+semaine.  Puis nous ajoutons $30$ g.  Nous avons donc $0.25 p_n + 30$ g au
+début de la semaine suivante.  Ainsi, le système dynamique discret est
+\[
+  p_{n+1} = 0.25 p_n + 30 \quad \text{pour} \quad n = 0, 1, 2, 3, \ldots
+\]
+
+\subQ{b} La fonction génératrice est $f(x) = 0.25 x + 30$.
+
+\subQ{c} Le point d'équilibre du système dynamique discret est la
+solution de l'équation $f(p)= 0.25 p + 30 = p$, soit
+$p = 30/0.75 = 40$.
+
+\subQ{d} La solution générale du système dynamique discret est
+\[
+p_n = 0.25^n(p_0-p)+p = 0.25^n(5-40)+40 = -35 \times 0.25^n + 40 \ .
+\]
+
+\subQ{e} Nous avons tracé le graphe de la fonction génératrice et le graphe
+en forme de toiles d'araignées dans la figure ci-dessous.
+\MATHgraph{6_derivees_appl/linear19}{8cm}
+
+\subQ{f} Puisque $|f'(40)| = |0.25| < 1$, nous avons que $p=40$ est une
+point d'équilibre (asymptotiquement) stable grâce au théorème de
+stabilité des points d´équilibre de système dynamique linéaire.
+
+Il est aussi évident à partir du graphe en forme de toile d'araignée
+que le point d'équilibre $p = 40$ est (asymptotiquement) stable car
+les orbites convergent tous vers $p$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q92}}{
+Nous avons $x_0 = 1$, $\displaystyle x_1 = f(x_0) = \frac{1}{2}$, 
+$\displaystyle x_2 = f(x_1) = \frac{1}{3}$,
+$\displaystyle x_3 = f(x_2) = \frac{1}{4}$, \ldots\
+Nous pouvons conjecturer que la solution est
+$\displaystyle x_i = \frac{1}{i+1}$.  Pour démontrer que notre
+conjecture est vrai, il faut vérifier que l'équation
+$\displaystyle x_{i+1} = \frac{x_i}{1+x_i}$ est satisfaite avec
+$\displaystyle x_i = \frac{1}{i+1}$.  Effectivement,
+\[
+\frac{x_i}{1+x_i} = \frac{1/(i+1)}{1 + 1/(i+1)} =
+\frac{1/(i+1)}{(i+2)/(i+1)} = \frac{1}{i+2} = x_{i+1} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{6Q93}}{
+Les points d'équilibre $p$ sont les solutions de l'équation
+$y = f(y) = e^{-y}$.  Malheureusement, nous ne pouvons pas résoudre
+cette équation pour $y$.  Par contre, nous pouvons déduire de
+l'intersection de la droite $y=x$ avec la courbe $y=e^{-x}$ qu'il
+existe un point d'équilibre.
+\PDFgraph{6_derivees_appl/graph_funct20}
+Nous pourrions utiliser la méthode de Newton pour estimer numériquement
+la valeur de $p$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q94}}{
+Le graphe de la fonction itérative est donné ci-dessous.
+\PDFgraph{6_derivees_appl/linear9}
+
+Le point d'équilibre $p$ est donné par l'intersection du graphe de la
+fonction itérative $z = f(y)$ avec la droite $z=y$.  Le point
+d'équilibre $p$ que nous cherchons est donc la solution de l'équation 
+$p=f(p)=p^2-1$ avec $0 \leq p \leq 2$.  C'est-à-dire qu'il faut trouver les
+racines du polynôme $p^2- p -1=0$ avec $0 \leq p \leq 2$.  Grâce à la formule
+pour trouver les racines d'un polynôme de degré deux, nous obtenons
+\[
+p_\pm = \frac{1 \pm \sqrt{1+4}}{2} = \frac{1 \pm \sqrt{5}}{2} \ .
+\]
+La seule racine $p$ telle que $0 \leq p \leq 2$ est
+$\displaystyle p = \frac{1 + \sqrt{5}}{2}$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q95}}{
+Soit $f(x)= x-\cos(x)$.  $f$ est une fonction continue sur la droite réelle
+telle que $f(0) = 0 -\cos(0) = -1 <0$ et 
+$f(\pi/2) = \pi/2 - \cos(\pi/2) = \pi/2 > 0$.  Selon le théorème des
+valeurs intermédiaires, il existe donc $p$ entre $0$ et $\pi/2$ tel que
+$f(p)= p - \cos(p)= 0$; c'est-à-dire, $\cos(p) = p$.  La figure suivante
+illustre ce fait.  Nous pouvons montrer à l'aide d'une méthode numérique
+(e.g. méthode de Newton) que $p \approx 0.73908513321$.
+\MATHgraph{6_derivees_appl/nonlinear1}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q96}}{
+La fonction itérative est $\displaystyle f(x) = \frac{x}{x-1}$ pour
+$x>1$.  Les point d'équilibre positifs du système dynamique discret
+sont les solutions de l'équation $\displaystyle p = f(p) = \frac{p}{p-1}$.
+Nous pouvons récrire cette équation de la façon suivante.
+\[
+p^2 - 2 p = p(p-2) = 0 \ .
+\]
+La seule solution pour $p>1$ est $p=2$.  C'est le point d'intersection
+du graphe de la fonction itérative $f$ avec la droite $y=x$ qui
+représenté dans la figure ci-dessous.
+\PDFgraph{6_derivees_appl/nonlinear2}
+}
+
+\compileSOL{\SOLUa}{\ref{6Q97}}{
+La fonction itérative est $\displaystyle f(x) = \frac{x}{x +1}$.  Le
+graphe de cette fonction est en noir dans la figure ci-dessous.  La
+figure ci-dessous contient aussi le graphe en forme de toile
+d'araignée.
+\MATHgraph{6_derivees_appl/nonlinear3}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q98}}{
+Le point d'équilibre est $p$ car $f(p) = p$.
+\PDFgraph{6_derivees_appl/nonlinear4_b}
+}
+
+\compileSOL{\SOLUa}{\ref{6Q99}}{
+$p$ est un point d'équilibre si
+$\displaystyle p = f(p) = \frac{\alpha p}{p+1}$.  Or,
+\[
+p = \frac{\alpha p}{p+1} \Leftrightarrow 
+p(p+1) = \alpha p \Leftrightarrow  p^2 + (1-\alpha) p = 0
+\Leftrightarrow p ( p+1-\alpha) = 0 \ .
+\]
+Les points d'équilibre sont donc $p=0$ et $p = \alpha -1$.  le
+système dynamique a toujours au moins un point d'équilibre; c'est le
+point $p=0$.
+
+\subQ{a} Il n'y pas de point d'équilibre autre que $0$ quand
+$\alpha = 1$.
+
+\subQ{b} le système dynamique discret a un point d'équilibre négatif
+lorsque $\alpha < 1$; c'est le point $p=\alpha - 1$.
+
+\subQ{c} le système dynamique discret a un point d'équilibre positif
+lorsque $\alpha > 1$; c'est le point $p=\alpha - 1$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q100}}{
+\subQ{a} Le graphe en forme de toile d'araignée lorsque la fonction
+itérative $f$ est dans sa position initiale.
+\PDFgraph{6_derivees_appl/nonlinear6_a}
+
+Il y a deux points d'équilibre: $0$ et $p$.  L'origine est stable.
+Par contre, $p$ n'est pas stable.  Il est vrai que les orbites
+convergent vers $p$ si la condition initiale $x_0$ est plus grande que
+$p$.  Cependant, si la condition initiale $x_0$ satisfait
+$0 < x_0 < p$, alors les orbites convergent vers l'origine et non pas
+vers $p$.
+
+\subQ{b} Le graphe en forme de toile d'araignée lorsque le graphe de
+$f$ est légèrement pivoté dans le sens des aiguilles d'une montre.
+\PDFgraph{6_derivees_appl/nonlinear6_b}
+
+Il n'y a maintenant qu'un seul point d'équilibre, l'origine, qui est
+stable.  Toutes les orbites convergent vers l'origine.
+
+\subQ{c} Le graphe en forme de toile d'araignée lorsque le graphe de
+$f$ est légèrement pivoté dans le sens contraire aux aiguilles d'une
+montre.
+\PDFgraph{6_derivees_appl/nonlinear6_c}
+
+Il y a maintenant trois points d'équilibre: $0$, $p_1$ et $p_2$.
+L'origine est toujours stable.  Le point $p_1$ est un point d'équilibre
+instable alors que le point $p_2$ est un point d'équilibre stable.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q101}}{
+\PDFgraph{6_derivees_appl/nonlinear7_b}
+Le point d'intersection (autre que l'origine) de la courbe $y=f(x)$ avec la
+droite $y=x$ est $(700,700)$.  Donc $p=700$ est le point d'équilibre du
+système dynamique discret $x_{n+1} = f(x_n)$ pour $n=0$, $1$, $2$, \ldots 
+
+La pente de la droite tangente à la courbe $y=f(x)$ au point $(700,700)$ est
+approximativement $m = 3/16$.  Puisque $|m|<1$, nous obtenons du
+théorème sur la stabilité des points d'équilibre que le point
+d'équilibre $p=700$ est (asymptotiquement) stable .
+}
+
+\compileSOL{\SOLUb}{\ref{6Q102}}{
+\subQ{a}
+\PDFgraph{6_derivees_appl/nonlinear8_a}
+Puisque la courbe $y=f(x)$ est tangente à la droite $y=x$ au point
+$(p,p)$ par construction, nous avons $f'(p) = 1$.  Nous ne pouvons rien conclure
+à l'aide du théorème de stabilité pour les points d'équilibre.  Par
+contre, le graphe en forme de toile d'araignée indique que le point
+d'équilibre $p$ est stable.
+
+\subQ{b}
+\PDFgraph{6_derivees_appl/nonlinear8_b}
+Comme précédemment, puisque la courbe $y=f(x)$ est tangente à la
+droite $y=x$ au point $(p,p)$ par construction, nous avons $f'(p) = 1$.  Nous
+ne pouvons rien conclure à l'aide du théorème de stabilité pour les
+points d'équilibre.  Par contre, le graphe en forme de toile
+d'araignée indique que le point d'équilibre $p$ est instable.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q103}}{
+Le système dynamique discret est de la forme $p_{n+1} = f(p_n)$ où
+$f(x)=6xe^{-2x}-2x$.  Les points d'équilibres sont donc les points
+$p$ qui satisfont $\displaystyle p = f(p) = 6pe^{-2p} - 2p$.
+Le point $p=0$ est un point d'équilibre.  Si $p\neq 0$, nous pouvons
+diviser des deux côtés de l'équation par $p$ pour obtenir 
+$\displaystyle 1 = 6e^{-2p}-2$.  Donc $e^{-2p} = 0.5$.  En appliquant
+$\ln$ des deux côtés de cette dernière égalité, nous obtenons un
+deuxième point d'équilibre, $p = \ln(2)/2$.
+
+Pour déterminer la stabilité de ces deux points d'équilibre, nous avons
+besoin de la dérivée de $f$; c'est-à-dire,
+$f'(x) = 6e^{-2x} - 12 xe^{-2x} -2 = 6(1-2x)e^{-2x} - 2$.
+
+Puisque $|f'(0)| = 4 > 1$, le point $p=0$ est instable.  De même,
+$|f'(\ln(2)/2)| = |6(1 - \ln(2))/2 -2| = 1.07944\ldots > 1$ et le point
+$p=\ln(2)/2$ est aussi instable.
+
+\noindent Note: le comportement de ce système dynamique discret est
+beaucoup plus complexe que ceux que nous avons normalement dans nos
+exemples.  Voir la section sur les orbites périodiques.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q104}}{
+La fonction itérative est
+$\displaystyle f(x) = \frac{1.5x}{1.5x + 2(1-x)} = \frac{1.5x}{2-0.5x}$.
+Nous avons $\displaystyle f'(x) = \frac{3}{(2-0.5x)^2}$.
+
+Notons que $p=0$ et $p=1$ sont des points d'équilibre car $f(0)=0$ et
+$f(1)=1$.  Puisque $|f'(0)| = 3/4 < 1$, nous avons que $0$ est un point
+d'équilibre asymptotiquement stable.  Puisque $|f'(1)| = 4/3 >1$, nous avons
+que $1$ est un point d'équilibre instable.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q105}}{
+La fonction itérative est $f(x) = 2x(1-x)$.  Les points d'équilibre sont
+les solutions de $f(x)=x$, soit $x=0$ ou $x=1/2$.  Le point d'équilibre
+non nul est $p=1/2$.  Puisque $f'(x)= 2-4x$, nous obtenons que
+$f'(p) = 0$.  Le point d'équilibre $p=1/2$ est donc asymptotiquement
+stable car $|f'(p)| = 0 <1$.
+
+Le graphe en forme de toile d'araignée pour $x_0 = 0.2$ est ci-dessous.
+\MATHgraph{6_derivees_appl/logistic1}{8cm}
+
+Comme nous pouvons le voir dans le graphe en forme de toile d'araignée, la
+convergence est très rapide.  À partir de $0.2$, il faut seulement quatre
+itérations pour être très près du point d'équilibre $p=1/2$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q106}}{
+\subQ{a} Nous avons le système dynamique discret
+\[
+M_{i+1} = M_i - \frac{M_i^2}{2+M_i} + 1
+= \frac{2M_i}{2+M_i} + 1  \quad \text{pour} \quad i =0, 1, 2, 3, \ldots ,
+\]
+La fonction itérative est $\displaystyle g(M) = \frac{2M}{2+M} + 1$.
+Notons que $G(2)=2$.  Ce qui confirme que $M=2$ est un point d'équilibre.
+
+Nous déduisons de $\displaystyle g'(M) = \frac{4}{(2+M)^2}$ que
+$g'(2) = 1/4$.  Puisque que $|g'(2)|<1$, le point d'équilibre $M=2$ est
+asymptotiquement stable.  De plus, puisque $g'(2)>0$, les orbites n'oscillent
+pas autour de $M=2$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q107}}{
+\subQ{a} La fonction génératrice du système dynamique discret est
+$f(x) = r x (1-x) - 0.75 x$.  Les points d'équilibre sont les
+solutions de l'équation $x = f(x) = r x (1-x) - 0.75 x$.  Il est
+facile de voir que $x=0$ est une solution.  Donc, $p_1 = 0$ est un point
+d'équilibre.  Si $x\neq 0$, nous pouvons diviser les deux
+côtés de l'égalité par $x$ pour obtenir $1 = r(1-x) - 0.75$.  Si nous
+résolvons pour $x$ cette dernière équation, nous obtenons le deuxième point
+d'équilibre $\displaystyle p_2  = 1 - \frac{1.75}{r}$.
+
+\subQ{b} Le point $p_1=0$ a toujours un sens biologique; il n'y a pas
+d'individus.  Le point d'équilibre
+$\displaystyle p_2 = 1- \frac{1.75}{r}$ a un sens
+biologique seulement s'il est plus grand ou égale à $0$.  Ainsi
+\[
+  1 - \frac{1.75}{r} \geq 0 \Rightarrow r \geq 1.75 \ .
+\]
+
+\subQ{c} La dérivée de la fonction génératrice est
+$f'(x) = r - 2r x -0.75$. Le point d'équilibre $p_2=1- 1.75/r$ sera
+stable si
+\[
+\left| f'(p_2) \right| = \left| r -2r \left(1 - \frac{1.75}{r}\right)
+  - 0.75 \right| = | -r + 2.75 | = |r-2.75|<1 \ ;
+\]
+c'est-à-dire, si $-1 < r - 2.75 < 1$ ou, plus précisément, si
+$1.75 < r < 3.75$.  Le point d'équilibre $p_2$ sera instable si
+$\left| f'(p_2) \right| > 1$; c'est-à-dire si $r > 3.75$ car
+nous considérons seulement $r > 1.75$ pour obtenir un point d'équilibre
+$p_2$ qui a un sens biologique.
+
+Le point d'équilibre $p_1=0$ sera stable si
+$\left| f'(p_1) \right| = |r - 0.75|<1$; c'est-à-dire si
+$-1 < r-0.75 < 1$ ou, plus précisément, si $-0.25 < r < 1.75$.
+Le point d'équilibre $p_1$ sera instable si
+$\left| f'(p_1) \right| > 1$; c'est-à-dire, si $r> 1.75$ ou $r<-0.25$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q108}}{
+\subQ{a} La fonction itérative est $f(x) = 2 x(1-x^2)$.
+
+\subQ{b} Les points d'équilibre sont les solutions de $x=f(x)$.
+Il découle de $2 x(1-x^2) = x$ que $x=0$ ou $2 (1-x^2) = 1$ si $x\neq 0$.
+De plus,
+\[
+2 (1-x^2) = 1 \Leftrightarrow x^2 = \frac{1}{2} \Leftrightarrow 
+x = \pm \frac{1}{\sqrt{2}} \ .
+\]
+Les trois points d'équilibre sont donc $0$, $1/\sqrt{2}$
+et $-1/\sqrt{2}$.
+
+\subQ{c} Nous avons $f'(x) = 2 - 6 x^2$.  Ainsi,
+$f'(-1/\sqrt{2})= -1$, $f'(0)=2$ et $f'(1/\sqrt{2}) = -1$.
+Puisque $|f'(0)|=2>0$, le point d'équilibre $x=0$ est instable.
+
+Puisque $|f'(-1/\sqrt{2})| = |f'(1/\sqrt{2})| = 1$, nous ne pouvons
+rien conclure à partir du théorème de stabilité des points
+d'équilibre.  Il faut faire une analyse plus poussée pour déterminer
+la stabilité de ces points d'équilibre.
+
+Nous retrouvons ci-dessous deux graphe en forme de toile d'araignée.  Dans le
+deuxième graphe, nous avons tracer le graphe au environ du point d'équilibre
+$1/\sqrt{2}$.  Nous voyons que les points d'équilibre $-1/\sqrt{2}$ et
+$1/\sqrt{2}$ sont stables mais la stabilité est très faible.  Il faut
+un très grand nombre d'itérations pour approcher légèrement le point
+d'équilibre.
+\MATHgraph{6_derivees_appl/logisticlike1_a}{8cm}
+\MATHgraph{6_derivees_appl/logisticlike1_b}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q109}}{
+\subQ{a} La fonction itérative du système dynamique discret est
+$f(x) = \mu x(1-x^2)$.  Ainsi, $\displaystyle f'(x) = \mu (1-3x^2)$ et
+$f'(0)= \mu$.  Le point d'équilibre $x=0$ est asymptotiquement stable
+si $|f'(0)|= |\mu|<1$.  Si $|\mu|>1$, le point d'équilibre $x=0$ est
+instable. Si $\mu=1$ ou $\mu=-1$, il faut utiliser un graphe en forme
+de toile d'araignée pour déterminer la stabilité du point d'équilibre
+$x=0$.
+
+Pour $\mu=1$, nous obtenons le graphe en forme de toile d'araignée suivant.
+\MATHgraph{6_derivees_appl/logisticlike2_a}{8cm}
+
+Pour $\mu=-1$, nous obtenons le graphe en forme de toile d'araignée suivant.
+\MATHgraph{6_derivees_appl/logisticlike2_b}{8cm}
+
+Dans les deux cas, l'origine est \lgm faiblement\rgm\ stable.  Dans le cas
+$\mu=-1$, les orbites oscillent autour de l'origine.
+
+\subQ{b} Les points d'équilibre non nuls sont les solutions non nuls de
+l'équation $x = f(x) = \mu x(1-x^2)$.  Si $x\neq 0$, nous pouvons
+diviser pas $x$ des deux côtés de l'égalité pour obtenir
+$1 = \mu (1-x^2)$.   La solution pour $x$ de cette équation est
+$\displaystyle x = \pm \sqrt{ 1 - 1/\mu}$ pour $\mu\geq 1$.
+
+Le point d'équilibre positif est donc
+$\displaystyle p = \sqrt{ 1 - 1/\mu}$ pour $\mu > 1$.
+
+Nous avons toujours $\displaystyle f'(x) = \mu (1-3x^2)$.  Ainsi,
+\[
+f'(p) = \mu \left(1 - 3 p^2\right)
+= \mu \left( 1 - 3\left(1 -\frac{1}{\mu}\right)\right) 
+= -2\mu + 3 \ .
+\]
+Le point d'équilibre $x=p$ est asymptotiquement stable si
+$|f'(p)|= |3-2\mu|<1$; c'est-à-dire, si
+\[
+|3-2\mu|<1 \Leftrightarrow -1 < 3-2\mu < 1 \Leftrightarrow
+1 > 2\mu -3 > -1 \Leftrightarrow 4 > 2\mu > 2 \Leftrightarrow
+2>\mu > 1
+\]
+Le point d'équilibre $x=p$ est instable si
+$|f'(p)|= |3-2\mu|>1$; c'est-à-dire, si
+\begin{align*}
+|3-2\mu|>1 &\Leftrightarrow  3-2\mu < -1 \text{ ou } 3-2\mu>1
+\Leftrightarrow 2\mu -3 > 1 \text{ ou } 2\mu -3 < -1 \\
+&\Leftrightarrow 2\mu > 4 \text{ ou } 2\mu  < 2 \Leftrightarrow
+ \mu > 2 \text{ ou } \mu < 1
+\end{align*}
+Comme $p$ est défini seulement pour $\mu>1$, nous conservons seulement
+$\mu > 2$.  Si $\mu=2$, il faut utiliser un graphe en forme de toile
+d'araignée pour déterminer la stabilité du point d'équilibre $x=p$.
+C'est ce qui a été fait à la question~\ref{6Q108}.
+
+Nous tirons la même conclusion pour le point d'équilibre négatif
+$\displaystyle p = -\sqrt{ 1 - 1/\mu}$ pour $\mu > 1$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q110}}{
+\subQ{a} Nous avons que
+\[
+x_{n+1} = x_n t(x_n) = \frac{2 x_n^2}{1+x_n^2} \quad \text{pour}
+\quad n=0, 1, 2, 3, \ldots 
+\]
+C'est le taux de reproduction par individus multiplié par le nombre
+d'individus par cm$^2$.
+
+\subQ{b}  La fonction itérative est
+$\displaystyle f(x) = \frac{2 x^2}{1+x^2}$.  Les points d'équilibre sont les
+solutions de $f(x)=x$.  Donc
+\[
+\frac{2 x^2}{1+x^2} = x \Leftrightarrow 2x^2 = x+ x^3 \Leftrightarrow
+x^3 -2x^2 + x = x(x-1)^2 = 0 \ .
+\]
+Il y a deux points d'équilibre $p=0$ et $p=1$.
+
+\subQ{c} Le graphe de la fonction itérative (en noire) et le graphe en
+forme de toile d'araignée sont donnés dans la figure ci-dessous.
+\MATHgraph{6_derivees_appl/nonlinear9}{8cm}
+
+\subQ{d} Puisque $\displaystyle f'(x) = \frac{4x}{(1+x^2)^2}$, nous avons que
+$f'(0)= 0$ et $f'(1) = 1$.  Selon le théorème de stabilité des points
+d'équilibre, le point d'équilibre $p=0$ est
+asymptotiquement stable car $|f'(0)|=0 <1$.  Par contre, nous ne pouvons
+rien conclure pour $p=1$.
+
+\subQ{e}
+Si initialement le nombre $x_0$ d'individus par cm$^2$ est supérieur à
+$1$, alors le nombre $x_n$ d'individus par cm$^2$ après $n$ heures
+converge vers $1$ lorsque $n \to \infty$.  Par contre, si initialement
+le nombre $x_0$ d'individus par cm$^2$ est supérieur à $0$ mais
+inférieure à $1$, alors le nombre $x_n$ d'individus par cm$^2$
+converge vers $0$ lorsque $n \to \infty$; la population va
+disparaître.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q112}}{
+\subQ{a} La fonction génératrice est
+$\displaystyle f(x) = \frac{6 x^2}{7+x^2}$ car $x_{n+1} = f(x_n)$.
+
+\subQ{b} Les points d'équilibre sont les solutions de l'équation
+$\displaystyle f(x) = \frac{6 x^2}{7+x^2} = x$.  Nous avons
+\[
+\frac{6 x^2}{7+x^2} = x \Leftrightarrow
+6 x^2 = 7x +x^3 \Leftrightarrow x^3 - 6 x^2 + 7x
+= x(x^2 - 6x + 7) = 0 \ .
+\]
+Les racines du polynôme $x^2- 6x + 7$ sont
+$\displaystyle x_{\pm}
+= \big(6 \pm \sqrt{(-6)^2 - 4 \times 7}\,\big)/2 = 3 \pm \sqrt{2}$.
+Les trois points d'équilibre sont donc
+$x_1^\ast = 0$, $x_2^\ast = 3-\sqrt{2} \approx  1.5858$ et
+$x_3^\ast = 3+\sqrt{2} \approx 4.4142$.
+
+\subQ{c} Nous avons $\displaystyle f'(x) = \frac{84x}{(7+x^2)^2}$.
+Puisque $|f'(x_1^\ast)| = |f'(0)| = 0 < 1$, le
+point d'équilibre $x_1^\ast$ est (asymptotiquement) stable.  Puisque
+$|f'(x_2^\ast)| = |f'(3-\sqrt{2})| \approx 1.4714 > 1$, le point
+d'équilibre $x_2^\ast$ est instable.  Finalement, puisque
+$|f'(x_3^\ast)| = |f'(3+\sqrt{2})| =  0.5286 < 1$, le
+point d'équilibre $x_3^\ast$ est (asymptotiquement) stable.
+
+\subQ{d} Si $x_0 = 1$, alors $x_1 = f(x_0) = 3/4$,
+$x_2 = f(x_1) \approx 0.4463$ et $x_3 = f(x_2) \approx  0.1660$.
+
+Nous obtenons le graphe en forme de toile d'araignée suivant.
+\MATHgraph{6_derivees_appl/nonlinear11}{8cm}
+
+\subQ{e} Si $x_0=1$, alors $x_n \to 0$ lorsque $n\to \infty$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q114}}{
+\subQ{a} Si les plantes ont produites $N_0 = 20$ graines dans l'année
+$0$, alors la taille moyenne des plantes l'année suivante (l'année
+$1$) sera $\displaystyle S_1= \frac{100}{N_0} = \frac{100}{20} = 5$.
+Ces plantes produiront donc en moyenne $N_1=S_1-1 = 5-1 = 4$ nouvelles
+graines pour le première année (l'année $1$).  
+
+la taille moyenne des plantes pour l'année $2$ sera
+$\displaystyle S_2= \frac{100}{N_1} = \frac{100}{4} = 25$.
+Ces plantes produiront donc en moyenne $N_2=S_2-1 = 25-1 = 24$
+nouvelles graines pour l'année $2$.
+
+la taille moyenne des plantes pour l'année $3$ sera
+$\displaystyle S_3= \frac{100}{N_2} = \frac{100}{24} = 4.1\overline{6}$.
+Ces plantes produiront donc en moyenne
+$N_3=S_3-1 = 4.1\overline{6}-1 = 3.1\overline{6}-1$
+nouvelles graines pour l'année $3$.
+
+\subQ{b} Nous pouvons déduire le système dynamique discret suivant à
+partir du raisonnement en (a) pour obtenir $N_1$, $N_2$ et $N_3$ à
+partir de $N_0$.
+\[
+N_{n+1} = \frac{100}{N_n} - 1 \quad \text{pour} \quad n =0, 1, 2, 3, \ldots 
+\]
+
+\subQ{c} La fonction itérative de notre système dynamique discret est
+$\displaystyle f(N) = \frac{100}{N} - 1$.  Les points d'équilibre sont les
+solutions de $f(N) = N$.
+\[
+\frac{100}{N} - 1 = N \Leftrightarrow 100 - N = N^2 
+\Leftrightarrow N^2+N-100 = 0 \ .
+\]
+Les racines du polynôme $N^2+N-100$ sont
+$\displaystyle N_1 = \frac{1}{2}\left(-1 + \sqrt{401}\right) \approx 9.5124922$
+et $\displaystyle N_2 = \frac{1}{2}\left(-1 - \sqrt{401}\right)$.  Puisque
+$N_2<0$, nous pouvons l'ignorer car nous ne pouvons pas avoir un
+nombre négatif de graines.
+
+\subQ{d} Nous avons $\displaystyle f'(N) = -\frac{100}{N^2}$, donc
+$\displaystyle f'(N_1) = - \frac{100}{N_1^2} \approx -1.1051249$.  Puisque
+$|f'(N_1)|>1$, le point d'équilibre $N_1$ est instable.
+
+\subQ{e} Le graphe de la fonction itérative ainsi qu'un graphe en forme de
+toile d'araignée sont donnés dans la figure ci-dessous.  Le graphe en forme
+de toile d'araignée montre que le point d'équilibre $N_1$ est instable.
+De plus, les orbites oscillent autour de ce point d'équilibre.  Ce qui n'est
+pas surprenant car $f'(N_1)<0$.
+\MATHgraph{6_derivees_appl/nonlinear10}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q115}}{
+\subQ{a} La fonction itérative du système dynamique discret est
+$f(x) = 2 x (1-x) - h x$.  Les points d'équilibre sont les solutions de
+$f(x)=x$.  L'origine $x=0$ est une point d'équilibre.  Si $x\neq 0$,
+nous pouvons alors diviser des deux côtés de l'égalité $2 x (1-x) - h x=x$
+par $x$ pour obtenir $2(1-x) - h=1$.  La solution pour $x$ de cette
+dernière équation donne le point d'équilibre $x = p(h) = (1-h)/2$.
+
+Pour que le point d'équilibre $p(h) = (1-h)/2$ soit non négatif, il faut avoir
+$h \leq 1$.  Naturellement, le facteur d'efficacité $h$ ne peut pas être
+négatif.
+
+\subQ{b} La récolte à long terme est
+\[
+R(h) = h\,p(h) = h\left(\frac{1-h}{2}\right) =
+\frac{1}{2} \left( h-h^2\right)
+\]
+pour $0\leq h \leq 1$.
+
+\subQ{c} Comme $R$ est une fonction continue définie sur l'intervalle fermé
+$[0,1]$, nous pouvons utiliser le Théorème des valeurs extrêmes pour trouver le
+maximum absolu de $R$ sur l'intervalle $[0,1]$.
+
+Puisque $\displaystyle R'(h) = \frac{1}{2} \left( 1 - 2h\right)$, il n'y a
+qu'un seul point critique et il est donné par la solution de $R'(h)=0$.  Ce
+point critique est $h = 1/2$.
+
+Puisque $R(0)=R(1)= 0$ et $R(1/2) = 1/8$, le maximum de $R$ sur
+l'intervalle $[0,1]$ est donc $1/8$ lorsque $h=1/2$.
+
+\subQ{d} La récolte est $R(1/2)=1/8$.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q116}}{
+\subQ{a} La fonction itérative du système dynamique discret est
+$f(x) = 2.5 x (1-x) - h x$.  Les points d'équilibre sont les solutions de
+$f(x)=x$.  l'origine $x=0$ est une point d'équilibre.  Si $x\neq 0$,
+nous pouvons alors diviser les deux côtés de l'égalité $2.5 x (1-x) - h x=x$
+par $x$ pour obtenir $2.5(1-x) - h=1$.  La solution de cette équation 
+nous donne le point d'équilibre $x = p(h) = (3-2h)/5$.
+
+Pour que le point d'équilibre $p(h)=(3-2h)/5$ soit non négatif, il faut avoir
+$h \leq 3/2$.  Naturellement, le facteur d'efficacité $h$ ne peut pas être
+négatif.
+
+\subQ{b} La récolte à long terme est
+\[
+R(h) = h\, p(h) = h\left(\frac{3-2h}{5}\right) =
+\frac{1}{5} \left( 3h-2h^2\right)
+\]
+pour $0\leq h \leq 3/2$.
+
+\subQ{c} Comme $R$ est une fonction continue définie sur l'intervalle fermé
+$[0,3/2]$, nous pouvons utiliser le Théorème des valeurs extrêmes pour
+trouver le maximum absolu de $R$ sur l'intervalle $[0,3/2]$.
+
+Puisque $\displaystyle R'(h) = \left( 3 - 4h\right)/5 = 0$ seulement
+pour $h=3/4$, le seul point critique est $h=3/4$.   Puisque
+$R(0)=R(3/2)= 0$ et $R(3/4) = 9/40$, le maximum de $R$ sur
+l'intervalle $[0,3/2]$ est $9/40$ lorsque $h=3/4$.
+
+\subQ{d} Pour $h= 3/4 = 0.75$, la fonction itérative est
+\[
+f(x) = 2.5 x (1-x) - h x = 2.5 x (1-x) - 0.75x = 1.75 x - 2.5x^2
+\]
+et le point d'équilibre positif du système dynamique discret
+$N_{i+1} = f(N_i) = 1.75 N_1 -2.5 N_i^2$ est
+$\displaystyle p(3/4) = \left(3- 2(3/4)\right)/5 = 3/10 = 0.3$.  
+
+La dérivée de la fonction itérative est $f'(x) = 1.75 - 5 x$.  Ainsi,
+\[
+| f'(0,3) | = |1.75 - 5 \times 0.3| = 0.25 < 1
+\]
+et le point d'équilibre $0.3$ est (asymptotiquement) stable.
+
+\subQ{e} Le graphe en forme de toile d'araignée pour le système dynamique
+$N_{n+1} = f(N_n) = 2.5N_n(1-N_n) - 0.75 N_n$ est donné ci-dessous.
+\MATHgraph{6_derivees_appl/harvest1}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{6Q118}}{
+\subQ{a} Le système dynamique discret est $p_{n+1} = f(p_n)$
+où $f(x) = 1.5 x(1-x^2) - h x$.  Les points d'équilibre sont
+les solutions $p$ de
+\[
+p= f(p) = 1.5\,p(1-p^2) - h\;p \ .
+\]
+$p=0$ est une solution et donc un point d'équilibre.  Si $p\neq 0$,
+nous pouvons diviser des deux côtés de l'égalité par $p$ pour obtenir
+$1=1.5(1-p^2) -h$.  D'où $p^2 = (1-2h)/3$.  Si $h < 1/2$, la solution
+positive de cette dernière équation nous donne
+le point d'équilibre $\displaystyle p = \sqrt{\frac{1-2h}{3}}$.
+
+\subQ{b} Le point d'équilibre $p=0$ va donner une récolte de $0$
+insecte.  Ce n'est certainement pas le maximum.  Nous devons trouver $h$
+qui maximise $\displaystyle R(h) = h\; p = h\sqrt{\frac{1-2h}{3}}$
+pour $0\leq p \leq 1/2$.  Pour que la récolte soit positive, il faut
+que $p$ soit plus grand que $0$.
+
+Les points critiques de $R(h)$ sont les valeurs de $h$ telles que
+$R'(h)=0$.  Or
+\[
+R'(h) = \frac{1}{\sqrt{3}} \left( \sqrt{1-2h} 
+- \frac{h}{\sqrt{1-2h}}\right)
+= \frac{1}{\sqrt{3}}\left( \frac{1-3h}{\sqrt{1-2h}} \right)  \ .
+\]
+Donc $R'(h)=0$ pour $h=1/3$.  Le tableau suivant confirme que nous avons
+bien un maximum absolu positif pour $0 \leq h < 1/2$.
+\[
+\begin{array}{c|c|c|c|c|c}
+h & 0 & 0<h< 1/3 & 1/3 & 1/3<h<1/2 & 1/2 \\
+\hline
+R(h) & 0 & + & 1/9 & + & 0 \\
+\hline
+R'(h) & + & + & 0 & - &
+\end{array}
+\]
+Avec un facteur d'efficacité de $h=1/3$, les grenouilles obtiennent la
+récolte maximale à long terme de $1/9$ de la population
+maximale d'insectes que le lac peut supporter.
+
+\subQ{c} Il reste à démontrer que le point d'équilibre $p$ avec $h=1/3$
+est stable; c'est-à-dire, que $p = 1/3$ est stable.
+
+Pour $h=1/3$, nous avons la fonction itérative
+$\displaystyle f(x) = 1.5 x(1-x^2) - x/3$.  Donc
+$\displaystyle f'(x) = 7/6 - 9x^2/2$.
+Puisque $|f'(p)| = 2/3 < 1$, le point d'équilibre
+$\displaystyle p = 1/3$ est stable.  À long
+terme, notre récolte maximale sera donc bien $1/9$ de la population.
+}
+
+\compileSOL{\SOLUa}{\ref{6Q119}}{
+\subQ{a} Le système dynamique discret est
+$x_{n+1} = f(x_n)$ où $f(x) = 2 x(1-x^3) - h x$ est la fonction
+génératrice.  Les points d'équilibre sont les solutions $p$ de
+$p=f(p) = 2\,p(1-p^3) - h\,p$.  Un premier point d'équilibre est $p=0$.
+Si $p\neq 0$, nous pouvons diviser les deux côtés de l'égalité par $p$ pour
+obtenir $1 = 2(1-p^3) -h$.  D'où $p^3 = (1-h)/2$.  Si $h<1$, la
+solution positive de cette dernière équation est le point d'équilibre
+$\displaystyle p = \sqrt[3]{(1-h)/2}$.
+
+Notons que nous avons un point d'équilibre non négatif seulement si
+$h\leq 1$.  De plus, $h$ ne peut pas être négatif car nous ne pouvons pas
+avoir un facteur d'efficacité négatif.
+
+\subQ{b} Le point d'équilibre $p=0$ va donner une récolte de $0$
+grenouille et ce n'est certainement pas le maximum.  Il faut trouver $h$
+qui maximise
+$\displaystyle R(h) = h\, p(h) = \frac{h(1-h)^{1/3}}{\sqrt[3]{2}}$ pour
+$0\leq h \leq 1$.
+
+Les points critiques de $R(h)$ sont les valeurs de $h$ telles que
+$R'(h)=0$.  Or
+\[
+R'(h) = \frac{1}{\sqrt[3]{2}} \left( (1-h)^{1/3} - \frac{h}{3(1-h)^{2/3}}
+\right) = \frac{1}{\sqrt[3]{2}}\left( \frac{3(1-h) -h}{3(1-h)^{2/3}}\right)
+= \frac{3-4h}{3(2(1-h)^2)^{1/3}} \ .
+\]
+Donc $R'(h)=0$ pour $h=3/4$.  Le tableau suivant confirme que nous avons
+bien un maximum absolu positif lorsque $h=3/4$.
+\[
+\begin{array}{c|c|c|c|c|c}
+h & 0 & 0<h<3/4 & 3/4 & 3/4<h<1 & 1 \\
+\hline
+R(h) & 0 & + & 3/8 & + & 0 \\
+\hline
+R'(h) & + & + & 0 & - & -\infty
+\end{array}
+\]
+Avec un facteur d'efficacité de $h=3/4$, nous obtenons le point
+d'équilibre $\displaystyle p(3/4) = 1/2$ pour le système
+dynamique discret
+\[
+x_{n+1} = 2 x_n (1 - x_n^3) - \frac{3x_n}{4} \quad \text{pour} \quad n=0, 1,
+2, \ldots
+\]
+La fonction génératrice de ce système est
+$\displaystyle f(x) = 2x(1-x^3)- 3x/4$.
+
+\subQ{c} Pour déterminer la stabilité du point d'équilibre, nous évaluons
+$|f'(x)|$ au point $p = 1/2$.  Puisque
+$\displaystyle f'(x) = 2 - 8 x^3 - 3/4 = 5/4- 8 x^3$,
+nous obtenons
+\[
+\left| f\left( \frac{1}{2} \right) \right| 
+= \left| \frac{5}{4} - 1 \right| = \frac{1}{4} < 1 \ .
+\]
+Le point d'équilibre $p=1/2$ est stable et il sera possible d'obtenir
+une récolte optimale à long termes.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q120}}{
+\subQ{a} La fonction itérative du système dynamique discret est
+$\displaystyle f(x) = \frac{2.5 x}{1+x} - h x$.  Les points d'équilibre sont
+les solutions de
+\[
+  f(x)=\displaystyle \frac{2.5 x}{1+x} - h x=x \ .
+\]
+L'origine $x=0$ est une point d'équilibre.  Si $x\neq 0$, nous pouvons
+alors diviser les deux côtés de l'égalité précédente pour obtenir
+$\displaystyle \frac{2.5}{1+x} - h=1$.  La solution
+$\displaystyle x = p(h) = \frac{3-2h}{2+2h}$ de cette dernière
+équation est le deuxième point d'équilibre.
+
+Pour que le point d'équilibre $\displaystyle p(h) = \frac{3-2h}{2+2h}$ soit
+non négatif, il faut avoir $h \leq 3/2$.  Naturellement, le facteur
+d'efficacité $h$ ne peut pas être négatif.   En fait, pour que le
+problème ait un sens biologique, il faut aussi que $h\leq 1$ car nous ne
+pouvons pas récolter plus de 100\% de la population.
+
+\subQ{b} La récolte à long terme est
+\[
+R(h) = h\, p(h) = h\left(\frac{3-2h}{2+2h}\right) =
+\frac{3h-2h^2}{2+2h}
+\]
+pour $0\leq h \leq 3/2$.
+
+\subQ{c} Comme $R$ est une fonction continue définie sur l'intervalle fermé
+$[0,3/2]$, nous pouvons utiliser le Théorème des valeurs extrêmes pour
+trouver le maximum absolu de $R$ sur l'intervalle $[0,3/2]$.
+
+Puisque $\displaystyle R'(h) = \frac{-2h^2-4h+3}{2(1+h)^2} = 0$
+si et seulement si $-2h^2-4h+3=0$, les solutions de $R'(h)=0$ sont les
+racines $-1 \pm \sqrt{10}/2$ de ce polynôme.
+La seule racine qui appartient à l'intervalle
+$[0,3/2]$ est $h_1 = -1 + \sqrt{10}/2 \approx 0.5811388$\ .  C'est
+le seul point critique dans l'intervalle $[0,3/2]$.
+
+Puisque $R(0)=R(3/2)= 0$ et $R(h_1) \approx 0.3377$, le maximum de $R$ sur
+l'intervalle $[0,3/2]$ est approximativement $0.3377$ lorsque $h=h_1$.
+
+\subQ{d} Pour $h= h_1$, la fonction itérative est
+$\displaystyle f(x) = \frac{2.5 x}{1+x} - h_1 x$
+et le point d'équilibre positif du système dynamique discret
+$\displaystyle N_{i+1} = f(N_i) = \frac{2.5N_1}{1+N_i} - h_1 N_i$ est
+$\displaystyle p(h_1) = \frac{3-2h_1}{2+2h_1} \approx 0.58113883$.
+
+La dérivée de la fonction itérative est
+$\displaystyle f'(x) = \frac{2.5}{(1+x)^2} - h_1$.  Ainsi,
+\[
+| f'(p(h_1)) | = \left| \frac{2.5}{(1+p(h_1))^2} - h_1 \right|
+\approx \left| \frac{2.5}{(1+0.58113883)^2} - 0.5811388 \right|
+\approx 0.418861 < 1
+\]
+et le point d'équilibre $p(h_1) \approx 0.58113883$ est
+(asymptotiquement) stable. 
+}
+
+\compileSOL{\SOLUa}{\ref{6Q121}}{
+La fonction génératrice est
+$\displaystyle f(x) = \frac{a x}{1+x} - \frac{x}{2}$.
+
+\subQ{a} Les point d'équilibre sont les solutions de
+\[
+p = f(p) = \frac{a p}{1+p} - \frac{p}{2} \ .
+\]
+$p=0$ est une solution possible.  Si $p\neq 0$, nous pouvons diviser des deux
+côtés de l'égalité par $p$ pour obtenir
+\[
+1 = \frac{a}{1+p} - \frac{1}{2}  \Rightarrow  \frac{3}{2} = \frac{a}{1+p}
+\Rightarrow \frac{3}{2}\, (1+p) = a \Rightarrow \frac{3p}{2} = a -
+\frac{3}{2} \Rightarrow p = \frac{2a-3}{3} \ .
+\]
+Il y a deux points d'équilibre $p_1=0$ et $p_2 = (2a-3)/3$
+
+\subQ{b} Nous avons
+\[
+f'(x) = \frac{a(1+x) - ax}{(1+x)^2} - \frac{1}{2}
+= \frac{2a - (1+x)^2}{2(1+x)^2} \ . 
+\]
+
+Pour $p_1$, nous avons $|f'(p_1)| = |f'(0)| = |a - 1/2|$.  Ainsi, $p_1$ est
+stable si $|a - 1/2|<1$; c'est-à-dire, $-1/2 < a < 3/2$.  De plus,
+$p_1$ est instable si $a < -1/2$ ou $a>3/2$.  Nous ne pouvons rien conclure
+à partir du Théorème de stabilité des points d'équilibre pour $a=-1/2$
+ou $a=3/2$.  Il faut tracer le graphe en forme de toile d'araignée
+pour déterminer la stabilité dans ces deux cas.
+
+Pour $p_2$, nous avons
+\[
+|f'(p_2)| = \left|f'\left(\frac{2a-3}{3}\right)\right|
+= \left| \frac{2a - (1+(2a-3)/3)^2}{2(1+(2a-3)/3)^2} \right|
+= \left| \frac{2a - (2a/3)^2}{2(2a/3)^2} \right|
+= \left| \frac{9}{4a} - \frac{1}{2} \right| \ .
+\]
+Si $a> 0$, alors $p_2$ est stable si
+\[
+\left| \frac{9}{4a} - \frac{1}{2} \right| < 1
+\Rightarrow -1 < \frac{9}{4a} - \frac{1}{2} < 1
+\Rightarrow -\frac{1}{2} < \frac{9}{4a} < \frac{3}{2}
+\Rightarrow a > \frac{3}{2} \ .
+\]
+Le point d'équilibre $p_2$ est instable si
+$0<a < 3/2$.   Nous ne pouvons rien conclure à partir du Théorème de
+stabilité des points d'équilibre pour $a=3/2$.  Il faut tracer le
+graphe en forme de toile d'araignée pour déterminer la stabilité dans
+ce cas.  Pour $a = 0$, nous avons le système dynamique discret linéaire
+$x_{n+1} = -0.5 x_n$ qui possède seulement le point d'équilibre
+stable $p_1$.
+}
+
+\compileSOL{\SOLUb}{\ref{6Q122}}{
+\subQ{a} La fonction itérative du système dynamique discret est
+$f(x) = 2.5 x e^{-x} - h x$.  Les points d'équilibre sont les solutions de
+$f(x)=x$.  Le point $x=0$ est une des solutions et donc un point
+d'équilibre.  Si $x\neq 0$, nous pouvons diviser les deux côtés de
+l'égalité $2.5 x e^{-x} - h x=x$ par $x$ pour obtenir $2.5 e^{-x} - h=1$.
+La solution de cette dernière équation est le deuxième point d'équilibre
+$\displaystyle x = p(h) = \ln\left(\frac{5}{2+2h}\right)$.
+
+Pour que le point d'équilibre
+$\displaystyle p(h)=\ln\left(\frac{5}{2+2h}\right)$ soit non négatif,
+il faut avoir $\displaystyle \frac{5}{2+2h} \geq 1$.  Ce qui donne
+$h \leq 3/2$. Naturellement, le facteur d'efficacité $h$ ne peut pas
+être négatif.   De plus, pour que le problème ait un sens biologique,
+il faut aussi que $h\leq 1$ car nous ne pouvons pas récolter plus de 100\%
+de la population.
+
+\subQ{b} La récolte à long terme est
+\[
+R(h) = h\,p(h) = h \ln\left(\frac{5}{2+2h}\right)
+\]
+pour $0\leq h \leq \frac{3}{2}$.
+
+\subQ{c} Comme $R$ est une fonction continue définie sur l'intervalle fermé
+$[0,3/2]$, nous pouvons utiliser le Théorème des valeurs extrêmes pour
+trouver le maximum absolu de $R$ sur l'intervalle $[0,3/2]$.  Nous avons
+\[
+R'(h) = \ln\left(\frac{5}{2+2h}\right) - \frac{h}{1+h} \ .
+\]
+Puisque $R'(0) = \ln(5/2)>0$ et $R'(3/2) = -3/5 < 0$, il y a au
+moins un point critique positif pour $R$ (i.e.\ une solution de
+$R'(h)=0$) entre $0$ et $3/2$ d'après le Théorème des
+valeurs intermédiaires.  Puisque
+\[
+R''(h) = - \frac{1}{1+h} - \frac{h}{(1+h)^2} = \frac{-2-h}{(1+h)^2} < 0
+\]
+pour tout $h \in [0,3/2]$, la fonction $R'$ est strictement
+décroissante.  Le point critique est donc unique; c'est-à-dire, $R'$
+ne peut pas couper l'axe des $h$ plus d'une fois.  Il est impossible
+de résoudre algébriquement $R'(h) = 0$.  Nous devons donc utiliser la
+méthode de Newton avec $g(h) = R'(h)$.  Pour $h_0 =1 \in [0,3/2]$,
+nous obtenons les résultats suivants.
+\[
+\begin{array}{c|c|c}
+n & h_n & h_{n+1} = h_n - \frac{g(h_n)}{g'(h_n)} \\
+\hline
+0 & 1 & 0.630858068418946 \\
+1 & 0.630858068418946 & 0.671659064055244 \\
+2 & 0.671659064055244 & 0.672372670703419 \\
+3 & 0.672372670703419 & 0.672372880075553 \\
+4 & 0.672372880075553 & 0.672372880075571 \\
+5 & 0.672372880075571 & 0.672372880075571 \\
+\end{array}
+\]
+% voir NewtonHarvest.m pour calculer les données
+Ainsi, le point critique est $H\approx 0.672372880075571$\ .
+Puisque $R(0)= R(3/2)=0$ et $R(H) \approx 0.270325652399176>0$, La récolte à
+long terme est maximale lorsque $h=H$.  Le point d'équilibre à long
+terme est $P(H) \approx 0.402047228$.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

@@ -1,0 +1,2389 @@
+\section{Algèbre linéaire}
+
+\subsection{Matrices}
+
+\compileSOL{\SOLUb}{\ref{12Q1}}{
+\subQ{a}
+\[
+D+E = \begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}
++ \begin{pmatrix} 6 & 1 & 3 \\ -1 & 1 & 2 \\ 4 & 1 & 3 \end{pmatrix}
+= \begin{pmatrix}
+1+6 & 5+1 & 2+3 \\
+-1-1 & 0+1 & 1+2 \\
+3+4 & 2+1 & 4+3
+\end{pmatrix}
+= \begin{pmatrix} 7 & 6 & 5 \\ -2 & 1 & 3 \\ 7 & 3 & 7 \end{pmatrix} \ .
+\]
+
+\subQ{b}
+\[
+D-E = \begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}
+- \begin{pmatrix} 6 & 1 & 3 \\ -1 & 1 & 2 \\ 4 & 1 & 3 \end{pmatrix}
+= \begin{pmatrix}
+1-6 & 5-1 & 2-3 \\
+-1+1 & 0-1 & 1-2 \\
+3-4 & 2-1 & 4-3
+\end{pmatrix}
+= \begin{pmatrix}
+-5 & 4 & -1 \\ 0 & -1 & -1 \\ -1 & 1 & 1
+\end{pmatrix} \ .
+\]
+
+\subQ{c}
+\[
+5C = 5\begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & 5 \end{pmatrix}
+= \begin{pmatrix}
+5\times 1 & 5\times 4 & 5\times 2 \\
+5\times 3 & 5\times 1 & 5\times 5
+\end{pmatrix}
+=  \begin{pmatrix} 5 & 20 & 10 \\ 15 & 5 & 25 \end{pmatrix} \ .
+\]
+
+\subQ{d}
+\[
+-7C = -7\begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & 5 \end{pmatrix}
+= \begin{pmatrix}
+-7\times 1 & -7\times 4 & -7\times 2 \\
+-7\times 3 & -7\times 1 & -7\times 5
+\end{pmatrix}
+= \begin{pmatrix} -7 & -28 & -14 \\ -21 & -7 & -35 \end{pmatrix} \ .
+\]
+
+\subQ{e} L'opération $2B - C$ n'est pas définie car les matrices $2B$
+et $C$ n'ont pas les mêmes dimensions.
+
+\subQ{f}
+\[
+4E-2D = 
+4\begin{pmatrix} 6 & 1 & 3 \\ -1 & 1 & 2 \\ 4 & 1 & 3 \end{pmatrix}
+-2 \begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}
+=\begin{pmatrix} 22 & -6 & 8 \\ -2 & 4 & 6 \\ 10 & 0 & 4 \end{pmatrix} \ .
+\]
+
+\subQ{g}
+\[
+-3(D+2E) = -3D - 6E
+= -3\begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}  
+-6 \begin{pmatrix} 6 & 1 & 3 \\ -1 & 1 & 2 \\ 4 & 1 & 3 \end{pmatrix}
+= \begin{pmatrix}
+-39 & -21 & -24 \\
+9 & -6 & -15 \\
+-33 & -12 & -30
+\end{pmatrix} \ .
+\]
+
+\subQ{h}
+\[ A-A = 0 = \begin{pmatrix} 0 & 0 \\ 0 & 0 \\ 0 & 0 \end{pmatrix} \ . \]
+
+\subQ{i}
+\[
+\tr(D) =
+\tr \begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}
+= 1 + 0 + 4 = 5 \ .
+\]
+
+\subQ{j}
+\[
+\tr(D-3E) = \tr
+\begin{pmatrix} -17 & 2 & -7 \\ 2 & -3 & -5 \\ -9 & -1 & -5 \end{pmatrix}
+= -17 -3 -5 = -25 \ .
+\]
+
+\subQ{k}
+$\tr(A)$ n'est pas définie car $A$ n'est pas une matrice carrée.
+
+\subQ{l}
+\[
+2A^\top+C
+= 2 \begin{pmatrix} 3 & 0 \\ -1 & 2 \\ 1 & 1 \end{pmatrix}^\top
++\begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & 5 \end{pmatrix}
+= 2 \begin{pmatrix} 3 & -1 & 1 \\ 0 & 2 & 1 \end{pmatrix}
++ \begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & 5 \end{pmatrix}
+= \begin{pmatrix} 7 & 2 & 4 \\ 3 & 5 & 7 \end{pmatrix}
+\ .
+\]
+
+\subQ{m}
+\begin{align*}
+D^\top - E^\top &=
+\begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}^\top
+- \begin{pmatrix} 6 & 1 & 3 \\ -1 & 1 & 2 \\ 4 & 1 & 3 \end{pmatrix}^\top \\
+& = \begin{pmatrix} 1 & -1 & 3 \\ 5 & 0 & 2 \\ 2 & 1 & 4 \end{pmatrix}
+- \begin{pmatrix} 6 & -1 & 4 \\ 1 & 1 & 1 \\ 3 & 2 & 3 \end{pmatrix}
+= \begin{pmatrix} -5 & 0 & -1 \\ 4 & -1 & 1 \\ -1 & -1 & 1 \end{pmatrix}
+= ( D-E)^\top \ .
+\end{align*}
+Voir (b) pour la valeur de $D-E$.
+
+\subQ{n}
+\[
+(D-E)^\top = D^\top - E^\top =
+\begin{pmatrix} -5 & 0 & -1 \\ 4 & -1 & 1 \\ -1 & -1 & 1 \end{pmatrix} \ .
+\]
+
+\subQ{o}
+l'opération $B^\top+5C^\top$ n'est pas définie car les matrices
+$B^\top$ et $5C^\top$ n'ont pas la même dimension.
+
+\subQ{p}
+\[
+B - B^\top
+= \begin{pmatrix} 6 & -1 \\ 0 & 2 \end{pmatrix}
+- \begin{pmatrix} 6 & 0 \\ -1 & 2 \end{pmatrix}
+= \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \ .
+\]
+
+\subQ{q}
+\[
+AB = \begin{pmatrix} 3 & 0 \\ -1 & 2 \\ 1 & 1 \end{pmatrix}
+\begin{pmatrix} 6 & -1 \\ 0 & 2 \end{pmatrix}
+= \begin{pmatrix}
+3\times 6 + 0 & 3\times (-1) + 0 \\
+-1\times 6 + 0 & (-1)\times (-1) + 2\times 2 \\
+1\times 6 + 0 & 1 \times  (-1) + 1 \times 2
+\end{pmatrix}
+= \begin{pmatrix} 18 & -3 \\ -6 & 5 \\ 6 & 1 \end{pmatrix}
+\ .
+\]
+
+\subQ{r}
+L'opération $BA$ n'est pas définie car le nombre de colonnes de $B$ n'est pas
+égale au nombre de ligne de $A$.
+
+\subQ{s}
+\[
+(3E)D = 3\begin{pmatrix} 6 & 1 & 3 \\ -1 & 1 & 2 \\ 4 & 1 & 3 \end{pmatrix}
+\begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}
+= 3 \begin{pmatrix} 14 & 36 & 25 \\ 4 & -1 & 7 \\ 12 & 26 & 21 \end{pmatrix}
+=\begin{pmatrix} 42 & 108 & 75 \\ 12 & -3 & 21 \\ 36 & 78 & 63 \end{pmatrix}
+\ .
+\]
+
+\subQ{t}
+\[
+A(BC) = \begin{pmatrix} 3 & 0 \\ -1 & 2 \\ 1 & 1 \end{pmatrix}
+\left( \begin{pmatrix} 6 & -1 \\ 0 & 2 \end{pmatrix}
+  \begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & 5 \end{pmatrix} \right)
+= \begin{pmatrix} 3 & 0 \\ -1 & 2 \\ 1 & 1 \end{pmatrix}
+\begin{pmatrix} 3 & 23 & 7 \\ 6 & 2 & 10 \end{pmatrix}
+= \begin{pmatrix}
+9 & 69 & 21 \\
+9 & -19 & 13 \\
+9 & 25 & 17
+\end{pmatrix} \ .
+\]
+
+\subQ{u}
+\[
+(AB)C = A(BC)
+= \begin{pmatrix} 9 & 69 & 21 \\ 9 & -19 & 13 \\ 9 & 25 & 17 \end{pmatrix} \ .
+\]
+
+\subQ{v}
+\[
+CC^\top = \begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & 5 \end{pmatrix}
+\begin{pmatrix} 1 & 3 \\ 4 & 1 \\ 2 & 5 \end{pmatrix}
+= \begin{pmatrix} 21 & 17 \\ 17 & 35 \end{pmatrix} \ .
+\]
+
+\subQ{w} Puisque
+\[
+DA = \begin{pmatrix} 1 & 5 & 2 \\ -1 & 0 & 1 \\ 3 & 2 & 4 \end{pmatrix}
+\begin{pmatrix} 3 & 0 \\ -1 & 2 \\ 1 & 1 \end{pmatrix}
+= \begin{pmatrix} 0 & 12 \\ -2 & 1 \\ 11 & 8 \end{pmatrix} \ ,
+\]
+nous avons
+\[
+(DA)^\top = \begin{pmatrix} 0 & -2 & 11 \\ 12 & 1 & 8 \end{pmatrix} ,
+\]
+
+\subQ{x}
+\[
+E^\top D^\top =
+\begin{pmatrix} 6 & -1 & 4 \\ 1 & 1 & 1 \\ 3 & 2 & 3 \end{pmatrix}
+\begin{pmatrix} 1 & -1 & 3 \\ 5 & 0 & 2 \\ 2 & 1 & 4 \end{pmatrix}
+= \begin{pmatrix} 9 & -2 & 32 \\ 8 & 0 & 9 \\ 19 & 0 & 25 \end{pmatrix} \ .
+\]
+
+\subQ{y}
+\[
+(DE)^\top = E^\top D^\top =
+\begin{pmatrix} 9 & -2 & 32 \\ 8 & 0 & 9 \\ 19 & 0 & 25 \end{pmatrix} \ .
+\]
+
+\subQ{z}
+\begin{align*}
+(C^\top B)A^\top
+&= \left(
+\begin{pmatrix} 1 & 3 \\ 4 & 1 \\ 2 & 5 \end{pmatrix}
+\begin{pmatrix} 6 & -1 \\ 0 & 2 \end{pmatrix}\right)
+\begin{pmatrix} 3 & -1 & 1 \\ 0 & 2 & 1 \end{pmatrix} \\
+&= \begin{pmatrix} 6 & 5 \\ 24 & -2 \\ 12 & 8 \end{pmatrix}
+\begin{pmatrix} 3 & -1 & 1 \\ 0 & 2 & 1 \end{pmatrix}
+= \begin{pmatrix} 18 & 4 & 11 \\ 72 & -28 & 22 \\ 36 & 4 & 20 \end{pmatrix} ,
+\end{align*}
+}
+
+\compileSOL{\SOLUc}{\ref{12Q2}}{
+\subQ{a}
+\[
+A^2 = \begin{pmatrix}1 & -1 \\0 & 1 \end{pmatrix}
+\begin{pmatrix}1 & -1 \\0 & 1 \end{pmatrix}
+= \begin{pmatrix}1 & -2 \\0 & 1 \end{pmatrix} \ .
+\]
+
+\subQ{b}
+\[
+A^3 = A^2\,A = \begin{pmatrix}1 & -2 \\0 & 1 \end{pmatrix}
+\begin{pmatrix}1 & -1 \\0 & 1 \end{pmatrix}
+= \begin{pmatrix}1 & -3 \\0 & 1 \end{pmatrix} \ .
+\]
+
+\subQ{c} Nous avons
+\begin{equation}\label{solIter}
+A^n = \begin{pmatrix}1 & -n \\0 & 1 \end{pmatrix}
+\end{equation}
+pour $n=0$, $1$, $2$, \ldots
+
+La démonstration de (\ref{solIter}) qui suit est optionnelle.
+Nous avons que (\ref{solIter}) est vrai pour $n=1$ (de plus, nous
+avons montré en (a) et (b) que (\ref{solIter}) est vrai si $n=2$ et
+$3$ respectivement).  Supposons que (\ref{solIter}) soit vrai pour
+$n=k$; c'est-à-dire,
+\[
+A^k = \begin{pmatrix}1 & -k \\0 & 1 \end{pmatrix} \ .
+\]
+Alors,
+\[
+A^{k+1} = A^k \, A = \begin{pmatrix}1 & -k \\0 & 1 \end{pmatrix}
+\begin{pmatrix}1 & -1 \\0 & 1 \end{pmatrix}
+= \begin{pmatrix}1 & -1 -k \\ 0 & 1 \end{pmatrix}
+= \begin{pmatrix}1 & -(k+1) \\ 0 & 1 \end{pmatrix} \ .
+\]
+C'est (\ref{solIter}) avec $n=k+1$.  Ce qui démontre que
+(\ref{solIter}) est vrai pour tout entier $n$.  Ce type de
+démonstration est appelée
+{\bfseries preuve par induction}\index{Preuve par induction}.
+}
+
+\subsection{Représentations matricielles des systèmes d'équations
+ li\-néaires}
+
+\compileSOL{\SOLUb}{\ref{12Q3}}{
+\subQ{a}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & 9 \\ 2 & 4 & -3 & 1 \\ 3 & 6 & -5 & 0
+\end{array}\right) \; .
+\]
+$R_2 - 2R_1 \to R_2$ et $R_3 - 3R_1 \to R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & 9 \\ 0 & 2 & -7 & -17 \\ 0 & 3 & -11 & -27
+\end{array}\right) \; .
+\]
+$(1/2) R_2 \to R_2$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & 9 \\ 0 & 1 & -7/2 & -17/2 \\ 0 & 3 & -11 & -27
+\end{array}\right) \; .
+\]
+$R_3 - 3 R_2 \to R_3$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & 9 \\ 0 & 1 & -7/2 & -17/2 \\ 0 & 0 & -1/2 & -3/2
+\end{array}\right) \; .
+\]
+Finalement, $-2 R_3 \to R_3$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & 9 \\ 0 & 1 & -7/2 & -17/2 \\ 0 & 0 & 1 & 3
+\end{array}\right) \; .
+\]
+Il n'est pas nécessaire de complètement réduire le coté gauche de la
+matrice augmentée pour obtenir la matrice identité.  Nous obtenons
+$z= 3$ de la troisième ligne.  Ainsi, la deuxième ligne nous donne
+$y = (-17/2) + (7/2) z = 2$.  Finalement,  nous obtenons
+$x = 9 - y - 2z = 1$ de la première ligne.
+
+\subQ{b}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+5 & 2 & 6 & 0 \\ -2 & 1 & 3 & 1
+\end{array}\right) \; .
+\]
+$R_1 + 2R_2 \to R_1$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 4 & 12 & 2 \\ -2 & 1 & 3 & 1
+\end{array}\right) \; .
+\]
+$R_2 + 2 R_1 \to R_2$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 4 & 12 & 2 \\ 0 & 9 & 27 & 5
+\end{array}\right) \; .
+\]
+$(1/9) R_2 \to R_2$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 4 & 12 & 2 \\ 0 & 1 & 3 & 5/9
+\end{array}\right) \; .
+\]
+Finalement, $R_1 - 4R_2 \to R_1$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 0 & 0 & -2/9 \\ 0 & 1 & 3 & 5/9
+\end{array}\right) \; .
+\]
+Nous trouvons donc $x= -2/9$, $y = 5/9 -3\alpha$ et $z=\alpha \in \RR$.  Il y a
+une infinité de solutions.
+
+\subQ{c}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+2 & 0 & 2 & 1 \\ 3 & -1 & 4 & 7 \\ 6 & 1 & -1 & 0
+\end{array}\right) \; .
+\]
+$R_3 - 2R_2 \to R_3$ suivie de $R_2 - R_1 \to R_2$ donnent
+\[
+\left(\begin{array}{rrr|r}
+2 & 0 & 2 & 1 \\ 1 & -1 & 2 & 6 \\ 0 & 3 & -9 & -14
+\end{array}\right) \; .
+\]
+$R_2 \leftrightarrow R_1$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & -1 & 2 & 6 \\ 2 & 0 & 2 & 1 \\ 0 & 3 & -9 & -14
+\end{array}\right) \; .
+\]
+$R_2 - 2 R_1 \to R_2$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & -1 & 2 & 6 \\ 0 & 2 & -2 & -11 \\ 0 & 3 & -9 & -14
+\end{array}\right) \; .
+\]
+$R_3 - R_2 \to R_3$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & -1 & 2 & 6 \\ 0 & 2 & -2 & -11 \\ 0 & 1 & -7 & -3
+\end{array}\right) \; .
+\]
+$R_2 - 2 R_3 \to R_2$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & -1 & 2 & 6 \\ 0 & 0 & 12 & -5 \\ 0 & 1 & -7 & -3
+\end{array}\right) \; .
+\]
+$(1/12) R_2 \to R_2$ suivie de $R_2 \leftrightarrow R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+1 & -1 & 2 & 6 \\ 0 & 1 & -7 & -3 \\ 0 & 0 & 1 & -5/12
+\end{array}\right) \; .
+\]
+En procédant à partir de la troisième ligne jusqu'à la première ligne, nous
+trouvons $x_3 = -5/12$, $x_2 = -3 + 7 x_3 = -71/12$ et
+$x_1 = 6 + x_2 -2 x_3 = 11/12$.
+
+\subQ{d}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrrr|r}
+7 & 2 & 1 & -3 & 5 \\ 1 & 2 & 4 & 0 & 1
+\end{array}\right) \; .
+\]
+$R_1 -7 R_2 \to R_1$ suivie de $R_1 \leftrightarrow R_2$ donne
+\[
+\left(\begin{array}{rrrr|r}
+1 & 2 & 4 & 0 & 1 \\  0 & -12 & -27 & -3 & -2
+\end{array}\right) \; .
+\]
+$-(1/12) R_2 \to R_2$ donne
+\[
+\left(\begin{array}{rrrr|r}
+1 & 2 & 4 & 0 & 1 \\ 0 & 1 & 9/4 & 1/4 & 1/6
+\end{array}\right) \; .
+\]
+$R_1 - 2R_2 \to R_2$ donne
+\[
+\left(\begin{array}{rrrr|r}
+1 & 0 & -1/2 & -1/2 & 2/3 \\ 0 & 1 & 9/4 & 1/4 & 1/6
+\end{array}\right) \; .
+\]
+Nous trouvons donc $x_1= 2/3 + \alpha_1/2 + \alpha_2/2$,
+$x_2 = 1/6 - 9\alpha_1/4 - \alpha_2/4$, $x_3 = \alpha_1 \in \RR$ et
+$x_4 = \alpha_2 \in \RR$.
+
+\subQ{e}
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+3 & 2 & -1 & -15 \\ 3 & 1 & 3 & 11 \\ -6 & -4 & 2 & 30
+\end{array}\right) \; .
+\]
+$R_2 - R_1 \to R_2$ et $R_3 + 2R_1 \to R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+3 & 2 & -1 & -15 \\ 0 & -1 & 4 & 26 \\ 0 & 0 & 0 & 0
+\end{array}\right) \; .
+\]
+$R_1 + 2R_2 \to R_1$ suivie de $-R_2 \to R_2$ donnent
+\[
+\left(\begin{array}{rrr|r}
+3 & 0 & 7 & 37 \\ 0 & 1 & -4 & -26 \\ 0 & 0 & 0 & 0
+\end{array}\right) \; .
+\]
+$(1/3) R_1 \to R_1$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 0 & 7/3 & 37/3 \\ 0 & 1 & -4 & -26 \\ 0 & 0 & 0 & 0
+\end{array}\right) \; .
+\]
+Ainsi, $x=37/3 - 7\alpha/3$, $y=-26 + 4 \alpha$ et $z = \alpha\in \RR$.
+}
+
+\compileSOL{\SOLUb}{\ref{12Q4}}{
+Nous avons la matrice augmentée
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & a \\
+1 & 0 & 1 & b \\
+2 & 1 & 3 & c
+\end{array}\right) \ .
+\]
+$R_3 - R_1 - R_2 \to R_3$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & a \\
+1 & 0 & 1 & b \\
+0 & 0 & 0 & c - a - b
+\end{array}\right) \ .
+\]
+$R_2 - R_1 \to R_2$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 1 & 2 & a \\
+0 & -1 & -1 & b - a \\
+0 & 0 & 0 & c - a - b
+\end{array}\right) \ .
+\]
+$R_1 + R_2 \to R_1$ suivie de $-R_2 \to R_2$ donnent
+\[
+\left(\begin{array}{rrr|r}
+1 & 0 & 1 & b \\
+0 & 1 & 1 & a - b \\
+0 & 0 & 0 & c - a - b
+\end{array}\right) \ .
+\]
+La seule contrainte pour que le système ait une solution est donnée
+par la troisième ligne et c'est $0 = c - a - b$.  Aucune autre
+contrainte n'est imposée au système.
+}
+
+\compileSOL{\SOLUb}{\ref{12Q5}}{
+\subQ{a} Nous avons la matrice augmentée
+\[
+\left(\begin{array}{cc|c}
+1 & a & 1 \\
+2 & 3 & b
+\end{array}\right) \ .
+\]
+$R_2 -2R_1 \to R_2$ donne
+\begin{equation} \label{twoNSens}
+\left(\begin{array}{cc|c}
+1 & a & 1 \\
+0 & 3- 2a & b - 2
+\end{array}\right) \ .
+\end{equation}
+
+\subI{I} Si $3-2a \neq 0$, le système a une solution unique.  Nous pouvons
+effectuer l'opération $(1/(3-2a)) R_2 \to R_2$ pour obtenir
+\[
+\left(\begin{array}{cc|c}
+1 & a & 1 \\
+0 & 1 & (b - 2)/(3 - 2a)
+\end{array}\right)
+\]
+et $R_1 - a R_2 \to R_1$ pour obtenir
+\[
+\left(\begin{array}{cc|c}
+1 & 0 & (3-ab)/(3-2a) \\
+0 & 1 & (b - 2)/(3 - 2a)
+\end{array}\right) \ .
+\]  
+Nous avons donc la solution $\displaystyle \begin{pmatrix} x \\ y \end{pmatrix}
+= \begin{pmatrix} (3-ab)/(3-2a) \\ (b - 2)/(3 - 2a) \end{pmatrix}$.
+
+\subI{II} Si $3-2a = 0$ et $b-2 =0$, alors (\ref{twoNSens})
+est réduit à
+\[
+\left(\begin{array}{rr|r}
+1 & a & 1 \\
+0 & 0 & 0
+\end{array}\right) \ .
+\]
+Il y a une infinité de solutions de la forme $x = 1 - a s$
+et $y=s \in \RR$ si $a \neq 0$, ou $x=1$ et $y=s \in \RR$ si $a = 0$.
+
+\subI{III} Si $3-2a = 0$ et $b-2 \neq 0$ alors il n'y a pas de solutions
+car la dernière ligne de la matrice augmentée (\ref{twoNSens}) est
+$0 = b-2 \neq 0$. 
+
+\subQ{b} La matrice augmentée du système est
+\[
+\left(\begin{array}{cc|c}
+1 & a & 1 \\ b & 5 & 2
+\end{array}\right) \ .
+\]
+$R_2 - bR_1 \to R_2$ donne
+\begin{equation}\label{twoMSens}
+\left(\begin{array}{cc|c}
+1 & a & 1 \\ 0 & 5-ab & 2-b
+\end{array}\right) \ .
+\end{equation}
+
+\subI{I} Si $5-ab \neq 0$, nous pouvons effectuer l'opération
+$(1/(5-ab))R_2 \to R_2$ pour obtenir
+\[
+\left(\begin{array}{cc|c}
+1 & a & 1 \\ 0 & 1 & (2-b)/(5-ab)
+\end{array}\right)
+\]
+et l'opération $R_1 - aR_2 \to R_1$ pour obtenir
+\[
+\left(\begin{array}{cc|c}
+1 & 0 & (5-2a)/(5-ab) \\ 0 & 1 & (2-b)/(5-ab)
+\end{array}\right) \ .
+\]
+Ainsi, il y a une solution unique donnée par $x=(5-2a)/(5-ab)$ et
+$y=(2-b)/(5-ab)$.
+
+\subI{II} Si $5-ab = 2-b = 0$, nous obtenons la matrice augmentée
+\[
+\left(\begin{array}{cc|c}
+1 & a & 1 \\ 0 & 0 & 0
+\end{array}\right) \ .
+\]
+Il y a une infinité de solution de la forme $x = 1-as$ et
+$y = s \in\RR$ si $a\neq 0$, ou $x=1$ et $y = s \in \RR$ si $a=0$.
+
+\subI{III} Si $5-ab =0$ et $ 2-b \neq 0$, il n'y a pas de solutions car
+la dernière ligne de la matrice augmentée (\ref{twoMSens}) donne
+$0 = 2-b \neq 0$.
+}
+
+\compileSOL{\SOLUa}{\ref{12Q6}}{
+La matrice augmentée du système est
+\[
+\left(\begin{array}{ccc|c}
+2 & -1 & 3 & -1 \\
+1 & 1 & 4 & h \\
+2 & -3 & h & 2
+\end{array}\right) \ .
+\]
+$R_1 \leftrightarrow R_2$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 1 & 4 & h \\
+2 & -1 & 3 & -1 \\
+2 & -3 & h & 2
+\end{array}\right) \ .
+\]
+$R_2-2R_1 \rightarrow R_2$ et $R_3-2R_1\rightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc|c}
+1 & 1 & 4 & h \\
+0 & -3 & -5 & -1-2h \\
+0 & -5 & h-8 & 2-2h
+\end{array}\right) \ .
+\]
+$(-1/3)R_2 \rightarrow R_2$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 1 & 4 & h \\
+0 & 1 & 5/3 & (1+2h)/3 \\
+0 & -5 & h-8 & 2-2h
+\end{array}\right) \ .
+\]
+Finalement, $R_3+5R_2 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 1 & 4 & h \\
+0 & 1 & 5/3 & (1+2h)/3 \\
+0 & 0 & (1+3h)/3 & (11+4h)/3
+\end{array}\right) \ .
+\]
+La dernière ligne est
+\[
+\left(\frac{1+3h}{3}\right)z = \frac{11+4h}{3} \ .
+\]
+
+\subQ{a} Si $h\neq -1/3$, alors il y a une seule solution avec
+$z = (11+4h)/(1+3h)$, $y=(2h^2-5h-18)/(1+3h)$ et $x=(h^2-10h-26)/(1+3h)$.
+
+\subQ{b} Si $h=-1/3$, nous obtenons $0 = 29/9$ qui n'a pas de sens.  Il n'y a
+donc pas de solutions.
+
+\subQ{c} Il n'y a pas de valeurs de $h$ pour lesquelles le système ci-dessus
+a un nombre infini de solutions.  Nous ne pouvons pas avoir $1+3h = 0$ et
+$11+4h=0$ en même temps.
+}
+
+\compileSOL{\SOLUb}{\ref{12Q7}}{
+Si $x$ est le nombre d'individus de l'espèce X et $y$ est le nombre
+d'individus de l'espèce Y, alors $x$ et $y$ doivent satisfaire
+\begin{align*}
+5x + 2y &= 900 \\
+3x + 4y &= 960
+\end{align*}
+
+La matrice augmentée du système est
+\[
+\left(\begin{array}{cc|c}
+5 & 2 & 900 \\
+3 & 4 & 960
+\end{array}\right) \ .
+\]
+$R_1 - 2 R_2 \leftrightarrow R_1$ donne
+\[
+\left(\begin{array}{cc|c}
+-1 & -6 & -1020 \\
+3 & 4 & 960
+\end{array}\right) \ .
+\]
+$R_2 + 3R_1 \rightarrow R_2$ suivi de $-R_1\rightarrow R_3$ donnent
+\[
+\left(\begin{array}{cc|c}
+1 & 6 & 1020 \\
+0 & -14 & -2100
+\end{array}\right) \ .
+\]
+$(-1/14)R_2 \rightarrow R_2$ donne
+\[
+\left(\begin{array}{cc|c}
+1 & 6 & 1020 \\
+0 & 1 & 150
+\end{array}\right) \ .
+\]
+Finalement, $R_1- 6 R_2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{cc|c}
+1 & 0 & 120 \\
+0 & 1 & 150
+\end{array}\right) \ .
+\]
+La solution de ce système est $x=120$ et $y=150$.
+}
+
+\subsection{Déterminant}
+
+\compileSOL{\SOLUb}{\ref{12Q9}}{
+\subQ{a}
+La matrice est inversible car $\det(A) = 3 \neq 0$.  Nous avons  
+\[ A^{-1} = \begin{pmatrix} 1/3 & 1/3 \\ -2/3 & 1/3 \end{pmatrix}\ . \]
+
+\subQ{b}
+La matrice est inversible car $\det(A) = -4 \neq 0$.  Nous avons  
+\[ A^{-1} = \begin{pmatrix} 1/4 & 0 \\ 0 & -1 \end{pmatrix}\ . \]
+
+\subQ{c}
+La matrice est inversible car $\det(A) = 3 \neq 0$.  Nous avons  
+\[ A^{-1} = \begin{pmatrix} 1 & -2/3 \\ 0 & 1/3 \end{pmatrix}\ .\]
+
+\subQ{d}
+$A$ n'est pas inversible car $\det(A) = 0$.
+
+\subQ{e}
+$A$ n'est pas inversible car $\det(A) = 0$.
+
+\subQ{f}
+La matrice est inversible car $\det(A) = -1 \neq 0$.  Nous avons  
+\[
+A^{-1} = \begin{pmatrix}
+-40 & 16 & 9 \\
+13 & -5 & -3 \\
+5 & -2 & -1
+\end{pmatrix} \ .
+\]
+
+\subQ{g} Si nous développons selon la deuxième ligne, nous avons
+\[
+\det(A) = -\det \begin{pmatrix} 1 & 2 \\ 1 & 4 \end{pmatrix}
++0 -\det \begin{pmatrix} 1 & 1 \\ 2 & 1 \end{pmatrix}
+= -(4-2) -(1-2) = -1 \neq 0 \ .
+\]
+Puisque le déterminant de la matrice $A$ est différent de $0$, la
+matrice $A$ est inversible.  Nous considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc@{\quad | \quad}ccc}
+1 & 1 & 2 & 1 & 0 & 0 \\1 & 0 & 1 & 0 & 1 & 0 \\2 & 1 & 4 & 0 & 0 & 1
+\end{array}\right) \ .
+\]
+$R_2-R_1\rightarrow R_2$ et $R_3-2\,R_1\rightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc@{\quad | \quad}ccc}
+1 & 1 & 2 & 1 & 0 & 0 \\ 0 & -1 & -1 & -1 & 1 & 0 \\ 0 & -1 & 0 & -2 & 0 & 1
+\end{array}\right) \ . 
+\]
+$R_2-R_3\rightarrow R_2$ et $R_1+R_3\rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc@{\quad | \quad}ccc}
+1 & 0 & 2 & -1 & 0 & 1 \\ 0 & 0 & -1 & 1 & 1 & -1 \\ 0 & -1 & 0 & -2 & 0 & 1
+\end{array}\right) \ .
+\]
+$R_1+2\,R_2\rightarrow R_1$ suivie de $-R_3\rightarrow R_3$ et
+$-R_2\rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc@{\quad | \quad}ccc}
+1 & 0 & 0 & 1 & 2 & -1 \\ 0 & 0 & 1 & -1 & -1 & 1 \\ 0 & 1 & 0 & 2 & 0 & -1
+\end{array}\right) \ .
+\]
+Finalement, $R_2 \leftrightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc@{\quad | \quad}ccc}
+1 & 0 & 0 & 1 & 2 & -1 \\ 0 & 1 & 0 & 2 & 0 & -1 \\ 0 & 0 & 1 & -1 & -1 & 1
+\end{array}\right) \ .
+\]
+Nous avons donc
+\[
+A^{-1} =
+\begin{pmatrix} 1 & 2 & -1 \\ 2 & 0 & -1 \\ -1 & -1 & 1 \end{pmatrix} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{12Q10}}{
+\subQ{a} Nous avons
+\begin{align*}
+AB &= \begin{pmatrix}
+1 & 3 & -1 \\
+0 & 2 & 1 \\
+4 & -2 & 5
+\end{pmatrix}\,
+\begin{pmatrix}
+11 & -5 & 0 \\
+-3 & 8 & -1 \\
+6 & 2& 4
+\end{pmatrix} \\
+&= \begin{pmatrix}
+11-9-6 & -5+24-2 & -3-4 \\
+-6+6 & 16+2 & -2+4 \\
+44+6+30 & -20-16+10 & 2+20
+\end{pmatrix}
+= \begin{pmatrix}
+-4 & 17 & -7 \\
+0 & 18 & 2 \\
+80 & -26 & 22
+\end{pmatrix}
+\end{align*}
+et
+\begin{align*}
+BA &= \begin{pmatrix}
+11 & -5 & 0 \\
+-3 & 8 & -1 \\
+6 & 2& 4
+\end{pmatrix} \,
+\begin{pmatrix}
+1 & 3 & -1 \\
+0 & 2 & 1 \\
+4 & -2 & 5
+\end{pmatrix} \\
+&= \begin{pmatrix}
+11 & 33-10 & -11-5 \\
+-3-4 & -9+16+2 & 3+8-5 \\
+6+16 & 18+4-8 & -6+2+20
+\end{pmatrix}
+= \begin{pmatrix}
+11 & 23 & -16 \\
+-7 & 9 & 6 \\
+22 & 14 & 16
+\end{pmatrix} \ .
+\end{align*}
+Donc $AB \neq BA$.
+
+\subQ{b} Puisque
+\begin{align*}
+2A-3B^T-C &= 2\begin{pmatrix}
+1 & 3 & -1 \\
+0 & 2 & 1 \\
+4 & -2 & 5
+\end{pmatrix}
+-3\begin{pmatrix}
+11 & -5 & 0 \\
+-3 & 8 & -1 \\
+6 & 2& 4
+\end{pmatrix}^\top
+-\begin{pmatrix}
+6 & -1 & 0 \\
+15 & 7 & 9 \\
+-7 & -2 & -3
+\end{pmatrix} \\
+&= \begin{pmatrix}
+2 & 6 & -2 \\
+0 & 4 & 2 \\
+8 & -4 & 10
+\end{pmatrix}
+-\begin{pmatrix}
+33 & -9 & 18 \\
+-15 & 24 & 6 \\
+0 & -3 & 12
+\end{pmatrix}
+-\begin{pmatrix}
+6 & -1 & 0 \\
+15 & 7 & 9 \\
+-7 & -2 & -3
+\end{pmatrix} \\
+&= \begin{pmatrix}
+2-33-6 & 6+9+1 & -2-18 \\
+15-15 & 4-24-7 & 2-6-9 \\
+8+7 & -4+3+2 & 10-12+3
+\end{pmatrix}
+= \begin{pmatrix}
+-37 & 16 & -20 \\
+0 & -27 & -13 \\
+15 & 1 & 1
+\end{pmatrix} \ ,
+\end{align*}
+nous avons
+\begin{align*}
+\det(2A-3B^T-C) &=
+-37 \det
+\begin{pmatrix}
+-27 & -13 \\ 1 & 1
+\end{pmatrix}
+-0+15\det
+\begin{pmatrix}
+16 & -20 \\ -27 & -13
+\end{pmatrix} \\
+&= -37(-27+13) + 15(-16\times 13 - 20 \times 27) = -10,702
+\end{align*}
+où le déterminant est développé selon la première colonne.
+
+\subQ{c} Si nous calculons le déterminant de $C$ selon la première ligne,
+nous trouvons
+\begin{align*}
+\det(C) &=
+6 \det
+\begin{pmatrix}
+7 & 9 \\ -2 & -3
+\end{pmatrix}
++\det
+\begin{pmatrix}
+15 & 9 \\ -7 & -3
+\end{pmatrix}
++ 0 \\
+&= 6(-21+18) + (-45 + 63) = 0 \ .
+\end{align*}
+Ainsi, la matrice $C$ n'est pas inversible.
+
+\subQ{d} Nous considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 3 & -1 & 1 & 0 & 0 \\
+0 & 2 & 1 & 0 & 1 & 0 \\
+4 & -2 & 5 & 0 & 0 & 1
+\end{array}\right) \ .
+\]
+$R_3-4R_1 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 3 & -1 & 1 & 0 & 0 \\
+0 & 2 & 1 & 0 & 1 & 0 \\
+0 & -14 & 9 & -4 & 0 & 1
+\end{array}\right) \ .
+\]
+$R_3+7R_2 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 3 & -1 & 1 & 0 & 0 \\
+0 & 2 & 1 & 0 & 1 & 0 \\
+0 & 0 & 16 & -4 & 7 & 1
+\end{array}\right) \ .
+\]
+$(1/16)R_3 \rightarrow R_3$ et $(1/2)R_2 \rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 3 & -1 & 1 & 0 & 0 \\
+0 & 1 & 1/2 & 0 & 1/2 & 0 \\
+0 & 0 & 1 & -1/4 & 7/16 & 1/16
+\end{array}\right) \ .
+\]
+$R_1+R_3\rightarrow R_1$ et $R_2 - (1/2)R_3 \rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 3 & 0 & 3/4 & 7/16 & 1/16 \\
+0 & 1 & 0 & 1/8 & 9/32 & -1/32 \\
+0 & 0 & 1 & -1/4 & 7/16 & 1/16
+\end{array}\right) \ .
+\]
+Finalement, $R_1-3R_2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & 3/8 & -13/32 & 5/32 \\
+0 & 1 & 0 & 1/8 & 9/32 & -1/32 \\
+0 & 0 & 1 & -1/4 & 7/16 & 1/16
+\end{array}\right) \ .
+\]
+Ainsi,
+\[
+A^{-1} =
+\begin{pmatrix}
+3/8 & -13/32 & 5/32 \\
+1/8 & 9/32 & -1/32 \\
+-1/4 & 7/16 & 1/16
+\end{pmatrix} \ .
+\]
+}
+
+\subsection{Valeurs propres et vecteurs propres}
+
+\compileSOL{\SOLUb}{\ref{12Q11}}{
+Pour chacune des réponses ci-dessous, nous donnons les valeurs propres
+de la matrice, un ensemble de vecteurs propres linéairement
+indépendant associé à chacune des valeurs propres, et la multiplicité
+algébrique des valeurs propres.
+
+\subQ{a}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2em} $-2$ &
+$\displaystyle \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ & 1 \\[1em]
+$4$ & $\displaystyle \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ & 1
+\end{tabular}
+\end{center}
+
+\subQ{b}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2em} $4$ &
+$\displaystyle \begin{pmatrix} 4 \\ 1 \end{pmatrix}$ & 1 \\[1em]
+$-4$ & $\displaystyle \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ & 1
+\end{tabular}
+\end{center}
+
+\subQ{c}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2.5em}
+$3$ & $\displaystyle \begin{pmatrix} 2 \\ -2 \\ 1 \end{pmatrix}$ & 1 \\[1.5em]
+$6$ & $\displaystyle \begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}$ & 1 \\[1.5em]
+$9$ & $\displaystyle \begin{pmatrix} 2 \\ 1 \\ -2 \end{pmatrix}$ & 1
+\end{tabular}
+\end{center}
+
+\subQ{d}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2.5em} $-3$ &
+$\displaystyle \begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}$ & 1 \\[1.5em]
+$5$ & $\VEC{u} = \displaystyle \begin{pmatrix} 3 \\ 0 \\ 1 \end{pmatrix}$
+\ et \ 
+$\VEC{v} = \displaystyle \begin{pmatrix} -2 \\ 1 \\ 0 \end{pmatrix}$ & 2
+\end{tabular}
+\end{center}
+Nous avons donné deux vecteurs propres, $\VEC{u}$ et $\VEC{v}$, associés à
+la valeur propre $5$ en prenant bien soin de choisir deux vecteurs qui
+ne sont pas un multiple l'un de l'autre.  Toute
+{\em combinaison linéaire} $\alpha \VEC{u} + \beta \VEC{v}$ pour
+$\alpha, \beta \in \RR$ est aussi un vecteur propre de $A$ associé à
+la valeur propre $5$.  Le lecteur est invité à vérifier que cela est
+vrai.
+
+\subQ{e}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2em} $0.8+0.6 i$ &
+$\displaystyle \begin{pmatrix} 1 \\ -i \end{pmatrix}$ & 1 \\[1em]
+$0.8- 0.6 i$ & $\displaystyle \begin{pmatrix} 1 \\ i \end{pmatrix}$ & 1
+\end{tabular}
+\end{center}
+
+\subQ{f}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2em} $3$ &
+$\VEC{u} = \displaystyle \begin{pmatrix} -2 \\ 1 \end{pmatrix}$ & 2
+\end{tabular}
+\end{center}
+Nous ne pouvons pas trouver d'autres vecteurs propres qui ne soient pas un
+multiple de $\VEC{u}$.
+
+\subQ{g} Les valeurs propres de $A$ sont les racines du polynôme
+caractéristique
+\begin{align*}
+p(\lambda) &= \det(A-\lambda \Id) \\
+&= \det
+\begin{pmatrix}
+-\lambda & 0 & 2 \\1 & 3-\lambda & 1 \\2 & 0 & -\lambda
+\end{pmatrix} \ .
+\end{align*}
+Si nous développons selon la deuxième colonne, nous obtenons
+\begin{align*}
+p(\lambda) &= 0 + (3-\lambda)
+\det\begin{pmatrix}
+-\lambda & 2 \\ 2 & -\lambda
+\end{pmatrix} + 0 \\
+&= (3-\lambda)(\lambda^2 - 4) = (3-\lambda)(\lambda - 2)(\lambda + 2) \ .
+\end{align*}
+Les valeurs propres sont $\lambda_1 = 3$, $\lambda_2 = 2$ et
+$\lambda_3 = -2$.
+
+Pour $\lambda_1 = 3$, les vecteurs propres $\VEC{x}$ doivent
+satisfaire $(A-\lambda_1\Id)\VEC{x}  = \VEC{0}$, c'est-à-dire,
+\[
+(A-3 \Id)\VEC{x}
+= \begin{pmatrix} -3 & 0 & 2 \\1 & 0 & 1\\2 & 0 & -3 \end{pmatrix}
+\begin{pmatrix} x_1 \\x_2 \\x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+Nous considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+-3 & 0 & 2 & 0 \\1 & 0 & 1 & 0 \\2 & 0 & -3 & 0
+\end{array}\right) \ .
+\]
+$R_1+R_2+R_3\rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+0 & 0 & 0 & 0 \\1 & 0 & 1 & 0 \\2 & 0 & -3 & 0
+\end{array}\right) \ .
+\]
+$R_3-2\,R_2 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+0 & 0 & 0 & 0 \\1 & 0 & 1 & 0 \\0 & 0 & -5 & 0
+\end{array}\right) \ .
+\]
+$-(1/5)\,R_3\rightarrow R_3$ suivit de $R_2-R_3 \rightarrow R_2$
+donnent
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+0 & 0 & 0 & 0 \\1 & 0 & 0 & 0 \\0 & 0 & 1 & 0
+\end{array}\right) \ .
+\]
+Ainsi, $x_1 = x_3 =0$ et $x_2$ est libre.  Si nous prenons $x_2=1$,
+nous obtenons le vecteur propre
+\[
+\VEC{u}_1 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \ .
+\]
+
+Pour $\lambda_2 = 2$, les vecteurs propres $\VEC{x}$ doivent
+satisfaire $(A-\lambda_2\Id)\VEC{x} = \VEC{0}$; c'est-à-dire,
+\[
+(A-2 \Id)\VEC{x} =
+\begin{pmatrix} -2 & 0 & 2 \\1 & 1 & 1 \\2 & 0 & -2 \end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}  \ .
+\]
+Nous considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+-2 & 0 & 2 & 0 \\1 & 1 & 1 & 0 \\2 & 0 & -2 & 0
+\end{array}\right) \ .
+\]
+$R_3+R_1\rightarrow R_3$ suivit de $-(1/2)R_1\rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+1 & 0 & -1 & 0 \\1 & 1 & 1 & 0 \\0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$R_2-R_1 \rightarrow R_2$ donne
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+1 & 0 & -1 & 0 \\0 & 1 & 2 & 0 \\0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+Ainsi, $x_1-x_3=0$ et $x_2+2x_3=0$.  Donc $x_1=x_3$ et $x_2=-2x_3$.  Si
+nous prenons $x_3=1$, nous obtenons le vecteur propre
+\[
+\VEC{u}_2 = \begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix} \ .
+\]
+
+Pour $\lambda_3 = -2$, les vecteurs propres $\VEC{x}$ doivent
+satisfaire $(A-\lambda_3\Id)\VEC{x} = \VEC{0}$.  Nous avons
+\[
+(A+2 \Id)\VEC{x} =
+\begin{pmatrix} 2 & 0 & 2 \\1 & 5 & 1 \\2 & 0 & 2 \end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+Nous considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+2 & 0 & 2 & 0 \\1 & 5 & 1 & 0 \\2 & 0 & 2 & 0
+\end{array}\right) \ .
+\]
+$R_3-R_1\rightarrow R_3$ suivit de $(1/2)R_1\rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+1 & 0 & 1 & 0 \\1 & 5 & 1 & 0 \\0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$R_2-R_1 \rightarrow R_2$ donne
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+1 & 0 & 1 & 0 \\0 & 5 & 0 & 0 \\0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(1/5)R_2\rightarrow R_2$ donne
+\[
+\left(\begin{array}{ccc@{\quad | \quad}c}
+1 & 0 & 1 & 0 \\0 & 1 & 0 & 0 \\0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+Ainsi, $x_1+x_3=0$ et $x_2=0$.  Donc $x_1=-x_3$ et $x_2=0$.  Si
+nous prenons $x_3=1$, nous obtenons le vecteur propre
+\[
+\VEC{u}_3 = \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix} \ .
+\]
+
+En conclusion,
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2.5em} $\lambda_1 = 3$ &
+$\VEC{u}_1
+=\displaystyle \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$ & 1 \\[1.5em]
+$\lambda_2 = 2$ &
+$\VEC{u}_2
+= \displaystyle \begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix}$ & 1 \\[1.5em]
+$\lambda_3 -2$ &
+$\VEC{u}_3
+=\displaystyle \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}$ & 1
+\end{tabular}
+\end{center}
+
+\subQ{h}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2.5em} $-2$ &
+$\displaystyle \VEC{u} = \begin{pmatrix} 1 \\ 1 \\ 0\end{pmatrix}$ et
+$\displaystyle \VEC{v} = \begin{pmatrix} 1 \\ 0 \\ -1\end{pmatrix}$
+& 2 \\[1.5em]
+$4$ & $\displaystyle \begin{pmatrix} 1 \\ 1 \\ 2\end{pmatrix}$  & 1
+\end{tabular}
+\end{center}
+Nous avons donné deux vecteurs propres, $\VEC{u}$ et $\VEC{v}$, associés à
+la valeur propre $-2$ en prenant bien soin de choisir deux vecteurs qui
+ne sont pas un multiple l'un de l'autre.  Toute
+{\em combinaison linéaire} $\alpha \VEC{u} + \beta \VEC{v}$ pour
+$\alpha, \beta \in \RR$ est aussi un vecteur propre de $A$ associé à
+la valeur propre $-2$.
+
+\subQ{i}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2.5em} $2$ &
+$\displaystyle \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}$ & 1 \\[1.5em]
+$2+\sqrt{2}$ &
+$\displaystyle \begin{pmatrix} 1 \\ -\sqrt{2} \\ 1 \end{pmatrix}$ & 1 \\[1.5em]
+$2-\sqrt{2}$ &
+$\displaystyle \begin{pmatrix} 1 \\ \sqrt{2} \\ 1 \end{pmatrix}$ & 1
+\end{tabular}
+\end{center}
+
+\subQ{j}
+\begin{center}
+\begin{tabular}{c|c|c}
+valeur propre & vecteur propre & multiplicité algébrique \\
+\hline
+\rule{0em}{2.5em} $-2$ &
+$\displaystyle \VEC{u} = \begin{pmatrix} 1 \\ -2 \\ 0\end{pmatrix}$ et
+$\displaystyle \VEC{v} = \begin{pmatrix} 0 \\ 3 \\ 1\end{pmatrix}$
+& 2 \\[1.5em]
+\rule{0em}{2em} $6$ &
+$\displaystyle \begin{pmatrix} 2 \\ 1 \\ -1 \end{pmatrix}$ & 1
+\end{tabular}
+\end{center}
+Nous avons donné deux vecteurs propres, $\VEC{u}$ et $\VEC{v}$, associés à
+la valeur propre $-2$ en prenant bien soin de choisir deux vecteurs qui
+ne sont pas un multiple l'un de l'autre.  Toute
+{\em combinaison linéaire} $\alpha \VEC{u} + \beta \VEC{v}$ pour
+$\alpha, \beta \in \RR$ est aussi un vecteur propre de $A$ associé à
+la valeur propre $-2$.
+}
+
+\compileSOL{\SOLUb}{\ref{12Q12}}{
+\subQ{a}\\
+\subI{I} Si nous développons selon la première colonne, nous trouvons
+\[
+\det \begin{pmatrix} -5 & 2 & -3 \\ 0 & 1 & -2 \\ 0 & 1 & 4 \end{pmatrix} 
+= -5 \det\begin{pmatrix} 1 & -2 \\ 1 & 4 \end{pmatrix} + 0 + 0
+= -5 (4 +2) = -30 \neq 0 \ .
+\]
+Puisque $\det A \neq 0$, la matrice $A$ est inversible.
+
+\subI{II} Considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc|ccc}
+-5 & 2 & -3 & 1 & 0 & 0 \\ 0 & 1 & -2 & 0 & 1 & 0 \\ 0 & 1 & 4 & 0 & 0
+& 1 \end{array}\right) \ .
+\]
+$R_3-R_2 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+-5 & 2 & -3 & 1 & 0 & 0 \\ 0 & 1 & -2 & 0 & 1 & 0 \\ 0 & 0 & 6 & 0 & -1
+& 1 \end{array}\right) \ .
+\]
+$(1/6)R_3 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+-5 & 2 & -3 & 1 & 0 & 0 \\ 0 & 1 & -2 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & -1/6
+& 1/6 \end{array}\right) \ .
+\]
+$R_2+2R_3\rightarrow R_2$ et $R_1 +3R_3 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|ccc}
+-5 & 2 & 0 & 1 & -1/2 & 1/2 \\ 0 & 1 & 0 & 0 & 2/3 & 1/3
+\\ 0 & 0 & 1 & 0 & -1/6 & 1/6 \end{array}\right) \ .
+\]
+$R_1-2R_2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+-5 & 0 & 0 & 1 & -11/6 & -1/6 \\ 0 & 1 & 0 & 0 & 2/3 & 1/3
+\\ 0 & 0 & 1 & 0 & -1/6 & 1/6 \end{array}\right) \ .
+\]
+Finalement, $(-1/5)R_1 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & -1/5 & 11/30 & 1/30 \\ 0 & 1 & 0 & 0 & 2/3 & 1/3
+\\ 0 & 0 & 1 & 0 & -1/6 & 1/6 \end{array}\right) \ .
+\]
+Ainsi,
+\[
+A^{-1} =
+\begin{pmatrix}
+-1/5 & 11/30 & 1/30 \\ 0 & 2/3 & 1/3 \\ 0 & -1/6 & 1/6
+\end{pmatrix} \ .
+\]
+
+\subI{III} Puisque $A$ est inversible, la solution
+de $A\VEC{x} = \VEC{b}$ est $\VEC{x} = A^{-1}\VEC{b}$.  Donc
+\[
+\VEC{x} = 
+\begin{pmatrix}
+-1/5 & 11/30 & 1/30 \\ 0 & 2/3 & 1/3 \\ 0 & -1/6 & 1/6
+\end{pmatrix}
+\begin{pmatrix} 3 \\ -5 \\ 15 \end{pmatrix}
+= \begin{pmatrix} -29/15 \\ 5/3 \\ 10/3 \end{pmatrix} \ .
+\]
+
+\subI{IV} Les valeurs propres de $A$ sont les racines du polynôme
+caractéristique
+\begin{align*}
+p(\lambda) &= \det(A -\lambda \Id)
+=\det \begin{pmatrix}
+-5-\lambda & 2 & -3 \\ 0 & 1-\lambda & -2 \\ 0 & 1 & 4-\lambda
+\end{pmatrix} \\
+&=(-5-\lambda) \det \begin{pmatrix} 1-\lambda & -2 \\  1 & 4-\lambda
+\end{pmatrix}
+=(-5-\lambda)\left( (1-\lambda)(4-\lambda)+2\right) \\
+&= -(5+\lambda)(\lambda^2 -5\lambda +6)
+= -(5+\lambda)(\lambda -2)(\lambda -3) \ .
+\end{align*}
+Les valeurs propres de $A$ sont donc $\lambda_1 = -5$, $\lambda_2 = 2$
+et $\lambda_3 = 3$.
+
+\subI{V} Un vecteur propre associé à la valeur propre
+$\lambda_1 = -5$ est donné par la solution du système
+\[
+(A-\lambda_1\Id)\VEC{x} = 
+\begin{pmatrix}
+0 & 2 & -3 \\ 0 & 6 & -2 \\ 0 & 1 & 9
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+0 & 2 & -3 & 0 \\ 0 & 6 & -2 & 0 \\ 0 & 1 & 9 & 0
+\end{array}\right) \ .
+\]
+$R_1-2R_3 \rightarrow R_1$ et $R_2-6R_3 \rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 0 & -21 & 0 \\ 0 & 0 & -56 & 0 \\ 0 & 1 & 9 & 0
+\end{array}\right) \ .
+\]
+$(-1/21)R_1 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|c}
+0 & 0 & 1 & 0 \\ 0 & 0 & -56 & 0 \\ 0 & 1 & 9 & 0
+\end{array}\right) \ .
+\]
+$R_2+56 R_1\rightarrow R_2$ et $R_3-9R_1 \rightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0
+\end{array}\right) \ .
+\]
+Finalement, $R_3 \leftrightarrow R_1$ suivie de
+$R_2\leftrightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_2=x_3=0$ et $x_1$ libre.  Avec $x_1=1$,
+nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}$.
+
+Un vecteur propre associé à la valeur propre
+$\lambda_2 = 2$ est donné par la solution du système
+\[
+(A-\lambda_2\Id)\VEC{x} = 
+\begin{pmatrix}
+-7 & 2 & -3 \\ 0 & -1 & -2 \\ 0 & 1 & 2
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+-7 & 2 & -3 & 0 \\ 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 0
+\end{array}\right) \ .
+\]
+$R_3+R_2 \rightarrow R_3$ et $R_1+2R_2 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|c}
+-7 & 0 & -7 & 0 \\ 0 & -1 & -2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(-1/7)R_1 \rightarrow R_1$ et $-R_2\rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & 1 & 0 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_1=-x_3$ et $x_2=-2x_3$.  Avec $x_3=-1$,
+nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_2 = \begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}$.
+
+Finalement, un vecteur propre
+associé à la valeur propre $\lambda_3 = 3$ est donné par la solution
+du système
+\[
+(A-\lambda_3\Id)\VEC{x} = 
+\begin{pmatrix}
+-8 & 2 & -3 \\ 0 & -2 & -2 \\ 0 & 1 & 1
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+-8 & 2 & -3 & 0 \\ 0 & -2 & -2 & 0 \\ 0 & 1 & 1 & 0
+\end{array}\right) \ .
+\]
+$R_2+2R_3 \rightarrow R_2$ et $R_1-2R_3 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|c}
+-8 & 0 & -5 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 1 & 1 & 0
+\end{array}\right) \ .
+\]
+$(-1/8)R_1 \rightarrow R_1$ et $R_2\leftrightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & 5/8 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_1=-5x_3/8$ et $x_2=-x_3$.  Avec $x_3=-8$,
+nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_3 = \begin{pmatrix} 5 \\ 8 \\ -8 \end{pmatrix}$.
+
+\subQ{b}\\
+\subI{I} Si nous développons selon la première colonne, nous trouvons
+\[
+\det \begin{pmatrix} 3 & 2 & -6 \\ 0 & 1 & -2 \\ 0 & -4 & 3
+\end{pmatrix} 
+= 3 \det\begin{pmatrix} 1 & -2 \\ -4 & 3 \end{pmatrix} + 0 + 0
+= 3 (3 -8 ) = -15 \neq 0 \ .
+\]
+Puisque $\det A \neq 0$, la matrice $A$ est inversible.
+
+\subI{II} Considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc|ccc}
+3 & 2 & -6 & 1 & 0 & 0 \\ 0 & 1 & -2 & 0 & 1 & 0 \\ 0 & -4 & 3 & 0 & 0
+& 1 \end{array}\right) \ .
+\]
+$R_3+4\,R_2 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+3 & 2 & -6 & 1 & 0 & 0 \\ 0 & 1 & -2 & 0 & 1 & 0 \\ 0 & 0 & -5 & 0 & 4
+& 1 \end{array}\right) \ .
+\]
+$-(1/5)\,R_3 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+3 & 2 & -6 & 1 & 0 & 0 \\ 0 & 1 & -2 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & -4/5
+& -1/5 \end{array}\right) \ .
+\]
+$R_2+2\,R_3\rightarrow R_2$ et $R_1 +6\,R_3 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|ccc}
+3 & 2 & 0 & 1 & -24/5 & -6/5 \\ 0 & 1 & 0 & 0 & -3/5 & -2/5
+\\ 0 & 0 & 1 & 0 & -4/5 & -1/5 \end{array}\right) \ .
+\]
+$R_1-2R_2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+3 & 0 & 0 & 1 & -18/5 & -2/5 \\ 0 & 1 & 0 & 0 & -3/5 & -2/5
+\\ 0 & 0 & 1 & 0 & -4/5 & -1/5 \end{array}\right) \ .
+\]
+Finalement, $(1/3)R_1 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1/3 & -6/5 & -2/15 \\ 0 & 1 & 0 & 0 & -3/5 & -2/5
+\\ 0 & 0 & 1 & 0 & -4/5 & -1/5 \end{array}\right) \ .
+\]
+Ainsi,
+\[
+A^{-1} =
+\begin{pmatrix}
+1/3 & -6/5 & -2/15 \\ 0 & -3/5 & -2/5 \\ 0 & -4/5 & -1/5
+\end{pmatrix} \ .
+\]
+
+\subI{III} Puisque $A$ est inversible, la solution de $A\VEC{x} =
+\VEC{b}$ est $\VEC{x} = A^{-1}\VEC{b}$.  Donc
+\[
+\VEC{x} = 
+\begin{pmatrix}
+1/3 & -6/5 & -2/15 \\ 0 & -3/5 & -2/5 \\ 0 & -4/5 & -1/5
+\end{pmatrix}
+\begin{pmatrix} 3 \\ -5 \\ 15 \end{pmatrix}
+= \begin{pmatrix} 5 \\ -3 \\ 1 \end{pmatrix} \ .
+\]
+
+\subI{IV} Les valeurs propres de $A$ sont les racines du polynôme
+caractéristique
+\begin{align*}
+p(\lambda) &= \det(A -\lambda \Id)
+=\det \begin{pmatrix}
+3-\lambda & 2 & -6 \\ 0 & 1-\lambda & -2 \\ 0 & -4 & 3-\lambda
+\end{pmatrix} \\
+&=(3-\lambda) \det \begin{pmatrix} 1-\lambda & -2 \\  -4 & 3-\lambda
+\end{pmatrix}
+=(3-\lambda)\left( (1-\lambda)(3-\lambda)-8\right) \\
+&= (3-\lambda)(\lambda^2 -4\lambda -5)
+= (3-\lambda)(\lambda -5)(\lambda +1) \ .
+\end{align*}
+Les valeurs propres de $A$ sont donc $\lambda_1 = -1$, $\lambda_2 = 3$
+et $\lambda_3 = 5$.
+
+\subI{V} Un vecteur propre
+associé à la valeur propre $\lambda_1 = -1$ est donné par la solution
+du système
+\[
+(A-\lambda_1\Id)\VEC{x} = 
+\begin{pmatrix}
+4 & 2 & -6 \\ 0 & 2 & -2 \\ 0 & -4 & 4
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+4 & 2 & -6 & 0 \\ 0 & 2 & -2 & 0 \\ 0 & -4 & 4 & 0
+\end{array}\right) \ .
+\]
+$R_3+2R_2 \rightarrow R_3$ et $R_1-2R_2 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|c}
+4 & 0 & -4 & 0 \\ 0 & 2 & -2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(1/4)R_1 \rightarrow R_1$ et $(1/2)R_2 \rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_2=x_3$ et $x_1=x_3$.  Avec $x_3=1$,
+nous obtenons le vecteur propre $\displaystyle \VEC{v}_1 =
+\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$.
+
+Un vecteur propre
+associé à la valeur propre $\lambda_2 = 3$ est donné par la solution
+du système
+\[
+(A-\lambda_2\Id)\VEC{x} = 
+\begin{pmatrix}
+0 & 2 & -6 \\ 0 & -2 & -2 \\ 0 & -4 & 0
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+=
+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+0 & 2 & -6 & 0 \\ 0 & -2 & -2 & 0 \\ 0 & -4 & 0 & 0
+\end{array}\right) \ .
+\]
+$-(1/4)R_3 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|c}
+0 & 2 & -6 & 0 \\ 0 & -2 & -2 & 0 \\ 0 & 1 & 0 & 0
+\end{array}\right) \ .
+\]
+$R_1-2R_3 \rightarrow R_1$ et $R_2 +2R_3 \rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 0 & -6 & 0 \\ 0 & 0 & -2 & 0 \\ 0 & 1 & 0 & 0
+\end{array}\right) \ .
+\]
+$R_1-3R_2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|c}
+0 & 0 & 0 & 0 \\ 0 & 0 & -2 & 0 \\ 0 & 1 & 0 & 0
+\end{array}\right) \ .
+\]
+$(-1/2)R_2 \rightarrow R_2$ et $R_1 \rightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_2=x_3=0$ et $x_1$ est libre.  Avec
+$x_1=1$, nous obtenons le vecteur propre $\displaystyle \VEC{v}_2 =
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}$.
+
+Finalement, un vecteur propre
+associé à la valeur propre $\lambda_3 = 5$ est donné par la solution
+du système
+\[
+(A-\lambda_3\Id)\VEC{x} = 
+\begin{pmatrix}
+-2 & 2 & -6 \\ 0 & -4 & -2 \\ 0 & -4 & -2
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+-2 & 2 & -6 & 0 \\ 0 & -4 & -2 & 0 \\ 0 & -4 & -2 & 0
+\end{array}\right) \ .
+\]
+$R_3-R_2 \rightarrow R_3$ et $-(1/2)R_1\rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|c}
+1 & -1 & 3 & 0 \\ 0 & -4 & -2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(-1/4)R_2 \rightarrow R_2$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & -1 & 3 & 0 \\ 0 & 1 & 1/2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$R_1+R_2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & 7/2 & 0 \\ 0 & 1 & 1/2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_1=-7x_3/2$ et $x_2=-x_3/2$.  Avec
+$x_3=2$, nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_3 = \begin{pmatrix} -7 \\ -1 \\ 2 \end{pmatrix} $.
+
+\subQ{c}\\
+\subI{I} Si nous développons selon la première colonne, nous trouvons
+\[
+\det \begin{pmatrix} 4 & 2 & -5 \\ 0 & 1 & 2 \\ 0 & 6 & -3
+\end{pmatrix}
+= 4 \det\begin{pmatrix} 1 & 2 \\ 6 & -3 \end{pmatrix} + 0 + 0
+= 4 (-3 -12) = -60 \neq 0 \ .
+\]
+Puisque $\det A \neq 0$, la matrice $A$ est inversible.
+
+\subI{II} Considérons la matrice augmentée
+\[
+\left(\begin{array}{ccc|ccc}
+4 & 2 & -5 & 1 & 0 & 0 \\ 0 & 1 & 2 & 0 & 1 & 0 \\ 0 & 6 & -3 & 0 & 0
+& 1 \end{array}\right) \ .
+\]
+$R_1-2R_2 \rightarrow R_1$ et $R_3-6R_2\rightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc|ccc}
+4 & 0 & -9 & 1 & -2 & 0 \\ 0 & 1 & 2 & 0 & 1 & 0 \\ 0 & 0 & -15 & 0 &
+-6 & 1 \end{array}\right) \ .
+\]
+$-(1/15)R_3 \rightarrow R_3$ et $(1/4)\,R_1\rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 0 & -9/4 & 1/4 & -1/2 & 0 \\ 0 & 1 & 2 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & 2/5
+& -1/15 \end{array}\right) \ .
+\]
+$R_2-2R_3\rightarrow R_2$ et $R_1 +(9/4)\,R_3 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1/4 & 2/5 & -3/20 \\ 0 & 1 & 0 & 0 & 1/5 & 2/15
+\\ 0 & 0 & 1 & 0 & 2/5 & -1/15 \end{array}\right) \ .
+\]
+Ainsi,
+\[
+A^{-1} =
+\begin{pmatrix}
+1/4 & 2/5 & -3/20 \\ 0 & 1/5 & 2/15 \\ 0 & 2/5 & -1/15
+\end{pmatrix} \ .
+\]
+
+\subI{III} Puisque $A$ est inversible, la solution de $A\VEC{x} = \VEC{b}$
+est $\VEC{x} = A^{-1}\VEC{b}$.  Donc
+\[
+\VEC{x} = 
+\begin{pmatrix}
+1/4 & 2/5 & -3/20 \\ 0 & 1/5 & 2/15 \\ 0 & 2/5 & -1/15
+\end{pmatrix}
+\begin{pmatrix} 3 \\ -5 \\ 15 \end{pmatrix}
+= \begin{pmatrix} -7/2 \\ 1 \\ -3 \end{pmatrix} \ .
+\]
+
+\subI{IV} Les valeurs propres de $A$ sont les racines du polynôme
+caractéristique
+\begin{align*}
+p(\lambda) &= \det(A -\lambda \Id)
+=\det \begin{pmatrix}
+4-\lambda & 2 & -5 \\ 0 & 1-\lambda & 2 \\ 0 & 6 & -3-\lambda
+\end{pmatrix} \\
+&=(4-\lambda) \det \begin{pmatrix} 1-\lambda & 2 \\  6 & -3-\lambda
+\end{pmatrix}
+=(4-\lambda)\left( (1-\lambda)(-3-\lambda)-12\right) \\
+&= (4-\lambda)(\lambda^2 +2\,\lambda -15 )
+= (4-\lambda)(\lambda -3)(\lambda +5) \ .
+\end{align*}
+Les valeurs propres de $A$ sont donc $\lambda_1 = -5$, $\lambda_2 = 3$
+et $\lambda_3 = 4$.
+
+\subI{V} Un vecteur propre
+associé à la valeur propre $\lambda_1 = -5$ est donné par la solution
+du système
+\[
+(A-\lambda_1\Id)\VEC{x} = 
+\begin{pmatrix}
+9 & 2 & -5 \\ 0 & 6 & 2 \\ 0 & 6 & 2
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+=
+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+9 & 2 & -5 & 0 \\ 0 & 6 & 2 & 0 \\ 0 & 6 & 2 & 0
+\end{array}\right) \ .
+\]
+$R_3-R_2 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|c}
+9 & 2 & -5 & 0 \\ 0 & 6 & 2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(1/6)R_2 \rightarrow R_2$ et $(1/9)R_1 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|c}
+1 & 2/9 & -5/9 & 0 \\ 0 & 1 & 1/3 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$R_1 - (2/9)R2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & -17/27 & 0 \\ 0 & 1 & 1/3 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_1=17x_3/27$ et $x_2=-x_3/3$ est
+libre.  Avec $x_3=27$, nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_1 = \begin{pmatrix} 17 \\ -9 \\ 27 \end{pmatrix} $.
+
+Un vecteur propre
+associé à la valeur propre $\lambda_2 = 3$ est donné par la solution
+du système
+\[
+(A-\lambda_2\Id)\VEC{x} = 
+\begin{pmatrix}
+1 & 2 & -5 \\ 0 & -2 & 2 \\ 0 & 6 & -6
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+=
+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+1 & 2 & -5 & 0 \\ 0 & -2 & 2 & 0 \\ 0 & 6 & -6 & 0
+\end{array}\right) \ .
+\]
+$R_3+3R_2 \rightarrow R_3$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 2 & -5 & 0 \\ 0 & -2 & 2 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(-1/2)R_2 \rightarrow R_2$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 2 & -5 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$R_1-2\,R_2 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & -3 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_1=3x_3$ et $x_2=x_3$.  Avec $x_3=1$,
+nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_2 = \begin{pmatrix} 3 \\ 1 \\ 1 \end{pmatrix}$.
+
+Finalement, un vecteur propre
+associé à la valeur propre $\lambda_3 = 4$ est donné par la solution
+du système
+\[
+(A-\lambda_3\Id)\VEC{x} = 
+\begin{pmatrix}
+0 & 2 & -5 \\ 0 & -3 & 2 \\ 0 & 6 & -7
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+=
+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+0 & 2 & -5 & 0 \\ 0 & -3 & 2 & 0 \\ 0 & 6 & -7 & 0
+\end{array}\right) \ .
+\]
+$R_3+2R_2 \rightarrow R_3$ et $R_1+R_2 \rightarrow R_1$ donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & -1 & -3 & 0 \\ 0 & -3 & 2 & 0 \\ 0 & 0 & -3 & 0
+\end{array}\right) \ .
+\]
+$-R_1 \rightarrow R_1$ et $(-1/3)R_3\leftrightarrow R_3$ donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 1 & 3 & 0 \\ 0 & -3 & 2 & 0 \\ 0 & 0 & 1 & 0
+\end{array}\right) \ .
+\]
+$R_1-3\,R_3 \rightarrow R_1$ et $R_2-2\,R_3 \leftrightarrow R_2$
+donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 1 & 0 & 0 \\ 0 & -3 & 0 & 0 \\ 0 & 0 & 1 & 0
+\end{array}\right) \ .
+\]
+$R_2+3\,R_1 \rightarrow R_2$ suivie de $R_2\leftrightarrow R_3$
+donnent
+\[
+\left(\begin{array}{ccc|c}
+0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_2=x_3=0$ et $x_1$ est libre.  Avec $x_1=1$,
+nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_3 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}$.
+
+\subQ{d}\\
+\subI{I} Si nous développons selon la deuxième ligne, nous obtenons
+\begin{align*}
+\det A  &= -a_{2,1} \det(A_{2,1}) + a_{2,2} \det(A_{2,2})
+- a_{2,3}\det(A_{2,3}) \\
+&= 0 - 4 \det\begin{pmatrix}2 & 4 \\ 4 & 2 \end{pmatrix} - 0
+= -4( 4-16) = 48 \ .
+\end{align*}
+Puisque $\det A \neq 0$, la matrice $A$ est inversible.
+
+\subI{II} Considérons la matrice augmentée
+\[
+(A\,|\, \Id) =
+\left(
+\begin{array}{ccc|ccc}
+2 & 0 & 4 & 1 & 0 & 0 \\
+0 & -4 & 0 & 0 & 1 & 0 \\
+4 & 0 & 2 & 0 & 0 & 1
+\end{array} \right) \ .
+\]
+$(-1/4) R_2 \to R_2$ et $(1/2)R_1 \to R_1$ donnent
+\[
+\left(
+\begin{array}{ccc|ccc}
+1 & 0 & 2 & 1/2 & 0 & 0 \\
+0 & 1 & 0 & 0 & -1/4 & 0 \\
+4 & 0 & 2 & 0 & 0 & 1 
+\end{array} \right) \ .
+\]
+$R_3 - 4 R_1 \to R_3$ donne
+\[
+\left(
+\begin{array}{ccc|ccc}
+1 & 0 & 2 & 1/2 & 0 & 0 \\
+0 & 1 & 0 & 0 & -1/4 & 0 \\
+0 & 0 & -6 & -2 & 0 & 1 
+\end{array} \right) \ .
+\]
+$(-1/6) R_3 \to R_3$ donne
+\[
+\left(
+\begin{array}{ccc|ccc}
+1 & 0 & 2 & 1/2 & 0 & 0 \\
+0 & 1 & 0 & 0 & -1/4 & 0 \\
+0 & 0 & 1 & 1/3 & 0 & -1/6 
+\end{array} \right) \ .
+\]
+Finalement, $R_1 -2 R_3 \to R_1$ donne
+\[
+\left(
+\begin{array}{ccc|ccc}
+1 & 0 & 0 & -1/6 & 0 & 1/3 \\
+0 & 1 & 0 & 0 & -1/4 & 0 \\
+0 & 0 & 1 & 1/3 & 0 & -1/6 
+\end{array} \right)  \ .
+\]
+L'inverse de la matrice $A$ est donc
+\[
+A^{-1} = \begin{pmatrix}
+-1/6 & 0 & 1/3 \\
+0 & -1/4 & 0 \\
+1/3 & 0 & -1/6 
+\end{pmatrix} \ .
+\]
+
+\subI{III} Puisque $A$ est inversible, la solution de $A\VEC{x} =
+\VEC{b}$ est $\VEC{x} = A^{-1}\VEC{b}$.  Donc
+\[
+\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+= A^{-1}\begin{pmatrix} 12 \\ 12 \\ 12 \end{pmatrix}
+= \begin{pmatrix}
+-1/6 & 0 & 1/3 \\
+0 & -1/4 & 0 \\
+1/3 & 0 & -1/6 
+\end{pmatrix}\begin{pmatrix} 12 \\ 12 \\ 12 \end{pmatrix}
+= \begin{pmatrix}  2 \\ -3 \\ 2 \end{pmatrix} \ . 
+\]
+
+\subI{IV}
+Les valeurs propres de la matrice $A$ sont les racines du polynôme
+caractéristique
+\begin{align*}
+p(\lambda) &= \det(A-\lambda \Id)=
+\begin{pmatrix}
+2-\lambda & 0 & 4 \\
+0 & -4-\lambda & 0 \\
+4 & 0 & 2-\lambda
+\end{pmatrix} \\
+&= (-4-\lambda)\left( (2-\lambda)^2 - 16 \right)
+= (-4-\lambda)\left( \lambda^2 - 4 \lambda -12 \right) \\
+&= (-4-\lambda)(\lambda - 6)(\lambda +2) \ .
+\end{align*}
+Les valeurs propres de $A$ sont donc $\lambda_1 = -4$, $\lambda_2 = -2$
+et $\lambda_3 = 6$.
+
+\subI{V} Un vecteur propre
+associé à la valeur propre $\lambda_1 = -4$ est donné par la solution
+du système
+\[
+(A-\lambda_1\Id)\VEC{x} = 
+\begin{pmatrix}
+6 & 0 & 4 \\0 & 0 & 0 \\4 & 0 & 6
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+Nous pourrions considérer la matrice augmentée de ce système d'équations
+linéaires pour trouver le vecteur $\VEC{v}_1$.  Cependant, il est
+facile de voir que 
+$\displaystyle \VEC{v}_1 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$
+est un vecteur propre associé à $\lambda_1 = -4$.
+
+Un vecteur propre
+associé à la valeur propre $\lambda_2 = -2$ est donné par la solution
+du système
+\[
+(A-\lambda_2\Id)\VEC{x} = 
+\begin{pmatrix}
+4 & 0 & 4 \\0 & -2 & 0 \\4 & 0 & 4
+\end{pmatrix}
+\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+4 & 0 & 4 & 0 \\0 & -2 & 0 & 0 \\4 & 0 & 4 & 0 
+\end{array}\right) \ .
+\]
+$R_3-R_1 \rightarrow R_3$ et $(-1/2)R_2 \rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|c}
+4 & 0 & 4 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(1/4)R_1 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_1=-x_3$ et $x_2=0$.  Avec $x_1=1$,
+nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_2 = \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}$.
+
+Un vecteur propre
+associé à la valeur propre $\lambda_3 = 6$ est donné par la solution
+du système
+\[
+(A-\lambda_3\Id)\VEC{x} = 
+\begin{pmatrix}
+-4 & 0 & 4 \\0 & -10 & 0 \\4 & 0 & -4
+\end{pmatrix}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \ .
+\]
+La matrice augmentée de ce système d'équations linéaires est
+\[
+\left(\begin{array}{ccc|c}
+-4 & 0 & 4 & 0 \\0 & -10 & 0 & 0 \\4 & 0 & -4 & 0 
+\end{array}\right) \ .
+\]
+$R_3+R_1 \rightarrow R_3$ et $(-1/10)R_2 \rightarrow R_2$ donnent
+\[
+\left(\begin{array}{ccc|c}
+-4 & 0 & 4 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(-1/4)R_1 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & -1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0
+\end{array}\right) \ .
+\]
+La solution de ce système est $x_1=x_3$ et $x_2=0$.  Avec $x_1=1$,
+nous obtenons le vecteur propre
+$\displaystyle \VEC{v}_3 = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}$.
+}
+
+\subsection{Chaînes de Markov}
+
+\compileSOL{\SOLUb}{\ref{12Q13}}{
+\subQ{a} Nous avons que $x_1 = 0.7\,x_0 + 0.2 \, y_0$ et
+$y_1 = 0.3\,x_0 + 0.8\,y_0$, ainsi
+\[
+\begin{pmatrix} x_1 \\ y_1 \end{pmatrix} =
+\begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.8  \end{pmatrix}
+\begin{pmatrix} x_0 \\ y_0 \end{pmatrix} \ .
+\]
+Donc
+\[
+A = \begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.8  \end{pmatrix} \ .
+\]
+
+\subQ{b}
+\[
+A^2 = \begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.8  \end{pmatrix}
+\begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.8  \end{pmatrix}
+= \begin{pmatrix} 0.55 & 0.3 \\ 0.45 & 0.7  \end{pmatrix} \ .
+\]
+
+\subQ{c} Puisque la multiplication par la matrice $A$ donne le nombre
+de voitures dans chaque succursale à la fin du mois (et donc au début
+du mois suivant) en fonction du nombre de voitures dans chaque
+succursale au début du mois, nous avons que la multiplication par la matrice
+$A^2$ donne le nombre de voiture dans chaque succursale à la fin du
+deuxième mois en fonction du nombre de voitures dans chaque succursale
+au début de la période de deux mois.  Nous pouvons généraliser.  La matrice
+$A^n$ donne le nombre de voitures dans chaque succursale à la fin du
+n$^e$ mois en fonction du nombre de voitures dans chaque succursale
+au début de la période de $n$ mois.
+
+Nous avons au début de mars
+\[
+\begin{pmatrix} x_0 \\ y_0 \end{pmatrix} =
+\begin{pmatrix} 60 \\ 40 \end{pmatrix} \ .
+\]
+Puisque
+\[
+\begin{pmatrix} x_1 \\ y_1 \end{pmatrix}
+= A \begin{pmatrix} 60 \\ 40 \end{pmatrix}
+= \begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.8  \end{pmatrix}
+\begin{pmatrix} 60 \\ 40 \end{pmatrix}
+= \begin{pmatrix} 50 \\ 50 \end{pmatrix} \ ,
+\]
+nous aurons $50$ voitures dans la succursale S et aussi $50$ voitures dans la
+succursale T à la fin du mois de mars (et donc au début d'avril).
+
+Puisque
+\[
+\begin{pmatrix} x_2 \\ y_2 \end{pmatrix}
+= A^2 \begin{pmatrix} 60 \\ 40 \end{pmatrix}
+= \begin{pmatrix} 0.55 & 0.3 \\ 0.45 & 0.7  \end{pmatrix}
+\begin{pmatrix} 60 \\ 40 \end{pmatrix}
+=
+\begin{pmatrix} 45 \\ 55 \end{pmatrix} \ ,
+\]
+nous aurons $45$ voitures dans la succursale S et $55$ voitures dans la
+succursale T à la fin du mois d'avril (et donc au début du mois de mai).
+
+Pour allez du début d'avril au début de mai, nous aurions pu procéder de la
+façon suivant.  Si
+\[
+\begin{pmatrix} x_1 \\ y_1 \end{pmatrix} =
+\begin{pmatrix} 50 \\ 50 \end{pmatrix}
+\]
+($50$ voitures dans chaque succursale au début d'avril), alors
+\[
+\begin{pmatrix} x_2 \\ y_2 \end{pmatrix} =
+\begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.8  \end{pmatrix}
+\begin{pmatrix} 50 \\ 50 \end{pmatrix}
+=
+\begin{pmatrix} 45 \\ 55 \end{pmatrix} \ .
+\]
+Donc, au début de mai, il y aura $45$ voitures dans la succursale S et
+$55$ voitures dans la succursale T.
+
+\subQ{d} Il faut trouver un vecteur $\displaystyle \VEC{v}$ tel
+que $A\VEC{v} = \VEC{v}$.  Nous cherchons donc un vecteur propre non nul
+associé à la valeur propre $1$.
+
+Comme $A$ est une matrice de Markov, $1$ est bien une valeur propre de
+$A$.  Nous pouvons vérifier que $1$ est une valeur propre de $A$ en
+trouvant les valeurs propre de $A$.  Les valeurs propres de $A$ sont
+les racines du polynôme caractéristique
+\begin{align*}
+p(\lambda) &= \det(A-\lambda \Id) =
+\det\begin{pmatrix} 0.7-\lambda & 0.2 \\ 0.3 & 0.8-\lambda
+\end{pmatrix} \\
+&=(0.7-\lambda)(0.8-\lambda) - 0.06 = \lambda^2 -1.5\lambda+0.5
+= (\lambda-1)(\lambda-0.5)
+\end{align*}
+Donc $1$ est bien une valeur propre de $A$,  Un vecteur propre
+$\VEC{v}$ de $A$ associé à la valeur propre $1$ est donné par une
+solution de $(A-\Id)\VEC{v}=\VEC{0}$; c'est-à-dire,
+\[
+(A-\Id)\VEC{v}
+= \begin{pmatrix} -0.3 & 0.2 \\ 0.3 & -0.2 \end{pmatrix}
+\begin{pmatrix} v_1 \\ v_2 \end{pmatrix}
+= \begin{pmatrix} 0 \\ 0 \end{pmatrix} \ .
+\]
+Nous considérons la matrice augmentée
+\[
+\left(\begin{array}{cc@{\quad |\quad}c}
+-0.3 & 0.2 & 0 \\ 0.3 & -0.2 & 0 \end{array}\right) \ .
+\]
+$R_2+R_1 \rightarrow R_2$ suivit de $-(10/3)R_1 \rightarrow R_1$
+donnent
+\[
+\left(\begin{array}{cc@{\quad |\quad}c}
+1 & -2/3 & 0 \\ 0 & 0 & 0 \end{array}\right) \ .
+\]
+Nous avons que $v_1 = 2v_2/3$.  Comme le nombre de voitures est constant, nous
+devons aussi avoir $v_1 + v_2 = 100$.  Si $v_1 = 2v_2/3$, alors
+$v_1 + v_2 = 100$ donne $v_2 = 60$.  Donc $v_1 = 40$.
+Il faut qu'il y est $40$ voitures à la succursale S et $60$ voitures à
+la succursale T.
+}
+
+\compileSOL{\SOLUa}{\ref{12Q14}}{
+\subQ{a} Si $x_i$ et $y_i$ dénotent le nombre de lots qui ont été
+choisis et le nombre de lots qui n'ont pas été choisis à la $i^e$
+année respectivement, alors la chaîne de Markov est décrite par
+\[
+\begin{pmatrix} x_{i+1} \\ y_{i+1} \end{pmatrix}
+= A \begin{pmatrix} x_i \\ y_i \end{pmatrix}
+\]
+pour $i=0$, $1$, $2$, \ldots\ avec la matrice de transition
+\[
+A = \begin{pmatrix} 0.2 & 0.5 \\ 0.8 & 0.5 \end{pmatrix} \ .
+\]
+
+\subQ{b} Puisque
+\[
+\begin{pmatrix} x_1 \\ y_1 \end{pmatrix}
+= \begin{pmatrix} 0.2 & 0.5 \\ 0.8 & 0.5 \end{pmatrix}
+\begin{pmatrix} 300 \\ 700 \end{pmatrix}
+= \begin{pmatrix} 410 \\ 590 \end{pmatrix} \ ,
+\]
+$410$ lots seront choisis après un an.
+
+\subQ{c} Puisque
+\[
+\begin{pmatrix} x_2 \\ y_2 \end{pmatrix}
+= \begin{pmatrix} 0.2 & 0.5 \\ 0.8 & 0.5 \end{pmatrix}
+\begin{pmatrix} x_1 \\ x_1 \end{pmatrix}
+= \begin{pmatrix} 377 \\ 623 \end{pmatrix} \ ,
+\]
+$377$ lots seront choisis après deux ans.
+
+\subQ{d}
+Il faut trouver un vecteur propre
+$\displaystyle \VEC{v} = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}$
+de la matrice $A$ associé à la valeur propre $1$ de $A$, et tel que
+$v_1 + v_2 = 1000$ lots.
+
+Pour $\lambda = 1$, les vecteurs propres $\VEC{v}$ sont les solutions de
+$(A-\lambda \Id)\VEC{v} = (A- \Id)\VEC{v} = \VEC{0}$ où
+\[
+A - \Id = \begin{pmatrix} -0.8 & 0.5 \\ 0.8 & -0.5 \end{pmatrix} \ .
+\]
+La matrice augmentée est
+\[
+\left(\begin{array}{cc|c}
+-0.8 & 0.5 & 0 \\ 0.8 & -0.5 & 0
+\end{array}\right) \ .
+\]
+$R_2 + R_1 \leftrightarrow R_2$ donne
+\[
+\left(\begin{array}{cc|c}
+-0.8 & 0.5 & 0 \\0 & 0 & 0
+\end{array}\right) \ .
+\]
+$(-5/4)R_1 \rightarrow R_1$ donne
+\[
+\left(\begin{array}{cc|c}
+1 & -5/8 & 0 \\0 & 0 & 0
+\end{array}\right) \ .
+\]
+Nous obtenons $v_1 = 5v_2/8$.  Il découle de
+$1000 = v_1+v_2 = (5v_2/8)+v_2 = 13v_2/8$ que
+$v_2 = 8000/13 \approx 615.38$ et donc
+$v_1 = 5v_2/8 = 5000/13\approx 384.62$.
+Environ $385$ lots seront donc choisis.
+}
+
+\compileSOL{\SOLUb}{\ref{12Q15}}{
+Soit $x_j$ le pourcentage de femelles du group I à la $j^e$
+génération, $y_j$ le pourcentage de femelles du group II à la $j^e$
+génération, et $z_j$ le pourcentage de femelles du group III à la
+$j^e$ génération.  la chaîne de Markov est décrite par
+\[
+\begin{pmatrix} x_{j+1} \\ y_{j+1} \\ z_{i+1} \end{pmatrix} =
+\begin{pmatrix} 0.5 & 0.25 & 0.3 \\ 0.45 & 0.5 & 0.3 \\
+0.05 & 0.25 & 0.4 \end{pmatrix}
+\begin{pmatrix} x_j \\ y_j \\ z_j\end{pmatrix}
+\]
+pour $j=0$, $1$, $2$,\ldots\ D'après la
+proposition~\ref{alglinMarkoV}, quelle que soit la condition initiale
+$\displaystyle \begin{pmatrix} x_0 \\ y_0 \\ z_0 \end{pmatrix}$, le
+vecteur
+$\displaystyle \begin{pmatrix} x_j \\ y_j \\ z_j \end{pmatrix}$ tend vers
+un vecteur propre associée à la valeur propre $1$ lorsque $j$ tend vers
+l'infini.  Trouvons ce vecteur propre.
+
+Pour trouver les vecteurs propres de la matrice
+\[
+A = \begin{pmatrix}
+0.5 & 0.25 & 0.3 \\
+0.45 & 0.5 & 0.3 \\
+0.05 & 0.25 & 0.4 \end{pmatrix}
+\]
+associé à la valeur propre $\lambda_1=1$, il faut résoudre le système
+d'équations linéaires $(A-\lambda_1 \Id) \VEC{v} = \VEC{0}$;
+c'est-à-dire,
+\[
+(A- \Id) \VEC{v}
+= \begin{pmatrix}
+-0.5 & 0.25 & 0.3 \\
+0.45 & -0.5 & 0.3 \\
+0.05 & 0.25 & -0.6
+\end{pmatrix}
+\begin{pmatrix} v_1 \\ v_2 \\ v_3  \end{pmatrix} =
+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\; .
+\]
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+-0.5 & 0.25 & 0.3 & 0 \\
+0.45 & -0.5 & 0.3 & 0 \\
+0.05 & 0.25 & -0.6 & 0
+\end{array}\right) \; .
+\]
+$R_2 + 0.9 R_2 \to R_1$ et $R_3 + 0.1 R_1 \to R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+-0.5 & 0.25 & 0.3 & 0 \\
+0 & -0.275 & 0.57 & 0 \\
+0 & 0.275 & -0.57 & 0
+\end{array}\right) \; .
+\]
+$R_3 + R_2 \to R_3$ donne
+\[
+\left(\begin{array}{rrr|r}
+-0.5 & 0.25 & 0.3 & 0 \\
+0 & -0.275 & 0.57 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \; .
+\]
+$-2R_1 \to R_1$ et $(-40/11) R_2 \to R_2$ donnent
+\[
+\left(\begin{array}{rrr|r}
+1 & -1/2 & -3/5 & 0 \\
+0 & 1 & -114/55 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \; .
+\]
+$R_1 + (1/2)R_2 \to R_1$ donne
+\[
+\left(\begin{array}{rrr|r}
+1 & 0 & -18/11 & 0 \\
+0 & 1 & -114/55 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \; .
+\]
+Les solutions $\VEC{v}$ du système $(A-\Id) \VEC{v} = \VEC{0}$ satisfont
+donc $v_1 - (18/11) v_3 = 0$ et $v_2 - (114/55) v_3 = 0$;
+c'est-à-dire, $v_1=(18/11)v_3$ et $v_2 = (114/55) v_3$.
+
+Puisque les $v_j$'s représentent des pourcentages de la population totale de
+femelles, nous avons
+\[
+1 = v_1 + v_2 + v_3 = \frac{18}{11} v_3 + \frac{114}{55} v_3 + v_3 =
+\frac{259}{55} v_3 \ .
+\]
+Donc $\displaystyle v_3 = \frac{55}{259} = 0.212355\ldots$,
+$\displaystyle v_2 = \frac{114}{55}\; v_3 = \frac{114}{259} = 0.44015\ldots$
+et
+$\displaystyle v_1 = \frac{18}{11}\; v_3 = \frac{90}{259} = 0.34749\ldots$
+La tendance à long terme est donc qu'approximativement $34.75$\% des
+femelles appartiennent au groupe I à la naissance, $44.02$\%
+appartiennent au groupe II et $21.24$\% appartiennent au groupe III.
+}
+
+\compileSOL{\SOLUa}{\ref{12Q16}}{
+Soit $x_j$ la probabilité que les pommes Spartan soient en vente à la
+$j^e$ journée, $y_j$ la probabilité que les pommes Cortland soient en
+vente à la $j^e$ journée, et $z_j$ la probabilité que les pommes
+McIntosh soient en vente à la $j^e$ journée.  La chaîne de
+Markov est décrite par
+\[
+\begin{pmatrix} x_{j+1} \\ y_{j+1} \\ z_{i+1} \end{pmatrix} =
+A \begin{pmatrix} x_j \\ y_j \\ z_j\end{pmatrix}
+\]
+pour $i=0$, $1$, $2$, \ldots\ où
+\[
+A = \begin{pmatrix}
+1/2 & 1/6 & 1/2 \\
+1/6 & 1/2 & 1/2 \\
+1/3 & 1/3 & 0
+\end{pmatrix} \ .
+\]
+$a_{1,3}$, $a_{2,3}$ et $a_{3,3}$ proviennent des énoncés (1) et
+(2) de la question, $a_{1,1}$ et $a_{2,2}$ proviennent
+de l'énoncé (3),  $a_{3,1}$ et $a_{3,2}$ proviennent de l'énoncé (4).
+Les autres éléments de $A$ proviennent du fait que la somme sur chaque
+colonne doit être $1$; il y a 100\% de chance qu'un item soit en vente
+chaque jour.
+
+La probabilité qu'un item soit en vente après $100$ jours est donnée par
+\[
+\begin{pmatrix} x_{100} \\ y_{100} \\ z_{100} \end{pmatrix} =
+A^{100} \begin{pmatrix} 1/3 \\ 1/3 \\ 1/3 \end{pmatrix} \ .
+\]
+
+D'après la Proposition~\ref{alglinMarkoV}, quelle que soit la
+condition initiale
+$\displaystyle \begin{pmatrix} x_0 \\ y_0 \\ z_0 \end{pmatrix}$, nous avons que
+$\displaystyle \begin{pmatrix} x_j \\ y_j \\ z_j \end{pmatrix}$ tend vers
+un vecteur propre associé à la valeur propre $1$ lorsque $j$ tend vers
+l'infini.  Trouvons ce vecteur propre.
+
+Pour trouver les vecteurs propres de la matrice $A$ associé à la valeur
+propre $\lambda_1=1$, il faut résoudre le système d'équations linéaires
+$(A-\lambda_1 \Id) \VEC{v} = \VEC{0}$; c'est-à-dire,
+\[
+(A-\Id)\VEC{v}
+= \begin{pmatrix}
+-1/2 & 1/6 & 1/2 \\
+1/6 & -1/2 & 1/2 \\
+1/3 & 1/3 & -1
+\end{pmatrix}
+\begin{pmatrix} v_1 \\ v_2 \\ v_3  \end{pmatrix} =
+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\ .
+\]
+La matrice augmentée de ce système est
+\[
+\left(\begin{array}{rrr|r}
+-1/2 & 1/6 & 1/2 & 0 \\
+1/6 & -1/2 & 1/2 & 0 \\
+1/3 & 1/3 & -1 & 0
+\end{array}\right) \ .
+\]
+$-6R_1 \to R_1$, $6R_2 \to R_2$ et $3R_3 \to R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+3 & -1 & -3 & 0 \\
+1 & -3 & 3 & 0 \\
+1 & 1 & -3 & 0
+\end{array}\right) \ .
+\]
+$R_1 - 3R_3 \to R_1$ et $R_2-R_3 \to R_2$ donnent
+\[
+\left(\begin{array}{rrr|r}
+0 & -4 & 6 & 0 \\
+0 & -4 & 6 & 0 \\
+1 & 1 & -3 & 0
+\end{array}\right) \ .
+\]
+$R_1 - R_2 \to R_1$ suivie de $(-1/4)R_2 \to R_2$ donnent
+\[
+\left(\begin{array}{rrr|r}
+0 & 0 & 0 & 0 \\
+0 & 1 & -3/2 & 0 \\
+1 & 1 & -3 & 0
+\end{array}\right) \ .
+\]
+$R_3 - R_2 \to R_3$ donne
+\[
+\left(\begin{array}{rrr|r}
+0 & 0 & 0 & 0 \\
+0 & 1 & -3/2 & 0 \\
+1 & 0 & -3/2 & 0
+\end{array}\right) \ .
+\]
+Les solutions $\VEC{v}$ du système $(A-\Id) \VEC{v} = \VEC{0}$ satisfont
+donc $v_1 - (3/2) v_3 = 0$ et $v_2 - (3/2) v_3 = 0$;
+c'est-à-dire, $v_1=(3/2)v_3$ et $v_2 = (3/2) v_3$.
+
+Puisque les $v_j$'s représentent les probabilités d'être en vente pour
+chaque item et qu'il est certain à $100$\% qu'un item est en vente à
+chaque jour, nous avons
+\[
+1 = v_1 + v_2 + v_3 = \frac{3}{2} v_3 + \frac{3}{2} v_3 + v_3 = 4 v_3 \ .
+\]
+Donc $\displaystyle v_3 = \frac{1}{4} = 0.25$,
+$\displaystyle v_2 = \frac{3}{2}\; v_3 = \frac{3}{8} = 0.375$ et
+$\displaystyle v_1 = \frac{3}{2}\; v_3 = \frac{3}{8} = 0.375$.
+Nous pouvons conclure que dans un future éloigné, il y aura $37.5$\%
+des chances que les pommes Spartan soient en vente, $37.5$\% des
+chances que les pommes Cortland soient en vente et $25$\% des chances
+que les pommes McIntosh soient en vente.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

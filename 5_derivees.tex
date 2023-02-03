@@ -1,0 +1,3099 @@
+\chapter[Dérivée]{Dérivée}
+
+\compileTHEO{
+
+Nous définissons dans ce chapitre la {\em dérivée d'une fonction}.  Nous
+présentons quelques unes des propriétés importantes de la dérivée d'une
+fonction ainsi que les principales techniques pour calculer
+{\em facilement} la dérivée d'une fonction.  Quelques applications de
+la dérivée seront fournies au prochain chapitre.
+
+\section{Étude du graphe et comportement d'une fonction}
+
+Avant de définir ce qu'est la {\em dérivée} d'une fonction, un des
+piliers du {\em calcul différentiel et intégral}, et de plonger dans
+l'étude de la dérivée d'une fonction, nous énonçons quelques
+propriétés des fonctions que la dérivée nous permettra de déterminer.
+
+La dérivée est un outil pour l'étude des fonctions.  Lorsque nous
+parlons de l'étude des fonctions, nous parlons de l'étude du graphe et du
+comportement des fonctions sur leur domaine.  Nous cherchons les
+caractéristiques marquantes des fonctions.  Quelques unes des
+caractéristiques qu'une fonction peut avoir sont énoncées dans les
+trois prochaines définitions.
+
+\begin{focus}{\dfn}
+Soit $f:]a,b[ \rightarrow \RR$ une fonction.
+\begin{enumerate}
+\item La fonction $f$ est {\bfseries strictement croissante}
+\index{Fonction!Strictement croissante}
+si $f(x) < f(y)$ pour tout $x$ et $y$ dans l'intervalle $]a,b[$
+tels que $x<y$.
+\item La fonction $f$ est {\bfseries croissante}\index{Fonction!Croissante}
+si $f(x) \leq f(y)$ pour tout $x$ et $y$ dans l'intervalle $]a,b[$
+tels que $x<y$.
+\item La fonction $f$ est {\bfseries strictement décroissante}
+\index{Fonction!Décroissante} si $f(x) > f(y)$ pour tout $x$ et $y$
+ dans l'intervalle $]a,b[$ tels que $x<y$.
+\item La fonction $f$ est {\bfseries décroissante}
+\index{Fonction!Décroissante} si $f(x) \geq f(y)$ pour tout $x$ et $y$
+ dans l'intervalle $]a,b[$ tels que $x<y$.
+\end{enumerate}
+\end{focus}
+
+\begin{focus}{\dfn}
+Soit $f:\RR \rightarrow \RR$ une fonction.
+\begin{enumerate}
+\item La fonction $f$ a un {\bfseries maximum local}
+\index{Fonction!Maximum local} au point $c$ si $f(x) < f(c)$ pour tout
+$x \neq c$ suffisamment près de $c$.
+\item La fonction $f$ a un {\bfseries minimum local}
+\index{Fonction!Minimum local} au point $c$ si $f(x) > f(c)$ pour tout
+$x \neq c$ suffisamment près de $c$.
+\end{enumerate}
+\end{focus}
+
+\begin{focus}{\dfn}
+Soit $f:[a,b] \rightarrow \RR$ une fonction.
+\begin{enumerate}
+\item La fonction $f$ a un {\bfseries maximum global ou absolu}
+\index{Fonction!Maximum global} \index{Fonction!Maximum absolu}
+s'il existe un point $c \in [a,b]$ tel que $f(c) > f(x)$
+pour tout $x\neq c$ dans $[a,b]$.  La valeur $f(c)$ est le maximum
+global de $f$ sur $[a,b]$.
+\item La fonction $f$ a un {\bfseries minimum global ou absolu}
+\index{Fonction!Minimum global} \index{Fonction!Minimum absolu}
+s'il existe un point $c \in [a,b]$ tel que $f(c) < f(x)$
+pour tout $x\neq c$ dans $[a,b]$.  La valeur $f(c)$ est le minimum
+global de $f$ sur $[a,b]$.
+\end{enumerate}
+\label{maxminabs}
+\end{focus}
+
+\begin{egg}
+Considérons la fonction continue dont le graphe est donné à la
+figure~\ref{DER1}.  Quelques unes des caractéristiques de cette
+fonction sont:
+\begin{enumerate}
+\item La fonction $f$ a un maximum absolu au point $c$ car $f(x)<f(c)$
+pour tout $x\neq c$.  La valeur $f(c)$ est le maximum absolu de $f$.
+Cela implique aussi que $f$ a un maximum local au point $c$.
+\item La fonction $f$ a un minimum local au point $e$ car $f(x)>f(e)$
+pour tout $x$ près de $e$, $x\neq e$.  Ce n'est pas un minimum absolu
+car il y a des valeurs de $x$ pour lesquelles $f(x) < f(e)$; par
+exemple, $f(a) < f(e)$.
+\item La fonction $f$ est strictement croissante pour $x<c$ car
+$f(x_1) < f(x_2)$ pour tous $x_1 < x_2 < c$.  De même, la fonction $f$
+est strictement croissante pour $x>e$.  Par contre, la fonction $f$
+est strictement décroissante pour $x$ entre $c$ et $e$ car
+$f(x_1) > f(x_2)$ pour tout $a < x_1 < x_2 < c$.
+\item $f(x)$ approche la valeur $Y$ lorsque $x$ devient de
+plus en plus grand.  La droite $y=Y$ est une asymptote horizontale
+pour $f$ lorsque $x$ tend vers plus l'infini.
+\end{enumerate}
+\label{caractF}
+\end{egg}
+
+\PDFfig{5_derivees/der1}{Caractéristiques du graphe d'une fonction}{À
+l'exemple~\ref{caractF}, nous déterminons certaines caractéristiques de la
+fonction qui possède ce graphe.}{DER1}
+
+Nous verrons plus tard d'autres caractéristiques que les fonctions peuvent
+avoir.
+
+Si nous observons minutieusement l'exemple précédent, nous remarquons que la
+fonction $f$ est strictement croissante au point $x$ si la pente de la
+{\em droite tangente} au graphe de la fonction $f$ au point $(x,f(x))$
+est positive, la fonction $f$ est strictement décroissante au point
+$x$ si la pente de la {\em droite tangente} au graphe de la fonction
+$f$ au point $(x,f(x))$ est négative, la pente de la
+{\em droite tangente} au graphe de la fonction $f$ au point $(x,f(x)$
+est zéro lorsque la fonction $f$ a un maximum local au point $x$, et
+ainsi de suite.  La pente des {\em droites tangentes} au graphe
+d'une fonction semble donc déterminer les caractéristiques importantes
+d'une fonction.  Il serait donc important de pouvoir facilement
+calculer la pente des tangentes au graphe d'une fonction. La dérivée
+est l'outil qui nous permettra de facilement calculer la pente des
+tangentes au graphe d'une fonction. Ainsi, elle nous permettra de
+trouver les minimums et maximums locaux d'une fonction, les
+intervalles de croissance et décroissance d'une fonction, et encore
+plus.
+
+Naturellement, il faut définir ce qu'est une {\em droite tangente} au
+graphe d'une fonction en un point du graphe.  En fait, cela n'est pas
+aussi évident que nous pourrions l'imaginer comme nous allons voir
+prochainement.  Nous allons voir que définir ce qu'est la droite tangente au
+graphe d'une fonction en un point du graphe revient à définir la
+dérivée de la fonction en ce point.
+
+\section{Taux de variation d'une fonction}\label{sect_TVI}
+
+\begin{focus}{\dfn} \index{Taux de variation moyen}
+Si $f$ est une fonction dont le domaine inclut l'intervalle $[a,b]$, le
+{\bfseries taux de variation moyen} de $f$ entre $a$ et $b$ est
+$\displaystyle \frac{f(b)-f(a)}{b-a}$
+\end{focus}
+
+\begin{egg}
+Suite à une expérience de laboratoire sur une culture de bactéries
+dans un milieu qui ne leur est pas favorable, nous observons que la
+fonction $\displaystyle g(t) = 50 \; e^{-2t}$ représente le
+nombre de bactéries par cm$^3$ au temps $t$ en heures.
+
+Cette formule demande quelques clarifications.  Remarquons que $g$
+peut retourner des valeurs réelles qui ne sont pas des entiers.  Cela
+ne semble pas \lgm rationnel\rgm\ car nous ne pouvons pas avoir une
+fraction de bactérie (e.g. nous ne pouvons pas avoir un dixième de
+bactérie).  Il faut comprendre que $g$ retourne un nombre moyen de
+bactéries par cm$^3$ dans un contenant qui pourrait avoir $10$ cm$^3$
+par exemple.  De plus, dans nos exemples, nous utiliserons des petites
+valeurs pour le nombre de bactéries.  Ce qui ne correspond pas à la
+réalité.  Il faudrait généralement multiplier le nombre de bactéries
+par un facteur de $10^9$ pour être plus prêt de la réalité.
+Cependant, dans le but de ne pas alourdir le texte, nous avons choisi
+d'utiliser de petites valeurs.  Malgré cela, le graphe de $g$
+(figure~\ref{BACT1}) est une très bonne représentation du nombre
+de bactéries par cm$^3$ en fonction du temps $t$ en heures.
+
+Le taux de variation moyen du nombre de bactéries entre $t=0$ et
+$t=10$ est
+\[
+\frac{g(10)-g(0)}{10 -0}
+= \frac{50 \;e^{-20} - 50}{10 -0}
+\approx -5.0000 
+\]
+bactéries par cm$^3$ par heure.  C'est-à-dire que le nombre de
+bactéries décroît en moyenne de $5$ bactéries par cm$^3$ par heure
+pendant les dix premières heures.  Nous disons que la population de
+bactéries a un {\em taux de croissance moyen} de $-5$ bactéries par
+cm$^3$ par heure.  Nous aurions pu parler de décroissance mais la
+tradition veut que nous parlions de croissance négative.
+
+Si nous regardons le graphe de $g$, nous voyons que la population de
+bactéries décroît plus rapidement dans les premières heures.  Par
+exemple, le taux de croissance moyen de la population de bactéries
+entre $t=0$ et $t=3$ est
+\[
+\frac{g(3)-g(0)}{3 -0}
+= \frac{50 \;e^{-6} - 50}{3 -0}
+\approx -16.625
+\]
+bactéries par cm$^3$ par heure.  Le nombre de bactéries décroît
+donc en moyenne de $16.625$ bactéries par cm$^3$ par heure pendant les
+trois premières heures.
+
+La population de bactéries a théoriquement disparu après $10$ heures
+car il reste
+\[
+g(10) = 50 \;e^{-20} \approx  1.0306 \times 10^{-7}
+\]
+bactéries par cm$^3$ après $10$ heures.
+\label{bacter0}
+\end{egg}
+
+\MATHfig{5_derivees/bact1}{8cm}{Graphe de $x= 50 \; e^{-2t}$}
+{Graphe de $x= 50 \; e^{-2t}$ pour $ 0 \leq t \leq 5$ heures.}
+{BACT1}
+
+Qu'arrivera-t-il si nous calculons les taux de variation moyens sur des
+intervalles $[a,b]$ de plus en plus petit; c'est-à-dire, pour
+lesquelles $b$ tend vers $a$?
+
+\begin{egg}
+Revenons à l'exemple précédent au sujet d'une population de bactéries.
+Si nous calculons le taux de croissance moyen (i.e. le taux de variation
+moyen) sur des intervalles $[a,b]$ où $a=1$ et $b$ est de plus en plus
+près de $a$, nous obtenons les données suivantes.
+\begin{center}
+\begin{tabular}{l|l|l}
+\hline
+$a$ heures & $b$ heures & \rule{0em}{1.3em}
+$\frac{g(b)-g(a)}{b-a}$ bactéries par cm$^3$ par heure \\[1ex]
+\hline
+$1$ & $2$ & $-5.8509822\ldots $ \\
+$1$ & $1.5$ & $-8.5548214\ldots$ \\
+$1$ & $1.1$ & $-12.2660624\ldots$ \\
+$1$ & $1.01$ & $-13.3990907\ldots$ \\
+$1$ & $1.001$ & $-13.5200038\ldots$ \\
+$1$ & $1.0001$ & $-13.5321750\ldots$ \\
+$1$ & $1.00001$ & $-13.5333929\ldots$ \\
+$1$ & $1.000001$ & $-13.5335147\ldots$ \\
+$1$ & $1.0000001$ & $-13.5335269\ldots$ \\
+\hline
+\end{tabular}
+\end{center}
+Comme le taux de croissance moyen n'a pas vraiment le temps de changer
+entre $t=1$ et $t=1.0000001$ heure, nous pouvons dire que le taux de
+croissance à $t=1$ heure est approximativement $-13.5335269$
+bactéries par cm$^3$ par heure.  Nous pourrions prendre des intervalles
+$[a,b]$ où $a=1$ et $b$ est encore plus près de $1$ que $1.0000001$.
+Si nous faisons cela, nous trouvons que le taux de croissance moyen
+(i.e. le taux de variation moyen) approche $-13.53352832\ldots$
+bactéries par cm$^3$ par heure.  Cette dernière valeur est le
+{\bfseries taux de variation instantané} du nombre de bactéries à
+$t=1$ heure.  Nous définissons le {\bfseries taux de croissance} de la
+population de bactéries à $t=1$ heure comme étant ce taux de variation
+instantané.
+
+Nous aurions pu calculer des taux de variation moyens pour des
+intervalles de la forme $[b,a]$, où $b<a$ tend vers $a$.  Nous aurions
+trouvé le même taux de variation instantané.
+\label{bacter1}
+\end{egg}
+
+\begin{focus}{\dfn} \index{Taux de variation instantané}
+Si $f$ est une fonction définie sur un intervalle ouvert contenant
+$a \in \RR$, le {\bfseries taux de variation instantané} de $f$ au
+point $a$ est la valeur $M$ unique (si une telle valeur existe) telle
+que le taux de variation moyen $\displaystyle \frac{f(b)-f(a)}{b-a}$
+tend vers $M$ lorsque $b$ tend vers $a$ avec $b$ plus petit ou
+plus grand que $a$.
+\end{focus}
+
+Remarquons que le taux de variation moyen
+\[
+\frac{f(b)-f(a)}{b-a}
+\]
+est aussi la pente de la droite qui passe par les points $(a,f(a))$ et
+$(b,f(b))$.  Une droite qui passe par au moins deux points d'une
+courbe est une {\bfseries sécante}. \index{Droite sécante}
+
+\begin{egg}
+Pour la population de bactéries étudiée précédemment, nous avons tracé à la
+figure~\ref{BACT2} les sécantes qui passent par les points suivants.
+\begin{enumerate}
+\item $(1,50 \; e^{-2})$ et $(4,50 \; e^{-8})$
+donnent une droite de pente
+\[
+\frac{g(4)-g(1)}{4-1} = \frac{50 \; e^{-8}- 50 \; e^{-2}}
+{4-1} = -2.24999701\ldots
+\]
+\item $(1,50 \; e^{-2})$ et $(3,50 \; e^{-6})$
+donnent une droite de pente
+\[
+\frac{g(3)-g(1)}{3-1} = \frac{50 \; e^{-6}- 50 \; e^{-2}}
+{3-1} = -3.321413276\ldots
+\]
+\item $(1,50 \; e^{-2})$ et $(2,50 \; e^{-4})$
+donnent une droite de pente
+\[
+\frac{g(2)-g(1)}{2-1} = \frac{50 \; e^{-4}- 50 \; e^{-2}}
+{2-1} = -5.850982217\ldots
+\]
+\end{enumerate}
+\end{egg}
+
+\MATHfig{5_derivees/bact2}{8cm}{Quelques sécantes du graphe de
+$x= 50 \; e^{-2t}$}{Quelques sécantes du graphe de $x= 50 \; e^{-2t}$.}{BACT2}
+
+Que devient la sécante qui passe par $(a,f(a))$ et $(b,f(b))$ si $b$
+est de plus en plus près de $a$?  L'exemple suivant va fournir une
+réponse à cette question.
+
+\begin{egg}
+Toujours pour la population de bactéries de l'exemple~\ref{bacter0},
+nous avons tracé à la figure~\ref{BACT3} les sécantes qui passent par les
+points suivants.
+\begin{enumerate}
+\item $(1,50 \; e^{-2})$ et $(1.1,50 \; e^{-2.2})$
+donnent une droite de pente
+\[
+\frac{g(1.1)-g(1)}{1.1-1} =
+\frac{50 \; e^{-2.2}- 50 \; e^{-2}}{1.1-1}
+= -12.2660624\ldots
+\]
+\item $(1,50\; e^{-2})$ et $(1.001,51 \; e^{-2.002})$
+donnent une droite de pente
+\[
+\frac{g(1.001)-g(1)}{1.001-1} =
+\frac{50 \; e^{-2.002}- 50 \; e^{-2}}{1.001-1}
+= -13.5200038\ldots
+\]
+\end{enumerate}
+Remarquons que, pour des valeurs de $b$ très près de $a=1$, il
+devient de plus en plus difficile de différencier le graphe de la
+fonction $g$ dans le voisinage de $x=1$ de la sécante qui passe par
+les points $(a,g(a))=(1,g(1))$ et $(b,g(b))$.  À la limite, ces
+sécantes approchent une droite que nous ne pouvons dissocier de la
+courbe $x=g(t)$ pour $t$ assez près de $t=1$.  Cette droite est
+appelée la {\em droite tangente} à la courbe au point $(1,g(1))$.  La
+pente de cette droite est la valeur limite des pentes des sécantes qui
+passent par $(a,g(a))$ et $(b,g(b))$ lorsque que $b$ tend vers $a=1$.
+Dans le cas présent, cette pente est $-13.53352832\ldots$ que nous
+avons trouvée à l'exemple~\ref{bacter1}.
+\end{egg}
+
+\MATHfig{5_derivees/bact3}{8cm}{Limite de sécantes pour le graphe de
+$x= 50 \; e^{-2t}$}{La sécante qui passe par $(1, 50 e^{-2})$ et 
+$(1.001, 50 e^{-2.002})$ se confond à la courbe $x= 50 \; e^{-2t}$
+pour $t$ très près de $t=1$ heure.}{BACT3}
+
+\begin{focus}{\dfn} \index{Droite tangent}
+Si $f$ est une fonction définie sur un intervalle ouvert qui contient
+$a \in \RR$.  La droite
+\[
+y = h(x) = f(a) + M(x-a) \; ,
+\]
+où $M$ est le taux de variation instantané de $f$ à $x=a$, est la
+{\bfseries droite tangente} à la courbe
+$y=f(x)$ au point $(a,f(a))$.
+
+Nous avons que la distance entre $f(x)$ et $h(x)$ devient de plus en plus
+petite lorsque $x$ approche $a$.
+\end{focus}
+
+Au moment de donner la définition de la dérivée d'une fonction en un
+point, nous donnerons un sens mathématique à \lgm la distance entre $f(x)$
+et $h(x)$ devient de plus en plus petite lorsque $x$ approche $a$\rgm.
+
+En résumé, lorsque $b$ approche $a$, la sécante qui passe par
+$(a,f(a))$ et $(b,f(b))$ approche une droite qui passe par $(a,f(a))$
+et qui est indissociable (presque superposée) à la courbe $y=f(x)$
+pour $x$ assez près de $x=a$.  Cette droite limite est la droite
+tangente que nous venons de définir.
+
+\section{Dérivée d'une fonction en un point}\label{def_der}
+
+La {\bfseries dérivée} d'une fonction $f$ en un point n'est
+rien d'autre que le taux de variation instantané de $f$ à ce point.
+
+Avec la définition de limite d'une fonction en un point, nous pouvons
+donner un sens mathéma\-tique au taux de variation instantané de $f$
+au point $a$.  À la section~\ref{sect_TVI}, nous avons défini le taux de
+variation instantané de $f$ au point $a$ comme étant le nombre $M$ tel
+que le taux de variation moyen $\displaystyle \frac{f(b)-f(a)}{b-a}$
+approche $M$ lorsque $b$ approche $a$ où $b$ peut être plus petit ou
+plus grand que $a$.  En termes mathématiques, l'énoncé précédent est
+simplement
+\[
+M = \lim_{b\rightarrow a} \frac{f(b)-f(a)}{b-a} \; .
+\]
+Nous obtenons la définition suivante.
+
+\begin{focus}{\dfn} \index{Dérivée d'une fonction à un point}
+Soit $f$ une fonction définie dans un voisinage de $a$ incluant le
+point $a$.  La {\bfseries dérivée de $f$ au point $a$}, dénotée
+$f'(a)$ ou $\displaystyle \dydx{f}{x}(a)$, est
+\[
+f'(a) \equiv \lim_{x\rightarrow a} \frac{f(x) - f(a)}{x-a}
+\]
+si cette limite existe.
+
+La limite précédente est équivalente à
+\[
+f'(a) \equiv \lim_{h\rightarrow 0} \frac{f(a+h) - f(a)}{h}
+\]
+si cette limite existe.  Il suffit de substituer $x=a+h$ dans la
+première limite pour obtenir la deuxième et de substituer $h=x-a$ dans
+la deuxième limite pour obtenir la première.  Nous avons que $x$
+approche $a$ si et seulement si $h=x-a$ approche $0$.  Notez que $h$
+peut être plus petit ou plus grand que $0$.
+\end{focus}
+
+\begin{egg}
+À l'exemple~\ref{bacter1}, nous avons montré numériquement que
+\[
+g'(1) = -13.53352832\ldots \quad \text{bactéries par cm$^3$/heure}
+\]
+où $g(t) = 50 e^{-2t}$.
+\end{egg}
+
+Pour l'exemple qui suit, nous aurons besoin de la définition suivante.
+
+\begin{focus}{\dfn} \index{Taux de croissance relatif}
+Le {\bfseries taux de croissance relatif} d'une population au temps
+$t$ est
+\[
+\frac{\text{taux de croissance instantané (au temps $t$)}}
+{\text{nombre d'individus dans la population (au temps $t$)}}
+\ .
+\]
+En d'autres mots, si $p(t)$ est le nombre d'individus au temps $t$, le
+taux de croissance relatif au temps $t$ est
+$\displaystyle \frac{p'(t)}{p(t)}$.
+\end{focus}
+
+\begin{egg}
+Estimons le taux de croissance relatif à $t=1$ et $t=2$ d'une
+population dont le nombre d'individus au temps $t$ (en heures) est
+donnée par $p(t) = 2^t$.
+
+Commençons par estimer $p'(1)$, le taux de croissance instantané à
+$t=1$.  Nous avons
+\begin{align*}
+\frac{p(1.01)-p(1)}{0.01} &= \frac{2^{1.01} - 2}{0.01} \approx 1.3911100,
+\quad \frac{p(1.001)-p(1)}{0.001} = \frac{2^{1.001} - 2}{0.001} \approx
+1.386774925, \\
+\frac{p(1.0001)-p(1)}{0.0001} &= \frac{2^{1.0001} - 2}{0.0001} \approx
+1.386342407529995, \quad \ldots 
+\to 1.3862943611\ldots
+\end{align*}
+Donc $p'(1)=1.3862943611\ldots$
+
+De même, nous pouvons estimer $p'(2)$, le taux de croissance instantané à
+$t=2$.  Nous avons
+\begin{align*}
+\frac{p(2.01)-p(2)}{0.01} &= \frac{2^{2.01} - 4}{0.01} \approx 2.7822200,
+\quad \frac{p(2.001)-p(2)}{0.001} = \frac{2^{2.001} - 4}{0.001} \approx
+2.773549850, \\
+\frac{p(2.0001)-p(2)}{0.0001} &= \frac{2^{2.0001} - 4}{0.0001} \approx
+2.7726848151 , \quad \ldots 
+\to 2.772588722\ldots
+\end{align*}
+Donc $p'(2) = 2.772588722\ldots$.
+
+Le taux de croissance relatif à $t=1$ est
+\[
+\frac{p'(1)}{p(1)} = \frac{1.3862943611\ldots}{2}
+= 0.693147180559945\ldots
+\]
+et le taux de croissance relatif à $t=2$ est
+\[
+\frac{p'(2)}{p(2)} = \frac{2.772588722\ldots}{4}
+= 0.693147180559945\ldots
+\]
+Est-ce que $\displaystyle \frac{p'(t)}{p(t)} = 0.693147180559945\ldots$
+pour tout $t$?  Nous verrons prochainement que la réponse est affirmative.
+\end{egg}
+
+Si
+\[
+f'(a) = \lim_{x\rightarrow a} \frac{f(x) - f(a)}{x-a} \ ,
+\]
+alors
+\[
+f'(a) \approx \frac{f(x) - f(a)}{x-a}
+\]
+pour $x$ près de $a$.  Si nous résolvons cette relation pour $f(x)$,
+nous trouvons
+\begin{equation} \label{faedt}
+f(x) \approx f(a) + f'(a) (x-a)
+\end{equation}
+Le côté droit de cette relation n'est nul autre que l'équation de la
+droite tangente à la courbe $y=f(x)$ au point $(a,f(a))$ définie à la
+section~\ref{sect_TVI} car $f'(a)$ est le taux de variation
+instantané.  Donc $f'(a)$ est la pente de la droite tangente à la
+courbe $y=f(x)$ au point $(a,f(a))$.
+
+Nous retrouvons à la figure~\ref{DER6} un résumé de l'interprétation
+graphique de la dérivée.
+
+\PDFfig{5_derivees/der6}{Interprétation graphique de la dérivée d'une
+fonction en un point}{Interprétation graphique de la dérivée d'une
+fonction $f$ au point $x=a$}{DER6}
+
+\begin{focus}{\prp} \label{der_approx_ft}
+Si $f$ est une fonction différentiable au point $a$, alors
+\[
+f(x) \approx f(a) + f'(a) (x-a)
+\]
+pour $x$ très près de $a$.
+\end{focus}
+
+L'équation de la droite tangente est une formule simple pour estimer
+la fonction $f$ au voisinage du point $x=a$ (figure~\ref{DER19}).
+L'approximation de fonctions compliquées à l'aide
+de droites tangentes ou de polynômes sera abordé dans une prochaine
+section.
+
+\begin{rmk}[\theory]
+En Analyse Mathématique, nous définissons la dérivée d'une fonction $f$ au
+point $a$ de la façon suivante.
+
+\begin{focus}{\dfn}
+Soit $f$ une fonction continue de $\RR$ dans $\RR$.  La dérivée de la
+fonction $f$ au point $a$ est le nombre $f'(a)$ qui satisfait
+\begin{equation} \label{RigDfn}
+\lim_{x\rightarrow a} \frac{|f(x) - f(a) - f'(a)(x-a)|}{|x-a|} = 0 \; .
+\end{equation}
+\end{focus}
+
+Cette définition de la dérivée est équivalent à la définition de la
+dérivée que nous avons donnée.  En effet, puisque
+\[
+\lim_{x\rightarrow a} \left| \frac{f(x) - f(a) - f'(a)(x-a)}{x-a} \right|
+= \lim_{x\rightarrow a} \left| \frac{f(x)-f(a)}{x-a} - f'(a) \right|
+\]
+et
+\[
+\lim_{x\rightarrow a} g(x) = 0 \qquad \text{si et seulement si} \qquad
+\lim_{x\rightarrow a} |g(x)| = 0 \; ,
+\]
+nous déduisons que
+\[
+\lim_{x\rightarrow a} \frac{f(x)-f(a)}{x-a} = f'(a)
+\]
+si et seulement si
+\[
+\lim_{x\rightarrow a} \frac{|f(x) - f(a) - f'(a)(x-a)|}{|x-a|} = 0 \; .
+\]
+
+Il découle de cette définition que, lorsque $x$ approche $a$, la
+distance entre $f(x)$ et $f(a)+f'(a)(x-a)$ approche $0$ plus vite que
+la distance entre $x$ et $a$ (figure~\ref{DER19}).  Cette
+propriété explique les énoncées \lgm la courbe $y=f(x)$ et la droite
+$y=h(x)=f(a)+f'(a) (x-a)$ sont presque superposées lorsque nous
+considérons des valeurs de $x$ assez près de $x=a$ \rgm\ et \lgm la
+distance entre $f(x)$ et $h(x)$ devient de plus en plus petite lorsque
+$x$ approche $a$ \rgm.
+\end{rmk}
+
+\PDFfig{5_derivees/der19}{Approximation linéaire d'une fonction}
+{Distance entre la courbe $y=f(x)$ et la droite tangente
+$y=f(a)+f'(a)(x-a)$ à $x=b$.  La tangente à la courbe $y=f(x)$ au
+point $(a,f(a))$ a une pente de $f'(a)$, le taux de variation
+instantané de $f$ à $x=a$.}{DER19} 
+
+\begin{rmk}
+Une fonction peut ne pas avoir de dérivée en un point.  Prenons la
+fonction $g(x) = |x|$.  La dérivée de $g$ au point $x=0$ n'existe pas.
+Les tableaux suivants donnent deux suites
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tendent vers $0$.
+Dans le premier tableau, les valeurs
+$\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$
+approchent $1$ alors que dans le second tableau, les valeurs
+$\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$ approchent $-1$.
+\[
+\begin{array}{l|l|l}
+\hline
+\rule[-1em]{0ex}{2.7em} n & \displaystyle x_n = \frac{1}{n} &
+\displaystyle \frac{g(x_n)-g(0)}{x_n-0} \\
+\hline
+1 & 1 & 1 \\
+2 & 1/2 & 1 \\
+3 & 1/3 & 1 \\
+\vdots & \vdots & \vdots \\
+10000 & 1/10000 & 1 \\
+\vdots & \vdots & \vdots \\
+\hline
+\end{array}
+\qquad
+\begin{array}{l|l|l}
+\hline
+\rule[-1em]{0ex}{2.7em} n & \displaystyle x_n = -\frac{1}{n} &
+\displaystyle \frac{g(x_n)-g(0)}{x_n-0} \\
+\hline
+1 & -1 & -1 \\
+2 & -1/2 & -1 \\
+3 & -1/3 & -1 \\
+\vdots & \vdots & \vdots \\
+10000 & -1/10000 & -1 \\
+\vdots & \vdots & \vdots \\
+\hline
+\end{array}
+\]
+Nous ne pouvons pas trouver une valeur unique $M$ telle que
+$\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$ approche $M$ pour toute
+suite $x_n$ qui approche $0$ lorsque $n \to \infty$.  Donc
+$\displaystyle \lim_{x\rightarrow 0} \frac{g(x)-g(0)}{x-0}$ n'existe 
+pas, et $g'(0)$ n'existe pas.
+
+De plus, à partir du graphe de $g$ à la figure~\ref{DER7}, nous voyons
+qu'il n'y a pas de droite qui passe par $(0,g(0))=(0,0)$ et qui soit
+indissociable de la courbe $y=g(x)=|x|$ pour $x$ assez près de $0$ où
+$x$ peut être inférieur ou supérieur à $0$.  Nous pouvons satisfaire la
+condition précédente pour $x<0$ ou $x>0$ séparément mais elle ne peut
+pas être satisfaite pour $x<0$ et $x>0$ en même temps.  La droite
+$y=x$ est superposée à la courbe $y=g(x)$ pour $x>0$ mais ne l'est pas
+pour $x<0$.  De même, la droite $y=-x$ est superposée à la courbe
+$y=g(x)$ pour $x<0$ mais ne l'est pas pour $x>0$.  Les autres droites
+qui passent par $(0,0)$ sont clairement distinctes de la courbe
+$y=g(x)$.
+\end{rmk}
+
+\PDFfig{5_derivees/der7}{Une fonction continue qui n'est pas
+différentiable en un point}{Le graphe de $y = g(x) = |x|$.  La
+fonction $g$ n'a pas de dérivée à $x=0$ car il n'y a pas de droite
+qui soit indissociable du graphe de $g$ près de l'origine.}{DER7}
+
+\begin{rmk}
+Il n'est pas nécessaire que le graphe de la fonction ait un \lgm
+coin\rgm\ comme à la remarque précédente pour que la fonction ne soit
+pas différentiable. La fonction $f$ dont le graphe se trouve à la
+figure~\ref{DER24} n'est pas différentiable à $x=a$ car la
+tangente à la courbe $y=f(x)$ au point $(a,f(a))$ est verticale; elle
+a donc une pente infinie.
+\end{rmk}
+
+\PDFfig{5_derivees/der24}{Fonction avec une tangente verticale en un
+point}{La fonction $f$ représentée par le graphe ci-dessus
+n'est pas différentiable à $x=a$ car la tangente à la courbe $y=f(x)$
+au point $(a,f(a))$ est verticale.}{DER24}
+
+\section{Dérivée d'une fonction} \label{deff_der}
+
+À la section précédente, nous avons vu la définition de la dérivée $f'(a)$
+d'une fonction $f$ en un point $a$; c'est-à-dire,
+\[
+f'(a) = \lim_{h\rightarrow 0} \frac{f(a+h)-f(a)}{h}
+\]
+si la limite existe.  Si nous calculons $f'(a)$ pour toutes les valeurs de
+$a$, nous obtenons la fonction qui, pour tout nombre réel $a$, donne la
+valeur $f'(a)$ de la dérivée de $f$ au point $a$.  Cette fonction
+est appelée la {\bfseries dérivée de $f$}.  Comme la tradition veut
+que nous utilisions $x$ comme variable indépendante d'une fonction, nous
+obtenons la définition suivante.
+
+\begin{focus}{\dfn} \index{Dérivée d'une fonction} 
+La {\bfseries dérivée} d'une fonction $f$ est la fonction $f'$ définie
+par
+\[
+f'(x) \equiv \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
+\]
+pour toutes les valeurs de $x$ où la limite existe.  Nous utilisons aussi
+la notation $\displaystyle \dydx{f}{x}$ pour désigner $f'$.
+\end{focus}
+
+Puisque $f'(x)$ est la pente de la tangente au graphe de $f$ au point
+$(x,f(x))$, nous en déduisons les propriétés suivantes.
+
+\begin{focus}{\prp}\label{CDDth}
+Soit $f:]a,b[\rightarrow \RR$ une fonction continue sur l'intervalle
+$]a,b[$.
+\begin{enumerate}
+\item Si $f$ est différentiable sur l'intervalle $]a,b[$ et la dérivée
+est positive en tout point de cet intervalle, alors la fonction $f$
+est strictement croissante sur l'intervalle $]a,b[$.  La
+pente $f'(x)$ de la droite tangente à la courbe $y=f(x)$ au point
+$(x,f(x)$ est positive pour tout $x$ entre $a$ et $b$
+(figure~\ref{DER9}).
+\item Si $f$ est différentiable sur l'intervalle $]a,b[$ et la dérivée
+est négative en tout point de cet intervalle, alors la fonction $f$
+est strictement décroissante sur l'intervalle $]a,b[$.  La pente
+$f'(x)$ de la droite tangente à la courbe $y=f(x)$ au point $(x,f(x)$
+est négative pour tout $x$ entre $a$ et $b$ (figure~\ref{DER10}).
+\item Si $f$ est différentiable sur l'intervalle $]a,b[$ sauf
+possiblement au point $c$, et si $f'(x)>0$ pour $x<c$ près de $c$ et
+$f'(x)<0$ pour $x>c$ près de $c$, alors la fonction $f$ a un maximum
+local à $x = c\in]a,b[$.  La fonction $f$ est strictement croissante
+pour $x<c$ près de $c$ et strictement décroissante pour $x>c$ près de
+$c$ (figure~\ref{DER11}).
+\item Si $f$ est différentiable sur l'intervalle $]a,b[$ sauf
+possiblement au point $c$, et si $f'(x)<0$ pour $x<c$ près de $c$ et
+$f'(x)>0$ pour $x>c$ près de $c$, alors la fonction $f$ a un minimum
+local à $x = c\in]a,b[$.  La fonction $f$ est strictement
+décroissante pour $x<c$ près de $c$ et strictement croissante pour
+$x>c$ près de $c$ (figure~\ref{DER12}).
+\end{enumerate}
+\end{focus}
+
+\PDFfig{5_derivees/der9}{Fonction croissante}
+{$f'(x)>0$ pour $a < x < b$ entraîne que la fonction $f$ est
+strictement croissante pour $a<x<b$.}{DER9}
+
+\PDFfig{5_derivees/der10}{Fonction décroissante}
+{$f'(x)<0$ pour $a < x < b$ entraîne que la fonction $f$ est
+strictement décroissante pour $a<x<b$.}{DER10}
+
+\PDFfig{5_derivees/der11}{Maximum local d'une fonction}
+{La fonction $f$ a un maximum local à $x=c$ car $f'(x)<0$ pour $x>c$ et
+$f'(x)>0$ pour $x<c$.}{DER11}
+
+\PDFfig{5_derivees/der12}{Minimum local d'une fonction}
+{La fonction $f$ a un minimum local à $x=c$ car $f'(x)>0$ pour $x>c$ et
+$f'(x)<0$ pour $x<c$.}{DER12}
+
+\PDFfig{5_derivees/der8}{Une dérivée nulle n'implique pas un extremum}
+{$f'(c)=0$ mais il n'y a pas de minimum ou maximum local à $x=c$.}{DER8}
+
+\begin{egg}
+La fonction $f$ dont le graphe est donné à la figure~\ref{DER1} est
+strictement croissante pour $x<c$ et $x>e$; ce sont les intervalles où
+$f'(x)>0$.  De même, $f$ est strictement décroissante pour $c<x<e$;
+c'est l'intervalle où $f'(x)<0$.  Nous avons un maximum local à $x=c$
+qui est prédit par $f'(x)<0$ pour $x>c$ près de $c$ et $f'(x)>0$ pour
+$x<c$ près de $c$.  Finalement, nous avons un minimum local à $x=e$
+qui est prédit par $f'(x)<0$ pour $x<e$ près de $e$ et $f'(x)>0$ pour
+$x>e$ près de $e$.
+\end{egg}
+
+\begin{rmk}
+Si $f'$ est une fonction continue, puisque $f'$ change de signe à un
+maximum ou un minimum local $c$, nous devons avoir $f'(c)=0$.  Par contre,
+$f'(c)=0$ n'implique pas que nous ayons un maximum ou minimum local
+comme c'est le cas pour la fonction $f$ dont le graphe est donné à la
+figure~\ref{DER8}.
+
+De plus, $f$ peut ne pas avoir de dérivée à un maximum ou minimum
+local comme c'est le cas pour la fonction $f$ dont le graphe est
+donné à la figure~\ref{DER20}.
+
+Nous reviendrons plus en détails sur ce sujet au chapitre sur les
+applications de la dérivée.
+\label{rmk_crpt}
+\end{rmk}
+
+\PDFfig{5_derivees/der20}{Un maximum local sans que la dérivée soit
+nulle}{Il y a un maximum local au point $x=c$ mais la fonction $f$ n'a
+pas de dérivée à ce point.}{DER20}
+
+\begin{egg}
+Le graphe de $f'$ est donné ci-dessous.
+\PDFgraph{5_derivees/der21}
+
+Si nous savons que $f(1) = 3$, nous pouvons dessiner un graphe approximatif de
+$f$ à partir de l'information fournie par le graphe de $f'$.
+
+Entre $1$ et $1.5$, la fonction est strictement croissante car $f'$
+est positive.  Plus précisément, comme $f'$ décroît lorsque $x$
+augmente de $1$ à $1.5$, la pente de $f$ est de moins en moins abrupte
+lorsque $x$ augmente de $1$ à $1.5$ et la fonction $f$ croît donc de
+moins en moins rapidement.
+
+Entre $1.5$ et $5$, la fonction $f$ est strictement décroissante car
+$f'$ est négative.  Plus précisément, comme $f'$ décroît lorsque $x$
+augmente de $1.5$ à $3.5$, la pente de $f$ devient de plus en plus
+abrupte et $f$ décroît donc de plus en plus rapidement lorsque $x$
+augmente de $1.5$ à $3.5$.  Par contre, $f'$ augmente lorsque $x$
+augmente de $3.5$ à $5$.  Ainsi, la pente de $f$ devient de moins en
+moins abrupte et donc $f$ décroît de moins en moins rapidement lorsque
+$x$ augmente de $3.5$ à $5$.
+
+En raisonnant comme nous l'avons fait aux paragraphes précédents, nous
+obtenons que $f$ croît de plus en plus rapidement lorsque $x$ augmente de $5$ à
+$6$, et de moins en moins rapidement lorsque $x$ augmente de $6$ à
+$7$.  Finalement, la fonction $f$ décroît de plus en plus rapidement
+lorsque $x$ augmente de $7$ à $7.5$.
+
+Nous retrouvons ci-dessous un graphe possible pour $f$.
+\PDFgraph{5_derivees/der22}
+\label{exDER21}
+\end{egg}
+
+Le théorème qui suit a généralement peu d'utilité du point de vue
+numérique.  Par contre, il est très utile du point de vue conceptuelle
+comme les exemples qui suivront son énoncé vont démontrer. 
+
+\begin{focus}[][Théorème de la moyenne / Théorème des accroisse\-ments
+ finis]{\thm}\label{MVT}
+\index{Théorème de la moyenne}\index{Théorème des accroissement finis}
+Si $f$ est une fonction continue sur l'intervalle $[a,b]$ et
+différentiable sur l'intervalle $]a,b[$, alors il existe une valeur
+$\xi = \xi(a,b)$ entre $a$ et $b$ telle que
+\[
+f'(\xi) = \frac{f(b)-f(a)}{b-a} \; .
+\]
+Nous insistons sur le fait que $\xi$ dépend de $a$ et $b$ (d'où la
+notation $\xi = \xi(a,b)$\ ) et donc varie si $a$ et $b$
+changent (figure~\ref{APPROX1}). 
+\end{focus}
+
+\PDFfig{5_derivees/approx1}{Une représentation graphique du théorème de
+la moyenne}{Une représentation graphique du théorème de la
+moyenne.  Les deux droites sont parallèles car elles ont la même
+pente.}{APPROX1}
+
+\begin{egg}
+Si un train prend deux heures pour parcourir la distance de $200$ km
+entre Ottawa à Montréal, sa vitesse moyenne est de $100$ km/h.  Alors
+il faut qu'à un moment durant le voyage la vitesse (instantanée) du
+train soit de $100$ km/h.  Si ce n'est pas le cas, cela implique que
+la plus grande vitesse du train durant le voyage a été inférieure à
+$100$ km/h (si nous supposons que le train parte au repos) et donc la
+vitesse moyenne est inférieure à $100$ km/h.
+
+De même, si le taux moyen de croissance d'une population de bactéries
+pour une période de $24$ heures est $1,000$ bactéries par heure,
+alors, à un moment durant la période de $24$ heures, le taux
+de croissance instantané de la population a été de $1,000$ bactéries par
+heure.
+
+Ces deux observations sont deux réalisations concrètes du théorème de
+la moyenne.
+\end{egg}
+
+\begin{rmk}[\theory]
+Le théorème de la moyenne peut être utilisé pour donner une
+démonstration analytique de la proposition~\ref{CDDth}; une
+démonstration qui ne fait pas appel à l'interprétation graphique de la
+dérivée.
+
+Montrons que si $f:]a,b[\rightarrow \RR$ est une fonction telle que
+$f'(x)>0$ pour $x\in]a,b[$ alors $f$ est strictement croissante sur
+l'intervalle $]a,b[$.  Soit $x_1 < x_2$ deux points de l'intervalle
+$]a,b[$.  Le théorème de la moyenne donne $\xi$ entre $x_1$ et $x_2$
+tel que
+\[
+f(x_2)-f(x_1) = f'(\xi)(x_2-x_1) \; .
+\]
+Puisque $\xi \in ]a,b[$, nous avons que $f'(\xi)>0$ et ainsi
+\[
+f(x_2)-f(x_1) = f'(\xi)(x_2-x_1) >0 \ .
+\]
+Donc $f(x_2) > f(x_1)$.
+
+De la même façon, nous pourrions montrer que si $f:]a,b[\rightarrow \RR$
+est une fonction telle que $f'(x)<0$ pour $x\in]a,b[$ alors $f$ est
+strictement décroissante sur l'intervalle $]a,b[$.
+\end{rmk}
+
+Nous verrons très prochainement que la dérivée d'une fonction constante
+est nulle en tout point.  Est-ce que les fonctions constantes sont les
+seules fonctions dont la dérivée est nulle en tout point?  Le théorème
+de la valeur moyenne nous permet de répondre par l'affirmative à cette
+question.  En effet, supposons que $f$ soit une fonction telle que
+$f'(x) = 0$ pour tout $x$.  Si $x_1$ et $x_2$ sont deux points
+distincts quelconques, il existe grâce au théorème de la moyenne un
+point $\xi$ entre $x_1$ et $x_2$ telle que
+\[
+\frac{f(x_2)-f(x_1)}{x_2-x_1} = f'(\xi) \ .
+\]
+Or $f'(\xi)=0$.  Donc $f(x_2)=f(x_1)$.
+
+\subsection{Différentiable implique continue}
+
+Remarquons que la fonction $f$ dont le graphe donnée à la
+figure~\ref{DER23} n'est pas différentiable au point $a$ où elle n'est
+pas continue.  La pente
+des sécantes $\ell_1$, $\ell_2$, $\ell_3$, \ldots approche moins
+l'infini car ces sécantes approchent une droite verticale.  Nous avons donc
+\[
+\lim_{b\rightarrow a+} \frac{f(b)-f(a)}{b-a} = -\infty \; .
+\]
+Il semble donc que les fonctions doivent être continues aux points où
+elles sont différentiables.  Nous allons vérifier que cela est vrai à
+partir de la définition de la dérivée.
+
+\PDFfig{5_derivees/der23}{Une fonction n'est pas différentiable aux
+points où elle n'est pas continue}{Cette fonction n'est pas continue
+à $x=a$ et donc sa dérivée n'existe pas à ce point,}{DER23}
+
+\begin{focus}{\thm}
+Si $f:]a,b[\rightarrow \RR$ est une fonction différentiable au point
+$c\in ]a,b[$, alors $f$ est continue au point $c$.
+\end{focus}
+
+Nous démontrons ce théorème de la façon suivante.  Si la fonction
+$f$ est différentiable au point $c$, nous avons donc que la limite
+\[
+\lim_{z \rightarrow c} \frac{f(z)-f(c)}{z-c}
+\]
+existe et est égale à $f'(c) \in \RR$.  En particulier, $f$ doit être
+définie au point $c$.  Mais alors,
+\begin{align*}
+\lim_{z \rightarrow c} \left( f(z) - f(c) \right)
+&= \lim_{z\rightarrow c} \left(\frac{f(z)-f(c)}{z-c}\right) (z-c) \\
+&= \lim_{z\rightarrow c} \left(\frac{f(z)-f(c)}{z-c}\right)
+\times \lim_{z\rightarrow c} (z-c)
+= f'(c) \times 0 = 0 \; .
+\end{align*}
+Ainsi,
+\[
+\lim_{z\rightarrow c} f(z) = f(c) \; .
+\]
+Ce qui prouve que $f$ est continue au point $c$.
+
+\subsection{Une première application de la dérivée; la vitesse d'un
+  objet}
+
+Soit $x(t)$ la position en kilomètres (km) au temps $t$ en heures (h)
+d'un véhicule se déplaçant en ligne droite.  La vitesse moyenne d'un
+véhicule est donnée par la distance parcourue divisée par le temps
+nécessaire pour couvrir cette distance.  Si la distance est en
+kilomètres et le temps est en heures, la vitesse moyenne est en
+kilomètres par heure (km/h).  La formule pour calculer la vitesse
+moyenne entre $t=a$ heures et $t=b>a$ heures est donnée par
+\[
+\frac{x(b)-x(a)}{b-a} \quad km/h \; .
+\]
+Si $b$ est très près de $a$, alors nous pouvons assumer que la vitesse du
+véhicule entre $t=a$ et $t=b$ heures est (presque) constante et est
+égale à la vitesse moyenne entre $t=a$ et $t=b$.  Si nous laissons $b$
+tendre vers $a$, nous obtenons la vitesse instantanée du véhicule au
+temps $t=a$ heures.  C'est la vitesse du véhicule à précisément $t=a$
+heures.  Donc
+\[
+x'(a) = \lim_{b\rightarrow a} \frac{x(b)-x(a)}{b-a}
+\]
+est la vitesse instantanée en km/h du véhicule à $t=a$ heures.  
+
+\section{Dérivées de quelques fonctions élémentaires}
+\label{basic_der}
+
+Nous avons vu précédemment comment calculer numériquement la dérivée d'une
+fonction en un point.  Malheureusement, pour analyser le comportement
+d'une fonction sur un intervalle donné à l'aide de la dérivée, nous ne
+pouvons pas calculer numériquement la dérivée à tous les points de
+l'intervalle pour déterminer le signe de la dérivée en ces points.  Il
+faut donc chercher des formules qui nous permettront de calculer la
+dérivée d'une fonction rapidement et efficacement.
+
+Nous allons voir dans les prochaines sections qu'il n'est pas
+nécessaire de calculer les dérivées de fonctions polynomiales,
+rationnelles, exponentielles et trigonométriques à partir de la
+définition de la dérivée.  Il existe des formules générales pour
+calculer ces dérivées.
+
+Nous pourrions réduire ce chapitre à une courte section énonçant
+les règles de dérivation sans ou avec le minimum de justifications.
+Le lecteurs n'aurait eu qu'à mémoriser ces règles.  Cependant, cet
+approche n'aurait pas permis au lecteur de développer ses capacités
+de raisonnement logique et mathématique.
+
+Nous avons donc choisi de présenter dans cette section et celles qui
+suivent les règles de dérivation de façon logique et avec le plus de
+rigueur possible sans aller aux extrêmes.  Chaque règle est introduite
+quand et seulement quand les concepts nécessaires pour justifier cette
+règle ont été présentés.  C'est pour cette raison, par exemple, que la
+règle de dérivation pour $f(x) = x^\alpha$ avec $\alpha$ un nombre
+réel quelconque est présentée seulement à la presque toute fin du
+chapitre.   C'est portant une des premières règles de dérivation qui
+est donnée dans le cours de mathématiques de 12$^e$ année au niveau
+secondaire.
+
+\subsection{Dérivée de $\mathbf{f(x) = x^n}$ où $\mathbf n$ est
+un entier positif ou nul}
+
+Quelle est la dérivée de la fonction constante $f$; c'est-à-dire, de
+la fonction définie par $f(x) = c$ pour tout $x$ où $c$ est une
+constante?
+
+Si nous utilisons le fait que la dérivée d'une fonction en un point est la
+pente de la droite tangente au graphe de cette fonction en ce point,
+nous trouvons que $f'(x) = 0$ pour tout $x$ car le graphe de $f$ est une
+droite horizontal et les droites horizontales ont une pente nul.  Nous
+utilisons le fait que la tangente à un droite est la droite elle-même.
+
+Nous pouvons aussi utiliser la définition de la dérivée pour démontrer que
+$f'(x) = 0$ pour tout $x$.  Puisque
+\[
+\frac{f(x+h)-f(x)}{h} = \frac{c-c}{h} = 0
+\]
+quel que soit $h$, nous avons que
+\[
+f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
+= \lim_{h\rightarrow 0} 0 = 0
+\]
+pour tout $x$.  La fonction constante à $0$ approche évidemment $0$
+quand nous approchons l'origine.  Nous obtenons donc la règle suivante.
+
+\begin{focus}{\prp}
+Soit $c$ une constante.  Si $f(x) = c$ pour tout $x$, alors
+$f'(x) = 0$ pour tout $x$.
+\end{focus}
+
+Considérons maintenant la fonction $f$ définie par $f(x) = x$ pour
+tout $x$.  Si nous utilisons
+encore le fait que la dérivée d'une fonction en un point est la pente
+de la droite tangente au graphe de cette fonction en ce point, nous
+trouvons que $f'(x) = 1$ pour tout $x$ car $y = f(x)= x$ est une 
+droite de pente $1$ qui est sa propre tangente en tout point.
+
+Nous pouvons démontrer à partir de la définition de la dérivée que la
+dérivée de $f(x) = x$ est bien $f'(x) = 1$ pour tout $x$.  Pour faire 
+cela, il suffit de remarquer que
+\[
+\frac{f(x+h)-f(x)}{h} = \frac{(x+h)-x}{h} = 1
+\]
+pour tout $h \neq 0$.  Donc
+\[
+\lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} = \lim_{h\rightarrow 0} 1
+= 1 \ .
+\]
+La fonction constante à $1$ sur la droite réelle approche
+évidemment $1$ quand nous approchons l'origine.
+
+Considérons maintenant la fonction $f(x)=x^2$ pour tout $x$.  Dans le
+tableau suivant, nous avons estimé $f'(x)$ pour quelques valeurs de $x$ à
+l'aide du rapport $\displaystyle \frac{f(x+h)-f(x)}{h}$ où
+$h = 0.00001$.
+\[
+\begin{array}{l|l|l}
+\hline
+x & \rule{0em}{1.7em}
+\displaystyle f'(x) \approx \frac{f(x+0.00001)-f(x)}{0.00001}
+& |2x - f'(x)| \\[0.8em]
+\hline
+-1 & -2 & 0 \\
+1 & 2.00001000001\ldots & 0.1000001\ldots \times 10^{-4} \\
+2 & 4.00001000002\ldots & 0.1000002\ldots \times 10^{-4} \\
+\pi & 6.2831953071\ldots & 0.99999\ldots \times 10^{-5} \\
+3.5 & 7.00001000009\ldots & 0.1000009\ldots \times 10^{-4} \\
+\hline
+\end{array}
+\]
+Nous remarquons que $f'(x) \approx 2x$ pour les valeurs de $x$ considérées
+dans le tableau.  Nous pouvons conjecturer que $f'(x) = 2x$ pour tout $x$.
+
+Montrons à partir de la définition de la dérivée que la dérivée de la
+fonction $f(x)=x^2$ est bien $f'(x) = 2x$ pour tout $x$.  Nous avons
+\[
+\frac{f(x+h)-f(x)}{h} = \frac{(x+h)^2 - x^2}{h} = 2x + h
+\]
+qui approche $2x$ lorsque $h$ tend vers $0$.  Donc
+\[
+f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
+= \lim_{h\rightarrow 0}\, (2x+h) = 2 x
+\]
+quel que soit $x$.
+
+Maintenant que nous savons que la dérivée de $f(x)=x^2$ est $f'(x) = 2x$
+pour tout $x$, il est très facile de trouver la pente de la tangente à
+la courbe $y=f(x)$ en un point de cette courbe.  Il n'est plus
+nécessaire de calculer numériquement les pentes des tangentes à l'aide
+de limites de pentes de sécantes.
+
+\begin{egg}
+Trouvons l'équation de la droite tangente à la courbe $y= f(x) = x^2$
+au point $(x,y)=(3,9)$ sur cette courbe.
+
+Nous avons vu que la pente de la tangente à la courbe $y=f(x)$ au point
+$(a,f(a))$ est donnée par $f'(a)$.  Ainsi, la pente de la tangente à la
+courbe $y= f(x) = x^2$ au point $(3,9)$ est $f'(3) = 2\times 3 = 6$.
+
+L'équation de la tangente dans la forme point-pente est donc
+$y-9 = 6 (x-3)$, ce qui donne $y = 6x -9$ dans la forme standard.
+Nous avons tracé le graphe de $y=x^2$ et de sa tangente au point
+$(3,9)$ à la figure~\ref{DER13}.
+\end{egg}
+
+\MATHfig{5_derivees/der13}{8cm}{Tangente au graphe de $y=x^2$ en un point}
+{Graphe de $y=x^2$ et de sa tangente au point $(3,9)$.}{DER13}
+
+En procédant comme nous l'avons fait avec la fonction $f(x) = x^2$,
+nous pouvons montrer que la dérivée de $f(x) = x^3$ est $f'(x) = 3x^2$,
+celle de $f(x)=x^4$ est $f'(x) = 4 x^{3}$, et ainsi de suite.  Nous
+pouvons obtenir un résultat dans le cas général où $f(x) = x^n$ avec
+$n$ un entier positif à l'aide de la formule du binôme.
+
+Puisque
+\[
+(x+h)^n = x^n + n h x^{n-1} + \frac{n(n-1)}{2} h^2 x^{n-2} + \ldots +
+nh^{n-1}x + h^n \quad ,
+\]
+nous avons
+\begin{align*}
+f'(x) &= \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+= \lim_{h\to 0}\frac{(x+h)^n-x^n}{h} \\
+&= \lim_{h\to 0}\frac{1}{h}
+\left( \left(x^n + n h x^{n-1} + \frac{n(n-1)}{2} h^2 x^{n-2} + \ldots +
+nh^{n-1}x + h^n\right)-x^n\right) \\
+&= \lim_{h\to 0}
+\left(n x^{n-1} + 
+\underbrace{\frac{n(n-1)}{2} h x^{n-2}}_{\to 0 \text{ lorsque } h \to 0}
++ \ldots + \underbrace{\;nh^{n-2}x\;}_{\to 0 \text{ lorsque }h \to 0}
++ \underbrace{\quad h^{n-1}\quad }_{\to 0 \text{ lorsque } h\to 0}\right) \\
+&= n x^{n-1}
+\end{align*}
+Nous obtenons la règle suivante.
+
+\begin{focus}{\prp}
+Soit $f(x) = x^n$ pour un entier $n\neq 0$, alors $f'(x) = n x^{n-1}$
+pour les valeurs de $x$ où $x^{n-1}$ est définie.
+\end{focus}
+
+\subsection{Dérivée du sinus et du cosinus \life \eng}
+
+Si $f(x) = \cos(x)$, quel sera $f'(x)$?
+
+Commençons par quelques observations qui nous guideront dans la
+recherche de la dérivée de $f$.  Puisque $f$ est périodique de période
+$2\pi$, alors $f'$ sera aussi périodique de période au plus $2\pi$
+comme nous pouvons le constater à partir du graphe à la
+figure~\ref{DER14}.  Par exemple, la tangente à la courbe $y = f(x)$ au point
+$(\pi/6,\cos(\pi/6)) = (\pi/6,\sqrt{3}/2)$ est parallèle à la tangente
+à cette même courbe au point
+$(13\pi/6,\cos(13\pi/6)) = (13\pi/6,\sqrt{3}/2)$.  Les deux 
+tangentes ont donc la même pente.  Ainsi, $f'(\pi/6) = f'(13\pi/6)$.
+
+\MATHfig{5_derivees/der14}{8cm}{Périodicité de la tangente au graphe de
+$\cos(x)$}{Le graphe de $y=f(x)=\cos(x)$ et de deux de ses tangentes.
+Ces deux tangentes sont parallèles.}{DER14}
+
+De plus, puisque $f(x) = f(2\pi-x)$, le graphe de $f$ est symétrique
+par rapport à l'axe vertical $x=\pi$.  Ainsi, la tangente à la courbe
+$y=f(x)$ au point $(2\pi-a,f(2\pi-a))$ est obtenue de la tangente à la
+courbe $y=f(x)$ au point $(a,f(a))$ par une symétrie par rapport à
+l'axe vertical $x=\pi$ (figure~\ref{DER25}).  En particulier,
+$f'(2\pi-a)=-f'(a)$.
+
+Puisque $f$ a des maximums locaux à $x=2n\pi$ et des minimums locaux à
+$x = (2n-1)\pi$ quel que soit l'entier $n$, nous avons que $f'(n\pi) = 0$ 
+pour tout entier $n$.
+
+\MATHfig{5_derivees/der25}{8cm}{Symétrie de la tangente au graphe de
+$\cos(x)$}{Le graphe de $y=f(x)=\cos(x)$ et de deux de ses tangentes.
+Ces deux tangentes sont symétriques par rapport à l'axe
+$x=\pi$.}{DER25}
+
+À partir du graphe de $f$, nous pouvons supposer que la plus petite pente
+pour les tangentes à la courbe $y=f(x)$ est lorsque $x=(4n+1)\pi/2$ et
+la plus grande pente pour les tangentes de cette même courbe est
+lorsque $x=(4n+3)\pi/2$ quel que soit l'entier $n$.  Cela sera
+démontré plus loin.  Donc $f'$ aura des minimums locaux (tous de même
+valeur) aux points $x=(4n+1)\pi/2$ et des maximums locaux (tous de
+même valeur) aux points $x=(4n+3)\pi/2$ quel que soit l'entier $n$.
+
+Si nous utilisons le fait que $f'(x)$ est la pente de la tangente à la
+courbe $y=f(x)$ au point $(x,f(x))$ sur la courbe, nous pouvons déterminer
+le signe de $f'(x)$ et même estimer la valeur de $f'(x)$ pour prédire
+la forme du graphe de $f'$.  Nous avons tracé un graphe possible pour $f'$ à
+la figure~\ref{DER25X}.
+
+\PDFfig{5_derivees/der25X}{Un graphe possible pour la dérivée du
+cosinus}{Un graphe possible pour la dérivée du cosinus basé sur le
+signe de la pente de la tangente à la courbe $y=f(x) = \cos(x)$.}
+{DER25X}
+
+Dans le tableau~\ref{TAB_COS_P}, nous avons estimé $f'(x)$ pour quelques
+valeurs de $x$ à l'aide du rapport $\displaystyle \frac{f(x+h)-f(x)}{h}$ où
+$h = 0.00001$.
+
+\begin{table}
+{\scriptsize
+\begin{center}
+\begin{tabular}{l|c|c}
+\cline{1-3}
+\rule[-0.7em]{0ex}{2.5em} $x$
+& $\displaystyle f'(x) \approx \frac{f(x+0.00001)-f(x)}{0.00001}$
+& $|-\sin(x)-f'(x)|$ \\[0.8em]
+\cline{1-3}
+$0.000000\ldots$ & $-0.000005\ldots$ & $0.000005\ldots$ \\ 
+$\pi/12 = 0.261799\ldots$ & $-0.258824\ldots$ & $0.000005\ldots$ \\ 
+$\pi/6 = 0.523599\ldots$ & $-0.500004\ldots$ & $0.000004\ldots$ \\ 
+$\pi/4 = 0.785398\ldots$ & $-0.707110\ldots$ & $0.000004\ldots$ \\ 
+$\pi/3 = 1.047198\ldots$ & $-0.866028\ldots$ & $0.000002\ldots$ \\ 
+$5\pi/12 = 1.308997\ldots$ & $-0.965927\ldots$ & $0.000001\ldots$ \\ 
+$\pi/2 = 1.570796\ldots$ & $-1.000000\ldots$ & $0.000000\ldots$ \\ 
+$7\pi/12 = 1.832596\ldots$ & $-0.965925\ldots$ & $0.000001\ldots$ \\ 
+$2\pi/3 = 2.094395\ldots$ & $-0.866023\ldots$ & $0.000003\ldots$ \\ 
+$3\pi/4 = 2.356194\ldots$ & $-0.707103\ldots$ & $0.000004\ldots$ \\ 
+$5\pi/6 = 2.617994\ldots$ & $-0.499996\ldots$ & $0.000004\ldots$ \\ 
+$11\pi/12 = 2.879793\ldots$ & $-0.258814\ldots$ & $0.000005\ldots$ \\ 
+$\pi = 3.141593\ldots$ & $0.000005\ldots$ & $0.000005\ldots$ \\ 
+$13\pi/12 = 3.403392\ldots$ & $0.258824\ldots$ & $0.000005\ldots$ \\ 
+$7\pi/6 = 3.665191\ldots$ & $0.500004\ldots$ & $0.000004\ldots$ \\ 
+$5\pi/4 = 3.926991\ldots$ & $0.707110\ldots$ & $0.000004\ldots$ \\ 
+$4\pi/3 = 4.188790\ldots$ & $0.866028\ldots$ & $0.000002\ldots$ \\ 
+$17\pi/12 = 4.450590\ldots$ & $0.965927\ldots$ & $0.000001\ldots$ \\ 
+$3\pi/2 = 4.712389\ldots$ & $1.000000\ldots$ & $0.000000\ldots$ \\ 
+$19\pi/12 = 4.974188\ldots$ & $0.965925\ldots$ & $0.000001\ldots$ \\ 
+$5\pi/3 = 5.235988\ldots$ & $0.866023\ldots$ & $0.000003\ldots$ \\ 
+$7\pi/4 = 5.497787\ldots$ & $0.707103\ldots$ & $0.000004\ldots$ \\ 
+$11\pi/6 = 5.759587\ldots$ & $0.499996\ldots$ & $0.000004\ldots$ \\ 
+$23\pi/12 = 6.021386\ldots$ & $0.258814\ldots$ & $0.000005\ldots$ \\ 
+$2\pi = 6.283185\ldots$ & $-0.000005\ldots$ & $0.000005\ldots$ \\ 
+\cline{1-3}
+\end{tabular}
+\end{center}
+}
+\caption[Approximations de la dérivée de $f(x) = \cos(x)$ à partir de
+la définition de la dérivées.]{Approximations de la dérivée de $f(x) =
+\cos(x)$ \`a l'aide du rapport $\displaystyle \frac{f(x+h)-f(x)}{h}$
+où $h = 0.00001$ \label{TAB_COS_P}}
+\end{table}
+
+Remarquons que $f'(x) \approx -\sin(x)$ pour les quelques valeurs de $x$
+dans le tableau~\ref{TAB_COS_P}.
+
+Le graphe associé aux données du tableau~\ref{TAB_COS_P} ainsi que le
+graphe de $y=-\sin(x)$ sont donnés à la figure~\ref{DER15}.  Les deux
+graphes sont très semblables.  Pour obtenir un meilleur graphe de $f'$,
+nous suggérons au lecteur d'ajouter plus de points au
+tableau~\ref{TAB_COS_P} et de choisir $h$ plus petit dans
+l'approximation $\displaystyle \frac{f(x+h)-f(x)}{h}$ de $f'(x)$.
+
+\MATHfig{5_derivees/der15}{8cm}{Le graphe de la dérivée de $\cos(x)$}
+{Les approximations de $f'(x)$ où $f(x)=\cos(x)$ qui se retrouvent
+dans le tableau~\ref{TAB_COS_P} sont représentées par des cercles.  La
+courbe pleine est le graphe de $-\sin(x)$.}{DER15}
+
+Nous allons démontrer plus loin qu'il est effectivement vrai que
+$\displaystyle f'(x) = -\sin(x)$.
+
+Si $g(x) = \sin(x)$, nous pourrions procéder comme nous venons de le faire
+pour $f(x)=\cos(x)$ pour montrer numériquement que
+$g'(x) = \cos(x)$.  Cependant, il y a une façon plus simple de
+démontrer cela en assumant que la dérivée de $\cos(x)$ est
+$-\sin(x)$.
+
+Puisque
+\[
+g(x) = \sin(x) = \cos\left(x-\frac{\pi}{2}\right) =
+f\left(x-\frac{\pi}{2}\right) \; ,
+\]
+nous obtenons le graphe de $g$ par une translation de $\pi/2$
+vers la droite du graphe de $f$.  Il s'en suit que les tangentes au
+graphe de $g$ sont obtenues par une translation de $\pi/2$
+vers la droite des tangentes au graphe de $f$, et il en est de même
+pour les pentes de ses tangentes.  Ainsi,
+\[
+g'(x) = f'\left(x - \frac{\pi}{2}\right) =
+-\sin\left(x - \frac{\pi}{2}\right) = \cos(x) \; .
+\]
+Nous pouvons aussi expliquer cette égalité à l'aide de la définition de la
+dérivée.  Pour $a\in \RR$, nous avons
+\begin{align*}
+g'(a) &= \lim_{h\rightarrow 0} \frac{g(a+h)-g(a)}{h}
+= \lim_{h\rightarrow 0} \frac{f\left((a+h)-\frac{\pi}{2}\right) -
+f\left(a-\frac{\pi}{2}\right)}{h} \\
+&= \lim_{h\rightarrow 0} \frac{f\left(\left(a-\frac{\pi}{2}\right) + h \right)
+- f\left(a-\frac{\pi}{2}\right)}{h}
+= f'\left(a-\frac{\pi}{2}\right) \ .
+\end{align*}
+
+En combinant les deux cas précédents nous obtenons les formules suivantes.
+
+\begin{focus}{\prp}
+\[
+\dfdx{\cos(x)}{x} = -\sin(x) \qquad \text{et} \qquad
+\dfdx{\sin(x)}{x} = \cos(x) \; .
+\]
+\end{focus}
+
+Soit $f(x) = \cos(x)$.  Pour démontrer que $f'(x) = -\sin(x)$, il faut
+se rappeler que
+\[
+\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b) \; .
+\]
+Ainsi,
+\begin{align*}
+\frac{\cos(x+h)-\cos(x)}{h}
+&= \frac{\cos(x)\cos(h) - \sin(x)\sin(h) - \cos(x)}{h} \\
+&= \cos(x) \frac{\cos(h)-1}{h} - \sin(x) \frac{\sin{h}}{h} \; .
+\end{align*}
+
+Or, nous avons vu à l'exemple~\ref{R_SINXX} que
+\[
+\lim_{h\rightarrow 0} \frac{\sin(h)}{h} =1 \; .
+\]
+
+De plus,
+\begin{align*}
+\lim_{h\rightarrow 0} \frac{\cos(h)-1}{h}
+&= \lim_{h\rightarrow 0} \left(\frac{\cos(h)-1}{h}\right)
+\left(\frac{\cos(h)+1}{\cos(h)+1}\right)
+= \lim_{h\rightarrow 0}\frac{\cos^2(h)-1}{h(\cos(h)+1)} \\
+&= \lim_{h\rightarrow 0} \frac{-\sin^2(h)}{h(\cos(h)+1)}
+= -\lim_{h\rightarrow 0} \frac{\sin(h)}{h}
+\times \lim_{h\rightarrow 0} \left(\frac{\sin(h)}{\cos(h)+1}\right) \\
+&= - 1 \times 0 = 0
+\end{align*}
+car $\displaystyle \frac{\sin(h)}{\cos(h)+1}$ est une fonction
+continue à $h=0$ et donc
+\[
+\lim_{h\rightarrow 0} \frac{\sin(h)}{\cos(h)+1}=
+\frac{\sin(0)}{\cos(0)+1} = \frac{0}{2} = 0 \; .
+\]
+
+En conclusion,
+\begin{align*}
+f'(x) &= \lim_{h\rightarrow 0} \frac{\cos(x+h)-\cos(x)}{h} =
+\cos(x) \lim_{h\rightarrow 0}  \frac{\cos(h)-1}{h} 
+- \sin(x) \lim_{h\rightarrow 0} \frac{\sin{h}}{h} \\
+&= \cos(x) \times 0 - \sin(x) \times 1 = -\sin(x)
+\end{align*}
+quel que soit $x$.
+
+\section{Règles de dérivation}
+
+Quelle est la dérivée de $x^{10}+5x^3+4$, de $x \cos(x)$, de
+$\cos(x^2)$, etc?  Il n'est pas raisonnable de chercher
+systématiquement la dérivée de chaque fonction comme nous l'avons fait à la
+section précédente.  Il y a des règles de dérivation qui nous
+permettront de calculer la dérivée d'un grand nombre de fonctions sans
+avoir à utiliser la définition de la dérivée comme nous l'avons fait
+pour les fonctions de la section précédente.
+
+\subsection{Dérivée d'une fonction multipliée par une constante}
+
+\begin{egg}
+Soit $x(t)$ le nombre de bactéries au temps $t$ en heures dans une
+culture A et $y(t)$ le nombre de bactéries au temps $t$ en heures dans
+une culture B.  Si nous avons deux bactéries de la culture A pour chaque
+bactérie de la culture B en tout temps, alors pour chaque bactérie
+qui s'ajoute à la culture B, deux bactéries doivent s'ajouter à la
+culture A pour préserver le rapport de $2$ pour $1$.  Par exemple, si
+pendant une période de deux heures, le nombre de bactéries de la
+culture B augmente de $10,000$ à $11,000$ alors le nombre de bactéries
+de la culture A doit augmenter de $20,000$ à $22,000$ pour préserver
+le rapport de $2$ pour $1$.  Le taux de croissance de la culture A est
+donc deux fois celui de la culture B.
+
+Mathématiquement, si $x(t) = 2 y(t)$ pour tout $t$ alors
+$x'(t) = 2 y'(t)$ pour tout $t$ car $x'(t)$ et $y'(t)$ sont les taux
+de croissance (taux de variation instantanée) au temps $t$ pour les
+cultures A et B respectivement.
+\end{egg}
+
+L'exemple précédent suggère la règle suivante.
+
+\begin{focus}{\thm}
+Si $f:]a,b[\rightarrow \RR$ et $g:]a,b[\rightarrow \RR$ sont deux fonctions
+différentiables et $f = c g$ où $c$ est une constante, alors
+\[
+f'(x) = c g'(x)
+\]
+pour tout $x \in ]a,b[$.
+\end{focus}
+
+Vérifions à partir de la définition de la dérivée que la règle
+précédente est vrai.  Si $f(x) = c g(x)$ pour tout $x\in]a,b[$, alors
+\[
+\frac{f(x+h)-f(x)}{h} = \frac{c g(x+h) - c g(x)}{h}
+= c\; \frac{g(x+h)- g(x)}{h} \; .
+\]
+Ainsi,
+\[
+f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} =
+c \; \lim_{h\rightarrow 0} \frac{g(x+h)- g(x)}{h} = c g'(x)
+\]
+pour tout $x\in]a,b[$.
+
+\begin{egg}
+Cette règle nous permet donc de calculer les dérivées suivantes.
+\begin{align*}
+\dfdx{\big(5x^7\big)}{x} &= 5 \dfdx{\big(x^7\big)}{x}
+= 5 ( 7 x^6) = 35 x^6
+\intertext{et}
+\dfdx{\big(7 \cos(x)\big)}{x} &= 7 \dfdx{\big(\cos(x)\big)}{x}
+= 7 ( -\sin(x)) = -7
+\sin(x)
+\end{align*}
+\end{egg}
+
+\subsection{Dérivée d'une somme de fonctions}
+
+\PDFfig{5_derivees/train}{Distance parcourue par un passager de train}
+{Distance parcourue par un passager de train qui roule en ligne
+droite.}{TRAIN} 
+
+\begin{egg}
+Un train se déplace en ligne droite (figure~\ref{TRAIN}).  Si
+$x(t)$ est la distance au temps $t$ entre la queue du train et le
+début du trajet, la vitesse du train (taux de variation instantané de
+sa position) au temps $t$ est donnée par $x'(t)$.
+
+Si $y(t)$ est la distance entre un passager et la queue du train au
+temps $t$, alors la vitesse du passager par rapport au train au temps
+$t$ est $y'(t)$.  Comme le passager passe normalement la majorité de
+son temps assis, nous avons que $y(t)$ est constant et donc $y'(t) = 0$ pour
+de long intervalles.  De plus, $y'(t)$ sera plus grand que $0$ si la
+personne se déplace vers l'avant du train et plus petit que $0$ si la
+personne se déplace vers l'arrière du train.
+
+La distance au temps $t$ entre le passager et le début du trajet est
+$z(t) = x(t) + y(t)$, la somme de la distance entre le début du trajet
+et la queue du train, et de la distance entre la queue du train et la
+position du passager dans le train.
+
+Si, $30$ minutes (i.e. $0.5$ heure) après le début du trajet, le train
+se déplace à une vitesse de $130$ km/heure et le passager se déplace 
+vers l'avant du train par rapport au train à une vitesse de $3$
+km/heure, alors la vitesse du passager par rapport au début du trajet
+en ligne droite est de $133$ km/heure.
+
+Mathématiquement, ce que nous venons de dire est que
+$z'(0.5) = 133 = 130 + 3 = x'(0.5) + y'(0.5)$.
+\end{egg}
+
+L'exemple précédent suggère la règle suivante pour la dérivée.
+
+\begin{focus}{\thm}
+Si $f:]a,b[\rightarrow \RR$ et $g:]a,b[\rightarrow \RR$ sont deux
+fonctions différentiables et $q:]a,b[\rightarrow \RR$ est définie par
+$q=f+g$, alors
+\[
+q'(x) = f'(x) + g'(x)
+\]
+pour tout $x\in ]a,b[$.
+\end{focus}
+
+Vérifions à partir de la définition de la dérivée que la règle
+précédente est vraie.  Par définition de la dérivée de $q$,
+\[
+q'(x) = \lim_{h\rightarrow 0} \frac{q(x+h)-q(x)}{h} \; .
+\]
+Or,
+\begin{align*}
+\frac{q(x+h)-q(x)}{h} &= \frac{f(x+h)+g(x+h) - f(x) - g(x)}{h} \\
+&= \frac{f(x+h)- f(x)}{h} + \frac{g(x+h) - g(x)}{h} \; .
+\end{align*}
+Puisque
+\[
+\lim_{h\rightarrow 0} \frac{f(x+h)- f(x)}{h} = f'(x)
+\quad \text{et} \quad
+\lim_{h\rightarrow 0} \frac{g(x+h)- g(x)}{h} = g'(x) \; ,
+\]
+nous avons
+\begin{align*}
+q'(x) &= \lim_{h\rightarrow 0} \frac{q(x+h)-q(x)}{h} \\
+&= \lim_{h\rightarrow 0} \frac{f(x+h)- f(x)}{h}  + 
+\lim_{h\rightarrow 0} \frac{g(x+h)- g(x)}{h} = f'(x) + g'(x) \; .
+\end{align*}
+
+\begin{egg}
+Soit $p(x) = 5x^{10} + 3x^4 + 2x^2 +7$, alors
+\begin{align*}
+\dfdx{p(x)}{x} &= \dfdx{\big(5x^{10}\big)}{x}
++ \dfdx{\big(3x^4\big)}{x} + \dfdx{\big(2x^2\big)}{x}
++ \dfdx{\big(7\big)}{x} \\
+&= 5\dfdx{\big(x^{10}\big)}{x} + 3\dfdx{\big(x^4\big)}{x}
++ 2\dfdx{\big(x^2\big)}{x} + \dfdx{\big(7\big)}{x} \\
+&= 5(10x^9) + 3(4x^3) + 2(2x) + 0 = 50x^9 + 12x^3 + 4x
+\end{align*}
+où la règle pour calculer la dérivée de $x^n$ a été utilisée.
+\end{egg}
+
+\begin{egg}
+Pour trouver l'équation de la droite tangente à la courbe
+$y = p(x) = 3x^{10} + 5x^4$ lorsque $x=1$, il faut trouver la pente de
+la tangente à la courbe $y=p(x)$ au point $(1,p(1)) = (1,8)$.  Cette
+pente est donnée par $p'(1)$.  Or
+\[
+p'(x) = \dfdx{\big(3x^{10}\big)}{x} + \dfdx{\big(5x^4\big)}{x}
+= 3 \dfdx{\big(x^{10}\big)}{x} + 5\dfdx{\big(x^4\big)}{x}
+= 3 (10x^9) + 5 (4x^3) = 30x^9 + 20x^3 \; .
+\]
+Donc $p'(1) = 50$.  L'équation de la tangente dans la forme
+point-pente est $y - 8 = 50 (x - 1)$, ce qui donne $y = 50x -42$. 
+\end{egg}
+
+\subsection{Dérivée du produit de fonctions}
+
+\begin{egg}
+Supposons que la longueur des côtés d'un rectangle varient en fonction
+du temps.  Soit $x(t)$ la longueur de la base du rectangle en mètres
+au temps $t$ en secondes, et soit $y(t)$ la longueur de la hauteur du
+rectangle en mètres au temps $t$ en secondes.  L'aire $A(t)$ du
+rectangle en mètres carrés au temps $t$ en secondes est donc
+$A(t) = x(t) y(t)$ m$^2$.
+
+Si la longueur de la base augmente à une vitesse constante de $2$ m/s
+et la longueur de la hauteur augmente à une vitesse constante de $3$
+m/s, quel sera le taux de croissance instantané de l'aire du rectangle
+en m$^2$/s?
+
+Nous avons que $x'(t) = 2$ m/s et $y'(t) = 3$ m/s pour tout $t$.  Si la
+longueur initiale de la base est de $10$ m et la longueur initiale de
+la hauteur est de $11$ m, alors la longueur de la base augmente de
+$10$ à $12$ m et la longueur de la hauteur augmente $11$ à $14$ m en
+une seconde.  L'aire du rectangle augmente donc de
+$10\times 11 =110$ m$^2$ à $12\times 14=168$ m$^2$ en une seconde, une
+augmentation moyenne de $58$ m$^2$/s.
+
+Est-ce que $A'(t) = 58$ m$^2$/s pour tout $t$?  En particulier, est-ce
+que la vitesse de croissance de l'aire du rectangle est constante par
+rapport au temps?
+
+Toujours en supposant que la longueur initiale de la base soit de $10$
+m et celle de la hauteur soit de $11$ m, après $2$ secondes la
+longueur de la base est de $14$ m et celle de la hauteur est de $17$
+m.  L'aire du rectangle augmente donc de $10\times 11 = 110$ m$^2$ à
+$14\times 17 = 238$ m$^2$ en deux secondes.  Ce qui donne une
+augmentation moyenne de $64$ m$^2$/s.  Nous ne pouvons donc pas avoir
+$A'(t) = 58$ m$^2$/s pour tout $t$.
+
+Comment pouvons-nous calculer $A'(t)$ à l'aide $x'(t)$ et $y'(t)$?  En
+fait, pouvons-nous calculer $A'(t)$ à l'aide $x'(t)$ et $y'(t)$?
+
+Il est clair que la formule $A'(t) = x'(t) y'(t)$ est
+{\bfseries fausse}.  Les calculs précédents montrent que le taux de
+croissance instantané de l'aire du rectangle varie avec le temps, ce
+qui n'est pas le cas pour le produit $x'(t)y'(t)$ qui est égal à $6$
+pour tout $t$.  En fait, une étude des unités utilisées montre que
+cette formule n'a pas de sens.  Puisque les unités de $x'(t)$ et de
+$y'(t)$ sont des m/s, les unités de $x'(t) y'(s)$ sont des m$^2$/s$^2$
+et non des m$^2$/s comme nous devons avoir pour $A'(t)$.
+
+Considérons la variation de l'aire sur un très petit intervalle de
+temps $\Delta t$.  Durant cet petit intervalle de temps, la longueur
+de la base augmente de $x$ à $x+\Delta x$ mètres et la longueur de la
+hauteur augmente de $y$ à $y+\Delta y$ mètres (figure~\ref{CARRE}).
+L'aire du rectangle augmente donc de $xy$ à
+\[
+(x+ \Delta x)(y + \Delta y) = x y+ x \Delta y +y \Delta x + \Delta x
+\Delta y \; .
+\]
+Lorsque $\Delta t$ approche $0$, nous avons que
+$\Delta x \Delta y / \Delta t$ converge vers $0$ car
+\[
+\frac{\Delta x \Delta y}{\Delta t} =
+\Delta x \; \frac{\Delta y}{\Delta t}
+\]
+ou $\Delta x$ converge vers $0$ et $\Delta y/\Delta t$
+converge vers $y'$ lorsque $\Delta t$ approche $0$.  Ainsi,
+\[
+\frac{\Delta A}{\Delta t} =
+\frac{(x+ \Delta x)(y + \Delta y)-xy}{\Delta t}
+= x \frac{\Delta y}{\Delta t} + y \frac{\Delta x}{\Delta y} 
++ \frac{\Delta x \Delta y}{\Delta t} \to x y' + y x'
+\]
+lorsque $\Delta t$ approche $0$.
+\end{egg}
+
+\PDFfig{5_derivees/carre}{L'aire d'un rectangle dont les dimensions
+varient avec le temps}{L'aire du rectangle augmente de $xy$ à
+$(x+\Delta x)(y+\Delta y) = xy + x\,\Delta y+y\,\Delta x+\Delta x\,\Delta y$.}
+{CARRE}
+
+La formule obtenue à l'exemple précédant suggère donc le résultat suivant.
+
+\begin{focus}{\thm}
+Si $f:]a,b[\rightarrow \RR$ et $g:]a,b[\rightarrow \RR$ sont deux
+fonctions différentiables et $q:]a,b[\rightarrow \RR$ est définie par
+$q = fg$, alors
+\[
+q'(x) = f'(x) g(x) + f(x) g'(x)
+\]
+pour tout $x\in ]a,b[$.
+\end{focus}
+
+Posons $q(x) = f(x) g(x)$ pour tout $x$.  Par définition de la
+dérivée,
+\[
+q'(x) = \lim_{h\rightarrow 0} \frac{q(x+h)-q(x)}{h} \; .
+\]
+Or,
+\begin{align*}
+\frac{q(x+h)-q(x)}{h} &= \frac{f(x+h)g(x+h) - f(x)g(x)}{h} \\
+&= \frac{f(x+h)g(x+h) - f(x)g(x+h) + f(x)g(x+h) - f(x)g(x)}{h} \\
+&= \left(\frac{f(x+h) - f(x)}{h}\right) g(x+h)
++f(x) \left( \frac{g(x+h) - g(x)}{h} \right) \; .
+\end{align*}
+Comme $g$ est différentiable au point $x$ par hypothèse, $g$ est
+continue au point $x$.  Ainsi,
+\[
+\lim_{h\rightarrow 0} g(x+h) = g(x) \;.
+\]
+De plus,
+\[
+\lim_{h\rightarrow 0} \frac{f(x+h) - f(x)}{h} = f'(x)
+\quad \text{et} \quad
+\lim_{h\rightarrow 0} \frac{g(x+h) - g(x)}{h} = g'(x)
+\]
+car $f$ et $g$ sont différentiables au point $x$ par hypothèse.  Nous avons
+donc
+\begin{align*}
+q'(x) &= \lim_{h\rightarrow 0} \frac{q(x+h)-q(x)}{h} \\
+&= \left( \lim_{h\rightarrow 0} \frac{f(x+h) - f(x)}{h} \right)
+\left( \lim_{h\rightarrow 0} g(x+h) \right)
++ f(x) \left( \lim_{h\rightarrow 0} \frac{g(x+h) - g(x)}{h} \right) \\
+&=f'(x) g(x) + f(x) g'(x) \; .
+\end{align*}
+Ce qui démontre la formule pour la dérivée du produit de deux
+fonctions.
+
+\begin{egg}
+Retournons à l'exemple précédent où nous devions déterminer le taux de
+croissance instantané de l'aire d'un rectangle dont la longueur des
+côtés varie en fonction du temps.  Notre formule pour la dérivée du
+produit de fonctions donne donc
+\[
+A'(t) = x'(t) y(t) + x(t) y'(t) = 2 y(t) + 3 x(t) \quad \text{m$^2$/s}
+\; .
+\]
+Nous observons que le taux de croissance instantané de l'aire du rectangle
+n'est pas constant par rapport au temps même si les taux de croissance
+instantanés des longueurs des côtés sont constants.  Par exemple, le
+taux de croissance instantané au début (à $t=0$) est
+\[
+A'(0) = x'(0) y(0) + x(0) y'(0) = 2 \times 11 + 3 \times 10
+= 52 \quad \text{m$^2$/s}
+\]
+et celui à $t=1$ est
+\[
+A'(1) = x'(1) y(1) + x(1) y'(1) = 2 \times 14 + 3 \times 12
+= 64 \quad \text{m$^2$/s} \; .
+\]
+
+Si nous étudions les unités utilisées, nous obtenons de la formule
+$A'(t) = x'(t) y(t) + x(t) y'(t)$ que les unités de $A'(t)$ sont des
+m/s $\times$ m + m $\times$ m/s = m$^2$/s comme il se doit.
+\end{egg}
+
+\begin{egg}
+Soit $q(x) = (x^3+2x)\sin(x)$.  La fonction $q$ est le produit des
+fonctions $f(x) = x^3+2x$ et $g(x) = \sin(x)$.  Ainsi,
+\[
+q'(x) = f'(x) g(x) + f(x) g'(x) = (3x^2 +2)\sin(x) + (x^3+2x)\cos(x)
+\; .
+\]
+\end{egg}
+
+\subsection{Dérivée du quotient de fonctions}
+
+Quelle est la dérivée de $g(x) = p(x) / q(x)$?  En multipliant par
+$q(x)$ des deux côtés, nous obtenons $g(x) q(x) = p(x)$.  Maintenant, en
+dérivant des deux côtés, nous obtenons
+\begin{align*}
+g'(x) q(x) + g(x) q'(x) = p'(x)
+&\Leftrightarrow g'(x) q(x) = p'(x) - g(x) q'(x) \\
+&\Leftrightarrow g'(x) = \frac{p'(x)}{q(x)} - \frac{g(x) q'(x)}{q(x)} \; .
+\end{align*}
+Or $g(x) = p(x) / q(x)$, donc
+\[
+g'(x) = \frac{p'(x)}{q(x)} - \frac{p(x) q'(x)}{q^2(x)}
+= \frac{p'(x) q(x) - p(x) q'(x)}{q^2(x)} \; .
+\]
+
+Cette formule pour calculer la dérivée du quotient de deux fonctions
+mérite d'être mise en évidence car elle est utile.
+
+\begin{focus}{\prp} \index{règle de dérivée du quotient}
+Soit $p:]a,b[\to \RR$ et $q:]a,b[\to \RR$ deux fonctions
+différentiables.  Si $q(x) \neq 0$ pour $a<x<b$, alors
+\[
+\dfdx{\left(\frac{p(x)}{q(x)}\right)}{x}
+= \frac{p'(x) q(x) - p(x) q'(x)}{q^2(x)}
+\]
+Cette formule est appelée la {\bfseries règle de dérivée du
+quotient} de deux fonctions.
+\end{focus}
+
+\begin{egg}
+Calculons la dérivée de $g(x) = (x^3+2)/(x^2+5x)$.
+
+Il suffit d'appliquer la règle de dérivée du quotient de deux
+fonctions ci-dessus avec $p(x) = x^3+2$ et $q(x) = x^2+5x$.  Ainsi,
+\[
+g'(x) = \frac{p'(x) q(x) - p(x) q'(x)}{q^2(x)}
+= \frac{(3x^2)(x^2+5x) - (x^3+2)(2x+5)}{(x^2+5x)^2} \; .
+\]
+\end{egg}
+
+\begin{egg}
+Calculons la dérivée de $\tan(x)$.
+
+Puisque $\tan(x) = \sin(x) / \cos(x)$, nous pouvons utiliser la règle de la
+dérivée du quotient de deux fonctions ci-haut avec
+$p(x) = \sin(x)$ et $q(x) = \cos(x)$.  Ainsi,
+\begin{align*}
+\dfdx{\tan(x)}{x} &= \frac{\left(\displaystyle \dfdx{\sin(x)}{x}\right) \cos(x)
+- \sin(x) \left(\displaystyle \dfdx{\cos(x)}{x}\right)}{\cos^2(x)} \\
+&= \frac{ \cos^2(x) + \sin^2(x)}{\cos^2(x)}
+= \frac{1}{\cos^2(x)}
+= \left(\frac{1}{\cos(x)}\right)^2 = \sec^2(x)
+\end{align*}
+où nous avons utilisé l'identité $\cos^2(x) + \sin^2(x) = 1$.
+\end{egg}
+
+En procédant de la même façon que dans l'exemple précédent, nous
+obtenons le résultat suivant.
+
+\begin{focus}{\prp}
+\[
+\dfdx{\tan(x)}{x} = \sec^2(x) \ ,
+\quad \dfdx{\cot(x)}{x} = -\csc^2(x) \ ,
+\quad \dfdx{\sec(x)}{x} = \tan(x) \sec(x)
+\]
+et
+\[
+\dfdx{\csc(x)}{x} = -\cot(x) \csc(x) \; .
+\]
+\end{focus}
+
+\subsection{Dérivée de fonctions composées}
+
+\begin{egg}
+Nous étudions les populations d'ours et de poissons le long d'une section
+de $1$ kilomètre d'une rivière du nord de l'Ontario.
+
+Nous estimons que le nombre de poissons augmente de $147$ lorsque la
+température de l'eau de la rivière augmente de $2^\circ$C et que le
+nombre d'ours augmente de $2$ lorsque le nombre de poissons augmente
+de $49$.  Nous pouvons donc dire que le nombre d'ours augmente de $3$
+lorsque la température de l'eau augmente de $1^\circ$C car une
+augmentation de $2^\circ$C entraîne une augmentation de $147$ poissons
+qui entraîne un augmentation de $6$ ours ($2$ ours par tranche de $49$
+poissons).
+
+Essayons de reformuler le raisonnement du paragraphe précédent en
+termes mathématiques.  Si $P(T)$ est le nombre de poissons lorsque la
+température de l'eau est de $T^\circ$C et $N(P)$ est le nombre d'ours
+lorsqu'il y a $P$ poissons, alors le nombre d'ours en fonction de la
+température $T$ en degrés centigrades de l'eau est donné par
+$B(T) = (N\circ P)(T) = N(P(T))$.   Nous avons que $P'(T) = 147/2$
+poissons/degré et $N'(P) = 2/49$ ours/poisson.  L'énoncé du paragraphe
+précédent se traduit donc par la formule mathématique
+\[
+B'(T) = N'(P(T)) P'(T) = \frac{2}{49} \times \frac{147}{2} = 3
+\quad \text{ours/degré} .
+\]
+En d'autres mots, le taux de croissance du nombre d'ours par rapport à
+la température de l'eau est le produit du taux de croissance du nombre
+d'ours par rapport au nombre de poissons ($2/49$ ours/poisson) et du
+taux de croissance du nombre de poissons par rapport à la température
+de l'eau ($149/2$ poissons/degré).
+
+La formule $B'(T) = N'(P(T)) P'(T)$ est cohérente avec les
+unités utilisées.  Les unités de $P'(T)$ sont des poissons/degré et
+les unités de $N'(P(T))$ sont des ours/poisson.  Il n'est donc pas 
+surprenant que les unités de $B'(T) = N'(P(T)) P'(T)$ soient
+des ours/degré.
+\end{egg}
+
+L'exemple précédent suggère la règle suivante.
+
+\begin{focus}{\thm}
+Soit $f:]c,d[\rightarrow\RR$ et $g:]a,b[\rightarrow \RR$ deux
+fonctions différentiables telles que $g(x) \in ]c,d[$ pour tout
+$x\in]a,b[$.  La dérivée de la fonction $q:]a,b[\rightarrow \RR$
+définie par $q = f \circ g$ est
+\[
+q'(x) = f'(g(x)) g'(x) \; .
+\]
+\end{focus}
+
+Vérifions que cette règle est vraie à partir de la définition de la
+dérivée.  Par définition de la dérivée,
+\[
+q'(x) = \lim_{h\rightarrow 0} \frac{q(x+h)-q(x)}{h} \; .
+\]
+Le quotient dans la limite précédente peut s'écrire
+\begin{align*}
+\frac{q(x+h)-q(x)}{h} &= \frac{f(g(x+h)) - f(g(x))}{h} \\
+&= \left( \frac{f(g(x+h)) - f(g(x))}{g(x+h)-g(x)} \right)
+\left( \frac{g(x+h)-g(x)}{h} \right) \; .
+\end{align*}
+Nous allons calculer la limite lorsque $h$ tend vers $0$ pour chacun
+des facteurs de l'expression précédente.  Pour le deuxième facteur, nous
+remarquons que
+\[
+\lim_{h\rightarrow 0} \frac{g(x+h)-g(x)}{h} = g'(x)
+\]
+car $g$ est différentiable par hypothèse.  Pour le premier facteur,
+nous remarquons premièrement que
+\[
+\lim_{h\rightarrow 0} g(x+h) = g(x)
+\]
+car $g$ est une fonction différentiable, donc continue, sur
+l'intervalle $]a,b[$.  Puisque $f$ est différentiable sur l'intervalle
+$]c,d[$ et $g(x) \in ]c,d[$, nous avons
+\[
+f'(g(x))=\lim_{b\rightarrow g(x)} \frac{f(b) - f(g(x))}{b-g(x)} \; .
+\]
+Nous en déduisons que
+\[
+\frac{f(g(x+h)) - f(g(x))}{g(x+h)-g(x)} \to f'(g(x))
+\]
+lorsque $h \to 0$ car $g(x+h) \to g(x)$ lorsque $h \to 0$.
+C'est-à-dire,
+\[
+\lim_{h\rightarrow 0} \frac{f(g(x +h) - f(g(x))}{g(x+h) - g(x)}
+= f'(g(x)) \; .
+\]
+En conclusion,
+\begin{align*}
+q'(x) &= \lim_{h\rightarrow 0} \frac{q(x+h)-q(x)}{h}
+= \left(\lim_{h\rightarrow 0} \frac{f(g(x+h)) - f(g(x))}{g(x+h)-g(x)}\right)
+\left(\lim_{h\rightarrow 0} \frac{g(x+h)-g(x)}{h}\right) \\
+&= f'(g(x)) g'(x) \; .
+\end{align*}
+
+\begin{rmk}[\theory]
+Soit $x \in ]a,b[$ arbitraire mais fixe.  Pour démontrer que
+\begin{equation}\label{derComp}
+\lim_{h\rightarrow 0} \frac{f(g(x +h) - f(g(x))}{g(x+h) - g(x)}
+= f'(g(x)) \; .
+\end{equation}
+à l'aide de la définition de limite en termes de $\epsilon$ et
+$\delta$, nous choisissons $\epsilon >0$.  Puisque
+\[
+f'(g(x))=\lim_{b\rightarrow g(x)} \frac{f(b) - f(g(x))}{b-g(x)}
+\]
+pour $g(x) \in ]c,d[$, il existe $\delta_1 >0$ tel que
+\[
+\left| \frac{f(b) - f(g(x))}{b-g(x)} - f'(g(x))\right| < \epsilon
+\]
+pour $|b-g(x)| < \delta_1$.   De plus, puisque $g$ est continue
+à $x \in ]a,b[$, il existe $\delta$ tel que
+$|g(x+h) - g(x)| < \delta_1$ pour $|h|< \delta$.  Donc, pour
+$|h|<\delta$, nous avons
+\[
+\left| \frac{f(g(x+h)) - f(g(x))}{g(x+h)-g(x)} - f'(g(x))\right|
+< \epsilon
+\]
+Puisque $\epsilon$ est arbitraire, nous obtenons (\ref{derComp}).
+\end{rmk}
+
+\begin{egg}
+Calculons la dérivée de $q(x) = (1+x^2)^{101}$.
+
+Il faut remarquer que
+$q = f\circ g$ où $g(x) = 1 + x^2$ et $f(y) = y^{101}$.  Puisque
+$g'(x) = 2x$ et $f'(y) = 101 y^{100}$, nous trouvons que
+\[
+q'(x) = f'(g(x)) g'(x) = 101 (1+x^2)^{100} \times 2 x
+= 202 x (1+x^2)^{100} \; .
+\]
+\end{egg}
+
+\begin{egg}
+Calculons la dérivée de $q(x) = \cos(1-x^5)$.
+
+Il faut remarquer que
+$q = f\circ g$ où $g(x) = 1-x^5$ et $f(y) = \cos(y)$.  Puisque
+$g'(x) = -5x^4$ et $f'(y) = -\sin(y)$, nous trouvons que
+\[
+q'(x) = f'(g(x)) g'(x) = -\sin(1+x^5) \times (-5x^4)
+= 5x^4 \sin(1+x^5) \; .
+\]
+\end{egg}
+
+\begin{egg}
+Nous pouvons utiliser la dérivée de fonctions composées pour obtenir la
+formule de dérivation d'un quotient de fonctions.  Soit
+$g(x) = p(x) / q(x)$?  La fonction $g$ est le produit des fonctions
+$p$ et $r \circ q$ où $r(y) = y^{-1}$.  La règle pour la dérivée du
+produit de fonctions donne
+\[
+g'(x) = p'(x)\; r(q(x)) + p(x)
+\left(\dfdx{r(q(x))}{x}\right) \; .
+\]
+Or,
+\[
+\dfdx{r(q(x))}{x} = r'(q(x)) q'(x) = - (q(x))^{-2} q'(x)
+\]
+car $r'(y) = -y^{-2}$.  Nous avons donc
+\[
+g'(x) = p'(x) (q(x))^{-1} - p(x) (q(x))^{-2} q'(x)
+= \frac{p'(x) q(x) - p(x) q'(x)}{q^2(x)} \; .
+\]
+\end{egg}
+
+\begin{egg}
+Calculons la dérivée de $g(x) = (x^3+2)/(x^2+5x)$ sans utiliser la
+règle de dérivation du quotient de deux fonctions.
+
+Nous avons que $g(x) = p(x) r(q(x))$ où $p(x) = x^3+2$, $q(x) = x^2+5x$ et
+$r(y) = y^{-1}$.  Donc
+\begin{align*}
+g'(x) &= p'(x) r(q(x)) + p(x) r'(q(x)) q'(x) \\
+&= (3x^2)(x^2+5x)^{-1} + (x^3+2) \left( -(x^2+5x)^{-2}\right) (2x + 5)\\
+&= \frac{(3x^2)(x^2+5x) - (x^3 + 2)(2x-5)}{(x^2+5x)^2} \; .
+\end{align*}
+Pour obtenir la première égalité, nous avons utilisé la règle pour la
+dérivée du produit de fonctions et celle pour la dérivée des fonctions
+composées.
+\end{egg}
+
+\section{Encore plus de dérivées de fonctions élémentaires}
+
+Avec nos connaissances des règles de dérivation, nous pouvons maintenant
+développer des formules pour calculer la dérivée de fonctions
+exponentielles et logarithmiques.
+
+\subsection{Dérivée de $\mathbf{f(x) = b^x}$}\label{SECT_B_EXP}
+
+\begin{table}[t]
+{\scriptsize
+\begin{center}
+\begin{tabular}{r|c|ccr|c|c}
+\cline{1-3} \cline{5-7}
+\rule[-0.7em]{0ex}{2.5em}
+$x$ & $\displaystyle f'(x) \approx \frac{f(x+h)-f(x)}{h}$ & $f'(x)/3^x$ &
+\qquad \qquad &
+$x$ & $\displaystyle f'(x) \approx \frac{f(x+h)-f(x)}{h}$ & $f'(x)/2^x$
+\\[0.8em]
+\cline{1-3} \cline{5-7}
+$-2.00$ & $0.122069\ldots$ & $1.098618\ldots$ && $-2.00$ & $0.173287\ldots$ & $0.693150\ldots$ \\
+$-1.84$ & $0.145527\ldots$ & $1.098618\ldots$ && $-1.84$ & $0.193612\ldots$ & $0.693150\ldots$ \\  
+$-1.68$ & $0.173493\ldots$ & $1.098618\ldots$ && $-1.68$ & $0.216320\ldots$ & $0.693150\ldots$ \\ 
+$-1.52$ & $0.206834\ldots$ & $1.098618\ldots$ && $-1.52$ & $0.241691\ldots$ & $0.693150\ldots$ \\
+$-1.36$ & $0.246582\ldots$ & $1.098618\ldots$ && $-1.36$ & $0.270039\ldots$ & $0.693150\ldots$ \\
+$-1.20$ & $0.293969\ldots$ & $1.098618\ldots$ && $-1.20$ & $0.301711\ldots$ & $0.693150\ldots$ \\
+$-1.04$ & $0.350462\ldots$ & $1.098618\ldots$ && $-1.04$ & $0.337098\ldots$ & $0.693150\ldots$ \\
+$-0.88$ & $0.417811\ldots$ & $1.098618\ldots$ && $-0.88$ & $0.376635\ldots$ & $0.693150\ldots$ \\
+$-0.72$ & $0.498103\ldots$ & $1.098618\ldots$ && $-0.72$ & $0.420809\ldots$ & $0.693150\ldots$ \\
+$-0.56$ & $0.593826\ldots$ & $1.098618\ldots$ && $-0.56$ & $0.470165\ldots$ & $0.693150\ldots$ \\
+$-0.40$ & $0.707943\ldots$ & $1.098618\ldots$ && $-0.40$ & $0.525309\ldots$ & $0.693150\ldots$ \\
+$-0.24$ & $0.843991\ldots$ & $1.098618\ldots$ && $-0.24$ & $0.586921\ldots$ & $0.693150\ldots$ \\
+$-0.08$ & $1.006183\ldots$ & $1.098618\ldots$ && $-0.08$ & $0.655759\ldots$ & $0.693150\ldots$ \\
+$0.08$ & $1.199545\ldots$ & $1.098618\ldots$ && $0.08$ & $0.732672\ldots$ & $0.693150\ldots$ \\
+$0.24$ & $1.430066\ldots$ & $1.098618\ldots$ && $0.24$ & $0.818605\ldots$ & $0.693150\ldots$ \\
+$0.40$ & $1.704886\ldots$ & $1.098618\ldots$ && $0.40$ & $0.914616\ldots$ & $0.693150\ldots$ \\
+$0.56$ & $2.032520\ldots$ & $1.098618\ldots$ && $0.56$ & $1.021889\ldots$ & $0.693150\ldots$ \\
+$0.72$ & $2.423116\ldots$ & $1.098618\ldots$ && $0.72$ & $1.141744\ldots$ & $0.693150\ldots$ \\
+$0.88$ & $2.888774\ldots$ & $1.098618\ldots$ && $0.88$ & $1.275655\ldots$ & $0.693150\ldots$ \\
+$1.04$ & $3.443919\ldots$ & $1.098618\ldots$ && $1.04$ & $1.425273\ldots$ & $0.693150\ldots$ \\
+$1.20$ & $4.105749\ldots$ & $1.098618\ldots$ && $1.20$ & $1.592440\ldots$ & $0.693150\ldots$ \\
+$1.36$ & $4.894764\ldots$ & $1.098618\ldots$ && $1.36$ & $1.779212\ldots$ & $0.693150\ldots$ \\
+$1.52$ & $5.835407\ldots$ & $1.098618\ldots$ && $1.52$ & $1.987891\ldots$ & $0.693150\ldots$ \\
+$1.68$ & $6.956816\ldots$ & $1.098618\ldots$ && $1.68$ & $2.221045\ldots$ & $0.693150\ldots$ \\
+$1.84$ & $8.293731\ldots$ & $1.098618\ldots$ && $1.84$ & $2.481545\ldots$ & $0.693150\ldots$ \\
+$2.00$ & $9.887565\ldots$ & $1.098618\ldots$ && $2.00$ & $2.772598\ldots$ & $0.693150\ldots$ \\
+\cline{1-3} \cline{5-7}
+\end{tabular}
+\end{center}
+}
+\caption[Approximations de la dérivée de $f(x) = 3^x$ et de $f(x) =2^x$ à
+partir de la définition de la dérivées.]{Approximations de la dérivée
+de $f(x) = 3^x$ à gauche et de $f(x) = 2^x$ à droite à l'aide du rapport
+$\displaystyle \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$\ .\label{TAB_32_EXP}}
+\end{table}
+
+\begin{egg}
+Quelle est la dérivée de $f(x) = 3^x$?
+
+Dans la partie gauche du tableau~\ref{TAB_32_EXP}, nous avons
+estimé $f'(x)$ pour quelques valeurs de $x$ à l'aide du rapport
+$\displaystyle \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$.
+
+Remarquons que $f'(x) / f(x) \approx 1.098618\ldots$ pour les
+quelques valeurs de $x$ dans la partie gauche du tableau~\ref{TAB_32_EXP}.  Si
+$C_3 = 1.098618\ldots$, nous semblons avoir
+\[
+\dfdx{3^x}{x} = C_3 3^x \; .
+\]
+Le graphe associé aux données de la partie gauche du
+tableau~\ref{TAB_32_EXP} ainsi que le graphe de $y=f(x)=3^x$ sont
+donnés à la figure~\ref{DER16}.  Il semble bien que $f'(x)$ soit un
+multiple plus grand que $1$ de $f(x)$.
+\label{EGG_3_EXP}
+\end{egg}
+
+\MATHfig{5_derivees/der16}{8cm}{Le graphe de la dérivée de $f(x)=3^x$}
+{Les approximations de $f'(x)$ où $f(x)=3^x$ qui se retrouvent dans la
+partie gauche du tableau~\ref{TAB_32_EXP} sont représentées par des
+cercles.  La courbe pleine est le graphe de $3^x$.}{DER16}
+
+\begin{egg}
+Soit $f(x) = 2^x$.  Essayons de voir si, comme à l'exemple précédent,
+le rapport $f'(x)/f(x)$ est constant.  Si c'est le cas, est-ce la même
+constante qu'à l'exemple précédent?
+
+Dans la partie droite du tableau~\ref{TAB_32_EXP}, nous avons
+estimé $f'(x)$ pour quelques valeurs de $x$ à l'aide du rapport
+$\displaystyle \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$.
+
+Remarquons que $f'(x)/f(x) \approx 0.693150\ldots$ pour les quelques
+valeurs de $x$ dans la partie droite du tableau~\ref{TAB_32_EXP}.  Si
+$C_2 = 0.693150\ldots$, nous semblons avoir
+\[
+\dfdx{2^x}{x} \approx C_2 2^x \; .
+\]
+Comme à l'exemple précédent, nous avons que $f'(x)/f(x)$ est constant mais
+la constante n'est pas la même qu'à l'exemple précédent.
+
+Le graphe associé aux données de la partie droite du
+tableau~\ref{TAB_32_EXP} ainsi que le graphe de $y=f(x)=2^x$ sont
+donnés à la figure~\ref{DER17}.  Il semble bien que $f'(x)$ soit un
+multiple plus petit que $1$ de $f(x)$.
+\label{EGG_2_EXP}
+\end{egg}
+
+\MATHfig{5_derivees/der17}{8cm}{Le graphe de la dérivée de $f(x)=2^x$}
+{Les approximations de $f'(x)$ où $f(x)=2^x$ qui se retrouvent dans la
+partie droite du tableau~\ref{TAB_32_EXP} sont représentées par des
+cercles.  La courbe pleine est le graphe de $2^x$.}{DER17}
+
+Les trois questions suivantes découlent des exemples que nous venons de
+présenter.
+\begin{enumerate}
+\item Est-il toujours vrai que, quelle que soit la base $b$ utilisée,
+la dérivée de $f(x) = b^x$ est $f'(x) = C_b b^s$ où $C_b$ est une
+constante qui dépend seulement du choix de $b$?
+\item Si la réponse à la question précédente est affirmative, existe-t-il un
+moyen de calculer facilement cette constante $C_b$ en fonction de la base $b$
+qui a été choisie?
+\item Existe-t-il une base $b$ pour laquelle la dérivée de $f(x)=b^x$
+est $f'(x) = f(x) = b^x$?  C'est-à-dire, pour laquelle la constante de
+proportionnalité $C_b$ est $1$?
+\end{enumerate}
+
+Nous répondons à la première question et donne une réponse partielle à la
+deuxième question dans la prochaine sous-section.  La réponse à la
+troisième question sera donnée dans la sous-section suivante.  La
+réponse complète à la deuxième question dépend de la dérivée de
+fonctions composées.  Cette réponse sera donnée dans la dernière
+sous-section.
+
+\subsubsection{La constante $\mathbf{C_b}$}
+
+Pour répondre à la première question et aborder la réponse pour la
+deuxième question, il faut avoir recours à la définition de la
+dérivée.  Si $f(x) = b^x$ pour une base quelconque $b>0$, alors
+\[
+\frac{f(x+h)-f(x)}{h} = \frac{b^{x+h} - b^x}{h}
+= \frac{b^x b^h - b^x}{h} = b^x \frac{b^h-1}{h} \; .
+\]
+Comme $b^x$ ne dépend pas de $h$, nous avons donc
+\[
+f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
+= b^x \underbrace{\lim_{h\rightarrow 0} \frac{b^h-1}{h}}_{= C_b}
+\]
+si la limite existe.  Pour une base $b$ donnée, l'expression
+$\displaystyle C_b \equiv \lim_{h\rightarrow 0} (b^h-1)/h$ est une
+constante car elle est indépendante du point $x$ qui est choisi.
+
+Nous avons bien que, quelle que soit la base $b$ utilisée, la dérivée de
+$f(x)=b^x$ est $f'(x) = C_b b^x$ pour une constante $C_b$.  Pour 
+calculer cette constante $C_b$, nous pouvons utiliser la formule
+\begin{equation} \label{COND_EXP}
+C_b \equiv \lim_{h\rightarrow 0} \frac{b^h-1}{h} \;.
+\end{equation}
+
+\begin{rmk}[\theory]
+Dans la discussion précédente, nous avons supposé que la limite
+$\displaystyle \lim_{h\rightarrow 0} \frac{b^h-1}{h}$ existait pour
+tout $b>0$.  Effectivement, la limite existe et cela sera prouvé à la
+section~\ref{DEFofE}; après que nous aurons défini la fonction
+exponentielle $e^x$ à l'aide d'une série.
+\end{rmk}
+
+\begin{egg}
+Soit $f(x) = 3^x$.  Pour estimer $C_3$, nous utilisons (\ref{COND_EXP})
+avec $b = 3$ et $h = h_n = 1/n^2$ pour $n=1$, $2$, $3$, \ldots
+La suite $\displaystyle \left\{h_n\right\}_{n=1}^\infty$ converge vers
+$0$.  Donc $\displaystyle \frac{3^{h_n}-1}{h_n}$ converge vers $C_3$
+lorsque $n \to \infty$.  Nous obtenons les résultats suivants.
+\[
+\begin{array}{c|c|l}
+\hline
+\rule[-0.4em]{0ex}{1.5em} n & h_n = 1/n^2 &
+\rule{0em}{1.7em} \displaystyle \frac{3^{h_n}-1}{h_n} \\[0.8em]
+\hline
+1 & 1 & 2 \\
+2 & 1/4 & 1.26429605180997\ldots \\
+3 & 1/9 & 1.16847867518778\ldots \\
+4 & 1/16 & 1.13720772916663\ldots \\
+5 & 1/25 & 1.12310877860219\ldots \\
+\vdots & \vdots & \vdots \\
+100 & 1/10000 & 1.09867263832664\ldots \\
+\vdots & \vdots & \vdots \\
+1000 & 1/1000000 & 1.09861289221413\ldots \\
+\vdots & \vdots & \vdots \\
+\end{array}
+\]
+Nous avons donc que $\displaystyle \frac{3^{h_n}-1}{h_n}$ approche la constante
+$1.09861\ldots$ lorsque $h_n$ approche $0$.  Comme toute autre
+séquence qui tend vers $0$ donnerait le même résultat, nous obtenons
+\[
+C_3 \equiv \lim_{h\rightarrow 0} \frac{3^h-1}{h} = 1.09861\ldots
+\]
+qui est la constante trouvée à l'exemple~\ref{EGG_3_EXP}.
+\label{COND_EXP_EGG}
+\end{egg}
+
+La Formule~\ref{COND_EXP} pour évaluer la constante $C_b$ demande le
+calcul d'une limite comme nous venons de le faire à l'exemple précédent
+pour $b=3$.  Il existe une façon plus simple (du point de vue de
+l'utilisateur d'une calculatrice) de calculer la valeur de $C_b$ que
+nous donnerons bientôt.
+
+\subsubsection{Le nombre $\mathbf e$}
+
+Nous répondons maintenant à la troisième question au début de la section.
+C'est-à-dire, nous cherchons la base $b$ telle que la dérivée de
+$f(x) = b^x$ soit $f'(x) = f(x) = b^x$.
+
+Nous avons refait le travail de l'exemple~\ref{COND_EXP_EGG} en choisissant
+des valeurs pour la base $b$ de $f(x) = b^x$ de telle sorte que la
+constante de proportionnalité $C_b$ entre $f$ et sa dérivée soit de
+plus en plus près de $1$.  Nous résumons dans le tableau~\ref{TAB_EXP}
+suivant les résultats que nous avons trouvés.
+
+\begin{table}
+{\scriptsize
+\begin{center}
+\begin{tabular}{|c|c|c|l|}
+\hline
+$b$ & $C_b \approx $ & & Prochaine valeur de $b$ \\
+\hline
+$2.0$ & $0.6931470952\ldots$ & $<1$ & \\
+$3.0$ & $1.0986123122\ldots$ & $>1$ & $2.5$ entre $2$ et $3$ \\
+$2.5$ & $0.9162908209\ldots$ & $<1$ & $2.7$ entre $2.5$ et $3$ \\
+$2.7$ & $0.9932517031\ldots$ & $<1$ & $2.8$ entre $2.7$ et $3$ \\
+$2.8$ & $1.0296195007\ldots$ & $>1$ & $2.75$ entre $2.7$ et $2.8$ \\
+$2.75$ & $1.011600803\ldots$ & $>1$ & $2.72$ entre $2.7$ et $2.75$ \\
+$2.72$ & $1.0006317996\ldots$ & $>1$ & $2.71$ entre $2.7$ et $2.72$ \\
+$2.71$ & $0.9969487457\ldots$ & $<1$ & $2.715$ entre $2.71$ et $2.72$ \\
+$2.715$ & $0.9987919380\ldots$ & $<1$ & $2.718$ entre $2.715$ et $2.72$ \\
+$2.718$ & $0.9998963879\ldots$ & $<1$ & $2.719$ entre $2.718$ et $2.72$ \\
+$2.719$ & $1.0002640937\ldots$ & $>1$ & $2.7185$ entre $2.718$ et $2.719$ \\
+$2.7185$ & $1.0000802408\ldots$ & $>1$ & $2.7182$ entre $2.718$ et $2.7185$ \\
+$2.7182$ & $0.9999698846\ldots$ & $<1$ & $2.7183$ entre $2.7182$ et $2.7185$ \\
+$2.7183$ & $1.0000067440\ldots$ & $>1$ & $2.71825$ entre $2.7182$ et
+$2.7183$ \\
+$2.71825$ & $0.9999883143\ldots$ & $<1$ & $2.71828$ entre $2.71825$ et
+$2.7183$ \\
+$2.71828$ & $0.9999994166\ldots$ & $<1$ & $2.71829$ entre $2.71828$ et
+$2.7183$ \\
+$2.71829$ & $1.0000029693\ldots$ & $>1$ & $2.718285$ entre $2.71828$ et
+$2.71829$ \\
+$2.718285$ & $1.0000011929\ldots$ & $>1$ & $2.718282$ entre $2.71828$ et
+$2.718285$ \\
+ \vdots & \vdots & \vdots & \vdots \\
+$2.718281828$ & $0.9999999939\ldots$ & & \\
+\hline
+\end{tabular}
+\end{center}
+}
+\caption[Approximation de $e$]{$C_b$ est estimé à l'aide de (\ref{COND_EXP}).
+Le nombre $e$ est plus grand que les valeurs de $b$ pour lesquelles
+$C_b<1$ et plus petit que les valeurs de $b$ pour lesquelles $C_b>1$.  Nous
+utilisons ce résultat pour prendre en sandwich le nombre
+$e \approx 2.718281828$.  \label{TAB_EXP}} 
+\end{table}
+
+Les valeurs de $b$ dans le tableau~\ref{TAB_EXP} approche le nombre
+$e = 2.71828182852\ldots$.  Nous avons donc le résultat suivant.
+
+\begin{focus}{\prp}
+Si $e = 2.71828182852\ldots$ et $f(x) = e^x$ pour tout $x$, alors
+\[
+f'(x) = f(x)
+\]
+pour tout $x$.
+\end{focus}
+
+La formule (\ref{COND_EXP}) avec la base $b = e$ devient donc
+\[
+C_e = \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1 \;.
+\]
+Si $f(x) = e^x$, la formule précédente n'est nul autre que
+\[
+f'(0) = \lim_{h\rightarrow 0} \frac{f(0+h) - f(0)}{h} =
+\lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1 \;.
+\]
+La pente de la courbe $y=e^x$ à $x=0$ est donc $1$.  La fonction
+$f(x)=e^x$ est la seule fonction exponentielle de la forme $b^x$ dont
+la valeur de la dérivée à l'origine est $1$.
+
+\begin{rmk}
+Nous avons vu la définition suivante de $e$ à la section~\ref{nbrE}.
+\begin{equation} \label{LIM_EXP}
+e = \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^n \; .
+\end{equation}
+Est-ce le même nombre $e$ que celui que nous venons de définir?
+
+Avec la définition de $e^x$ donnée à la section~\ref{DEFofE}, il est
+trivial de montrer que le nombre $e$ définie par (\ref{LIM_EXP})
+satisfait $\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$.
+
+Nous présentons ici un raisonnement qui supporte sans démontrer que le
+nombre $e$ défini en (\ref{LIM_EXP}) satisfait
+$\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$.
+
+Si $\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$, il
+découle de la définition de limite d'une fonction en un point que
+$\displaystyle \frac{e^{x_n}-1}{x_n} \rightarrow 1$ lorsque
+$n \rightarrow \infty$ quelle que soit la suite
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $0$.  Si
+$x_n = \frac{1}{n}$ pour $n=1$, $2$, $3$, \ldots, nous pouvons donc dire que
+$\displaystyle 1 \approx \frac{e^{\frac{1}{n}}-1}{\frac{1}{n}}$
+pour $n$ très grand.  Si nous résolvons pour $e$, nous trouvons
+\[
+e \approx \left(1 + \frac{1}{n}\right)^n
+\]
+pour $n$ très grand.  Le nombre $e$ qui satisfait
+$\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$ et le nombre
+$e$ défini par (\ref{LIM_EXP}) semblent bien être le même nombre.
+
+Il est beaucoup plus facile d'estimer $e$ à l'aide de (\ref{LIM_EXP})
+que d'utiliser la formule (\ref{COND_EXP}) pour déterminer la valeur
+de $b$ telle que $\displaystyle \lim_{h\rightarrow 0} \frac{b^h-1}{h} = 1$
+comme nous l'avons fait au tableau~\ref{TAB_EXP}.
+\end{rmk}
+
+\subsubsection{Quelle est la valeur de la constante $\mathbf{C_b}$}
+
+Nous pouvons maintenant donner une réponse complète à la deuxième question
+de la section~\ref{SECT_B_EXP}.  À savoir, comment pouvons-nous calculer la
+constance $C_b$ dans la relation
+\[
+\dfdx{b^x}{x} = C_b b^x
+\]
+sans avoir à calculer une limite comme en (\ref{COND_EXP})?  Soit
+$q(x) = b^x$ avec $b>0$.  Puisque
+$\displaystyle q(x) = b^x = e^{x\ln(b)}$, 
+nous pouvons exprimer $q(x)$ comme la composition $q(x) = f(g(x))$ des
+fonctions $g(x) = x \ln(b)$ et $f(y) = e^y$. Comme
+$f'(y) = f(y)$ et $g'(x) = \ln(b)$, nous avons
+\[
+\dfdx{b^x}{x} = q'(x) = f'(g(x)) g'(x) = f(g(x)) g'(x)
+= q(x) g'(x) = b^x \ln(b) \;.
+\]
+Nous obtenons la proposition suivante.
+
+\begin{focus}{\prp}\label{BexpX}
+Si $b>0$, alors
+\[
+\dfdx{b^x}{x} = b^x \ln(b)
+\]
+pour tout $x$.
+\end{focus}
+
+La constante $C_b$ que nous cherchions est donc $\ln(b)$.
+
+\begin{egg}
+Si $f(x) = 5^x$, alors $f'(x) = 5^x \ln(5)$.
+\end{egg}
+
+\begin{egg}
+Si $f(x) = 5^{x^2}$, la dérivée de $f$ {\em n'est pas}
+$5^{x^2}\ln(5)$.  Il faut remarquer que $f(x) = q(p(x))$ où
+$q(y) = 5^y$ et $p(x)=x^2$.  Puisque $q'(y) = 5^y \ln(5)$ et $p'(x) = 2 x$,
+la règle de la dérivée de fonctions composées donne
+\[
+f'(x) = q'(p(x)) p'(x) = 5^{x^2}\ln(5) \times 2x 
+= 2x\, 5^{x^2} \ln(5)\; .
+\]
+\end{egg}
+
+\begin{rmk}
+Comme nous avons vu à l'exemple précédent, il est facile de se tromper avec
+toutes les règles de calcul des dérivées.  Il est souvent plus
+avantageux de s'en tenir aux formules les plus importantes.
+
+À l'exemple précédent, nous aurions pu simplement écrire $f(x) = 5^{x^2}$
+comme $f(x) = e^{x^2\ln(5)}$.  Il est alors clair que $f$ est la
+composition de deux fonctions.  En effet, $f(x) = q(p(x))$ où $q(y) = e^y$
+et $p(x) = x^2 \ln(5)$.  Puisque $q'(y) = e^y = q(y)$ et $p'(x) = 2x \ln(5)$,
+nous obtenons
+\[
+f'(x) = q'(p(x))p'(x) = q({p(x)}) ( 2x \ln(5) )
+= 5^{x^2} (2x \ln(5)) = 2x\, 5^{x^2}\ln(5) \; .
+\]
+\end{rmk}
+
+\subsection{Dérivée de $\mathbf{\log_b(x)}$}
+
+Puisque $\log_b(x) = \ln(x) / \ln(b)$ pour tout $x>0$, il suffit de
+trouver une formule pour la dérivée de $\ln$.  Pour trouver cette
+formule, nous utilisons le fait que $g(x)=\ln(x)$ est la fonction inverse
+de $f(x) = e^x$.
+
+Si nous dérivons les deux côtés de l'égalité $f(g(x))= x$ pour $x>0$,
+nous trouvons
+\[
+f'(g(x))g'(x) = 1 \; .
+\]
+Or $f'(x) = f(x)$ et $f(g(x))=x$, donc
+\[
+\dfdx{\ln(x)}{x} = g'(x) = \frac{1}{f'(g(x))}
+= \frac{1}{f(g(x))} = \frac{1}{x} \; .
+\]
+
+Nous venons de démontrer la règle suivante.
+
+\begin{focus}{\prp}
+Pour $x>0$, alors
+\[
+\dfdx{\ln(x)}{x} = \frac{1}{x} \; .
+\]
+\end{focus}
+
+Quelle est la dérivée de $\ln |x|$ pour tout $x \neq 0$?  Puisque
+$|x|=x$ pour $x>0$, nous avons
+\[
+\dfdx{\ln|x|}{x} = \dfdx{\ln(x)}{x} = \frac{1}{x} \quad \text{pour}
+\quad x>0 \;.
+\]
+Puisque $|x|=-x$ pour $x<0$, nous avons $\ln|x| = \ln(-x)$ pour $x<0$.
+Ainsi, pour $x<0$, $\ln|x| = g(h(x))$ où $g(y) = \ln(y)$ et
+$h(x) = -x$.  Puisque $g'(y) = 1/y$ et $h'(x) = -1$, nous obtenons donc
+\[
+\dfdx{\ln|x|}{x} = g'(h(x)) h'(x) = \frac{1}{h(x)} \ h'(x) =
+\left(\frac{1}{-x}\right) (-1) = \frac{1}{x} \quad \text{pour} \quad x< 0 \; .
+\]
+Nous pouvons donc généraliser le théorème précédent de la façon suivante.
+
+\begin{focus}{\prp}
+Si $x\neq 0$, alors
+\[
+\dfdx{\ln|x|}{x} = \frac{1}{x} \; .
+\]
+\end{focus}
+
+\begin{egg}
+Quelle est la dérivée de $\log_5(x)$ pour tout $x>0$?
+
+Puisque $\log_5(x) = \ln(x)/\ln(5)$, nous avons
+\[
+\dfdx{\log_5(x)}{x} = \dfdx{\left(\frac{\ln(x)}{\ln(5)}\right)}{x}
+= \frac{1}{\ln(5)} \dfdx{\ln(x)}{x}
+= \frac{1}{x\ln(5)} \; .
+\]
+\end{egg}
+
+\begin{egg}
+Quelle est la dérivée de $q(x) = \ln( \sin(x) )$ pour $0 < x < \pi$?
+
+Notez que nous assumons $0<x<\pi$ pour que $\sin(x)$ soit positif et
+donc que $\ln(\sin(x))$ soit bien définie.
+
+Puisque $q = f\circ g$ où $g(x) = \sin(x)$ et $f(y) = \ln(y)$, nous
+obtenons de la règle pour la dérivée de fonctions composées que
+\[
+q'(x) = f'(g(x)) g'(x) = \frac{1}{\sin(x)} \, \cos(x)
+= \cot(x)
+\]
+pour $0 < x < \pi$.
+\end{egg}
+
+\begin{egg}
+Calculons la dérivée de $f(x) = (x+1)^5(x+5)^7/(x+2)^4$.
+
+Il serait tentant d'utiliser la règle de la dérivée du quotient de
+deux fonctions mais cela risque d'être très long.
+
+En calcul numérique, nous utilisons très souvent la formule
+$\ln(ab) = \ln(a)+\ln(b)$ pour remplacer le produit de très
+grands nombres par la somme de leurs logarithmes.  Cela permet
+d'éviter les nombres trop grands pour l'ordinateur.
+La même idée peut être utilisée ici.  Nous avons
+\[
+\ln|f(x)| = 5\ln|x+1| + 7\ln|x+5| - 4\ln|x+2|
+\]
+Si nous dérivons des deux côtés de l'égalité, nous trouvons
+\[
+\frac{f'(x)}{f(x)} = \frac{5}{x+1} + \frac{7}{x+5} - \frac{4}{x+2}
+\]
+et ainsi
+\[
+f'(x) = f(x) \left(\frac{5}{x+1} + \frac{7}{x+5} - \frac{4}{x+2} \right)
+= \frac{(x+1)^5(x+5)^7}{(x+2)^4}
+\left(\frac{5}{x+1} + \frac{7}{x+5} - \frac{4}{x+2} \right) \; .
+\]
+Calculez la dérivée de $f$ avec la règle de la dérivée du quotient de
+deux fonctions pour comparer cette méthode avec celle que nous venons
+d'introduire.
+\end{egg}
+
+\begin{egg}
+Calculons la dérivée de
+$\displaystyle g(x) = \frac{(x^4+2)e^{2x}}{(x^2+3x)\sqrt{x^2+3}}$.
+
+Nous pourrions adresser ce problème directement avec la règle de
+dérivation du quotient de deux fonctions mais, comme la fonction $g$
+est assez complexe, ce ne serait pas une bonne idée.  Nous invitons le
+lecteur à essayer.
+
+Nous allons faire appel à l'ensemble de nos connaissances des méthodes de
+dérivation.  Commençons par calculer le logarithme de $g$.  Nous
+obtenons
+\begin{align*}
+\ln|g(x)| &= \ln\left|\frac{(x^4+2)e^{2x}}{(x^2+3x)\sqrt{x^2+3}}\right|
+= \ln\left(\frac{(x^4+2)e^{2x}}{|x^2+3x|\sqrt{x^2+3}}\right) \\
+& = \ln(x^4+2) + \ln(e^{2x}) - \ln|x^2+3x| - \ln\left((x^2+3)^{1/2}\right) \\
+& = \ln(x^4+2) + 2x - \ln|x^2+3x| -\frac{1}{2} \ln(x^2+3)
+\end{align*}
+Nous dérivons maintenant des deux côtés
+\[
+\dfdx{\ln|g(x)|}{x} = \dfdx{\ln(x^4+2)}{x} + \dfdx{(2x)}{x} -
+\dfdx{\ln|x^2+3x|}{x} -\frac{1}{2} \dfdx{\ln(x^2+3)}{x}
+\]
+pour obtenir
+\[
+\frac{g'(x)}{g(x)} = \frac{4x^3}{x^4+2} + 2 -
+\frac{2x + 3}{x^2+3x} - \frac{x}{x^2+3} \ .
+\]
+Ainsi,
+\begin{align*}
+g'(x) &= \left(\frac{4x^3}{x^4+2} + 2 -
+\frac{2x + 3}{x^2+3x} - \frac{x}{x^2+3}\right) g(x) \\
+&= \left(\frac{4x^3}{x^4+2} + 2 -
+\frac{2x + 3}{x^2+3x} - \frac{x}{x^2+3}\right)
+\left(\frac{(x^4+2)e^{2x}}{(x^2+3x)\sqrt{x^2+3}}\right)
+\end{align*}
+\end{egg}
+
+\subsection{Dérivée de $\mathbf{x^\alpha}$ où $\mathbf{\alpha}$ est réel}
+
+Nous avons vu que la dérivée de $h(x) = x^n$ où $n$ est un entier positive
+est $h'(x) = nx^{n-1}$.  Mais, quelle est la dérivée de
+$h(x) = x^{\alpha}$ si $\alpha$ n'est pas un entier positif.  Par
+exemple, quelle est la dérivée de $\sqrt{x} = x^{1/2}$ ou de $x^\pi$?
+Commençons par un exemple simple.
+
+\begin{egg}
+Soit $f(x)= x^{-1} = 1/x$ pour $x\neq 0$.  Si nous estimons $f'(x)$ pour
+quelques valeurs de $x$ à l'aide du rapport
+$\displaystyle \frac{f(x+h)-f(x)}{h}$ où
+$h = 0.00001$, nous obtenons les résultats suivants.
+\[
+\begin{array}{l|l|l}
+\hline
+\rule[-0.7em]{0ex}{2.5em} x &
+f'(x) \approx \displaystyle \frac{f(x+0.00001)-f(x)}{0.00001}
+ & |-x^{-2} - f'(x) | \\[0.8em]
+\hline
+-1 & -1.00001000009\ldots & 0.1000009\ldots \times 10^{-4} \\
+ 1 & -0.99999000010\ldots & 0.999989\ldots \times 10^{-5} \\
+ 2 & -0.24999875000\ldots & -0.124999\ldots \times 10^{-5} \\
+\pi & -0.10132086112\ldots & -0.32251\ldots \times 10^{-6} \\
+3.5 & -0.08163241982\ldots & -0.23323\ldots \times 10^{-6} \\
+\hline
+\end{array}
+\]
+Remarquons que $f'(x) \approx -x^{-2}$ pour les valeurs de $x$
+considérées dans le tableau.  Nous pouvons donc supposer que
+$f'(x) = -x^{-2}$ pour tout $x\neq 0$.
+
+Montrons à partir de la définition de la dérivée que
+$f'(x) = -x^{-2}$ pour tout $x\neq 0$.  En effet, si $x\neq 0$, alors
+\begin{align*}
+f'(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
+= \lim_{h\to 0} \frac{1/(x+h) - 1/x}{h} \\
+&= \lim_{h\to 0} \frac{-h}{h(x+h)x}
+= \lim_{h\to 0} \frac{-1}{x^2 + x h} = -\frac{1}{x^2}
+\end{align*}
+car $x^2 + x h \to x^2$ lorsque $h \to 0$.
+\label{XminusONE}
+\end{egg}
+
+L'exemple précédent semble indiquer que la règle qui dit que la
+dérivée de $f(x) = x^n$ est $f'(x) = nx^{n-1}$ pourrait s'appliquer
+pour tous les nombres entiers $n$.
+
+\begin{egg}
+Calculons la dérivée de $f(x) = \sqrt{x}$ à partir de la définition.
+\begin{align*}
+f'(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
+= \lim_{h\to 0} \frac{\sqrt{x+h}-\sqrt{x}}{h} \\
+&= \lim_{h\to 0} \left(\frac{\sqrt{x+h}-\sqrt{x}}{h}\right)
+\underbrace{\left(\frac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}}\right)}_{=1}
+= \lim_{h\to 0} \frac{h}{h(\sqrt{x+h}+\sqrt{x})} \\
+&= \lim_{h\to 0} \frac{1}{(\sqrt{x+h}+\sqrt{x})} = \frac{1}{2\sqrt{x}} \ .
+\end{align*}
+\end{egg}
+
+Encore une fois, l'exemple précédent semble indiquer que la règle qui
+dit que la dérivée de $f(x) = x^n$ est $f'(x) = nx^{n-1}$ pourrait
+s'appliquer pour tous les nombres rationnels $n$.  En fait,
+nous avons plus.
+
+Pour montrer que la règle est vraie pour tout exposant réel non nul,
+il faut se rappeler que $\displaystyle x^\alpha = e^{\alpha \ln(x)}$
+pour $x>0$.  Ainsi, $x^\alpha = f(g(x))$ où $g(x) = \alpha \ln(x)$ et
+$f(y) = e^y$.   Puisque $f'(y) = f(y)$ et $g'(x) = \alpha / x$,
+nous déduisons de la règle de la dérivée de fonctions composées que
+\[
+\dfdx{x^\alpha}{x} = f'(g(x)) g'(x)
+= f(g(x)) g'(x) = x^{\alpha} \left(\frac{\alpha}{x}\right)
+= \alpha x^{\alpha-1}
+\]
+pour $x>0$.  Nous venons de démontrer la règle suivante.
+
+\begin{focus}{\prp}
+Si $\alpha \neq 0$ est un nombre réel, alors
+\[
+\dfdx{x^\alpha}{x} = \alpha x^{\alpha-1}
+\]
+pour tout $x>0$.
+\end{focus}
+
+\begin{egg}
+Si $f(x) = x^{-1/2}$, alors
+$\displaystyle f'(x) = -\frac{1}{2} x^{-3/2} = \frac{-1}{2 x^{3/2}}$
+pour $x>0$.
+\end{egg}
+
+Avant de terminer cette section, il y a un exemple important que nous
+nous devons de présenter.
+
+\begin{egg}
+Que devons-nous faire pour calculer la dérivée d'une fonction comme
+$f(x) = x^x$?  La variable $x$ apparaît à la base et à l'exposant.
+La règle ci-dessus pour dérivée $x^\alpha$ ne s'applique pas car
+l'exposant n'est pas une constante.  La règle donnée à la
+proposition~\ref{BexpX} pour dérivée $b^x$ ne s'applique pas car
+c'est la base qui n'est pas une constante.
+
+Nous devons utiliser les fonctions exponentielles et logarithmiques.
+
+Puisque
+\[
+f(x) = x^x = e^{\ln((x^x)}  = e^{x\ln(x)} \ ,
+\]
+il découle de la règle de dérivation des fonctions composées que
+\begin{align*}
+f'(x) &= \left(\dfdx{e^y}{y} \bigg|_{y=x\ln(x)} \right)
+\dfdx{\left( x\ln(x)\right)}{x}
+= \left( e^y \bigg|_{x\ln(x)} \right) ( \ln(x) + 1 ) \\
+&= e^{x\ln(x)} ( \ln(x) + 1)
+= x^x( \ln(x) + 1) \ .
+\end{align*}
+\end{egg}
+
+\subsection{Dérivée des fonction trigonométriques inverses \life \eng}
+
+Si nous dérivons les deux côtés de l'identité $x = \sin (\arcsin(x))$ pour
+$-1 < x < 1$, nous obtenons grâce à la dérivée de fonctions composées que
+\[
+1 = \cos(\arcsin(x)) \dfdx{\arcsin(x)}{x} \; .
+\]
+Donc
+\[
+\dfdx{\arcsin(x)}{x} = \frac{1}{\cos(\arcsin(x))} \; .
+\]
+
+Posons $\theta = \arcsin(x)$.  Donc $\sin(\theta) = x$ par définition
+de l'arcsinus et nous obtenons la figure suivante par définition des
+fonctions trigonométriques à partir d'un triangle droit.
+\PDFgraph{5_derivees/invtrig1}
+Nous en déduisons que
+\[
+\cos(\arcsin(x)) = \cos(\theta) = \sqrt{1-x^2} \; .
+\]
+Nous obtenons donc la formule suivante.
+
+\begin{focus}{\prp}
+\[
+\dfdx{\arcsin(x)}{x} = \frac{1}{\sqrt{1-x^2}}
+\]
+pour $-1<x<1$.
+\end{focus}
+
+De façon semblable, le lecteur peut démontrer la proposition suivante.
+
+\begin{focus}{\prp}
+\[
+\dfdx{\arccos(x)}{x} = \frac{-1}{\sqrt{1-x^2}}
+\]
+pour $-1<x<1$.
+\end{focus}
+
+Si maintenant nous dérivons les deux côtés de l'identité
+$x = \tan (\arctan(x))$
+où $x$ est réel, nous obtenons grâce à la dérivée de fonctions composées que
+\[
+1 = \sec^2(\arctan(x)) \dfdx{\arctan(x)}{x}\; .
+\]
+Donc
+\[
+\dfdx{\arctan(x)}{x} = \frac{1}{\sec^2(\arctan(x))} \; .
+\]
+
+Posons $\theta = \arctan(x)$.  Donc $\tan(\theta) = x$ par définition
+de l'arctangente et nous obtenons la figure suivante par définition des
+fonctions trigonométriques à partir d'un triangle droit.
+\PDFgraph{5_derivees/invtrig2}
+Nous en déduisons que
+\[
+\sec(\arctan(x)) = \sec(\theta) = \sqrt{1+x^2} \ .
+\]
+Nous obtenons donc la formule suivante.
+
+\begin{focus}{\prp}
+\[
+\dfdx{\arctan(x)}{x} = \frac{1}{1+x^2}
+\]
+pour $x\in \RR$.
+\end{focus}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Taux de variation}
+
+\begin{question}
+Pour chacune des fonctions suivantes et des points $t_0$ suivants:
+
+\subQ{i} Calculez la moyenne de la fonction $f$ entre les points $t_0$
+et $t_0+\Delta t$ pour $\Delta t = 1$, $0.5$, $0.1$ et
+$0.01$.\\
+\subQ{ii} Donnez l'équation de la sécante qui passe par les points
+$(t_0, f(t_0))$ et $(t_0 + \Delta t, f(t_0+\Delta t))$
+pour $\Delta t = 1$, $0.5$, $0.1$ et $0.01$.\\
+\subQ{iii} Dessiner, sur une même figure, le graphe de la fonction
+avec ses quatre sécantes.\\
+\subQ{iv} Donner, en vous basant sur les valeurs calculées en
+(i), une approximation de la pente de la droite tangente à la
+courbe $y=f(t)$ au point $(t_0,f(t_0))$.\\
+\subQ{v} Donnez l'équation de la droite tangente à la courbe $y=f(t)$ au
+point $(t_0, f(t_0))$ en vous basant sur votre réponse en (iv).
+
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $f(t) = 2 t^2$ et $t_0 = 1$. &
+\subQ{b} & $f(t) = e^{2t}$ et $t_0 = 0$.
+\end{tabular}
+\end{center}
+\label{5Q1}
+\end{question}
+
+\begin{question}
+Supposons que le nombre d'individus au temps $t$ (en heures) pour une
+certaine population animale soit donnée par $p(t) = 1.5^t$.
+
+\subQ{a} Quelle est le taux de croissance moyen entre $0$ et $1$?\\
+\subQ{b} Quelle est le taux de croissance moyen entre $0$ et $0.1$?\\
+\subQ{c} Quelle est le taux de croissance moyen entre $0$ et $0.01$?\\
+\subQ{d} Quelle est le taux de croissance moyen entre $0$ et $0.0001$?\\
+\subQ{e} Quelle est le taux de croissance instantané à $t=0$?\\
+\subQ{f} Donnez l'équation de la droite tangente à la courbe $y=p(t)$ au point
+  $(0,p(0))$.
+\label{5Q2}
+\end{question}
+
+\begin{question}[\life]
+Les données du tableau suivant décrivent la hauteur $H$ (en mètres) d'un
+arbre en fonction du temps $t$ (en années).
+\[
+\begin{array}{c|ccccccccccc}
+t & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+H & 10.11 & 11.18 & 12.40 & 13.74 & 15.01 & 16.61 & 18.27 &
+20.17 & 22.01 & 24.45 & 26.85
+\end{array}
+\]
+\subQ{a} Estimez le taux de croissance instantané à $t=0$, $1$, $2$,
+\ldots, $10$ ans à l'aide de la moyenne des taux de croissance que
+vous pouvez estimer à partir des données de l'année qui précède et de
+l'année qui suit immédiatement (si possible).\\
+\subQ{b} Tracez sur un graphe les points qui représentent le taux de
+croissance instantané pour chacune des années en (a).  Est-ce que les
+points semblent tracer une courbe quelconque?\\
+\subQ{c} Estimez le taux de croissance relatif à $t=0$, $1$, $2$,
+\ldots, $10$ ans.\\
+\subQ{d} Tracez sur un graphe les points qui représente le taux de
+croissance relatif pour chacune des années en (c).  Est-ce que les
+points semblent tracer une courbe quelconque?\\
+\subQ{e} Comparez vos deux graphes.  Que pouvez-vous conclure?
+\label{5Q3}
+\end{question}
+
+\begin{question}[\life]
+Le nombre d'individus dans une population est donné par la formule
+$p(t) = 2^t$ où $t$ est le temps en heures. Trouvez le taux de
+croissance moyen entre $0$ et $1$ heure, $0$ et $0.1$ heure, $0$ et
+$0.01$ heure, et $0$ et $0.001$ heure.
+
+Quelle est la limite?  Que représente cette limite?  Tracez le graphe
+de la fonction $p$ et la droite tangent à ce graphe au point
+$(t,p) = (0,1)$.  Donnez l'équation de cette droite tangente.
+\label{5Q4}
+\end{question}
+
+\begin{question}
+Le nombre $N$ de visites au nouveau site Internet du ministère de
+l'environnement est donné dans le tableau suivant.
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c}
+nombre d'heures après l'inauguration du site & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$N$ & 30 & 57 & 87 & 151 & 246
+\end{tabular}
+\end{center}
+
+\subQ{a} Trouvez le taux moyen de croissance des visites de la
+deuxième à la troisième heure, de la troisième à la quatrième heure,
+et de la troisième à la cinquième heure.  Donnez les unités de vos
+réponses.\\
+\subQ{b} Donnez une approximation du taux instantané de croissance des
+visite après trois heures en prenant la moyenne de deux taux de
+croissance moyens. Donnez les unités de votre réponse.\\
+\subQ{c} Est-ce qu'il est réaliste d'estimer le taux de croissance
+instantané des visites après trois heures sur la base des données que
+nous possédons?
+\label{5Q5}
+\end{question}
+
+\subsection{Dérivée d'une fonction}
+
+\begin{question}
+Le graphe de la fonction $f$ est donné ci-dessous.
+\PDFgraph{5_derivees/cont1}
+\subQ{a} Identifiez les points où la fonction n'est pas continue.\\
+\subQ{b} Identifiez les points où la fonction n'est pas différentiable
+et dite pourquoi.\\
+\subQ{c} Identifiez les points où la dérivée de la fonction est nulle.
+\label{5Q6}
+\end{question}
+
+\begin{question}
+Le graphe de la fonction $f$ est donné ci-dessous.
+\PDFgraph{5_derivees/der27}
+\subQ{a} Identifiez les points où la dérivée est positive.\\
+\subQ{b} Identifiez les points où la dérivée est négative.\\
+\subQ{c} Identifiez les points où la dérivée est nulle.
+\label{5Q7}
+\end{question}
+
+\begin{question}
+Un chien court après un cycliste.  Tracez sur un même système de
+coordonnées la position du chien et du cycliste en fonction du temps
+pour chacun des scénarios suivants.
+
+\subQ{a} Le chien et le cycliste se déplacent à vitesse constante mais
+le chien se déplace plus rapidement que le cycliste et, après un
+certain temps, rattrape le cycliste.\\
+\subQ{b} La vitesse du chien augmente et celle du cycliste diminue.
+Le chien rattrape le cycliste.\\
+\subQ{c} La vitesse du chien et du cycliste diminue, et la distance
+entre les deux augment.
+\label{5Q8}
+\end{question}
+
+\begin{question}
+Une voiture est remorquée par une dépanneuse à l'aide d'une tige
+rigide de $10$ mètres de long.  Tracez les graphes possibles de la
+position et de la vitesse des deux véhicules en fonction du temps dans
+chacun des cas suivants.
+
+\subQ{a} La dépanneuse part du repos, recule lentement pour une courte
+période de temps, arrête, avance lentement pour une autre courte
+période de temps et finalement avance plus rapidement.\\
+\subQ{b} La dépanneuse est initialement au repos, accélère lentement,
+garde une vitesse constante pour un certain temps, et finalement
+arrête brusquement.
+\label{5Q9}
+\end{question}
+
+\begin{question}
+La figure ci-dessous contient le graphe d'une fonction et le graphe de la
+dérivée de cette fonction.  Quelle est le graphe de la dérivée?
+\PDFgraph{5_derivees/der28}
+\label{5Q10}
+\end{question}
+
+\begin{question}
+Considérons les graphes de deux fonctions donnés dans la figure ci-dessous.
+\PDFgraph{5_derivees/ass3D}
+Identifiez la courbe qui représente le graphe de la dérivée d'un
+fonction dont le graphe est donné par l'autre courbe.
+\label{5Q11}
+\end{question}
+
+\begin{question}
+Trois des graphes ci-dessous représentent les graphes de fonctions et
+les trois autres graphes représentent les graphes des dérivées de ces
+fonctions.  Donner les pairs $(n_1, n_2)$ où $n_1$ est le numéro d'un
+graphe associé au graphe d'une fonction et $n_2$ est le numéro du
+graphe associé au graphe de la dérivée de cette fonction.
+{\bfseries Vous ne pouvez pas utiliser une image plus d'une fois}.
+\MATHgraph{5_derivees/graphs}{10cm}
+\label{5Q12}
+\end{question}
+
+\begin{question}
+La température en fonction du temps d'une substance chimique est
+donnée par le graphe suivant.
+\PDFgraph{5_derivees/der29}
+Tracez le graphe du taux de variation instantané de la température en
+fonction du temps.  Sur le graphe que vous avez dessiner, indiquer
+lorsque la température augmente et lorsqu'elle diminue.
+\label{5Q13}
+\end{question}
+
+\begin{question}
+Le graphe du volume $V(t)$ en mètres cubes d'un objet en fonction du
+temps $t$ en heures est donné ci-dessous.
+\PDFgraph{5_derivees/ass3C}
+\subQ{a} Identifiez un point $t$ où la dérivée est positive.\\
+\subQ{b} Identifiez un point $t$ où la dérivée est négative.\\
+\subQ{c} Identifiez le point $t$ avec la plus grande dérivée.\\
+\subQ{d} Identifiez le point $t$ avec la plus petite dérivée.\\
+\subQ{e} Identifiez les points $t$ où la dérivée est nulle.\\
+\subQ{f} Tracez le graphe de la dérivée $V'$ de $V$.
+\label{5Q14}
+\end{question}
+
+\begin{question}
+Le graphe d'une fonction $f$ est donné ci-dessous.
+\PDFgraph{5_derivees/ass3B}
+Donnez les points $x$ qui satisfont chacun des cas suivants.
+
+\subQ{a} La fonction $f$ n'est pas continue.\\
+\subQ{b} La fonction $f$ n'est pas différentiable et dite pourquoi.\\
+\subQ{c} La dérivée $f'(x)$ est nulle.
+\label{5Q15}
+\end{question}
+
+\begin{question}
+Utilisez la définition de la dérivée pour calculer la dérivée de
+$f(x) = 4 - x^2$.  Tracez le graphe de $f$ et $f'$.  Trouvez les
+points où la dérivée de $f$ est nulle.  Déterminez les intervalles où
+la fonction est strictement croissante et ceux où elle est strictement
+décroissante.
+\label{5Q16}
+\end{question}
+
+\begin{question}
+Soit $g(x) = x+2x^2$ une fonction quadratique.  Donnez la pente
+de la sécante à la courbe $y=g(x)$ entre les points $x$ et $x+h$.
+Donnez la pente de la tangente à la courbe $y=g(x)$ au point $x$ en
+passant à la limite lorsque $h$ approche $0$.  Donnez la dérivée de
+$g$ au point $x$.
+\label{5Q17}
+\end{question}
+
+\begin{question}
+Utilisez la définition de la dérivée pour calculer la dérivée de
+chacune des fonctions suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $f(x) = (x+1)^2$ & \subQ{b}
+& $\displaystyle f(x) = \frac{1}{2x+5}$ & \subQ{c} & $f(x) = x^2+x$ \\[0.9em]
+\subQ{d} & $\displaystyle f(x) = \frac{x}{3x-1}$ &
+\subQ{e} & $\displaystyle f(x) = \frac{1}{x(x+1)}$ & &
+\end{tabular}
+\end{center}
+\label{5Q18}
+\end{question}
+
+\begin{question}[\eng]
+La fonction de Heaviside est définie par
+\[
+H(x) =
+\begin{cases}
+1 & \quad \text{si} \quad x \geq 0 \\
+0 & \quad \text{si} \quad x < 0
+\end{cases} \ .
+\]
+Montrez qu'il n'existe pas de solution à l'équation $H(x) = 0.5$ même si
+$H(-1)=0$ et $H(1)=1$.  Ceci démontre que le Théorème des valeurs
+intermédiaires est valable seulement pour les fonctions continues.  
+
+Montrez qu'il n'existe pas de valeur $c$ telle que $H'(c)$ soit égale à la
+pente $\displaystyle \frac{H(1)-H(-1)}{2}$ de la sécante entre les points
+$(-1,H(-1))$ et $(1,H(1))$.  Ceci démontre que le Théorème de la moyenne est
+valable seulement pour les fonctions qui sont différentiable.
+\label{5Q19}
+\end{question}
+
+\begin{question}[\life]
+Un animal passe de $4$ kg à $60$ kg en $14$ ans.  Si nous supposons
+que la masse de l'animal est une fonction différentiable par rapport
+au temps, pourquoi pouvons-nous dire que le taux de croissance
+(instantané) a été de $4$ kg/année à un moment durant les $14$ années?
+\label{5Q20}
+\end{question}
+
+\subsection{Calcul des dérivées}
+
+\begin{question}
+Calculez la dérivée de $g(y) = -3 y + 5$ et déterminez les
+intervalles, s'il y en a, où la fonction est strictement croissante.
+\label{5Q21}
+\end{question}
+
+\begin{question}
+Une quantité $T(t)$ au temps $t$ est donnée par le produit de deux
+quantités: $p(t) = 2\times 10^6 + 10^3 t^2$ et $M(t) = 80 - 0.5 t$.
+
+\subQ{a} Donnez $T$ en fonction du temps.\\
+\subQ{b} Calculez la dérivée de $T$ en fonction du temps.\\
+\subQ{c} Quelle est la valeur de $T$ au moment où $T'(t) = 0$?
+Quelle est la valeur de $p$ à ce moment?  Quelle est la valeur de $M$
+à ce moment?
+\label{5Q22}
+\end{question}
+
+\begin{question}
+Un train se déplace à $110$ km/h.  Un passager de ce train se déplace
+à un vitesse de $3$ km/h vers l'arrière du train.  Quelle est la
+vitesse de ce passager par rapport au sol?
+\label{5Q23}
+\end{question}
+
+\begin{question}
+Pour chacune des questions suivantes, Calculez la dérivée à l'aide de
+la formule de dérivation des fonctions composées.
+
+\subQ{a} Soit $T(W) = 30 -0.2W$, $S(T) = 9 -T/5$ et $H(W) = S(T(W))$.
+Calculez $\displaystyle \dydx{H}{W}$.\\
+\subQ{b} Soit $L(T) = 10+T/10$, $V(L) = 2L^3$, $M(V) = 1.3V$
+$H(T) = M(V((L(T))))$.  Calculez $\displaystyle \dydx{H}{T}$.\\
+\subQ{c} Soit $M(G) = 5G+2$, $P(M) = 0.5 M$ et $H(G)=P(M(G))$.
+Calculer $\displaystyle \dydx{H}{G}$.\\
+\subQ{d} Soit $V(I) = 5 I^2$, $F(V) = 37 + 0.4 V$ et $H(I) = F(V(I))$.
+Calculer $\displaystyle \dydx{F}{I}$.  
+\label{5Q24}
+\end{question}
+
+\begin{question}
+Soit $B=0.007 W^{2/3}$ et $W=0.12 L^{2.53}$.  De plus, supposons que
+$L$ soit une fonction de $t$ et que $L'(t)$ soit constant.  Si nous
+savons que $L$ augmente de $5$ lorsque $t$ augmente de $10$, quelle
+est la dérivée de $H(t) = B(W(L(t)))$ par rapport à $t$ lorsque $L = 18$?
+\label{5Q25}
+\end{question}
+
+\begin{question}
+Calculez la dérivée de chacune des fonctions suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.4em}}l@{\hspace{2.7em}}}l@{\hspace{0.4em}}l}
+\subQ{a} & $\displaystyle f(x) = x^{1/5}$ &
+\subQ{b} & $\displaystyle h(t) = x^{1/e}$ &
+\subQ{c} & $\displaystyle g(z) = 3z^3 + 2z^2$ \\[0.7em]
+\subQ{d} & $\displaystyle p(z) = (1+3z)^2(1+2z)^3$ &
+\subQ{e} & $\displaystyle f(x) = (2x+1)^3$ &
+\subQ{f} & $\displaystyle h(x) = (x^2-5)^{135/2}$ \\
+\subQ{g} & $\displaystyle G(x) = \frac{(1+x)(2+x)}{(3+x)}$ &
+\subQ{h} & $\displaystyle f(t) = \frac{\sqrt{t}}{1+\sqrt{t}}$ &
+\subQ{i} & $\displaystyle f(x) = \log_2(1-3x)$ \\[0.7em]
+\subQ{j} & $\displaystyle f(y) = (5y-3)^7(y^2-1)$ &
+\subQ{k} & $\displaystyle h(t) = \frac{1+t}{2-t}$ &
+\subQ{l} & $\displaystyle g(z) = \frac{1+z^2}{1+2z^3}$ \\[0.7em]
+\subQ{m} & $\displaystyle f(x) = \frac{\ln(2x+ e^x)}{2x+e^x}$ &
+\subQ{n} & $\displaystyle h(x) = \frac{(1+3x)^2}{(1+2x)^3}$ &
+\subQ{o} & $\displaystyle f(x) = e^{-7x}$ \\[1em]
+\subQ{p} & $\displaystyle g(z) = \left(1 + \frac{2}{1+z}\right)^7$ &
+\subQ{q} & $\displaystyle f(t) = (1+3t)^{33}$ &
+\subQ{r} & $\displaystyle h(x) = \ln|\ln(x)|$ \\[1em]
+\subQ{s} & $\displaystyle g(t) = \ln\left(\frac{t^2}{(t-2)^3}\right)$ &
+\subQ{t} & $\displaystyle f(x) = x^{\ln(x)}$ &
+\subQ{u} & $\displaystyle f(x) = x^{x^2}$ \\[1em]
+\subQ{v} & $\displaystyle g(t) = \ln\left(\frac{t^7(t^2-5)^8}{(t-2)^5}\right)$ &
+ &  & &
+\end{tabular}
+\end{center}
+\label{5Q26}
+\end{question}
+
+\begin{question}[\eng \life]
+Évaluez les dérivées suivantes.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle h(\theta) =\sec(\theta)\tan(\theta)$ &
+\subQ{b} & $\displaystyle G(t) = 1 + 2
+\cos\left( \frac{2\pi(t-3)}{5} \right)$ \\[1em]
+\subQ{c} & $\displaystyle f(x) = \ln(4+\sin(x))$ &
+\subQ{d} & $\displaystyle g(\theta) = \sqrt{2\theta\, \sin(\theta)}$ \\
+\subQ{e} & $\displaystyle F(\theta) = \tan^2(\sin(\theta))$ &
+\subQ{f} & $\displaystyle g(x) = x \arctan(x^2)$\\
+\subQ{g} & $\displaystyle h(\theta) = \sin(\theta)\cos(\theta)$ &
+\subQ{h} & $\displaystyle h(x) = 3 + \cos(2x-1)$ \\
+\subQ{i} & $\displaystyle g(z) = e^{\cos(z)}$ &
+\subQ{j} & $\displaystyle f(\theta) = \sec(\theta)$ \\
+\subQ{k} & $\displaystyle f(x)=e^{\sin(x^{100}+1)}$ &
+\subQ{l} & $\displaystyle g(x) = x^{\sin(x)}$ \\
+\subQ{m} & $\displaystyle f(t) = \ln\left(\frac{2t-\cos(6t)}{t}\right)$  &
+         &
+\end{tabular}
+\end{center}
+\label{5Q27}
+\end{question}
+
+\begin{question}
+Calculez la dérivée de $\displaystyle f(x) = \frac{1}{1+e^x}$ de deux
+façons:
+
+\subI{i} Avec la règle de la dérivée d'un quotient.\\
+\subI{ii} Avec la règle de la dérivée de fonctions composées.
+\label{5Q28}
+\end{question}
+
+\begin{question}
+Calculez la dérivée de $\displaystyle f(x) = \ln(7x)$ de deux façons:
+
+\subI{i} Avec une des identités satisfaites par $\ln()$.\\
+\subI{ii} Avec la règle de la dérivée de fonctions composées.
+\label{5Q29}
+\end{question}
+
+\begin{question}
+Calculez la dérivée de $\displaystyle f(x) = 7^x$ de deux façons:
+
+\subI{i} Avec la règle introduite en classe pour dériver ce type
+de fonctions.\\
+\subI{ii} Avec le fait que $7^x$ peut s'exprimer sous la forme
+$e^{h(x)}$ pour une certaine fonction $h$.
+\label{5Q30}
+\end{question}
+
+\begin{question}[\eng \life]
+Calculez la dérivée de $\displaystyle f(\theta) = \cos(2\theta)$ de deux
+façons:
+
+\subI{i} Avec les formules d'addition pour le cosinus et le sinus.\\
+\subI{ii} Avec la règle de la dérivée de fonctions composées.
+
+\noindent Montrez que vos deux réponses sont égales.
+\label{5Q31}
+\end{question}
+
+\begin{question}
+Un tableau contenant certaines valeurs de $f$, $f'$, $g$ et $g'$ est
+donné ci-dessous.
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c}
+$x$ & $f(x)$ & $g(x)$ & $f'(x)$ & $g'(x)$ \\
+\hline
+1 & 3 & 2 & 4 & 6 \\
+2 & 1 & 8 & 5 & 7 \\
+3 & 7 & 2 & 7 & 9
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & Si $h(x) = f(g(x))$, calculez $h'(1)$. &
+\subQ{b} & Si $h(x) = g(f(x))$, calculez $h'(1)$. \\
+\subQ{c} & Si $\displaystyle h(x) = \frac{f(x)}{g(x)}$, calculez $h'(1)$. & 
+\subQ{d} & Si $h(x) = f^{-1}(x)$, calculez $h'(1)$
+\end{tabular}
+\end{center}
+\noindent Suggestion pour (d): $f(f^{-1}(x))=x$.  Nous assumons que $f$
+est injective.
+\label{5Q32}
+\end{question}
+
+\begin{question}
+Soit $f$ une fonction strictement croissante positive.  Une fonction
+$f$ est positive si $f(x)>0$ pour tout $x$.  Montrez que la fonction
+$g$ définie par $g(x) = 1/f(x)$ pour tout $x$ est strictement
+décroissante.
+\label{5Q33}
+\end{question}
+
+\begin{question}
+Pour chacune des fonctions suivantes, calculez la dérivée de la fonction
+inverse $f^{-1}$ en procédant de deux façons:
+
+\subI{i} Trouvez la fonction inverse et dérivez cette fonction.\\
+\subI{ii} Calculez la dérivée de la fonction composée
+$(f\circ f^{-1})(x) = f(f^{-1}(x)) = x$.
+
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle f(x) = 2 + x^3$ &
+\subQ{b} & $f(x) = 1 - e^{-x}$
+\end{tabular}
+\end{center}
+\label{5Q34}
+\end{question}
+
+\begin{question}[\eng \life]
+Pour chacune des courbes ci-dessous, trouvez l'équation de la droite
+tangente à la courbe au point donné.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $y = \ln(x^3-7)$ au point $(2,0)$ &
+\subQ{b} & $y=\sin(\sin(x))$ au point $(x,y) = (\pi,0)$.
+\end{tabular}
+\end{center}
+\label{5Q35}
+\end{question}
+
+\begin{question}
+\subQ{a} Trouvez la pente de la droite tangente à la courbe
+$y = f(x) = x^3 + 8$ au point où cette courbe coupe l'axe des $x$.\\
+\subQ{b} Trouvez l'équation de la droite tangente à la courbe
+$y = f(x)$ au point d'intersection trouvé en (a).\\
+\subQ{c} Trouvez l'équation de la droite perpendiculaire à la droite
+tangente en (b) qui passe par le point d'intersection en (a).
+\label{5Q36}
+\end{question}
+
+\begin{question}[\eng \life]
+Pour quelle valeur de $x$ avons-nous que la tangente à la courbe 
+$y = f(x) = \sqrt{3}\,x + 2\sin(x)$ au point $(x,f(x))$ est horizontale?
+\label{5Q37}
+\end{question}
+
+\begin{question}
+L'aire d'un disque en fonction de son rayon est donné par la formule
+$A(r) = \pi r^2$, où $r$ est mesuré en mètres et $A$ en mètres
+carrés.  Calculez la dérivée de l'aire en fonction du rayon.
+Illustrez par un dessin la région représentée par la différence entre
+un disque de rayon $r+\Delta r$ et un disque de rayon $r$.  Donnez une
+représentation géométrique de la dérivée.  Est-ce que les unités sont
+cohérentes.
+\label{5Q38}
+\end{question}
+
+\begin{question}[\life \eng]
+Soit $f(x) = x^2$.  Trouvez le point sur l'intervalle $[0,2]$ où
+$\displaystyle f'(x) = \frac{f(2)-f(0)}{2-0}$.  
+\label{5Q39}
+\end{question}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

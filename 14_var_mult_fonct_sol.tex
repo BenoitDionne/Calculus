@@ -1,0 +1,174 @@
+\section{Fonctions de plusieurs variables}
+
+\subsection{Fonctions de plusieurs variables}
+
+\compileSOL{\SOLUb}{\ref{14Q2}}{
+Les courbes de niveau sont les courbes $y - x^2 = k$ où $k$ est une
+constante.  Ce sont les paraboles $y = x^2 - k$ dont l'axe majeur est
+l'axe des $x$.
+}
+
+\compileSOL{\SOLUb}{\ref{14Q4}}{
+Il y a plusieurs façons de résoudre ce problème, nous en présentons
+seulement une.
+
+La forme standard de l'équation d'un plan est $z=f(x,y) = m_1 x + m_2 y + b$.
+
+Comme l'intersection de deux plans non parallèles est une droite,
+l'intersection du graphe de $f$ et du plan $x=2$ est une droite qui
+contient les points $(y,z) = (1, 5)$ et $(6,-5)$ qui sont donnée par
+le diagramme de courbes de niveau dans l'énoncé de la question.
+C'est donc une droite de pente
+$\displaystyle \frac{-5-5}{6-1} = -2$.  Or, si $x=2$ dans
+$z=f(x,y)=m_1x + m_2 y + b$, nous obtenons la formule
+$z= m_2 y + 2 m_1 + b$ pour la droite d'intersection.  Donc
+$m_2 = -2$.
+
+L'intersection du graphe de $f$ et du plan $y=3$ est une droite qui
+contient les points $(x,z) = (0, -5)$ et $(10,25)$ qui sont donnée par
+le diagramme de courbes de niveau dans l'énoncé de la question.
+C'est donc une droite de pente $\displaystyle \frac{25+5}{10-0} = 3$.
+Or, si $y=3$ dans $z=f(x,y)=m_1x + m_2y + b$, nous
+obtenons la formule $z= m_1x + 3  m_2 + b$ pour la droite
+d'intersection.  Donc $m_1 = 3$.
+
+Il découle des deux paragraphes précédents que
+$z=f(x,y) = 3x -2 y + b$.  Pour
+déterminer $b$, prenons le point $(2,1,5)$ du graphe de $f$.
+Donc $5 = f(2,1) = 6 -2 + b$.  Ce qui donne $b=1$.
+
+Finalement, l'équation cherchée est $z = 3x -2 y + 1$.
+}
+
+\compileSOL{\SOLUb}{\ref{14Q5}}{
+La forme standard de l'équation d'un plan est $z=f(x,y) = m_1 x + m_2 y + b$.
+
+Nous savons qu'un plan est déterminé par trois points qui ne sont pas
+sur une même droite.  Choisissons les trois points 
+$(5,10,-22)$, $(10,10,-7)$ et $(10,20,-47)$.  Ils ne sont pas tous
+sur une même droite.
+Si nous substituons ces trois points dans la formule
+$z= m_1 x + m_2 y + b$, nous obtenons les trois équations linéaires
+suivantes.
+\[
+-22 = 5m_1+10 m_2 + b \ , \ -7 = 10 m_1 + 10 m_2 + b \quad \text{et} \quad
+-47 = 10 m_1 + 20 m_2 + b \; .
+\]
+Il faut donc résoudre ce système d'équations linéaires pour $m_1$,
+$m_2$ et $b$.  Sous la forme matricielle, nous avons
+\[
+\begin{pmatrix} 5 & 10 & 1 \\ 10 & 10 & 1 \\ 10 & 20 & 1 \end{pmatrix}
+\begin{pmatrix} m_1 \\ m_2 \\ b \end{pmatrix}
+= \begin{pmatrix} -22 \\ -7 \\ -47 \end{pmatrix} \; .
+\]
+La matrice augmentée est
+\[
+\left(\begin{array}{rrr|r}
+5 & 10 & 1 & -22 \\
+10 & 10 & 1 & -7 \\
+10 & 20 & 1 & -47
+\end{array}\right) \; .
+\]
+$R_2-2R_1 \to R_2$ et $R_3 -2R_1 \to R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+5 & 10 & 1 & -22 \\
+0 & -10 & -1 & 37 \\
+0 & 0 & -1 & -3
+\end{array}\right) \; .
+\]
+$R_1-R_2 \to R_1$ donne
+\[
+\left(\begin{array}{rrr|r}
+5 & 0 & 0 & 15 \\
+0 & -10 & -1 & 37 \\
+0 & 0 & -1 & -3
+\end{array}\right) \; .
+\]
+$R_2-R_3 \to R_2$ donne
+\[
+\left(\begin{array}{rrr|r}
+5 & 0 & 0 & 15 \\
+0 & -10 & 0 & 40 \\
+0 & 0 & -1 & -3
+\end{array}\right) \; .
+\]
+$(1/5)R_1 \to R_1$, $(-1/10)R_2 \to R_2$ et $-R_3\to R_3$ donnent
+\[
+\left(\begin{array}{rrr|r}
+1 & 0 & 0 & 3 \\
+0 & 1 & 0 & -4 \\
+0 & 0 & 1 & 3
+\end{array}\right) \; .
+\]
+Nous trouvons donc $m_1=3$, $m_2 = -4$ et $b=3$.
+
+L'équation cherchée est $z = 3 - 4y + 3x$.
+}
+
+\compileSOL{\SOLUb}{\ref{14Q6}}{
+\subQ{a} Le domaine est l'ensemble des points $(x,y)$ tels que $1-x^2-2y^2>0$
+car $\ln(z)$ n'est pas définie pour $z\leq 0$.  Il faut donc avoir
+$x^2 + 2 y^2 <1$.  Le domaine est l'intérieure de l'ellipse $x^2+2y^2=1$ que
+nous retrouvons dans la figure ci-dessous dans laquelle nous avons aussi tracé
+quelques courbes de niveau.  Ce sont les ellipses $x^2+2y^2=c$ avec
+$0\leq c <1$.
+\MATHgraph{14_var_mult_fonct/level1}{8cm}
+
+\subQ{b} Le domaine est l'ensemble des points $(x,y)$ tels que $x^2-y^2\geq 0$
+car la fonction $\sqrt{z}$ n'est pas définie pour $z<0$.  Il faut donc avoir
+$x^2 \geq y^2$.  Le domaine est la région bornée par les droites $y=\pm x$ et
+qui contient l'axe des $x$.  Les courbes de niveau sont les hyperboles
+$x^2-y^2 = c$ avec $0\leq c$; des hyperboles dont l'axe principal est l'axe
+des $x$.  Nous avons tracé quelques courbes de niveau de la fonction
+$\displaystyle f(x,y) = \sqrt{x^2-y^2}$ dans la figure ci-dessous.
+\MATHgraph{14_var_mult_fonct/level2}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{14Q7}}{
+Les courbes de niveau de $f$ sont données par
+$\displaystyle \frac{1}{1+x^2+y^2} = C \in ]0,1]$.  Ainsi,
+$\displaystyle x^2 + y^2 = D$ où
+$\displaystyle D = \frac{1}{C} - 1 \in [0, \infty[$.
+Les courbes de niveau sont des cercles centrés à l'origine et de rayon
+$\sqrt{D}$.   La figure ci-dessous contient quelques courbes de niveau
+de $f$.
+\MATHgraph{14_var_mult_fonct/lev_curves3a}{8cm}
+
+Le graphe de $f$ au voisinage de l'origine est donné dans la figure
+ci-dessous.
+\MATHgraph{14_var_mult_fonct/lev_curves3b}{8cm}
+}
+
+\subsection{Fonctions  continues}
+
+\compileSOL{\SOLUb}{\ref{14Q8}}{
+Puisque
+\[
+f(x, m x^2) = \frac{x\sqrt{m x^2}}{x^2+m x^2}
+= \frac{\sqrt{m}\,x|x|}{(1+m)x^2}
+= \begin{cases}
+\displaystyle \frac{\sqrt{m}\,x^2}{(1+m)x^2} = \frac{\sqrt{m}}{1+m} &
+\text{si } x>0 \\[2ex]
+\displaystyle \frac{-\sqrt{m}\,x^2}{(1+m)x^2} = \frac{-\sqrt{m}}{1+m}
+& \text{si } x<0 \\
+\end{cases}
+\]
+nous avons
+\[
+\lim_{x\rightarrow 0^+} f(x,m x^2) = \frac{\sqrt{m}}{1+m}
+\qquad \text{et} \qquad
+\lim_{x\rightarrow 0^-} f(x,m x^2) = \frac{-\sqrt{m}}{1+m} \ .
+\]
+Ainsi, $f(x,y)$ approche des valeurs différentes lorsque nous approchons
+l'origine le long des courbes $y=m x^2$ pour différentes valeurs de
+$m$.  Même pour la même valeur non nul de $m$, la limite à droite est
+différente de la limite à gauche.  La limite
+$\displaystyle \lim_{(x,y)\rightarrow(0,0)} f(x,y)$ n'existe donc pas.  Par
+conséquent, la fonction $f$ n'est pas continue au point $(0,0)$.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

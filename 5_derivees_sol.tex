@@ -1,0 +1,1031 @@
+\section{Dérivée}
+
+\subsection{Taux de variation}
+
+\compileSOL{\SOLUb}{\ref{5Q1}}{
+\subQ{a} \\
+\subQ{i}
+$\displaystyle \frac{f(1+1)-f(1)}{1} = \frac{2\times 2^2 - 2}{1} = 6$,
+\quad
+$\displaystyle \frac{f(1+0.5)-f(1)}{0.5} = \frac{2 \times (1.5)^2 - 2}{0.5}
+= 5$,\\
+$\displaystyle \frac{f(1+0.1)-f(1)}{0.1} = \frac{2 \times (1.1)^2 - 2}{0.1}
+= 4.2$ et\\
+$\displaystyle \frac{f(1+0.01)-f(1)}{0.01} =
+\frac{2 \times (1.01)^2 - 2}{0.01} = 4.02$ respectivement.
+
+\subQ{ii} $y-2 = 6(t-1)$, $y-2 = 5(t-1)$, $y-2 = 4.2(t-1)$ et
+$y-2 = 4.02(t-1)$ respectivement.
+
+\subQ{iii} Voir la figure ci-dessous.
+
+\subQ{iv} La pente de la tangente est la limite des pentes
+\[
+\frac{f(t_0 + \Delta t) - f(t_0)}{\Delta t} =
+\frac{f(1 + \Delta t) - f(1)}{\Delta t}
+\]
+des sécantes qui passent par les points $(t_0,f(t_0))= (1,2)$ et
+$(t_0+\Delta t, f(t_0+\Delta t)) = (1+\Delta t, f(1+\Delta t))$ lorsque 
+$\Delta t$ tend vers $0$.  Ainsi, nous pouvons conclure à partir des calculs
+faits en (i) que la pente de la tangente à la courbe $y=f(x)$ au point
+$(1,2)$ est possiblement $4$.
+
+\subQ{v} $y-2 = 4(t-1)$
+
+\MATHgraph{5_derivees/limsec1_a}{8cm}
+
+\subQ{b}\\
+\subQ{i} $\displaystyle \frac{f(0+1)-f(0)}{1} = \frac{e^{2(1)} - 1}{1}
+\approx 6.3891$, \quad
+$\displaystyle \frac{f(0+0.5)-f(0)}{0.5} = \frac{e^{2(0.5)} - 1}{0.5}
+\approx 3.4366$,\\
+$\displaystyle \frac{f(0+0.1)-f(0)}{0.1} = \frac{2^{2(0.1)} - 1}{0.1}
+\approx 2.2140$ et\\
+$\displaystyle \frac{f(0+0.01)-f(0)}{0.01} =
+\frac{e^{2(0.01)} - 1}{0.01} \approx 2.0201$ respectivement.
+
+\subQ{ii} $y-1 \approx 6.3891(t-0)=6.3891 t$, $y-1 \approx 3.4366 t$,
+$y-1 \approx 2.2140 t$ et $y-1 \approx 2.0201 t$ respectivement.
+
+\subQ{iii} Voir la figure ci-dessous.
+
+\subQ{iv} La pente de la tangente est la limite des pentes
+\[
+\frac{f(t_0 + \Delta t) - f(t_0)}{\Delta t} =
+\frac{f(\Delta t) - f(0)}{\Delta t}
+\]
+des sécantes qui passent par les points $(t_0,f(t_0))= (0,1)$ et
+$(t_0+\Delta t, f(t_0+\Delta t)) = (\Delta t, f(\Delta t))$ lorsque 
+$\Delta t$ tend vers $0$.  Ainsi, nous pouvons conclure à partir des calculs
+faits en (i) que la pente de la tangente à la courbe $y=f(x)$ au point
+$(0,1)$ est possiblement $2$.
+
+\subQ{v} $y-1 = 2t$
+
+\MATHgraph{5_derivees/limsec1_b}{8cm}
+}
+
+\compileSOL{\SOLUa}{\ref{5Q2}}{
+\subQ{a} $\displaystyle \frac{p(1)-p(0)}{1} = \frac{1.5^1 - 1}{1} = 0.5$
+
+\subQ{b} $\displaystyle \frac{p(0.1)-p(0)}{0.1} = \frac{1.5^{0.1} - 1}{0.1}
+\approx 0.4138$
+
+\subQ{c} $\displaystyle \frac{p(0.01)-p(0)}{0.01} = \frac{1.5^{0.01} - 1}{0.01}
+\approx 0.4063$
+
+\subQ{d} $\displaystyle \frac{p(0.001)-p(0)}{0.001} =
+\frac{1.5^{0.001} - 1}{0.001} \approx 0.4055$
+
+\subQ{e} $\ln(1.5) \approx 0.40546510$
+
+\subQ{f} $y-1 \approx 0.40546510\, t$
+}
+
+\compileSOL{\SOLUb}{\ref{5Q3}}{
+\subQ{a}
+À $t=0$, $\displaystyle H'(0) \approx \frac{H(1)-H(0)}{1-0} = 1.07$.
+À $t=1$, puisque que
+$\displaystyle \frac{H(0)-H(1)}{0-1} = 1.07$ et 
+$\displaystyle \frac{H(2)-H(1)}{2-1} = 1.22$, nous estimons $H'(1)$ par
+la moyenne
+$\displaystyle H'(1) \approx \frac{1.22+1.07}{2} = 1.145$.
+À $t=2$, puisque que
+$\displaystyle \frac{H(1)-H(2)}{1-2} = 1.22$ et 
+$\displaystyle \frac{H(3)-H(2)}{3-2} = 1.34$, nous estimons $H'(2)$ par la
+moyenne
+$\displaystyle H'(2) \approx \frac{1.22+1.34}{2} = 1.28$.
+Nous procédons de la même façon pour trouver
+$H'(3) \approx 1.305$, $H'(4) \approx 1.435$, $H'(5) \approx 1.63$,
+$H'(6) \approx 1.78$, $H'(7) \approx 1.87$, $H'(8) \approx 2.14$ et
+$H'(9) \approx 2.42$.  Finalement, 
+$\displaystyle H'(10) \approx \frac{H(10)-H(9)}{10-9} = 2.4$\ .
+
+\subQ{b}
+\MATHgraph{5_derivees/tauxrel1_a}{8cm}
+
+\subQ{c}
+\[
+\begin{array}{c|cccccc}
+t & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+H'(t)/H(t) \approx & 0.105835 & 0.102415 & 0.103225 &
+0.094978 & 0.095602 & 0.098133  \\
+\multicolumn{7}{c}{} \\
+\multicolumn{1}{c}{} & 6 & 7 & 8 & 9 & 10 & \\
+\cline{2-7}
+\multicolumn{1}{c}{} & 0.097427 & 0.092711 & 0.097228 & 0.098977 & 0.089385 &
+\end{array}
+\]
+
+\subQ{d}
+\MATHgraph{5_derivees/tauxrel1_b}{8cm}
+
+\subQ{f} Le taux de croissance relatif n'est pas constant mais
+augmente.  Alors qu'il ne semble pas y avoir de relation entre les
+différents taux de croissance instantanés que nous avons calculés, nous pouvons
+facilement imaginer en regardant le graphe des taux de croissance
+relatifs en fonction du temps qu'ils semblent tracer une courbe
+convexe.
+}
+
+\compileSOL{\SOLUa}{\ref{5Q4}}{
+{\scriptsize    
+\[
+\begin{array}{c|c|c}
+a & b &
+\text{Taux de croissance moyen entre $a$ et $b$ heures (individus/heure)} \\ 
+\hline
+0 & 1 & \rule{0em}{2em} \displaystyle \frac{2^1-2^0}{1-0} = 1 \\[0.7em]
+0 & 0.1 & \displaystyle \frac{2^{0.1}-2^0}{0.1-0} = 0.7177\ldots \\[0.7em]
+0 & 0.01 & \displaystyle \frac{2^{0.01}-2^0}{0.01-0} = 0.6956\ldots \\[0.7em]
+0 & 0.001 & \displaystyle \frac{2^{0.001}-2^0}{0.001-0} = 0.6956\ldots \\
+\vdots & \vdots & \qquad \vdots \\
+0 & 10^{-5} & \displaystyle \frac{2^{10^{-5}}-2^0}{10^{-5}-0} = 0.6931\ldots
+\\[0.7em]
+0 & 10^{-6} & \displaystyle \frac{2^{10^{-6}}-2^0}{10^{-6}-0} = 0.6931\ldots \\
+\vdots & \vdots & \qquad \vdots \\
+ & \downarrow & \downarrow \\
+ & 0 & 0.6931\ldots
+\end{array}
+\]
+}
+Nous en déduisons que
+\[
+\lim_{b\rightarrow 0} \frac{2^b - 2^0}{b-0} \approx 0.6931\ldots
+\]
+C'est le taux de variation instantané de $2^t$ à $t=0$.
+
+Nous retrouvons dans la figure ci-dessous les graphes de $p$ et de la
+droite tangente au graphe de $p$ au point $(0,1)$.
+\MATHgraph{5_derivees/der_ass1A}{8cm}
+
+La pente $m$ de la droite tangente est le taux de variation instantané
+de $2^t$ à $t=0$; c'est-à-dire, $m \approx 0.6931$.  L'équation de
+cette droite tangente dans la forme point-pente est
+\[
+(p-1) = m (t-0) \Rightarrow p = 0.6931 t + 1 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{5Q5}}{
+\subQ{a}
+\[
+\begin{array}{c|c|c}
+a & b & \text{Taux de croissance moyen de la $a^e$ à la $b^e$ heure} \\
+& & \text{(visites/heure)} \\
+\hline
+2 & 3 & \rule{0em}{2em} \displaystyle \frac{87-57}{3-2} = 30 \\[0.7em]
+3 & 4 & \displaystyle \frac{151-87}{4-3} = 64 \\[0.7em]
+3 & 5 & \displaystyle \frac{246-87}{5-3} =  \frac{159}{2} = 79.5
+\end{array}
+\]
+
+\subQ{b}
+Nous pouvons estimer le taux de croissance instantané après trois heures en
+calculant la moyenne du taux de croissance moyen de la $2^e$ à la
+$3^e$ heure et du taux de croissance moyen de la $3^e$ à la $4^e$
+heure.  Nous obtenons $(30+64)/2 = 47$ visites/heure.  Nous utilisons les
+taux de croissance moyens calculés sur les plus petits intervalles de
+temps possibles.
+
+\subQ{c}
+Ce n'est pas réaliste de demander d'estimer le taux de croissance
+instantané après trois heures sur la base des données que nous
+possédons.  Il faudrait calculer le nombre de visites sur des
+intervalles de temps beaucoup plus petits qu'une heure.
+}
+
+\subsection{Dérivée d'une fonction}
+
+\compileSOL{\SOLUb}{\ref{5Q6}}{
+\subQ{a} La fonction $f$ n'est pas continue en $x=4$.
+
+\subQ{b} La fonction $f$ n'est pas différentiable en $x=4$ car elle
+n'est pas continue à ce point.  De plus, la fonction $f$ n'est
+pas différentiable en $x=5.5$ car
+\[
+\lim_{x\to 5.5^-} \frac{f(x)-f(5.5)}{x-5.5} = 2 \quad \text{et}
+\quad \lim_{x\to 5.5^+} \frac{f(x)-f(5.5)}{x-5.5} = -2 \neq 2
+\]
+impliquent que
+\[
+\lim_{x\to 5.5} \frac{f(x)-f(5.5)}{x-5.5}
+\]
+n'existe pas.  Le graphe de la fonction a un \flqq coin\frqq\ au point
+$(5.5,f(5.5))$.  Finalement, La fonction $f$ n'est pas différentiable
+en $x=6.5$ car
+\[
+\lim_{x\to 6.5} \frac{f(x)-f(6.5)}{x-6.5} = -\infty \ .
+\]
+La tangente à la courbe $y=f(x)$ au point $(6.5,f(6.5))$ est verticale.
+
+\subQ{c} La dérivée de la fonction est nulle aux points où la tangente
+à la courbe est horizontale.  Nous trouvons donc $x=0.5$, $2$ et $3.5$.
+}
+
+\compileSOL{\SOLUa}{\ref{5Q7}}{
+La valeur de la dérivée de $f$ en un point est donné par la pente de
+la droite tangente à la courbe en ce point.
+
+\subQ{a} La dérivée est positive sur les intervalles $]0.5,2[$,
+$]3,4[$ et $]5.5,7[$.
+
+\subQ{b} La dérivée est négative sur les intervalles $]0,0.5[$,
+$]1,3[$ et $]4,5.5[$.
+
+\subQ{c} La dérivée est nulle aux points $x=0.5$, $2$, $3$ et $5.5$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q8}}{
+\subQ{a} \PDFgraph{5_derivees/der31}
+
+\subQ{b} \PDFgraph{5_derivees/der32}
+
+\subQ{c} \PDFgraph{5_derivees/der33}
+}
+
+\compileSOL{\SOLUa}{\ref{5Q9}}{
+\subQ{a} La figure ci-dessous contient des graphes possibles pour la
+position et la vitesse de la voiture et de la dépanneuse en fonction
+du temps répondant aux conditions de la question.  La voiture et la
+dépanneuse ont la même vitesses en tout temps.
+\PDFgraph{5_derivees/towcars1}
+
+\subQ{b} La voiture et de la dépanneuse ont la même vitesse.
+Pour $0\leq t < t_1$, la voiture et la dépanneuse accélèrent.
+Pour $t_1 \leq t \leq t_2$, ils gardent une vitesse constante.
+Finalement, pour $t>t_2$, ils sont au repos.  Disons que le freinage a
+été plutôt brusque.
+\PDFgraph{5_derivees/towcars2}
+}
+
+\compileSOL{\SOLUb}{\ref{5Q10}}{
+La fonction $g$ ne peut pas être la dérivée de $f$ car, entre $0$ et
+$3.7$, $f$ est une fonction strictement décroissante.  Donc $g$
+devrait être négatif entre $0$ et $3.7$.
+
+Nous avons que $f$ est la dérivée de $g$.  Nous avons que $f$ est
+positif quand $g$ est strictement croissante, $f$ est négatif quand $g$ est
+strictement décroissante, et $f$ est zéro aux points où $g$ à un
+extremum.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q11}}{
+Nous avons que $f$ est la dérivée de $g$.  Nous avons que $f$ est positif quand
+$g$ est strictement croissante, $f$ est négatif quand $g$ est
+strictement décroissante, et $f$ est zéro aux points où $g$ à un
+extremum.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q13}}{
+\PDFgraph{5_derivees/der30}
+La température augmente lorsque $T'(t)>0$ et diminue lorsque
+$T'(t)<0$.
+}
+
+\compileSOL{\SOLUa}{\ref{5Q14}}{
+\PDFgraph{5_derivees/ass3C_sol1}
+Les réponses ci-dessous font références au graphe ci-dessus.
+
+\subQ{a} Il suffit de choisir une valeur de $t$ pour laquelle la pente
+de la droite tangente à la courbe $y=V(t)$ au point $(t,V(t))$ est
+positive.  Nous avons choisie $t = A = 0.5$.
+
+\subQ{b} Il suffit de choisir une valeur de $t$ pour laquelle la pente
+de la droite tangente à la courbe $y=V(t)$ au point $(t,V(t))$ est
+négative.  Nous avons choisie $t = B = 1.25$.
+
+\subQ{c} La valeur de $t$ pour laquelle la pente de la droite
+tangente à la courbe $y=V(t)$ au point $(t,V(t))$ semble maximale est
+$t = C = 0.75$.
+
+\subQ{d} La valeur de $t$ pour laquelle la pente de la droite tangente
+à la courbe $y=V(t)$ au point $(t,V(t))$ semble minimale est
+$t = D = 1.25$.  
+
+\subQ{e} Finalement, les valeurs de $t$ pour lesquelles la
+pente de la droite tangente à la courbe $y=V(t)$ au point $(t,V(t))$
+est nulle sont $t = E = 1$ et $t = F = 2$.
+
+\subQ{f} Le graphe de la dérivée $V'$ de $V$ est donné ci-dessous.
+\PDFgraph{5_derivees/ass3C_sol2}
+Ce graphe de la dérivée $V'$ de la fonction $V$ est naturellement une
+approximation du graphe de $V'$ car il faudrait calculer la pente de la
+droite tangente à la courbe $y=V(t)$ à tous les points $(t,V(t))$ pour
+pouvoir tracer exactement le graphe de $V'$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q15}}{
+\subQ{a} La fonction $f$ n'est pas continue au point $x=1$ car
+\[
+  \lim_{x\rightarrow 1^-} f(x) \approx \frac{11}{6} \neq
+  2 = \lim_{x\rightarrow 1^+} f(x) \ .
+\]
+
+\subQ{b} La fonction $f$ n'est pas différentiable aux points $x=0.5$ et
+$x=1$.  Puisque nous venons de montrer que la fonction $f$ n'est pas
+continue au point $x=1$, elle n'est donc pas différentiable à ce
+point. Que la dérivée de $f$ n'existe pas au point
+$x=0.5$ est justifié par la figure suivante.
+\PDFgraph{5_derivees/ass3B_sol}
+La fonction $f$ est continue au point $x=0.5$ mais ne possède pas de
+droite tangente au point $(0.5, f(0.5))$.  Nous pouvons voir que
+\[
+\lim_{x\to 0.5^-} \frac{f(x)-f(0.5)}{x-0.5} = 0 
+\neq \frac{19}{6} \approx \lim_{x\to 0.5^+} \frac{f(x)-f(0.5)}{x-0.5} 
+\]
+La limite à gauche est $0$ alors que celle à droite est beaucoup plus
+grande.   La fonction $f$ n'est donc pas différentiable au point
+$x = 0.5$.
+
+\subQ{c} La dérivée de $f$ est nulle aux points $x$ tels que la droite
+tangente à la courbe $y=f(x)$ au point $(x, f(x))$ est horizontal
+(i.e. de pente nulle).  Ainsi, la fonction $f$ possède une dérivée
+nulle au point $x = 1.5$ seulement.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q16}}{
+\begin{align*}
+f'(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
+= \lim_{h\to 0} \frac{\left( 4 -(x+h)^2\right) - \left( 4-x^2\right)}{h} \\
+&= \lim_{h\to 0} \frac{\left(-x^2 -2xh -h^2 +4\right) - \left( 4-x^2\right)}{h}
+= \lim_{h\to 0} \frac{-2xh -h^2}{h} \\
+& = \lim_{h\to 0} \left( -2x - h\right) = -2x \ .
+\end{align*}
+\PDFgraph{5_derivees/der26}
+
+Le seul point $x$ pour lequel $f'(x) = 0$ est $x=0$ car $f'(x) = -2x$.
+Puisque $f'(x)=-2x>0$ pour $x<0$, la fonction $f$ est strictement
+croissante pour $x<0$.  Puisque $f'(x)=-2x<0$ pour $x>0$, la fonction
+$f$ est strictement décroissante pour $x>0$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q17}}{
+la pente de la sécante à la courbe $y=g(x)$ entre les points $x$ et
+$x+h$ est
+\[
+\frac{g(x+h)-g(x)}{h} = \frac{(x+h) + 2(x+h)^2 - x - 2x^2}{h}
+= \frac{h + 4h x+ 2h^2}{h} = 1 + 4x + 2h \ .
+\]
+La pente de la tangente à la courbe $y=g(x)$ au point $x$ est
+\[
+g'(x) = \lim_{h\rightarrow 0} \frac{g(x+h)-g(x)}{h}
+= \lim_{h\rightarrow 0} \left( 1 + 4x + 2h \right)
+= 1 + 4x + \lim_{h\rightarrow 0} 2h = 1+ 4x \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{5Q18}}{
+\subQ{a} Puisque
+\begin{align*}
+\frac{f(x+h)-f(x)}{h} &= \frac{(x+h+1)^2-(x+1)^2}{h} \\
+&= \frac{(x^2 + 2xh + 2x + h^2 + 2h + 1) - (x^2 + 2x + 1)}{h} \\
+&= \frac{2xh + 2h + h^2}{h} = 2x + 2 + h \ ,
+\end{align*}
+nous avons que
+\[
+f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
+= \lim_{h\rightarrow 0} (2x + 2 + h) = 2x + 2 \ .
+\]
+
+\subQ{b}
+\begin{align*}
+f'(x) &= \lim_{h\rightarrow 0} \frac{f(x+h) - f(x)}{h}
+=\lim_{h\rightarrow 0} \frac{1/(2(x+h)+5) - 1/(2x+5)}{h} \\
+&=\lim_{h\rightarrow 0} \frac{(2x+5) - (2(x+h)+5)}{h(2x+5)(2x+5+2h)}
+= \lim_{h\rightarrow 0} \frac{-2h}{h(2x+5)(2x+5+2h)} \\
+&= \lim_{h\rightarrow 0} \frac{-2}{(2x+5)(2x+5+2h)}
+= \frac{-2}{(2x+5)^2} \ .
+\end{align*}
+
+\subQ{c}
+\begin{align*}
+f'(x) &= \lim_{h\rightarrow 0} \frac{f(x+h) - f(x)}{h}
+=\lim_{h\rightarrow 0} \frac{\big((x+h)^2+(x+h)\big)-\big(x^2+x\big)}{h} \\
+&=\lim_{h\rightarrow 0} \frac{2xh+h^2 +h}{h}
+= \lim_{h\rightarrow 0} \left(2x+h +1\right) = 2x+1 \ .
+\end{align*}
+
+\subQ{e}
+\begin{align*}
+f'(x) &= \lim_{h\rightarrow 0} \frac{f(x+h) - f(x)}{h}
+=\lim_{h\rightarrow 0} \frac{1/((x+h)(x+1+h)) - 1/(x(x+1))}{h} \\
+&=\lim_{h\rightarrow 0} \frac{x(x+1) - (x+h)(x+1+h)}{hx(x+1)(x+h)(x+1+h)}
+= \lim_{h\rightarrow 0} \frac{-2xh -h -h^2}{hx(x+1)(x+h)(x+1+h)} \\
+&= \lim_{h\rightarrow 0} \frac{-2x -1 -h}{x(x+1)(x+h)(x+1+h)}
+= \frac{-2x-1}{x^2(x-1)^2} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{5Q19}}{
+Il est évident qu'il n'existe pas de valeur $c$ telle que $H(c) = 0.5$ car
+$0.5$ n'est pas dans l'image de $H$.
+
+La pente de la sécante entre les points $(-1,H(-1))$ et $(1,H(1))$ est
+$\displaystyle \frac{H(1)-H(-1)}{2} = \frac{1}{2}$.  Puisque $H'(x)=0$ pour
+tout $x\neq 0$ et $H'(x)$ n'est pas défini à $x=0$, il est alors clair que
+nous ne pouvons pas trouver une valeur $c$ telle que $H'(c)= 1/2$.
+
+Le problème avec la fonction de Heaviside est qu'elle n'est pas continue à
+l'origine.
+}
+
+\subsection{Calcul des dérivées}
+
+\compileSOL{\SOLUb}{\ref{5Q21}}{
+Puisque $g'(y) = -3 < 0$ pour tout $y$, la fonction est strictement
+décroissante sur $\RR$.  Ce n'est pas surprenant car $z=g(y)=-3y+5$
+est l'équation d'une droite de pente $-3$.  L'intervalle où la
+fonction est strictement croissante est l'intervalle vide.
+}
+
+\compileSOL{\SOLUa}{\ref{5Q22}}{
+\subQ{a} $T(t) = p(t)M(t)= (2\times 10^6 + 10^3 t^2)(80 - 0.5 t)$.
+
+\subQ{b}
+\begin{align*}
+T'(t) &= \left(\dfdx{(2\times 10^6 + 10^3 t^2)}{t}\right)(80 - 0.5 t)
++ (2\times 10^6 + 10^3 t^2)\left(\dfdx{(80 - 0.5 t)}{t}\right) \\
+&= 2\times 10^3\, t(80 - 0.5 t) - 0.5(2\times 10^6 + 10^3 t^2) \\
+&= -1.5\times 10^3\, t^2 + 1.6 \times 10^5 \, t - 10^6 \ .
+\end{align*}
+
+\subQ{c} Nous avons que
+\[
+T'(t) = -1.5\times 10^3\, t^2 + 1.6 \times 10^5\, t - 10^6 =
+-1.5\times 10^3 \left( t^2 - 106.\overline{6} t + 666.\overline{6}\right)= 0
+\]
+pour
+\begin{align*}
+t = t_1 &= \frac{106.\overline{6}- \sqrt{106.\overline{6}^2 - 4 \times
+666.\overline{6}}}{2} = 6.\overline{6}
+\intertext{et}
+t = t_2 &= \frac{106.\overline{6}+ \sqrt{106.\overline{6}^2 - 4 \times
+666.\overline{6}}}{2} = 100
+\end{align*}
+À $t=t_1$, $T(t_1) = 153674074.\overline{074}$,
+$M(t_1)= 76.\overline{6}$ et $p(t_1) = 2004444.\overline{4} \approx
+2004445$.
+À $t=t_2$, $T(t_2) = 3.6 \times 10^8$, $M(t_2)= 30$ et
+$p(t_2) = 1.2\times 10^7$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q23}}{
+Si $v(t)$ est la vitesse du train au temps $t$ et $u(t)$ est la
+vitesse du passager par rapport au train au temps $t$, alors
+$w(t) = v(t)+u(t)$ est la vitesse du passager par rapport au sol au
+temps $t$.  Nous avons $v(t) = 110$ km/h et $u(t)=-3$ km/h au temps
+$t$.  Alors la vitesse du passager est $w(t) = 110-3 = 107$ km/h au
+temps $t$.  Notez que $u(t)<0$ car le passager se déplace dans la direction
+opposée au mouvement du train.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q24}}{
+\subQ{c} Nous avons $H(G) = P(M(G))$ où $M(G)= 5G+2$ et $P(M)=0.5M$.
+Puisque $M'(G) = 5$ et $P'(N) = 0.5$, nous obtenons
+\[
+\dydx{H}{G} = P'(M(G))M'(G) = 0.5\times 5 = 2.5 \ .
+\]
+\subQ{d} Nous avons $H(I) = F(V(I))$ où $F(V) = 37 + 0.4 V$ et $V(I) = 5 I^2$.
+Puisque $F'(V) = 0.4$ et $V'(I) = 10 I$, nous obtenons
+\[
+  \dydx{H}{I} = F'(V(I)) V'(I) = 0.4 \times 10 I = 4I \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{5Q25}}{
+Nous avons comme information que $L'(t)$ est constant et donc égale
+au taux de variation moyen
+$\displaystyle \frac{\Delta L}{\Delta t} = \frac{5}{10} = 0.5$.
+
+Utilisons
+\begin{align*}
+\dydx{H}{t} &= \dydx{B}{W}(W(L(t))\; \dydx{W}{L}(L(t))\; \dydx{L}{t}(t) \\
+&= \left( \frac{2}{3} \times 0.007\, W^{-1/3}\right)
+\left(2.53 \times 0.12 \, L^{1.53} \right) \left( 0.5 \right)
+\end{align*}
+pour calculer $\displaystyle \dydx{H}{t}$ lorsque $L=18$.
+Puisque $W = 0.007 (18)^{2/3} = 0.04807799619\ldots$\ lorsque $L=18$,
+nous obtenons
+\begin{align*}
+\dydx{H}{t} &=
+\left( \frac{2}{3} \times 0.007 (0.04807799619\ldots)^{-1/3}\right)
+\left(2.53 \times 0.12 \times 18^{1.53} \right)
+\left( 0.5 \right) \\
+&= 0.1622544808
+\end{align*}
+lorsque $L=18$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q26}}{
+\subQ{a} $\displaystyle f'(x) = \frac{1}{5} x^{1/5 - 1} =
+\frac{1}{5} x^{-4/5}$
+
+\subQ{b} $\displaystyle h'(t) = \frac{1}{e}x^{1/e-1}
+= \frac{1}{e}x^{(1-e)/e}$
+
+\subQ{c} $\displaystyle g'(z) = 3 \left(3 z^{3-1}\right)
++ 2 \left( 2 z^{2-1} \right) = 9 z^{2} + 4z$
+
+\subQ{e} Nous avons la fonction composée $f(x) = f_1(f_2(x))$ où
+$f_2(x) = 2x+1$ et $f_1(y) = y^3$.  Puisque $f_1'(y) = 3 y^2$ et
+$f_2'(x) = 2$, nous obtenons
+\[
+f'(x) = f_1'(f_2(x)) \; f_2'(x) = 3(2x+1)^2 \left( 2 \right)
+= 6 (2x+1)^2 \ .
+\]
+
+\subQ{f} $\displaystyle h'(x) = 135x (x^2-5)^{133/2}$
+
+\subQ{g} Si nous dérivons l'expression
+\[
+\ln| G(x) | = \ln\left(\frac{|1+x||2+x|}{|3+x|}\right)
+= \ln|1+x| + \ln|2+x| - \ln|3+x| \ ,
+\]
+nous obtenons
+\[
+\frac{G'(x)}{G(x)} = \frac{1}{1+x} + \frac{1}{2+x} - \frac{1}{3+x} \ .
+\]
+Donc
+\[
+G'(x) = \left(\frac{1}{1+x} + \frac{1}{2+x} - \frac{1}{3+x}\right)G(x)
+= \frac{2+x}{3+x} + \frac{1+x}{3+x} - \frac{(1+x)(2+x)}{(3+x)^2} \ .
+\]
+
+\subQ{h} $\displaystyle f'(t) = \frac{1}{2\sqrt{t}(1+\sqrt{t})^2}$
+
+\subQ{i} $\displaystyle f'(x) = \frac{3}{(3x-1)\ln(2)}$
+
+\subQ{j} Si nous complétons la factorisation, nous avons
+$f(y) = (5y-3)^7(y-1)(y+1)$.
+Donc
+\[
+\ln|f(y)| = \ln\left(|5y-3|^7|y-1||y+1|\right)
+= 7 \ln|5y-3| + \ln|y - 1| + \ln|y+1| \ .
+\]
+Si nous dérivons des deux côtés de cette équation, nous obtenons
+\[
+\frac{f'(y)}{f(y)} = \frac{35}{5y-3} + \frac{1}{y-1} + \frac{1}{y+1} \ .
+\]
+Ainsi,
+\begin{align*}
+f'(y) &= \left(\frac{35}{5y-3} + \frac{1}{y-1} + \frac{1}{y+1}\right)f(y) \\
+&= 35 (5y-3)^6(y^2-1) + (5y-3)^7(y+1) + (5y-3)^7(y-1) \\
+&= (5y-3)^6\left( 35(y^2-1)+2y(5y-3)\right)
+= (5y-3)^6(45y^2-6y-35) \ .
+\end{align*}
+
+\subQ{k}
+\begin{align*}
+h'(t) &= \frac{\displaystyle
+\left(\dfdx{(1+t)}{t}\right)(2-t)-(1+t)\left(\dfdx{(2-t)}{t}\right)}
+        {(2-t)^2} \\
+&= \frac{(2-t)+(1+t)}{(2-t)^2} = \frac{3}{(2-t)^2}
+\end{align*}
+
+\subQ{l}
+\begin{align*}
+g'(z) &= \frac{\displaystyle
+\left(\dfdx{(1+z^2)}{z}\right)(1+2z^3)-(1+z^2)\left(\dfdx{(1+2z^3)}{z}\right)}
+{(1+2z^3)^2} \\
+&= \frac{2z(1+2z^3)-6z^2(1+z^2)}{(1+2z^3)^2} = \frac{-2z^4-6z^2+2z}{(1+2z^3)^2}
+\end{align*}
+
+\subQ{m} Nous avons $f(x) = g(x)/h(x)$, où $g(x)=\ln(2x+e^x)$ et $h(x)= 2x+e^x$.
+Nous allons utiliser la règle pour la dérivée d'un quotient.  Notons
+que $g(x)$ est une composition de fonctions et que
+\[
+g'(x) = \left( \dfdx{\ln(y)}{y}\bigg|_{y=2x+e^x}\right)\dfdx{(2x + e^x)}{x}
+= \frac{1}{y}\bigg|_{y=2x+e^x} (2+e^x) = \frac{2+e^x}{2x+e^x} \ .
+\]
+Nous avons
+\begin{align*}
+f'(x) &= \frac{g'(x) h(x) - g(x)h'(x)}{ h^2(x)}
+= \frac{ \big((2+e^x)/(2x+e^x)\big)(2x+e^x)
+- (2+e^x) \ln(2x+e^x)}{(2x+e^x)^2} \\
+&= \frac{ (2+e^x) - (2+e^x) \ln(2x+e^x)}{(2x+e^x)^2}
+= (2+e^x) \left( \frac{  1- \ln(2x+e^x)}{(2x+e^x)^2} \right) \ .
+\end{align*}
+
+\subQ{n} Si nous dérivons des deux côtés de l'équation
+\[
+\ln|h(x)| = \ln\left(\frac{|1+3x|^2}{|1+2x|^3}\right)
+= 2 \ln|1+3x| - 3\ln|1+2x| \ ,
+\]
+nous obtenons
+\[
+\frac{h'(x)}{h(x)} = \frac{6}{1+3x} - \frac{6}{1+2x} \ .
+\]
+Ainsi,
+\begin{align*}
+h'(x) &= \left( \frac{6}{1+3x} - \frac{6}{1+2x}\right) h(x)
+= \left(\frac{6}{1+3x} - \frac{6}{1+2x}\right)
+\left(\frac{(1+3x)^2}{(1+2x)^3}\right) \\
+&= 6 \left( (1+2x) - (1+3x) \right) \left(\frac{(1+3x)}{(1+2x)^4}\right)
+= \frac{-6x (1+3x)}{(1+2x)^4} \ .
+\end{align*}
+
+Nous avons utilisé $\ln|1 +3x| = g_2(g_1(x))$ où
+$g_1(x) = 1+3x$ et $g_2(z)=\ln|z|$ pour obtenir
+\[
+\dfdx{\ln|1+3x|}{x} = g_2'(g_1(x)) g_1'(x)
+= \left(\frac{1}{z}\bigg|_{z=1+3x}\right) \times 3 = \frac{3}{1+3x} \ .
+\]
+La dérivée de $\ln|1+2x|$ est calculée de façon semblable.
+
+\subQ{o} Nous avons $\displaystyle f(x) = e^{-7x} = f_1(f_2(x))$ où
+$f_1(y)=e^y$ et
+$f_2(x) = -7x$.  Puisque $f_1'(y) = e^y$ et $f_2'(x) = -7$, nous obtenons
+\[
+f'(x) = f_1'(f_2(x)) f_2'(x) = e^{-7x} (-7) = - 7 e^{-7x} \ .
+\]
+
+\subQ{p} Puisque
+\[
+g(z) = \left(1 + \frac{2}{1+z}\right)^7 = \left(\frac{3+z}{1+z}\right)^7
+= (3+z)^7 (1+z)^{-7} \ ,
+\]
+nous avons
+\[
+\ln|g(z)| = \ln\left(|3+z|^7 |1+z|^{-7}\right)
+= 7\ln|3+z| - 7 \ln|1+z| \ .
+\]
+Si nous dérivons des deux côtés de cette équation, nous obtenons
+\[
+\frac{g'(z)}{g(z)} = \frac{7}{3+z} - \frac{7}{1+z}
+\]
+Ainsi,
+\begin{align*}
+g'(z) &= \left( \frac{7}{3+z} - \frac{7}{1+z}\right) g(z)
+= \left(\frac{7}{3+z} - \frac{7}{1+z}\right)
+\left(\frac{(3+z)^7}{(1+z)^7}\right) \\
+&= 7 \left( (1+z) - (3+z) \right) \left(\frac{(3+z)^6}{(1+z)^8}\right)
+= \frac{-14 (3+z)^6}{(1+z)^8} \ .
+\end{align*}
+
+\subQ{q} Puisque $f(t) = f_1(f_2(t))$ où $f_1(y) = y^{33}$ et
+$f_2(t) = 1+3t$, nous obtenons
+\[
+f'(t) = f_1'(f_2(t)) f_2'(t) = 33(1+3t)^{32} \left( 3\right)
+= 99(1+3t)^{32} \ . 
+\]
+
+\subQ{r} Nous avons $\displaystyle h(x) = \ln|\ln(x)| = h_1(h_2(x))$ où
+$h_1(y) = \ln|y|$ et $h_2(x) = \ln(x)$ pour $x>0$.  Puisque
+$h_1'(y) = y^{-1}$ et $h_2'(x) = x^{-1}$, nous obtenons
+\[
+h'(x) = h_1'(h_2(x)) h_2'(x) = \frac{1}{y}\bigg|_{y=\ln(x)}
+\left(\frac{1}{x}\right)
+= \frac{1}{\ln(x)} \left(\frac{1}{x}\right)
+= \frac{1}{x\ln(x)}
+\]
+pour $0<x<1$ et $x>1$.
+
+\subQ{s} Puisque
+\[
+g(t) = \ln\left(\frac{t^2}{(t-2)^3}\right) = 2\ln(t) - 3 \ln(t-2) \ ,
+\]
+nous avons
+\[
+g'(t) = \frac{2}{t} - \frac{3}{t-2}  \ .
+\]
+
+\subQ{t} Puisque
+\[
+f(x) = x^{\ln(x)} = e^{\ln(x^{\ln(x)})} = e^{(\ln(x))^2} \ ,
+\]
+nous avons
+\begin{align*}
+f'(x) &= \dfdx{e^{(\ln(x))^2}}{x}
+=\left(\dfdx{e^y}{y}\bigg|_{y=(\ln(x))^2}\right)
+\left(\dfdx{ (\ln(x))^2}{x}\right) \\
+& = e^{(\ln(x))^2} \dfdx{(\ln(x))^2}{x}
+= 2\, e^{(\ln(x))^2} \, \ln(x)\,\dfdx{\ln(x)}{x} \\
+&= 2 \, e^{(\ln(x))^2} \, \ln(x)\,\left(\frac{1}{x}\right)
+= 2\, x^{\ln(x)} \, \ln(x)\,\left(\frac{1}{x}\right)
+= 2\, x^{\ln(x)-1}\,\ln(x) \ .
+\end{align*}
+
+\subQ{u} Puisque
+\[
+g(x) = x^{x^2} = e^{\ln(x^{x^2})} = e^{x^2 \ln(x)} \ ,
+\]
+nous avons
+\begin{align*}
+g'(x) &= \dfdx{e^{x^2\ln(x)}}{x}
+= \left(\dfdx{e^y}{y}\bigg|_{y=x^2\ln(x)}\right)
+\left(\dfdx{x^2 \ln(x)}{x}\right) \\
+&= e^{x^2\ln(x)} \dfdx{\left( x^2\ln(x) \right)}{x}
+ = e^{x^2\ln(x)} \left(2x\ln(x) + x^2\, \frac{1}{x}\right) \\
+ &= x \, e^{x^2\ln(x)} \left( 2\ln(x) + 1\right)
+ = x\, x^{x^2} \left(2\ln(x) +1\right)
+ = x^{x^2+1}\left(2\ln(x) + 1\right) \ .
+\end{align*}
+
+\subQ{v} Grâce aux propriétés du logarithme, nous avons
+\[
+g(t) = 7\ln(t) + 8\ln(t^2-5) - 5 \ln(t-2) \ .
+\]
+Donc
+\[
+g'(t) = \frac{7}{t} + \frac{16t}{t^2-5} - \frac{5}{t-2} \ .
+\]
+La règle de dérivation des fonctions composées a été utilisée pour
+calculer la dérivée de $\ln(t^2-5)$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q27}}{
+\subQ{a}
+$\displaystyle h'(\theta) = \sec(\theta)(\sec^2(\theta)+\tan^2(\theta))$
+
+\subQ{c} $\displaystyle f'(t) = \frac{\cos(x)}{4+\sin(x)}$
+
+\subQ{d} $\displaystyle g(\theta) = \frac{\sin(\theta) + \theta\cos(\theta)}
+{\sqrt{2\theta\, \sin(\theta)}}$
+
+\subQ{e} Nous avons
+$\displaystyle F(\theta)=f_1(f_2(f_3(\theta)))$ où
+$f_1(z) = z^2$, $f_2(y)=\tan(y)$ et $f_3(\theta) = \sin(\theta)$.  Ainsi,
+\[
+F'(\theta) = f_1'(f_2(f_3(\theta)))\ f_2'(f_3(\theta))\ f_3'(\theta) \ .
+\]
+Or, $f_1'(z) = 2z$, $f_2'(y) = \sec^2(y)$ et $f_3'(\theta) = \cos(\theta)$.
+Nous obtenons donc
+\[
+F'(\theta) = 2\tan(\sin(\theta)) \; \sec^2(\sin(\theta)) \; \cos(\theta) \ .
+\]
+
+\subQ{f} Nous avons $g(x) = f(x)\, h(x)$ où $f(x)=x$ et $h(x)= \arctan(x^2)$.
+Nous allons utiliser la règle pour la dérivée d'un produit.  Notons
+que $h(x)$ est une composition de fonctions et que
+\[
+h'(x) = \left( \dfdx{\arctan(y)}{y}\bigg|_{y=x^2}\right)\dfdx{x^2}{x}
+= \frac{1}{1+y^2}\bigg|_{y=x^2} (2x) = \frac{2x}{1+x^4} \ .
+\]
+Nous obtenons
+\[
+g'(x) = f'(x) h(x) + f(x)h'(x) = \arctan(x^2) + x \left(\frac{2x}{1+x^4}\right)
+= \arctan(x^2) + \frac{2x^2}{1+x^4} \ .
+\]
+
+\subQ{g}
+\[
+h'(\theta) = \left(\dfdx{\sin(\theta)}{\theta}\right)\cos(\theta)
++\sin(\theta)\left( \dfdx{\cos(\theta)}{\theta}\right) =
+\cos^2(\theta)  - \sin^2(\theta)
+\]
+
+\subQ{h} Nous avons $\cos(2x-1) = f_1(f_2(x))$ où $f_1(y)=\cos(y)$ et
+$f_2(x) = 2x-1$.  Donc
+\[
+\dfdx{\cos(2x-1)}{x} = f_1'(f_2(x)) f_2'(x) =
+-\sin(2x-1)\, (2) = -2\sin(2x-1)
+\]
+et ainsi
+\[
+h'(x) = \dfdx{\left(3 + \cos(2x-1)\right)}{x}
+= \dfdx{\cos(2x-1)}{x} = -2\sin(2x-1) \ .
+\]
+
+\subQ{i} Nous avons $e^{\cos(z)} = f_1(f_2(z))$ où $f_1(y) = e^y$ et
+$f_2(z) = \cos(z)$.  Puisque $f_1'(y) = e^y$ et $f_2'(x) = -\sin(x)$,
+nous obtenons
+\[
+g'(z) = \dfdx{\left( e^{\cos(z)}\right)}{z} = f_1'(f_2(z)) f_2'(z)
+= e^{\cos(z)} (-\sin(z)) = - e^{\cos(z)}\sin(z) \ .
+\]
+
+\subQ{j} Si nous n'utilisons pas la formule pour calculer la dérivée de la
+sécante, nous pouvons procéder comme suit.  Nous avons
+\[
+f(\theta) = \sec(\theta) = \left(\cos(\theta)\right)^{-1}
+= f_1(f_2(\theta)) \ .
+\]
+où $f_1(y)=y^{-1}$ et $f_2(\theta) = \cos(\theta)$.  Puisque
+$f_1'(y) = - y^{-2}$ et $f_2'(\theta) = -\sin(\theta)$, nous trouvons
+\begin{align*}
+f'(\theta) &= f_1'(f_2(\theta)) f_2'(\theta)
+= -\left(\cos(\theta)\right)^{-2} \left(-\sin(\theta)\right)
+= \frac{\sin(\theta)}{\left(\cos(\theta)\right)^2} \\
+&= \left(\frac{\sin(\theta)}{\cos(\theta)}\right)
+\left( \frac{1}{\cos(\theta)} \right)
+= \tan(\theta) \sec(\theta) \ .
+\end{align*}
+
+\subQ{k} Nous avons $f(x) = g(h(k(x)))$ où
+$k(x) = x^{100}+1$, $h(y) = \sin(y)$
+et $g(z) = e^z$.  Donc $f'(x) = g'(h(k(x)))h'(k(x))k'(x)$.
+Or $g'(z) = e^z$, $h'(y) = \cos(y)$ et $k'(x) = 100 x^{99}$.  Donc
+\[
+f'(x) = 100 \, x^{99} \, \cos(x^{100}+1) \, e^{\sin(x^{100}+1)} \ .
+\]
+
+\subQ{m} Puisque
+$\displaystyle f(t) = \ln\left(2t-\cos(6t)\right)-\ln(t)$, nous trouvons
+\[
+f'(t) = \frac{2+6\sin(6t)}{2t-\cos(6t)} - \frac{1}{t} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{5Q28}}{
+\subI{i} Avec la règle de la dérivée d'un quotient, nous avons
+\begin{align*}
+\dfdx{\left( \frac{1}{1+e^x} \right)}{x} &=
+\frac{\displaystyle  \left(\dfdx{1}{x}\right) (1+e^x) -
+(1) \left(\dfdx{(1+e^x)}{x}\right)}{(1+e^x)^2} \\
+&= \frac{0\times  (1+e^x) - e^x}{(1+e^x)^2} = \frac{-e^x}{(1+e^x)^2} \ .
+\end{align*}
+
+\subI{ii} Pour utiliser la règle de la dérivée de fonctions composées,
+notons que
+\[
+\frac{1}{1+e^x} = (1+e^x)^{-1} = f_1(f_2(x))
+\]
+où $f_1(y)=y^{-1}$ et $f_2(x)= 1+e^x$.  Puisque $f_1'(y) = - y^{-2}$
+et $f_2'(x) = e^x$, nous obtenons
+\[
+\dfdx{\left( \frac{1}{1+e^x} \right)}{x} =
+\dfdx{\left( (1+e^x)^{-1} \right)}{x} = f_1'(f_2(x))f_2'(x)
+= -(1+e^x)^{-2} e^x = \frac{-e^x}{(1+e^x)^2} \ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{5Q29}}{
+\subI{i}
+Avec les identités pour les fonctions logarithmiques, nous avons
+$f(x) = \ln(7x) = \ln(7) + \ln(x)$.  Donc
+$f'(x) = 1/x$.
+
+\subI{ii} Pour utiliser la règle des fonctions composées, notons que
+$\displaystyle \ln(7x) = f_1(f_2(x))$ où
+$f_1(y)=\ln(y)$ et $f_2(x)= 7x$.  Donc
+\[
+\dfdx{\left( \ln(7y) \right)}{x} = f_1'(f_2(x))f_2'(x)
+= \frac{1}{y}\bigg|_{y=7x} \times 7
+= \frac{1}{7x} \times 7 = \frac{1}{x} \ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{5Q30}}{
+\subI{i} Nous avons la règle
+$\displaystyle \dfdx{(a^x)}{x} = a^x \ln(a)$ pour $a>0$.
+Donc $\displaystyle \dfdx{(7^x)}{x} = 7^x \ln(7)$.
+
+\subI{ii} Pour utiliser la règle des fonctions composées, notons que
+$\displaystyle 7^x = e^{\ln(7^x)} = e^{x\ln(7)} = f_1(f_2(x))$ où
+$f_1(y)= e^y$ et $f_2(x)= x\ln(7)$.  Donc
+\[
+\dfdx{\left( 7^x \right)}{x} = f_1'(f_2(x))f_2'(x)
+= e^y \big|_{y=x\ln(7)} \ln(7) 
+= e^{x\ln(7)} \ln(7) = e^{\ln(7^x)}\ln(7) = 7^x\ln(7) \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{5Q31}}{
+\subI{i}
+Puisque $\cos(2\theta) = \cos^2(\theta) - \sin^2(\theta)$, nous avons
+\begin{align*}
+\dfdx{\left(\cos(2\theta)\right)}{\theta}
+&= \dfdx{\left(\cos^2(\theta)\right)}{\theta} -
+\dfdx{\left(\sin^2(\theta)\right)}{\theta}
+= -2\cos(\theta)\sin(\theta) - 2 \cos(\theta)\sin(\theta) \\
+&= -4 \cos(\theta)\sin(\theta) = - 2\sin(2\theta) \ .
+\end{align*}
+Nous avons utilisé la règle de la dérivée d'un produit pour calculer
+\begin{align*}
+\dfdx{\left(\cos^2(\theta)\right)}{\theta} &=
+2\cos(\theta) \; \dfdx{\cos(\theta)}{\theta}
+= -2\cos(\theta)\sin(\theta)
+\intertext{et}
+\dfdx{\left(\sin^2(\theta)\right)}{\theta} &=
+2\sin(\theta) \; \dfdx{\sin(\theta)}{\theta}
+= 2\cos(\theta)\sin(\theta) \ .
+\end{align*}
+Nous aurions pu calculer la dérivée de $\cos^2(\theta)$ et $\sin^2(\theta)$ à
+l'aide de la règle de la dérivée de fonctions composées.
+
+\subI{ii} Puisque $\cos(2\theta) = f_1(f_2(\theta))$ où
+$f_2(y) = \cos(y)$ et $f_2(\theta) = 2\theta$, nous avons
+\[
+f'(\theta) = f_2'(f_1(z)) f_1'(z) = - \sin(y)\big|_{y=2\theta} (2)
+= -\sin(2\theta) \, (2) = -2\sin(2\theta) \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{5Q32}}{
+\subQ{a} Puisque $h'(x) = f'(g(x))g'(x)$, nous avons
+$h'(1) = f'(g(1))g'(1) = f'(2)\times 6 = 5\times 6 = 30$.
+
+\subQ{b} Puisque $h'(x) = g'(f(x))f'(x)$, nous avons
+$h'(1) = g'(f(1))f'(1) = g'(3) \times 4 = 9 \times 4 = 36$.
+
+\subQ{c} Puisque
+$\displaystyle h'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$, nous avons\\
+$\displaystyle h'(1) = \frac{f'(1)g(1) - f(1)g'(1)}{g^2(1)}
+= \frac{4 \times 2 - 3\times 6}{2^2} = -\frac{5}{2}$.
+
+\subQ{d} Puisque $f(h(x)) = x$, nous avons que $f'(h(x))h'(x) = 1$.  Ainsi,
+$\displaystyle h'(1) = \frac{1}{f'(h(1))}$.  Or $h(1) = f^{-1}(1)$ est
+la valeur qu'il faut donner à $f$ pour obtenir $1$.  Donc, $h(1)=2$.
+Nous avons que $\displaystyle h'(1)=\frac{1}{f'(2)} = \frac{1}{5}$.
+}
+
+\compileSOL{\SOLUa}{\ref{5Q33}}{
+Nous avons $f'(x)>0$ pour tout $x$ car $f$ est une fonction strictement
+croissante.  Ainsi, $\displaystyle g'(x) = \frac{-f'(x)}{f^2(x)} < 0$
+pour tout $x$ car $f(x)>0$ pour tout $x$ par hypothèse.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q34}}{
+\subQ{a}\\
+\subI{i} Puisque
+\[
+y=2+x^3 \Leftrightarrow x^3 = y-2 \Leftrightarrow x = (y-2)^{1/3} \ ,
+\]
+l'inverse de $f$ est $f^{-1}(x) = (x-2)^{1/3}$.  Ainsi, la règle des
+fonctions composées donne
+\[
+\dfdx{\left( f^{-1}(x) \right)}{x} = \dfdx{(x-2)^{1/3}}{x}
+= \frac{1}{3} (x-2)^{-2/3} \ .
+\]
+
+\subI{ii} Puisque $f(f^{-1}(x)) = x$ pour tout $x$, nous avons que
+\[
+1 = \dfdx{(x)}{x} = \dfdx{ \left( f(f^{-1}(x)) \right)}{x}
+= f'(f^{-1}(x)) \dfdx{\left( f^{-1}(x)\right)}{x} \ .
+\]
+Donc
+\[
+\dfdx{\left( f^{-1}(x)\right)}{x} = \frac{1}{f'(f^{-1}(x))}
+\]
+où $f'(f^{-1}(x)) \neq 0$.  Puisque $f'(x) = 3x^2$, nous obtenons
+\[
+\dfdx{\left( f^{-1}(x)\right)}{x} = \frac{1}{3((x-2)^{1/3})^2}
+= \frac{1}{3(x-1)^{2/3}} = \frac{1}{3} (x-2)^{-2/3} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{5Q35}}{
+\subQ{a} Puisque $\displaystyle y'= \frac{3x^2}{x^3-7}$, nous avons que
+$y'(2) = 12$.  L'équation de la droite tangente dans la forme
+point-pente est $y - 0 = 12(x -2)$.  Donc $y = 12 x -24$.
+
+\subQ{b} Puisque $\displaystyle y'= \cos(\sin(x))\cos(x)$, nous avons que
+$y'(\pi) = -1$.  L'équation de la droite tangente dans la forme
+point-pente est $y - 0 = -1(x - \pi)$.  Donc $y = -x +\pi$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q36}}{
+\subQ{a} La courbe coupe l'axe des $x$ au point $x=-2$.  La pente est
+donnée par $f'(-2) = 3 (-2)^2 = 12$.
+
+\subQ{b} La droite tangente passe par le point $(-2,0)$ et a une pente
+de $f'(-2) = 12$.  L'équation de la droite tangente est donnée par
+$( y - 0 ) = f'(-2) ( x - (-2) )$; c'est-à-dire, $y = 12x + 24$.
+
+\subQ{c} La droite perpendiculaire a une pente $m$ telle que
+$m \times f'(-2) = -1$.  Donc $m=-1/12$.  La droite doit passer par
+le point $(-2,0)$.  L'équation de cette droite est donc
+$(y - 0) = (-1/12) ( x - (-2))$; c'est-à-dire, $y = -x/12 - 1/6$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q37}}{
+Puisque $f'(x) = \sqrt{3} + 2 \cos(x)$, nous avons que $f'(x) = 0$ lorsque
+$\displaystyle \cos(x) = -\frac{\sqrt{3}}{2}$.  Donc
+$\displaystyle x = \pm \frac{2\pi}{3} + 2n \pi$ pour $n \in \ZZ$.
+}
+
+\compileSOL{\SOLUb}{\ref{5Q38}}{
+Nous avons $A'(r) = 2\pi r$.
+\PDFgraph{5_derivees/disk}
+
+Par définition, nous avons
+\begin{align*}
+A'(r) &= \lim_{\Delta r\to 0} \frac{A(r+\Delta r)-A(r)}{\Delta r}
+= \lim_{\Delta r\to 0} \frac{\pi(r+\Delta r)^2-\pi r^2}{\Delta r} \\
+&= \lim_{\Delta r\to 0} \frac{2 \pi r \Delta r  + \pi (\Delta r)^2}
+{\Delta r} = \lim_{\Delta r\to 0} \left( 2 \pi r + \pi \Delta r\right)
+= 2 \pi r \ .
+\end{align*}
+Puisque nous divisons une aire en m$^2$ (i.e. $\pi(r+\Delta r)^2-\pi r^2$)
+par une longueur en m (i.e. $\Delta r$), nous obtenons que $A'(r)$ est en
+m.  Ce sont les unités de $2\pi r$.
+
+Notez que lorsque $\Delta r \to 0$, l'anneau \lgm tend\rgm\ vers un
+cercle de rayon $r$ qui a une circonférence de $2\pi r$.
+}
+
+\compileSOL{\SOLUa}{\ref{5Q39}}{
+Nous cherchons $c \in [0,2]$ tel que
+\[
+2c = f'(c) = \frac{f(2)-f(0)}{2-0} = \frac{4-0}{2-0} = 2 \ .
+\]
+Donc $c=1$.  C'est la valeur $c$ qui est prédite par le Théorème de la
+moyenne.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

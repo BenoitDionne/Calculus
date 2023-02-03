@@ -1,0 +1,1452 @@
+\chapter[Représentation paramétrique des courbes \life \eng]{Représentations paramétriques des courbes\\ \life \eng}\label{cha[ReprParam}
+
+\compileTHEO{
+
+Les deux premières sections de ce chapitre sont nécessaires en autre
+pour le calcul vectoriel et l'étude des systèmes d'équations
+différentielles que nous ferons prochainement.  Nous verrons comment
+calculer l'intégrale de fonctions et champs de vecteurs le long de
+courbes paramétriques dans le chapitre sur le calcul vectoriel.   Les
+solutions d'un système d'équations différentielles sont des courbes
+paramétriques.
+
+Les dernières sections de ce chapitre offrent plus d'information sur
+la représentation paramétrique des courbes et peuvent servir de
+matériel optionnel pour les étudiants en génie.
+
+\section{Définition}
+
+\begin{focus}{\dfn} \index{Représentation paramétrique d'une courbe}
+Soit $I \subset \RR$ un sous-intervalle de la droite réelle.  De plus,
+soit $\displaystyle \left\{ \phi_1, \phi_2, \ldots, \phi_n \right\}$
+un ensemble de $n$ fonctions continues à valeurs réelles définies sur
+$I$.
+
+L'ensemble des points
+\[
+\Gamma = \left\{ (\phi_1(t), \phi_2(t), \ldots, \phi_n(t)) : t \in I\right\}
+\]
+définit une courbe (figure~\ref{PARAM1}) dans l'espace $\RR^n$.
+Les $n$ fonctions $\phi_1$, $\phi_2$, \ldots, $\phi_n$ définissent une
+fonction $\phi: \RR \rightarrow \RR^n$ par 
+\begin{equation}\label{courbeD1}
+\phi(t) = (\phi_1(t), \phi_2(t), \ldots, \phi_n(t))
+\end{equation}
+pour $t\in \RR$.  L'image de $\phi$ est la courbe $\Gamma$.  La
+fonction $\phi$ est une {\bfseries représentation paramétrique} de
+la courbe $\Gamma$.
+
+Puisque les élements de $\RR^n$ sont bien souvent représentés par des
+matrices de dimensions \nm{n}{1}, une matrice avec $n$ ligne et une
+colonne, nous définissons aussi une représentation paramétrique
+$\phi: \RR \rightarrow \RR^n$ par
+\begin{equation}\label{courbeD2}
+\phi(t) = \begin{pmatrix}
+  \phi_1(t) \\ \phi_2(t) \\ \vdots \\ \phi_n(t)
+\end{pmatrix}
+\end{equation}
+pour $t\in \RR$.
+
+(\ref{courbeD1}) est généralement associée à la représentation
+géométrique de la courbe alors (\ref{courbeD2}) associée à la
+représentation algébrique.  Le contexte détermine quelle forme est
+utilisée.
+\end{focus}
+
+\PDFfig{13_repr_param/param1}{Une courbe du plan donnée par une
+représentation paramétrique}{Une courbe dans le plan donnée par une
+représentation paramétrique $\phi(t) = (\phi_1(t), \phi_2(t))$ pour
+$t\in \RR$. Nous indiquons à l'aide d'une flèche la direction du
+déplacement le long de la courbe lorsque $t$ augmente.}{PARAM1}
+
+\begin{egg}
+Une représentation paramétrique du cercle $\Gamma$ de rayon $1$ centré
+à l'origine est donnée par les fonctions trigonométriques
+$\cos(\theta)$ et $\sin(\theta)$.  Plus précisément, une
+représentation paramétrique de cette courbe est donnée par
+\[
+(x,y) = (\cos(\theta), \sin(\theta))
+\]
+pour $\theta \in \RR$.
+
+\PDFgraph{13_repr_param/param2}
+
+Lorsque $\theta$ augmente, nous parcourons le cercle unité dans le sens
+contraire aux aiguilles d'une montre.  Puisque $\cos(\theta)$ et
+$\sin(\theta)$ sont des fonctions périodiques de période $2\pi$, nous
+parcourons la courbe $\Gamma$ au complet à chaque fois que $\theta$
+augmente de $2\pi$.
+\end{egg}
+
+\begin{egg}
+Une autre représentation paramétrique du cercle $\Gamma$ de rayon
+$1$ centré à l'origine est donnée par
+\[
+(x,y) = (\cos(2\theta), \sin(2\theta))
+\]
+pour $\theta \in \RR$.  Lorsque $\theta$ augmente, nous parcourons le
+cercle unité dans le sens contraire aux aiguilles d'une
+montre. Puisque $\cos(2\theta)$ et $\sin(2\theta)$ sont des fonctions
+périodiques de période $\pi$, nous parcourons la courbe $\Gamma$ au
+complet à chaque fois que $\theta$ augmente de $\pi$.  Cette
+représentation permet de parcourir la courbe $\Gamma$ deux fois plus
+rapidement que la représentation donnée à l'exemple précédent.
+\end{egg}
+
+Les deux exemples précédents montrent qu'une courbe $\Gamma$ a plus
+qu'une représentation paramétrique.
+
+\begin{egg}
+Quelle est la courbe $\Gamma$ décrite par la représentation
+paramétrique
+\[
+(x,y) = (\sec(\theta) , \tan(\theta))
+\]
+pour $-\pi/2 < \theta < \pi/2$?
+
+Puisque $\tan^2(\theta) +1 = \csc^2(\theta)$, nous obtenons que
+$y^2 + 1 = x^2$.  La courbe $\Gamma$ fait donc partie de la courbe
+décrite par $x^2-y^2=1$.  L'équation $x^2-y^2=1$ est l'équation d'une
+hyperbole dont l'axe est la droite horizontale $y=0$ et les sommets
+sont aux points $(1,0)$ et $(-1,0)$.
+\PDFgraph{13_repr_param/param3}
+
+Par contre, la représentation paramétrique ne représente pas toute
+l'hyperbole.  Nous avons $x = \sec(\theta) >0$ pour
+$-\pi/2<\theta<\pi/2$,
+$\displaystyle \lim_{\theta \to \pi/2} \sec(\theta) = 
+\lim_{\theta \to \pi/2} \sec(\theta) =  +\infty$, 
+$\displaystyle \lim_{\theta \to -\pi/2} \tan(\theta) = +\infty$,
+$\displaystyle \lim_{\theta \to -\pi/2} \tan(\theta) =  -\infty$
+et $(\sec(0), \tan(0)) = (1,0)$.  La courbe $\Gamma$ est donc la
+branche de l'hyperbole à droite de l'axe des $y$ que nous parcourons de
+bas en haut lorsque $\theta$ augmente.
+\end{egg}
+
+\begin{egg}
+Quelle est la courbe $\Gamma$ décrite par la représentation
+paramétrique
+\[
+(x,y) = (2t-1, t^2-1)
+\]
+pour $t\in \RR$?
+
+De l'équation $x= 2t-1$, nous trouvons $t = (x+1)/2$.  Si nous substituons
+cette expression pour $t$ dans l'équation $y=t^2-1$, nous obtenons
+$y = (x+1)^2/4 -1$.  Cette dernière équation donne
+\[
+(x+1)^2 = 4(y+1) \; .
+\]
+C'est l'équation d'une parabole convexe dont l'axe est la droite
+verticale $x=-1$ et le sommet est au point $(-1,-1)$.
+\PDFgraph{13_repr_param/param4}
+
+Puisque $x=2t-1$ augmente de $-\infty$ à $+\infty$ lorsque $t$
+augmente de $-\infty$ à $+\infty$, la courbe est parcourue de gauche à
+droite.
+\end{egg}
+
+\section{Droite tangente à une courbe}\label{DTcourbe}
+
+Supposons qu'une courbe $\Gamma$ possède la représentation
+paramétrique
+\[
+\VEC{x} = \phi(t)
+\]
+ou, plus explicitement,
+\[
+(x_1,x_2, \ldots, x_n) = (\phi_1(t), \phi_2(t), \ldots, \phi_n(t))
+\]
+pour $t \in ]a,b[ \subset \RR$, où les fonctions
+$\phi_i:]a,b[ \rightarrow \RR$ sont différentiables.  Nous ne demandons
+pas seulement que les fonctions $\phi_i$ soient continues mais
+qu'elles soient aussi différentiables.
+
+Pour trouver la direction de la droite tangente à la courbe $\Gamma$
+au point
+\[
+\phi(t_0) = (\phi_1(t_0), \phi_2(t_0), \ldots, \phi_n(t_0)) \; ,
+\]
+nous considérons la sécante qui passe par les points
+\[
+\phi(t_0) = (\phi_1(t_0), \phi_2(t_0), \ldots, \phi_n(t_0))
+\ \text{et} \ 
+\phi(t_0+h) = (\phi_1(t_0+h), \phi_2(t_0+h), \ldots, \phi_n(t_0+h))
+\]
+où $h$ est petit. Le vecteur
+\begin{align*}
+\VEC{v}_h &= \frac{1}{h} \big(\phi(t_0+h)-\phi(t_0)\big) \\
+&= \frac{1}{h}\big(\phi_1(t_0+h) - \phi_1(t_0),
+\phi_2(t_0+h) - \phi_2(t_0), \ldots , \phi_n(t_0+h)-\phi_n(t_0)\big) \\
+&= \left(\displaystyle \frac{\phi_1(t_0+h) - \phi_1(t_0)}{h},
+\displaystyle \frac{\phi_2(t_0+h) - \phi_2(t_0)}{h}, \ldots ,
+\displaystyle \frac{\phi_n(t_0+h) - \phi_n(t_0)}{h}\right)
+\end{align*}
+est parallèle à la sécante qui passe par les points $\phi(t_0)$ et
+$\phi(t_0+h)$.
+
+Lorsque $h$ tend vers $0$, le vecteur $\VEC{v}_h$ approche un vecteur
+parallèle à la droite tangente à $\Gamma$ au point $\phi(t_0)$.  Or,
+cette limite est
+\begin{align*}
+\lim_{h\rightarrow 0}\VEC{v}_h &=
+\left(\displaystyle \lim_{h\rightarrow 0}\frac{\phi_1(t_0+h) - \phi_1(t_0)}{h},
+\displaystyle \lim_{h\rightarrow 0}\frac{\phi_2(t_0+h) - \phi_2(t_0)}{h},
+ \ldots ,
+\displaystyle \lim_{h\rightarrow 0}\frac{\phi_n(t_0+h)
+- \phi_n(t_0)}{h}\right) \\
+&= (\phi_1'(t_0), \phi_2'(t_0), \ldots, \phi_n'(t_0)) \; ,
+\end{align*}
+
+Nous avons donc le résultat suivant.
+
+\begin{focus}{\prp}
+Soit $\Gamma$, une courbe qui possède la représentation paramétrique
+\[
+(x_1,x_2, \ldots, x_n) =
+\phi(t) = (\phi_1(t), \phi_2(t), \ldots, \phi_n(t))
+\]
+pour $t \in ]a,b[ \subset \RR$, où les fonctions
+$\phi_i:]a,b[ \rightarrow \RR$ sont différentiables.
+Le vecteur
+\[
+\phi'(t_0) = (\phi_1'(t_0), \phi_2'(t_0), \ldots, \phi_n'(t_0))
+\]
+est parallèle à la droite tangente à la courbe $\Gamma$ au point
+$\phi(t_0)$ (figure~\ref{PARAM5}).  De plus, le vecteur $\phi'(t_0)$
+pointe dans la direction associée à $t$ croissant.
+
+Lorsque les éléments de $\RR^n$ sont représentés par des matrices de
+dimension \nm{n}{1}, nous avons
+\[
+\phi(t) = \begin{pmatrix}
+  \phi_1(t) \\ \phi_2(t) \\ \vdots \\ \phi_n(t)
+\end{pmatrix}
+\qquad \text{et} \qquad
+\phi'(t) = \begin{pmatrix}
+  \phi_1'(t) \\ \phi_2'(t) \\ \vdots \\ \phi_n'(t)
+\end{pmatrix}
+\]
+Le contexte détermine quelle formulation doit être utilisée.
+\end{focus}
+
+\PDFfig{13_repr_param/param5}{tangente à une courbe donnée par une
+représentation paramétrique}{La courbe $\Gamma$ donnée par la
+représentation paramétrique $(x_1,x_2)=(\phi_1(t),\phi_2(t))$ pour
+$t\in \RR$.  La sécante qui passe par $\phi(t_0)$ et $\phi(t_0+h)$, et
+la tangente à la courbe au point $\phi(t_0)$ sont aussi incluses.  Le
+vecteur $\VEC{v}_h$ est parallèle à la sécante.}{PARAM5}
+
+Ainsi, la droite tangente à la courbe $\Gamma$ au point $\phi(t_0)$
+possède la représentation paramétrique
+\begin{align*}
+(x_1,x_2, \ldots, x_n) &= \phi(t_0) + \alpha\, \phi'(t_0) \\
+&= (\phi_1(t_0), \phi_2(t_0), \ldots, \phi_n(t_0))
++ \alpha (\phi_1'(t_0), \phi_2'(t_0), \ldots, \phi_n'(t_0)) \\
+&= (\phi_1(t_0) + \alpha \phi_1'(t_0), \phi_2(t_0)+ \alpha
+\phi_2'(t_0),  \ldots, \phi_n(t_0) + \alpha \phi_n'(t_0))
+\end{align*}
+pour $\alpha \in \RR$.
+
+\begin{rmk}
+Soit $\Gamma$ une courbe dans $\RR^2$ (i.e. $n=2$ dans la discussion
+précédente) qui possède la représentation paramétrique
+\[
+(x,y) = (\phi_1(t), \phi_2(t))
+\]
+pour $t \in ]a,b[ \subset \RR$, où les fonctions
+$\phi_1:]a,b[ \rightarrow \RR$ et $\phi_2:]a,b[ \rightarrow \RR$
+sont différentiables.
+
+Si $\phi_1'(t_0) = 0$ alors la tangente à la courbe $\Gamma$ au point
+$(\phi_1(t_0), \phi_2(t_0))$ est verticale car la tangente est
+parallèle au vecteur
+$(\phi_1'(t_0), \phi_2'(t_0)) = (0,\phi_2'(t_0))$.
+
+Si $\phi_2'(t_0) = 0$ alors la tangente à la courbe $\Gamma$ au point
+$(\phi_1(t_0), \phi_2(t_0))$ est horizontale car la tangente est
+parallèle au vecteur $(\phi_1'(t_0), \phi_2'(t_0)) = (\phi_1'(t_0),0)$.
+\end{rmk}
+
+\begin{rmk}
+Soit $\Gamma$ une courbe dans $\RR^2$ qui possède la représentation
+paramétrique
+\[
+(x,y) = (\phi_1(t), \phi_2(t))
+\]
+pour $t \in ]a,b[ \subset \RR$, où les fonctions
+$\phi_1:]a,b[ \rightarrow \RR$ et $\phi_2:]a,b[ \rightarrow \RR$
+sont différentiables.
+
+Il est possible de démontrer que si $\phi_1'(t_0)\neq 0$ alors nous pouvons
+représenter $\Gamma$ près du point $(\phi_1(t_0),\phi_2(t_0))$ par une
+expression de la forme $y=f(x)$ où $f$ est aussi différentiable.  En
+effet, si $\phi_1'(t_0) \neq 0$ alors $\phi_1$ est strictement
+croissant ou décroissant au voisinage de $t_0$.  Ce qui implique que
+$\phi_1$ est localement inversible au voisinage de $t_0$.  Nous avons
+donc $t=\phi_1^{-1}(x)$ pour $x$ près de $\phi_1(t_0)$.  Si nous
+substituons cette expression dans
+$y=\phi_2(t)$, nous trouvons $y=f(x) \equiv \phi_2(\phi_1^{-1}(x))$ pour
+$x$ près de $\phi_1(t_0)$.  Cette situation est illustrée à la
+figure~\ref{PARAM6}.  Nous avons que $y=f(x)$ représente la courbe $\Gamma$
+près du point $(\phi_1(t_1),\phi_2(t_1))$.
+\end{rmk}
+
+\PDFfig{13_repr_param/param6}{Une courbe du plan donnée par une
+représentation paramétrique et une fonction}{La courbe $\Gamma$ donnée
+par la représentation paramétrique $(x,y)=(\phi_1(t),\phi_2(t))$ pour
+$t\in \RR$.  Pour $x$ près de $\phi_1(t_0)$, nous pouvons représenter la
+courbe $\Gamma$ par $y = f(x)\equiv \phi_2(\phi_1^{-1}(x))$.}{PARAM6} 
+
+\begin{egg}
+Trouvons l'équation de la droite tangente à la courbe $\Gamma$ au point
+$(0,-\pi)$ si $\Gamma$ possède la représentation paramétrique
+\[
+(x,y) = (t\sin(t), t \cos(t))
+\]
+pour $t\in \RR$.
+
+Il faut trouver $t$ tel que $t\sin(t) = 0$ et $t\cos(t) = -\pi$.  De
+la première équation, nous trouvons $t=n\pi$ pour $n \in \ZZ$.  Parmi ces
+valeurs, seul $t=\pi$ satisfait la deuxième équation.  Nous avons donc que
+$(0,\pi)$ est donné par $t=\pi$ dans la représentation paramétrique.
+
+Posons $\phi_1(t) = t\sin(t)$ et $\phi_2(t) = t\cos(t)$, la
+représentation paramétrique de la droite tangente à $\Gamma$ au point
+$(\phi_1(\pi),\phi_2(\pi)) = (0 , -\pi)$ est
+\begin{align*}
+(x,y) &= \left(\phi_1(\pi)+\alpha\phi_1'(\pi),
+\phi_2(\pi)+\alpha\phi_2'(\pi) \right) \\
+&= \left( \alpha\left( \sin(t) + t\cos(t) \right)\big|_{t=\pi} , -\pi +
+\alpha\left(\cos(t) - t \sin(t)\right)\big|_{t=\pi} \right)
+= (-\alpha\,\pi , -\pi - \alpha)
+\end{align*}
+pour $\alpha \in \RR$.  Si nous éliminons $\alpha$ des deux équations
+$x=-\alpha\,\pi$ et $y= -\pi - \alpha$, nous trouvons l'équation suivante
+pour la droite tangente.
+\[
+y = \frac{1}{\pi}\,x - \pi \ .
+\]
+\end{egg}
+
+\begin{egg}[\theory]
+Traçons la courbe qui possède la représentation paramétrique
+$x = t^3 - 3 t^2$ et $y = t^3-3t$ pour $t \in \RR$.
+
+Trouvons les points de la courbe où la tangente est
+horizontale ou verticale.  La tangente est horizontal si
+$y'= 3t^2-3=0$.  Donc $t=\pm 1$.  Nous obtenons le point
+$(-2,-2)$ pour $t=1$ et le point $(-4,2)$ pour $t=-1$.
+La tangente est verticale si $x'= 3t^2 -6t =0$.  Donc $t=0$ ou
+$t=2$.  Nous obtenons le point $(0,0)$ pour $t=0$ et le point $(-4,2)$
+pour $t=2$.
+
+La courbe passe au moins deux fois par le point $(-4,2)$.  De
+plus, $x'(t)$ et $y'(t)$ ne changent pas de signes lorsque $t$ est dans un
+des intervalles $]-\infty, -1[$, $]-1,0[$, $]0,1[$, $]1,2[$ et
+$]2,\infty[$.
+
+Nous pouvons déterminer la pente de la tangente à la courbe au point
+$(x(t),y(t))$ à l'aide du rapport $y'(t)/x'(t)$ si $x'(t) \neq 0$.
+Par contre, pour déterminer la courbure, nous utilisons la
+représentation locale $y=f(x)$ de la courbe car $f''(x)$ va nous
+permettre de déterminer si la courbe est concave ou convexe.
+
+Il découle du théorème de la dérivée de fonctions composées que
+\[
+\dydx{f}{x}(x(t)) = \dydx{y}{x}(x(t)) = \dydx{y}{t}(t) \bigg/ \dydx{x}{t}(t)
+= \frac{3t^2-3}{3t^2-6t} = \frac{t^2-1}{t^2-2t}
+\]
+pour $t$ dans un des intervalles mentionnés précédemment dans lesquels
+$x'(t)\neq 0$.  De plus,
+\begin{align*}
+\dydxn{f}{x}{2}(x(t)) &= \dydxn{y}{x}{2}(x(t)) =
+\dfdx{\left( \dydx{y}{x}(x(t)) \right)}{t}\bigg/\dydx{x}{t}(t)
+= \frac{1}{3t^2-6t}\;
+\dfdx{\left( \frac{t^2-1}{t^2-2t} \right)}{t} \\
+&= \frac{-2(t^2-t+1)}{3(t^2-2t)^3}
+\end{align*}
+pour tout $t$ appartenant à un des intervalles mentionnés
+précédemment.  Puisque $t^2-t+1 >0$ pour tout $t$, nous avons que
+$\displaystyle \dydxn{y}{x}{2}(x(t))$ peut changer de signe seulement
+lorsque cette dérivée seconde n'est pas définie; c'est-à-dire, lorsque
+$t=0$ ou $2$.  Donc $\displaystyle \dydxn{y}{x}{2}(x(t))$ ne change
+pas de signe lorsque $t$ est dans un des intervalles considérés ci-dessus.
+
+Le tableau suivant donne le signe des dérivées dans les
+différents intervalles.
+\[
+\begin{array}{c|c|c|c}
+t & \displaystyle \dydx{y}{x} & \displaystyle \dydxn{y}{x}{2} &
+\text{description de } y=f(x) \\[0.7em]
+\hline
+]-\infty,-1[ & + & - & \text{croissante et concave} \\
+\hline
+]-1,0[ & - & - & \text{décroissante et concave} \\
+\hline
+]0,1[ & + & + & \text{croissante et convexe} \\
+\hline
+]1,2[ & - & + & \text{décroissante et convexe} \\
+\hline
+]2,\infty[ & + & - & \text{croissante et concave}
+\end{array}
+\]
+
+Pour faciliter le travail de tracer la courbe, il est souvent utile de
+trouver les points où la courbe coupe l'axe des $x$ et l'axe des $y$
+quand cela est possible.  La courbe coupe l'axe des $y$
+(i.e. $x(t)=t^3-3t^2=0$) lorsque $t=0$ et $3$.  Nous obtenons les deux
+points $(0,0)$ et $(0,18)$.  La courbe coupe l'axe des $x$
+(i.e. $y(t)=t^3-3t=0$) lorsque $t=0$ et $\pm \sqrt{3}$.  Nous obtenons
+les trois points $(0,0)$ et $(-3\sqrt{3}-9,0)$ et $(3\sqrt{3} -9,0)$.
+
+Le dessin de la courbe est donné ci-dessous.
+\PDFgraph{13_repr_param/param7}
+\end{egg}
+
+\begin{egg}[\theory]
+Traçons la courbe qui possède la représentation paramétrique
+$x = \sin(2t)$ et $y = \sin(t)$ pour $t \in \RR$.
+
+Puisque cette représentation paramétrique est périodique de période
+$2\pi$, nous pouvons assumer que $0\leq t \leq 2\pi$.
+
+Trouvons les points de la courbe où la tangente est
+horizontale ou verticale.  La tangente est horizontal si
+$y'= \cos(t)= 0$; c'est-à-dire, si $t= \pi/2$ ou $3\pi/2$.  Nous obtenons
+les points suivants.
+\[
+\begin{array}{l|l}
+t & (x,y) \\
+\hline
+\pi/2 & (0,1) \\
+3\pi/2 & (0,-1)
+\end{array}
+\]
+La tangente est verticale si $x'= 2\cos(2t) = 0$; c'est-à-dire, si
+$t=\pi/4$, $3\pi/4$, $5\pi/4$ ou $7\pi/4$.  Nous obtenons les points
+suivants.
+\[
+\begin{array}{l|l}
+t & (x,y) \\
+\hline
+\rule{0em}{1.2em} \pi/4 & (1, \sqrt{2}/2) \\
+3\pi/4 & (-1, \sqrt{2}/2) \\
+5\pi/4 & (1, -\sqrt{2}/2) \\
+7\pi/4 & (-1, -\sqrt{2}/2)
+\end{array}
+\]
+Nous avons que la courbe passe trois fois par le point $(0,0)$, lorsque
+$t=0$, $\pi$ et $2\pi$.  De plus, $x'(t)$ et $y'(t)$ ne changent pas
+de signes lorsque $t$ est dans un des intervalles de la forme
+$]n\pi/4 , (n+1)\pi/4[$. 
+
+Pour déterminer la courbure, nous utilisons la représentation locale
+$y=f(x)$ de la courbe car $f''(x)$ va nous permettre de déterminer
+si la courbe est concave ou convexe.
+
+Il découle du théorème de la dérivée de fonctions composées que
+\[
+\dydx{f}{x}(x(t)) = \dydx{y}{x}(x(t)) = \dydx{y}{t}(t) \bigg/ \dydx{x}{t}(t)
+= \frac{\cos(t)}{2\cos(2t)}
+\]
+pour $t$ dans un des intervalles mentionnés précédemment.  De plus,
+\begin{align*}
+\dydxn{f}{x}{2}(x(t)) &= \dydxn{y}{x}{2}(x(t)) =
+\dfdx{\left( \dydx{y}{x}(x(t)) \right)}{t}\bigg/\dydx{x}{t}
+= \frac{1}{2\cos(2t)}\;
+\dfdx{\left( \frac{\cos(t)}{2\cos(2t)} \right)}{t} \\
+&= \frac{(2\cos^2(t)+1)\sin(t)}{4\cos^3(2t)}
+\end{align*}
+pour tout $t$ appartenant à un des intervalles mentionnés
+précédemment.  Pour simplifier le numérateur, nous avons utilisé les
+identités $\cos(2t) = \cos^2(t)-\sin^2(t)$ et $\sin(2t) = 2\cos(t)\sin(t)$.
+Notons que $\displaystyle \dydxn{y}{x}{2}(x(t))$ ne change pas de
+signe lorsque $t$ est dans un des intervalles considérés ci-dessus
+car $\displaystyle \dydxn{y}{x}{2}(x(t)) =0$ seulement pour $t=0$,
+$\pi$ ou $2\pi$; et $\displaystyle \dydxn{y}{x}{2}(x(t))$ n'est pas
+définie seulement pour $t= pi/4$, $3\pi/4$, $5\pi/4$ ou $7\pi/4$.
+
+Le tableau suivant donne le signe des dérivées dans les différents
+intervalles.
+\[
+\begin{array}{c|c|c|c}
+t & \displaystyle \dydx{y}{x} & \displaystyle \dydxn{y}{x}{2} &
+\text{description de } y = f(x) \\[0.7em]
+\hline
+]0,\pi/4[ & + & + & \text{croissante et convexe} \\
+\hline
+]\pi/4,\pi/2[ & - & - & \text{décroissante et concave} \\
+\hline
+]\pi/2,3\pi/4[ & + & - & \text{croissante et concave} \\
+\hline
+]3\pi/4,\pi[ & - & + & \text{décroissante et convexe} \\
+\hline
+]\pi,5\pi/4[ & - & - & \text{décroissante et concave} \\
+\hline
+]5\pi/4,3\pi/2[ & + & + & \text{croissante et convexe} \\
+\hline
+]3\pi/2,7\pi/4[ & - & + & \text{décroissante et convexe} \\
+\hline
+]7\pi/4,2\pi[ & + & - & \text{croissante et concave}
+\end{array}
+\]
+
+Pour faciliter le travail de tracer la courbe, il est souvent utile de
+trouver les points où la courbe coupe l'axe des $x$ et l'axe des $y$
+(quand cela est possible).  La courbe coupe l'axe des $y$
+(i.e. $x(t)=\sin(2t)=0$) lorsque $t=0$, $pi/2$, $\pi$ et $3\pi/2$.  Nous
+obtenons seulement trois points, $(0,0)$, $(0,1)$ et $(0,-1)$.  La
+courbe coupe l'axe des $x$ (i.e. $y(t)=\sin(t)=0$) lorsque $t=0$,
+$\pi$ et $2\pi$.  Dans les trois cas, nous obtenons l'origine.
+
+Le dessin de la courbe est donné ci-dessous.
+\PDFgraph{13_repr_param/param9}
+\end{egg}
+
+\section{Longueur d'une courbe \eng}
+
+Soit $\phi:[a,b]\rightarrow \RR^2$ une représentation paramétrique
+d'une courbe $\Gamma$ dans le plan.  Nous pouvons estimer la longueur de la
+courbe $\Gamma$ en approchant cette courbe par une courbe formée de
+petits segments de droite (figure~\ref{PARAM8}).
+La somme de la longueur de chacun des petits segments va donner une
+approximation de la longueur de la courbe qui ira en s'améliorant si
+nous prenons des segments de plus en plus petits.
+
+\PDFfig{13_repr_param/param8}{Une courbe dans le plan que nous
+approchons avec des segments de droites}{Une courbe dans le
+plan que nous approchons avec des segments de droites.}{PARAM8}
+
+Soit $k$ une entier positif.  Posons $\Delta t = (b-a)/k$ et
+$t_j = a + j\,\Delta t$ pour $j=0$, $1$, $2$, \ldots, $k$.  Nous avons que
+$t_0=a$ et $t_k = b$.  L'intervalle $[a,b]$ est partagé en
+$k$ sous-intervalles de la forme $[t_j,t_{j+1}]$ pour $j=0$, $1$, $2$,
+\ldots, $k-1$.  La longueur du segment de droite qui joint les points
+\[
+\phi(t_j) = \left( \phi_1(t_j) , \phi_2(t_j) \right)
+\quad \text{et} \quad
+\phi(t_{j+1}) = \left( \phi_1(t_{j+1}) , \phi_2(t_{j+1}) \right)
+\]
+est
+\[
+\sqrt{ (\phi_1(t_{j+1})-\phi_1(t_j))^2 + (\phi_2(t_{j+1})-\phi_2(t_j))^2  }
+\]
+grâce au théorème de Pythagore.  Ainsi, la longueur de la courbe
+formée de tous les petits segments de droite pour $j=0$, $1$, \ldots,
+$k-1$ est
+\begin{equation}\label{sumSegm}
+L_k = \sum_{j=0}^{k-1} \sqrt{ (\phi_1(t_{j+1})-\phi_1(t_j))^2 +
+(\phi_2(t_{j+1})-\phi_2(t_j))^2  } \; ,
+\end{equation}
+
+Si nous utilisons le théorème de la moyenne, nous pouvons trouver $\alpha_j$ et
+$\beta_j$ entre $x_j$ et $x_{j+1}$ tels que
+\begin{align*}
+\phi_1(t_{j+1})-\phi_1(t_j) = \phi_1'(\alpha_j) ( t_{j+1} - t_j) =
+\phi_1'(\alpha_j) \Delta t
+\intertext{et}
+\phi_2(t_{j+1})-\phi_2(t_j) = \phi_2'(\beta_j) ( t_{j+1} - t_j) =
+\phi_2'(\beta_j) \Delta t \; .
+\end{align*}
+
+Ainsi, La longueur du segment de droite qui joint les points
+$\phi(t_j)$ et $\phi(t_{j+1})$ est
+\begin{align*}
+\sqrt{ (\phi_1(t_{j+1})-\phi_1(t_j))^2 + (\phi_2(t_{j+1})-\phi_2(t_j))^2  }
+&= \sqrt{ (\phi_1'(\alpha_j) \Delta t)^2 +
+(\phi_2'(\beta_j) \Delta t)^2 } \\
+&= \sqrt{ (\phi_1'(\alpha_j))^2 + (\phi_2'(\beta_j))^2 } \,
+\Delta t \; .
+\end{align*}
+Si nous substituons cette expression dans (\ref{sumSegm}) nous
+obtenons la
+formule suivante pour la longueur de la courbe formée de tous les
+petits segments de droite pour $j=0$, $1$, \ldots, $k-1$.
+\begin{equation}\label{sumSegm2}
+L_k = \sum_{j=0}^{k-1} \sqrt{ (\phi_1'(\alpha_j))^2
++ (\phi_2'(\beta_j))^2 }\, \Delta t \; .
+\end{equation}
+Si $\alpha_j$ était égale à $\beta_j$, nous aurions une somme de
+Riemann mais $\alpha_j$ n'est généralement pas égal à $\beta_j$.
+De façon {\bfseries non rigoureuse}, nous allons quand même procéder
+comme si nous avions une somme de Riemann car $\alpha_j$ et $\beta_j$
+sont dans l'intervalle $[t_j, t_{j+1}]$ qui devient de plus en plus petit
+lorsque $k \rightarrow \infty$. Ainsi, si $k \rightarrow \infty$, nous
+obtenons le résultat suivant.
+
+\begin{focus}{\prp}
+La longueur $L$ d'une courbe $\Gamma$ qui possède la représentation
+paramétrique $\phi:[a,b]\rightarrow \RR^2$ est
+\begin{equation}\label{arcLength}
+L = \int_a^b \sqrt{ (\phi_1'(t))^2 + (\phi_2'(t))^2} \dx{t} \; .
+\end{equation}
+\end{focus}
+
+\begin{rmk}[\theory]
+Avec la définition de l'intégrale de Riemann
+donnée à la section~\ref{Riemann_int}, nous pourrions démontrer
+rigoureusement que la formule (\ref{arcLength}) est vrai.
+\end{rmk}
+
+Il est possible de démontrer à l'aide de la règle de substitution pour
+l'intégration que la formule (\ref{arcLength}) est indépendante de la
+représentation paramétrique de la courbe $\Gamma$ qui est utilisées.
+
+\begin{rmk}
+Lorsque nous calculons la longueur d'une courbe décrite par une
+représentation paramétrique, il faut vérifier que celle-ci ne parcoure
+pas une section de la courbe plus d'une fois.  Par exemple, les deux
+représentations paramétriques suivantes tracent le cercle unité.
+\[
+  \phi(t) = \left( \cos(t) , \sin(t) \right)
+\]
+pour $0\leq t \leq 2\pi$ et
+\[
+  \psi(t) = \left( \cos(2t) , \sin(2t) \right)
+\]
+pour $0\leq t \leq 2\pi$.  Cependant,
+\[
+\int_0^{2\pi} \sqrt{ (\phi_1'(t))^2 + (\phi_2'(t))^2} \dx{t} = 2\pi
+\]
+et
+\[
+\int_0^{2\pi} \sqrt{ (\psi_1'(t))^2 + (\psi_2'(t))^2} \dx{t} = 4\pi
+\; .
+\]
+La représentation paramétrique $\psi$ parcoure deux fois le cercle
+unité.  Ce qui fait que l'intégrale donne deux fois la circonférence
+du cercle unité.
+\end{rmk}
+
+\begin{egg}
+Calculons la longueur de la courbe donnée par la représentation
+paramétrique $x=t^3$ et $y=t^2$ pour $0\leq t \leq 4$.
+
+Cette longueur est
+\[
+L = \int_0^4 \sqrt{ (x'(t))^2 + (y'(t))^2} \dx{t}
+= \int_0^4 \sqrt{ (3t^2)^2 + (2t)^2} \dx{t}
+= \int_0^4 t\, \sqrt{ 9t^2 + 4} \dx{t}
+\]
+Si $u = 9t^2 + 4$, alors $\dx{u} = 18 t \dx{t}$, $u=4$ lorsque
+$t=0$ et $u=148$ lorsque $t=4$.  Ainsi, 
+\[
+L = \frac{1}{18} \int_4^{148} u^{1/2} \dx{u}
+= \frac{1}{27} u^{3/2} \bigg|_4^{148} =
+\frac{8}{27} \left( 37^{3/2} - 1 \right) \; .
+\]
+\end{egg}
+
+Dans le cas particulier où la courbe $\Gamma$ peut être représentée
+par le graphe d'une fonction $f$ sur une intervalle $[a,b]$, nous pouvons
+utiliser la représentation $\phi:[a,b]\rightarrow \RR^2$ définie par
+$\phi_1(x)=x$ et $\phi_2(x) = f(x)$ pour obtenir le résultat suivant
+directement de (\ref{arcLength}).
+
+\begin{focus}{\prp}
+La longueur $L$ d'une courbe $\Gamma$ qui peut être représentée par le
+graphe d'une fonction $f$ sur un intervalle $[a,b]$ est
+\begin{equation}\label{arcLength2}
+L = \int_a^b \sqrt{ 1 + (f'(t))^2} \dx{x} \; .
+\end{equation}
+\end{focus}
+
+\begin{egg}
+Calculons la longueur de la courbe donnée par le graphe de
+$f(x) = \ln(\sin(x))$ pour $\pi/6 \leq x \leq \pi/3$.
+
+Puisque $f'(x) = \cos(x)/\sin(x)  = \cot(x)$, nous obtenons la longueur
+\begin{align*}
+L&= \int_{\pi/6}^{\pi/3} \sqrt{ 1 + (f'(x))^2}\dx{x}
+= \int_{\pi/6}^{\pi/3} \sqrt{ 1 + \cot^2(x)}\dx{x}
+= \int_{\pi/6}^{\pi/3} \sqrt{ \csc^2{x} }\dx{x}
+= \int_{\pi/6}^{\pi/3} \csc{x}\dx{x} \\
+&= - \ln(\csc(x)+\cot(x)) \bigg|_{\pi/6}^{\pi/3}
+= -\ln\left(\frac{3}{\sqrt{3}}\right) + \ln(2+\sqrt{3})
+\end{align*}
+car $\csc(x) = 1/\cos(x) >0$ pour $\pi/6 \leq x \leq \pi/3$.
+\end{egg}
+
+\begin{egg}
+Calculons la longueur de la courbe définie par $y = (x-1)^2$ entre les
+points $(1.0)$ et $(2,1)$.
+
+La courbe dont nous voulons calculer la longueur est la partie de la
+parabole $y= (x-1)^2$ pour $1\leq x \leq 2$.  Si nous posons
+$f(x) = (x-1)^2$, alors $f'(x) = 2(x-1)$.  La longueur de la courbe est
+\begin{align*}
+L &= \int_1^2 \sqrt{1+(f'(x))^2} \dx{x}
+= \int_1^2 \sqrt{1+4(x-1)^2} \dx{x} \\
+&= \left( \frac{1}{2}\,(x-1)\sqrt{1+4(x-1)^2} + \frac{1}{4}
+\ln\left| 2(x-1) + \sqrt{1+4(x-1)^2} \right| \right)\bigg|_{x=1}^2 \\
+&= \frac{1}{2}\, \sqrt{5} + \frac{1}{4}\, \ln\left| 2 + \sqrt{5}\right| \; .
+\end{align*}
+Le calcul de l'intégrale précédente demande plusieurs substitutions et
+une intégration par parties.  Nous donnons les détails dans le
+paragraphe qui suit.
+
+Pour évaluer l'intégrale indéfinie
+\[
+\int \sqrt{1+4(x-1)^2} \dx{x} \; ,
+\]
+nous posons $\displaystyle x = 1 + \frac{1}{2}\, \tan(\theta)$ pour
+$-\pi/2<\theta<\pi/2$.  Nous avons que
+\[
+\sqrt{1+4(x-1)^2} = \sqrt{1+\tan^2(\theta)} = \sec(\theta)
+\]
+car $\sec(\theta)>0$ pour $-\pi/2<\theta<\pi/2$.  De plus,
+$\displaystyle \dx{x} = \frac{1}{2} \,\sec^2(\theta) \dx{\theta}$.
+Ainsi,
+\begin{align*}
+\int \sqrt{1+4(x-1)^2} \dx{x} &= \int \sec(\theta)
+\left(\frac{1}{2}\, \sec^2(\theta) \right) \dx{\theta} \\
+&= \frac{1}{2}\, \int \sec^3(\theta) \dx{\theta} \; .
+\end{align*}
+À l'exemple~\ref{intSRQTxdpu}, nous avons montré que
+\[
+\int \sec^3(\theta) \dx{\theta} = \frac{1}{2} \sec(\theta) \tan(\theta)
++ \frac{1}{2} \ln|\sec(\theta)+\tan(\theta)| + C \ .
+\]
+Ainsi,
+\begin{align*}
+\int \sqrt{1+4(x-1)^2} \dx{x}
+&= \frac{1}{2}\, \int \sec^3(\theta) \dx{\theta} \\
+&= \frac{1}{4}\,\tan(\theta)\sec(\theta)
++ \frac{1}{4}\, \ln \big| \sec(\theta) + \tan(\theta) \big| + C \; .
+\end{align*}
+Puisque $\displaystyle \tan(\theta) = 2(x-1)$ et
+$\displaystyle \sec(\theta) = \sqrt{ 1 + 4(x-1)^2}$ pour
+$-\pi/2<\theta<\pi/2$, nous obtenons
+\begin{align*}
+\int \sqrt{1+4(x-1)^2} \dx{x} & = \frac{1}{2}\,(x - 1)\sqrt{ 1 + 4(x-1)^2} \\
+& \quad + \frac{1}{4}\, \ln \big|2(x - 1) + \sqrt{ 1 + 4(x-1)^2} \big| + C \; .
+\end{align*}
+\end{egg}
+
+% \begin{egg}
+% Calculons la longueur de la courbe définie par
+% $y = (x^2+2)^{3/2}/3$ pour $0\leq x \leq 1$.
+% \end{egg}
+
+\begin{egg}
+Calculons la longueur de la courbe définie par
+$y = \ln(1-x^2)$ pour $0\leq x \leq 1/2$.
+
+Si nous posons $f(x) = \ln(1-x^2)$, alors
+$\displaystyle f'(x) = \frac{-2x}{1-x^2}$.  La longueur de la courbe
+est
+\begin{align*}
+L &= \int_0^{1/2} \sqrt{1+(f'(x))^2} \dx{x}
+= \int_0^{1/2} \sqrt{1+\frac{4x^2}{(1-x^2)^2}} \dx{x}
+= \int_0^{1/2} \sqrt{\frac{x^4+2x^2+1}{(1-x^2)^2}} \dx{x} \\
+&= \int_0^{1/2} \sqrt{\frac{(x^2+1)^2}{(1-x^2)^2}} \dx{x}
+= \int_0^{1/2} \frac{x^2+1}{1-x^2} \dx{x}
+= \int_0^{1/2} \left( -1 + \frac{2}{1-x^2}\right) \dx{x} \\
+&= \int_0^{1/2} \left( -1 -\frac{1}{x-1} + \frac{1}{x+1}\right) \dx{x}
+= \left( -x - \ln|x-1| + \ln(x+1) \right)\bigg|_0^{1/2} \\
+&= -\frac{1}{2} + \ln(3) \ .
+\end{align*}
+Le calcul de l'intégrale précédente a demandé une intégration par
+fractions partielles.
+\end{egg}
+
+\section{Aire d'une surface \eng}
+
+Soit $\Gamma$ une courbe dans le plan possédant la représentation
+paramétrique
+\[
+\phi(t) = \left( \phi_1(t) , \phi_2(t) \right)
+\]
+pour $a \leq t \leq b$.  La rotation autour d'un axe de cette courbe
+$\Gamma$ produit une surface $S$ dans l'espace
+(figure~\ref{surfArea}).  Il est possible de calculer l'aire de cette
+surface.
+
+\PDFfig{13_repr_param/param10}{Une surface produite par la rotation d'une
+courbe autour d'un axe}{Une surface produite par la rotation de la
+courbe $\Gamma$ autour d'un axe horizontal $y=c$.}{surfArea}
+
+Avant de développer la formule pour calculer l'aire de la surface $S$
+que nous retrouvons à la figure~\ref{surfArea}, considérons 
+la section horizontal d'un cône qui est donnée à la
+figure~\ref{surfCone}.  L'aire de cette section horizontal
+est $\displaystyle 2\pi\,\left(\frac{R_1+R_2}{2}\right)\,L$.
+
+\PDFfig{13_repr_param/param11}{Une section horizontal d'un cône dont
+l'axe est vertical}{Une section horizontal d'un cône dont l'axe est
+vertical.}{surfCone}
+
+Soit $k$ une entier positif.  Posons $\Delta t = (b-a)/k$ et
+$t_j = a + j\,\Delta t$ pour $j=0$, $1$, $2$, \ldots, $k$.  Nous avons que
+$t_0=a$ et $t_k = b$.  L'intervalle $[a,b]$ est partagé en
+$k$ sous-intervalles de la forme $[t_j,t_{j+1}]$ pour $j=0$, $1$, $2$,
+\ldots, $k-1$.
+
+La section de la surface $S$ entre $t_j$ et $t_{j+1}$
+(figure~\ref{surfSect}) représente approximativement une section d'un
+cône comme celui que nous retrouvons à la figure~\ref{surfCone}.
+L'aire de cette section est donc approximativement
+\[
+2\pi \, \left(\frac{ |\phi_2(t_j)-c| + |\phi_2(t_{j+1})-c|}{2}\right)
+\sqrt{\left(\phi_1(t_{j+1})-\phi_1(t_j)\right)^2 +
+\left( \phi_2(t_{j+1}) - \phi_2(t_j)\right)^2} \; .
+\]
+
+\PDFfig{13_repr_param/param12}{Une section d'un surface produite par la
+rotation d'une courbe d'un axe horizontal}{Une section de la surface
+$S$ représenté à la figure~\ref{surfArea} pour $t_j \leq t \leq t_{j+1}$
+est approximativement une section d'un cône comme celle que
+nous retrouvons à la figure~\ref{surfCone}.}{surfSect} 
+
+L'aire total $A$ de la surface $S$ est donc donné approximativement
+par
+\begin{align*}
+A &\approx \sum_{j=0}^{k-1}
+2\pi \, \left(\frac{ |\phi_2(t_j)-c| + |\phi_2(t_{j+1})-c|}{2}\right) \\
+&\qquad\qquad \times \sqrt{\left(\phi_1(t_{j+1})-\phi_1(t_j)\right)^2 +
+\left( \phi_2(t_{j+1}) - \phi_2(t_j)\right)^2} \; .
+\end{align*}
+D'après le théorème de la moyenne, ils existent $\alpha_j$ et
+$\beta_j$ entre $t_j$ et $t_{j+1}$ tels que
+\begin{align*}
+\phi_1(t_{j+1})-\phi_1(t_j) &= \phi_1'(\alpha_j)(t_{j+1}-t_j) =
+\phi_1'(\alpha_j)\, \Delta t
+\intertext{et}
+\phi_2(t_{j+1})-\phi_2(t_j) &= \phi_2'(\beta_j)(t_{j+1}-t_j) =
+\phi_2'(\beta_j)\, \Delta t \; .
+\end{align*}
+Donc
+\begin{align*}
+\sqrt{\left(\phi_1(t_{j+1})-\phi_1(t_j)\right)^2 +
+\left( \phi_2(t_{j+1}) - \phi_2(t_j)\right)^2}
+&= \sqrt{\left(\phi_1'(\alpha_j)\, \Delta t \right)^2 +
+\left( \phi_2'(\beta_j)\, \Delta t \right)^2} \\
+&= \sqrt{\left(\phi_1'(\alpha_j)\right)^2 +
+\left( \phi_2'(\beta_j)\right)^2} \; \Delta t
+\end{align*}
+pour $j=0$, $1$, $2$, \ldots  De plus, le théorème des valeurs
+intermédiaires donne $\gamma_j$ entre $t_j$ et $t_{j+1}$ tel que
+\[
+\left(\frac{ |\phi_2(t_j)-c| + |\phi_2(t_{j+1})-c|}{2}\right)
+= \left|\phi_2(\gamma_j) - c\right| \; .
+\]
+L'aire $A$ de la surface $S$ est donc approximativement
+\[
+A \approx \sum_{j=0}^{k-1}
+2\pi \, \left|\phi_2(\gamma_j) - c\right|\,
+\sqrt{\left(\phi_1'(\alpha_j)\right)^2 +
+\left( \phi_2'(\beta_j)\right)^2} \; \Delta t \; .
+\]
+Si $\alpha_j$, $\beta_j$ et $\gamma_j$ étaient égaux, nous
+aurions une somme de Riemann mais $\alpha_j$, $\beta_j$ et
+$\gamma_j$ ne sont généralement pas égaux.  De façon
+{\bfseries non rigoureuse},
+nous allons quand même procéder comme si nous avions une somme de Riemann car
+$\alpha_j$, $\beta_j$ et $\gamma_j$ sont dans l'intervalle
+$[t_j,t_{j+1}]$ qui devient de plus en plus petit lorsque
+$k \rightarrow \infty$.   Ainsi, si $k \rightarrow \infty$, nous obtenons
+le résultat suivant.
+
+\begin{focus}{\prp}
+Soit $S$ une surface produite par la rotation autour d'un axe $y=c$
+d'une courbe $\Gamma$ possédant la représentation paramétrique
+\[
+  \phi(t) = \left( \phi_1(t) , \phi_2(t) \right)
+\]
+pour $a \leq t \leq b$.  L'aire total $A$ de la surface $S$ est
+\begin{equation} \label{AirSurfRot}
+A = 2\pi\, \int_a^b \left| \phi_2(t)-c \right| \, 
+\sqrt{\left(\phi_1'(t)\right)^2 + \left( \phi_2'(t)\right)^2} \dx{t} \; .
+\end{equation}
+Si $S$ est une surface produite par la rotation autour d'un axe $x=c$
+de la courbe $\Gamma$, alors l'aire total $A$ de la surface $S$ est
+\[
+A = 2\pi\, \int_a^b \left| \phi_1(t)- c \right| \, 
+\sqrt{\left(\phi_1'(t)\right)^2 +
+\left( \phi_2'(t)\right)^2} \dx{t} \; .
+\]
+\end{focus}
+
+\begin{rmk}
+Comme pour le calcul de la longueur d'une courbe, lorsque que nous
+calculons l'aire d'une surface produite par la rotation d'une courbe
+autour d'un axe, il faut vérifier que la représentation paramétrique
+de la courbe ne parcoure pas une section de la courbe plus d'une
+fois.
+\end{rmk}
+
+Si la courbe $\Gamma$ est donnée par le graphe d'une fonction
+$f:[a,b]\rightarrow \RR$, en prenant la représentation paramétrique
+\[
+\phi(x) = \left( \phi_1(x) , \phi_2(x) \right)
+= \left( x , f(x) \right)
+\]
+pour $a \leq x \leq b$, nous obtenons le résultat suivant.
+
+\begin{focus}{\prp}
+Soit $\Gamma$ une courbe représentée par le graphe d'une fonction
+différentiable $f$ sur l'intervalle $[a,b]$.  L'aire $A$ de la surface
+$S$ produite par la rotation de $\Gamma$ autour de l'axe $y=c$ est
+\begin{equation} \label{AirSurfRotClass}
+A = 2\pi\, \int_a^b \left| f(x)-c \right| \, 
+\sqrt{1 + \left( f'(x) \right)^2} \dx{x} \; .
+\end{equation}
+\end{focus}
+
+\begin{egg}
+Calculons l'aire $A$ de la surface $S$ obtenue par la rotation autour
+de l'axe des $x$ de la courbe $\Gamma$ ayant la représentation
+paramétrique
+\[
+\phi(t) = \left( \phi_1(t) , \phi_2(t) \right)
+= \left( t^3 , t^2 \right)
+\]
+pour $0 \leq t \leq 1$.
+
+Posons $x=t^3$ et $y=t^2$.  La première équation donne $t= x^{1/3}$.
+Si nous substituons cette expression dans la deuxième équation, nous
+obtenons $y = x^{2/3}$.   La courbe $\Gamma$ est donc le graphe de
+la fonction $y = f(x) = x^{2/3}$ pour $0\leq x \leq 1$.  Nous pourrions
+donc utiliser (\ref{AirSurfRotClass}) pour calculer l'aire de la
+surface $S$.  Nous laissons au lecteur le soin de faire ce calcul.
+Nous calculons l'aire de la surface $S$ à l'aide de
+(\ref{AirSurfRot}).
+
+Puisque $\phi_1'(t) = 3t^2$ et $\phi_2'(t) = 2t$, nous avons
+\[
+A = 2\pi \,\int_0^1 t^2 \, \sqrt{(3t^2)^2 + (2t)^2} \dx{t}
+= 2\pi \,\int_0^1 t^3 \, \sqrt{9t^2 + 4} \dx{t} \; .
+\]
+Si $u=9 t^2 +4$, alors $u=4$ pour $t=0$, $u=13$ pour $t=1$ et
+$\displaystyle \dx{u} = 18 t \dx{t}$.  Ainsi,
+\begin{align*}
+A &= 2\pi \,\int_0^1 t^3 \, \sqrt{9t^2 + 4} \dx{t}
+= \frac{\pi}{9} \, \int_0^1 t^2 \, \left(9t^2 + 4\right)^{1/2} \;
+18 t \dx{t} \\
+&= \frac{\pi}{9} \, \int_4^{13} \frac{u-4}{9} \, u^{1/2} \dx{u}
+= \frac{\pi}{81} \, \int_4^{13} \left(u^{3/2}-4u^{1/2}\right) \dx{u} \\
+&= \frac{\pi}{81} \,\left( \frac{2}{5} u^{5/2}- \frac{8}{3} u^{3/2}
+\right)\bigg|_{u=4}^{13}
+= \frac{\pi\left(494\sqrt{13} + 128\right)}{1215}
+\approx 4.9364177 \; .
+\end{align*}
+\end{egg}
+
+\section{Coordonnées polaires\index{Coordonnées polaires} \theory}
+
+Chaque point $P$ du plan est uniquement déterminé par ses coordonnées
+cartésiennes $(x,y)$ où $x$ est le déplacement horizontal et $y$ est
+le déplacement vertical pour se rentre de l'origine $O$ au point $P$.
+
+Le système de coordonnées polaires est une autre façon d'identifier
+les points du plan.  Ce système de coordonnées est très utile lorsque
+nous travaillons avec un objet qui exécute un mouvement circulaire.
+
+Dans le système de coordonnées polaires, le point $P$ est représenté
+par le couple $(r, \theta)$ où $r$ est la distance entre le point $P$
+et l'origine $O$ et $\theta$ est l'angle entre l'axe des $x$ et la
+droite $\overline{OP}$ mesuré dans le sens contraire aux aiguilles
+d'une montre (figure~\ref{POLAR1}).
+
+\PDFfig{13_repr_param/polar1}{Les coordonnées polaires}{Relation entre
+les coordonnées polaires et les coordonnées cartésiennes d'un point
+$P$.}{POLAR1}
+
+Contrairement aux coordonnées cartésiennes, les coordonnées polaires
+d'un point du plan ne sont pas uniques.  Si $(r,\theta)$ représente un
+point $P$, alors $(r,\theta+2n\pi)$ avec $n\in \ZZ$ représentent aussi
+le point $P$. L'origine est encore plus problématique car $(0,\theta)$
+représente l'origine quel que soit $\theta$.
+
+Si $(r,\theta)$ sont les coordonnées polaires d'un point $P$, alors
+les coordonnées cartésiennes $(x,y)$ de ce point sont données par
+\[
+x = r\cos(\theta) \quad \text{et} \quad y = r\sin(\theta) \; .
+\]
+Si $(x,y) \neq (0,0)$ sont les coordonnées cartésiennes d'un point
+$P$, alors les coordonnées polaires $(r,\theta)$ de ce point (modulo
+un multiple de $2\pi$ pour $\theta$) sont donnée par
+\begin{align*}
+r &= \sqrt{x^2+y^2} \quad ,\\
+\theta &= \begin{cases}
+\arctan\left(y/x\right) & \quad \text{si} \quad x>0 \\
+\arctan\left(y/x\right) + \pi & \quad \text{si} \quad x<0 \\
+\pi/2 & \quad \text{si} \quad x=0 \quad \text{et} \quad y>0 \\
+-\pi/2 & \quad \text{si} \quad x=0 \quad \text{et} \quad y<0
+\end{cases}\; .
+\end{align*}
+Puisque
+$\displaystyle -\frac{\pi}{2} < \arctan\left(\frac{y}{x}\right) <
+\frac{\pi}{2}$ pour tout $x\neq 0$ et $y$, nous avons que $\theta$ donnée
+par la formule précédente satisfait
+$\displaystyle -\frac{\pi}{2} \leq \theta < \frac{3\pi}{2}$.
+
+\begin{rmk}
+Il est permit d'avoir des coordonnées polaires de la forme
+$(r,\theta)$ où $r<0$.  Dans ce cas, il est sous-entendu que
+$(r, \theta) = (|r|, \theta +\pi)$.  C'est-à-dire que $(r,\theta)$
+avec $r<0$ est la réflexion par rapport à l'origine du point
+$(|r|,\theta)$.
+\end{rmk}
+
+\begin{egg}
+Quelles sont les coordonnées cartésiennes du point $P$ dont les
+coordonnées polaires sont\\ $(3, -\pi/3)$?
+
+Nous avons $x = 3 \cos(-\pi/3) = 3/2$ et $y = 3\sin(-\pi/3) = -3\sqrt{3}/2$.
+Les coordonnées cartésiennes de $P$ sont donc $(3/2, -3\sqrt{3}/2)$.
+\end{egg}
+
+\begin{egg}
+Quelles sont les coordonnées polaires du point $P$ dont les
+coordonnées cartésiennes sont\\ $(-1, -\sqrt{3})$?
+
+Nous avons $\displaystyle r = \sqrt{ (-1)^2 + (-\sqrt{3})^2} = 2$. Puisque
+$x<0$, nous avons
+\[
+\theta = \arctan\left(\frac{-\sqrt{3}}{-1}\right) + \pi
+= \arctan\left(\sqrt{3}\right) + \pi = \frac{\pi}{3} + \pi =
+\frac{4\pi}{3} \; .
+\]
+Les coordonnées polaires de $P$ sont donc $(2, 4\pi/3)$.
+\end{egg}
+
+\subsection{Équations en coordonnées polaires}
+
+Commençons notre apprentissage des courbes décrites par des équations
+en coordonnées polaires par l'étude de quelques équations
+élémentaires; c'est-à-dire, $r$ constant ou $\theta$ constant.
+
+\begin{egg}
+Quelle est la courbe décrite par l'équation $r=3$ et celle décrite par
+$r=-3$?
+
+Comme aucune contrainte n'est imposée sur l'angle $\theta$ dans
+l'équation $r=3$, l'angle $\theta$ est libre.  En d'autres mots,
+l'équation $r=3$ est vrai quelle que soit la valeur de $\theta$.  La
+courbe représentée par cette équation est le cercle de rayon $3$
+centré à l'origine; c'est l'ensemble de tous les points dont les
+coordonnées cartésiennes $(x,y)$ satisfont $\sqrt{x^2+y^2} = 3$.
+Lorsque $\theta$ augmente, nous parcourons le cercle de rayon $3$ dans
+le sens contraire aux aiguilles d'une montre.
+
+L'équation $r=-3$ décrit aussi le cercle de rayon $3$ centré à
+l'origine car c'est la courbe qui est la réflexion par rapport à
+l'origine du cercle $r=3$.
+\end{egg}
+
+\begin{egg}
+Quelle est la courbe décrite par l'équation $\theta = \pi/4$?
+
+Comme aucune contrainte n'est imposée sur le rayon $r$ dans l'équation
+$\theta = \pi/4$, le rayon $r$ est libre.  En d'autres mots,
+l'équation $\theta = \pi/4$ est vrai quelle que soit la valeur de
+$r \in \RR$.  La courbe représentée par cette équation est la droite
+de pente $\pi/4$ qui passe par l'origine;  c'est-à-dire, la droite
+$y=x$ au complet car nous acceptons les valeurs négatives de $r$. Lorsque
+$r$ augmente, $x$ et $y$ vont de $-\infty$ à $+\infty$.
+\end{egg}
+
+\begin{egg}
+Traçons la courbe $\Gamma$ décrite par l'équation $r = 2\sin(\theta)$
+et trouvons l'équation cartésienne qui décrit cette courbe.
+
+Si nous multiplions l'équation $r=2\sin(\theta)$ par $r$, nous obtenons
+$r^2= 2 r \sin(\theta)$.  Or $r^2 = x^2 + y^2$ et $y = r\sin(\theta)$.
+Nous avons donc $x^2+y^2 = 2y$.  Nous obtenons l'équation en coordonnées
+cartésiennes
+\[
+1 = x^2+y^2 -2y + 1 = x^2 + (y-1)^2 \; .
+\]
+$\Gamma$ est le cercle de rayon $1$ centré au point $(0,1)$.
+
+Le graphe de $r$ en fonction de $\theta$ ainsi que le dessin de la
+courbe $\Gamma$ sont donnés ci-dessous.  Les points suivants
+appartiennent à la courbe $\Gamma$.
+\[
+\begin{array}{*{9}{c|}c}
+\theta & 0 & \pi/4 & \pi/2 & 3\pi/4 & \pi & 5\pi/4 & 3\pi/2 & 7\pi/2 &
+2\pi \\
+\hline
+\rule{0pt}{1.1em} r & 0 & \sqrt{2} & 2 & \sqrt{2} & 0 & -\sqrt{2} & -2 &
+-\sqrt{2} & 0
+\end{array}
+\]
+Ces points apparaissent sur la courbe $\Gamma$ dans le dessin
+ci-dessous.  Nous parcourons la courbe $\Gamma$ deux fois dans le
+sens contraire aux aiguilles d'une montre lorsque $\theta$ varie de
+$0$ à $2\pi$.
+\PDFgraph{13_repr_param/polar2}
+\label{eggPOLAR2}
+\end{egg}
+
+\begin{egg}
+Traçons la courbe $\Gamma$ décrite par l'équation $r = 2 + \cos(\theta)$.
+
+Le graphe de $r$ en fonction de $\theta$ ainsi que le dessin de la
+courbe $\Gamma$ sont donnés ci-dessous.  Les points suivants
+appartiennent à la courbe $\Gamma$.
+\[
+\begin{array}{*{9}{c|}c}
+\theta & 0 & \pi/4 & \pi/2 & 3\pi/4 & \pi & 5\pi/4 & 3\pi/2 & 7\pi/2 &
+2\pi \\
+\hline
+\rule{0pt}{1.8em} r & 3 &
+\displaystyle \frac{4+\sqrt{2}}{2} \approx 2.7071 & 2 &
+\displaystyle \frac{4-\sqrt{2}}{2} \approx 1.29289
+& 1 & \displaystyle \frac{4-\sqrt{2}}{2} & 2 &
+\displaystyle \frac{4+\sqrt{2}}{2} & 0
+\end{array}
+\]
+Ces points apparaissent sur la courbe $\Gamma$ dans le dessin
+ci-dessous.  Nous parcourons la courbe $\Gamma$ une fois dans le sens
+contraire aux aiguilles d'une montre lorsque $\theta$ varie de $0$ à
+$2\pi$.
+\PDFgraph{13_repr_param/polar3}
+\label{eggPOLAR3}
+\end{egg}
+
+\begin{egg}
+Traçons la courbe $\Gamma$ décrite par l'équation
+$r = \sin(2\theta)$.
+
+Le graphe de $r$ en fonction de $\theta$ ainsi que le dessin de la
+courbe $\Gamma$ sont donnés ci-dessous.  Les points suivants
+appartiennent à la courbe $\Gamma$.
+\[
+\begin{array}{*{9}{c|}c}
+\theta & 0 & \pi/4 & \pi/2 & 3\pi/4 & \pi & 5\pi/4 & 3\pi/2 & 7\pi/2 &
+2\pi \\
+\hline
+\rule{0pt}{1.5em} r & 0 & 1 & 0 & -1 & 0 & 1 & 0 & -1 & 0
+\end{array}
+\]
+Ces points apparaissent sur la courbe $\Gamma$ dans le dessin
+ci-dessous.  Nous parcourons la courbe $\Gamma$ en suivant l'ordre des
+intervalles I, II, III, \ldots, VIII lorsque $\theta$ varie de $0$ à
+$2\pi$.
+\PDFgraph{13_repr_param/polar4}
+\label{eggPOLAR4}
+\end{egg}
+
+\begin{rmk}
+Les courbes que nous avons obtenues aux exemples~\ref{eggPOLAR2},
+\ref{eggPOLAR3} et \ref{eggPOLAR4} ont certaines symétries.  La courbe
+de l'exemple~\ref{eggPOLAR2} est inchangée par une réflexion par
+rapport à l'axe des $y$.  La courbe de l'exemple~\ref{eggPOLAR3} est
+inchangée par une réflexion par rapport à l'axe des $x$.  La courbe de
+l'exemple~\ref{eggPOLAR4} est inchangée par une réflexion par rapport
+à l'axe des $x$, à l'axe des $y$, à la droite $x=y$, à la droite
+$y=-x$. et à l'origine.  Elle est de plus inchangée par une rotation
+autour de l'origine de $\pi/2$, $\pi$ ou $3\pi/2$.  En fait, nous
+disons que la courbe de l'exemple~\ref{eggPOLAR4} à la symétrie d'un
+carré car les opérations qui transforment un carré en lui même vont aussi
+transformer cette courbe en elle même.
+
+Résumons comment déterminer les principales symétries d'une courbe
+donnée en coordonnées polaires.  Soit $\Gamma$ une courbe donnée par
+l'équation en coordonnées polaires $f(r,\theta)=0$.
+
+\begin{itemize}
+\item La courbe $\Gamma$ est inchangée par une réflexion par rapport à
+l'axe des $x$ si $f(r,\theta) = f(r,-\theta) = 0$ (ou
+$f(r,\theta) = f(-r,\pi-\theta) = 0$). 
+\item La courbe $\Gamma$ est inchangée par une réflexion par rapport à
+l'axe des $y$ si $f(r,\theta) = f(r,\pi-\theta) = 0$ (ou
+$f(r,\theta) = f(-r,-\theta) = 0$).
+\item La courbe $\Gamma$ est inchangée par une réflexion par rapport à
+l'origine (cela correspond aussi à une rotation par $\pi$) si 
+$f(r,\theta) = f(-r,\theta) = 0$ (ou $f(r,\theta) = f(r,\pi+\theta) = 0$).
+\item La courbe $\Gamma$ est inchangée par une réflexion par rapport à
+la droite $\theta = \pi/4$ (i.e. $y=x$) si
+$\displaystyle f(r,\theta) = f\left(r,\frac{\pi}{2} -\theta\right) = 0$ (ou
+$\displaystyle f(r,\theta) = f\left(-r,-\frac{\pi}{2}-\theta\right)$).
+\item La courbe $\Gamma$ est inchangée par une réflexion par rapport à
+la droite $\theta = -\pi/4$ (i.e. $y=-x$) si 
+$\displaystyle f(r,\theta) = f\left(r,-\frac{\pi}{2} -\theta\right) = 0$
+(ou
+$\displaystyle f(r,\theta) = f\left(-r,\frac{\pi}{2}-\theta\right)$).
+\item La courbe $\Gamma$ est inchangée par une rotation centrée à
+l'origine de $\pi/2$ dans le sens contraire aux aiguilles d'une montre
+si
+$\displaystyle f(r,\theta) = f\left(r,\frac{\pi}{2}+\theta\right) = 0$
+(ou
+$\displaystyle f(r,\theta) = f\left(-r,-\frac{\pi}{2}+\theta\right)$).
+\end{itemize}
+
+Les conditions entre parenthèses dans la liste précédente sont données
+car ils sont parfois plus simples à vérifier que les conditions
+standards.
+\end{rmk}
+
+\subsection[Longueur d'une courbe]{Longueur d'une courbe donnée par
+  une équation en coordonnées polaires}
+
+Supposons qu'un courbe $\Gamma$ soit décrite par l'équation en
+coordonnées polaires $f(r,\theta)=0$.  Supposons de plus que nous
+puissions résoudre cette équation pour $r$ en fonction de $\theta$.  Dans
+ce cas, une représentation paramétrique pour la courbe $\Gamma$ est
+donnée par
+\[
+x=\phi_1(\theta) = r(\theta)\,\cos(\theta) \quad \text{et} \quad
+y= \phi_2(\theta) = r(\theta)\,\sin(\theta) \quad
+\]
+pour $a\leq \theta \leq b$.  Puisque
+\[
+\phi_1'(\theta) = r'(\theta)\,\cos(\theta) - r(\theta)\,\sin(\theta)
+\quad \text{et} \quad
+\phi_2'(\theta) = r'(\theta)\,\sin(\theta) + r(\theta)\,\cos(\theta)
+\; ,
+\]
+nous avons
+\begin{align*}
+\left(\phi_1'(\theta)\right)^2 + \left(\phi_2'(\theta)\right)^2
+&= \left( r'(\theta)\,\cos(\theta) - r(\theta)\,\sin(\theta)\right)^2
++ \left(r'(\theta)\,\sin(\theta) + r(\theta)\,\cos(\theta)\right)^2 \\
+&= \left(r'(\theta)\right)^2\,\cos^2(\theta)
+-2\,r'(\theta)\,r(\theta)\,\sin(\theta)\,\cos(\theta)
++\left(r(\theta)\right)^2\,\sin^2(\theta)\\
+&\quad +\left(r'(\theta)\right)^2\,\sin^2(\theta)
++2\,r'(\theta)\,r(\theta)\,\sin(\theta)\,\cos(\theta)
++\left(r(\theta)\right)^2\,\cos^2(\theta) \\
+&= \left(r'(\theta)\right)^2 + \left(r(\theta)\right)^2 \; ,
+\end{align*}
+Ainsi, la formule (\ref{arcLength}) pour calculer la longueur d'une
+courbe devient
+\[
+L = \int_a^b \sqrt{\left(\phi_1'(\theta)\right)^2
++ \left(\phi_2'(\theta)\right)^2} \dx{\theta}
+= \int_a^b
+\sqrt{\left(r'(\theta)\right)^2 + \left(r(\theta)\right)^2}
+\dx{\theta} \; .
+\]
+Nous avons donc le résultat suivant.
+
+\begin{focus}{\prp}
+Soit $\Gamma$ une courbe donnée par une équation en coordonnées
+polaire $r = r(\theta)$ pour $a \leq \theta \leq b$.  La longueur $L$
+de cette courbe est donnée pas
+\begin{equation} \label{arclengthPolar}
+L = \int_a^b
+\sqrt{\left(r'(\theta)\right)^2 + \left(r(\theta)\right)^2}
+\dx{\theta} \; .
+\end{equation}
+\end{focus}
+
+\begin{egg}
+Traçons la courbe donnée par l'équation en coordonnées polaires
+$r=\theta$ pour $0\leq \theta \leq 2\pi$, et calculons la longueur de
+cette courbe.
+
+Le graphe de $r$ en fonction de $\theta$ ainsi que le dessin de la
+courbe sont donnés ci-dessous.
+\PDFgraph{13_repr_param/polar5}
+C'est une spirale.  Puisque $r(\theta) = \theta$ et
+$r'(\theta)= 1$, la longueur $L$ de cette courbe est
+\[
+L = \int_0^{2\pi} \sqrt{1 + \theta^2} \dx{\theta} \; .
+\]
+Nous avons montré à l'aide d'une substitution trigonométrique à
+l'exemple~\ref{intSRQTxdpu} que
+\[
+\int \sqrt{\theta^2+1} \dx{x} = \frac{1}{2}\, \theta\sqrt{1+\theta^2}
++ \frac{1}{2} \ln\left|\theta + \sqrt{1+\theta^2}\right| + C\; .
+\]
+Ainsi,
+\[
+L = \left( \frac{1}{2}\, \theta\sqrt{1+\theta^2}
++ \frac{1}{2} \ln\left|\theta + \sqrt{1+\theta^2}\right|\right)\bigg|_0^{2\pi}
+= \pi\,\sqrt{1+4\pi^2} +
+\frac{1}{2} \ln\left|2\pi+\sqrt{1+4\pi^2}\right| \; .
+\]
+\end{egg}
+
+\subsection[Aire d'une région]{Aire d'une région bornée par une courbe  définie à l'aide d'une équation en coordonnées polaires}
+
+Supposons que nous voulions calculer l'aire de la région $R$
+représenté à la figure~\ref{POLAR6}.  La région $R$ est bornée par les
+droites $\theta=\alpha$ et $\theta = \beta$, et la courbe
+$r=r(\theta)$ pour $\alpha \leq \theta \leq \beta$. 
+
+Soit $k$ une entier positif.  Posons $\Delta \theta =(\beta-\alpha)/k$
+et $\theta_j = \alpha + j\,\Delta \theta$ pour $j=0$, $1$, $2$,
+\ldots, $k$.  Nous avons que $\theta_0=\alpha$ et $\theta_k = \beta$.
+L'intervalle $[\alpha,\beta]$ est partagé en $k$ sous-intervalles de la
+forme $[\theta_j,\theta_{j+1}]$ pour $j=0$, $1$, $2$, \ldots, $k-1$.
+
+Pour $j=0$, $1$, $2$, \ldots, $k-1$, nous choisissons $\theta_j^\ast$ entre
+$\theta_j$ et $\theta_{j+1}$.  L'aire de la région bornée par les
+droites $\theta=\theta_j$ et $\theta=\theta_{j+1}$, et la courbe
+$r=r(\theta)$ pour $\theta_j \leq \theta \leq \theta_{j+1}$, est
+approximativement l'aire $A_j$ de la région $R_j$ bornée par les
+droites $\theta=\theta_j$ et $\theta=\theta_{j+1}$, et l'arc de cercle
+$r=r(\theta_j^\ast)$ pour $\theta_j \leq \theta \leq \theta_{j+1}$.
+La région $R_j$ est une pointe de tarte dont l'aire est
+\[
+A_j = \frac{1}{2}\,r^2(\theta_j^\ast) \Delta \theta_j^\ast
+\]
+car $R_j$ représente $\Delta \theta_j^\ast/2\pi$ du disque de rayon
+$r(\theta_j^\ast)$ dont l'aire est $\displaystyle \pi r^2(\theta_j^\ast)$.
+
+Ainsi, l'aire $A$ de la région $R$ est approximativement la somme de
+l'aire de chacune des régions $R_j$.
+\begin{equation} \label{airePolaireAppr}
+A \approx \sum_{j=0}^{k-1} A_j = \sum_{j=0}^{k-1}
+\frac{1}{2}\,r^2(\theta_j^\ast) \Delta \theta_j^\ast \; .
+\end{equation}
+La somme précédente représente une somme de Riemann pour l'intégrale
+\[
+\int_\alpha^\beta \frac{1}{2}\, r^2(\theta) \dx{\theta} \; .
+\]
+Si $k$ tend vers plus l'infini en (\ref{airePolaireAppr}), nous obtenons
+le résultat suivant.
+
+\begin{focus}{\prp}
+Soit $R$ une région bornée par les droites $\theta=\alpha$ et
+$\theta = \beta$, et la courbe $r=r(\theta)$ pour
+$\alpha \leq \theta \leq \beta$.  L'aire $A$ de $R$ est
+\[
+A = \int_\alpha^\beta \frac{1}{2}\, r^2(\theta) \dx{\theta} \; .
+\]
+\end{focus}
+
+\PDFfig{13_repr_param/polar6}{Une région du plan bornée par une courbe
+définie en coordonnées polaires}{La région $R$ du plan est bornée par
+les droites $\theta=\alpha$ et $\theta = \beta$, et la courbe
+$r=r(\theta)$ pour $\alpha \leq \theta \leq \beta$}{POLAR6} 
+
+\begin{egg}
+Dessinons la région $R$ bornée par la courbe $r=e^\theta$
+pour $-\pi/2 \leq \theta \leq \pi/2$ et l'axe des $y$, et calculons
+l'aire de cette région.
+
+Le dessin de la région $R$ est donné ci-dessous.
+\PDFgraph{13_repr_param/polar7}
+
+L'aire de $R$ est
+\[
+A = \frac{1}{2} \int_{-\pi/2}^{\pi/2} \left( e^\theta \right)^2
+\dx{\theta}
+= \frac{1}{2} \int_{-\pi/2}^{\pi/2} e^{2\theta} \dx{\theta}
+= \frac{1}{4} \, e^{2\theta} \bigg|_{-\pi/2}^{\pi/2}
+= \frac{1}{4} \left( e^\pi-e^{-\pi} \right) = \frac{1}{2} \sinh(\pi) \; .
+\]
+\end{egg}
+
+\begin{egg}
+Dessinons la région $R$ bornée par la courbe
+$r=\sin(3\theta)$, et calculons l'aire de cette région.
+
+Le graphe de $r$ en fonction de $\theta$ ainsi que le dessin de la
+région $R$ sont donnés ci-dessous.
+\PDFgraph{13_repr_param/polar8}
+Nous parcourons la contour de $R$ deux fois lorsque $\theta$ augment de $0$ à
+$2\pi$.  De plus, nous remarquons que la courbe $r=\sin(3\theta)$ est
+invariante pour la rotation de $2\pi/3$ car
+\[
+r=\sin\left(3\theta\right) \Rightarrow
+\sin\left( 3\left(\theta+\frac{2\pi}{3}\right)\right)
+= \sin\left(3\theta + 2\pi\right) = \sin\left(3\theta\right) = r \; .
+\]
+Il suffit donc de calculer l'aire de la partie de la région $R$ dans
+le premier quadrant et de multiplier le résultat par $3$ pour trouver
+l'aire $A$ de $R$.
+\begin{align*}
+A &= \frac{3}{2} \int_0^{\pi/3} \sin^2(3\theta) \dx{\theta}
+= \frac{3}{4} \int_0^{\pi/3} \left( 1 - \cos(6\theta)\right) \dx{\theta} \\
+&= \frac{3}{4} \left(\theta - \frac{1}{6} \, \sin(6\theta)\right)
+\bigg|_0^{\pi/3}
+= \frac{3}{4} \left( \frac{\pi}{3} \right) = \frac{\pi}{4} \ .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Dessinons de la région $R$ qui est à l'intérieure de la courbe
+$r=1-\sin(\theta)$ et à l'extérieure du cercle $r=1$, et calculons l'aire
+de cette région.
+
+Le graphe de $r$ en fonction de $\theta$ ainsi que le dessin de la
+région $R$ sont donnés ci-dessous.
+\PDFgraph{13_repr_param/polar9}
+Pour obtenir l'aire $A$ de la région $R$, il suffit de soustraire
+l'aire de la partie du disque de rayon $1$ sous l'axe des $x$ de
+l'aire de la région bornée par la courbe $r=1-\sin(\theta)$ pour
+$\pi \leq \theta \leq 2\pi$ et l'axe des $x$.  C'est-à-dire,
+\begin{align*}
+A &= \frac{1}{2} \int_\pi^{2\pi} \left(1-\sin(\theta)\right)^2 \dx{\theta}
+- \frac{1}{2} \int_\pi^{2\pi} 1^2 \dx{\theta}
+= \frac{1}{2} \int_\pi^{2\pi} \left(1-2\sin(\theta)+\sin^2(\theta)\right)
+\dx{\theta} - \frac{\pi}{2} \\
+&= \frac{1}{2} \int_\pi^{2\pi} \left(1-2\sin(\theta)+
+\frac{1}{2}\left(1-\cos(2\theta)\right)\right) \dx{\theta} - \frac{\pi}{2} \\
+&= \frac{1}{2} \int_\pi^{2\pi} \left(\frac{3}{2} - 2\sin(\theta) -
+\frac{1}{2}\cos(2\theta)\right) \dx{\theta} - \frac{\pi}{2}
+= \frac{1}{2}\left( \frac{3}{2}\,\theta + 2\cos(\theta) - \frac{1}{4}
+\sin(2\theta)\right)\bigg|_\pi^{2\pi}  - \frac{\pi}{2} \\
+&= \frac{1}{2} \left(\frac{3\pi}{2} + 4 \right) - \frac{\pi}{2}
+= \frac{\pi}{4} + 2 \; .
+\end{align*}
+\end{egg}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Droite tangente à une courbe}
+
+\begin{question}
+Considérons la courbe ayant la représentation paramétrique
+$x(t) = t^2 -2t$ et $y(t) = t^2 - 1$ pour $t \in \RR$.
+
+\subQ{a} Quels sont les points où cette courbe coupe l'axe des $x$ et
+l'axe des $y$?\\
+\subQ{b} Déterminez les points de la courbe où la tangente est
+horizontal et ceux où la tangente est vertical.\\
+\subQ{c} Trouvez l'équation de la droite tangente à la courbe au point
+$(3,8)$.\\
+\subQ{d} Trouvez les points de la courbe où la tangente à la
+courbe en ces points passe par le point $(2,7)$.
+\label{13Q1}
+\end{question}
+
+\subsection{Longueur d'une courbe}
+
+\begin{question}[\eng]
+Quelle est la longueur de la courbe donnée par la représentation
+paramétrique $x=t^2$, $y=1+t^3$ qui va du point $(0,1)$ au point
+$(4,9)$?
+\label{13Q2}
+\end{question}
+
+\begin{question}[\eng]
+Quelle est la longueur de la courbe donnée par la représentation
+paramétrique $x = e^t \sin{t}$, $y = e^t \cos{t}$ pour
+$0 \leq t \leq \pi/2$?
+\label{13Q3}
+\end{question}
+
+\begin{question}[\eng]
+Quelle est la longueur de la courbe $y = 1 + 2 x^{3/2}$ pour
+$1 \leq x \leq 3$?
+\label{13Q4}
+\end{question}
+
+\begin{question}[\eng]
+Quelle est la longueur de la courbe $y = \ln|\cos(x)|$ pour
+$0 \leq x \leq \pi/4$?
+\label{13Q5}
+\end{question}
+
+\begin{question}[\eng]
+Considérons la région $R$ bornée par l'axe des $x$, la courbe
+$y = x^{1/3}$ et la droite $x = 1$.  Calculez le périmètre de cette
+région avec une précision de $0.001$\,.
+\label{13Q6}
+\end{question}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

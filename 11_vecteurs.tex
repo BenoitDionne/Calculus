@@ -1,0 +1,1626 @@
+\chapter[Vecteurs]{Vecteurs}\label{CHAPvecteurs}
+
+\compileTHEO{
+
+Dans ce chapitre, nous revoyons rapidement quelques notions de
+géométrie analytique que le lecteur devrait avoir étudié à l'école
+secondaire.  Une grande partie des concepts présentés dans ce chapitre
+seront utilisés lors de l'étude des fonctions de plusieurs variables
+à partir du chapitre~\ref{chapFonctPlusVar}.
+
+\section{Définition}
+
+\begin{focus}{\dfn} \index{Vecteur}
+Un {\bfseries vecteur} du plan $\RR^2$ est une flèche qui part de
+l'origine $\VEC{0} = (0,0)$ pour se terminer en un point
+$\VEC{p} = (p_1,p_2)$.   Puisque chaque vecteur est associé à un
+unique point $\VEC{p}$ et vice-versa, le vecteur est dénoté par
+$\VEC{p}$
+
+De même, un {\bfseries vecteur} de l'espace $\RR^3$ est une flèche qui
+part de l'origine $\VEC{0} = (0,0,0)$ pour se terminer en un point
+$\VEC{p} = (p_1,p_2,p_3)$.   Puisque chaque vecteur est associé à un
+unique point $\VEC{p}$ et vice-versa, le vecteur est dénoté par
+$\VEC{p}$
+\end{focus}
+
+La définition de vecteur pourrait être généralisée à l'espace $\RR^n$
+pour $n>3$.  Cela n'est cependant pas nécessaire pour le chapitre
+présent.  Nous aborderons les espace de dimensions plus grande que $3$
+au chapitre~\ref{chapALLin} sur l'algèbre linéaire.
+
+Puisqu'il y a une bijection entre les vecteurs et les points, le
+contexte déterminera comment il faut interpréter $\VEC{p}$.
+
+\begin{egg}
+Nous retrouvons à la figure~\ref{VECT1} la représentation graphique du
+vecteur $\VEC{p} = (2,5,3)$.
+\label{vect1}
+\end{egg}
+
+\PDFfig{11_vecteurs/vect1}{Représentation graphique du vecteur
+$\VEC{p} = (2,5,3)$ de l'espace}{Représentation graphique du vecteur
+$\VEC{p} = (2,5,3)$ de l'espace}{VECT1}
+
+\begin{focus}{\dfn} \index{Vecteur!longueur} \label{norm} 
+La {\bfseries longueur (euclidienne)} du vecteur $\VEC{p} = (p_1,p_2)$ est
+\[
+\|\VEC{p}\| \equiv \sqrt{p_1^2+p_2^2} \ ,
+\]
+alors que celle du vecteur $\VEC{p} = (p_1,p_2,p_3)$ est
+\[
+\|\VEC{p}\| \equiv \sqrt{p_1^2+p_2^2+p_3^2} \;.
+\]
+\end{focus}
+
+Cette définition découle du théorème de Pythagore qui affirme que le
+carré de l'hypoténuse d'un triangle droit est égal à la somme des
+carrés des deux côtés adjacents à l'angle droit. La justification de
+la formule pour la longueur d'un vecteur dans $\RR^3$ est illustrée à la
+figure~\ref{VECT2}.
+
+\PDFfig{11_vecteurs/vect2}{Longueur du vecteur $\VEC{p}=(p_1,p_2,p_3)$}
+{Longueur du vecteur $\VEC{p}=(p_1,p_2,p_3)$}{VECT2}
+
+\section{Opérations sur les vecteurs}
+
+Nous pouvons définir des opérations algébriques sur les vecteurs comme ils
+en existent pour les nombres.  De plus, nous pouvons aussi définir des
+opérations sur les vecteurs qui ont une importante signification
+géométrique comme nous verrons dans les prochaines sections.
+
+Nous commençons par définir deux opérations algébriques sur les vecteurs:
+{\em le produit d'un vecteur par un nombre réel} et
+{\em la somme de vecteurs}.
+
+Par la suite, nous définirons deux opérations sur les vecteurs,
+{\em le produit scalaire} et {\em le produit vectoriel}, qui jouent
+des rôles majeurs dans l'analyse géométrique.
+
+\subsection{Produit d'un vecteur par un nombre réel}
+
+\begin{focus}{\dfn} \index{Vecteur!produit avec un nombre réel}
+Soit $\VEC{p} = (p_1,p_2)$ et $\rho$ est un nombre réel.  Le
+{\bfseries produit} de $\rho$ avec le vecteur $\VEC{p}$ est le
+vecteur $\VEC{q}$ défini par la formule suivante.
+\[
+\VEC{q} = \rho\, \VEC{p} = \rho (p_1, p_2) = (\rho p_1 , \rho p_2) \; .
+\]
+
+De même, soit $\VEC{p} = (p_1,p_2,p_3)$ et $\rho$ est un nombre réel.
+Le {\bfseries produit} de $\rho$ avec le vecteur $\VEC{p}$ est le vecteur
+$\VEC{q}$ défini par la formule suivante.
+\[
+\VEC{q} = \rho\, \VEC{p} = \rho (p_1,p_2,p_3)
+= (\rho p_1 , \rho p_2, \rho p_3) \; .
+\]
+\end{focus}
+
+Le vecteur $\VEC{q}$ est de longueur $|\rho| \|\VEC{p}\|$ et pointe dans la
+même direction que $\VEC{p}$ si $\rho > 0$ et dans la direction opposée à
+$\VEC{p}$ si $\rho < 0$.
+
+\begin{egg}
+Le dessin du vecteur $\displaystyle \VEC{q} = -2 \VEC{p}$, où
+$\VEC{p}$ est le vecteur donné à l'exemple~\ref{vect1}, est donné à la
+figure~\ref{VECT3}.  Nous avons
+\[
+\VEC{q} = -2 \VEC{p} = -2 (2, 5, 3) = (-4,-10,-6) \; .
+\]
+\end{egg}
+
+\PDFfig{11_vecteurs/vect3}{Représentation du vecteur $\VEC{q} = -2\VEC{p}$}
+{Représentation du vecteur $\VEC{q} = -2\VEC{p}$ où le vecteur
+$\VEC{p}=(2,5,3)$ est représenté à la figure~\ref{VECT1}}{VECT3}
+
+\subsection{Somme de vecteurs}
+
+\begin{focus}{\dfn} \index{Vecteur!somme de vecteurs}
+Soit $\VEC{p} = (p_1,p_2)$ et $\VEC{q} = (q_1, q_2)$.  La
+{\bfseries somme} des vecteurs $\VEC{p}$ et $\VEC{q}$ est le
+vecteur $\VEC{r}$ défini par la formule suivante.
+\[
+\VEC{r} = \VEC{p} + \VEC{q} = ( p_1, p_2) + (q_1, q_2)
+= (p_1+q_1, p_2+q_2) \; .
+\]
+
+De même, soit $\VEC{p} = (p_1,p_2,p_3)$ et $\VEC{q} = (q_1, q_2, q_3)$.
+La {\bfseries somme} des deux vecteurs $\VEC{p}$ et
+$\VEC{q}$ est le vecteur $\VEC{r}$ défini par la formule suivante.
+\[
+\VEC{r} = \VEC{p} + \VEC{q} = ( p_1, p_2, p_3) + (q_1, q_2, q_3)
+= (p_1+q_1, p_2+q_2, p_3+q_3) \; .
+\]
+\end{focus}
+
+\begin{egg}
+Le résultat $\VEC{r} = (5,9,4)$ de la somme des vecteurs $\VEC{p} = (6,6,2)$
+et $\VEC{q} = (-1, 3, 2)$ est illustré à la figure~\ref{VECT4}.
+
+Remarquons que les trois vecteurs $\VEC{p}$, $\VEC{q}$ et $\VEC{r}$ sont
+tous dans le même plan.  Nous verrons à la section~\ref{PROD_VECT} sur
+le produit vectoriel comment nous pouvons facilement vérifier cette
+affirmation.
+\label{EX_SUM}
+\end{egg}
+
+\PDFfigD[t]{11_vecteurs/vect4}{11_vecteurs/vect5}{Représentation
+graphique de la somme de deux vecteurs}{Ces dessins illustrent
+l'aspect géométrique de la somme des deux vecteurs donnés à
+l'exemple~\ref{EX_SUM}}{VECT4}
+
+\subsection{Notation vectorielle classique}
+
+Les vecteurs suivants sont fondamental en analyse vectorielle.  Pour
+cette raison, ils ont leur propre notation.
+
+\begin{focus}{\dfn} \index{Vecteur!canonique}
+Dans le plan, les vecteurs $\ii = (1,0)$ et $\jj = (0.1)$ sont appelés
+les {\bfseries vecteurs canoniques}.  Si
+$\VEC{p}=(p_1,p_2)$, alors $\displaystyle \VEC{p} = p_1 \ii + p_2 \jj$.
+
+De même, dans l'espace $\RR^3$, les {\bfseries vecteurs canoniques}
+sont les vecteurs $\ii = (1,0,0)$, $\jj = (0.1,0)$ et $\kk = (0,0,1)$.  Si
+$\VEC{p}=(p_1,p_2,p_3)$, alors
+$\displaystyle \VEC{p} = p_1 \ii + p_2 \jj + p_3 \kk$.
+\end{focus}
+
+Dans les livres de mathématiques, la notation
+$\VEC{e}_1$ pour $\ii$, $\VEC{e}_2$ pour $\jj$ et $\VEC{e}_3$ pour
+$\kk$ est plus souvent utilisée.
+
+\subsection{Produit scalaire \eng}
+
+Alors que le produit d'un vecteur par un nombre réel et l'addition de
+vecteurs ont un rôle principalement algébrique, le produit scalaire est l'une
+des deux opérations sur les vecteurs qui a un usage principalement
+géométrique; l'autre opération étant le produit vectoriel.
+
+\begin{focus}{\dfn} \index{Vecteur!produit scalaire}
+Le {\bfseries produit scalaire} de deux vecteurs,
+$\VEC{p} = (p_1,p_2)$ et $\VEC{q} = (q_1,q_2)$, est défini par la
+formule
+\[
+\ps{\VEC{p}}{\VEC{q}} = p_1 q_1 + p_2 q_2  \; .
+\]
+
+De même, Le {\bfseries produit scalaire} de deux vecteurs,
+$\VEC{p} = (p_1,p_2,p_3)$ et $\VEC{q} = (q_1,q_2,q_3)$, est défini
+par la formule
+\[
+\ps{\VEC{p}}{\VEC{q}} = p_1 q_1 + p_2 q_2 + p_3 q_3 \; .
+\]
+Le produit scalaire des vecteurs $\VEC{p}$ et $\VEC{q}$ est aussi
+dénoté $\VEC{p} \cdot \VEC{q}$ quand cela ne cause pas de confusion.
+\end{focus}
+
+Pourquoi définir un produit de deux vecteurs comme nous venons de le faire?
+N'aurions-nous pas pu définir le produit de deux vecteurs composante par
+composante comme nous l'avons fait pour la somme de deux vecteurs?  En
+fait, nous aurions pu le faire mais cela n'a pas d'intérêt car il n'y a pas
+d'interprétations géométriques du produit de deux vecteurs composante par
+composante.  Par contre, le produit scalaire défini ci-dessus a une
+interprétation géométrique très importante.
+
+\begin{focus}{\dfn} \label{dfncos}
+Le cosinus de l'angle entre les vecteurs non nuls $\VEC{p}$ et
+$\VEC{q}$ (et ainsi l'angle entre ces vecteurs) est déterminé par
+\begin{equation}\label{CosVectors}
+\cos(\alpha) = \frac{\ps{\VEC{p}}{\VEC{q}}}{\|\VEC{p}\|\,\|\VEC{q}\|} \; .
+\end{equation}
+\end{focus}
+
+C'est cette définition qui fait le lien entre l'opération algébrique
+qu'est le produit scalaire de deux vecteurs et l'interprétation
+géométrique que nous avons des vecteurs.
+
+\begin{rmk}
+Remarquons que la longueur d'un vecteur est la racine carrée du produit
+scalaire de ce vecteur par lui-même.  Si $\VEC{p} = (p_1,p_2,p_3)$, alors
+\[
+\ps{\VEC{p}}{\VEC{p}} = p_1^2 + p_2^2 + p_3^2 = \|\VEC{p}\|^2 \; .
+\]
+
+Si $\displaystyle \ps{\VEC{p}}{\VEC{q}} = 0$, alors le cosinus entre
+les deux vecteurs $\VEC{p}$ et $\VEC{q}$ est $0$.  Nous avons donc que
+l'angle entre $\VEC{p}$ et $\VEC{q}$ est $\pi/2$ ( $+n\pi$ pour
+$n \in \ZZ$).  Ceci justifie la définition suivante.
+\end{rmk}
+
+\begin{focus}{\dfn}
+Soit $\VEC{p}$ et $\VEC{q}$, deux vecteurs.  Le vecteur $\VEC{p}$ est
+{\bfseries perpendiculaire}\index{Vecteur!perpendiculaire} ou
+{\bfseries orthogonal}\index{Vecteur!orthogonal} au vecteur
+$\VEC{q}$ (et vice-versa) si $\displaystyle \ps{\VEC{p}}{\VEC{q}} = 0$.
+\end{focus}
+
+\begin{rmk}
+Vous avez probablement appris que le produit des pentes de deux droites
+orthogonales est $-1$.  Il est facile à l'aide des vecteurs de
+vérifier cette énoncé.  Supposons que $\VEC{p} = (p_1,p_2)$ soit un
+vecteur parallèle à une droite $\ell_1$ et que $\VEC{q} = (q_1,q_2)$
+soit un vecteur parallèle à une droite $\ell_2$.  Si les droites
+$\ell_1$ et $\ell_2$ sont perpendiculaires, alors il en est de même
+pour les vecteurs $\VEC{p}$ et $\VEC{q}$, et vice-versa.  Nous avons donc
+\[
+\ps{\VEC{p}}{\VEC{q}} = p_1 q_1 + p_2 q_2 = 0 \; .
+\]
+Ainsi,
+\[
+\frac{p_2}{p_1} = - \frac{q_1}{q_2} \; .
+\]
+Puisque $\displaystyle m_1 = \frac{p_2}{p_1}$ est la pente de la droite
+$\ell_1$ et $\displaystyle m_2 = \frac{q_2}{q_1}$ est celle de la droite
+$\ell_2$, nous obtenons bien que $\displaystyle m_1 = -\frac{1}{m_2}$.
+\end{rmk}
+
+\begin{rmk}
+Nous justifierons ci-dessous la définition~\ref{dfncos} dans le plan.  La
+justification est identique pour les vecteurs dans l'espace.
+
+Commençons par un petit rappel.  Considérons le triangle $\triangle ABC$
+représenté à la figure~\ref{VECT6}.  La {\bfseries loi des cosinus} dit que
+\[
+c^2 = a^2 + b^2 - 2 a b\, \cos(\gamma)  \; .
+\]
+
+\PDFfig{11_vecteurs/vect6}{La loi des cosinus}{La loi des cosinus dit que
+$c^2 = a^2 + b^2 - 2 a b \cos(\gamma)$}{VECT6}
+
+Soit $\VEC{p} = (p_1,p_2)$ et $\VEC{q} = (q_1,q_2)$.
+De la loi des cosinus, nous déduisons que
+\begin{equation} \label{ps_interpr}
+\| \VEC{q} - \VEC{p} \|^2 = \|\VEC{p}\|^2 + \|\VEC{q}\|^2
+- 2 \|\VEC{p}\| \|\VEC{q}\| \cos(\alpha)
+\end{equation}
+où $\alpha$ est l'angle entre $\VEC{p}$ et $\VEC{q}$ (figure~\ref{VECT7}).
+
+\PDFfig{11_vecteurs/vect7}{Interprétation géométrique du produit scalaire}
+{Interprétation géométrique du produit scalaire}{VECT7}
+
+Puisque $\displaystyle \VEC{q} - \VEC{p} = (q_1-p_1,q_2-p_2)$,
+nous avons que
+\begin{align*}
+\| \VEC{q} - \VEC{p} \|^2
+&= (q_1 - p_1)^2 + (q_2-p_2)^2  \\
+&= \left(p_1^2 + p_2^2\right) + \left(q_1^2 + q_2^2\right)
+- 2 ( p_1 q_1 + p_2 q_2) \\
+&= \| \VEC{p} \|^2 + \| \VEC{q} \|^2 - 2 \ps{\VEC{p}}{\VEC{q}} \; .
+\end{align*}
+Ainsi, (\ref{ps_interpr}) devient
+\[
+\| \VEC{p} \|^2 + \| \VEC{q} \|^2 - 2 \ps{\VEC{p}}{\VEC{q}}
+= \|\VEC{p}\|^2 + \|\VEC{q}\|^2 - 2 \|\VEC{p}\| \|\VEC{q}\|
+\cos(\alpha) \; .
+\]
+Après avoir simplifié les termes identiques de chaque côté de l'égalité,
+nous obtenons
+\[
+\ps{\VEC{p}}{\VEC{q}} = \|\VEC{p}\|\, \|\VEC{q}\| \cos(\alpha) \; .
+\]
+Si nous isolons $\cos(\alpha)$, nous retrouvons la définition~\ref{dfncos}.
+\end{rmk}
+
+\begin{rmk}[\theory]
+Il est facile de démontrer la loi des cosinus en utilisant les
+coordonnées cartésiennes.
+
+Pour démontrer la loi des cosinus pour l'angle au sommet $C$ d'un
+triangle $\triangle ABC$. nous plaçons le sommet $C$ à l'origine et le
+sommet $A$ (ou $B$) sur l'axe des $x_1$ comme cela est fait à la
+figure~\ref{VECT16}.
+
+\PDFfig{11_vecteurs/vect16}{Démonstration de la loi des cosinus}{Démonstration
+de la loi des cosinus}{VECT16} 
+
+Les coordonnées du point $B$ sont donc
+$(a\cos(\gamma), a \sin(\gamma))$ et celle du point $A$ sont $(b,0)$.
+Le triangle $\triangle DAB$ a un angle droite au sommet $D$.  Le
+théorème de Pythagore nous donne donc
+\[
+c^2 = \left( a\sin(\gamma) \right)^2 + \left( -a\cos(\gamma) + b\right)^2 \; .
+\]
+Si nous développons le côté droit de cette équation, nous trouvons
+\begin{align*}
+c^2 &= a^2 \sin^2(\gamma) + a^2 \cos^2(\gamma) - 2 ab\, \cos(\gamma) +b^2 \\
+&= a^2 \left(\cos^2(\gamma)+\sin^2(\gamma)\right) + b^2 - 2ab\,\cos(\gamma) \\
+&= a^2 + b^2 - 2ab\,\cos(\gamma)
+\end{align*}
+puisque $\cos^2(\gamma) + \sin^2(\gamma) = 1$.
+\end{rmk}
+
+\subsection{Produit vectoriel \eng}\label{PROD_VECT}
+
+Le produit vectoriel est une opération sur les vecteurs qui a un
+usage principalement géométrique.
+
+\begin{focus}{\dfn} \index{Vecteur!produit vectoriel}
+Si $\VEC{p} = (p_1,p_2,p_3)$ et $\VEC{q} = (q_1, q_2, q_3)$ sont deux
+vecteurs qui ne sont pas colinéaires (i.e.\ dont l'un n'est pas un
+multiple de l'autre), nous définissons le
+{\bfseries produit vectoriel} des vecteurs
+$\VEC{p}$ et $\VEC{q}$ comme étant le vecteur
+\begin{equation}\label{sp_form}
+\VEC{m} = \VEC{p} \times \VEC{q} =
+\left(p_2 q_3 - p_3 q_2\right)\ii + \left(p_3 q_1 - p_1 q_3\right) \jj
++ \left(p_1 q_2 - p_2 q_1\right) \kk \; .
+\end{equation}
+Donc $\VEC{m} = \left(p_2 q_3 - p_3 q_2, p_3 q_1 - p_1 q_3,
+p_1 q_2 - p_2 q_1\right)$.
+\label{VecTProdDef}
+\end{focus}
+
+Nous fournirons à la remarque~\ref{DetermVectProd} de la
+section~\ref{DetermSect} une formule symbolique simple pour calculer
+le produit vectoriel de deux vecteurs.
+
+Le vecteur qui résulte du produit vectoriel de deux vecteurs a une relation
+géométrique très particulière avec les deux vecteurs du produit.
+
+\begin{focus}{\prp}
+Le vecteur $\VEC{m} = \VEC{p} \times \VEC{q}$ est
+perpendiculaire aux vecteurs $\VEC{p}$ et $\VEC{q}$.
+\end{focus}
+
+Pour vérifier que $\VEC{p} \times \VEC{q}$ est perpendiculaire à
+$\VEC{p}$, il suffit de vérifier que
+$\ps{(\VEC{p} \times \VEC{q})}{\VEC{p}} = 0$.  En effet,
+\begin{align*}
+\ps{(\VEC{p} \times \VEC{q})}{\VEC{p}} &=
+\ps{ \left(p_2 q_3 - p_3 q_2, p_3 q_1 - p_1 q_3,
+p_1 q_2 - p_2 q_1\right)}{(p_1,p_2,p_3)} \\
+&= p_1\left(p_2 q_3 - p_3 q_2\right) + p_2\left(p_3 q_1 - p_1 q_3\right)
++ p_3\left(p_1 q_2 - p_2 q_1\right) \\
+&= p_1 p_2 q_3 - p_1 p_3 q_2 + p_2 p_3 q_1 - p_1 p_2 q_3
++ p_1 p_3 q_2 - p_2 p_3 q_1 \\
+&= 0 \; .
+\end{align*}
+De même, nous pouvons vérifier que
+$\ps{(\VEC{p} \times \VEC{q})}{\VEC{q}} = 0$.
+
+\begin{focus}{\dfn} \index{Règle de la main droite}
+La direction du vecteur $\VEC{p} \times \VEC{q}$ est déterminée par la
+{\bfseries règle de la main droite}.  C'est-à-dire, si la paume de
+votre main droite entoure la droite qui contient le vecteur
+$\VEC{p} \times \VEC{q}$ de telle sorte que vos doigts indiquent la
+plus petite direction angulaire de $\VEC{p}$ à $\VEC{q}$, alors votre
+pouce pointe dans la direction de $\VEC{p} \times \VEC{q}$
+(figure~\ref{VECT10}).
+\end{focus}
+
+\PDFfig{11_vecteurs/vect10}{Le vecteur obtenu du produit vectoriel de deux
+vecteurs est orthogonal au plan généré par ces deux vecteurs}{Le vecteur
+obtenu du produit vectoriel de deux vecteurs est orthogonal au plan généré
+par ces deux vecteurs.}{VECT10}
+
+\begin{egg}
+Nous pouvons facilement vérifier avec la règle de la main droite que
+$\kk = \ii \times \jj$ et $\jj \times \ii = -\kk$.
+\end{egg}
+
+Quelques manipulations algébriques vont nous permettre de trouver une
+formule pour la longueur du vecteur $\VEC{p} \times \VEC{q}$.
+Soit $\theta$, le plus petit angle entre $\VEC{p}$ et $\VEC{q}$
+(donc $0 < \theta < \pi$).  Nous avons que
+\[
+\ps{\VEC{p}}{\VEC{q}} = \|\VEC{p}\| \|\VEC{q}\| \cos(\theta)  \; .
+\]
+Ainsi,
+\begin{align*}
+\| \VEC{p} \times \VEC{q} \|^2 &= 
+\left(p_2 q_3 - p_3 q_2\right)^2 + \left(p_3 q_1 - p_1 q_3\right)^2
++ \left(p_1 q_2 - p_2 q_1\right)^2 \\
+&= \left(p_1^2+p_2^2+p_3^2\right)\left(q_1^2+q_2^2+q_3^2\right)
+-\left(p_1q_1+p_2q_2+p_3q_3\right)^2 \\
+&= \|\VEC{p}\|^2 \|\VEC{q}\|^2
+- \left( \ps{\VEC{p}}{\VEC{q}} \right)^2
+= \|\VEC{p}\|^2 \|\VEC{q}\|^2
+- \|\VEC{p}\|^2 \|\VEC{q}\|^2\cos^2(\theta) \\
+&= \|\VEC{p}\|^2 \|\VEC{q}\|^2 \left( 1 - \cos^2(\theta)\right)
+= \|\VEC{p}\|^2 \|\VEC{q}\|^2 \sin^2(\theta) \; .
+\end{align*}
+
+Nous obtenons le résultat suivant.
+
+\begin{focus}{\prp}
+\[
+\| \VEC{p} \times \VEC{q} \| = 
+= \|\VEC{p}\| \|\VEC{q}\| \sin(\theta)
+\]
+où $0 \leq \theta < \pi$ est l'angle entre $\VEC{p}$ et $\VEC{q}$.
+\end{focus}
+
+\begin{egg}
+Nous avons que le plus petit angle entre les vecteurs $\ii$ et $\jj$ est
+$\displaystyle \frac{\pi}{2}$.  Ainsi,
+\[
+\|\kk \| = \| \ii \times \jj \| = \|\ii \| \| \jj \|
+\sin \left(\frac{\pi}{2}\right) = 1
+\]
+comme il se doit.
+\end{egg}
+
+Il y a une interprétation géométrique très intéressante de la longueur du
+vecteur obtenu d'un produit vectoriel.  Comme nous pouvons constater à
+partir du dessin à la figure~\ref{VECT11},
+$\|\VEC{p}\| \|\VEC{q}\| \sin(\theta)$ est
+l'aire du parallélogramme définie par $\VEC{p}$ et $\VEC{q}$.  La
+longueur du vecteur $\VEC{p}\times \VEC{q}$ est donc l'aire de ce
+parallélogramme.
+
+\PDFfig{11_vecteurs/vect11}{L'aire du parallélogramme définie par deux vecteurs}
+{L'aire du parallélogramme définie par les deux vecteurs $\VEC{p}$ et
+$\VEC{q}$ est
+$\|\VEC{p}\times \VEC{q}\| = \|\VEC{p}\| \|\VEC{q}\| \sin(\theta)$.}{VECT11}
+
+\section{Équation d'une droite \eng}
+
+Nous pouvons utiliser les vecteurs pour décrire les droites.
+
+La droite qui passe par le point $\VEC{p}$ et qui est parallèle au
+vecteur $\VEC{q}$ (figure~\ref{VECT8}) est formé des points
+$\VEC{x}$ où 
+\begin{equation}\label{PVline}
+\VEC{x} = \VEC{p} + \alpha \VEC{q}
+\end{equation}
+et $\alpha$ prend toutes les valeurs réelles.
+
+Rappelons que nous utilisons la même notation pour désigner un point ou
+un vecteur.  Nous pouvons donc faire référence au point $\VEC{x}$ et à ses
+coordonnées à un certain moment et traiter $\VEC{x}$ comme un vecteur
+à d'autres moments.
+
+\begin{focus}{\dfn} \index{Représentation vectorielle d'une droite}
+La formule (\ref{PVline}) est une {\bfseries représentation
+vectorielle} de la droite qui passe par $\VEC{p}$ et est parallèle au
+vecteur $\VEC{q}$.
+\end{focus}
+
+\PDFfig{11_vecteurs/vect8}{Représentation vectorielle d'une droite}
+{Représentation vectorielle d'une droite}{VECT8}
+
+Si $\VEC{p}=(p_1,p_2,p_3)$, $\VEC{q} = (q_1, q_2, q_3)$ et
+$\VEC{x}=(x_1,x_2,x_3)$,  les composantes de la représentation vectorielle
+$\VEC{x} = \VEC{p} + \alpha \VEC{q}$ sont
+\begin{equation}\label{RPline}
+x_1 = p_1 + \alpha\; q_1 \ , \ x_2 = p_2 + \alpha\; q_2 \quad \text{et}
+\quad x_3 = p_3 + \alpha\; q_3 \; .
+\end{equation}
+
+\begin{focus}{\dfn} \index{Représentation paramétrique d'une droi\-te}
+la formule (\ref{RPline}) est une {\bfseries représentation
+paramétrique} de la droite qui passe par $\VEC{p}$ et est parallèle au
+vecteur $\VEC{q}$.  Le {\bfseries paramètre} est $\alpha$.
+\end{focus}
+
+Si nous supposons que $q_1$, $q_2$ et $q_3$ sont non nuls et que nous
+résolvons chacune des trois équations de la représentation paramétrique
+pour $\alpha$, nous obtenons 
+\begin{equation}\label{RSline1}
+\frac{x_1-p_1}{q_1} = \frac{x_2-p_2}{q_2} = \frac{x_3-p_3}{q_3} \; .
+\end{equation}
+Si $q_2$ et $q_3$ sont non nuls mais $q_1 = 0$, nous obtenons
+\begin{equation}\label{RSline2}
+\frac{x_2-p_2}{q_2} = \frac{x_3-p_3}{q_3} \quad \text{et} \quad x_1 = p_1 \; .
+\end{equation}
+C'est une droite dans le plan $x=p_1$.  Le lecteur est invité à
+analyser les autres cas possibles.
+
+\begin{focus}{\dfn} \index{Représentation standard d'une droite}
+Les formules (\ref{RSline1}) et (\ref{RSline2}) sont des
+{\bfseries représentations standard}
+d'une droite qui passe par $\VEC{p}$ et est parallèle au vecteur
+$\VEC{q}$.
+\end{focus}
+
+\begin{rmk}
+Nous pouvons déduire à partir du dessin à la figure~\ref{VECT15} que,
+dans le plan, les points $\VEC{x}$ de la droite qui passe par le point
+$\VEC{p}$ et qui est perpendiculaire au vecteur $\VEC{q}$ sont donnés par
+\[
+\ps{\VEC{x} - \VEC{p}}{\VEC{q}} = 0 \; .
+\]
+\end{rmk}
+
+\PDFfig{11_vecteurs/vect15}{Équation d'une droite du plan qui est
+perpendiculaire à un vecteur }{Les points $\VEC{x}$ d'une droite
+perpendiculaire à un vecteur $\VEC{q}$ et passant par un point
+$\VEC{p}$ satisfont $\ps{\VEC{x} - \VEC{p}}{\VEC{q}} = 0$.}{VECT15}
+
+\begin{egg}
+Si $\VEC{p}=(1,2,3)$ et $\VEC{q}=(-1,2,2)$, alors l'ensemble des points
+$\VEC{x}=(x_1,x_2,x_3)$ de la droite passant par $\VEC{p}$ et
+parallèle à $\VEC{q}$ est donnée par la relation
+\[
+(x_1,x_2,x_3) = \VEC{x} = \VEC{p} + \alpha \VEC{q} = (1,2,3) + \alpha (-1,2,2)
+= (1-\alpha, 2 +2 \alpha, 3 + 2\alpha)
+\]
+pour $\alpha \in \RR$.  Nous avons donc la représentation paramétrique
+\[
+x_1 = 1-\alpha \ , \ x_2 = 2+2\alpha \quad \text{et} \quad x_3 = 3+2\alpha
+\]
+et la représentation standard
+\[
+- (x_1-1) = \frac{x_2-2}{2} = \frac{x_3-3}{2} \; .
+\]
+\end{egg}
+
+\begin{egg}
+La représentation classique d'une droite dans le plan est $x_2=m x_1+b$
+où $m$ est la pente de la droite et $b$ est l'abscisse à l'origine.
+
+L'exemple suivant illustre la relation entre les représentations
+d'une droite que nous venons d'introduire et la représentation
+classique de cette droite.
+
+Soit $\VEC{p}=(2,3)$ et $\VEC{q} = (4,3)$.  Pour trouver l'équation
+classique de la droite qui passe par le point $\VEC{p}$ et qui est
+parallèle au vecteur $\VEC{q}$, il faut premièrement trouver la pente
+de la droite qui contient le vecteur $\VEC{q}$.  La pente de
+cette droite est $3/4$.  La forme {\bfseries point-pente} de la droite
+cherchée est donc
+\[
+x_2-3 = \frac{3}{4}\, (x_1 - 2) \; .
+\]
+Nous obtenons la représentation classique
+\[
+x_2 = \frac{3}{4} x_1 + \frac{3}{2}
+\]
+de la droite.
+
+L'ensemble des points $\VEC{x}=(x_1,x_2)$ de la droite qui passe par le
+point $\VEC{p}$ et est parallèle au vecteur $\VEC{q}$ est donnée par
+\[
+(x_1,x_2) = \VEC{x} = \VEC{p} + \alpha \VEC{q}
+= (2,3) + \alpha (4,3) = (2+ 4\alpha, 3 +3\alpha) \; .
+\]
+Une représentation paramétrique de la droite qui passe par le point
+$\VEC{p}$ et est parallèle au vecteur $\VEC{q}$ est donc
+$x_1 = 2 + 4 \alpha$ et $x_2 = 3 + 3 \alpha$.  De la première
+équation, nous obtenons que $\alpha = (x_1-2)/4$.  Si
+nous substituons cette expression pour $\alpha$ dans l'équation
+$x_2 = 3 + 3 \alpha$, nous obtenons
+\[
+x_2 = 3 + 3 \left(\frac{x_1-2}{4}\right) = 3 + \frac{3}{4} (x_1-2)
+= \frac{3}{4} x_1 + \frac{3}{2} \ ,
+\]
+la représentation classique de le droite.
+\end{egg}
+
+\subsection{Droites tangentes}
+
+\begin{egg}
+Trouvons l'équation de la droite tangent au point
+$\VEC{p}= (1,\sqrt{3})$ du cercle de rayon $2$ centré à l'origine
+\PDFgraph{11_vecteurs/vect14}
+
+Nous présentons trois méthodes pour résoudre ce problème.
+
+\subQ{a} Nous remarquons que le vecteur $\VEC{p}$ est perpendiculaire à la
+droite tangente au cercle car $\VEC{p}$ représente un rayon du cercle.
+Les points $\VEC{x}=(x_1,x_2)$ de la droite tangente cherchée
+satisfont donc
+\[
+\ps{\VEC{x} - \VEC{p}}{\VEC{p}} = \ps{ (x_1-1, x_2-\sqrt{3})}{(1,\sqrt{3})}
+= (x_1-1) + \sqrt{3} (x_2-\sqrt{3}) = 0 \; .
+\]
+Si nous résolvons pour $x_2$, nous obtenons
+\[
+x_2 = \frac{-1}{\sqrt{3}}\ x_1 + \frac{4}{\sqrt{3}} \ ;
+\]
+une représentation classique pour la droite tangente.
+
+\subQ{b} Une autre méthode pour résoudre notre problème fait appel à
+la représentation paramétrique d'une droite.  Premièrement, nous trouvons un
+vecteur parallèle à la tangent au cercle au point $\VEC{p}$.
+C'est-à-dire que nous cherchons un vecteur perpendiculaire au vecteur
+$\VEC{p} = (1,\sqrt{3})$.  Il est facile de voir que
+$\VEC{q} = (\sqrt{3}, -1)$ est perpendiculaire au vecteur
+$\VEC{p}$ car $\ps{\VEC{q}}{\VEC{p}} = 0$.  Ainsi, les points
+$\VEC{x}=(x_1,x_2)$ de la droite tangent au cercle au point $\VEC{p}$
+satisfont
+\[
+\VEC{x} = \VEC{p} + \alpha \VEC{q} \; .
+\]
+Une représentation paramétrique de la droite tangent au cercle au point
+$(1,\sqrt{3})$ est alors
+\[
+x_1 = 1 + \alpha \, \sqrt{3} \quad \text{et} \quad x_2 = \sqrt{3} - \alpha
+\]
+pour tout nombre réel $\alpha$.
+
+Si nous résolvons pour $\alpha$ la première équation de la représentation
+paramétrique, nous trouvons $\alpha = (x_1-1)/\sqrt{3}$.  Si nous
+substituons cette expression pour $\alpha$ dans la deuxième équation
+de la représentation paramétrique, nous obtenons une représentation
+classique pour l'équation d'une droite tangente.
+\[
+x_2 = \sqrt{3} - \frac{x_1-1}{\sqrt{3}} = \frac{-1}{\sqrt{3}}\ x_1 
++ \frac{4}{\sqrt{3}} \; .
+\]
+
+\subQ{c} Finalement, la façon traditionnelle de trouver l'équation de
+la tangente au point $\VEC{p}$ est de commencer par trouver la pente de la
+tangente.  Pour cela, nous notons que la pente de la droite qui contient
+le vecteur $\VEC{p}$ est $\displaystyle m_1 = \sqrt{3}$.  Comme la
+droite tangente est perpendiculaire à la droite qui contient le
+vecteur $\VEC{p}$, sa pente est donc
+\[
+m_2 = \frac{-1}{m_1} = \frac{-1}{\sqrt{3}} \; .
+\]
+La forme point-pente de l'équation de la tangente au cercle au point
+$\VEC{p}$ est donc
+\[
+x_2 - \sqrt{3} = \frac{-1}{\sqrt{3}} ( x_1 - 1) \; .
+\]
+Donc
+\[
+x_2 = \frac{-1}{\sqrt{3}} \ x_1 + \frac{4}{\sqrt{3}}  \; .
+\]
+\label{TANG_CIRCL}
+\end{egg}
+
+\subsection{Intersection de deux droites}
+
+Dans le plan, deux droites non parallèles se coupent en un point.
+Dans l'espace, deux droites non parallèles ne se coupent généralement
+pas en un point.  L'exemple suivant illustre une méthode pour trouver
+l'intersection de deux droites si cette intersection existe.
+
+\begin{egg}
+Trouvons l'intersection (s'il y en a une) des droites $\ell$ et $\ell'$
+données par les représentations paramétriques suivantes.  La droite
+$\ell$ possède la représentation paramétrique
+\[
+x_1 = 2s -3 \ , \ x_2 = s -1 \quad \text{et} \quad  x_3 = -s +5
+\]
+pour $s\in \RR$, et la droite $\ell'$ possède la représentation
+paramétrique
+\[
+x_1 = t -3 \ , \ x_2 = -2 t + 1 \quad \text{et} \quad  x_2 = t - 1 \; ,
+\]
+pour $t \in \RR$.
+
+Ces deux droites ne sont pas parallèles car $\ell$ est parallèle au
+vecteur $(2,1,-1)$ et $\ell'$ au vecteur $(1,-2,1)$, et ces deux
+vecteurs ne sont pas parallèles.  Pour que ces deux droites se coupent
+en un point $(x_1,x_2,x_3)$ commun, il faut qu'ils existent $s$ et $t$
+tels que
+\[
+t -3 = 2s -3 \quad , \quad -2 t + 1 = s -1 \quad \text{et} \quad
+t - 1 = -s +5 \; .
+\]
+La première équation donne $t = 2s$.  Si nous substituons cette expression
+pour $t$ dans la deuxième équation, alors $-4s +1 = s-1$ et donc
+$s=2/5$.  Nous obtenons de $t = 2s$ que $t= 4/5$.  Malheureusement, si
+nous substituons $s=2/5$ dans la troisième équation, nous obtenons
+$t = 28/5$.  Il n'y a donc pas de valeurs de $s$ et $t$ qui satisfont
+les trois équations simultanément.  Les deux droites ne se
+coupent pas.
+\end{egg}
+
+% \begin{egg}
+% Trouvons l'intersection (s'il y en a une) de la droite $\ell$ donnée par la
+% représentation paramétrique
+% \[
+% x = 2s -2 \ , \ y = -s +2 \ \text{et} \  z = 2s
+% \]
+% pour $s\in \RR$, et de la droite $\ell'$ donnée par la représentation
+% paramétrique
+% \[
+% x = t -3 \ , \ y = -2 t + 1 \ \text{et} \  z = t - 1
+% \]
+% pour $t \in \RR$.
+% \end{egg}
+
+\section{Équation d'un plan \eng} \label{EQU_PLAN1}
+
+\begin{focus}{\prp} \label{RSplan}
+Le plan qui passe par un point $\VEC{p}$ et qui est perpendiculaire au
+vecteur $\VEC{m}$ (figure~\ref{VECT9}) est l'ensemble des
+points $\VEC{x}$ tels que le vecteur $\displaystyle \VEC{x}-\VEC{p}$ est
+perpendiculaire à $\VEC{m}$.  Si nous utilisons le produit scalaire, nous
+pouvons définir ce plan comme l'ensemble des points $\VEC{x}$ tels que
+\[
+\ps{\VEC{x}-\VEC{p}}{\VEC{m}} = 0 \; .
+\]
+\end{focus}
+
+\PDFfig{11_vecteurs/vect9}{Représentation vectorielle d'un plan}
+{Représentation vectorielle d'un plan}{VECT9}
+
+Si $\displaystyle \VEC{x}=(x_1,x_2,x_3)$, $\displaystyle \VEC{p}=(p_1,p_2,p_3)$
+et $\displaystyle \VEC{m} = (m_1,m_2,m_3)$, la formule donnée à la
+proposition~(\ref{RSplan}) devient
+\begin{equation} \label{EQU_PLAN_S}
+m_1 (x_1-p_1) + m_2 (x_2-p_2) + m_3 (x_3-p_3) = 0
+\end{equation}
+ou simplement
+\begin{equation} \label{EQU_PLAN_S2}
+m_1 x_1 + m_2 x_2 + m_3 x_3 - d = 0
+\end{equation}
+où $d = m_1 p_1 + m_2 p_2 + m_3 p_3 = \ps{\VEC{m}}{\VEC{p}}$.  Nous
+pourrions penser que la valeur de $d$ va changer si nous choisissons
+différent points $\VEC{p}$ du plan.  En fait, ce n'est pas le cas.
+Soit $\VEC{t}$ un autre point du plan.  Puisque
+$\VEC{t} - \VEC{p}$ est un vecteur parallèle au plan et donc
+perpendiculaire à $\VEC{m}$, nous avons
+\[
+\ps{\VEC{m}}{\VEC{t}} - \ps{\VEC{m}}{\VEC{p}} 
+= \ps{\VEC{m}}{\VEC{t} - \VEC{p}} = 0
+\]
+Ainsi, $\ps{\VEC{m}}{\VEC{t}} = \ps{\VEC{m}}{\VEC{p}}$.
+
+\begin{focus}{\dfn}
+la formule (\ref{EQU_PLAN_S}) (ou (\ref{EQU_PLAN_S2})\;) est une
+{\bfseries représentation standard}\index{Représentation standard d'un
+  plan} d'un plan qui contient le point $\VEC{p}$ et qui est
+perpendiculaire au vecteur $\VEC{m}$.  Nous disons que le vecteur $\VEC{m}$
+est {\bfseries orthogonal} ou {\bfseries perpendiculaire}
+ou {\bfseries normal} au plan.\index{Vecteur!Perpendiculaire à un plan}
+\index{Vecteur!Orthogonal à un plan}\index{Vecteur!Normal à un plan}
+\end{focus}
+
+Si $m_3 \neq 0$, nous pouvons déduire de (\ref{EQU_PLAN_S}) que
+\[
+x_3 = p_3 - \frac{m_1}{m_3} (x_1-p_1) - \frac{m_2}{m_3} (x_2- p_2) \;.
+\]
+Si $m_3 = 0$ et $m_2 \neq 0$, l'équation du plan est simplement
+\[
+x_2 = p_2 - \frac{m_1}{m_2} (x_1- p_1)
+\]
+et $x_3$ est libre (i.e. $x_3$ va de $-\infty$ à $\infty$).
+C'est un plan qui est parallèle à l'axe des $x_3$.  Nous laissons aux lecteurs
+l'étude des autres cas possibles.
+
+\begin{egg}
+Si $\VEC{p}=(1,2,3)$ et $\VEC{m} = (1,-2,4)$, l'ensemble des points
+$\VEC{x}=(x_1,x_2,x_3)$ du plan qui est perpendiculaire à $\VEC{m}$ et
+contient le point $\VEC{p}$ est donnée par la relation
+\[
+\ps{\VEC{x}-\VEC{p}}{\VEC{m}} =
+\ps{(x_1,x_2,x_3) - (1,2,3)}{(1,-2,4)} = (x_1-1) -2 (x_2-2) + 4(x_3-3) = 0 \; .
+\]
+Si nous résolvons pour $x_3$, nous trouvons
+\[
+x_3 = 3 - \frac{1}{4}(x_1-1)  + \frac{1}{2} (x_2-2) \ .
+\]
+\end{egg}
+
+\begin{egg}
+Trouvons l'équation du plan tangent au point $\VEC{p}= (1,2,2)$ de la
+sphère de rayon $3$ centré à l'origine.
+
+Un vecteur perpendiculaire au plan tangent de la sphère au point
+$\VEC{p}$ est donné par le vecteur $\VEC{p}$ lui-même.  Ainsi, les
+points $\VEC{x}=(x_1,x_2,x_3)$ du plan tangent cherché satisfont l'équation
+\[
+\ps{\VEC{x} - \VEC{p}}{\VEC{p}} = 
+\ps{(x_1-1,x_2-2,x_3-2)}{(1,2,2)} = (x_1-1) + 2(x_2-2) + 2(x_3-2) = 0 \ .
+\]
+Si nous résolvons pour $x_3$, nous trouvons
+\[
+x_3 = 2 - \frac{1}{2}(x_1-1) - (x_2-2) \ .
+\]
+\label{TANG_PLANE}
+\end{egg}
+
+Nous savons qu'un plan est déterminé par trois points non alignés.
+Comment pouvons-nous trouver l'équation du plan qui passe par trois points
+non alignés?  Nous reformulons la question de la façon suivante. Étant
+donné trois points non alignés, comment pouvons-nous trouver un vecteur
+normal au plan qui contient ces trois points?  La réponse à cette
+question nous est fournie par le produit vectoriel.
+
+\begin{focus}{\prp}
+Si $\VEC{p}$, $\VEC{u}$ et $\VEC{v}$ sont trois points non alignés
+d'un plan, alors $\VEC{s} = \VEC{u} - \VEC{p}$ et
+$\VEC{t} = \VEC{v} - \VEC{p}$ sont deux vecteurs parallèles au plan
+qui ne sont pas colinéaires, et $\VEC{m} = \VEC{s} \times \VEC{t}$ est un
+vecteur perpendiculaire au plan.  Si $\VEC{x} = (x_1,x_2,x_3)$ est un
+point du plan, la représentation standard du plan est alors donnée par
+\[
+\ps{\VEC{x} - \VEC{p}}{\VEC{m}} = 0 \; .
+\]
+\end{focus}
+
+\begin{egg}
+Trouvons l'équation du plan qui contient les trois points $(2,1,3)$,
+$(1,-2,3)$ et $(1,5,4)$.
+
+Choisissons $\VEC{p}=(2,1,3)$, $\VEC{u}=(1,-2,3)$ et
+$\VEC{v}=(1,5,4)$.  Tout autre choix pour $\VEC{p}$, $\VEC{u}$ et
+$\VEC{v}$ est valable.  Ainsi,
+\begin{align*}
+\VEC{s} &= \VEC{u} - \VEC{p} = (1,-2,3)-(2,1,3) = (-1,-3,0)
+\intertext{et}
+\VEC{t} &= \VEC{v} - \VEC{p} = (1,5,4)-(2,1,3) = (-1,4,1)
+\end{align*}
+sont deux vecteurs parallèles au plan.  Le vecteur
+\[
+\VEC{m} = \VEC{s} \times \VEC{t} = (-3, 1, -7)
+\]
+qui est perpendiculaire au plan.  Les points $\VEC{x}=(x_1,x_2,x_3)$
+du plan contenant $\VEC{p}$, $\VEC{u}$ et $\VEC{v}$ satisfont donc
+l'équation
+\[
+\ps{\VEC{x} - \VEC{p}}{\VEC{m}} =
+\ps{(x_1,x_2,x_3)-(2,1,3)}{(-3,1,-7)} = -3(x_1-2) + (x_2-1) -7(x_3-3) = 0 \; .
+\]
+Nous pouvons résoudre pour $z$ pour obtenir
+\[
+x_3 = 3 -\frac{3}{7}(x_1-2) + \frac{1}{7}(x_2-1) \; .
+\]
+Le dessin du plan représemté par cette équation est donné ci-dessous.
+\MATHgraph{11_vecteurs/vect13}{8cm}
+
+Remarquons que $\VEC{m} = (-3,1,-7)$ satisfait bien la règle de
+la main droite avec les vecteurs $\VEC{s} = (-1,3,0)$ et
+$\VEC{t} = (-1,4,1)$.
+\end{egg}
+
+\subsection{Représentations vectorielles et paramétriques du plan}
+
+Comme pour la droite dans le plan, il existe des représentations
+vectorielles et paramétriques pour le plan.
+
+Le plan qui contient le point $\VEC{p}$ et qui est parallèle à deux
+vecteurs $\VEC{s}$ et $\VEC{t}$ qui ne sont pas colinéaires
+(figure~\ref{VECT12}) est formé des points $\VEC{x} = (x_1,x_2,x_3)$
+de la forme
+\begin{equation}\label{pr_pln}
+\VEC{x} = \VEC{p} + \alpha \VEC{s} + \beta \VEC{t}
+\end{equation}
+où $\alpha$ et $\beta$ sont des nombres réels.
+
+\begin{focus}{\dfn} \index{Représentation vectorielle du plan}
+La formule (\ref{pr_pln}) est une {\bfseries représentation vectorielle}
+du plan qui contient le point $\VEC{p}$ et est parallèle à deux
+vecteurs $\VEC{s}$ et $\VEC{t}$ qui ne sont pas colinéaires.
+\end{focus}
+
+\PDFfig{11_vecteurs/vect12}{Représentation d'un plan défini par un
+point et deux vecteurs qui ne sont pas colinéaires}{Représentation
+d'un plan défini par un point et deux vecteurs qui ne sont pas
+colinéaires}{VECT12}
+
+Si $\VEC{p}=(p_1,p_2,p_3)$, $\VEC{s} = (s_1,s_2,s_3)$,
+$\VEC{t}=(t_1,t_2,t_3)$ et $\VEC{x}=(x_1,x_2,x_3)$, les composantes de la
+représentation vectorielle
+$\VEC{x} = \VEC{p} + \alpha \VEC{s} + \beta \VEC{s}$ sont
+\begin{subequations} \label{paramRep}
+\begin{align}
+x_1 &= p_1 + \alpha s_1 + \beta t_1 \label{paramRepa} \\
+x_2 &= p_2 + \alpha s_2 + \beta t_2 \label{paramRepb} \\
+x_3 &= p_3 + \alpha s_3 + \beta t_3 \label{paramRepc}
+\end{align}
+\end{subequations}
+pour $\alpha$ et $\beta$ des nombres réels.
+
+\begin{focus}{\dfn} \index{Représentation paramétrique du plan}
+L'ensemble des formules en (\ref{paramRep}) est une {\bfseries
+représentation paramétrique} du plan contenant $\VEC{p}$ et parallèle
+à deux vecteurs $\VEC{s}$ et $\VEC{t}$ qui ne sont pas colinéaires.
+Les {\bfseries paramètres} sont $\alpha$ et $\beta$.
+\end{focus}
+
+\begin{egg}
+Les points $\VEC{x}=(x_1,x_2,x_3)$ du plan contenant $\VEC{p}=(1,2,3)$ et
+parallèle aux vecteurs $\VEC{s}=(-1,2,2)$ et $\VEC{t}=(1,-1,2)$ sont
+donnés par
+\begin{align*}
+(x_1,x_2,x_3) &= \VEC{r} = \VEC{p} + \alpha \VEC{s} + \beta \VEC{t}
+= (1,2,3) + \alpha (-1,2,2) + \beta (1,-1,2) \\
+&= (1-\alpha +\beta, 2 +2 \alpha - \beta, 3 + 2\alpha +2\beta) \; .
+\end{align*}
+
+Nous avons donc la représentation paramétrique
+\[
+x_1 = 1-\alpha+\beta \ , \ x_2 = 2+2\alpha-\beta \quad \text{et} \quad 
+x_3 = 3+2\alpha + 2\beta \; .
+\]
+\end{egg}
+
+\begin{rmk}[\theory]
+Il existe une relation entre la représentation paramétrique et standard du
+plan.
+
+Si nous soustrayons (\ref{paramRepb}) multipliée par $t_1$ de
+(\ref{paramRepa}) multipliée par $t_2$, nous obtenons
+\[
+x_1 t_2 - x_2 t_1 = (p_1 t_2 - p_2 t_1) + \alpha (s_1 t_2 - s_2 t_1) \; .
+\]
+Ainsi,
+\[
+\alpha = \frac{1}{s_1 t_2 - s_2 t_1}
+\left(x_1 t_2 - x_2 t_1 - p_1 t_2 + p_2 t_1\right) = 
+\frac{t_2}{s_1 t_2 - s_2 t_1} \left(x_1 - p_1\right)
+-\frac{t_1}{s_1 t_2 - s_2 t_1} \left(x_2 - p_2\right)
+\]
+si $s_1 t_2 - s_2 t_1 \neq 0$.
+
+Si nous soustrayons (\ref{paramRepb}) multipliée par $s_1$ de (\ref{paramRepa})
+multipliée par $s_2$, nous obtenons
+\[
+x_1 s_2 - x_2 s_1 = (p_1 s_2 - p_2 s_1) + \beta (t_1 s_2 - t_2 s_1) \; .
+\]
+Ainsi,
+\[
+\beta = \frac{1}{t_1 s_2 - t_2 s_1}
+\left(x_1 s_2 - x_2 s_1 - p_1 s_2 + p_2 s_1\right) = 
+\frac{s_2}{t_1 s_2 - t_2 s_1} \left(x_1 - p_1\right)
+-\frac{s_1}{t_1 s_2 - t_2 s_1} \left(x_2 - p_2\right)
+\]
+si $s_1 t_2 - s_2 t_1 \neq 0$.
+
+Si nous substituons $\alpha$ et $\beta$ dans (\ref{paramRepc}), nous
+trouvons
+\begin{align*}
+x_3 &= p_3 +
+\frac{t_2s_3}{s_1 t_2 - s_2 t_1} \left(x_1 - p_1\right)
+-\frac{t_1 s_3}{s_1 t_2 - s_2 t_1} \left(x_2 - p_2\right)
++ \frac{s_2t_3}{t_1 s_2 - t_2 s_1} \left(x_1 - p_1\right) \\
+& \qquad -\frac{s_1t_3}{t_1 s_2 - t_2 s_1} \left(x_2 - p_2\right) \\
+&= p_3 - \frac{s_2 t_3 - t_2s_3}{s_1 t_2 - s_2 t_1} \left(x_1 -p_1\right)
+- \frac{t_1 s_3 - s_1 t_3}{s_1 t_2 - s_2 t_1} \left(x_2 - p_2\right) \; .
+\end{align*}
+Nous pouvons récrire cette expression sous la forme suivante.
+\[
+\left(s_2 t_3 - t_2s_3\right) \left(x_1 -p_1\right) 
++ \left(t_1 s_3 - s_1 t_3\right) \left(x_2 - p_2\right)
++ \left(s_1 t_2 - s_2 t_1\right) \left(x_3 - p_3\right) = 0 \; .
+\]
+C'est la représentation standard donnée en (\ref{EQU_PLAN_S}) où
+$\VEC{m} = \VEC{s} \times \VEC{t}$.
+\end{rmk}
+
+\subsection{Intersection d'une droite et d'un plan}
+
+Si une droite $\ell$ n'est pas parallèle au plan $\cal M$, alors la
+droite coupe le plan en un point.  La droite $\ell$ est parallèle au
+plan $\cal M$ si le produit scalaire d'un vecteur $\VEC{q}$ parallèle
+à la droite $\ell$ avec un vecteur $\VEC{m}$ perpendiculaire au plan
+est $0$ car le plan $\cal M$ est une translation de l'ensemble des
+vecteurs $\VEC{u}$ tels que $\ps{\VEC{u}}{\VEC{m}} = 0$ (figure~\ref{PROJ3}).
+
+\PDFfig{11_vecteurs/proj3}{Droite parallèle à un plan}{La droite $\ell$ est
+parallèle au plan $\cal M$ si $\ps{\VEC{q}}{\VEC{m}} = 0$ où le vecteur
+$\VEC{q}$ est parallèle à la droite $\ell$ et $\VEC{m}$ est un vecteur
+perpendiculaire au plan $\cal M$.}{PROJ3}
+
+\begin{egg}
+Considérons la droite $\ell$ définie par la représentation standard
+\[
+\frac{x_1-5}{3} = \frac{x_2-1}{2} = x_3+2
+\]
+et le plan $\cal M$ donné par $x_1+2x_2+x_3 = 4$.  Trouvons l'intersection
+(s'il y en a une) de la droite $\ell$ et du plan $\cal M$.
+  
+Une représentation paramétrique de la droite $\ell$ est
+\[
+x_1 = 3\alpha +5 \ , \ x_2 = 2\alpha + 1 \ \text{et} \ x_3= \alpha - 2 \; .
+\]
+Le point $\VEC{x} = (x_1,x_2,x_3)$ de la droite $\ell$ qui appartient
+aussi au plan $\cal M$ doit satisfaire
+\[
+(3\alpha +5) + 2(2\alpha + 1) + (\alpha - 2) = 4 \; .
+\]
+Nous obtenons $\alpha = -1/8$.  Les coordonnées du point d'intersection
+sont donc
+\[
+x_1 = 3\left(\frac{-1}{8}\right)+5 = \frac{37}{8} \ , \ 
+x_2 = 2\left(\frac{-1}{8}\right) + 1 = \frac{3}{4} \quad \text{et} \quad
+x_3 = \left(\frac{-1}{8}\right) - 2 = -\frac{17}{8} \; .
+\]
+\label{planline}
+\end{egg}
+
+\begin{rmk}
+Il est facile de trouver un vecteur tangent à la droite $\ell$ de
+l'exemple~\ref{planline} et un vecteur perpendiculaire au plan
+$\cal M$. 
+
+À partir de la représentation standard ou paramétrique de la droite
+$\ell$, nous déduisons la représentation vectorielle
+$\VEC{x} = \VEC{p} + \alpha \VEC{q}$ où $\VEC{x} = (x_1,x_2,x_3)$,
+$\VEC{p} = (5,1,-2)$ et $\VEC{q} = (3,2,1)$.  Le vecteur
+$\VEC{q} = (3,2,1)$ est parallèle à la droite $\ell$.
+
+Un vecteur $\VEC{m} = (m_1.m_2.m_3)$ perpendiculaire au plan $\cal M$
+est donné par les coefficients de $x_1$, $x_2$ et $x_3$ dans l'équation
+$x_1+2x_2+x_3-4 = 0$.  En effet, $x_1+2x_2+x_3-4 = 0$ est la représentation
+standard (\ref{EQU_PLAN_S2}) du plan $\cal M$.  Ainsi,
+$\VEC{m} = (1,2,1)$ et $\ps{\VEC{x}}{\VEC{m}} = 4$ 
+pour les points $\VEC{x}$ du plan $\cal M$.
+
+Puisque $\ps{\VEC{m}}{\VEC{q}} = 8 \neq 0$, nous avons que $\VEC{q}$ n'est
+pas perpendiculaire à $\VEC{m}$ et donc que la droite $\ell$
+n'est pas parallèle au plan $\cal M$.  Ainsi, $\ell$ coupe le plan
+$\cal M$.
+\end{rmk}
+
+\subsection{Intersection de deux plans}
+
+Deux plans distincts non parallèles vont se couper en une droite.  Si
+$\VEC{m}$ est un vecteur perpendiculaire au plan $\cal M$ et $\VEC{n}$
+est un vecteur perpendiculaire au plan $\cal N$, alors les plans
+$\cal M$ et $\cal N$ sont parallèles si les vecteurs $\VEC{m}$ et $\VEC{n}$
+sont colinéaires; c'est-à-dire, un multiple l'un de l'autre.
+
+Si le plan $\cal M$ est représenté par l'équation
+$m_1 x_1 + m_2 x_2 + m_3 x_3 = k_{\VEC{m}}$ et le plan $\cal N$ par 
+$n_1 x_1 + n_2 x_2 + n_3 x_3 = k_{\VEC{n}}$, l'intersection des plans
+$\cal M$ et $\cal N$ est donc l'ensemble des points
+$\VEC{x} = (x_1,x_2,x_3)$ qui satisfont ces deux équations 
+simultanément.  En d'autres mots, l'intersection des deux plans est
+l'ensemble des solutions du {\em système d'équations linéaires}
+\begin{subequations}\label{ls_plan}
+\begin{align}
+m_1 x_1 + m_2 x_2 + m_3 x_3 &= k_{\VEC{m}} \label{ls_plana} \\
+n_1 x_1 + n_2 x_2 + n_3 x_3 &= k_{\VEC{n}} \label{ls_planb}
+\end{align}
+\end{subequations}
+
+\subsubsection{Les deux plans sont parallèles}
+
+Si les deux plans sont parallèles, alors $\VEC{m} = \lambda \VEC{n}$
+pour un nombre réel $\lambda$.
+\begin{enumerate}
+\item Si $k_{\VEC{m}} \neq \lambda k_{\VEC{n}}$, il ne peut pas y
+avoir de points 
+$(p_1,p_2,p_3)$ qui satisfassent (\ref{ls_plana}) et (\ref{ls_planb})
+simultanément.  Si c'était le cas, alors nous aurions
+\begin{align*}
+m_1 p_1 + m_2 p_2 + m_3 p_3 &= k_{\VEC{m}} \\
+n_1 p_1 + n_2 p_2 + n_3 p_3 &= k_{\VEC{n}}
+\end{align*}
+avec $m_i = \lambda n_i$.  Si nous soustrayons $\lambda$ fois la
+deuxième équation de la première équation, nous obtenons
+$0 = k_{\VEC{m}} - \lambda k_{\VEC{n}}$.  Ce qui contredit notre
+hypothèse.  Nous avons donc deux plan distincts et parallèles.
+\item Si $k_{\VEC{m}} = \lambda k_{\VEC{n}}$ alors l'équation
+(\ref{ls_plana}) est un 
+multiple par $\lambda$ de l'équation (\ref{ls_planb}) et tout point
+$\VEC{x} = (x_1,x_2,x_3)$ qui satisfait (\ref{ls_planb}) satisfait aussi
+(\ref{ls_plana}) et vice-versa.  Les plans $\cal M$ et $\cal N$ sont
+en fait un seul et même plan.
+\end{enumerate}
+
+\subsubsection{Les deux plans ne sont pas parallèles}
+
+Si les deux plan ne sont pas parallèles, $\VEC{m}$ n'est pas un multiple de
+$\VEC{n}$.  Nous verrons lors de l'étude de l'algèbre linéaire que les
+solutions du système d'équations linéaires donné par (\ref{ls_plana}) et
+(\ref{ls_planb}) représente alors une droite $\ell$.  Puisque cette droite
+est contenue dans les plans $\cal M$ et $\cal N$, elle doit être
+perpendiculaire aux vecteurs $\VEC{m}$ et $\VEC{n}$.  Donc $\ell$ est
+parallèle au vecteur $\VEC{r} = \VEC{m} \times \VEC{n}$.
+
+Si $\VEC{p}$ est un point de $\ell$, donc une solution du système
+d'équations linéaires donné par (\ref{ls_plana}) et (\ref{ls_planb}),
+alors l'équation de la droite d'intersection $\ell$ est donnée par
+\[
+  \ps{\VEC{x} - \VEC{p}}{\VEC{r}} =  r_1(x_1 - p_1) + r_2(x_2-p_2) +
+  r_3(x_3 - p_3) = 0 \ .
+\]
+
+Le problème est donc de trouver au moins une solution du système
+d'équations linéaires donné par (\ref{ls_plana}) et (\ref{ls_planb}).
+En fait, trouver une solution n'est pas plus difficile que de trouver
+toutes les solutions et donc l'équation de la droite d'intersection.
+C'est ce que nous décrivons ci-dessous.
+
+Si (\ref{ls_plana}) définit un plan dans l'espace, ces coefficients
+$m_i$ ne peuvent pas tous être nuls.  Supposons que $m_1 \neq 0$; 
+le raisonnement est semblable si $m_2$ ou $m_3$ est non nul.  Si nous
+soustrayons le produit de (\ref{ls_plana}) par $n_1/m_1$ de
+(\ref{ls_planb}), nous obtenons
+\begin{equation}\label{ls_planc}
+  \frac{n_2 m_1 - n_1 m_2}{m_1} x_2 + \frac{m_1 n_3 - n_1 m_3}{m_1} x_3 =
+  \frac{k_{\VEC{n}} m_1 - n_1 k_{\VEC{m}}}{m_1} \ .
+\end{equation}
+Puisque nous supposons que $\VEC{m}$ et $\VEC{n}$ ne sont pas
+colinéaires, les coefficients de $x_2$ et $x_3$ ne peuvent pas être tous
+les deux nuls.  Supposons que le coefficient de $x_2$ soit non nul.  Le
+raisonnement est semblable si le coefficient de $x_3$ est non nul.  Nous
+pouvons alors résoudre pour $x_2$. 
+\begin{equation}\label{ls_planP1}
+  x_2 = C_1 + C_2 x_3 \ ,
+\end{equation}
+où
+$\displaystyle  C_1 = \frac{k_{\VEC{n}} m_1 - n_1 k_{\VEC{m}}}{n_2 m_1 - n_1 m_2}$ et
+$\displaystyle  C_2 = - \frac{m_1 n_3 - n_1 m_3}{n_2 m_1 - n_1 m_2}$.
+Si nous substituons l'expression pour $x_2$ obtenue en (\ref{ls_planP1})
+dans (\ref{ls_plana}), et résolvons pour $x_1$, nous trouvons
+\begin{equation}\label{ls_planP2}
+  x_1 = C_3 + C_4 x_3 \ ,
+\end{equation}
+où
+$\displaystyle  C_3 =
+\frac{k_{\VEC{m}} n_2 - m_2 k_{\VEC{n}}}{n_2 m_1 - n_1 m_2}$ et
+$\displaystyle  C_4 = - \frac{m_2 n_3 - n_2 m_3}{n_2 m_1 - n_1 m_2}$.
+Notez que $C_2$ et $C_4$ ne peuvent pas être tous les deux nuls pour
+la même raison que les coefficients de $x_2$ et $x_3$ dans
+(\ref{ls_planc}) ne peuvent pas être tous les deux nuls\footnote{Nous
+verrons dans le chapitre sur l'algèbre linéaire que, si la matrice de
+dimension \nm{2}{3} dont les lignes sont données par les vecteurs
+$\VEC{m}$ et $\VEC{n}$ est de rang 2, alors au moins deux des
+expressions $m_1 n_2 - n_1 m_2$, $m_2 n_3 - n_2 m_3$ et
+$m_1 n_3 - n_1 m_3$ sont non nuls.}
+
+Nous obtenons donc la représentation paramétrique
+\[
+  x_1 = C_3 + C_4 \alpha \quad , \quad x_2 = C_1 + C_2 \alpha \quad \text{et}
+\quad x_3 = \alpha
+\]
+pour la droite d'intersection des plan $\cal M$ et $\cal N$.
+
+Il ne faut surtout pas essayer de mémoriser les formules ci-haut pour trouver
+la représentation paramétrique de la droite d'intersection de deux plans.
+L'exemple suivant illustre comment trouver l'intersection de deux plans.
+
+\begin{egg}
+Trouvons, si elle existe, l'intersection des plans $\cal M$ et $\cal N$
+donnés respectivement par les équations
+\begin{subequations}\label{ls_planB}
+\begin{align}
+x_1 + 2x_2 + x_3 &= 5 \label{ls_planBa}
+\intertext{et}
+2x_1 + x_2 + x_3 &= 3 \ . \label{ls_planBb}
+\end{align}
+\end{subequations}
+
+Le vecteur $\VEC{m} = (1,2,1)$ est perpendiculaire au plan $\cal M$ et le
+vecteur $\VEC{n} = (2,1,1)$ est perpendiculaire au plan $\cal N$.  Comme ils
+ne sont pas colinéaires (nous ne pouvons pas écrire $\VEC{m}$ comme un
+multiple de $\VEC{n}$), les deux plans se coupent en une droite $\ell$.
+
+\subI{1$^{er}$ méthode}  Le vecteur
+$\VEC{r} = \VEC{m} \times \VEC{n} = (1, 1, -3)$ est
+parallèle à la droite $\ell$.  Il est facile de vérifier que
+$(0, 2, 1)$ est un point de la droite $\ell$ puisque c'est une
+point qui appartient aux deux plans.  La représentation standard de
+$\ell$ est donc
+\begin{equation} \label{ls_plan8}
+  x_1 = x_2 - 2 = \frac{x_3-1}{-3}
+\end{equation}
+
+\subI{2$^{e}$ méthode} Si nous soustrayons deux fois l'équation
+(\ref{ls_planBa}) de l'équation (\ref{ls_planBb}), nous obtenons
+$-3 x_2 -x_3 = -7$.  Ainsi,
+\[
+x_2 = \frac{x_3-7}{-3} = -\frac{1}{3}x_3 +\frac{7}{3} \; .
+\]
+Si nous substituons cette expression pour $y$ dans (\ref{ls_planBa}), nous
+obtenons
+\[
+x_1 + 2\left(\frac{x_3-7}{-3}\right) + x_3 = 5 \; .
+\]
+Ceci donne
+\[
+x_1 = -2\left(\frac{x_3-7}{-3}\right) - x_3 + 5
+= -\frac{1}{3} x_3 + \frac{1}{3} \; .
+\]
+Nous obtenons donc la représentation paramétrique suivante pour la droite
+$\ell$ produite par l'intersection des plans $\cal M$ et $\cal N$.
+\begin{equation} \label{ls_plan6}
+x_1 = -\frac{1}{3} \alpha + \frac{1}{3} \quad , \quad 
+x_2 = -\frac{1}{3}\alpha +\frac{7}{3} \quad \text{et} \quad x_3 = \alpha \; .
+\end{equation}
+
+\subI{3$^{e}$ méthode} Nous pouvons aussi résoudre pour
+$x_3$ l'équation $-3 x_2 -x_3 = -7$ obtenue au début de la
+$2^e$ méthode.  Nous trouvons alors $x_3= -3x_2 + 7$.  Si nous substituons
+cette expression dans (\ref{ls_planBa}), nous obtenons $x_1+2x_2+(-3x_2+7)=5$.
+Ainsi, $x_1 = x_2 -2$.  Nous obtenons une nouvelle représentation
+paramétrique pour la droite $\ell$ produite par l'intersection des
+plans $\cal M$ et $\cal N$.
+\begin{equation} \label{ls_plan7}
+  x_1 = \beta - 2 \quad , \quad x_2 = \beta \quad \text{et} \quad
+  x_3 = -3 \beta + 7 \; .
+\end{equation}
+
+(\ref{ls_plan8}), (\ref{ls_plan6}) et (\ref{ls_plan7}) sont trois 
+représentations équivalentes de la droite d'intersection $\ell$.
+
+Nous avons bien obtenu des représentations équivalentes de la droite
+$\ell$.  En effet, notons que les trois représentations décrivent des
+droites qui ont la même direction: $(1,1,-3)$, $(-1/3,-1/3,1)$ et
+$(1,1,-3)$ respectivement.  De plus, ils contiennent tous le point
+$(0,2,1)$.  Nous obtenons $(0,2,1)$ avec $\alpha=1$ dans (\ref{ls_plan6})
+et $\beta =2$ dans (\ref{ls_plan7}).  Puisque les trois représentation
+décrivent des droites parallèles qui passent par le même point, nous avons
+donc la même droite.
+
+Nous remarquons de plus, que si nous substituons $\alpha = -3\beta + 7$ dans
+(\ref{ls_plan6}), nous obtenons (\ref{ls_plan7}).  De même, si nous
+substituons $\beta = -(\alpha-7)/3$ dans (\ref{ls_plan7}), nous obtenons
+(\ref{ls_plan6}).  Ainsi, l'ensemble des points produits par la
+représentation (\ref{ls_plan6}) est le même que l'ensemble des points
+produits par la représentation (\ref{ls_plan7}).   Par exemple, si
+$\alpha = 1$ dans la représentation (\ref{ls_plan6}), nous obtenons
+$(x_1,x_2,x_3) = ( 0, 2, 1)$.  La représentation (\ref{ls_plan7}) donne ce
+même point avec $\beta = -(1-7)/3 = 2$.  Si $\beta = 1$ dans la
+représentation (\ref{ls_plan7}), nous obtenons $(x_1,x_2,x_3) = ( -1, 1, 4)$.
+La représentation (\ref{ls_plan6}) donne ce même point avec
+$\alpha = -3 (1) + 7 = 4$.
+\end{egg}
+
+\subsection{Intersection de trois plans}
+
+Les exemples suivants montre comment nous pouvons résoudre un systèmes de trois
+équations avec trois inconnues en utilisant la technique de substitution.
+Malheureusement, cette méthode ne nous permet pas de classifier les cas
+possibles d'intersections; c'est-à-dire, une intersection vide, une droite ou
+un plan.
+
+L'algèbre linéaire que nous verrons dans un prochain chapitre simplifiera
+grandement l'étude des cas possibles d'intersections de trois plans.
+
+\begin{egg}
+Quelle est l'intersection, si elle existe, des trois plans suivants?
+\begin{subequations}\label{PlanA}
+\begin{align}
+x_1 + x_2 + x_3 &= 3 \label{planAa} \\
+3x_1 + 2x_2 + x_3 &= 5 \label{planAb} \\
+x_1 + x_2 - 2x_3 &= 1 \label{planAc}
+\end{align}
+\end{subequations}
+
+De (\ref{planAa}), nous obtenons $x_3=3-x_1-x_2$ que nous substituons dans
+(\ref{planAb}) et (\ref{planAc}) pour obtenir
+\begin{subequations}\label{PlanE}
+\begin{align}
+2x_1 + x_2 &= 2 \label{planEa}\\
+3x_1 + 3x_2 &= 7 \label{planEb}
+\end{align}
+\end{subequations}
+
+De (\ref{planEa}), nous obtenons $x_2=2-2x_1$ que nous substituons dans
+(\ref{planEb}) pour obtenir $-3x_1 = 1$.  Ainsi, $x_1=-1/3$, $x_2=2-2x_1=8/3$
+et $x_3=3-x_1-x_2 = 2/3$.  Le point $(-1/3, 8/3 , 2/3)$ est le seul point
+commun (i.e. qui appartient) au trois plans.
+\end{egg}
+
+\begin{egg}
+Quelle est l'intersection, si elle existe, des trois plans suivants?
+\begin{subequations}\label{PlanC}
+\begin{align}
+x_1 + 2x_2 +x_3 &= 5 \label{planCa}\\ 
+2x_1 -x_2 + x_3 &= 2 \label{planCb}\\
+3x_1 + x_2 + 2x_3 &= 7 \label{planCc}
+\end{align}
+\end{subequations}
+
+De (\ref{planCa}), nous obtenons $x_3=5-x_1-2x_2$ que nous substituons dans
+(\ref{planCb}) et (\ref{planCc}) pour obtenir $x_1 -3 x_2 = -3$ dans les deux
+cas.   Ainsi, $x_2= x_1/3  + 1$ et $x_3=5-x_1-2x_2 = - 5x_1/3 + 3$.  Nous
+trouvons la représentation paramétrique
+\[
+x_1=\alpha \ , \ x_2 = \frac{\alpha}{3} + 1 \ \text{et}
+\ x_3 = -\frac{5x}{3} + 3
+\]
+d'une droite $\ell$.  La droite $\ell$ est l'ensemble des points
+commun au trois plans.
+\end{egg}
+
+\begin{egg}
+Quelle est l'intersection, si elle existe, des trois plans suivants?
+\begin{subequations}\label{PlanD}
+\begin{align}
+x_1 + 2x_2 +x_3 &= 5 \label{planDa}\\ 
+2x_1 -x_2 + x_3 &= 2 \label{planDb}\\
+-x_1 + 3x_2 &= 7 \label{planDc}
+\end{align}
+\end{subequations}
+
+De (\ref{planDa}), nous obtenons $x_3=5-x_1-2x_2$ que nous substituons dans
+(\ref{planDb}) pour obtenir $x_1 -3 x_2 = -3$.  Ainsi, $x_2 = x_1/3 +1$.
+Malheureusement, si nous substituons cette expression pour $x_2$ dans
+(\ref{planDc}), nous trouvons $3 = 7$.  Ce qui est absurde.  Il n'existe donc
+aucun point $(x_1,x_2,x_3)$ qui satisfasse les trois équations simultanément;
+c'est-à-dire, qui est commun au trois plans.
+\end{egg}
+
+\section{Projections \theory}
+
+\subsection{Plus courte distance entre un point et une droite}
+
+Quelle est la plus courte distance entre un point $\VEC{a}$ et une
+droite $\ell$ qui passe par l'origine?  Pour répondre à cette
+question, nous avons premièrement besoin de trouver le point $\VEC{b}$
+de la droite $\ell$ qui est le plus près de $\VEC{a}$ comme il est
+illustré à la figure~\ref{PROJ1}.
+
+\PDFfig{11_vecteurs/proj1}{Projection d'un vecteur sur une droite}
+{Le point $\VEC{b}$ est le point de la droite $\ell$ qui est le plus
+près de $\VEC{a}$.  Le vecteur $\VEC{b}$ est appelé la projection du
+vecteur $\VEC{a}$ sur la droite $\ell$ passant pas l'origine.}{PROJ1}
+
+Soit $\VEC{q}$ un vecteur contenu dans la droite $\ell$.  Pour trouver
+les coordonnées de $\VEC{b}$, nous remarquons que $\VEC{b} = \alpha \VEC{q}$
+pour un certain nombre réel $\alpha$.  De plus $\VEC{a}-\VEC{b}$ est
+perpendiculaire à $\VEC{q}$.  Nous avons donc
+\[
+0 = \ps{\VEC{a}-\VEC{b}}{\VEC{q}}
+= \ps{\VEC{a}- \alpha\VEC{q}}{\VEC{q}}
+= \ps{\VEC{a}}{\VEC{q}} - \alpha \ps{\VEC{q}}{\VEC{q}} \; .
+\]
+Ainsi,
+\begin{equation}\label{expr_x}
+\alpha = \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \; .
+\end{equation}
+Nous avons donc trouvé que
+\[
+\VEC{b} = \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \VEC{q} \; .
+\]
+
+Il est maintenant facile de calculer la plus courte distance entre le
+point $\VEC{a}$ et la droite $\ell$; c'est-à-dire, la distance entre
+les points $\VEC{a}$ et $\VEC{b}$.  Il suffit de calculer la longueur
+du vecteur $\VEC{a}-\VEC{b}$.
+
+% Pour ceux intéressés à une formule générale, nous avons
+% \[
+% \|\VEC{a}-\VEC{b}\|^2 = \ps{\VEC{a} - \alpha\VEC{q}}{\VEC{a} - \alpha\VEC{q}}
+% = \ps{\VEC{a}}{\VEC{a}} - \alpha\ps{\VEC{q}}{\VEC{a}} -
+% x\ps{\VEC{a}}{\VEC{q}} + \alpha^2 \ps{\VEC{q}}{\VEC{q}}  \; .
+% \]
+% Si nous substituons l'expression pour $\alpha$ en (\ref{expr_x})
+% dans cette équation, nous trouvons
+% \begin{align*}
+% \|\VEC{a}-\VEC{b}\|^2 &= \ps{\VEC{a}}{\VEC{a}} -
+% \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \ps{\VEC{q}}{\VEC{a}} -
+% \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \ps{\VEC{a}}{\VEC{q}} +
+% \left( \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \right)^2
+% \ps{\VEC{q}}{\VEC{q}} \\
+% &= \frac{\ps{\VEC{a}}{\VEC{a}}\ps{\VEC{q}}{\VEC{q}} -
+% \left( \ps{\VEC{a}}{\VEC{q}} \right)^2}{\ps{\VEC{q}}{\VEC{q}}} \; .
+% \end{align*}
+
+Pour résumer, nous avons le résultat suivant.
+
+\begin{focus}{\dfn} \index{Projection orthogonale}
+Soit $\ell$ une droite qui contient le vecteur $\VEC{q}$.  Si
+$\VEC{a}$ un point quelconque, la {\bfseries projection (orthogonale)}
+du vecteur $\VEC{a}$ sur la droite $\ell$ est le vecteur
+\[
+\VEC{b} =  \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \VEC{q} \; .
+\]
+Le point $\VEC{b}$ est le point de la droite $\ell$ qui est le plus
+près de $\VEC{a}$.  Le vecteur $\VEC{a}-\VEC{b}$ est perpendiculaire à
+la droite $\ell$.  La plus courte distance entre $\VEC{a}$ et la droite
+$\ell$ est la longueur du vecteur $\VEC{a}-\VEC{b}$.
+\end{focus}
+
+\begin{egg}
+Quelle est la plus courte distance entre le point $\VEC{a}=(1,1,1)$ et
+la droite $\ell$ donnée par $x_1 = 4x_2 = 2x_3$?
+
+Il faut premièrement trouver la projection $\VEC{b}$ du vecteur
+$\VEC{a} = (1,1,1)$ sur la droite $\ell$.  Pour cela, il faut choisir un
+vecteur $\VEC{q}$ sur la droite $\ell$.  Comme nous considérons seulement
+des droites qui passent par l'origine, il suffit de prendre le vecteur
+qui donne la direction de la droite dans l'une des représentations de
+la droite.  Par exemple, la représentation standard de la droite
+$\ell$ est
+\[
+  \frac{x_1}{1} = \frac{x_2}{1/4} = \frac{x_3}{1/2} \ .
+\]
+Donc $\VEC{q} = \left(1, 1/4, 1/2\right)$ est un bon choix.  En fait,
+tout multiple non nul de $\VEC{q}$ est acceptable.  Ainsi,
+\[
+\VEC{b} = \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \VEC{q}
+= \frac{4}{3} \left(1, \frac{1}{4}, \frac{1}{2}\right)
+= \left(\frac{4}{3}, \frac{1}{3},\frac{2}{3} \right) \; .
+\]
+La plus courte distance entre le point $\VEC{a}$ et la droite $\ell$
+est donc
+\[
+\|\VEC{a}-\VEC{b}\| =
+\| \left(-\frac{1}{3}, \frac{2}{3},\frac{1}{3} \right) \|
+= \sqrt{ \left(-\frac{1}{3}\right)^2 + \left(\frac{2}{3}\right)^2
++ \left(\frac{1}{3}\right)^2}
+= \frac{\sqrt{6}}{3} \; .
+\]
+\end{egg}
+
+\begin{egg}
+Quelle est la plus courte distance entre le point $\VEC{a}=(2,7,6)$ et
+la droite $\ell$ donnée par la représentation standard
+\[
+x_1 - 1 = x_2 - 6 = \frac{x_3 - 2}{-3} \; ?
+\]
+
+Comme la droite $\ell$ ne passe pas par l'origine, nous
+ne pouvons pas utiliser directement les formules précédentes.  Pour
+remédier à ce problème, il suffit de faire une translation du point $\VEC{a}$
+et de la droite $\ell$ par un vecteur $\VEC{c}$ de telle sorte que la
+nouvelle droite $\ell'$ passe par l'origine.  La plus courte distance
+entre le point $\VEC{a}'$ et la droite $\ell'$ obtenus de la
+translation par le vecteur $\VEC{c}$ sera égale à la plus courte
+distance entre le point $\VEC{a}$ et la droite $\ell$ car les 
+translations préservent la distance entre les objets (figure~\ref{PROJ4}).
+
+\PDFfig{11_vecteurs/proj4}{Translation dans l'espace}
+{Le point $\VEC{a}'$ et la droite $\ell'$ résultent d'une translation
+par le vecteur $\VEC{c}$ du point $\VEC{a}$ et de la droite $\ell$
+respectivement.}{PROJ4}
+
+La droite $\ell$ a la représentation vectorielle
+$\VEC{x} = \VEC{p} + \alpha \VEC{q}$ où $\VEC{x} = (x_1,x_2,x_3)$,
+$\VEC{p} = (1,6,2)$ et $\VEC{q} = (1,1,-3)$.  Si nous faisons une
+translation par $\VEC{c} = - \VEC{p}$, nous obtenons la droite $\ell'$
+donnée par la formule $\VEC{x} = \alpha \VEC{q}$ et le point
+\[
+\VEC{a}' = \VEC{a} + \VEC{c} = \VEC{a} - \VEC{p} = (1,1,4) \ .
+\]
+La droite $\ell'$ passe par l'origine car, avec cette translation, le
+point $\VEC{p}$ de la droite $\ell$ est envoyé à l'origine.
+Notez que $\ell$ et $\ell'$ sont parallèles comme il se doit pour deux
+droites dont l'une est la translation de l'autre.
+
+Le vecteur $\VEC{q} = (1,1,-3)$ est naturellement sur la droite
+$\ell'$.  La projection $\VEC{b}'$ du vecteur $\VEC{a}$' sur la droite
+$\ell'$ est
+\[
+\VEC{b}' = \frac{\ps{\VEC{a}'}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \VEC{q}
+= -\frac{10}{11} (1,1,-3)
+= \left(-\frac{10}{11}, -\frac{10}{11}, \frac{30}{11} \right) \; .
+\]
+
+La plus courte distance entre le point $\VEC{a}'$ et la droite $\ell'$
+(et donc entre le point $\VEC{a}$ et la droite $\ell$) est
+\[
+\|\VEC{a}'-\VEC{b}'\| =
+\| \left(\frac{21}{11}, \frac{21}{11}, \frac{14}{11} \right) \|
+= \sqrt{ \left(\frac{21}{11}\right)^2 + \left(\frac{21}{11}\right)^2
++ \left(\frac{14}{11}\right)^2 } 
+= \frac{7\sqrt{22}}{11} \; .
+\]
+\end{egg}
+
+\subsection{Plus courte distance entre un point et un plan de
+l'espace}
+
+Quelle est la plus courte distance entre un point $\VEC{a}$ et un plan
+$\cal M$ qui contient l'origine?  La méthode utilisée pour répondre à
+cette question est très semblable à la méthode utilisée pour trouver
+la plus courte distance entre un point et une droite.
+
+Nous avons premièrement besoin de trouver le point $\VEC{b}$ du plan
+$\cal M$ qui est le plus près de $\VEC{a}$ comme il est illustré à la
+figure~\ref{PROJ2}.
+
+\PDFfig{11_vecteurs/proj2}{Projection d'un vecteur sur un plan passant par
+l'origine}{Le point $\VEC{b}$ est le point du plan $\cal M$ qui est le
+plus près de $\VEC{a}$.  Le vecteur $\VEC{b}$ est appelé la projection
+du vecteur $\VEC{a}$ sur le plan $\cal M$ contenant l'origine.}{PROJ2}
+
+Soit $\VEC{p}$ et $\VEC{q}$ deux vecteurs contenus dans le
+plan $\cal M$.  Nous assumons que ces deux vecteurs sont perpendiculaires
+pour simplifier les calculs qui vont suives.  Il est en générale plus
+simple de travailler avec un système de coordonnées orthogonales.
+
+Pour trouver les coordonnées de $\VEC{b}$, nous remarquons que
+$\VEC{b} = \alpha \VEC{p} + \beta \VEC{q}$ pour deux nombres réels
+$\alpha$ et $\beta$.  De plus $\VEC{a}-\VEC{b}$ est perpendiculaire au
+deux vecteurs $\VEC{p}$ et $\VEC{q}$.  Nous avons donc
+\begin{align*}
+0 &= \ps{\VEC{a}-\VEC{b}}{\VEC{p}}
+= \ps{\VEC{a}-\alpha \VEC{p}-\beta \VEC{q}}{\VEC{p}}
+= \ps{\VEC{a}}{\VEC{p}} - \alpha \ps{\VEC{p}}{\VEC{p}}
+- \beta \ps{\VEC{q}}{\VEC{p}} = \ps{\VEC{a}}{\VEC{p}}
+- \alpha \ps{\VEC{p}}{\VEC{p}}
+\intertext{et}
+0 &= \ps{\VEC{a}-\VEC{b}}{\VEC{q}}
+= \ps{\VEC{a}-\alpha \VEC{p}-\beta \VEC{q}}{\VEC{q}}
+= \ps{\VEC{a}}{\VEC{q}} - \alpha \ps{\VEC{p}}{\VEC{q}}
+- \beta \ps{\VEC{q}}{\VEC{q}}
+= \ps{\VEC{a}}{\VEC{q}} - \beta \ps{\VEC{q}}{\VEC{q}}
+\end{align*}
+car $\ps{\VEC{p}}{\VEC{q}} = 0$.  Ainsi,
+\begin{equation}\label{expr_x_y} 
+\alpha = \frac{\ps{\VEC{a}}{\VEC{p}}}{\ps{\VEC{p}}{\VEC{p}}}
+\quad \text{et} \quad
+\beta = \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \; .
+\end{equation}
+Donc
+\[
+\VEC{b} = \frac{\ps{\VEC{a}}{\VEC{p}}}{\ps{\VEC{p}}{\VEC{p}}} \VEC{p}
++ \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \VEC{q} \; .
+\]
+
+Il est maintenant facile de calculer la plus courte distance entre le point
+$\VEC{a}$ et le plan $\cal M$; c'est-à-dire, la distance entre les
+points $\VEC{a}$ et $\VEC{b}$.  Il suffit de calculer la longueur du
+vecteur $\VEC{a}-\VEC{b}$.
+
+% Pour ceux intéressés à une formule générale, nous notons que
+% \begin{align*}
+% \|\VEC{a}-\VEC{b}\|^2
+% &= \ps{\VEC{a} - \alpha \VEC{p} - \beta \VEC{q}}{\VEC{a} - \alpha
+% \VEC{p} - \beta \VEC{q}} \\
+% &= \ps{\VEC{a}}{\VEC{a}} - 2 \alpha \ps{\VEC{a}}{\VEC{p}}
+% -2 \beta \ps{\VEC{a}}{\VEC{q}} + \alpha^2 \ps{\VEC{p}}{\VEC{p}}
+% + \beta^2 \ps{\VEC{q}}{\VEC{q}} \; .
+% \end{align*}
+% Si nous substituons les expressions pour $\alpha$ et $\beta$ que nous
+% retrouvons en (\ref{expr_x_y}) dans cette équation, nous obtenons
+% \begin{align*}
+% \|\VEC{a}-\VEC{b}\|^2
+% &= \ps{\VEC{a}}{\VEC{a}} - 2
+% \left(\frac{\ps{\VEC{a}}{\VEC{p}}}{\ps{\VEC{p}}{\VEC{p}}}\right) 
+% \ps{\VEC{a}}{\VEC{p}}
+% -2 \left(\frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}}\right)
+% \ps{\VEC{a}}{\VEC{q}} \\
+% &\qquad + \left(\frac{\ps{\VEC{a}}{\VEC{p}}}{\ps{\VEC{p}}{\VEC{p}}}\right)^2
+%  \ps{\VEC{p}}{\VEC{p}}
+% + \left(\frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}}\right)^2
+% \ps{\VEC{q}}{\VEC{q}} \\
+% &= \frac{
+% \ps{\VEC{a}}{\VEC{a}}\ps{\VEC{p}}{\VEC{p}}\ps{\VEC{q}}{\VEC{q}}
+% -\left(\ps{\VEC{a}}{\VEC{p}}\right)^2\ps{\VEC{q}}{\VEC{q}}
+% -\left(\ps{\VEC{a}}{\VEC{q}}\right)^2\ps{\VEC{p}}{\VEC{p}} }
+% {\ps{\VEC{p}}{\VEC{p}}\ps{\VEC{q}}{\VEC{q}}} \; .
+% \end{align*}
+
+Pour résumer, nous avons le résultat suivant.
+
+\begin{focus}{\dfn} \index{Projection orthogonale}
+Soit $\cal M$ un plan qui contient deux vecteurs perpendiculaires
+$\VEC{p}$ et $\VEC{q}$.  Si $\VEC{a}$ un point quelconque, la
+{\bfseries projection (orthogonale)} du vecteur $\VEC{a}$ dans le plan
+$\cal M$ est le vecteur
+\[
+\VEC{b} =  \frac{\ps{\VEC{a}}{\VEC{p}}}{\ps{\VEC{p}}{\VEC{p}}} \VEC{p}
++ \frac{\ps{\VEC{a}}{\VEC{q}}}{\ps{\VEC{q}}{\VEC{q}}} \VEC{q} \; .
+\]
+Le point $\VEC{b}$ est le point du plan $\cal M$ qui est le plus près
+de $\VEC{a}$.  Le vecteur $\VEC{a}-\VEC{b}$ est perpendiculaire au
+plan $\cal M$.  La plus courte distance entre $\VEC{a}$ et le plan
+$\cal M$ est la longueur du vecteur $\VEC{a}-\VEC{b}$.
+\end{focus}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Équation d'une droite}
+
+\begin{question}
+Donnez une représentation de la droite qui passe par les points
+$(2,-5,5)$ et $(-4,3,4)$.
+\label{11Q1}\end{question}
+
+\subsection{Équation d'un plan}
+
+\begin{question}
+Trouvez l'équation du plan parallèle au plan $2x_1 + 3x_2 - x_3 = 1$ et qui
+passe par le point $(2,3,2)$.
+\label{11Q2}
+\end{question}
+
+\begin{question}
+Trouvez l'équation du plan $\cal M$ qui contient la droite $\ell$
+définie par
+\[
+  \frac{x_1-2}{2} = \frac{x_2+3}{3} = \frac{x_3-3}{-2}
+\]
+et le point $(1,2,1)$.
+\label{11Q3}
+\end{question}
+
+\begin{question}
+Déterminez si les deux plans suivants se coupent et, si c'est le cas,
+trouvez l'intersection des deux plans.
+\[
+ 2x_1 + 5x_3  + 3 = 0 \qquad \text{et}  \qquad x_1 - 3x_2 + x_3 + 2 = 0 \ .
+\]
+\label{11Q4}
+\end{question}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End:

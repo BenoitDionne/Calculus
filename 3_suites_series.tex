@@ -1,0 +1,2087 @@
+\chapter[Suites et séries]{Suites et séries}\label{ChapSuitesSeries}
+
+\compileTHEO{
+
+Au chapitre précédent, nous avons introduit les fonctions; les objets
+sur lesquels nous travaillerons tout au long de cet ouvrage.  Ce ne
+sont pas toutes les fonctions qui nous intéressent.  Par exemple, nous
+sommes intéressé aux fonctions qui peuvent représenter des phénomènes
+naturels qui évoluent de façon continue dans le temps et qui ont des
+comportements prévisibles.  Les fonctions qui représentent ce genre de
+phénomènes sont généralement {\em continues} ou même
+{\em différentiables}.  Pour définir ces propriétés, nous aurons
+besoin des concepts de {\em limite d'une suite} et de
+{\em limite d'une fonction en un point}.  Nous étudions la limite
+d'une suite dans ce chapitre alors que la limite d'une fonction en un
+point sera présentée au prochain chapitre.
+
+Certaines fonctions ne peuvent être définies de façon simple comme,
+par exemple, à l'aide d'une expression algébrique.  Nous aurons besoin
+du concept de {\em séries} pour définir ces fonctions.  C'est le cas
+en particulier de la fonction $e^x$.  Ce sont ces concepts que nous
+présentons dans la deuxième partie du chapitre.
+
+\section{Suites}
+
+\begin{focus}{\dfn}
+Une {\bfseries suite}\index{Suite} est un ensemble infini et ordonné
+de nombres.  Les nombres qui forment une suite sont appelés les
+{\bfseries termes}\index{Suite!terme} de la suite.  Par exemple,
+$\{ a_1, a_2, a_3, \ldots \}$ représente une suite de nombres où $a_1$
+est le {\bfseries premier terme} de la suite, $a_2$ est le
+{\bfseries deuxième terme} de la suite, ainsi de suite.
+
+Les termes de la suite sont généralement donnés par une fonction
+$f:\NN^+\rightarrow \RR$; c'est-à-dire, $a_n = f(n)$ pour $n \in \NN^+$.
+La suite est alors dénoté  $\{ f(n) \}_{n=1}^\infty$.
+\end{focus}
+
+\begin{egg}
+La suite $\displaystyle \left\{\frac{n}{n+2}\right\}_{n=1}^\infty$ est
+la suite formée des termes
+\[
+\left\{\frac{1}{3}, \frac{2}{4}, \frac{3}{5}, \ldots \right\}
+\]
+alors que la suite
+$\displaystyle \left\{\frac{(-1)^n}{n^2}\right\}_{n=1}^\infty$ est
+la suite formée des termes
+\[
+\left\{-1, \frac{1}{4}, -\frac{1}{9}, \frac{1}{16}, \ldots \right\} \; .
+\]
+\end{egg}
+
+\begin{egg}
+La procédure pour générer certaines suites demande plus qu'une simple
+fonction $f:\NN^+ \rightarrow \RR$.  C'est le cas de la
+{\bfseries suite de Fibonnacci}.  Après avoir choisis $a_1$ et $a_2$, les
+autres termes de la suites sont générés par $a_{n+1} = a_n + a_{n-1}$
+pour $n=2$, $3$, $4$, \ldots.  En d'autres mots, chaque terme de la
+suite est le résultat de la somme des deux termes qui le précède.
+
+La suite de Fibonnacci la plus classique est lorsque $a_1=a_2=1$.  Nous
+obtenons la suite
+\[
+\{ 1, 1, 2, 3, 5, 8, 13, 21, \ldots \}\; .
+\]
+\end{egg}
+
+Nous sommes souvent intéressés par le comportement asymptotique des
+termes de la suite lorsque $n\rightarrow \infty$.
+
+\begin{focus}[\theory]{\dfn} \index{Suite!convergence}
+Nous disons que la suite $\{ a_n\}_{n=1}^\infty$ {\bfseries converge}
+(ou {\bfseries tend}) vers un nombre $L$
+lorsque $n$ tend vers l'infini si,
+{\em pour chaque valeur $\epsilon >0$}, il existe un 
+entier $N$ (qui peut dépendre de $\epsilon$) tel que
+\[
+|a_n-L| < \epsilon \qquad \text{si} \qquad n \geq N \; .
+\]
+
+En d'autre mots, Quel que soit le nombre $\epsilon$ qui est donné, nous
+avons que la distance entre $L$ et $a_n$ est plus petite que $\epsilon$ à
+partir d'un indice $N$.  Nous écrivons
+\[
+\lim_{n\rightarrow \infty} a_n = L \; .
+\]
+Le nombre $L$ est appelé la {\bfseries limite}\index{Suite!limite} de la
+suite.
+
+S'il n'existe pas de valeur $L$ qui satisfait la définition ci-dessus,
+nous disons que la suite {\bfseries diverge}.
+\end{focus}
+
+\begin{egg}[\theory]
+Il est intuitivement claire que la suite
+\[
+\left\{ \frac{1}{n} \right\}_{n=1}^\infty
+= \left\{ 1 , \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots \right\}
+\]
+tend vers $0$.  Nous pouvons vérifier que la définition de limite est
+satisfaite par $L=0$.  En effet, pour $\epsilon >0$ donné, il suffit
+de prendre $N > 1/\epsilon$\footnote{L'existence de $N$ est une
+conséquence du principe d'Archimède} pour obtenir
+$|a_n - 0| = 1/n \leq 1/N < \epsilon$ pour $n \geq N$.
+\end{egg}
+
+\begin{egg}[\theory]
+La suite
+\[
+\left\{\frac{n}{n+2}\right\}_{n=1}^\infty
+= \left\{ \frac{1}{3}, \frac{2}{4}, \frac{3}{5}, \frac{4}{6}, \ldots
+\right\}
+\]
+tend vers $1$.
+
+En effet, pour $\epsilon$ donné, il suffit de prendre
+$N > 2(1-\epsilon)/\epsilon$ pour obtenir
+$|a_n-1| < \epsilon$ lorsque $n\geq N$.  En effet,
+\[
+n > \frac{2(1-\epsilon)}{\epsilon} \Rightarrow
+n\epsilon > 2 - 2\epsilon \Rightarrow \epsilon(n+2) > 2
+\Rightarrow \epsilon > \frac{2}{n+2} = 1 - \frac{n}{n+2}  
+= | a_n - 1|
+\]
+
+Par exemple, si $\epsilon = 10^{-5}$, il faut prendre
+$N > 2(1-10^{-5})/10^{-5} = 199998$.
+\end{egg}
+
+\begin{rmkList}
+\begin{itemize}
+\item Nous utilisons aussi l'expression \flqq\ $a_n \rightarrow L$ lorsque
+  $n\rightarrow \infty$\ \frqq\ pour dire que
+  $\displaystyle \lim_{n\rightarrow \infty} a_n = L$. 
+\item Il est souvent très utile d'explorer numériquement le
+  comportement des suites $\{ a_n\}_{n=1}^\infty$; c'est-à-dire,
+  d'évaluer $a_n$ pour de très grandes valeurs de $n$ dans l'espoir
+  d'obtenir des termes qui approchent une constante $L$ quelconque.
+  Cela ne démontre pas que la suite $\{ a_n\}_{n=1}^\infty$ tend vers
+  $L$ mais cela nous permet de conjecturer la limite de la suite.  Il
+  faut vérifier que la définition de limite ci-dessus est satisfaite
+  pour pouvoir dire que la suite $\{ a_n\}_{n=1}^\infty$ tend vers la
+  constante $L$ obtenue numériquement.
+\item La définition de limite ci-dessus revient à dire que la suite
+  $\{ a_n\}_{n=1}^\infty$ tend vers $L$ si et seulement si la suite
+  $\{ |a_n - L|\}_{n=1}^\infty$ tend vers $0$ lorsque $n$ tend vers
+  l'infini.  Nous écrivons
+  \[
+    \lim_{n\rightarrow \infty} |a_n-L| = 0 \; .
+  \]
+  En d'autres mots, la distance $|a_n - L|$ entre $a_n$ et $L$ approche
+  $0$ lorsque $n$ augmente. 
+\end{itemize}
+\end{rmkList}
+
+La limite de suites possède les propriétés suivantes qui
+permettront d'évaluer facilement les limites de certaines suites.
+
+\begin{focus}{\thm} \label{suite3}
+Si $\displaystyle \{ a_n\}_{n=1}^\infty$ est une suite qui tend vers
+$L_a$ et $\displaystyle \{ b_n\}_{n=1}^\infty$ est une suite qui tend
+vers $L_b$, alors:
+\begin{enumerate}
+\item La suite $\displaystyle \{ a_n + b_n \}_{n=1}^\infty$ tend vers
+$L_a + L_b$.  Nous écrivons
+\[
+\lim_{n\rightarrow \infty} (a_n + b_n) =
+\lim_{n\rightarrow \infty} a_n + \lim_{n\rightarrow \infty} b_n \; .
+\]
+\item La suite $\displaystyle \{ a_n b_n \}_{n=1}^\infty$ tend vers
+$L_a L_b$.  Nous écrivons
+\[
+\lim_{n\rightarrow \infty} (a_n b_n) =
+\left(\lim_{n\rightarrow \infty} a_n \right)
+\left(\lim_{n\rightarrow \infty} b_n \right) .
+\]
+\item Si $b_n \neq 0$ pour tout $n$ et $L_b\neq 0$, alors la suite
+$\displaystyle \left\{ \frac{a_n}{b_n} \right\}_{n=1}^\infty$
+tend vers $\displaystyle \frac{L_a}{L_b}$.  Nous écrivons
+\[
+\lim_{n\rightarrow \infty} \frac{a_n}{b_n} =
+\frac{\displaystyle \lim_{n\rightarrow \infty} a_n}
+{\displaystyle \lim_{n\rightarrow \infty} b_n} \; .
+\]
+\end{enumerate}
+\end{focus}
+
+\begin{egg}
+Soit $c$ une constante quelconque.  Il est facile de voir que la
+limite de la suite $\displaystyle \{ a_n\}_{n=1}^\infty$ où $a_n = c$
+pour tout $n$ est $c$.  Nous pouvons utiliser cette information pour
+trouver la limite de la suite
+$\displaystyle \left\{ \frac{5n+2}{n} \right\}_{n=1}^\infty$.  En
+effet, grâce au théorème précédent, nous avons
+\[
+\lim_{n\rightarrow \infty} \frac{5n+2}{n}
+= \lim_{n\rightarrow \infty} \left(5 + 2\,\frac{1}{n} \right)
+= \lim_{n\rightarrow \infty} 5 + 2\,\lim_{n\rightarrow \infty}\frac{1}{n}
+= 5 + 2 \times 0 = 5 \; .
+\]
+\end{egg}
+
+\begin{focus}[][des gendarmes ou sandwich]{\thm} \label{gendarmeS}
+\index{Théorème des gendarmes} \index{Théorème sandwich}
+Soit
+$\displaystyle \{ a_n\}_{n=1}^\infty$ et $\displaystyle \{c_n\}_{n=1}^\infty$
+deux suites qui tendent vers $L$.  Si
+$\displaystyle \{ b_n\}_{n=1}^\infty$ est une suite telle que 
+$a_n \leq b_n \leq c_n$ pour tout $n$, alors la
+suite $\displaystyle \{ b_n\}_{n=1}^\infty$ tend aussi vers $L$.
+\end{focus}
+
+\begin{proof}[\theory]
+Soit $\epsilon>0$.  Puisque $\displaystyle \{ a_n\}_{n=1}^\infty$ et
+$\displaystyle \{c_n\}_{n=1}^\infty$ tendent vers $L$, il existe $N\geq 0$
+tel que $|a_n-L|<\epsilon$ et $|c_n - L|<\epsilon$ pour $n\geq N$.  Ainsi,
+\[
+L-\epsilon < a_n \leq b_n \leq c_n < L+\epsilon
+\]
+pour $n\geq N$.  C'est-à-dire, $|b_n-L|<\epsilon$ pour $n\geq N$.
+\end{proof}
+
+\begin{egg}[\theory\ \eng]
+Montrons que la limite de la suite
+$\displaystyle \{ b_n\}_{n=1}^\infty$ où $b_n = n^{1/n}$ est $1$.
+
+Il est clair que la suite
+$\displaystyle \{ a_n\}_{n=1}^\infty$ où $a_n = 1$ pour tout
+$n$ satisfait $a_n \leq b_n$ pour tout $n$.  De plus, la suite
+$\displaystyle \{ c_n\}_{n=1}^\infty$ où $c_n = 1+\sqrt{2/n}$ pour
+tout $n$ satisfait $b_n \leq  c_n$ pour tout $n$.
+
+Pour démontrer ce dernier énoncé, posons $x_n = b_n-1$ et
+notons que
+\[
+n = b_n^n = (1+x_n)^n
+= 1 + nx_n + \frac{n(n-1)}{2}\,x_n^2 + \ldots + x_n^n \; .
+\]
+Comme c'est une somme de termes positifs, nous obtenons
+\[
+n \geq 1 + \frac{n(n-1)}{2}\,x_n^2 \; .
+\]
+Si nous isolons $x_n$, nous trouvons
+\[
+x_n \leq \sqrt{2/n} \quad , \quad n \geq 1 \; .
+\]
+Ainsi,
+\[
+b_n = 1 + x_n \leq 1 + \sqrt{2/n} = c_n
+\]
+pour tout $n$.
+
+Nous avons $\displaystyle \lim_{n\rightarrow \infty} a_n = 1$ et
+\[
+\lim_{n\rightarrow \infty} c_n = \lim_{n\rightarrow \infty}
+\left(1+ \sqrt{2/n} \right) = 1 + \lim_{n\rightarrow \infty} \sqrt{2/n} = 1
+\]
+car nous pouvons facilement montrer à partir de la définition de limite que
+la suite $\displaystyle \left\{ \sqrt{2/n} \right\}_{n=0}^\infty$ tend
+vers $0$.  Puisque $a_n \leq b_n \leq c_n$ pour tout $n \geq 1$, nous
+obtenons du Théorème des gendarmes que
+$\displaystyle \{ b_n\}_{n=1}^\infty$ tend vers $1$.
+\end{egg}
+
+Le résultat suivant est quelques fois utile.
+
+\begin{focus}{\thm}
+La suite $\displaystyle \{ a_n\}_{n=1}^\infty$ tend vers $0$ si et
+seulement si la suite $\displaystyle \{ |a_n| \}_{n=1}^\infty$ tend vers
+$0$. \label{suiteAbs}
+\end{focus}
+
+\begin{proof}[\theory]
+\subQ{$\Rightarrow$} Soit $\epsilon>0$. Puisque que
+$\displaystyle \{ a_n\}_{n=1}^\infty$ 
+tend vers $0$, il existe $N>0$ tel que $|a_n- 0 | = |a_n| <\epsilon$
+pour $n\geq N$.  Ainsi, il existe $N>0$ tel que
+$\big| |a_n|- 0 \big| = |a_n| <\epsilon$ pour $n\geq N$.  Comme
+$\epsilon$ est arbitraire, cela implique que
+$\displaystyle \{|a_n|\}_{n=1}^\infty$ tend vers $0$.
+
+\subQ{$\Leftarrow$} Soit $\epsilon>0$. Puisque que
+$\displaystyle \{ |a_n|\}_{n=1}^\infty$ tend vers $0$, il existe $N>0$
+tel que $\big| |a_n|- 0 \big| = |a_n| <\epsilon$ pour $n\geq N$.
+Ainsi, il existe $N>0$ tel que $|a_n- 0| = |a_n| <\epsilon$ pour
+$n\geq N$.  Comme $\epsilon$ est arbitraire, cela implique que
+$\displaystyle \{a_n\}_{n=1}^\infty$ tend vers $0$.
+\end{proof}
+
+Il est très utile de pouvoir caractériser le comportement des suites
+lorsque $n$ tend vers l'infini.
+
+\begin{focus}{\dfn}
+\begin{enumerate}
+\item Une suite $\{a_n\}_{n=1}^\infty$ est {\bfseries croissante}
+\index{Suite!croissante} si $a_n < a_{n+1}$ pour tout $n$.
+\item Une suite $\{a_n\}_{n=1}^\infty$ est {\bfseries décroissante}
+\index{Suite!décroissante} si $a_n > a_{n+1}$ pour tout $n$.
+\item Une suite $\{a_n\}_{n=1}^\infty$ est
+{\bfseries bornée supérieurement}\index{Suite!bornée supérieurement}
+s'il existe un nombre réel $M$ tel que $a_n \leq M$ pour tout $n$.  Le
+nombre $M$ est appelé une {\bfseries borne supérieure} pour la suite.
+\item Une suite $\{a_n\}_{n=1}^\infty$ est
+{\bfseries bornée inférieurement}\index{Suite!bornée inférieurement}
+s'il existe un nombre réel $m$ tel que $a_n \geq m$ pour tout $n$.  Le
+nombre $m$ est appelé une {\bfseries borne inférieure} pour la suite.
+\item Une suite $\{a_n\}_{n=1}^\infty$ est
+{\bfseries bornée}\index{Suite!bornée} si elle est bornée
+inférieurement et supérieurement.
+\end{enumerate}
+\end{focus}
+
+Le concept de convergence peut aussi être adapté aux suites non bornées.
+
+\begin{focus}[\theory]{\dfn}
+\index{Suite!convergence à l'infini} 
+Nous disons qu'une suite $\displaystyle \{ a_n\}_{n=1}^\infty$
+{\bfseries converge} (ou {\bfseries tend}) vers $+\infty$ (plus
+l'infini) si, pour chaque $M>0$, il existe $N$ (qui dépend du $M$ donné)
+tel que $a_n > M$ pour tout $n \geq N$.  Nous écrivons
+\[
+\lim_{n\rightarrow \infty} a_n = +\infty \; .
+\]
+Nous disons qu'une suite $\displaystyle \{ a_n\}_{n=1}^\infty$
+{\bfseries converge} (ou {\bfseries tend}) vers $-\infty$ (moins
+l'infini) si, pour chaque $M<0$, il existe $N$ (qui dépend du $M$ donné)
+tel que $a_n < M$ pour tout $n \geq N$.  Nous écrivons
+\[
+\lim_{n\rightarrow \infty} a_n = -\infty \; .
+\]
+\label{def_of_lim_at_inf}
+\end{focus}
+
+\begin{egg}[\theory]
+La suite $\displaystyle \{ a_n\}_{n=1}^\infty$ où $a_n = n^2+1$ tend
+vers plus l'infini.  En effet, si $M\geq 1$ est un nombre quelconque,
+il suffit de prendre $N > \sqrt{M-1}$ pour obtenir
+\[
+a_n = n^2+1 \geq N^2+1 > \left(\sqrt{M-1}\right)^2 + 1 = M
+\]
+pour tout $n\geq N$.
+\end{egg}
+
+\begin{egg}
+Le fait qu'une suite ne soit pas bornée n'implique pas qu'elle tende
+vers plus ou moins l'infini.  Par exemple, la suite 
+$\{a_n\}_{n=1}^\infty$ où
+\[
+a_n =
+\begin{cases}
+n & \qquad \text{si $n$ est pair}\\
+1/n & \qquad \text{si $n$ est impair}
+\end{cases}
+\]
+n'est pas bornée car il y a des termes qui sont aussi grands que nous
+voulons.  Par contre, cette suite ne tend pas vers plus l'infini car il
+est impossible de trouver $N>0$ tel que $a_n> 1$ pour tout $n\geq N$.
+Les termes $a_n$ avec $n$ impair et plus grand que $1$ sont tous plus
+petits que $1$.
+\end{egg}
+
+Les deux propositions suivantes nous donnent la limite de certaines suites
+que nous retrouvons fréquemment dans les applications.
+
+\begin{focus}{\prp}
+Soit $r$ un nombre réel.  Alors
+\[
+\lim_{n\rightarrow \infty} r^n=
+\begin{cases}
+\infty &\qquad \text{pour $r>1$} \\
+1 &\qquad \text{pour $r=1$} \\
+0 &\qquad \text{pour $-1 < r < 1$}
+\end{cases} \; .
+\]
+La suite $\{r^n\}_{n=1}^\infty$ ne converge pas pour $r\leq -1$.
+\label{suite1}
+\end{focus}
+
+\begin{focus}{\prp}
+Soit $r$ un nombre réel.  Alors
+\[
+\lim_{n\rightarrow \infty} \frac{1}{n^r}=
+\begin{cases}
+0 &\qquad \text{pour $r>0$} \\
+1 &\qquad \text{pour $r=0$} \\
+\infty &\qquad \text{pour $r<0$}
+\end{cases} \; .
+\]
+\label{suite2}
+\end{focus}
+
+\begin{egg}
+Évaluons les limites suivantes.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{5em}}}l@{\hspace{1em}}l}
+\subQ{a} & $\displaystyle \lim_{n\rightarrow \infty} \frac{n}{n^2+2n+4}$ &
+\subQ{b} & $\displaystyle \lim_{n\rightarrow \infty} \frac{\cos(n)}{n^2}$
+\end{tabular}
+\end{center}
+
+Pour calculer la limite en (a), nous utilisons les
+théorèmes~\ref{suite3} et \ref{suite2} pour obtenir
+\begin{align*}
+\lim_{n\rightarrow \infty} \frac{n}{n^2+2n+4}
+&= \lim_{n\rightarrow \infty} \frac{1/n}{1+2/n+4/n^2} \\
+&= \frac{\displaystyle \lim_{n\rightarrow \infty} 1/n}
+{\displaystyle 1 + \lim_{n\rightarrow \infty} 2/n
++ 4 \lim_{n\rightarrow \infty} 1/n^2} = \frac{0}{1+0+0} = 0 \; .
+\end{align*}
+
+Pour évaluer la limite en (b), nous utilisons le
+Théorème des gendarmes.  Puisque
+\[
+0 \leq \left| \frac{\cos(n)}{n^2} \right| \leq \frac{1}{n^2}
+\]
+pour tout $n$, la suite $\{b_n\}_{n=1}^\infty$ avec $b_n = |\cos(n)/n^2|$
+tend vers $0$ car les suites $\{a_n\}_{n=1}^\infty$ avec $a_n = 0$ et
+$\{c_n\}_{n=1}^\infty$ avec $c_n = 1/n^2$ tendent vers $0$.  Puisque la
+suite
+$\displaystyle \left\{ \left| \frac{\cos(n)}{n^2} \right|\right\}_{n=1}^\infty$
+tend vers $0$, il en est de même de la suite 
+$\displaystyle \left\{\frac{\cos(n)}{n^2}\right\}_{n=1}^\infty$ grâce
+au théorème~\ref{suiteAbs}.  Nous déduisons donc que
+\[
+\lim_{n\rightarrow \infty} \frac{\cos(n)}{n^2} = 0 \; .
+\]
+\end{egg}
+
+\begin{focus}[\theory]{\thm}
+Toute suite croissante et bornée supérieurement converge.  De même,
+toute suite décroissante et bornée inférieurement converge.  Dans le
+premier cas, la limite est la plus petite borne
+supérieure\footnotemark\ de la suite alors que dans le deuxième cas
+c'est la plus grande borne inférieure de la suite.
+\label{suiteBORN}
+\end{focus}
+
+\footnotetext{{\bfseries L'Axiome de complétude} des nombres
+réels dit que tout ensemble non vide et borné supérieurement
+possède une plus petite borne supérieure.  Cette borne ne fait pas
+nécessairement partie de l'ensemble.  Par exemple, $\sqrt{2}$ est
+la plus petite borne supérieure de l'ensemble
+$\{ x \in \RR : x^2 <4\}$ mais ne fait pas partie de cet ensemble.  Il
+en découle aussi que tout ensemble non vide et borné inférieurement
+possède une plus  grande borne inférieure.}
+
+\begin{proof}[\theory]
+Nous considérons le cas où $\displaystyle \{ a_n \}_{n=0}^\infty$ est une
+suite décroissante et bornée inférieurement.  La démonstration pour
+une suite croissante et bornée supérieurement est semblable.  Soit $m$
+la plus grande borne inférieure de
+$\displaystyle \{ a_n \}_{n=0}^\infty$.  Montrons que
+$\displaystyle \lim_{n\to \infty} a_n = m$.
+
+Soit $\epsilon >0$.  Puisque $m+\epsilon > m$ n'est pas une borne
+inférieure de la suite $\displaystyle \{ a_n \}_{n=0}^\infty$, il
+existe $N>0$ tel que $m \leq a_N < m+\epsilon$.  Puisque la suite
+$\displaystyle \{ a_n \}_{n=0}^\infty$ est décroissante, nous avons
+$m \leq a_n < m+\epsilon$ pour $n\geq N$.  C'est-à-dire,
+$|a_n-m|<\epsilon$ pour $n\geq N$.  Comme $\epsilon$ est arbitraire,
+$\displaystyle \lim_{n\to \infty} a_n = m$.
+\end{proof}
+
+\begin{egg}[\theory]
+Quel est la limite de la suite
+\[
+\left\{ \sqrt{2}, \sqrt{2\sqrt{2}}, \sqrt{2\sqrt{2\sqrt{2}}}, \ldots
+\right\} \; ?
+\]
+Cette suite est produite de façon itérative. C'est la suite
+$\{a_n\}_{n=1}^\infty$ où $a_1=\sqrt{2}$ et $a_{n+1} = \sqrt{2a_n}$
+pour $n=1$, $2$, \ldots.
+
+Montrons que la suite $\{a_n\}_{n=1}^\infty$ est bornée
+supérieurement par $2$.  Cela se démontre par induction.  Nous avons
+$a_1<2$.  Supposons que $a_n < 2$.  Alors $2a_n < 4$ et
+\[
+a_{n+1} = \sqrt{2a_n} < \sqrt{4} = 2 \; .
+\]
+Donc $a_n <2$ pour tout $n$ par induction.
+
+De plus, montrons que la suite $\{a_n\}_{n=1}^\infty$ est
+croissante.   Cela se démontre aussi par induction.  En fait, nous  montrons
+par induction que
+\begin{equation}\label{sssqrt}
+a_{n+1} = 2^{1/2^{(n+1)}}\,a_n
+\end{equation}
+pour tout $n$.  Puisque $2^{1/2^{(n+1)}} > 1$, nous obtenons alors que
+$a_{n+1} > a_n$ pour tout $n$.  L'équation (\ref{sssqrt}) est vrai
+pour $n=1$ car
+\[
+a_2 = \sqrt{2 \sqrt{2}} = \sqrt{2} \sqrt{\sqrt{2}} =
+2^{1/2^2} \sqrt{2} = 2^{1/2^2} a_1 \; .
+\]
+Supposons que l'équation (\ref{sssqrt}) soit vrai pour $n$ et
+montrons qu'elle est alors vrai pour $n+1$.  Nous avons
+\[
+a_{n+2} = \sqrt{2a_{n+1}} = \sqrt{2 \left(2^{1/2^{(n+1)}} \, a_n\right)}
+= \sqrt{2 a_n} \sqrt{2^{1/2^{(n+1)}}}
+= a_{n+1} 2^{1/2^{(n+2)}} \; .
+\]
+La deuxième égalité est une conséquence de l'hypothèse d'induction.
+Ce qui démontre que (\ref{sssqrt}) est vrai pour $n+1$ et complète
+la preuve par induction.
+
+Donc $\{a_n\}_{n=1}^\infty$ est une suite croissante et
+bornée supérieurement.  Il découle du théorème précédent que la suite
+converge. Appelons $L$ la limite de la suite $\{a_n\}_{n=1}^\infty$.
+
+La suite $\{ a_{n+1} \}_{n=1}^\infty$ tend aussi vers $L$ car c'est la
+suite $\{ a_n\}_{n=1}^\infty$ auquel nous avons enlevé le premier terme.  De
+plus, nous pouvons montrer à partir de la définition de limite d'une suite
+que $\{ \sqrt{2a_n} \}_{n=1}^\infty$ tend vers $\sqrt{2L}$.  Puisque
+$a_{n+1} = \sqrt{2 a_n}$ pour tout $n$, nous avons donc que
+\[
+L= \lim_{n\rightarrow \infty} a_{n+1} =
+\lim_{n\rightarrow \infty} \sqrt{2 a_n} = \sqrt{2L} \; .
+\]
+La limite $L$ doit donc satisfaire l'équation $L^2-2L = L(L-2) = 0$.
+Puisque $\{ a_n \}_{n=1}^\infty$ est une suite croissante de termes
+positifs, nous devons avoir $L=2$.
+\end{egg}
+
+\section{Séries}
+
+Si $a_1$, $a_2$, \ldots, $a_n$ sont $n$ nombres réels, le symbole
+$\displaystyle \sum_{k=1}^n a_k$ dénote la somme de ces nombres.  En
+d'autres mots,
+\[
+\sum_{k=1}^n a_k = a_1 + a_2 + \ldots + a_n \; .
+\]
+De façon générale, si $k_1 \leq k_2$ sont deux nombres entiers et
+$a_k$ pour $k_1 \leq k \leq k_2$ sont des nombres réels, alors
+\[
+\sum_{k=k_1}^{k_2} a_k = a_{k_1} + a_{k_1+1} + a_{k_1+2} + \ldots + a_{k_2} \ .
+\]
+En générale, nous avons que $a_k = f(k)$ pour une fonction $f:\ZZ \to \RR$.
+Ainsi,
+\[
+\sum_{k=k_1}^{k_2} a_k = \sum_{k=k_1}^{k_2} f(k) =
+f(k_1) + f(k_1+1) + f(k_1+2) + \ldots + f(k_2) \ .
+\]
+
+\begin{egg}
+Nous avons
+\begin{align*}
+\sum_{k=3}^8 \ \underbrace{k^2}_{=f(k)}
+&= \underbrace{3^2}_{=f(3)}
++ \underbrace{4^2}_{=f(4)}
++ \underbrace{5^2}_{=f(5)} + \ldots
++ \underbrace{8^2}_{=f(8)} \\
+&= 9 + 16 + 25 + \ldots + 64
+\end{align*}
+et
+\begin{align*}
+\sum_{k=1}^6 \underbrace{\frac{1}{k^2+1}}_{=f(k)}
+&= \underbrace{\frac{1}{1^2+1}}_{=f(1)}
++ \underbrace{\frac{1}{2^2+1}}_{=f(2)}
++ \underbrace{\frac{1}{3^2+1}}_{=f(3)} + \ldots
++ \underbrace{\frac{1}{6^2+1}}_{=f(6)} \\
+&= \frac{1}{2}+ \frac{1}{5} + \frac{1}{10} + \ldots + \frac{1}{37} \ .
+\end{align*}
+\end{egg}
+
+Il découle de la commutativité de l'addition et de la distributivité du
+produit sur l'addition que
+\[
+\sum_{n=k_1}^{k_2} c\,a_n = c \sum_{n=k_1}^{k_2} a_n \qquad \text{et}
+\qquad
+\sum_{n=k_1}^{k_2} (a_n+b_n) = \sum_{n=k_1}^{k_2} a_n + \sum_{n=k_1}^{k_2} b_n
+\ ,
+\]
+où $c$, $a_n$ et $b_n$ pour $k_1\leq n \leq k_2$ sont des nombres
+réels.
+
+\begin{focus}[\theory]{\prp}
+Certaines sommes sont fréquemment utilisées.
+\begin{align*}
+\sum_{k=1}^n 1 &= \underbrace{1+1+1+\ldots+1}_{n\text{ fois}} = n \ ,
+& \sum_{k=0}^n k &= \frac{n(n+1)}{2} \ ,\\
+\sum_{k=0}^n k^2 &= \frac{n(n+1)(2n+1)}{6} ,
+& \sum_{k=0}^n k^3 &= \left(\frac{n(n+1)}{2}\right)^2
+\intertext{et}
+\sum_{k=0}^n k^4 &= \frac{n(n+1)(2n+1)(3n^3+3n-1)}{30} \ .
+\end{align*}
+\end{focus}
+
+\begin{rmk}[\theory]
+\subI{i} Démontrons premièrement la deuxième identité.  Posons
+$\displaystyle S = \sum_{k=1}^n k$.  Nous avons
+\[
+\begin{array}{ll|c|c|c|c|c|c|c|c|c|r}
+\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}\cline{11-11}
+& S = &1&+ &2&+ &3&+ \ldots + &(n-1)&+ &n& \\
+\text{et\qquad} &&&&&&&&&&& \\
+& S = &n&+ &(n-1)& + &(n-2)&+ \ldots + &2&+ &1& . \\
+\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}\cline{11-11}
+\multicolumn{2}{c}{} &
+\multicolumn{9}{c}{\underbrace{\rule{24em}{0em}}_{n\text{ fois}}} &
+\end{array}
+\]
+La somme de ces deux équations donne $2S = n(n+1)$.  Donc
+\[
+\sum_{k=0}^n k = S = \frac{n(n+1)}{2} \ .
+\]
+
+\subI{ii} Nous donnons deux démonstrations de la troisième identité.
+
+\subI{ii-1} La première démonstration ne fait pas appel au principe
+d'induction.  Considérons la séries {\em télescopique}\quad
+$\displaystyle \sum_{k=1}^n ((k+1)^3 -k^3)$.  Puisque
+\begin{align*}
+\sum_{k=1}^n ((k+1)^3 -k^3) &= (2^3 -1)+(3^3-2^3)+(4^3-3^3) + \ldots \\
+&\qquad + (n^3-(n-1)^3) + ((n+1)^3-n^3) \\
+&= -1 + (2^3 -2^3)+(3^3-3^3) + \ldots + (n^3-n^3) + (n+1)^3 \\
+&= (n+1)^3 - 1
+\end{align*}
+et
+\begin{align*}
+\sum_{k=1}^n ((k+1)^3 -k^3) &= \sum_{k=1}^n ( 3k^2 + 3k + 1)
+= 3 \sum_{k=1}^n k^2 + 3 \sum_{k=1}^n k + \sum_{k=1}^n 1 \\
+&= 3 \sum_{k=1}^n k^2 + \frac{3n(n+1)}{2} + n \ ,
+\end{align*}
+nous obtenons que
+\[
+3 \sum_{k=1}^n k^2 + \frac{3n(n+1)}{2} + n = (n+1)^3 - 1 \ .
+\]
+Si nous résolvons pour $\displaystyle \sum_{k=1}^n k^2$, nous trouvons
+\begin{align*}
+\sum_{k=1}^n k^2 &= \frac{1}{3}
+\left( (n+1)^3 - 1 - \frac{3n(n+1)}{2}- n \right) \\
+&= \frac{1}{3} \left( n^3 +3n^2 + 3n -\frac{3}{2} n^2 - \frac{3}{2}n -
+  n\right)\\
+&=\frac{1}{3}\left( n^3 +\frac{3}{2}n^2 + \frac{1}{2}n\right)
+= \frac{n}{6}(2n^2 + 3n+1) = \frac{n(2n+1)(n+1)}{6}
+\end{align*}
+
+\subI{ii-2} La deuxième démonstration utilise la principe d'induction.
+L'hypothèse d'induction est
+\[
+P(n) : \qquad \sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6} \; .
+\]
+$P(1)$ est vrai car, pour $n=1$, nous avons
+\[
+\sum_{k=1}^n k^2 = \sum_{k=1}^1 k^2 = 1^2 = 1 \quad \text{et} \quad
+\frac{n(n+1)(2n+1)}{6} = \frac{1 \times 2 \times 3}{6} = 1 \; .
+\]
+Supposons que $P(n)$ soit vrai.  Alors
+\begin{align*}
+\sum_{k=0}^{n+1} k^2 &= \sum_{k=0}^n k^2 + (n+1)^2
+= \frac{n(n+1)(2n+1)}{6} + (n+1)^2 \\
+&= \left(\frac{n(2n+1)}{6} + (n+1)\right) (n+1)
+= \frac{2n^2 + 7n + 6}{6}\,(n+1) \\
+&= \frac{(2n+3)(n+2)}{6}\,(n+1) \; ,
+\end{align*}
+où la deuxième égalité provient de l'hypothèse d'induction.  Cette
+dernière expression n'est nul autre que $P(n+1)$.  Par induction, nous
+concluons que $P(n)$ est vrai pour tout $n$.
+
+La démonstration des autres identités est laissée au lecteur. 
+\end{rmk}
+
+\begin{egg}[\theory]
+Nous avons
+\begin{align*}
+\sum_{k=1}^{10} (2k^2 + 4 k + 1) &= 
+2\sum_{k=1}^{10} k^2 + 4 \sum_{k=1}^{10} k + \sum_{k=1}^{10} 1 \\
+&= 2 \frac{10(10+1)(2\times 10 +1)}{6} + 4 \frac{10(10+1)}{2} + 7
+= 1000
+\end{align*}
+et
+\begin{align*}
+\sum_{k=1}^n (4k^2 + n k) &= 4\sum_{k=1}^n k^2 + n \sum_{k=1}^n k \\
+&= 4 \frac{n(n+1)(2n+1)}{6} + n \frac{n(n+1)}{2}
+= \frac{(11n+4)(n(n+1)}{6} \ .
+\end{align*}
+\end{egg}
+
+\begin{focus}{\dfn}
+Soit $\{ a_n\}_{n=1}^\infty$, \ldots une suite de nombres réels.  Posons
+\[
+S_k = \sum_{n=1}^k a_n = a_1 + a_2 + \ldots + a_k
+\]
+pour $k=1$, $2$, $3$, \ldots
+
+L'expression $\displaystyle \sum_{n=1}^\infty a_n$ est définie comme
+étant la suite $\{S_k\}_{k=1}^\infty$.
+
+L'expression $\displaystyle \sum_{n=1}^\infty a_n$ est appelée une
+{\bfseries série}\index{Série}, les $a_n$ sont les
+{\bfseries termes}\index{Série!termes} de la série, et les termes
+$S_k$ de la suite $\displaystyle \{S_k\}_{k=1}^\infty$ sont appelés
+les {\bfseries sommes partielles}\index{Série!Somme partielle} de la
+série.
+
+Nous disons que la série {\bfseries converge}\index{Série!convergence}
+si la suite $\displaystyle \{S_k\}_{k=1}^\infty$ des sommes partielles
+converge.  Si la suite $\{S_k\}_{k=1}^\infty$ des sommes partielles
+diverge, nous disons que la série {\bfseries diverge}\index{Série!divergence}.
+
+Si la suite $\{S_k\}_{k=1}^\infty$ des sommes partielles tend vers
+$S \in \RR$, nous écrivons
+\[
+\sum_{n=1}^\infty a_n = S
+\]
+et nous disons que la {\bfseries somme} de la série est $S$.  Par abus
+de langage, nous désignons souvent la somme de la série par
+$\displaystyle \sum_{n=1}^\infty a_n$.  C'est le contexte qui
+détermine le sens donné à $\displaystyle \sum_{n=1}^\infty a_n$.
+\end{focus}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ représente la
+suite $\{S_k\}_{k=1}^\infty$ des sommes partielles
+\[
+S_k = \sum_{n=1}^k \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \ldots
+  + \frac{1}{k} \; .
+\]
+La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ est appelée la
+{\bfseries série harmonique}.\index{Série!harmonique}
+Nous démontrerons plus loin que cette série ne converge pas.
+
+La série $\displaystyle \sum_{n=1}^\infty \frac{\sin(n)}{n^2+n}$
+représente la suite $\{S_k\}_{k=1}^\infty$ des sommes partielles
+\[
+S_k = \sum_{n=1}^k \frac{\sin(n)}{n^2+n}
+= \frac{\sin(1)}{2} + \frac{\sin(2)}{6} + \frac{\sin(3)}{12} + \ldots
+  + \frac{\sin(k)}{k^2+k} \; .
+\]
+Nous démontrerons plus loin que cette série converge.
+\end{egg}
+
+\begin{egg}[][Série géométrique]
+Soit $r$ un nombre réel.  Montrons que la série
+$\displaystyle \sum_{n=0}^\infty r^n$ converge si $|r|<1$ et diverge
+si $|r|\geq 1$.
+
+La série $\displaystyle \sum_{n=0}^\infty r^n$ est
+très importante en mathématiques et, pour cette raison, nous lui donnons
+un nom.  Nous appellons cette série la {\bfseries série géométrique}.
+\index{Série!géométrique} La valeur $r$ est appelée la
+{\bfseries raison} de la série géométrique.
+
+Les sommes partielles de la série géométrique sont de la forme
+\[
+S_k = 1 + r + r^2 + \ldots + r^k
+\]
+pour $k=0$, $1$, $2$, \ldots \ Ainsi,
+\begin{align*}
+rS_k &= r + r^2 + r^3 + \ldots + r^{k+1}
+\intertext{et}
+(1-r)S_k &= S_k - r S_k = 1 - r^{k+1} \; .
+\end{align*}
+Donc
+\[
+S_k = \frac{1-r^{k+1}}{1-r}
+\]
+si $r\neq 1$.  Pour $|r|<1$, il découle du théorème~\ref{suite2}
+que
+\[
+\lim_{k\rightarrow \infty} S_k
+= \lim_{k\rightarrow \infty} \frac{1-r^{k+1}}{1-r}
+= \frac{\displaystyle 1- \lim_{k\rightarrow \infty}r^{k+1}}{1-r}
+= \frac{1}{1-r} \; .
+\]
+Si $r \leq -1$, la suite $\{r^{k+1}\}_{k=1}^\infty$ ne converge pas.
+La suite des sommes partielles ne converge donc pas si $r\leq -1$.
+Si $r>1$, la suite $\{r^{k+1}\}_{k=1}^\infty$ tend
+vers plus l'infini.  Ce qui implique que la suite des sommes
+partielles tend aussi vers plus l'infini.  De même, si $r=1$, nous
+obtenons que $S_k = k+1$ pour tout $k$ et la suite des sommes
+partielles tend donc vers plus l'infini.
+\label{geoseries}
+\end{egg}
+
+En résumé, nous avons le résultat suivant.
+
+\begin{focus}{\prp}
+\[
+\sum_{n=0}^\infty r^n = \frac{1}{1-r} \quad \text{pour} \quad  |r|<1 \; ,
+\]
+et la série $\displaystyle \sum_{n=0}^\infty r^n$ diverge si
+$|r|\geq 1$.
+\end{focus}
+
+Pour déterminer si une série $\displaystyle \sum_{j=0}^\infty a_j$ est
+une série géométrique, il faut vérifier que $a_{j+1}/a_j = r$, la
+raison de la série, pour tout $j$.  Si c'est le cas, alors
+$a_j = a_0 r^j$ pour tout $j$ et
+$\displaystyle \sum_{j=0}^\infty a_j = a_0\sum_{j=0}^\infty r^j$.
+
+\begin{egg}
+Déterminons si la série
+\[
+\sum_{n=0}^\infty \left(\frac{1}{5}\right)^{2n}
+\]
+converge.  Si elle converge, nous voulons sa valeur.
+
+Puisque
+\[
+\sum_{n=0}^\infty \left(\frac{1}{5}\right)^{2n}
+= \sum_{n=0}^\infty \left( \left(\frac{1}{5}\right)^2 \right)^n
+= \sum_{n=0}^\infty \left(\frac{1}{25}\right)^n
+\]
+est une série géométrique de raison $r = 1/25$, elle converge car
+$|r|<1$.  En fait,
+\[
+\sum_{n=0}^\infty \left(\frac{1}{5}\right)^{2n} = \frac{1}{1-(1/25)}
+= \frac{25}{24} \; .
+\]
+\end{egg}
+
+\begin{egg}
+Déterminons si la série
+  $\displaystyle \sum_{n=1}^\infty \frac{7^{n+2}}{5^{2n-1}}$
+converge ou diverge.
+
+Les termes de la série sont
+$\displaystyle \frac{7^{n+2}}{5^{2n-1}} = 5\times 7^2 \times
+\left(\frac{7}{25}\right)^n$.  Ainsi, la série est une série
+géométrique de raison $7/25$.  Comme la raison est plus petite que $1$
+en valeur absolue, la série converge.
+\end{egg}
+
+\begin{focus}{\thm}
+Si $\displaystyle \sum_{n=1}^\infty a_n$ et
+$\displaystyle \sum_{n=1}^\infty b_n$ sont deux séries convergentes et
+$c$ est un nombre réel, alors
+$\displaystyle \sum_{n=1}^\infty (a_n+b_n)$ et
+$\displaystyle \sum_{n=1}^\infty c\, a_n$ sont des séries convergentes.
+De plus, si
+\[
+\sum_{n=1}^\infty a_n = A \quad \text{et} \quad \sum_{n=1}^\infty b_n = B
+\]
+alors
+\[
+\sum_{n=1}^\infty (a_n+b_n) = A+B \quad \text{et}
+\quad \sum_{n=1}^\infty c\, a_n = cA \; .
+\]
+\label{series_linear}
+\end{focus}
+
+\begin{proof}[\theory]
+Le théorème précédent est une conséquence du théorème~\ref{suite3}.
+En effet, considérons les sommes partielles suivantes.
+\[
+A_k = \sum_{n=1}^k a_n \ , \ 
+B_k = \sum_{n=1}^k b_n \ , \ C_k = \sum_{n=1}^k c\,a_n
+\ \text{et} \ D_k = \sum_{n=1}^k (a_n+b_n) \; .
+\]
+Nous avons $C_k = c\,A_k$ et $D_k = A_k + B_k$.  Ainsi,
+\[
+\sum_{n=1}^\infty c\,a_n = \lim_{k\rightarrow \infty} C_k
+= \lim_{k\rightarrow \infty} c\,A_k
+= c\,\lim_{k\rightarrow \infty} A_k = c\, A
+= c\, \sum_{n=1}^\infty a_n
+\]
+et
+\[
+\sum_{n=1}^\infty (a_n+b_n) = \lim_{k\rightarrow \infty} D_k
+= \lim_{k\rightarrow \infty} (A_k + B_k)
+= \lim_{k\rightarrow \infty} A_k + \lim_{k\rightarrow \infty} B_k
+= A + B
+= \sum_{n=1}^\infty a_n + \sum_{n=1}^\infty b_n
+\; .
+\]
+\end{proof}
+
+\begin{egg}[\eng]
+Déterminons si la série
+\[
+\sum_{n=0}^\infty \frac{3-4^{n-1}}{5^n}
+\]
+converge.  Si elle converge, nous voulons aussi sa valeur?
+
+Nous avons
+\[
+\frac{3-4^{n-1}}{5^n} =
+3 \left( \frac{1}{5}\right)^n - \frac{1}{4} \left(\frac{4}{5}\right)^n \ .
+\]
+De plus,
+\[
+\sum_{n=0}^\infty \left( \frac{1}{5} \right)^n \quad \text{et}
+\quad \sum_{n=0}^\infty \left( \frac{4}{5} \right)^n
+\]
+sont des séries géométriques de raisons $r = 1/5$ et $r = 4/5$
+respectivement. Puisque $|r|<1$ pour les deux séries, elles
+convergent.  Plus précisément,
+\[
+\sum_{n=0}^\infty \left( \frac{1}{5} \right)^n = \frac{1}{1-(1/5)} =
+\frac{5}{4} \quad \text{et} \quad
+\sum_{n=0}^\infty \left( \frac{4}{5} \right)^n = \frac{1}{1-(4/5)} = 5 \ .
+\]
+Ainsi, grâce au théorème précédent,
+\[
+\sum_{n=0}^\infty \frac{3-4^{n-1}}{5^n}
+= 3 \sum_{n=0}^\infty \left( \frac{1}{5} \right)^n - \frac{1}{4}
+\sum_{n=0}^\infty \left( \frac{4}{5} \right)^n
+= \frac{15}{4} - \frac{5}{4} = \frac{5}{2} \ .
+\]
+\end{egg}
+
+\begin{egg}[\eng]
+Déterminons si la série
+\[
+-3+\frac{6}{5} -\frac{12}{25} + \frac{24}{125} - \ldots =
+\sum_{n=0}^\infty (-3)\, \left(\frac{-2}{5}\right)^n
+\]
+converge.  Si elle converge, nous voulons sa valeur.  Que pouvons-nous
+dire au sujet de la série
+\begin{equation}\label{shiftseries}
+\sum_{n=3}^\infty (-3)\left(\frac{-2}{5}\right)^n \ ?
+\end{equation}
+
+La série $\displaystyle \sum_{n=0}^\infty \left(\frac{-2}{5}\right)^n$ est une
+série géométrique de raison $r = -2/5$.  Cette série converge car
+$|r|<1$.  Puisque 
+\[
+\sum_{n=0}^\infty \left(\frac{-2}{5}\right)^n = \frac{1}{1-(-2/5)}
+= \frac{5}{7} \; ,
+\]
+nous avons
+\[
+\sum_{n=0}^\infty (-3)\left(\frac{-2}{5}\right)^n
+= -3 \sum_{n=0}^\infty \left(\frac{-2}{5}\right)^n
+= -3 \, \frac{5}{7} = \frac{-15}{7} \; .
+\]
+
+Pour étudier la série (\ref{shiftseries}), posons
+\[
+S_k = \sum_{n=0}^k (-3)\left(\frac{-2}{5}\right)^n \quad \text{et}
+\quad  T_k = \sum_{n=3}^k (-3)\left(\frac{-2}{5}\right)^n \; .
+\]
+Pour $k\geq 3$, nous avons
+\[
+T_k = S_k - \sum_{n=0}^2 (-3)\left(\frac{-2}{5}\right)^n
+= S_k + 3 - \frac{6}{5} + \frac{12}{25} \; .
+\]
+Ainsi,
+\begin{align*}
+ \sum_{n=3}^\infty (-3)\left(\frac{-2}{5}\right)^n &=
+\lim_{k\rightarrow \infty} T_k = \lim_{k\rightarrow \infty}
+\left(S_k + 3 - \frac{6}{5} + \frac{12}{25} \right) \\
+& = \left(\lim_{k\rightarrow \infty} S_k\right)
++ 3 - \frac{6}{5} + \frac{12}{25}
+= \left( \sum_{n=0}^\infty (-3)\left(\frac{-2}{5}\right)^n \right)
++ 3 - \frac{6}{5} + \frac{12}{25} \\
+& = \frac{-15}{7} + 3 - \frac{6}{5} + \frac{12}{25}
+= \frac{24}{175} \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}[\eng][Série télescopique]
+Déterminons si la série suivante converge et, si elle converge,
+trouvons sa valeur.
+\begin{equation}\label{telescope}
+\sum_{n=3}^\infty \frac{2}{n(n-1)} \; .
+\end{equation}
+
+À l'aide de la méthode des {\em fractions partielles}, nous obtenons
+\[
+\frac{2}{n(n-1)} = \frac{2}{n-1} - \frac{2}{n}
+\]
+pour tout $n \geq 3$.  Ainsi, les sommes partielles de la série
+(\ref{telescope}) sont
+\begin{align*}
+S_k &= \sum_{n=3}^k \frac{2}{n(n-1)}
+= \sum_{n=3}^k \left( \frac{2}{n-1} - \frac{2}{n} \right) \\
+&= \left( \frac{2}{2} - \frac{2}{3} \right) +
+\left( \frac{2}{3} - \frac{2}{4} \right) +
+\left( \frac{2}{4} - \frac{2}{5} \right) + \ldots
++\left( \frac{2}{k-1} - \frac{2}{k} \right) \\
+&= 1 - \frac{2}{k}
+\end{align*}
+pour tout $k\geq 3$.  Le premier terme à l'intérieure d'une parenthèse est
+annulé par le deuxième terme à l'intérieure de la parenthèse précédente sauf
+pour le premier terme de la première parenthèse.  Nous avons donc
+\[
+\sum_{n=3}^\infty \frac{2}{n(n-1)} = \lim_{k\rightarrow \infty} S_k
+= 1 - \lim_{k\rightarrow \infty} \frac{2}{k} = 1 \; .
+\]
+
+Les séries pour lesquelles les sommes partielles peuvent être réduites
+grâce à une procédure permettant d'annuler une partie d'un terme à
+l'aide d'une partie du terme suivant comme nous avons fait ci-dessus
+(une procédure qui rappelle le mécanisme utilisé pour ranger les
+télescopes rétractiles) sont appelées des {\bfseries séries télescopiques}.
+\index{Série!télescopique}
+\end{egg}
+
+\begin{egg}[\theory\ \eng]
+Montrons que la série harmonique
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ diverge.
+
+Les sommes partielles sont
+$\displaystyle S_n = \sum_{j=1}^n \frac{1}{j}$.
+Montrons par induction que
+\[
+\lim_{k\rightarrow \infty} S_{2^k} = +\infty \; .
+\]
+Ainsi, la suite des sommes partielles $\{S_n\}_{n=1}^\infty$ ne peut
+pas tendre vers un nombre réel $S$ car c'est une suite de termes
+croissants dont les termes $S_{2^k}$ tendent vers l'infini.
+
+Montrons par induction que
+\begin{equation}\label{harmInduct}
+S_{2^k} \geq 1 + \frac{k}{2}
+\end{equation}
+pour $k=1$, $2$, $3$, \ldots.
+
+Puisque $S_2 = 1 + 1/2$, (\ref{harmInduct}) est vrai pour
+$k=1$.  Supposons que l'inégalité (\ref{harmInduct}) soit vraie et
+montrons qu'elle est aussi vraie si nous remplaçons $k$ par $k+1$.  Nous avons
+\begin{align*}
+S_{2^{k+1}} &= S_{2^k} + \frac{1}{2^k+1} + \frac{1}{2^k+2} + \ldots
++ \frac{1}{2^{k+1}} \\
+&= S_{2^k} + \underbrace{\frac{1}{2^k+1} + \frac{1}{2^k+2} + \ldots
++ \frac{1}{2^k+2^k}}_{2^k \text{ termes } \geq 1/2^{k+1}} \\
+&\geq S_{2^k} + \frac{2^k}{2^{k+1}}
+\geq \left(1+\frac{k}{2}\right) + \frac{1}{2}
+= 1 + \frac{k+1}{2} \; .
+\end{align*}
+Ce qui donne (\ref{harmInduct}) si nous remplaçons $k$ par $k+1$.
+
+Nous avons donc démontré par induction que $S_{2^k} \geq 1 + k/2 \geq 0$
+pour $k=1$, $2$, $3$, \ldots.  Puisque la suite
+$\{1+k/2\}_{k=1}^\infty$ tend vers plus l'infini, il en est de même
+pour la suite $\{S_{2^k}\}_{k=1}^\infty$.
+\end{egg}
+
+\begin{focus}{\prp}
+La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$ converge si
+$p>1$ et diverge si $p\leq 1$.
+\label{Pseries}
+\end{focus}
+
+\begin{rmk}[\eng]
+Une démonstration élémentaire de ce théorème existe.  Cette
+démonstration ne sera pas donnée mais, à sa place, le théorème
+précédent sera démontré à l'aide du {\em test de l'intégrale} qui sera
+énoncé à la section~\ref{integralTest} du chapitre sur les
+applications de l'intégrale.
+\end{rmk}
+
+\begin{focus}{\thm}
+Si la série $\displaystyle \sum_{n=1}^\infty a_n$
+converge, alors $\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
+\label{condTC}
+\end{focus}
+
+\begin{proof}[\theory]
+Pour démontrer le théorème précédent, posons
+$\displaystyle S = \sum_{n=1}^\infty a_n$.  Puisque les suites
+$\{S_n\}_{n=1}^\infty$ et $\{S_{n+1}\}_{n=1}^\infty$ de
+sommes partielles tendent vers $S$, il découle du
+théorème~\ref{suite3} que la suite
+$\displaystyle \{S_{n+1}-S_n\}_{n=1}^\infty = \{ a_{n+1} \}_{n=1}^\infty
+= \{ a_n \}_{n=2}^\infty$
+tend vers $S-S=0$.
+\end{proof}
+
+\begin{rmk}
+Il est {\bfseries faux} de dire que
+$\displaystyle \lim_{n\rightarrow \infty} a_n = 0$ implique que la
+série $\displaystyle \sum_{n=1}^\infty a_n$ converge.  La série
+harmonique est la série $\displaystyle \sum_{n=1}^\infty a_n$ où
+$a_n = 1/n$.  Il est vrai que
+$\displaystyle \lim_{n\rightarrow \infty} a_n = 0$ mais la série
+harmonique diverge.
+\end{rmk}
+
+\subsection{Tests de convergence \eng}\label{conv_tests}
+
+Nous présentons des méthodes pour déterminer si une série converge ou
+diverge.  Il faut démontrer qu'une série converge avant d'essayer
+d'estimer la limite de ses sommes partielles (soit analytiquement ou
+numériquement à l'aide d'un ordinateur).  Il y a peu de séries pour
+lesquelles nous possédons une formule pour déterminer exactement la somme,
+il faut donc bien souvent utiliser un ordinateur pour estimer la
+valeur des séries convergentes.
+
+Le critère de convergence suivant découle du théorème~\ref{condTC}.
+
+\begin{focus}{\thm}
+Si la suite des termes $\displaystyle \{a_n\}_{n=1}^\infty$ ne tend
+pas vers $0$, alors la série $\displaystyle \sum_{n=1}^\infty a_n$
+diverge.
+\label{NCforCofS}
+\end{focus}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^2+1}}{n+1}$
+diverge car
+\[
+\lim_{n\rightarrow \infty} \frac{\sqrt{n^2+1}}{n+1}
+= \lim_{n\rightarrow \infty} \frac{\sqrt{1+1/n^2}}{1+1/n}
+= \frac{\sqrt{\displaystyle 1+ \lim_{n\rightarrow \infty}1/n^2}}
+{\displaystyle 1+ \lim_{n\rightarrow \infty}1/n} = 1 \neq 0 \; .
+\]
+\end{egg}
+
+\begin{egg}
+Démontrons que la série
+$\displaystyle \sum_{n=1}^\infty \frac{7^{2n+2}}{5^{2n-1}}$
+diverge.
+
+Les termes de la série sont
+$\displaystyle a_n = \frac{7^{2n+2}}{5^{2n-1}} = 5\times 7^2 \times
+\left(\frac{49}{25}\right)^n$.   Ainsi,
+$\lim_{n\rightarrow \infty} a_n \neq 0$ et la série diverge.
+
+Nous aurions aussi pu dire que la série est une série géométrique de
+raison $49/25 > 1$.  Comme la raison est plus grande que $1$ en valeur
+absolue, la série diverge.
+\end{egg}
+
+\begin{egg}
+Démontrons que la série
+$\displaystyle \sum_{n=1}^\infty \arctan(n)$ diverge.
+
+Les termes de la série sont $\displaystyle a_n = \arctan(n)$.
+Puisque $\lim_{n\rightarrow \infty} a_n = \pi/2 \neq 0$, la série diverge.
+\end{egg}
+
+La théorème suivant est une conséquence du théorème~\ref{suiteBORN}.
+
+\begin{focus}[][Test de comparaison]{\thm} \label{comp_theo}
+Soit $\displaystyle \{a_n\}_{n=1}^\infty$ et
+$\displaystyle \{b_n\}_{n=1}^\infty$, deux suites de termes positifs
+ou nuls.
+\begin{enumerate}
+\item Si la série $\displaystyle \sum_{n=1}^\infty b_n$ converge et
+$a_n\leq b_n$ pour tout $n$, alors $\displaystyle \sum_{n=1}^\infty a_n$
+converge.
+\item Si la série $\displaystyle \sum_{n=1}^\infty b_n$ diverge et
+$a_n\geq b_n$ pour tout $n$, alors $\displaystyle \sum_{n=1}^\infty a_n$
+diverge.
+\end{enumerate}
+\end{focus}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{n}{\sqrt{n^5+1}}$
+converge car
+\[
+\frac{n}{\sqrt{n^5+1}} < \frac{1}{n^{3/2}} \quad , \quad n=1,2,3,\ldots
+\]
+et la série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^{3/2}}$
+converge grâce à la proposition~\ref{Pseries} avec $p = 3/2 > 1$.
+
+La série $\displaystyle \sum_{n=1}^\infty \frac{2}{1+n^{1/3}}$ diverge car
+\[
+\frac{2}{1+n^{1/3}} \geq \frac{2}{n^{1/3}+n^{1/3}} =\frac{1}{n^{1/3}}
+\quad , \quad n=1, 2, 3,\ldots
+\]
+et la série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^{1/3}}$ diverge grâce
+à la proposition~\ref{Pseries} avec $p =1/3 < 1$.
+\end{egg}
+
+\begin{egg}
+Déterminons si la séries $\displaystyle \sum_{n=1}^\infty \frac{1}{n 3^n}$
+converge ou diverge.
+
+Puisque $\displaystyle 0 < \frac{1}{n 3^n} \leq \frac{1}{3^n}$
+pour tout $n>0$ et $\displaystyle \sum_{n=1}^\infty \frac{1}{3^n}$
+converge (série géométrique de raison $1/3$), nous en déduisons à partir du
+test de comparaison que $\displaystyle \sum_{n=1}^\infty \frac{1}{n 3^n}$
+converge.
+\end{egg}
+
+\begin{egg}
+Déterminons si la série $\displaystyle \sum_{n=1}^\infty \frac{1}{5n^4 + 4}$
+converge ou diverge.
+
+Puisque $\displaystyle 0 < \frac{1}{5n^4 + 4} \leq \frac{1}{5n^4}$ pour
+tout $n>0$ et $\displaystyle \sum_{n=1}^\infty \frac{1}{5n^4}$
+est une série convergente (proposition~\ref{Pseries} avec $p = 4>1$), nous
+obtenons du test de comparaison que
+$\displaystyle \sum_{n=1}^\infty \frac{1}{5n^4 + 4}$ converge.
+\end{egg}
+
+\begin{egg}
+Déterminons si la série
+$\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}$
+converge ou diverge.
+
+Nous avons que
+\[
+\frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}
+= \frac{n^{3/2}(1+2/n^3)^{1/2}}{n^{5/3}(5+1/n)^{1/3}}
+= \frac{(1+2/n^3)^{1/2}}{n^{1/6}(5+1/n)^{1/3}}
+\geq \frac{1}{6^{1/3} n^{1/6}} \ .
+\]
+pour tout $n>0$ car $1 + 2/n^3 > 1$ et $5+1/n < 6$ pour tout $n>0$.
+De plus, $\displaystyle \sum_{n=1}^\infty \frac{1}{6^{1/3} n^{1/6}}
+= \frac{1}{6^{1/3}} \sum_{n=1}^\infty \frac{1}{n^{1/6}}$
+est une série qui diverge grâce à la proposition~\ref{Pseries} avec
+$p=1/6 <1$, nous en
+déduisons à partir du test de comparaison que
+$\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}$
+diverge.
+\end{egg}
+
+\begin{focus}[][Test de comparaison à la limite]{\thm}
+Soit $\displaystyle \{a_n\}_{n=1}^\infty$ et
+$\displaystyle \{b_n\}_{n=1}^\infty$, deux suites de termes positifs.
+\begin{enumerate}
+\item Si $\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = c
+\in ]0,\infty[$, alors la série $\displaystyle \sum_{n=1}^\infty a_n$
+converge si et seulement si la séries 
+$\displaystyle \sum_{n=1}^\infty b_n$ converge.
+\item \label{compLT_lbl1}
+Si $\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = 0$, alors
+$\displaystyle \sum_{n=1}^\infty b_n$ converge implique que
+$\displaystyle \sum_{n=1}^\infty a_n$ converge.
+\end{enumerate}
+\label{comp_lim_theo}
+\end{focus}
+
+\begin{rmkList}
+\begin{enumerate}
+\item L'énoncer de l'item~\ref{compLT_lbl1} du
+théorème~\ref{comp_lim_theo} peut être reformulé de la façon
+suivante.  Si
+$\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = 0$, alors 
+$\displaystyle \sum_{n=1}^\infty a_n$ diverge implique que
+$\displaystyle \sum_{n=1}^\infty b_n$ diverge.
+\item Si $\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = \infty$,
+il suffit d'inverser les rôles de $a_n$ et $b_n$ pour pouvoir utiliser
+l'item~\ref{compLT_lbl1} du théorème~\ref{comp_lim_theo}.
+\end{enumerate}
+\end{rmkList}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{1}{1+3^n}$ converge
+car la série $\displaystyle \sum_{n=1}^\infty \frac{1}{3^n}$ converge
+(c'est une série géométrique de raison $1/3$) et
+\[
+\lim_{n\rightarrow \infty} \frac{1/3^n}{1/(1+3^n)} 
+= \lim_{n\rightarrow \infty} \left( 1 + \frac{1}{3^n}\right) 
+= 1 + \lim_{n\rightarrow \infty}\frac{1}{3^n} = 1 \in ]0,\infty[ \; .
+\]
+
+Par contre, la série $\displaystyle \sum_{n=1}^\infty \frac{\ln(n)}{\sqrt{n}}$
+diverge car la série $\displaystyle \sum_{n=1}^\infty \frac{1}{\sqrt{n}}$
+diverge (le cas $p=1/2$ de la proposition~\ref{Pseries}) et
+\[
+\lim_{n\rightarrow \infty} \frac{1/\sqrt{n}}{\ln(n)/\sqrt{n}} 
+= \lim_{n\rightarrow \infty} \frac{1}{\ln(n)} = 0
+\]
+où nous supposons que $n>1$ pour ne pas avoir de division par zéro.
+\end{egg}
+
+\begin{focus}[][Test de d'Alembert ou du quotient]{\thm} \label{Alembert}
+Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série de termes
+positifs.  Si la suite $\displaystyle \left\{ \frac{a_{n+1}}{a_n}
+\right\}_{n=1}^\infty$ converge et
+$\displaystyle L = \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n}$
+($L$ peut être $+\infty$), alors
+\begin{enumerate}
+\item la série $\displaystyle \sum_{n=1}^\infty a_n$ converge si $L<1$ et
+\item la série $\displaystyle \sum_{n=1}^\infty a_n$ diverge si $L>1$.
+\end{enumerate}
+\end{focus}
+
+\begin{rmk}
+Si $L=1$ au théorème précédent, nous ne pouvons rien dire au sujet de la
+série $\displaystyle \sum_{n=1}^\infty a_n$.
+
+Par exemple, les séries $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$
+et $\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ satisfont
+$\displaystyle \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n} = 1$.
+La première série diverge (c'est la série harmonique) alors que la
+deuxième série converge (c'est le cas $p=2$ de la
+proposition~\ref{Pseries}).
+\label{dAlembert1}
+\end{rmk}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty a_n$ avec
+$\displaystyle a_n = \frac{(n+2)5^n}{n 4^{3n}}$ converge car
+\begin{align*}
+\lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n} &=
+\lim_{n\rightarrow \infty} \left( \frac{(n+3)5^{n+1}}{(n+1) 4^{3(n+1)}}
+\right) \left( \frac{(n+2)5^n}{n 4^{3n}} \right)^{-1} \\
+&=\lim_{n\rightarrow \infty} \frac{5(n^2+3n)}{4^3(n^2+3n+2)}
+=\lim_{n\rightarrow \infty} \frac{5(1+3/n)}{4^3(1+3/n+2/n^2)}
+= \frac{5}{4^3} < 1 \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Montrons que la série
+$\displaystyle \sum_{n=1}^\infty \frac{n!}{(2n+1)!}$ converge.
+
+Le nombre $n!$,
+{\bfseries prononcé $\mathbf n$ factoriel}\index{Factoriel},
+est le nombre défini par $n! = n(n-1)(n-2)\ldots 1$
+si $n$ est un entier positif et $n! = 1$ si $n=0$.
+
+Utilisons le test de d'Alembert pour démontrer que cette
+série converge.   Nous avons la série $\displaystyle \sum_{n=1}^\infty a_n$ où
+$\displaystyle a_n = \frac{n!}{(2n+1)!}$.  Puisque
+\begin{align*}
+\lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n}
+&= \lim_{n\rightarrow \infty} \frac{(n+1)!}{(2(n+1)+1)!}
+\left(\frac{n!}{(2n+1)!}\right)^{-1}
+= \lim_{n\rightarrow \infty}
+\frac{(n+1)!}{n!}\;\frac{(2n+1)!}{(2n+3)!} \\
+&= \lim_{n\rightarrow \infty} \frac{n+1}{(2n+2)(2n+3)}
+= \lim_{n\rightarrow \infty} \frac{1/n + 1/n^2}{4 + 10/n + 6/n^2} = 0
+<1 \; ,
+\end{align*}
+la série converge.
+\end{egg}
+
+\begin{egg}
+Déterminons si la série
+$\displaystyle \sum_{n=1}^\infty \frac{n^n}{(2n)!}$ converge ou diverge.
+
+Utilisons le test du quotient.  Puisque
+\begin{align*}
+\lim_{n\to\infty} \left(\frac{(n+1)^{n+1}}{(2(n+1))!}\right)
+\left(\frac{n^n}{(2n)!}\right)^{-1}
+& = \lim_{n\to\infty} \left( 1 + \frac{1}{n}\right)^n
+\frac{n+1}{(2n+1)(2n+2)}  \\
+& = \lim_{n\to\infty} \left( 1 + \frac{1}{n}\right)^n
+\frac{1/n + 1/n^2}{(4 + 6/n + 2/n^2}  \\
+& = e \times 0 = 0 < 1 \ ,
+\end{align*}
+la série $\displaystyle \sum_{n=1}^\infty \frac{n^n}{(2n)!}$ converge.
+
+Le fait que
+$\displaystyle \lim_{n\to\infty} \left( 1 + \frac{1}{n}\right)^n = e$
+provient du théorème~\ref{limitDefe} que nous verrons prochainement.
+\end{egg}
+
+\begin{focus}[][Test de la racine]{\thm} \label{roottest}
+Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série de termes
+positifs.  Si la suite
+$\displaystyle \left\{ \sqrt[n]{a_n} \right\}_{n=1}^\infty$ converge
+et $\displaystyle L = \lim_{n\rightarrow \infty} \sqrt[n]{a_n}$
+($L$ peut être $+\infty$), alors
+\begin{enumerate}
+\item la série $\displaystyle \sum_{n=1}^\infty a_n$ converge si $L<1$ et
+\item la série $\displaystyle \sum_{n=1}^\infty a_n$ diverge si $L>1$.
+\end{enumerate}
+\end{focus}
+
+\begin{rmk}
+Comme pour le Test de d'Alembert, nous ne pouvons rien dire au sujet
+de la série
+$\displaystyle \sum_{n=1}^\infty a_n$ si $L=1$ dans le théorème précédent. 
+
+Par exemple, si nous utilisons le fait que la suite
+$\{ \sqrt[n]{n} \}_{n=1}^\infty$ tend vers $1$, nous pouvons
+facilement montrer que les séries
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ et
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ satisfont
+$\displaystyle \lim_{n\rightarrow \infty} \sqrt[n]{a_n} = 1$.
+Comme à la remarque~\ref{dAlembert1}, la première série diverge alors
+que la deuxième série converge.
+\end{rmk}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=2}^\infty a_n$ avec
+$\displaystyle a_n = \frac{1}{(\ln(n))^n}$ converge car
+\[
+\lim_{n\rightarrow \infty} \sqrt[n]{\frac{1}{(\ln(n))^n}} =
+\lim_{n\rightarrow \infty} \sqrt[n]{\left(\frac{1}{\ln(n)}\right)^n} =
+\lim_{n\rightarrow \infty} \frac{1}{\ln(n)} = 0 < 1 \; .
+\]
+\end{egg}
+
+Un autre test pour déterminer si une série de termes positifs converge
+est le {\em test de l'intégrale}.  Ce test sera présenté à la
+section~\ref{integralTest} du chapitre sur les applications de
+l'intégrale d'une fonction.
+
+\subsection{Convergence absolue et séries alternées \eng}\label{serie_alt}
+
+Jusqu'à maintenant, la majorité des séries que nous avons considérées
+ne possédaient que des termes positifs.  Nous allons maintenant
+étudier un type particulier de séries avec des termes positifs et
+négatifs.
+
+\begin{focus}{\dfn} \index{Série!alternée}
+La série $\displaystyle \sum_{n=1}^\infty a_n$ est une
+{\bfseries série alternée} si $a_n a_{n+1} < 0$
+pour tout $n$.
+\end{focus}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ est une
+série alternée.  C'est une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n$ où
+$\displaystyle a_n = \frac{(-1)^n}{n}$.  Ainsi,
+$a_n >0$ pour $n$ pair et $a_n <0$ pour $n$ impair.  Nous avons
+\[
+\sum_{n=1}^\infty \frac{(-1)^n}{n} = -1 + \frac{1}{2} - \frac{1}{3} +
+\frac{1}{4} - \ldots
+\]
+\end{egg}
+
+\begin{focus}[][Test des séries alternées]{\thm}
+Si la série $\displaystyle \sum_{n=1}^\infty (-1)^n a_n$ satisfait les
+conditions suivantes alors elle converge.
+\begin{enumerate}
+\item $a_n >0$ pour tout $n$,
+\item $a_{n+1} \leq a_n$ pour tout $n$ et
+\item $\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
+\end{enumerate}
+De plus, les sommes partielles
+$\displaystyle S_n = \sum_{k=1}^n (-1)^k a_k$ satisfont la relation
+\begin{equation}\label{altError}
+ | S - S_n | \leq a_{n+1}
+\end{equation}
+où $\displaystyle S = \lim_{n\rightarrow \infty} S_n
+= \sum_{n=1}^\infty (-1)^n a_n$.
+\label{altTest}
+\end{focus}
+
+\begin{proof}[\theory]
+Nous démontrons ce théorème car la démonstration nous permet de mieux
+comprendre la relation (\ref{altError}).
+
+Puisque $S_{2(k+1)} - S_{2k} = a_{2k+2} - a_{2k-1} \leq 0$ pour tout
+$k\geq 1$, nous obtenons
+\begin{equation}\label{alt1}
+S_{2(k+1)} \leq S_{2k} \quad , \quad k\geq 1 \ .
+\end{equation}
+Donc
+\[
+\ldots \leq S_6 \leq S_4 \leq S_2 \; .
+\]
+De même, puisque $S_{2k+1} - S_{2k-1} = a_{2k} - a_{2k+1} \geq 0$ pour
+tout $k\geq 1$, nous obtenons
+\begin{equation}\label{alt2}
+S_{2k+1} \geq S_{2k-1} \quad , \quad  k\geq 1 \ .
+\end{equation}
+Donc
+\[
+S_1 \leq S_3 \leq S_5 \leq \ldots
+\]
+De plus
+\begin{equation}\label{alt3}
+S_{2k-1} \leq S_{2k-1} + a_{2k} = S_{2k} \quad , \quad k \geq 1 \ .
+\end{equation}
+
+Nous déduisons de (\ref{alt1}), (\ref{alt2}) et (\ref{alt3}) que
+\begin{equation}\label{alt4}
+S_q \leq S_p
+\end{equation}
+pour $p$ pair et $q$ impair.  En effet, si $q < p$, alors
+\[
+S_p \geq S_{p-1} \geq S_q \; .
+\]
+La première inégalité provient de (\ref{alt3}) et la deuxième de
+(\ref{alt2}).  Si par contre $q>p$, alors
+\[
+S_q \leq S_{q+1} \leq S_p \; .
+\]
+La première inégalité provient de (\ref{alt3}) et la deuxième de
+(\ref{alt1}).
+
+Puisque la suite $\{S_{2k}\}_{k=1}^\infty$ est décroissante et bornée
+inférieurement par $S_q$ où $q$ est impair, il découle du
+théorème~\ref{suiteBORN} que cette suite converge.  Soit
+\[
+B = \lim_{k\rightarrow \infty} S_{2k} \; .
+\]
+De même, puisque la suite $\{S_{2k-1}\}_{k=1}^\infty$ est croissante et
+bornée supérieurement par $S_p$ où $p$ est pair, il découle du
+théorème~\ref{suiteBORN} que cette suite converge.  Soit
+\[
+A = \lim_{k\rightarrow \infty} S_{2k-1} \; .
+\]
+Puisque $B \geq S_q$ pour tout $q$ impair grâce à (\ref{alt4}), nous
+déduisons que $B \geq A$.
+% De même, nous avons $A \leq S_p$ pour tout $p$ pair grâce à (\ref{alt4}).
+
+Puisque la suite $\{S_{2k-1}\}_{k=1}^\infty$ tend vers $A$ et la
+suite $\{S_{2k}\}_{k=1}^\infty$ tend vers $B$, nous avons que
+\[
+B-A = \lim_{k\rightarrow \infty} S_{2k} - \lim_{k\rightarrow \infty} S_{2k-1}
+= \lim_{k\rightarrow \infty} \left( S_{2k} - S_{2k-1} \right)
+= \lim_{k\rightarrow \infty} a_{2k} =0 \; .
+\]
+grâce à la troisième hypothèse du théorème.
+
+Pour résumé, si nous posons $S=A=B$, nous avons montré que
+\[
+S_1 \leq S_3 \leq S_5 \leq \ldots \leq S \leq \ldots \leq S_6 \leq S_4
+\]
+et
+\[
+\sum_{n=1}^\infty (-1)^n a_n = \lim_{n\rightarrow \infty} S_n = S \; .
+\]
+
+Nous avons maintenant tous les ingrédients nécessaires pour démontrer la
+relation (\ref{altError}).  Il découle de $S_{2k-1} \leq S \leq S_{2k}$
+que
+\[
+0 \leq S - S_{2k-1} \leq S_{2k} - S_{2k-1} = a_{2k} \; .
+\]
+Ainsi, $|S- S_n| \leq a_{n+1}$ lorsque $n$ est impair.  De même, il
+découle de $S_{2k+1} \leq S \leq S_{2k}$ que
+\[
+0 \geq S - S_{2k} \geq S_{2k+1} - S_{2k} = -a_{2k+1} \; .
+\]
+Ainsi, $|S-S_n| \leq a_{n+1}$ lorsque $n$ est pair.  Nous avons donc démontré
+(\ref{altError}).  Nous retrouvons à la figure~\ref{ALTERN} une
+représentation graphique du raisonnement que nous venons de faire.
+\end{proof}
+
+\PDFfig{3_suites_series/alterned}{Représentation graphique de l'erreur
+$|S_n-S|$ pour une série alternée}{Pour la série alternée du
+théorème~\ref{altTest}, si nous utilisons $S_n$ pour estimer la valeur
+$S$, l'erreur $|S_n - S|$ commisse est plus petite ou égale à
+$a_{n+1}$}{ALTERN}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge
+car c'est une série alternée avec $a_n = 1/n$ qui satisfait les trois
+hypothèses du test des séries alternées.
+\end{egg}
+
+\begin{egg}
+Montrons que la série
+$\displaystyle \sum_{n=1}^\infty (-1)^{n-1}\frac{n}{n^2+1}$ converge,
+puis cherchons une petite valeur $N$ telle que
+$|S_n - S|< 10^{-3}$ si $n\geq N$ où $S_n$ est la $n^e$ somme
+partielle de la série et $S$ est la somme de la série.
+
+Nous avons
+\[
+\sum_{n=1}^\infty (-1)^{n-1}\frac{n}{n^2+1} =
+-\sum_{n=1}^\infty (-1)^n\frac{n}{n^2+1}
+\]
+où la série de droite est une série alternée avec $a_n = n/(n^2+1)$.
+Puisque $a_n = n/(n^2+1) >0$,
+\[
+\lim_{n\rightarrow \infty} a_n =
+\lim_{n\rightarrow \infty} \frac{n}{n^2+1} =
+\lim_{n\rightarrow \infty} \frac{1/n}{1+1/n^2} = 0
+\]
+et
+\begin{equation}\label{inequAlt}
+a_{n+1} < a_n
+\end{equation}
+pour tout $n$, la série
+$\displaystyle \sum_{n=1}^\infty (-1)^n\frac{n}{n^2+1}$ et
+donc la série
+$\displaystyle \sum_{n=1}^\infty (-1)^{n-1}\frac{n}{n^2+1}$ converge.
+Notons que (\ref{inequAlt}) provient de la relation
+\[
+(n+1)(n^2+1) = n^3 + n^2 + n + 1 < n^3 +2n^2 + n + n = n( (n+1)^2+1)
+\]
+pour tout $n\geq 1$.
+
+Pour déterminer $N$ tel que $|S_n - S |<10^{-3}$ pour tout $n\geq N$,
+il suffit de trouver $n$ tel que $|S_n - S |< a_{n+1} < 10^{-3}$.
+Pour simplifier les calculs, nous choisissons $n$ tel que
+\[
+a_{n+1} = \frac{n+1}{(n+1)^2+1} < \frac{1}{n+1} < 10^{-3}
+\]
+et résolvons pour $n$ pour trouver $n > 10^3-1$.  Il suffit de
+prendre $N=10^3$.
+\end{egg}
+
+D'autres applications du test des séries alternées sont données à
+l'exemple~\ref{deriveAlt} dans le chapitre sur les applications de la
+dérivée d'une fonction.
+
+\begin{focus}{\dfn}
+Une série de termes réels $\displaystyle \sum_{n=1}^\infty a_n$
+{\bfseries converge absolument}\index{Série!convergence absolue}
+si la série de termes positifs $\displaystyle \sum_{n=1}^\infty |a_n|$
+converge.
+
+Si la série $\displaystyle \sum_{n=1}^\infty a_n$ converge mais la
+série $\displaystyle \sum_{n=1}^\infty |a_n|$ diverge, nous disons que la
+série $\displaystyle \sum_{n=1}^\infty a_n$
+{\bfseries converge conditionnellement}.\index{Série!convergence conditionnelle}
+\end{focus}
+
+\begin{rmk}
+Le Test de comparaison, théorème~\ref{comp_theo},
+le Test de comparaison à la limite, théorème~\ref{comp_lim_theo},   
+le Test de d'Alembert ou du quotient, théorème~\ref{Alembert}, et le
+Test de la racine, théorème~\ref{roottest}, peuvent être utilisés pour
+déterminer la convergence absolue d'une série.
+\end{rmk}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge
+car elle satisfait le test des séries alternées.  Par contre, la série
+\[
+\sum_{n=1}^\infty \left|\frac{(-1)^n}{n}\right| =
+\sum_{n=1}^\infty \frac{1}{n}
+\]
+est la série harmonique qui diverge.  La série
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge donc
+conditionnellement.
+\end{egg}
+
+Comme nous venons de le voir à l'exemple précédent, nous pouvons avoir une
+série qui converge mais qui ne converge pas absolument.  L'inverse
+n'est pas possible.
+
+\begin{focus}{\thm}
+Si une série converge absolument alors elle converge.
+\end{focus}
+
+\begin{proof}[\theory]
+Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série qui converge
+absolument.  Posons $b_n = a_n + |a_n|$ pour $n\geq 1$.
+Remarquons que
+\[
+b_n = \begin{cases}
+0 & \quad \text{pour}\quad  a_n<0 \\
+2 a_n & \quad \text{pour}\quad  a_n \geq 0
+\end{cases}
+\]
+et $b_n - |a_n| = a_n$ pour tout $n\geq 1$.
+
+Puisque la série $\displaystyle \sum_{n=1}^\infty |a_n|$ converge, il
+en est de même pour la
+série $\displaystyle \sum_{n=1}^\infty 2 |a_n|$.  De 
+plus, puisque $0 \leq b_n \leq 2 |a_n|$ pour tout $n\geq 1$ et la
+série $\displaystyle \sum_{n=1}^\infty 2 |a_n|$ converge, nous avons par le
+test de comparaison que la série $\displaystyle \sum_{n=1}^\infty b_n$
+converge.
+
+Finalement, puisque les séries $\displaystyle \sum_{n=1}^\infty |a_n|$
+et $\displaystyle \sum_{n=1}^\infty b_n$ convergent, la série
+$\displaystyle \sum_{n=1}^\infty (b_n - |a_n|) = \sum_{n=1}^\infty a_n$
+converge.
+\end{proof}
+
+\begin{egg}
+La série $\displaystyle \sum_{n=1}^\infty \frac{\sin(n)}{n^3}$
+converge car elle converge absolument.  En effet,
+\[
+0 \leq \left| \frac{\sin(n)}{n^3} \right|
+= \frac{|\sin(n)|}{n^3} \leq \frac{1}{n^3}
+\]
+et la série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$ converge
+grâce à la proposition~\ref{Pseries}.  Il découle du test de comparaison
+que la série
+$\displaystyle \sum_{n=1}^\infty \left| \frac{\sin(n)}{n^3} \right|$
+converge.
+\end{egg}
+
+\section{Le nombre $\mathbf{e}$ et la fonction $\mathbf{e^x}$}\label{nbrE}
+
+% Bug in tcolorbox : The text before the box is needed.
+
+Voici la première définition rigoureuse du nombre $e$.  Une autre
+définition équivalente à celle-ci sera donné au chapitre sur les
+séries entières.
+
+\begin{focus}{\thm}
+La suite
+$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$ 
+converge.  Sa limite est définie comme étant le {\bfseries nombre
+d'Euler}\index{Nombre d'Euler}
+\[
+e=2.718281828459\ldots
+\]
+\label{limitDefe}
+\end{focus}
+
+\begin{proof}[\theory]
+Pour démontrer que cette limite existe, nous utilisons la formule
+suivante, connue sous le nom de
+{\bfseries formule du binôme}\index{formule du binôme}, 
+qui permet de développer une expression de la forme $(a+b)^n$ où $n$
+est un entier positif.
+\[
+(a+b)^n = a^n + n a^{n-1}b + \frac{n(n-1)}{2}a^{n-2}b^2 + \ldots
++ n a b^{n-1} + b^n \\
+= \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
+\]
+où $\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+
+Par exemple, $\displaystyle (a+b)^2 = a^2 + 2ab + b^2$
+et $\displaystyle (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+
+Montrons que la suite
+$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$ 
+converge.
+
+Premièrement, nous montrons que la suite est bornée supérieurement.  Grâce
+à la formule du binôme, nous avons
+\[
+\left( 1 + \frac{1}{n} \right)^n = \sum_{k=0}^n \binom{n}{k}
+\left(\frac{1}{n}\right)^k \; .
+\]
+Puisque
+\begin{align*}
+\binom{n}{k} \left(\frac{1}{n}\right)^k
+&= \frac{n(n-1)(n-2)\ldots(n-k+1)}{k!}\left(\frac{1}{n}\right)^k \\
+&= \frac{1}{k!}\left(1-\frac{1}{n}\right)\left(1 - \frac{2}{n}\right)\ldots
+\left(1-\frac{k-1}{n}\right)
+< \frac{1}{k!}
+\end{align*}
+pour $1\leq k \leq n$ et
+\[
+\frac{1}{k!} = \frac{1}{1\times 2\times 3\times \ldots\times k} \leq
+\frac{1}{\underbrace{2\times 2 \times 2 \ldots \times 2}_{k-1\text{ fois}}}
+ = \frac{1}{2^{k-1}}
+\]
+pour $1\leq k \leq n$, nous avons que
+\[
+\left( 1 + \frac{1}{n} \right)^n 
+= 1 + \sum_{k=1}^n \binom{n}{k} \left(\frac{1}{n}\right)^k
+\leq 1 + \sum_{k=1}^n \frac{1}{2^{k-1}}
+< 1 + \sum_{k=0}^\infty \left(\frac{1}{2}\right)^k
+= 1 + \frac{1}{1-1/2} = 3 \; .
+\]
+
+Deuxièmement, montrons que la suite
+$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$
+est croissante.  Nous avons que
+\begin{align*}
+\left(1+\frac{1}{n+1}\right)^{n+1}\bigg/
+\left(1+\frac{1}{n}\right)^n
+&= \left( \left(1+\frac{1}{n+1}\right)\left(\frac{n}{n+1}\right) \right)^n
+\left(1+\frac{1}{n+1}\right) \\
+&= \left( \frac{n^2+2n}{(n+1)^2} \right)^n
+\left(1+\frac{1}{n+1}\right) \\
+&= \left(1- \frac{1}{(n+1)^2} \right)^n \left(1+\frac{1}{n+1}\right) \; .
+\end{align*}
+De plus, il découle de la formule du binôme que
+\begin{align*}
+\left(1- \frac{1}{(n+1)^2} \right)^n &=
+1 - \frac{n}{(n+1)^2} + \underbrace{\frac{n(n-1)}{2(n-1)^4} -
+\frac{n(n-1)(n-2)}{3!(n-1)^6}}_{>0} + \ldots \\
+& + \underbrace{\frac{n}{(n-1)^{2(n-1)}} - \frac{1}{(n-1)^{2n}}}_{>0}
+> 1 - \frac{n}{(n+1)^2}
+\end{align*}
+si $n$ est impair et
+\begin{align*}
+\left(1- \frac{1}{(n+1)^2} \right)^n &=
+1 - \frac{n}{(n+1)^2} + \underbrace{\frac{n(n-1)}{2(n-1)^4} -
+\frac{n(n-1)(n-2)}{3!(n-1)^6}}_{>0} + \ldots \\
+&+ \underbrace{\frac{n(n-1)}{2(n-1)^{2(n-2)}} -
+\frac{n}{(n-1)^{2(n-1)}}}_{>0} + \underbrace{\frac{1}{(n-1)^{2n}}}_{>0}
+> 1 - \frac{n}{(n+1)^2}
+\end{align*}
+si $n$ est pair.  Ainsi,
+\begin{align*}
+\left(1+\frac{1}{n+1}\right)^{n+1}\bigg/
+\left(1+\frac{1}{n}\right)^n
+&> \left(1 - \frac{n}{(n+1)^2}\right)\left(1+\frac{1}{n+1}\right) \\
+&= \frac{n^3+3n^3+3n+2}{n^3+3n^2+3n+1}>1 \; .
+\end{align*}
+La convergence de la série
+$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$
+est donc une conséquence du théorème~\ref{suiteBORN}
+\end{proof}
+
+\begin{rmk}
+Une autre façon équivalente de définir le nombre $e$ est donnée
+lors de l'étude de la dérivée de fonctions exponentielles.
+\end{rmk}
+
+\begin{rmk}[\theory]
+Comme nous avons annoncé à la section~\ref{cerclevicieux},
+une définition simple de $b^x$ pour $b\in]0,\infty[$ et $x\in \RR$, et
+en particulier de $e^x$, sera donnée à la section~\ref{DEFofE}. 
+Cette définition fera appel aux séries.
+\end{rmk}
+
+\begin{egg}
+Évaluons la limite de la suite
+$\displaystyle \left\{\frac{n\,e^{-n}}{n+1}\right\}_{n=1}^\infty$.
+
+Pour ce faire, nous remarquons que la suite
+$\displaystyle \{ e^{-n} \}_{n=1}^\infty$ tend vers $0$ car c'est le
+cas $0< r = e^{-1}<1$ du théorème~\ref{suite1}.  Il est aussi facile
+de voir à partir du graphe de la fonction exponentielle $f(x)=e^x$
+à la figure~\ref{exp_N} que la limite de la suite
+$\displaystyle \{ e^{-n}\}_{n=1}^\infty$ est $0$. 
+
+Nous pouvons alors conclure que la limite de la suite
+$\displaystyle \left\{\frac{n\,e^{-n}}{n+1}\right\}_{n=1}^\infty$ est
+aussi $0$ car
+\[
+\lim_{n\rightarrow \infty} \frac{n\, e^{-n}}{n+1}
+= \lim_{n\rightarrow \infty} \left( \frac{e^{-n}}{1+1/n} \right)
+= \frac{\displaystyle \lim_{n\rightarrow \infty} e^{-n}}
+{\displaystyle \lim_{n\rightarrow \infty} \left(1 + 1/n\right)}
+= \frac{\displaystyle \lim_{n\rightarrow \infty} e^{-n}}
+{\displaystyle 1 + \lim_{n\rightarrow \infty} (1/n)}
+= \frac{0}{1+0} = 0 \; .
+\]
+\end{egg}
+
+\PDFfig{3_suites_series/exp_n}{La suite $\{e^{-n}\}_{n=1}^\infty$}
+{La suite $\{e^{-n}\}_{n=1}^\infty$ tend vers $0$}{exp_N}
+
+\begin{egg}
+Évaluons la limite
+$\displaystyle \lim_{n\rightarrow \infty} \frac{e^{-n}}{n^2}$.
+
+Comme à l'exemple précédent, nous avons que la suite
+$\displaystyle \{ e^{-n} \}_{n=1}^\infty$ tend vers $0$.  De plus, la
+suite $\displaystyle \{ 1/n^2 \}_{n=1}^\infty$ tend aussi vers $0$
+(le cas $r=2>0$ du théorème~\ref{suite2}).  Ainsi, grâce au
+théorème~\ref{suite3},
+\[
+\lim_{n\rightarrow \infty} \frac{e^{-n}}{n^2}
+= \left(\lim_{n\rightarrow \infty} e^{-n} \right)
+\left(\lim_{n\rightarrow \infty} \frac{1}{n^2}\right) = 0\times 0 = 0 \; .
+\]
+\end{egg}
+
+\begin{rmk}[\theory]
+En analyse réel, dont fait partie le calcul différentielle et intégral,
+la fonction $e^z$ et les fonctions $\sin(z)$ et $\cos(z)$ font parties
+de deux familles de fonctions que l'on étudie séparément.  Par contre,
+en analyse complexe, la fonction $e^z$ et les fonctions $\sin(z)$ et
+$\cos(z)$ sont intimement reliées.  Donc, les nombres $e$ et $\pi$
+sont intimement reliés.  C'est un sujet fascinant pour les  
+étudiant.e.s qui poursuivront leurs études en mathématique.
+\end{rmk}
+
+\subsection{Fonctions hyperboliques \eng}
+
+Le but de cette section est de fournir une brève description des
+fonctions hyperboliques pour ceux qui poursuivront des études plus
+avancées des mathématiques pour l'ingénierie.  Ces fonctions ne
+joueront aucun rôle dans le reste de ce manuel.
+
+Les {\bfseries fonctions hyperboliques} \index{Fonctions hyperboliques}
+sont:
+\begin{enumerate}
+\item le sinus hyperbolique $\displaystyle \sinh(x) = \frac{e^x - e^{-x}}{2}$
+pour $x\in \RR$,
+\item le cosinus hyperbolique $\displaystyle \cosh(x) = \frac{e^x + e^{-x}}{2}$
+pour $x\in \RR$,
+\item la tangente hyperbolique $\displaystyle
+\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} = \frac{\sinh(x)}{\cosh(x)}$
+pour $x\in \RR$,
+\item la cotangente hyperbolique $\displaystyle
+\coth(x) = \frac{e^x + e^{-x}}{e^x - e^{-x}} = \frac{\cosh(x)}{\sinh(x)}$
+pour $x\in \RR\setminus \{0\}$,
+\item la sécante hyperbolique $\displaystyle
+\sech(x) = \frac{2}{e^x + e^{-x}} = \frac{1}{\cosh(x)}$ pour $x\in \RR$, et
+\item la cosécante hyperbolique $\displaystyle
+\csch(x) = \frac{2}{e^x - e^{-x}} = \frac{1}{\sinh(x)}$ pour
+pour $x\in \RR\setminus\{0\}$.
+\end{enumerate}
+Ces fonctions sont fréquemment utilisées en ingénierie.  Le graphe du
+sinus hyperbolique et celui du cosinus hyperbolique sont donnés à la
+figure~\ref{trigHyper}
+
+\PDFfig{3_suites_series/trigHyper}{Le graphe du sinus et du
+cosinus hyperbolique}{Le graphe du sinus hyperbolique et du
+cosinus hyperbolique}{trigHyper}
+
+Les fonctions hyperboliques n'apportent rien de nouveau du point de
+vue des mathématiques puisqu'elles proviennent de formules algébriques
+en termes des fonctions exponentielles $e^x$ et $e^{-x}$.  Il n'en
+reste pas moins qu'elle permettent de présenter plusieurs résultats de
+façon élégante.
+
+Les fonctions hyperboliques satisfont les identités suivantes:
+$\displaystyle \sinh(-x) = -\sinh(x)$ (fonction impaire),
+$\displaystyle \cosh(-x) = \cosh(x)$ (fonction paire),
+$\displaystyle \cosh^2(x) - \sinh^2(x) = 1$,
+$\displaystyle \sinh(x+y) = \sinh(x) \cosh(y) + \cosh(x)\sinh(y)$ et
+biens d'autres.  Elles satisfont donc des identités semblables à
+celles satisfaites par les fonctions trigonométriques.
+
+Finalement, pour chaque fonction hyperbolique, nous pouvons définir une
+fonction inverse.  Par exemple, la fonction $\sinh^{-1}$ est définie
+par $\displaystyle \sinh^{-1}(x) = \ln(x+\sqrt{x^2+1})$ pour
+$x\in \RR$.  En effet,
+\[
+y = \sinh^{-1}(x)  \Leftrightarrow y = \frac{e^x - e^{-x}}{2} 
+\Leftrightarrow e^x- 2y - e^{-x} = 0 \Leftrightarrow
+e^{2x}-2y e^x - 1 = 0 \ .
+\]
+C'est un polynôme de degré deux en $e^x$.  Donc, si nous utilisons la
+formule pour trouver les racines d'une polynôme de degré deux, nous
+obtenons
+\[
+e^x = \frac{2y + \sqrt{4y^2 +4}}{2} = y +\sqrt{y^2+1} \ .
+\]
+Nous ne pouvons pas utiliser la formule
+$\displaystyle \frac{2y - \sqrt{4y^2 +4}}{2} = y -\sqrt{y^2+1}$ car elle
+donne une valeurs négatives alors que $e^x >0$.  Nous avons donc
+que $x = \ln(y+\sqrt{y^2+1})$ pour $y\in \RR$.  Pour respecter la
+tradition qui veut que $y$ soit une fonction de $x$, nous échangeons
+les rôles de $x$ et $y$ pour obtenir
+$y = \sinh^{-1}(x) = \ln(x+\sqrt{x^2+1})$ pour $x\in \RR$.
+
+La fonction $\cosh$ a un inverse si nous considérons seulement
+$\cosh(x)$ pour $x\geq 0$.  Sur l'intervalle $[0,\infty[$, la fonction
+$\cosh$ est injective et possède donc un inverse.  L'image de $\cosh$
+est $[1,\infty[$.  L'inverse de $\cosh$ est donnée par
+$\cosh^{-1}(x) = \ln(x+\sqrt{x^2-1})$ pour $x\geq 1$.
+
+Finalement, La fonction $\tanh$ a un inverse si nous considérons.
+La fonction $\tanh^{-1}$ est définie par
+$\displaystyle \tanh^{-1}(x) = \frac{1}{2}\,\ln\left(\frac{1+x}{1-x}\right)$
+pour $-1 < x < 1$.  Le domaine de $\tanh^{-1}$ est $]-1,1[$, l'image
+de $\tanh$.
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Suites}
+
+\begin{question}
+Déterminez si les suites suivantes convergent ou divergent.
+Si elles convergent, calculez leurs limites.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \left\{\frac{2^n}{3^{n+1}} \right\}_{n=1}^\infty$ &
+\subQ{b} & $\displaystyle \left\{ \ln(n+3) - \ln(n) \right\}_{n=1}^\infty$ &
+\subQ{c} & $\displaystyle \left\{\frac{2^{n+1}}{5^{n-1}} \right\}_{n=1}^\infty$
+\\[1em]
+\subQ{d} & $\displaystyle \left\{ 3 + \sin\left(n\frac{\pi}{2}\right)
+\right\}_{n=1}^\infty$ &
+\subQ{e} & $\displaystyle \left\{ 2 + \cos(n\pi) \right\}_{n=1}^\infty$ &
+\subQ{f} & $\displaystyle \left\{\frac{n^2 - n + 1}{2n^2 + 1}
+\right\}_{n=0}^\infty$
+\end{tabular}
+\end{center}
+\label{3Q1}
+\end{question}
+
+% $\displaystyle \left\{\frac{e^n}{n^2 + 1} \right\}_{n=1}^\infty$
+
+\subsection{Séries}
+
+\begin{question}
+Nous laissons tomber une balle d'une hauteur de 10 mètres et elle
+rebondit.  A chaque bond elle atteint $3/4$ de la hauteur du bond
+précédent.  Ainsi, au premier bond, la balle atteint la hauteur de
+$10\times(3/4)$ mètres, au deuxième bond, la balle atteint la
+hauteur de $10\times(3/4)^2$ mètres, etc.\\
+\subQ{a} Trouvez une expression pour la hauteur du $n^e$ bond.\\
+\subQ{b} Trouvez une expression pour la distance verticale totale
+parcourue par la balle lorsqu'elle frappe le sol pour la première,
+deuxième, troisième et quatrième fois.\\
+\subQ{c} Trouvez une expression pour la distance verticale totale
+parcourue par la balle lorsqu'elle frappe le sol pour la $n^e$ fois.\\
+\subQ{d} Quelle sera éventuellement la distance parcourue par la
+balle?
+\label{3Q2}
+\end{question}
+
+\begin{question}
+Trouvez l'aire de la région en gris dans le dessin suivant.  La
+région en gris est l'union d'un nombre infini de disques de rayon
+décroissant.
+\PDFgraph{3_suites_series/disques}
+\label{3Q3}
+\end{question}
+
+\begin{question}[\eco]
+Un fabricant de cerfs-volants vent $5000$ unités par année.  Chaque
+année, $10$\% des cerfs-volants vendus depuis le début de la
+production sont brisés par leur propriétaire.
+
+\subQ{a} Combien y-aura-t-il de cerfs-volants après $n$ années?
+
+\subQ{b} Quel est le niveau de stabilisation du marché pour ce type de
+cerfs-volants?  C'est-à-dire, si $P_n$ est le nombre de cerfs-volants
+après $n$ années, quelle est la limite
+$\displaystyle \lim_{n\rightarrow \infty} P_n$ si cette limite existe.?
+\label{3Q4}
+\end{question}
+
+\begin{question}[\eng]
+Déterminez si les séries suivantes convergent ou divergent.  Si elles
+convergent, calculez leurs sommes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{5^{n+2}}{7^{n-2}}$ &
+\subQ{b} & $\displaystyle \sum_{n=0}^\infty \frac{2^n+1}{6^n}$ &
+\subQ{c} & $\displaystyle \sum_{n=0}^\infty
+  \frac{2^n- 3^{n+2}}{5^{n+1}}$ \\[1em]
+\subQ{d} & $\displaystyle\sum_{n=1}^\infty\frac{2}{n(n+1)}$ &
+\subQ{e} & $\displaystyle \sum_{n=1}^\infty 5^n 2^{-2n}$ &
+\subQ{f} & $\displaystyle \sum_{n=1}^\infty \frac{30}{n^2+3n+2}$ \\[1em]
+\subQ{g} & $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+5)}$ &
+& & &
+\end{tabular}
+\end{center}
+\label{3Q5}
+\end{question}
+
+\subsection{Tests de convergence}
+
+\begin{question}[\eng]
+Déterminez si les séries suivantes sont convergentes ou divergentes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{5^n}{(n+1)!}$ &
+\subQ{b} & $\displaystyle \sum_{n=1}^\infty\left(1+\frac{2}{n}\right)^n$ &
+\subQ{c} & $\displaystyle \sum_{n=0}^\infty
+           \frac{n^2-1}{\sqrt[3]{n^7+1}}$ \\[1em] 
+\subQ{d} & $\displaystyle \sum_{n=0}^\infty\;\frac{n^{1/3}}{n+4}$ &
+\subQ{e} & $\displaystyle \sum_{n=1}^\infty \frac{2}{\sqrt[3]{n}}$ &
+\subQ{f} & $\displaystyle \sum_{n=0}^\infty \frac{(n+1)^2}{n!}$ \\[1em]
+\subQ{g} & $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n^3+5)^{1/3}}$ &
+\subQ{h} & $\displaystyle \sum_{n=1}^\infty
+           \frac{\cos^2(n)}{n\sqrt{n}}$ &
+\subQ{i} & $\displaystyle \sum_{n=1}^\infty\frac{n}{5^n}$ \\[1em]
+\subQ{j} & $\displaystyle \sum_{n=0}^\infty\;\frac{\cos^2(n)}{3^n}$ &
+\subQ{k} & $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^5+1}$ &
+\subQ{l} & $\displaystyle \sum_{n=1}^{\infty}
+\frac{(3n+1)^{1/2}}{(n^3+n)^{1/4}}$ \\[1em]
+\subQ{m} & $\displaystyle \sum_{n=1}^\infty \frac{5+3\sin(n)}{3n^3+n+4}$ &
+\subQ{n} & $\displaystyle \sum_{n=1}^\infty \frac{n^3+2}{\sqrt{n^7+8}}$ &
+&
+\end{tabular}
+\end{center}
+\label{3Q6}
+\end{question}
+
+\subsection{Convergence absolue et séries alternées}
+
+\begin{question}[\eng]
+Déterminez si les séries suivantes convergent absolument,
+convergent conditionnellement ou divergent.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \sum_{n=1}^\infty (-1)^n\frac{1}{\sqrt{n^2+3}}$ &
+\subQ{b} & $\displaystyle \sum_{n=2}^\infty \frac{(-1)^n}{\ln(n)}$ &
+\subQ{c} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n n!}{(2n+1)!}$
+\\[1em]
+\subQ{d} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{\sqrt{n(n+2)}}$ &
+\subQ{e} & $\displaystyle \sum_{n=1}^\infty (-1)^n\left(\frac{1}{n^{3/2}}
++ \frac{1}{n^2}\right)$ &
+\subQ{f} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n n^2}{(2n+1)(2n+3)}$
+\\[1em]
+\subQ{g} & $\displaystyle \sum_{n=1}^{\infty} \frac{\sin(n)}{n^2 +n-1}$ &
+& & &
+\end{tabular}
+\end{center}
+\label{3Q7}
+\end{question}
+
+\begin{question}[\eng]
+Montrez que la série
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}}{3^n}$ converge et
+trouvez un entier $N$ tel que la somme partielle $S_n$ de cette série
+satisfasse $|S - S_n | < 10^{-3}$ pour $n \geq N$ où $S$ est la somme
+de la série.
+\label{3Q8}
+\end{question}
+
+\begin{question}[\eng]
+Montrez que la série
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n \, n}{4^n}$ converge et
+trouvez un entier $N$ tel que la somme partielle $S_n$ de cette série
+satisfasse $|S - S_n | < 10^{-3}$ pour $n \geq N$ où $S$ est la somme
+de la série.  Donnez une approximation de la somme $S$ de la série
+avec une erreur inférieure à $10^{-3}$. 
+\label{3Q9}
+\end{question}
+
+\begin{question}[\eng]
+Soit la série
+$\displaystyle \sum_{n=1}^\infty\;\frac{(-1)^n}{(2n+1)!}$.
+
+\subQ{a} Montrez que cette série converge.\\
+\subQ{b} Trouvez un petit entier $N$ tel que $|S - S_N | < 10^{-4}$ où
+$S$ est la somme de la série et $S_N$ est la somme partielle des $N$
+premiers termes de la séries.\\
+\subQ{c} Donnez une approximation de la somme $S$ de la série avec une
+erreur inférieure à $10^{-4}$.
+\label{3Q10}
+\end{question}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

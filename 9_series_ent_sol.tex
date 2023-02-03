@@ -1,0 +1,939 @@
+\section{Séries entières}
+
+\subsection{Convergence des séries entières}
+
+\compileSOL{\SOLUb}{\ref{9Q1}}{
+\subQ{a} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n x^n$ avec
+$\displaystyle a_n = \frac{1}{n^2}$.   Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left| \frac{n^2}{(n+1)^2} \right|
+= \lim_{n\rightarrow \infty} \left( \frac{1}{1 + 1/n} \right)^2
+= 1 \ ,
+\]
+le rayon de convergence est $1$.
+
+Il faut considérer les extrémités de l'intervalle $]-1,1[$.
+Pour $x=1$, nous avons la série
+\[
+\sum_{n=1}^\infty \frac{1}{n^2}
+\]
+qui converge (le cas $p>1$ de la proposition~\ref{Pseries}).  De même,
+pour $x=-1$, nous avons la série 
+\[
+\sum_{n=1}^\infty \frac{(-1)^n}{n^2}
+\]
+qui converge (c'est une série alternée de la forme
+$\displaystyle \sum_{n=1}^\infty (-1)^n b_n$ avec
+$\displaystyle b_n = \frac{1}{n^2}$ qui satisfait
+$b_n > b_{n+1} \geq 0$ et
+$\displaystyle \lim_{n\rightarrow \infty} b_n = 0$).
+L'intervalle de convergence est donc $[-1,1]$.
+
+\subQ{b} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n x^n$ avec
+$\displaystyle a_n = \frac{n^2}{10^n}$.   Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left|
+\frac{(n+1)^2 10^n}{n^2 10^{n+1}} \right|
+= \lim_{n\rightarrow \infty} \frac{1}{10} \left(1 + \frac{1}{n}\right)^2
+= \frac{1}{10} \ ,
+\]
+le rayon de convergence est $10$.
+
+Il faut considérer les extrémités de l'intervalle $[-10,10]$.
+Pour $x=10$, nous avons la série
+\[
+\sum_{n=0}^\infty n^2
+\]
+qui diverge car $n^2$ ne tend pas vers $0$ lorsque
+$n \rightarrow \infty$.  De même, Pour $x=-10$, nous avons la série 
+\[
+\sum_{n=1}^\infty (-1)^n n^2
+\]
+qui diverge car $\displaystyle \{(-1)^n n^2\}_{n=1}^\infty$ ne
+converge pas vers $0$.  L'intervalle de convergence est donc
+$]-10,10[$.
+
+\subQ{c} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n x^n$ avec
+$\displaystyle a_n = \frac{1}{n!}$.  Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left| \frac{n!}{(n+1)!} \right|
+= \lim_{n\rightarrow \infty} \frac{1}{n+1} = 0 \ ,
+\]
+le rayon de convergence est $+\infty$ et l'intervalle de convergence
+est $\RR$.
+
+\subQ{d} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n (x+2)^n$ avec
+$\displaystyle a_n = \sqrt{n}$.   Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left| \frac{\sqrt{n+1}}{\sqrt{n}} \right|
+= \lim_{n\rightarrow \infty} \sqrt{1 + \frac{1}{n}}
+= 1 \ ,
+\]
+le rayon de convergence est $1$.
+
+Il faut considérer les extrémités de l'intervalle $]-3,-1[$.  Ne pas
+oublier que cette série est centrée à $x = -2$.
+Pour $x=-1$, nous avons la série
+\[
+\sum_{n=0}^\infty \sqrt{n}
+\]
+qui ne converge pas car $\sqrt{n} \not\to 0$ lorsque $n\to \infty$.
+De même, pour $x=-3$, nous avons la série
+\[
+\sum_{n=0}^\infty (-1)^n \sqrt{n}
+\]
+qui ne converge pas car $(-1)^n\sqrt{n} \not\to 0$ lorsque $n\to \infty$.
+L'intervalle de convergence est $]-3,-1[$.
+
+\subQ{e} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n (x-1)^n$ avec
+$\displaystyle a_n = (-1)^n \,\frac{1}{n\,4^n}$.   Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left| \frac{(-1)^{n+1} n\, 4^n}
+{(-1)^n (n+1) 4^{n+1}} \right|
+= \lim_{n\rightarrow \infty} \frac{n}{4(n+1)}
+= \lim_{n\rightarrow \infty} \frac{1}{4+4/n}
+= \frac{1}{4} \ ,
+\]
+le rayon de convergence est $4$.
+
+Il faut considérer les extrémités de l'intervalle $]-3,5[$.
+Pour $x=5$, nous avons la série
+\[
+\sum_{n=1}^\infty (-1)^n \frac{1}{n}
+\]
+qui converge (c'est une série alternée de la forme
+$\displaystyle \sum_{n=1}^\infty (-1)^n b_n$ avec
+$\displaystyle b_n = \frac{1}{n}$ qui satisfait
+$b_n > b_{n+1} \geq 0$ et $\displaystyle \lim_{n\rightarrow \infty} b_n = 0$). 
+Par contre, pour $x= -3$, nous avons la série harmonique
+\[
+\sum_{n=1}^\infty \frac{1}{n}
+\]
+qui ne converge pas (le cas $p=1$ de la proposition~\ref{Pseries}). 
+L'intervalle de convergence est donc $]-3,5]$.
+
+\subQ{f} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n x^n$ avec
+\[
+a_n =
+\frac{n}{ 1 \cdot 3 \cdot 5 \cdot \ldots \cdot (2n-1)} \ .
+\]
+Puisque
+\begin{align*}
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| &=
+\lim_{n\rightarrow \infty}
+\left| \frac{(n+1) \cdot 1 \cdot 3 \cdot 5 \cdot \ldots \cdot (2n-1)}
+{n \cdot 1 \cdot 3 \cdot 5 \cdot \ldots \cdot (2n-1) \cdot (2n+1) }
+\right| \\
+&= \lim_{n\rightarrow \infty} \frac{n+1}{n(2n+1)}
+= \lim_{n\rightarrow \infty} \frac{1}{n} \left(\frac{1+1/n}{1+2/n}\right)
+= 0 \ ,
+\end{align*}
+le rayon de convergence est $+\infty$.
+L'intervalle de convergence est toute la droite réelle.
+
+\subQ{i} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n (x+3)^n$ avec
+$\displaystyle a_n = \frac{(-5)^n}{n}$.  Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n}\right| = 
+\lim_{n\rightarrow \infty}
+\frac{ n\,5^{n+1}}{(n+1)\,5^n}
+= \lim_{n\rightarrow \infty} \frac{5n}{n+1}
+= \lim_{n\rightarrow \infty} \frac{5}{(1+1/n)}
+= 5  \ ,
+\]
+le rayon de convergence est $1/5$.
+
+Il faut analyser les extrémités de l'intervalle
+$]-16/5, -14/5[$.  Pour $x=-16/5$, nous avons la série
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ qui diverge.  C'est la
+série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$ avec
+$p \leq 1$ qui diverge.
+
+Pour $x=-14/5$, nous avons la série
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$.  C'est une série
+alternée de la forme $\displaystyle \sum_{n=1}^\infty (-1)^n b_n$
+avec $\displaystyle b_n = 1/n$, une suite de termes
+positifs décroissante qui converge vers $0$.  La
+série alternée converge donc.
+
+l'intervalle de convergence est $]-16/5, -14/5]$.
+
+\subQ{j} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n (x-2)^n$ avec
+$\displaystyle a_n = \frac{3^n}{n^2}$.  Puisque
+\begin{align*}
+\lim_{n\to \infty} \left|\frac{a_{n+1}}{a_n}\right|
+&= \lim_{n\to \infty} \left( \frac{3^{n+1}}{(n+1)^2}\right)
+\left( \frac{3^n}{n^2}\right)^{-1}
+= \lim_{n\to \infty} \left( \frac{3^{n+1}}{(n+1)^2}\right)
+\left( \frac{n^2}{3^n}\right) \\
+&= \lim_{n\to \infty} 3\left( \frac{n^2}{(n+1)^2}\right)
+= \lim_{n\to \infty} 3\left( \frac{n^2}{n^2+2n +1}\right) \\
+&= \lim_{n\to \infty} 3\left( \frac{1}{1+2/n +1/n^2}\right)
+= 3 \ ,
+\end{align*}
+le rayon de convergence est $1/3$.
+
+Il faut analyser les extrémités de l'intervalle
+$]5/3, 7/3[$.  Pour $x=5/3$, nous avons la série
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n^2}$ qui converge.
+C'est une série alternée de la forme
+$\displaystyle \sum_{n=1}^\infty (-1)^n b_n$
+avec $\displaystyle b_n = 1/n^2$, une suite de termes
+positifs décroissante qui converge vers $0$.  La
+série alternée converge donc.
+
+Pour $x=7/3$, nous avons la série
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$.  C'est la
+série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$ avec
+$p > 1$ qui converge.
+
+l'intervalle de convergence est $[5/3, 7/3]$.
+
+\subQ{k} Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n (x-2)^n$ avec
+$\displaystyle a_n = \frac{1}{3^n\sqrt{n}}$.  Puisque
+\begin{align*}
+\lim_{n\to \infty} \left|\frac{a_{n+1}}{a_n}\right|
+&= \lim_{n\to \infty} \left( \frac{1}{3^{n+1}\sqrt{n+1}}\right)
+\left( \frac{1}{3^n\sqrt{n}}\right)^{-1}
+= \lim_{n\to \infty} \frac{3^n\sqrt{n}}{3^{n+1}\sqrt{n+1}} \\
+&= \lim_{n\to \infty} \frac{1}{3} \sqrt{\frac{1}{1+ 1/n}}
+= \frac{1}{3} \ ,
+\end{align*}
+le rayon de convergence est $3$.
+
+Il faut analyser les extrémités de l'intervalle
+$]-1, 5[$.  Pour $x=-1$, nous avons la série
+$\displaystyle \sum_{n=1}^\infty \frac{(-3)^n}{3^n\sqrt{n}}
+= \sum_{n=1}^\infty \frac{(-1)^n}{\sqrt{n}}$.
+C'est une série alternée de la forme
+$\displaystyle \sum_{n=1}^\infty (-1)^n a_n$ avec 
+$\displaystyle a_n = \frac{1}{\sqrt{n}}$, , une suite de termes
+positifs décroissante qui converge vers $0$.  La
+série alternée converge donc.
+
+Pour $x=5$, Nous avons la séries
+$\displaystyle \sum_{n=1}^\infty \frac{1}{\sqrt{n}}$.
+Cette série divergence selon la proposition~\ref{Pseries} avec
+$p = 1/2 \leq 1$.
+
+L'intervalle de convergence est $[-1, 5[$.
+}
+
+\compileSOL{\SOLUb}{\ref{9Q2}}{
+\subQ{a} Nous devons retourner au Test de d'Alembert car nous n'avons pas
+exactement une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n (x-c)^n$.
+Soit $\displaystyle a_n = \frac{(-1)^n x^{2n-1}}{(2n-1)!}$.  Nous avons
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty}
+\left| \frac{(-1)^{n+1} x^{2n+1} (2n-1)!}{(-1)^n x^{2n-1} (2n+1)!} \right|
+= |x|^2 \lim_{n\rightarrow \infty} \frac{1}{2n(2n+1)}
+= 0 < 1 \ .
+\]
+La série
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}$
+converge donc pour tout $x$.  Ainsi, le rayon de convergence est $+\infty$
+et l'intervalle de convergence est toute la droite réelle.
+
+\subQ{b} Nous devons retourner au Test de d'Alembert car nous n'avons pas
+exactement une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n (x-c)^n$.
+Soit $\displaystyle a_n = (-1)^n \,\frac{x^{2n+1}}{2n+1}$.  Nous avons
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left| \frac{(-1)^{n+1} x^{2n+3} (2n+1)}
+{(-1)^n x^{2n+1} (2n+3)} \right|
+= x^2 \lim_{n\rightarrow \infty} \frac{2n+1}{2n+3} \\
+= x^2 \lim_{n\rightarrow \infty} \frac{2+1/n}{2+3/n}
+= x^2 \ .
+\]
+Il découle du Test de d'Alembert que la série
+$\displaystyle \sum_{n=0}^\infty (-1)^n \,\frac{x^{2n+1}}{2n+1}$
+converge si $x^2 < 1$ et diverge si $x^2 > 1$.  En d'autres mots,
+la série converge si $|x| < 1$ et diverge si $|x| > 1$.
+Le rayon de convergence est $1$.
+
+Il faut considérer les extrémités de l'intervalle $]-1,1[$.
+Pour $x=1$, nous avons la série
+\[
+\sum_{n=0}^\infty (-1)^n \frac{1}{2n+1}
+\]
+qui converge (c'est une série alternée de la forme
+$\displaystyle \sum_{n=1}^\infty (-1)^n b_n$ avec
+$\displaystyle b_n = 1/(2n+1)$ qui satisfait
+$b_n > b_{n+1} \geq 0$ et $\displaystyle \lim_{n\rightarrow \infty} b_n = 0$). 
+De même, pour $x= -1$, nous avons la série
+\[
+\sum_{n=0}^\infty (-1)^{n+1} \frac{1}{2n+1} 
+= - \sum_{n=0}^\infty (-1)^n \frac{1}{2n+1}
+\]
+qui converge comme nous venons de le voir.  L'intervalle de
+convergence est donc $[-1,1]$.
+}
+
+\subsection{Fonctions définies par des séries}
+
+\compileSOL{\SOLUb}{\ref{9Q3}}{
+\subQ{a} Si nous multiplions la série géométrique
+\[
+\frac{1}{1-x} = \sum_{n=0}^\infty x^n  \quad , \quad |x|<1 \ ,
+\]
+par $x$, nous obtenons la série
+\[
+\frac{x}{1-x} = x \sum_{n=0}^\infty x^n = \sum_{n=0}^\infty x^{n+1}
+\quad , \quad |x|<1 \ ,
+\]
+grâce au théorème~\ref{series_linear}.  Ainsi, le rayon et l'intervalle de
+convergence de cette dernière série sont identiques à ceux de la série
+géométrique.  Plus précisément, le rayon de convergence est $1$ et
+l'intervalle de convergence est $]-1,1[$.
+
+\subQ{b} Si nous substituons $u$ par $x^2$ dans la série géométrique
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n  \quad , \quad  |u|<1 \ ,
+\]
+nous obtenons
+\[
+\frac{1}{1-x^2} = \sum_{n=0}^\infty x^{2n}  \quad , \quad 
+|x^2|<1 \quad \text{(i.e. $|x|<1$)} \ .
+\]
+Ainsi, la somme de la série est
+\[
+\sum_{n=1}^\infty x^{2n} = \sum_{n=0}^\infty x^{2n} - 1 
+= \frac{1}{1-x^2} -1 = \frac{x^2}{1-x^2} \quad , \quad |x|< 1 \ .
+\]
+Nous obtenons de plus que le rayon de convergence est $1$ et l'intervalle de
+convergence est $]-1,1[$.
+}
+
+\compileSOL{\SOLUa}{\ref{9Q4}}{
+Nous avons
+\begin{equation} \label{geom_ded}
+\sum_{n=1}^\infty n 2^{n-1} x^{n+1} =
+\frac{1}{4} \sum_{n=1}^\infty n (2x)^{n+1} \ .
+\end{equation}
+Cela suggère premièrement de substituer $u$ par $2x$ dans la série géométrique
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n  \quad , \quad |u|<1 \ ,
+\]
+pour obtenir
+\[
+\frac{1}{1-2x} = \sum_{n=0}^\infty (2x)^n  \quad , \quad 
+|2x|<1 \quad \text{(i.e. $|x|<1/2$)} \ .
+\]
+La présence du coefficient $n$ dans la séries en (\ref{geom_ded}) (et le fait
+que la série débute à $n=1$) suggère de dériver la série précédente pour
+obtenir
+\[
+\frac{2}{(1-2x)^2} = \sum_{n=1}^\infty 2n(2x)^{n-1}  \quad , \quad
+|x|<\frac{1}{2} \ .
+\]
+Ainsi,
+\[
+\frac{1}{(1-2x)^2} = \sum_{n=1}^\infty n(2x)^{n-1} \quad , \quad
+|x|<\frac{1}{2} \ .
+\]
+Il suffit de multiplier la série précédente par
+$\displaystyle x^2 = (2x)^2/4$ pour obtenir
+\[
+\frac{x^2}{(1-2x)^2} = \frac{1}{4} \sum_{n=1}^\infty n(2x)^{n+1}
+= \sum_{n=1}^\infty n 2^{n-1} x^{n+1} \quad , \quad
+|x|<\frac{1}{2} \ .
+\]
+Nous ne pouvons pas conclure que le rayon de convergence de la série
+(\ref{geom_ded}) est $1/2$ et l'intervalle de convergence est $]-1/2, 1/2[$
+car le théorème~\ref{der_int_series} dit que le rayon de convergence de la
+série obtenue de la dérivée d'une autre série sera au moins égale à
+celui de la série qui a été dérivée, il pourrait être plus grand.
+
+Il faut utiliser le test du quotient pour trouver le rayon de
+(\ref{geom_ded}).  C'est une série au
+voisinage de l'origine dont le terme général est
+$\displaystyle a_n = n 2^{n-1} x^{n+1}$. 
+Cette série va converger pour $x$ tel que
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left|
+\frac{ (n+1) 2^n x^{n+2} }{ n 2^{n-1} x^{n+1}} \right|
+= \lim_{n\rightarrow \infty} 2 |x| \left( 1 + \frac{1}{n} \right) = 2 |x| < 1
+\ .
+\]
+Le rayon de convergence de la série (\ref{geom_ded}) est donc bien $1/2$.
+Pour déterminer l'intervalle de convergence, il faut étudier la convergence
+de la série à $x=-1/2$ et $x=1/2$.  Pour $x = 1/2$, nous avons la série
+\[
+\sum_{n=1}^\infty \frac{n}{4}
+\]
+qui diverge car $n/4 \not\rightarrow 0$ lorsque
+$n \rightarrow \infty$.  Pour $x = -1/2$, nous avons la série
+\[
+\sum_{n=1}^\infty (-1)^{n+1} \frac{n}{4}
+\]
+qui diverge car $(-1)^{n+1} n/4 \not\rightarrow 0$ lorsque
+$n \rightarrow \infty$.  L'intervalle de convergence de la série
+(\ref{geom_ded}) est donc $]-1/2, 1/2[$.
+}
+
+\compileSOL{\SOLUb}{\ref{9Q5}}{
+\subQ{a}
+Nous avons une série de la forme
+$\displaystyle \sum_{n=1}^\infty a_n x^n$ avec
+$\displaystyle a_n = n/3^n$.  Puisque,
+\[
+\lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right|
+= \lim_{n\to\infty} \left|\frac{(n+1) 3^n}{n 3^{n+1}}\right|
+= \frac{1}{3} \lim_{n\to\infty} \left(1 + \frac{1}{n}\right)
+= \frac{1}{3} \ ,
+\]
+le rayon de convergence est $3$.
+
+Il faut considérer les extrémités de l'intervalle $]-3,3[$.
+Pour $x=3$ nous avons la série $\displaystyle \sum_{n=1}^\infty n$ qui
+diverge car le terme général $n$ ne converge pas vers $0$ lorsque
+$n \to \infty$.  Pour $x=-3$, nous avons la série 
+$\displaystyle \sum_{n=1}^\infty (-1)^n n$ qui aussi diverge pour la
+même raison que la série précédente.
+L'intervalle de convergence, et donc le domaine de $g$, est $]-3,3[$.
+
+\subQ{b} Grâce au théorème~\ref{der_int_series}, nous avons que $g'(x)$
+existe pour $-3 < x < 3$ et est donné par la série que nous obtenons
+après avoir dérivé chacun des termes de la série (\ref{questDefg}).
+Donc
+\[
+g'(x) = \sum_{n=0}^\infty \dfdx{\left(\frac{nx^n}{3^n}\right)}{x}
+= \sum_{n=1}^\infty \frac{n^2x^{n-1}}{3^n} \ .
+\]
+En particulier, cette série converge pour $-3<x<3$.  Ainsi,
+\[
+g'(2) = \sum_{n=1}^\infty \frac{n^2 2^{n-1}}{3^n}
+= \sum_{n=1}^\infty \frac{n^2}{3} \left( \frac{2}{3}\right)^{n-1} \ .
+\]
+
+\subQ{c} De même, grâce au théorème~\ref{der_int_series}, nous avons que
+$\displaystyle \int_0^2 g(x) \dx{x}$ existe car l'intervalle
+d'intégration $[0,2]$ est inclus dans l'intervalle de convergence
+$]-3,3[$ de la série de $g(x)$.  Il suffit d'intégrer chacun des
+termes de la série (\ref{questDefg}) entre $0$ et $2$ pour obtenir la
+série qui représente $\displaystyle \int_0^2 g(x) \dx{x}$.  Ainsi,
+\[
+\int_0^2 g(x) \dx{x} = \sum_{n=0}^\infty \int_0^2\frac{nx^n}{3^n} \dx{x}
+= \sum_{n=0}^\infty \left( \frac{nx^{n+1}}{(n+1) 3^n} \right)\bigg|_0^2
+= \sum_{n=0}^\infty \frac{n 2^{n+1}}{(n+1) 3^n}
+= \sum_{n=0}^\infty \frac{2n}{n+1} \left( \frac{2}{3} \right)^n
+\]
+et cette série converge.
+}
+
+\compileSOL{\SOLUb}{\ref{9Q6}}{
+Si nous substituons $u$ par $-x^2$ dans la série géométrique
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n  \quad , \quad  |u|<1 \ ,
+\]
+nous obtenons
+\[
+\frac{1}{1+x^2} = \sum_{n=0}^\infty (-1)^n x^{2n}  \quad , \quad 
+|x^2|<1 \quad \text{(i.e.\ $|x|<1$)} \ .
+\]
+Si nous multiplions cette dernière equalitée des deux côtés par $2x$,
+nous obtenons
+\[
+\frac{2x}{1+x^2} = 2\sum_{n=0}^\infty (-1)^n x^{2n+1}  \quad , \quad 
+|x|<1 \ .
+\]
+Si nous intégrons les deux côtés de cette équalité de $0$ à $t$ où $|t|<1$,
+nous obtenons
+\begin{align}
+\ln(1+t^2) &= \int_0^t \frac{2x}{1+x^2} \dx{x}
+= 2\sum_{n=0}^\infty (-1)^n \int_0^t x^{2n+1} \dx{x} \nonumber \\
+&= 2\sum_{n=0}^\infty (-1)^n \frac{t^{2n+2}}{2n+2}
+= \sum_{n=0}^\infty (-1)^n \frac{t^{2n+2}}{n+1} \quad , \quad |t|< 1 \ ,
+\label{lnseries}
+\end{align}
+grâce au théorème~\ref{der_int_series}.
+
+(\ref{lnseries}) démontre que le rayon de convergence est au moins $1$.
+Est-ce qu'il est plus grand que $1$.  Pour déterminer le rayon de convergence
+de la série en (\ref{lnseries}), nous utilisons le test de d'Alembert.
+Nous avons une série au voisinage de l'origine dont le terme général est
+$\displaystyle a_n = (-1)^n \,\frac{t^{2n+2}}{n+1}$.
+Cette série va converger pour $t$ tel que
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| =
+\lim_{n\rightarrow \infty} \left| \frac{(-1)^{n+1} t^{2n+4} (n+1)}
+{(-1)^n t^{2n+2} (n+2)} \right|
+= t^2 \lim_{n\rightarrow \infty} \frac{n+1}{n+2} \\
+= t^2 \lim_{n\rightarrow \infty} \frac{1+1/n}{1+2/n}
+= t^2 < 1 \ .
+\]
+Le rayon de convergence\footnote{Notez que même si nous avions
+démontré que le rayon de convergence était plus grand que $1$, cela n'aurait
+pas été suffisant pour affirmer que la série en (\ref{lnseries}) converge
+vers $\ln(1+t^2)$ pour certaines valeurs de $t$ telles que $|t| \geq 1$.
+
+Pour $t=1$ ou $-1$, nous avons la série
+\[
+\sum_{n=0}^\infty (-1)^n \frac{1}{n+1}
+\]
+qui converge (c'est une série alternée de la forme
+$\displaystyle \sum_{n=1}^\infty (-1)^n b_n$ avec
+$\displaystyle b_n = \frac{1}{n+1}$ qui satisfait
+$b_n > b_{n+1} \geq 0$ et $\displaystyle \lim_{n\rightarrow \infty} b_n = 0$). 
+L'intervalle de convergence de la série en (\ref{lnseries}) est donc
+$[-1,1]$.  Est-ce que $\ln(2)$ peut être exprimé par cette séries avec $t=1$?
+La réponse est affirmative mais la démonstration fait appelle à un résultat
+que nous n'avons pas présenté dans le text.} est donc $1$.
+
+Nous avons
+\begin{equation} \label{lnserieseg}
+\ln\left(\frac{5}{4}\right) = \ln\left( 1 + \left(\frac{1}{2}\right)^2\right)
+= \sum_{n=0}^\infty (-1)^n \frac{1}{(n+1)2^{2n+2}} \ .
+\end{equation}
+C'est une série alternée de la forme
+$\displaystyle \sum_{n=0}^\infty (-1)^n b_n$ où les termes
+$\displaystyle b_n = \frac{1}{(n+1)2^{2n+2}}$ forment une suite
+décroissante de termes positifs qui tend vers $0$ lorsque
+$n\rightarrow \infty$.  Si $S$ est la somme de cette série alternée et $S_N$
+est la $N^e$ somme partielle, alors
+\[
+| S - S_N | \leq b_{N+1} = \frac{1}{(N+2)2^{2N+4}} \ .
+\]
+Il suffit de choisir $N$ tel que $b_{N+1} < 5 \times 10^{-5}$.
+Puisque $b_5 = 4.0690 \times 10^{-5} < 5 \times 10^{-5}$ et
+$b_4 = 1.9531 \times 10^{-4} > 5\times 10^{-5}$, Il faut utiliser les quatre
+premiers termes de la série en (\ref{lnserieseg}) pour obtenir la précision
+requise.
+}
+
+\compileSOL{\SOLUb}{\ref{9Q7}}{
+\subQ{a} La série de Taylor de $e^u$ à l'origine est
+$\displaystyle e^u = \sum_{n=0}^\infty \frac{1}{n!}u^n$ pour tout $u$.
+Ainsi $\displaystyle e^{x^3} = \sum_{n=0}^\infty \frac{1}{n!}x^{3n}$
+pour tout $x$.
+
+Nous savons que le coefficient de $x^9$ (i.e.\ $1/3!$) dans la série
+de Taylor de $e^{x^3}$ est donné par la formule
+$\displaystyle \frac{1}{9!}\dydxn{f}{x}{9}(0)$.  Donc
+\[
+\frac{1}{9!}\dydxn{f}{x}{9}(0) = \frac{1}{3!} \Rightarrow 
+\dydxn{f}{x}{9}(0) = \frac{9!}{3!} = 60480 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{9Q8}}{
+Il y a deux façons de résoudre ce problème.
+
+\subQ{i} Les séries de MacLaurin de $e^{x^2}$ et $\cos(x)$ sont
+\begin{align*}
+e^{x^2} &= \sum_{n=0}^\infty \frac{1}{n!} (x^2)^n = 1 + x^2 +
+\frac{1}{2}x^4 + \frac{1}{6} x^6 + \ldots
+\intertext{et}
+\cos(x) &= \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}
+= 1 - \frac{1}{2}x^2 + \frac{1}{24}x^4 - \frac{1}{720} x^6 + \ldots
+\end{align*}
+Pour obtenir les trois premiers termes non nuls de $f(x)$, nous
+multiplions $\displaystyle 1 + x^2 + \frac{1}{2}x^4 + \ldots$ et
+$\displaystyle 1 - \frac{1}{2}x^2 + \frac{1}{24}x^4 + \ldots$ pour
+obtenir
+$\displaystyle 1 + \frac{1}{2} x^2 + \frac{1}{24} x^4 + ...$
+Tout les autres termes sont de degrés plus grand que $4$.
+Les trois premiers termes non nuls sont donc
+$\displaystyle 1 + \frac{1}{2} x^2 + \frac{1}{24} x^4$.
+
+\subQ{ii} Nous savons que la série de MacLaurin d'une fonction $f(x)$ est
+\[
+\sum_{n=0}^\infty \frac{1}{n!} \dfdxn{f}{x}{n}(0) x^n \ .
+\]
+Ainsi, pour trouver les trois premiers termes non nuls, il faut
+calculer les dérivées $f^{(n)}(0)$ pour $n=0$, $1$, $2$, \ldots
+jusqu'à ce que nous ayons obtenu trois dérivées non nuls.
+Cette approche est beaucoup plus longue car il faut calculer les
+quatre premières dérivées de $f(x)$.
+}
+
+\compileSOL{\SOLUb}{\ref{9Q9}}{
+\subQ{a} La série de Maclaurin de $\sin(x)$ est
+\[
+\sin(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+\]
+pour tout $x \in \RR$. Ainsi,
+\[
+\sin(2x^3) = \sum_{n=0}^\infty (-1)^n \frac{(2x^3)^{2n+1}}{(2n+1)!}
+= \sum_{n=0}^\infty (-1)^n \frac{2^{2n+1}x^{6n+3}}{(2n+1)!}
+\]
+pour tout $x \in \RR$.
+
+\subQ{b} La série de MacLaurin de $\cos(x)$ est
+\[
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \ .
+\]
+Ainsi, la série de MacLaurin de $\cos(2x)$ est
+\[
+\cos(2x) = \sum_{n=0}^\infty \frac{(-1)^n (2x)^{2n}}{(2n)!}
+= \sum_{n=0}^\infty \frac{(-1)^n 2^{2n} x^{2n}}{(2n)!} \ .
+\]
+Donc
+\begin{align*}
+\sin^2(x) = \frac{1}{2} \left(1 - \cos(2x) \right)
+&= \frac{1}{2}
+- \frac{1}{2} \sum_{n=0}^\infty \frac{(-1)^n 2^{2n} x^{2n}}{(2n)!}
+= \frac{1}{2} - \frac{1}{2}
+- \frac{1}{2} \sum_{n=1}^\infty \frac{(-1)^n 2^{2n} x^{2n}}{(2n)!} \\
+&= \sum_{n=1}^\infty \frac{(-1)^{n+1} 2^{2n-1} x^{2n}}{(2n)!}
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{9Q10}}{
+Si nous substituons $u=-x^2$ dans la série géométrique
+\[
+\frac{1}{1-u} = \sum_{n=0}^\infty u^n  \quad , \quad |u|<1 \ ,
+\]
+nous trouvons
+\[
+\frac{1}{1+x^2} = \sum_{n=0}^\infty (-x^2)^n
+= \sum_{n=0}^\infty (-1)^n x^{2n} \quad , \quad |x|<1 \ .
+\]
+Ainsi,
+\[
+f(x) = \frac{x^2}{1+x^2} = \sum_{n=0}^\infty (-1)^n x^{2n+2} \quad ,
+\quad |x|<1 \ .
+\]
+L'intervalle de convergence de cette série est $]-1,1[$ comme c'est le cas
+pour la séries géométrique.
+
+De plus,
+\begin{equation}
+\int f(x)\dx{x} = C + \sum_{n=0}^\infty (-1)^n \int x^{2n+2} \dx{x}
+= C+ \sum_{n=0}^\infty (-1)^n \frac{1}{2n+3} x^{2n+3} \label{integrQuest}
+\end{equation}
+où $C$ est une constante d'intégration.
+
+Nous avons une série de la forme $\displaystyle \sum_{n=0}^\infty a_n$ avec
+$\displaystyle a_n = (-1)^n \frac{1}{2n+3} x^{2n+3}$.  Puisque
+\[
+\lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n}\right| = 
+\lim_{n\rightarrow \infty}
+\frac{2n+3}{2n+5} x^2
+= \lim_{n\rightarrow \infty} \frac{2 + 3/n}{2 +5/n} x^2
+= x^2  \ ,
+\]
+il découle du Test de d'Alembert que la série
+(\ref{integrQuest}) converge si $x^2 < 1$ et diverge si $x^2 > 1$.  En
+d'autres mots, la série converge si $|x| < 1$ et diverge si $|x| >
+1$.  Le rayon de convergence de la série (\ref{integrQuest})
+est donc $1$.
+
+Il faut considérer les extrémités de l'intervalle $]-1,1[$.
+Pour $x=1$, nous avons la série
+$\displaystyle \sum_{n=0}^\infty (-1)^n \frac{1}{2n+3}$  C'est une
+série alternée de la forme
+$\displaystyle \sum_{n=0}^\infty (-1)^n b_n$ 
+avec $b_n = 1/(2n+3)$.  Comme la suite des $b_n$ est une suite
+décroissante de termes positifs qui converge vers $0$, la série
+converge.  Pour $x=-1$, nous avons la série alternée
+$\displaystyle \sum_{n=0}^\infty (-1)^{n+1} \frac{1}{2n+3}$ qui, comme la
+séries précédente, converge.
+
+L'intervalle de convergence de la série (\ref{integrQuest}) est donc
+$[-1,1]$.
+}
+
+\compileSOL{\SOLUb}{\ref{9Q11}}{
+Si nous remplaçons $z$ par $-u^2$ dans la série géométrique
+\[
+\frac{1}{1-z} = \sum_{n=0}^\infty z^n  \quad , \quad  |z|<1 \ ,
+\]
+nous obtenons
+\[
+\frac{1}{1+u^2} = \sum_{n=0}^\infty (-1)^n u^{2n}  \quad , \quad |u|<1 \ .
+\]
+Si nous intégrons les deux côtés de cette égalité de $0$ à $v$ où $|v|<1$,
+nous obtenons
+\[
+\arctan(v) = \int_0^v \frac{1}{1+u^2} \dx{u}
+= \sum_{n=0}^\infty (-1)^n \int_0^v u^{2n} \dx{u}
+= \sum_{n=0}^\infty (-1)^n \frac{v^{2n+1}}{2n+1} \quad , \quad |v|< 1 \ ,
+\]
+grâce au théorème~\ref{der_int_series}.
+Si nous substituons $v$ par $x^2$ dans l'expression précédente et
+multiplions le résultat par $x^2$, nous obtenons
+\[
+x^2 \arctan(x^2) = 
+\sum_{n=0}^\infty (-1)^n \frac{x^{4n+4}}{2n+1} \quad , \quad |x|< 1 \ .
+\]
+
+Il découle du théorème~\ref{der_int_series} que
+\begin{equation}\label{arcaltQ}
+\int_0^{0.5} x^2 \arctan(x^2) \dx{x} =
+\sum_{n=0}^\infty (-1)^n \int_0^{0.5} \frac{x^{4n+4}}{2n+1} \dx{x}
+= \sum_{n=0}^\infty (-1)^n \frac{0.5^{4n+5}}{(2n+1)(4n+5)} \ .
+\end{equation}
+C'est une série convergente car nous avons intégré sur une intervalle
+inclus dans l'intervalle $]-1,1[$.
+
+La séries (\ref{arcaltQ}) est une série alternée de la forme
+$\displaystyle \sum_{n=0}^\infty (-1)^n b_n$ où les termes\\
+$\displaystyle b_n = \frac{0.5^{4n+5}}{(2n+1)(4n+5)}$ forment une suite
+décroissante de termes positifs qui tend vers $0$ lorsque
+$n\rightarrow \infty$.  Si $S$ est la somme de cette série alternée et
+$S_N$ est sa $N^e$ somme partielle, alors
+\[
+| S - S_N | \leq b_{N+1} = \frac{1}{2^{4N+9}(2N+3)(4N+9)} \ .
+\]
+Il suffit de choisir $N$ tel que $b_{N+1} < 10^{-5}$.
+Puisque $b_2 \approx 1.87800\times 10^{-6} \not< 10^{-6}$ et
+$b_3 \approx 6.4112559 \times 10^{-8} < 10^{-6}$, un bon choix est $N=2$.
+Donc $S_2$ fournit une approximation de l'intégrale donnée avec la
+précision demandée.
+\[
+\int_0^{0.5} x^2 \arctan(x^2) \dx{x} \approx
+S_2 = \frac{0.5^{5}}{5} - \frac{0.5^{9}}{27} + \frac{0.5^{13}}{65}
+\approx 0.006179540042 \ .
+\]
+}
+
+\subsection{Série du binôme}
+
+\compileSOL{\SOLUb}{\ref{9Q15}}{
+La série du binôme de $(1+u)^{3/5}$ est
+\[
+(1+u)^{3/5} = \sum_{n=0}^\infty \binom{3/5}{n} u^n \qquad , \qquad |u|<1 \ .
+\]
+Ainsi, la série de MacLauren de $(1+x^3)^{3/5}$ est
+\begin{align*}
+(1+x^3)^{3/5} &= \sum_{n=0}^\infty \binom{3/5}{n} x^{3n}
+= 1 + \frac{3/5}{1!} x^3 + \frac{(3/5)(3/5-1)}{2!} x^6 + \ldots \\
+&= 1 + \frac{3}{5} x^3 - \frac{3}{25} x^6 + \ldots \quad , \quad |x|<1 \ .
+\end{align*}
+Donc $b_6 = 3/25$.
+}
+
+\compileSOL{\SOLUb}{\ref{9Q16}}{
+Considérons la fonction
+$\displaystyle f(x) = 2\sqrt{2}\,
+\left( 1 + \left(\frac{x}{2}\right)^3\right)^{1/2}$.
+
+La série du binôme est
+\[
+  (1+u)^p = \sum_{n=0}^\infty \binom{p}{n} u^n \quad , \quad |u|<1 \ ,
+\]
+où
+\[
+\binom{p}{n} =
+\begin{cases}
+ 1 & \quad \text{si} \quad n = 0 \\
+\displaystyle
+\frac{p(p-1)(p-2)(p-3)\ldots(p-n+1)}{n!} & \quad \text{si} \quad n>0
+\end{cases}
+\]
+Avec $p=1/2$, nous obtenons la série de MacLaurin de
+$\displaystyle \sqrt{1+u}$; c'est-à-dire,
+\[
+\sqrt{1+u} = \sum_{n=0}^\infty \binom{1/2}{n} u^n \quad ,
+\quad |u|<1 \ ,
+\]
+où les premiers coefficients sont
+\begin{align*}
+\displaystyle \binom{1/2}{0} &= 1 \ ,\\
+\displaystyle \binom{1/2}{1} &= \frac{1/2}{1!} = \frac{1}{2} \ , \\
+\displaystyle \binom{1/2}{2} &= \frac{1/2(1/2-1)}{2!} = \frac{-1}{2^2
+\, 2!} \ , \\
+\displaystyle \binom{1/2}{3} &= \frac{1/2(1/2-1)(1/2-2)}{3!}
+= \frac{(-1)(-3)}{2^3 \, 3!} \ , \\
+\displaystyle \binom{1/2}{4} &= \frac{1/2(1/2-1)(1/2-2)(1/2-3)}{4!}
+= -\frac{(-1)(-3)(-5)}{2^4\,4!} \ , \\
+\displaystyle \binom{1/2}{5} &= \frac{1/2(1/2-1)(1/2-2)(1/2-3)(1/2-4)}{5!} =
+\frac{(-1)(-3)(-5)(-7)}{2^5\,4!} \ , \\
+  \vdots & \qquad  \vdots
+\end{align*}
+Par induction, nous obtenons que
+\[
+  \binom{1/2}{n} = \frac{(1)(-1)(-3)(-5)\ldots(3-2n)}{2^n\, n!}
+\]
+pour $n>0$.  Donc
+\[
+  \sqrt{1+u} = 1 +
+\sum_{n=1}^\infty \frac{(1)(-1)(-3)(-5)\ldots(3-2n)}{2^n\, n!} u^n \quad
+, \quad |u| < 1 \ .
+\]
+Si nous substituons $u$ par $(x/2)^3$ dans l'expression précédente et
+multiplions le résultat par $2\sqrt{2}$, nous obtenons
+\begin{align*}
+f(x) &= 2\sqrt{2} \left( 1 +
+\sum_{n=1}^\infty \frac{(1)(-1)(-3)(-5)\ldots(3-2n)}{2^n\, n!}
+\left(\frac{x}{2}\right)^{3n} \right) \\
+&= 2\sqrt{2}
++ \sum_{n=1}^\infty \frac{(1)(-1)(-3)(-5)\ldots(3-2n)\sqrt{2}}{2^{4n-1}\, n!}
+x^{3n} \\
+&= 2\sqrt{2} + \frac{\sqrt{2}}{2^3} x^3 -
+\frac{\sqrt{2}}{2^8} x^6 + \frac{\sqrt{2}}{2^{12}} x^9
+- \frac{5\sqrt{2}}{2^{18}}x^{12} + \frac{7\sqrt{2}}{2^{22}} x^{15} + \ldots
+\end{align*}
+pour $|x/2|<1$.
+}
+
+\compileSOL{\SOLUa}{\ref{9Q17}}{
+La série du binôme est
+\[
+(1+u)^p = \sum_{n=0}^\infty \binom{p}{n} u^n \qquad , \qquad |u|<1 \ ,
+\]
+où
+\[
+\binom{p}{n} =
+\begin{cases}
+1 & \qquad \text{si} \quad n = 0 \\                 
+\displaystyle \frac{p(p-1)(p-2)(p-3)\ldots(p-n+1)}{n!} &
+\qquad \text{si} \quad n>0
+\end{cases}
+\]
+Avec $p = 1/3$, nous obtenons
+\[
+(1+u)^{1/3} = \sum_{n=0}^\infty \binom{1/3}{n} u^n \qquad , \qquad
+|u|<1
+\]
+où
+\begin{align*}
+\displaystyle \binom{1/3}{0} &= 1 \ , \\
+\displaystyle \binom{1/3}{1} &= \frac{1/3}{1!} = \frac{1}{3} \ , \\
+\displaystyle \binom{1/3}{2} &= \frac{(1/3)(1/3-1)}{2!} =
+\frac{(-2)}{3^2\, 2!} \ , \\
+\displaystyle \binom{1/3}{3} &= \frac{(1/3)(1/3-1)(1/3-2)}{3!}
+= \frac{(-2)(-5)}{3^3\, 3!} \ , \\
+\displaystyle \binom{1/3}{4} &= \frac{(1/3)(1/3-1)(1/3-2)(1/3-3)}{4!}
+= \frac{(-2)(-5)(-8)}{3^4\, 4!} \ , \\
+\vdots & \qquad \vdots
+\end{align*}
+Par induction, nous trouvons que
+\[
+\displaystyle \binom{1/3}{n} = \frac{(1)(-2)(-5)(-8)\ldots(4-3n)}{3^n n!}
+\]
+pour $n>0$.  Donc
+\[
+(1+u)^{1/3} = 1 + \sum_{n=1}^\infty
+\frac{(1)(-2)(-5)(-8)\ldots(4-3n)}{3^n n!} u^n
+\quad , \quad |u|<1 \ .
+\]
+Si nous substituons $u = x^2$, nous trouvons
+\begin{align*}
+f(x) = (1+x^2)^{1/3} &= 1 + \sum_{n=1}^\infty
+\frac{(1)(-2)(-5)(-8)\ldots(4-3n)}{3^n n!} x^{2n} \\
+&= 1 + \frac{1}{3} x^2 - \frac{1}{3^2} x^4  + \frac{5}{3^4} x^6
+- \frac{10}{3^5} x^8 + \ldots \quad , \quad |x|<1
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{9Q18}}{
+\subQ{a} La série du binôme est
+\[
+  (1+u)^p = \sum_{n=0}^\infty \binom{p}{n} u^n \quad , \quad |u|<1 \ ,
+\]
+où
+\[
+\binom{p}{n} =
+\begin{cases}
+ 1 & \quad \text{si} \quad n = 0 \\
+\displaystyle \frac{p(p-1)(p-2)(p-3)\ldots(p-n+1)}{n!} &
+\quad \text{si} \quad n>0
+\end{cases}
+\]
+Avec $p=-1/2$, nous obtenons la série de MacLaurin de
+$\displaystyle \frac{1}{\sqrt{1+u}}$; c'est-à-dire,
+\[
+\frac{1}{\sqrt{1+u}} = \sum_{n=0}^\infty \binom{-1/2}{n} u^n \quad ,
+\quad |u|<1 \ ,
+\]
+où les premiers coefficients sont
+\begin{align*}
+\displaystyle \binom{-1/2}{0} &= 1 \ , \\
+\displaystyle \binom{-1/2}{1} &= \frac{-1/2}{1!} = \frac{-1}{2} \ , \\
+\displaystyle \binom{-1/2}{2} &= \frac{-1/2(-1/2-1)}{2!} =
+\frac{(-1)(-3)}{2^2\, 2!} \ , \\
+\displaystyle \binom{-1/2}{3} &= \frac{-1/2(-1/2-1)(-1/2-2)}{3!} =
+\frac{(-1)(-3)(-5)}{2^3\, 3!}\ , \\
+\displaystyle \binom{-1/2}{4} &= \frac{-1/2(-1/2-1)(-1/2-2)(-1/2-3)}{4!}
+= \frac{(-1)(-3)(-5)(-7)}{2^4\, 4!}\ , \\
+\displaystyle \binom{-1/2}{5}& =
+\frac{-1/2(-1/2-1)(-1/2-2)(-1/2-3)(-1/2-4)}{5!}
+= \frac{(-1)(-3)(-5)(-7)(-9)}{2^5\, 5!} \ , \\
+  \vdots & \qquad \vdots
+\end{align*}
+Par induction, nous trouvons que
+\[
+\displaystyle \binom{-1/2}{n}
+= \frac{(-1)(-3)(-7)(-9)\ldots(1-2n)}{2^n\, n!}
+= (-1)^n \frac{(1)(3)(7)(9)\ldots(2n-1)}{2^n\, n!}
+\]
+pour $n>0$.  Nous avons donc
+\[
+\frac{1}{\sqrt{1+u}} = 1 +
+\sum_{n=1}^\infty (-1)^n \frac{(1)(3)(7)(9)\ldots(2n-1)}{2^n\, n!} u^n
+\quad , \quad |u|<1 \ .
+\]
+Si nous substituons $u$ par $x^3$ dans la série ci-dessus, nous trouvons
+\[
+\frac{1}{\sqrt{1+x^3}} = 1 +
+\sum_{n=1}^\infty (-1)^n \frac{(1)(3)(7)(9)\ldots(2n-1)}{2^n\, n!} x^{3n}
+\quad , \quad |x|<1 \ .
+\]
+
+\subQ{b}
+Nous avons
+\begin{align*}
+\int_0^{0.1} \frac{1}{\sqrt{1+x^3}} \dx{x}
+&= \int_0^{0.1} \dx{x} +
+\sum_{n=1}^\infty (-1)^n \frac{(1)(3)(7)(9)\ldots(2n-1)}{2^n\, n!}
+\int_0^{0.1}  x^{3n} \dx{x} \\
+&= x \bigg|_0^{0.1} + 
+\sum_{n=1}^\infty (-1)^n \frac{(1)(3)(7)(9)\ldots(2n-1)}{2^n\, n!} 
+\left(\frac{x^{3n+1}}{3n+1}\right)\bigg|_0^{0.1} \\
+&= \frac{1}{10} + 
+\sum_{n=1}^\infty (-1)^n \frac{(1)(3)(7)(9)\ldots(2n-1)}
+{(3n+1)\, 2^n\, 10^{3n+1}\, n! } \ .
+\end{align*}                                                      
+C'est une série convergente car nous avons intégré sur une intervalle
+inclus dans l'intervalle $]-1,1[$.
+
+Nous avons une séries alternée $\displaystyle \sum_{n=0}^\infty (-1)^n a_n$,
+où $a_0 = 1/10$ et
+$a_n = \displaystyle \frac{(1)(3)(7)(9)\ldots(2n-1)}
+{(3n+1)\, 2^n\, 10^{3n+1}\, n!}$ pour $n>0$.
+Les termes $\displaystyle a_n$ forment une suite décroissante
+(fastidieux à vérifier) de termes positifs qui tend vers $0$ lorsque
+$n\rightarrow \infty$.  Si $S$ est la somme de cette série et $S_n$
+est sa $n^e$ somme partielle (C'est la somme des $n+1$ premier termes
+de la suite car nous commençons avec $a_0$), alors
+\[
+  | S - S_n | \leq a_{n+1} =
+\frac{(1)(3)(7)(9)\ldots(2n+1)}
+{(3n+4)\, 2^{n+1}\, 10^{3n+4}\,(n+1)!} \ .
+\]
+Il faut choisir $n$ tel que $a_{n+1} < 10^{-8}$.
+Puisque $a_2 \approx 5.357142857\times 10^{-9} < 10^{-8}$ et
+$a_1 = 1.25 \times 10^{-5} > 10^{-8}$, il suffit de choisir $n=1$.
+Donc $S_1$ fournit une approximation de l'intégrale donnée avec une
+précision d'au moins $10^{-8}$.
+\[
+\int_0^{0.1} \frac{1}{\sqrt{1+x^3}} \dx{x} \approx
+S_1 = \frac{1}{10} - \frac{1}{8 \times 10^4}
+\approx 0.0999875 \ .
+\]
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

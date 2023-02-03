@@ -1,0 +1,1844 @@
+\chapter[Limite et fonctions continues]{Limites et fonctions continues}
+\label{chapLimites}
+
+\compileTHEO{
+
+La première partie du chapitre est consacrée à l'étude de la
+{\em limite d'une fonction} en un point et à l'infini.  La définition
+de limite d'une fonction en un point est introduite de façon
+intuitive.  Par la suite, nous donnons une définition rigoureuse de
+limite.  La limite de fonctions en un point sera
+aussi l'outil qui nous permettra de définir la
+{\em dérivée d'une fonction} au chapitre suivant. 
+
+La deuxième partie du chapitre présente la définition d'une
+{\em fonction continue} avec quelques unes des propriétés des
+fonctions continues.  Nous verrons d'autres propriétés des fonctions
+continues aux prochains chapitres.
+
+\section{Limites}\label{oneD_LimCont}
+
+L'exemple suivant introduit le concept de {\em limite d'une fonction}
+en un point.
+
+\begin{egg}
+Si $g(x) = x^2+1$, vérifions que $g(x)$ approche $2$ lorsque $x$
+approche $1$.  Dans les tableaux suivants, nous évaluons $g$ a chacun des
+termes de la suite de nombres
+\[
+\left\{ x_n\right\}_{n=1}^\infty = \left\{ x_1, x_2, x_3, \ldots\right\}
+\]
+qui tend vers $1$.
+
+Si $x_n = 1 +1/n$ pour $n =1$, $2$, $3$, \ldots
+\[
+\begin{array}{l|c|c|c|c|c|c|c|c|c}
+n & 1 & 2 & 3 & 4 & \ldots & 100 & \ldots & 10000 & \ldots \\
+\hline
+\rule[-1em]{0ex}{3em} \displaystyle x_n = 1 + \frac{1}{n} &
+\displaystyle 2 & \displaystyle \frac{3}{2} &
+\displaystyle \frac{4}{3} & \displaystyle \frac{5}{4} &
+\ldots & \displaystyle \frac{101}{100} &
+\ldots & \displaystyle \frac{10001}{10000} & \ldots \\
+\hline
+g(x_n) & 5 & 3.25 & 2.\overline{7} & 2.5625 &
+\ldots & 2.0201 & \ldots & 2.00020001 & \ldots
+\end{array}
+\]
+
+Si $x_n = 1 - 1/n^2$ pour $n=0$, $1$, $2$, \ldots
+\[
+\begin{array}{l|c|c|c|c|c|c|c|c}
+n & 1 & 2 & 3 & \ldots & 100 & \ldots & 10000 & \ldots \\
+\hline
+\rule[-1em]{0ex}{3em} \displaystyle x_n = 1 - \frac{1}{n^2} &
+\displaystyle 0 & \displaystyle \frac{3}{4} &
+\displaystyle \frac{8}{9} & \ldots & \displaystyle \frac{9999}{10000} &
+\ldots & \displaystyle \frac{99999999}{100000000} & \ldots \\
+\hline
+g(x_n) & 1 & 1.5625\ldots & 1.7901\ldots &
+\ldots & 1.9998\ldots & \ldots & 1.99999998\ldots & \ldots
+\end{array}
+\]
+Dans les deux cas, $g(x_n)$ approche la valeur $2$ lorsque
+$n \to \infty$ et donc lorsque $x_n$ approche $1$; c'est-à-dire,  
+\[
+\lim_{n\rightarrow \infty} g(x_n) = 2
+\quad \text{pour} \quad
+\lim_{n\rightarrow \infty} x_n = 1
+\]
+dans les deux cas.
+
+Nous pouvons vérifier algébriquement (et donc rigoureusement) que
+$g(x_n)$ avec $x_n = 1 + 1/n$ approche $2$ lorsque $n \to \infty$.
+Nous avons
+\[
+g(x_n) = \left(1+\frac{1}{n}\right)^2 + 1
+= 2 + \frac{2}{n} + \frac{1}{n^2}
+\]
+qui approche $2$ lorsque $n \to \infty$ car $1/n$ et $1/n^2$ tendent
+vers $0$ lorsque $n \to \infty$.
+
+Comme nous l'avons fait pour $x_n = 1 + 1/n$, nous pouvons vérifier
+algébriquement que $g(x_n)$ avec $x_n = 1 - 1/n^2$ approche $2$ lorsque
+$n \to \infty$.  Nous avons
+\[
+g(x_n) = \left(1-\frac{1}{n^2}\right)^2 + 1
+= 2 - \frac{2}{n^2} + \frac{1}{n^4}
+\]
+qui approche $2$ lorsque $n \to \infty$ car $1/n^2$
+et $1/n^4$ approchent $0$ lorsque $n \to \infty$.
+
+Quelque soit la suite de nombres
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+qui tend vers $1$ que nous choisissons, le résultat sera toujours une
+suite $\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$ qui tend vers
+la valeur $2$.  En d'autres mots,
+\[
+\lim_{n\rightarrow \infty} g(x_n) = 2 \quad
+\text{pour toute suite} \quad \{x_n\}_{n=1}^\infty \quad
+\text{qui satisfait} \quad
+\lim_{n\rightarrow \infty} x_n = 1 \; .
+\]
+Pour résumer ce dernier énoncé, nous écrivons
+\[
+\lim_{x\rightarrow 1} g(x) = 2 \; .
+\]
+
+À partir du graphe de $g$ que nous retrouvons à la figure~\ref{DER3},
+nous constatons que $g(x_n)$ approche la valeur $2$ pour la suite qui
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ approche $1$.
+\label{egg_cont1}
+\end{egg}
+
+\MATHfig{4_limites/der3}{8cm}{Graphe de $g(x) = x^2 + 1$}
+{Graphe de $g(x) = x^2 + 1$ pour $x$ près de $1$.}{DER3}
+
+\begin{focus}{\dfn} \index{Limite d'une fonction}
+Soit $f$ une fonction définie pour $x$ près de $c$ (il n'est pas
+nécessaire que $f$ soit définie à $c$).  Nous écrivons
+\[
+\lim_{x\rightarrow c} f(x) = C
+\]
+s'il existe un {\em unique nombre} $C$ tel que
+\[
+\lim_{n\rightarrow \infty} f(x_n) = C
+\]
+{\em quelle que soit la suite}
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ de
+{\em nombres différents de $c$} qui tend vers $c$.   Nous écrivons aussi
+$f(x) \to C$ lorsque $x \to c$.  Nous disons que
+{\bfseries $f(x)$ converge (ou tend) vers la valeur $C$
+lorsque $x$ converge (ou tend) vers $c$}.  Nous disons aussi que
+{\bfseries $C$ est la limite de $f$ au point $c$}.
+\label{def1_conv}
+\end{focus}
+
+Il est aussi nécessaire à l'occasion de considérer seulement les suites
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui approchent $c$ par la
+droite ou la gauche.
+
+\begin{focus}{\dfn}
+Si, dans la définition de la limite d'une fonction $f$ en un point
+$c$, nous considérons seulement les suites
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n < c$}, nous
+écrivons
+\[
+\lim_{x\rightarrow c^-} f(x) = C
+\]
+ou $f(x) \to C$ lorsque $x \to c^-$,
+et nous disons que {\bfseries $f(x)$ converge (ou tend) vers la valeur $C$
+lorsque $x$ converge (ou tend) par la gauche vers $c$}.  Nous disons aussi
+que {\bfseries $C$ est la limite à gauche de $f$ au point $c$}.
+\index{Limite d'une fonction!à gauche}
+
+De même, si, dans la définition de la limite d'une fonction $f$ en un
+point $c$, nous considérons seulement les suites
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n > c$}, nous
+écrivons
+\[
+\lim_{x\rightarrow c^+} f(x) = C
+\]
+ou $f(x) \to C$ lorsque $x \to c^+$,
+et nous disons que {\bfseries $f(x)$ converge (ou tend) vers la valeur $C$
+lorsque $x$ converge (ou tend) par la droite vers $c$}.  nous disons aussi que
+{\bfseries $C$ est la limite à droite de $f$ au point $c$}.
+\index{Limite d'une fonction!à droite}
+\end{focus}
+
+\begin{egg}
+Soit $g(x) = \sin(x)/x$. Quelle est la limite de $g(x)$ lorsque $x$
+approche $0$?  En d'autres mots, quelle est la valeur de
+$\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x}$ ?
+
+Dans le tableau suivant, nous évaluons $g$ à chacun des
+termes de la suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui
+converge vers $0$ définie par $x_n = 1/n$ pour $n=1$, $2$, $3$,
+\ldots\  Toute autre suite qui tend vers $0$ aurait pu être utilisée.
+\[
+\begin{array}{c|c|l}
+\hline
+\rule[-0.7em]{0ex}{2em} n & x_n = 1/n & g(x_n) \\
+\hline
+1 & 1 & 0.8414709848\ldots \\
+2 & 1/2 & 0.9588510772\ldots \\
+3 & 1/3 & 0.9815840903\ldots \\
+4 & 1/4 & 0.9896158370\ldots \\
+\vdots & \vdots & \vdots \\
+100 & 1/100 & 0.9999833334\ldots \\
+\vdots & \vdots & \vdots \\
+10000 & 1/10000 & 0.9999999983\ldots \\
+\vdots & \vdots & \vdots \\
+\hline
+\end{array}
+\]
+La suite $\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$
+tend vers $1$.  Nous allons montrer plus loin que cela est vrai quelle que
+soit la suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend
+vers $0$.  Nous pourrons donc dire que
+$\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$.
+Comme nous pouvons constater à partir du graphe de $g$ donné à la
+figure~\ref{DER4}, $g(x)$ approche la valeur $1$ lorsque $x$ approche
+$0$.  Par contre, la fonction $g$ n'est pas définie à l'origine.
+\label{E_SINXX}
+\end{egg}
+
+\MATHfig{4_limites/der4}{8cm}{Graphe de $g(x) = \sin(x)/x$}
+{Graphe de $g(x) = \sin(x)/x$ pour $x\neq 0$.}{DER4}
+
+\begin{egg}
+Soit $g(x) = \sin(1/x)$.  Est-ce que $g(x)$ approche une valeur quelconque
+lorsque $x$ approche l'origine?  Si oui, quelle est cette valeur?
+
+Le tableau suivant donne les valeurs de $g$ pour les termes de la
+suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ où
+$\displaystyle x_n = \frac{1}{2n \pi}$ pour $n=1$, $2$, $3$, \ldots.
+La suite $\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$ tend
+vers $0$ car $g(x_n) = 0$ pour tout $n$.
+\[
+\begin{array}{l|l|l|l|l|l|l|l|l|l}
+n & 1 & 2 & 3 & 4 & \ldots & 100 & \ldots & 10000 & \ldots \\
+\hline
+\rule[-1em]{0ex}{3em} \displaystyle x_n = \frac{1}{2n \pi} &
+\displaystyle \frac{1}{2\pi} & \displaystyle \frac{1}{4\pi} &
+\displaystyle \frac{1}{6\pi} & \displaystyle \frac{1}{8\pi} &
+\ldots & \displaystyle \frac{1}{200\pi} &
+\ldots & \displaystyle \frac{1}{20000\pi} & \ldots \\
+\hline
+g(x_n) & 0 & 0 & 0 & 0 & \ldots & 0 & \ldots & 0 & \ldots
+\end{array}
+\]
+
+Il semble que $g(x)$ approche $0$ lorsque $x$ approche $0$.  Essayons
+maintenant avec la suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+où $x_n = 2/((4n+1)\pi)$ pour $n=1$, $2$, $3$, \ldots  La suite
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ tend vers $0$.  Par
+contre, le tableau suivant semble indiquer que
+$\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$
+approche $1$ lorsque $x_n$ approche $0$.
+\[
+\begin{array}{l|l|l|l|l|l|l|l|l|l}
+n & 1 & 2 & 3 & 4 & \ldots & 100 & \ldots & 10000 & \ldots \\
+\hline
+\rule[-1em]{0ex}{3em} \displaystyle x_n = \frac{2}{(4n+1)\pi} &
+\displaystyle \frac{2}{5\pi} & \displaystyle \frac{2}{9\pi} &
+\displaystyle \frac{2}{13\pi} & \displaystyle \frac{2}{17\pi} &
+\ldots & \displaystyle \frac{2}{4001\pi} &
+\ldots & \displaystyle \frac{2}{40001\pi} & \ldots \\
+\hline
+g(x_n) & 1 & 1 & 1 & 1 & \ldots & 1 & \ldots & 1 & \ldots
+\end{array}
+\]
+
+En fait, pour tout nombre $\alpha$ entre $-1$ et $1$ inclusivement, nous
+pourrions trouver une suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+qui tend vers $0$ et telle que $g(x_n)$ tend vers $\alpha$ lorsque
+$n\to \infty$.  Il y a aussi des suites
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui
+tendent vers $0$ et telles que $g(x_n)$ n'approche aucune valeur fixe
+lorsque $n \to \infty$ mais se promène entre $-1$ et $1$.
+
+Le graphe de $g$ que nous retrouvons à la figure~\ref{DER5} montre bien
+que $g(x)$ n'approche pas une valeur unique lorsque $x$ approche $0$.
+Le graphe de $g$ oscille entre $-1$ et $1$ de plus en plus rapidement
+lorsque $x$ approche $0$.
+
+Donc, dans la définition de $\displaystyle \lim_{x\rightarrow c} f(x) = C$,
+il est très important que la suite
+$\displaystyle \left\{f(x_n)\right\}_{n=1}^\infty$ tende vers une
+{\em valeur unique} $C$ {\em quelle que soit la suite}
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $c$.
+\end{egg}
+
+\MATHfig{4_limites/der5}{8cm}{Graphe de $g(x) = \sin(1/x)$}
+{Graphe de $g(x) = \sin(1/x)$ pour $x >0$.}{DER5}
+
+La définition précédente pour
+\[
+\lim_{x\rightarrow c} f(x) = C \; ,
+\]
+où nous utilisons les suites $\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+qui tendent vers $c$ pour déterminer la valeur possible de $C$, est
+très utile pour prédire numériquement la valeur possible $C$ de la
+limite. Cependant, il est généralement impossible d'utiliser cette
+définition pour prouver que la limite est bien la valeur $C$ suggérée.
+Pour prouver cela, il faudrait vérifier que {\em toutes} les suites
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tendent vers $c$
+donnent des suites $\displaystyle \left\{f(x_n)\right\}_{n=1}^\infty$
+qui tendent vers $C$.  Ceci est évidemment impossible.
+
+\begin{egg}
+Est-ce que la limite suivante existe?
+\[
+\lim_{x\to 1} \frac{|x-1|}{x-1}
+\]
+
+Nous considérons deux cas: $x$ converge vers $1$ avec $x>1$ et $x$
+converge vers $1$ avec $x<1$.  Pour $x>1$, nous avons que $|x-1| = x-1$.
+Ainsi,
+\[
+\lim_{x\to 1^+} \frac{|x-1|}{x-1} = \lim_{x\to 1^+} \frac{x-1}{x-1}
+= \lim_{x\to 1^+} 1 = 1
+\]
+Pour $x<1$, nous avons que $|x-1| = 1 - x$.  Ainsi,
+\[
+\lim_{x\to 1^-} \frac{|x-1|}{x-1} = \lim_{x\to 1^-} \frac{1-x}{x-1}
+= \lim_{x\to 1^-} -1 = -1
+\]
+Puisque
+\[
+\lim_{x\to 1^-} \frac{|x-1|}{x-1} \neq \lim_{x\to 1^+}
+\frac{|x-1|}{x-1} \ ,
+\]
+nous devons conclure que la limite n'existe pas.
+\end{egg}
+
+\begin{egg}[\theory][Suite de l'exemple~\ref{egg_cont1}]
+Vérifions de façon algébrique (et donc rigoureusement) que
+$g(x) = x^2 +1$ satisfait $\displaystyle \lim_{x\rightarrow 1} g(x) = 2$.
+
+Remarquons que toute suite
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+qui approche $1$ peut s'écrire $x_n = 1 + r_n$ où la suite
+$\displaystyle \left\{r_n\right\}_{n=1}^\infty$ approche $0$ lorsque
+$n \to \infty$.  C'est certainement le cas pour les
+suites $\displaystyle \left\{ 1 + \frac{1}{n} \right\}_{n=1}^\infty$
+et $\displaystyle \left\{1+\frac{1}{n^2} \right\}_{n=1}^\infty$
+que nous avons utilisées précédemment.  Ainsi,
+\[
+g(x_n) = g(1+r_n) = (1+r_n)^2 + 1 = 2 + 2r_n + r_n^2 \to 2
+\]
+lorsque $n \to \infty$ car $r_n$ et $r_n^2$ approchent $0$ lorsque
+$n \to \infty$.  Donc $\displaystyle \lim_{n\rightarrow \infty} g(x_n) = 2$.
+\label{egg_contcont1}
+\end{egg}
+
+Malheureusement, la méthode algébrique utilisée à
+l'exemple~\ref{egg_contcont1} est restreinte aux fonctions algébriques
+(simples).
+
+\subsection{Epsilon et delta \theory}
+
+La définition de
+\[
+\lim_{x\rightarrow c} f(x) = C \; ,
+\]
+que nous allons donner ci-dessous est équivalente à la définition de
+limite d'une fonction en un point que nous avons donnée précédemment mais
+ne fait pas appelle aux suites.  Cette nouvelle définition est souvent
+appelée la définition en termes de $\epsilon$ et $\delta$ de la limite
+d'un fonction en un point.  C'est cette définition qui est généralement
+utilisée pour démontrer rigoureusement que la limite d'une fonction
+$f$ en un point $c$ est une valeur $C$.
+
+\begin{focus}{\dfn} \index{Limite d'une fonction!en un point}
+Soit $f$ une fonction définie pour $x \neq c$ (il n'est pas
+nécessaire que $f$ soit définie à $x=c$).  Nous écrivons
+\[
+\lim_{x\rightarrow c} f(x) = C
+\]
+si, {\em quel que soit le petit nombre $\epsilon >0$} qui est donné,
+nous pouvons trouver un nombre $\delta >0$ (qui peut dépendre de
+$\epsilon$) tel que
+\[
+| f(x) - C | < \epsilon \quad \text{si} \quad |x-c|<\delta,\ x\neq c \; .
+\]
+Nous disons que {\bfseries $f(x)$ converge (ou tend) vers la valeur $C$
+lorsque $x$ converge vers $c$}.
+\label{def2_conv}
+\end{focus}
+
+\PDFfig{4_limites/epsdelt}{Définition avec $\epsilon$ et
+$\delta$ de la limite d'une fonction en un point}{Pour $\epsilon$
+donné, le graphe nous donne une valeur possible de $\delta$ pour que
+$f(x) = \sin(x)/x$ soit entre $1-\epsilon$ et $1+\epsilon$ quel que
+soit $x \neq 0$ entre $-\delta$ et $\delta$.}{EPSDELT}
+
+Nous illustrons cette nouvelle formulation de la limite d'une fonction
+en un point à l'aide de la fonction $f(x) = \sin(x)/x$ pour $x=0$.
+Quelque soit la valeur de $\epsilon$, nous remarquons à partir du graphe
+de $f$ à la figure~\ref{EPSDELT} qu'il est toujours possible de trouver
+$\delta>0$ pour que $f(x)$ soit entre $1-\epsilon$ et $1+\epsilon$
+($C=1$ dans l'énoncé de la définition) si $x$ est entre $-\delta$ et
+$\delta$ ($c=0$ dans l'énoncé de la définition) avec $x \neq 0$.  Le
+graphe de $f$ pour $-\delta < x < \delta$ et $x\neq 0$ est
+complètement à l'intérieure de la boite définie par
+$-\delta < x < \delta$ et $1-\epsilon < y < 1+\epsilon$. 
+Plus $\epsilon$ sera petit, plus nous devrons prendre $\delta$ petit.
+
+Nous présentons à la figure~\ref{EPSDELT2} le graphe d'une fonction
+qui n'a pas de limite au point $c$.  Il n'existe pas de $\delta$ tel
+que le graphe de $f$ pour $c-\delta < x < c+\delta$ avec $x \neq c$
+soit complètement à l'intérieure de la boite définie par 
+$c-\delta < x < c+\delta$ et $C-\epsilon < y < C+\epsilon$.  Il
+n'existe donc pas de $\delta$ pour satisfaire la définition
+précédente.
+
+Dans la définition de limite, $\epsilon$ prend n'importe laquelle des
+valeurs positives.  Il {\em ne suffit pas} de trouver un $\epsilon$
+pour lequel nous pouvons trouver un $\delta$ tel que $f(x)$ soit dans
+l'intervalle $]C-\epsilon, C+\epsilon[$ si $x \neq c$ est dans
+l'intervalle $]c-\delta , c+\delta[$.  Il {\em faut} que pour chaque
+valeur $\epsilon>0$ nous puisons trouver un $\delta$ (qui peut varier si
+$\epsilon$ varie) tel que $f(x)$ soit dans l'intervalle
+$]C-\epsilon, C+\epsilon[$ si $x \neq c$ est dans l'intervalle
+$]c-\delta , c+\delta[$.
+
+\PDFfig{4_limites/epsdelt2}{Une fonction qui n'a pas de limite en un point}
+{Pour $\epsilon$ donné, il est impossible de trouver $\delta$ pour que
+$f(x)$ soit entre $C-\epsilon$ et $C+\epsilon$ quel que soit $x \neq c$
+entre $c-\delta$ et $c+\delta$.}{EPSDELT2}
+
+\begin{egg}
+Montrons à l'aide de la dernière définition de limite d'une fonction
+en un point que
+$\displaystyle \lim_{x\rightarrow 2} \frac{1}{x} = \frac{1}{2}$.
+
+Soit $\epsilon >0$ quelconque mais fixe.  Puisque nous cherchons la
+limite lorsque $x$ approche $2$, nous pouvons supposer que $x>1$.
+Ainsi,
+\[ 
+\left|\frac{1}{x} - \frac{1}{2}\right| = \left| \frac{2-x}{2x} \right|
+= \frac{|2-x|}{|2x|} < \frac{|2-x|}{2}
+\]
+pour $x>1$.  Si nous prenons $\delta = \min\{1, 2\epsilon\}$, alors
+\[
+\left|\frac{1}{x} - \frac{1}{2}\right| < \frac{|2-x|}{2}
+< \frac{\delta}{2} \leq \epsilon
+\]
+pour $|x-2|<\delta$.
+\end{egg}
+
+\begin{focus}{\prp}
+Les définitions de convergence données aux définitions~\ref{def1_conv}
+et \ref{def2_conv} sont équivalente.
+\end{focus}
+
+\begin{proof}
+\subQ{i} Supposons que $\displaystyle \lim_{x\rightarrow c} f(x) = C$
+selon la définition~\ref{def1_conv}.  Montrons que la
+définition~\ref{def2_conv} est satisfaite.
+
+La preuve est par contradiction.  Supposons que la
+définition~\ref{def2_conv} ne soit pas satisfaite.  Cela implique
+qu'il existe un $\epsilon >0$ tel que pour tout $\delta$ nous pouvons
+trouver au moins un point $x_\delta$ tel que
+$\displaystyle \left|x_\delta -c\right| < \delta$ et
+$\displaystyle \left|f(x_\delta) -C\right| \geq \epsilon$.
+
+Si nous prenons $\delta = 1/n$ pour $n$ un entier positif, nous
+obtenons une
+suite $\displaystyle \left\{ x_{1/n} \right\}_{n=1}^\infty$ telle que
+$\displaystyle \left|x_{1/n} - c \right| < \frac{1}{n}$ et
+$\displaystyle \left|f(x_{1/n}) -C\right| \geq \epsilon$ pour tout $n$.
+Nous avons donc $\displaystyle \lim_{n\rightarrow \infty} x_{1/n} = c$ mais
+la suite $\displaystyle \left\{ f(x_{1/n}) \right\}_{n=1}^\infty$ ne
+tend pas vers $C$.  Ce qui contredit la définition~\ref{def1_conv}.
+
+\subQ{ii} Supposons maintenant que
+$\displaystyle \lim_{x\rightarrow c} f(x) = C$ selon la
+définition~\ref{def2_conv}.  Montrons que la
+définition~\ref{def1_conv} est satisfaite.
+
+Supposons que $\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ soit
+une suite qui tend vers $c$.  Soit $\epsilon >0$.  Selon la
+définition~\ref{def2_conv}, il existe $\delta >0$ tel que
+$\displaystyle \left|f(x) -C\right| < \epsilon$ si
+$\displaystyle \left|x -c\right| < \delta$.  Puisque
+$\displaystyle \lim_{n\rightarrow \infty} x_n = c$, il existe $N>0$
+tel que $\displaystyle \left|x_n - c \right| < \delta$ pour $n>N$.
+Ainsi,
+$\displaystyle \left|f(x_n) -C\right| < \epsilon$ pour $n>N$.  Puisque
+$\epsilon$ est arbitraire, nous avons
+$\displaystyle \lim_{n\rightarrow \infty} f(x_n) = C$.
+
+Comme le résultat du paragraphe précédent est vrai pour toute suite
+$\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ qui tend vers $c$,
+nous avons que $\displaystyle \lim_{x\rightarrow c} f(x) = C$ selon la
+définition~\ref{def1_conv}.
+\end{proof}
+
+\subsection{Règles pour évaluer les limites}
+
+Le théorème suivant est parfois très utile pour évaluer la limite
+d'une fonction en un point.  Nous avons déjà vu une version de ce théorème
+(théorème~\ref{gendarmeS}) pour les suites.  La présente version
+en est une conséquence.
+
+\begin{focus}[][des gendarmes ou sandwich]{\thm}
+\index{Théorème des gendarmes}\index{Théorème sandwich}
+Soit $f$, $g$ et $h$; trois fonctions telles que
+$f(x) \leq g(x) \leq h(x)$ pour $x$ près de $c$.  Si
+\[
+\lim_{x\rightarrow c} f(x) = \lim_{x\rightarrow c} h(x) = L \ ,
+\]
+alors
+\[
+\lim_{x\rightarrow c} g(x) = L \; .
+\]
+\label{gendarmeF}
+\end{focus}
+
+\begin{egg}[\theory]
+La méthode algébrique de l'exemple~\ref{egg_contcont1} n'est pas utile
+pour démontrer rigoureusement que
+\begin{align} \label{sinxsx}
+\lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1 \; .
+\end{align}
+Il faut utiliser une autre approche.  Le théorème précédent nous
+permet de démontrer rigoureusement (\ref{sinxsx}).
+
+Considérons le dessin à la figure~\ref{SINXX}.  Nous avons
+\[
+\sin(x) = |\sgm{CE}| < |\sgm{AC}|
+< \text{longueur de l'arc de cercle}\ AC = x \; .
+\]
+Donc
+\begin{equation}\label{inequ1}
+\frac{\sin(x)}{x} < 1 \; .
+\end{equation}
+De plus,
+\begin{align*}
+x &= \text{longueur de l'arc de cercle}\ AC \\
+&< |\sgm{AD}| + |\sgm{DC}| < |\sgm{AD}| + |\sgm{DB}|
+= |\sgm{AB}| = \frac{|\sgm{AB}|}{|\sgm{OA}|}
+= \tan(x) = \frac{\sin(x)}{\cos(x)} \; .
+\end{align*}
+Donc
+\begin{equation}\label{inequ2}
+\cos(x) < \frac{\sin(x)}{x} \; .
+\end{equation}
+
+Nous déduisons de (\ref{inequ1}) et (\ref{inequ2}) que
+\[
+\cos(x) < \frac{\sin(x)}{x} < 1  \; .
+\]
+Il est facile de vérifier à partir de la définition du cosinus que
+\[
+\lim_{x\rightarrow 0} \cos(x) = 1
+\]
+Par exemple, pour toute suite
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $0$,
+nous avons que $\cos(x_n)$ tend vers $\cos(0) = 1$. Ainsi, nous
+obtenons que
+$g(x) = \sin(x)/x$ approche $1$ lorsque $x$ approche $0$ grâce au
+théorème des gendarmes.
+\label{R_SINXX}
+\end{egg}
+
+Comme nous venons de voir, il n'est pas toujours facile de démontrer
+rigoureusement qu'une fonction à une limite en un point.
+
+\PDFfig{4_limites/sin_x_x}{$\displaystyle \lim_{x\rightarrow 0}\sin(x)/x = 1$}
+{La figure utilisée pour démontrer rigoureusement que
+$\displaystyle \lim_{x\rightarrow 0} \sin(x)/x = 1$.}{SINXX}
+
+Comme pour les limites de suites, nous avons les propriétés suivantes.
+
+\begin{focus}{\thm} \label{lim_funct_scd}
+Supposons que $\displaystyle \lim_{x\rightarrow c} f(x) = A$ et
+$\displaystyle \lim_{x\rightarrow c} g(x) = B$.
+\begin{enumerate}
+\item $\displaystyle \lim_{x\rightarrow c}\; (f(x) + g(x) ) = A + B$.
+\item Si $k$ est un nombre réel, alors
+$\displaystyle \lim_{x\rightarrow c}\; (k\; f(x)) = kA$.
+\item $\displaystyle \lim_{x\rightarrow c}\; (f(x)g(x)) = AB$.
+\item Si $B \neq 0$ (donc $g(x) \neq 0$ pour $x$ près de $c$),
+alors $\displaystyle \lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \frac{A}{B}$.
+\end{enumerate}
+\end{focus}
+
+Les quatre conclusions du théorème précédent sont souvent énoncées de
+la façon suivante.
+\begin{align*}
+\lim_{x\rightarrow c} (f(x)+g(x)) &= \lim_{x\rightarrow c} f(x) +
+\lim_{x\rightarrow c} g(x) \; , \\
+\lim_{x\rightarrow c} kf(x) &= k \lim_{x\rightarrow c} f(x) \; , \\
+\lim_{x\rightarrow c} f(x)g(x) &= \left(\lim_{x\rightarrow c} f(x)\right) 
+\left(\lim_{x\rightarrow c} g(x)\right)  \\
+\intertext{et}
+\lim_{x\rightarrow c} \frac{f(x)}{g(x)} &=
+\frac{\displaystyle \lim_{x\rightarrow c} f(x)}
+{\displaystyle \lim_{x\rightarrow c} g(x)}
+\end{align*}
+respectivement.
+
+\section{Fonctions continues}
+
+Une propriété que possèdent certaines fonctions est la
+{\bfseries continuité}.  La fonction $f$ est continue au point $x=c$
+si $f$ est définie au point $x=c$ et $f(x)$ approche la valeur $f(c)$
+lorsque $x$ approche $c$.
+
+Si nous utilisons la définition de limite introduite à la section
+précédente pour définir la continuité d'une fonction au point $x=c$,
+nous obtenons l'énoncé suivant.
+
+\begin{focus}{\dfn} \index{Fonction continue!en un point}
+Soit $f$ une fonction à valeurs réelles définie près d'un point $c$ et
+au point $c$.  La fonction $f$ est {\bfseries continue au point $c$}
+si
+\[
+\lim_{x\rightarrow c} f(x) = f(c)  \; .
+\]
+\end{focus}
+
+En d'autres mots, $f$ est continue au point $c$ si $f(c)$ existe et
+$f(x_n)$ approche $f(c)$ quelle que soit la suite
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $c$.
+
+La figure~\ref{DER2} contient le graphe d'une fonction $f$ qui
+n'est pas continue au point $x=c$ car $f(x)$ approche la valeur $B$
+lorsque $x>c$ approche $c$ et $f(x)$ approche la valeur $A\neq B$
+lorsque $x<c$ approche $c$.  Comme $f$ est une fonction, elle ne peut
+pas prendre deux valeurs distinctes, $A$ et $B$, lorsque $x=c$.  Dans
+le dessin à la figure~\ref{DER2}, le cercle plein à l'extrémité gauche de la
+courbe supérieure (à $x=c$) et le cercle vide à l'extrémité droite de
+la courbe inférieure (aussi à $x=c$) indiquent que $f(c)=B$.
+
+\PDFfig{4_limites/der2}{Une fonction discontinue}
+{La fonction $f$ n'est pas continue au point $x=c$}{DER2}
+
+Pour qu'une fonction ne soit pas continue en un point $x=c$, il faut
+que le graphe de la fonction soit représenté par une courbe brisée à
+$x=c$.
+
+\begin{egg}
+À l'exemple~\ref{egg_cont1}, nous avons montré que la fonction
+$g(x) = x^2+1$ est continue au point $x=1$ car
+$\displaystyle \lim_{x\rightarrow 1} g(x) = 2$ et $g(1)=2$. 
+Donc
+\[
+\displaystyle \lim_{x\rightarrow 1} g(x) = g(1) \; .
+\]
+\end{egg}
+
+\begin{egg}
+La fonction $g(x) = \sin(x)/x$ que nous avons étudié à
+l'exemple~\ref{E_SINXX} n'est pas continue au point $x=0$ car $g(x)$
+n'est pas définie pour $x=0$. Par contre, si nous définissons
+\[
+f(x) = \begin{cases}
+\displaystyle \frac{\sin(x)}{x} & \qquad \text{pour} \; x\neq 0 \\
+1 & \qquad \text{pour} \; x = 0
+\end{cases}
+\]
+alors $f(x) = g(x)$ pour $x\neq 0$ et $f$ est continue au point $x=0$
+car
+\[
+\lim_{x \rightarrow 0} f(x) = \lim_{x\rightarrow 0} \frac{\sin(x)}{x}
+= 1 = f(0) \; .
+\]
+Le graphe de $f$ est le graphe à la figure~\ref{DER4} où le point
+$(0,1)$ est maintenant représenté par un cercle plein.
+\end{egg}
+
+\begin{focus}{\dfn} \index{Fonction continue!sur un intervalle}
+Si une fonction $f$ est continue en tout point d'un intervalle
+(e.g.\ $]a,b[$, $[a,b]$, $[a,b[$ or $]a,b]$) nous disons que la fonction
+$f$ est {\bfseries continue cet intervalle}.
+\end{focus}
+
+Il est toujours préférable (si c'est possible) d'utiliser des
+fonctions continues pour décrire les phénomènes physiques,
+biologiques, et autres.  La raison pour cette préférence est qu'une
+petite variation de l'argument d'une fonction continue aura très peu
+d'effet (en général) sur la valeur retournée par la fonction.  Cela
+est nécessaire si nous voulons faire des prédictions à long terme ou si
+nous voulons estimer les valeurs à fournir à la fonction pour obtenir le
+résultat escompté.  Nous illustrons ce dernier type de problèmes dans
+l'exemple suivant.
+
+\begin{egg}[\life]
+La concentration d'un contaminant dans l'eau d'une rivière est
+déterminée par la fonction
+$\displaystyle f(t) = \frac{0.7 t}{1+t}$ où la variable $t$ est mesurée
+en années.  À quel moment aurons-nous une concentration du contaminant
+entre $0.1$ et $0.2$ pourcent?
+
+Il faut trouver $t$ tel que
+\[
+  0.1 < f(t) = \frac{0.7t}{1+t} < 0.2 \quad .
+\]
+Il découle de la première inégalité que
+\[
+  0.1 < \frac{0.7t}{1+t} \Rightarrow 0.1 + 0.1 t < 0.7 t
+  \Rightarrow 0.1 < 0.6 t \Rightarrow \frac{1}{6} < t
+\]
+et de la deuxième inégalité que
+\[
+  \frac{0.7t}{1+t} < 0.2 \Rightarrow 0.7 t < 0.2 + 0.2 t
+  \Rightarrow 0.5 t < 0.2 \Rightarrow t < \frac{2}{5} \quad .
+\]
+Nous aurons donc une concentration entre $0.1$ et $0.2$ pourcent pour
+$t$ entre $1/6 = 0.1\overline{6}$ de l'année (environ $2$ mois) et
+$2/5 = 0.4$ de l'année (un peu moins de $5$ mois).
+
+Si nous considérons la même question pour une concentration entre $0.13$
+et $0.17$ pourcent, il faut trouver $t$ tel que
+\[
+  0.13 < f(t) = \frac{0.7t}{1+t} < 0.17 \quad .
+\]
+Puisque
+\[
+  0.13 < \frac{0.7t}{1+t} \Rightarrow 0.13 + 0.13 t < 0.7 t
+  \Rightarrow 0.13 < 0.57 t \Rightarrow \frac{13}{57} < t
+\]
+et
+\[
+  \frac{0.7t}{1+t} < 0.17 \Rightarrow 0.7 t < 0.17 + 0.17 t
+  \Rightarrow 0.53 t < 0.17 \Rightarrow t < \frac{17}{53} \ ,
+\]
+nous aurons une concentration entre $0.13$ et $0.17$ pourcent pour $t$
+entre $13/57 =0.228\ldots$ de l'année et $17/53 = 0.320\ldots$ de l'année.
+
+Si considère la même question pour une concentration entre $0.14$
+et $0.16$ pourcent, nous trouvons $1/4 = 0.25 < t < 8/27 = 0.\overline{296}$,
+Pour une concentration enter $0.145$ et $0.155$ pourcent, nous trouvons
+$29/111 = 0.\overline{261} < t < 31/109 = 0.284\ldots$, etc.  À la
+limite, nous avons un concentration de $0.15$ pourcent pour
+$t = 3/11 = 0.\overline{27}$ de l'année.   C'est la valeur de $t$
+lorsque $f(t) = 0.15$.
+
+Naturellement, cet exemple n'est pas réaliste car la fonction $f$ est
+donnée explicitement.  Dans une expérience réelle, la fonction $f$ est
+inconnue.  Nous avons peut être quelques résultats expérimentaux 
+qui nous donnent que la concentration du contaminant varie de $0.1$ à
+$0.2$ pourcent entre $t=0.1\overline{6}$ et $t = 0.4$, de $0.13$ à
+$0.17$ pourcent entre $t =0.228\ldots$ et $t = 0.320\ldots$, 
+de $0.14$ à $0.16$ pourcent entre $t = 0.25$ et $t = 0.\overline{296}$,
+de $0.145$ à $0.155$ pourcent entre $t = 0.\overline{261}$ et
+$t = 0.284\ldots$, etc.  Si nous assumons que la fonction qui donne la
+densité du contaminant en fonction du temps est une fonction continue,
+nous pouvons alors conclure que la concentration du contaminant est
+possiblement de $0.15$ pourcent pour $t=0.27$; une valeur qui se
+trouve entre $t = 0.\overline{261}$ et $t = 0.284\ldots$.  Si nous
+n'assumons pas que la fonction soit continue, nous ne pouvons rien
+conclure.
+\end{egg}
+
+\subsection{Epsilon et delta \theory}
+
+La définition en termes de $\epsilon$ et $\delta$ de la limite d'une
+fonction à un point nous donne une définition de la continuité qui est
+équivalente à celle que nous venons de donner.
+
+\begin{focus}{\dfn} \index{Fonction continue!en un point}
+Soit $f$ une fonction à valeurs réelles définie près d'un point $c$ et
+au point $c$.  La fonction $f$ est continue au point $x=c$ si,
+{\em quel que soit le petit nombre $\epsilon >0$} qui est donné, nous
+pouvons trouver un nombre $\delta >0$ (qui peut dépendre de $\epsilon$)
+tel que
+\[
+|f(x) - f(c)| < \epsilon \quad \text{si} \quad |x-c|\leq \delta \; .
+\]
+\end{focus}
+
+\begin{rmk}
+Nous illustrons à la figure~\ref{EPSDELTC} la deuxième formulation de la
+définition d'une fonction continue $f$ en un point $c$.  Quel que soit
+le nombre $\epsilon$, nous pouvons toujours trouver $\delta$ tel que le
+graphe de la fonction $f$ entre $c-\delta$ et $c+\delta$,
+{\em incluant $(c,f(c))$}, soit dans la boite définie par
+$c-\delta < x < c+\delta$ et $f(c)-\epsilon < y < f(c)+\epsilon$.
+\end{rmk}
+
+\PDFfig{4_limites/epsdeltC}{Définition en termes de $\epsilon$ et $\delta$ de
+la continuité d'une fonction à un point}{Pour $\epsilon$ donné, il est
+possible de trouver $\delta$ pour que $f(x)$ (incluant $f(c)$) soit entre
+$f(c)-\epsilon$ et $f(c)+\epsilon$ quel que soit $x$ entre $c-\delta$ et
+$c+\delta$.}{EPSDELTC}
+
+\section{Quelques propriétés des fonctions continues}
+
+Les résultats suivants découlent de la définition d'une fonction continue.
+
+\begin{focus}{\prp}
+\begin{enumerate}
+\item Les fonctions polynomiales, trigonométriques, exponentielles et
+  logarithmiques sont des fonctions continues sur leur domaine.
+\item Il découle du théorème~\ref{lim_funct_scd} que le produit et la
+  somme de fonctions continues donnent une nouvelle fonction continue.
+  De même, le quotient de deux fonctions continues donne une nouvelle
+  fonction continue sauf aux points où le dénominateur est nul.
+\item La composition de deux fonctions continues donne une nouvelle
+  fonction continue.
+\end{enumerate}
+\end{focus}
+
+Si $\displaystyle \{ x_n\}_{n=0}^\infty$ est une suite qui converge
+vers un point $c$ du domaine d'une fonction continue $f$, alors
+la suite $\displaystyle \{ f(x_n)\}_{n=0}^\infty$ converge vers le
+point $f(c)$.   En d'autres mots,
+\[
+\lim_{n\to \infty} f(x_n) = f\left(\lim_{n\to \infty} x_n\right)
+\]
+Puisque la définition de limite d'une fonction en un point $c$ fait
+appel aux suites $\displaystyle \{ x_n\}_{n=0}^\infty$ qui converge
+vers $c$, nous obtenons le résultat suivant qui est très utile pour
+calculer des limites.
+
+\begin{focus}{\prp} \label{interLim}
+Soit $f$ une fonction continue et $g$ une fonction dont l'image est un
+sous-ensemble du domaine de $f$.  Nous pouvons donc considérer la
+composition $f\circ g$.   Si $\displaystyle \lim_{x\to r} g(x) = s$
+est un élément du domaine de $f$, alors
+$\displaystyle \lim_{x\to r} f(g(x)) = f(s)$.  En d'autres mots,
+\[
+\lim_{x \to r} f(g(x)) = f\left(\lim_{x\to r} g(x)\right)
+\]
+\end{focus}
+
+\begin{egg}
+Calculons les limites suivantes si elles existent.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.6em}}l@{\hspace*{2.6em}}}l@{\hspace{0.6em}}l}
+\subQ{a} & $\displaystyle \lim_{x\to 2} \sin\left(\frac{x^2-4}{x-2}\right)$ &
+\subQ{b} & $\displaystyle \lim_{x\to 4} \frac{x-4}{2 - \sqrt{x}}$ &
+\subQ{c} & $\displaystyle \lim_{x\to 1} \frac{x-1}{2 - \sqrt{x+3}}$
+\end{tabular}
+\end{center}
+
+\subQ{a}
+Notons que
+\[
+\lim_{x\to 2} \frac{x^2-4}{x-2}
+= \lim_{x\to 2} \frac{(x-2)(x+2)}{x-2}
+= \lim_{x\to 2} (x+2) = 4 \; .
+\]
+Puisque $\sin(x)$ est continue en $x = 4$, nous pouvons utiliser la
+proposition~\ref{interLim} pour conclure que
+\[
+\lim_{x\to 2} \sin\left(\frac{x^2-4}{x-2}\right)
+= \sin\left(\lim_{x\to 2} \; \frac{x^2-4}{x-2}\right)
+= \sin(4) \ .
+\]
+
+\subQ{b} Remarquons que
+\[
+\frac{x-4}{2 - \sqrt{x}} = \frac{(\sqrt{x} - 2)(\sqrt{x}+2)}{2 - \sqrt{x}}
+= -(\sqrt{x}+2)
+\]
+pour $x\neq 4$.  Ainsi,
+\[
+\lim_{x\to 4} \frac{x-4}{2 - \sqrt{x}}
+= \lim_{x\to 4} -(\sqrt{x}+2) = -(\sqrt{4}+2) = -4
+\]
+Nous avons utilisé le fait que $\sqrt{x} - 2$ est une fonction continue pour
+calculer la dernière limite.
+
+\subQ{c} Pour évaluer cette limite, nous éliminons premièrement la racine
+carrée au dénominateur.
+\begin{align*}
+\frac{x-1}{2 - \sqrt{x+3}}
+&= \frac{x-1}{2 - \sqrt{x+3}}
+\left( \frac{2 + \sqrt{x+3}}{2 + \sqrt{x+3}} \right)
+= \frac{(x-1)(2 + \sqrt{x+3})}{4 - (x+3)} \\
+&= \frac{(x-1)(2 + \sqrt{x+3})}{1 - x}
+= -(2 + \sqrt{x+3})
+\end{align*}
+pour $x \neq 1$.  Ainsi,
+\[
+\lim_{x\to 1} \frac{x-1}{2 - \sqrt{x+3}}
+= \lim_{x\to 1}  -(2 + \sqrt{x+3}) =  -(2 + \sqrt{4}) = -4
+\]
+Nous avons utilisé le fait que $2 + \sqrt{x+3}$ est une fonction continue pour
+calculer la dernière limite.
+\end{egg}
+
+\begin{egg}[\theory]
+Soit la fonction
+\[
+h(x) = \arctan(x) + \arctan\left(\frac{1}{x}\right) \quad , \quad
+x\neq 0 \; .
+\]
+Montrons que
+\[
+h(x) = \begin{cases}
+\pi/2 & \quad \text{si} \quad x>0 \\
+-\pi/2 & \quad \text{si} \quad x<0
+\end{cases} \; .
+\]
+
+Premièrement, montrons que
+\[
+\sin(h(x)) = \begin{cases}
+1 & \quad \text{si} \quad x>0 \\
+-1 & \quad \text{si} \quad x<0
+\end{cases} \; .
+\]
+Posons $\theta_1 = \arctan(x)$ et $\theta_2 = \arctan(1/x)$.  Nous avons 
+$-\pi/2 < \theta_1, \theta_2 < \pi/2$ et
+\[
+\sin(h(x)) = \sin(\theta_1+\theta_2) = \sin(\theta_1)\cos(\theta_2)
++ \sin(\theta_2)\cos(\theta_1) \; .
+\]
+Nous déduisons des deux dessins à la figure~\ref{arcXX1} que
+\[
+\sin(\theta_1) = \frac{x}{\sqrt{x^2+1}} \ ,
+\ \cos(\theta_1) = \frac{1}{\sqrt{x^2+1}} \ ,
+\ \sin(\theta_2) = \frac{1}{\sqrt{x^2+1}}
+\quad \text{et} \quad
+\cos(\theta_2) = \frac{x}{\sqrt{x^2+1}}
+\]
+pour $x>0$.  Donc
+\[
+\sin(h(x)) = \left(\frac{x}{\sqrt{x^2+1}}\right)
+\left(\frac{x}{\sqrt{x^2+1}}\right)
++ \left(\frac{1}{\sqrt{x^2+1}}\right) \left(\frac{1}{\sqrt{x^2+1}}\right) = 1
+\]
+pour tout $x>0$.
+De même, nous déduisons des deux dessins à la figure~\ref{arcXX2} que
+\[
+\sin(\theta_1) = \frac{x}{\sqrt{x^2+1}} \ ,
+\ \cos(\theta_1) = \frac{1}{\sqrt{x^2+1}} \ ,
+\ \sin(\theta_2) = \frac{-1}{\sqrt{x^2+1}}
+\quad\text{et}\quad
+\cos(\theta_2) = \frac{-x}{\sqrt{x^2+1}}
+\]
+pour $x<0$.  Donc
+\[
+\sin(h(x)) = \left(\frac{x}{\sqrt{x^2+1}}\right)
+\left(\frac{-x}{\sqrt{x^2+1}}\right)
++ \left(\frac{-1}{\sqrt{x^2+1}}\right) \left(\frac{1}{\sqrt{x^2+1}}\right) = -1
+\]
+pour tout $x<0$.
+
+Pour compléter le problème, remarquons que
+$h(1) = 2\arctan(1) = \pi/2$.  Comme $\sin(h(x))$ est constant pour
+$x>0$ et $h$ est une fonction continue pour $x>0$, $h(x)$ doit être
+constant pour $x>0$ et ainsi $h(x) = \pi/2$ pour $x>0$.  De même,
+$h(-1) = 2\arctan(-1) = -\pi/2$.  Comme $\sin(h(x))$ est constant pour
+$x<0$ et $h$ est continue pour $x<0$, $h(x)$ doit être constant pour
+$x<0$ et ainsi $h(x) = -\pi/2$ pour $x>0$.
+\end{egg}
+
+\PDFfig{4_limites/arcXX1}{Représentations graphiques de
+$\tan(\theta_1)=x$ et $\tan(\theta_2)=1/x$ pour $x>0$}{Représentations
+graphiques de $\tan(\theta_1)=x$ et $\tan(\theta_2)=1/x$ pour $x>0$
+et $0< \theta_1, \theta_2 < \pi/2$.}{arcXX1} 
+
+\PDFfig{4_limites/arcXX2}{Représentations graphiques de
+$\tan(\theta_1)=x$ et $\tan(\theta_2)=1/x$ pour $x<0$}{Représentations
+graphiques de $\tan(\theta_1)=x$ et $\tan(\theta_2)=1/x$ pour $x<0$
+et $-\pi/2 < \theta_1, \theta_2 < 0$.   Notons que
+$\tan(\theta_i)<0$, $\sin(\theta_i)<0$ et $\cos(\theta_i)>0$ pour
+$-\pi/2 < \theta_1, \theta_2 < 0$.}{arcXX2}
+
+Les fonctions continues possèdent une propriété très importante que
+nous utiliserons lors de l'étude des fonctions au prochain chapitre.
+
+\begin{focus}[][Théorème des valeurs intermédiaires]{\thm}
+\index{Théorème des valeurs intermédiaires}
+Soit $f$ une fonction continue sur l'intervalle $[a,b]$ et soit $m$
+une valeur entre $f(a)$ et $f(b)$.  Il existe au moins une valeur $c$
+telle que  $a\leq c \leq b$ et $f(c) = m$ (figure~\ref{CONTFCT}).
+\label{TVI}
+\end{focus}
+
+\PDFfig{4_limites/contfct}{Théorème des valeurs intermédiaires}
+{Illustration du théorème des valeurs intermédiaires.}{CONTFCT}
+
+\section{Limites à l'infini et limites infinies}
+
+Lorsque nous étudions une fonction, il est souvent intéressant de savoir
+comment se comporte la fonction pour de très grandes valeurs de son
+domaine.
+
+\begin{egg}
+Comme nous pouvons le constater à partir du graphe de la fonction
+$\displaystyle g(x) = 5 + e^{(2 - x/10)}$ que l'on retrouve à la
+figure~\ref{LIM1}, $g(x)$ semble approcher la valeur $5$ lorsque $x$
+devient de plus en plus grand.  En effet, $g(x) \approx 5$ pour $x$
+très grand.
+\end{egg}
+
+\MATHfig{4_limites/lim_inf1}{8cm}{Graphe de
+$\displaystyle g(x) = 5 + e^{(2-x/10)}$}{Le graphe
+de $\displaystyle g(x) = 5 + e^{(2-x/10)}$.  Nous avons que $g(x)$
+approche $5$ lorsque $x$ tend vers plus l'infini.}{LIM1}
+
+Commençons par donner un sens mathématique à l'énoncé \lgm $f(x)$
+approche une certaine valeur lorsque $x$ tend vers plus l'infini\rgm.
+Pour se faire, nous utilisons la définition~\ref{def_of_lim_at_inf} de
+limite à l'infini pour les suites.  Nous obtenons la définition suivante
+de limite d'une fonction $f$ lorsque $x$ tend vers plus ou moins
+l'infini.
+
+\begin{focus}{\dfn} \index{Limite d'une fonction!à l'infini}
+Si la définition~\ref{def1_conv} est satisfaite lorsque $c$ est
+remplacé par $\infty$, nous disons que {\bfseries $f(x)$ converge (ou tend)
+vers la constante $C$ lorsque $x$ converge (ou tend) vers plus
+l'infini} et nous écrivons
+\[
+\lim_{x\rightarrow \infty} f(x) = C \; .
+\]
+De même, si la définition~\ref{def1_conv} est satisfaite lorsque $c$
+est remplacé par $-\infty$, nous disons que {\bfseries $f(x)$ converge (ou
+tend) vers la constante $C$ lorsque $x$ converge (ou tend) vers moins
+l'infini} et nous écrivons
+\[
+\lim_{x\rightarrow -\infty} f(x) = C \; .
+\]
+\label{def_of_lim_of_f_at_inf}
+\end{focus}
+
+\begin{egg}
+Revenons à l'exemple précédent avec
+$\displaystyle g(x) = 5 + e^{\left(2 - x/10\right)}$.
+
+La suite $\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ où
+$x_n = n^2$ pour $n=1$, $2$, $3$, \ldots est une suite qui tend vers
+plus l'infini car c'est une suite croissante de nombres sans borne
+supérieure.  Nous donnons, dans le tableau~\ref{TAB_LIM_INF}, les valeurs
+de $g(x_n)$ pour quelques uns des termes de la suite
+$\displaystyle \left\{ x_n\right\}_{n=1}^\infty$.  Il est clair que
+$g(x_n)$ approche $5$ lorsque $n$ (et donc $x_n$) devient de plus en
+plus grand.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c|c|c}
+\hline
+$n$ & $x_n = n^2$ & $g(x_n)$ \\ 
+\hline
+$1$ & $1$ & $11.68589444228\ldots$ \\ 
+$2$ & $4$ & $9.95303242440\ldots$ \\ 
+$3$ & $9$ & $8.00416602395\ldots$ \\ 
+$4$ & $16$ & $6.49182469764\ldots$ \\ 
+$5$ & $25$ & $5.60653065971\ldots$ \\ 
+$\vdots$ & $\vdots$ & $\vdots$ \\ 
+$11$ & $121$ & $5.00004107956\ldots$ \\ 
+$12$ & $144$ & $5.00000411859\ldots$ \\ 
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}{c|c|c}
+\hline
+$n$ & $x_n = n^2$ & $g(x_n)$ \\ 
+\hline
+$13$ & $169$ & $5.00000033807\ldots$ \\ 
+$14$ & $196$ & $5.00000002272\ldots$ \\ 
+$15$ & $225$ & $5.00000000125\ldots$ \\ 
+$16$ & $256$ & $5.00000000006\ldots$ \\ 
+$\vdots$ & $\vdots$ & $\vdots$ \\
+$22$ & $484$ & $5.00000000000\ldots$ \\ 
+$23$ & $529$ & $5.00000000000\ldots$ \\ 
+$24$ & $576$ & $5.00000000000\ldots$ \\ 
+\hline
+\end{tabular}
+\caption[Limite à l'infini d'une fonction]{$g(x_n)$ pour quelques
+  valeurs de $n$. \label{TAB_LIM_INF}}
+\end{center}
+\end{table}
+
+Puisque pour toute suite
+$\displaystyle \left\{ x_n \right\}_{n=1}^\infty$
+qui tend vers plus l'infini, nous pourrions montrer que $g(x_n)$ approche
+$5$ lorsque $n$ devient de plus en plus grand, nous avons que
+$\displaystyle \lim_{x\rightarrow \infty} g(x) = 5$.  Ainsi, $g(x)$
+tend vers $5$ lorsque $x$ tend vers plus l'infini.
+
+La droite $y=5$ est appelée une {\bfseries asymptote horizontale} pour
+la fonction $g$.\index{Asymptote horizontale}
+
+Nous pourrions aussi résonner à partir du graphe de $y=e^x$ pour montrer
+que $\displaystyle \lim_{x\rightarrow \infty} g(x) = 5$.  En effet,
+puisque $\displaystyle 2- x/10$ devient de plus en plus petit
+(de plus en plus \lgm négatif\rgm) lorsque $x$ devient de plus en plus
+grand, nous pouvons conclure à partir du graphe de $y=e^x$ que
+$\displaystyle e^{\left(2- x/10\right)}$ tend vers $0$ lorsque
+$x$ tend vers plus l'infini.  Donc
+$\displaystyle 5+e^{\left(2- x/10\right)}$ tend vers $5$ lorsque
+$x$ tend vers plus l'infini.
+\label{asympt5}
+\end{egg}
+
+Les propositions \ref{suite1} et \ref{suite2} ne sont pas limitées à
+la suite $\displaystyle \{n\}_{n=1}^\infty$.
+
+\begin{focus}{\prp} \label{limite1}
+Soit $r$ un nombre réel positif.  Alors
+\[
+\lim_{x\rightarrow \infty} r^x=
+\begin{cases}
+\infty &\qquad \text{pour $r>1$} \\
+1 &\qquad \text{pour $r=1$} \\
+0 &\qquad \text{pour $0 < r < 1$}
+\end{cases} \; .
+\]
+\end{focus}
+
+\begin{focus}{\prp} \label{limite2}
+Soit $r$ un nombre réel.  Alors
+\[
+\lim_{x\rightarrow \infty} \frac{1}{x^r}=
+\begin{cases}
+0 &\qquad \text{pour $r>0$} \\
+1 &\qquad \text{pour $r=0$} \\
+\infty &\qquad \text{pour $r<0$}
+\end{cases} \; .
+\]
+\end{focus}
+
+\begin{rmk}
+Dans les deux propositions précédentes, nous faisons référence à la
+convergence d'une fonction vers plus l'infini lorsque $x$ tend vers
+plus l'infini.  La définition~\ref{def_of_inf_lim_of_f} ci-dessous
+explique ce que cela veut dire.  C'est deux propositions 
+seront extrêmement utiles pour calculer des limites.
+\end{rmk}
+
+\begin{egg}
+Évaluons les limites suivantes si elles existent.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.6em}}l@{\hspace*{2.6em}}}l@{\hspace{0.6em}}l}
+\subQ{a} & $\displaystyle \lim_{x\to \infty} \frac{x^2 + x  +1}{5x^2 + 1}$ &
+\subQ{b} & $\displaystyle \lim_{x\to \infty} \frac{x-4}{x^{3/2} + 2x +1}$ &
+\subQ{c} & $\displaystyle \lim_{x\to \infty} \frac{\sqrt{4x^4+5}}
+{\left(x^8 + x^2 + 1\right)^{1/4}}$
+\end{tabular}
+\end{center}
+
+\subQ{a} Si nous divisons le numérateur et dénominateur par $x^2$, alors
+\[
+\lim_{x\to \infty} \frac{x^2 + x  +3}{5x^2 + 1}
+= \lim_{x\to \infty} \frac{1 + (1/x)  + (3/x^2)}{5 + (1/x^2)}
+= \frac{\displaystyle 1 + \lim_{x\to \infty}(1/x)  + 3\lim_{x\to \infty}(1/x^2)}
+{\displaystyle 5 + \lim_{x\to \infty}(1/x^2)}
+= \frac{1}{5}
+\]
+grâce à la proposition~\ref{limite2} qui nous donne
+$\displaystyle \lim_{x\to \infty}(1/x) = \lim_{x\to \infty}(1/x^2) = 0$.
+
+\subQ{b} Si nous divisons le numérateur et dénominateur par $x^{3/2}$, alors
+\begin{align*}
+\lim_{x\to \infty} \frac{x-4}{x^{3/2} + 2x +1}
+&= \lim_{x\to \infty} \frac{(1/x^{1/2})-(4/x^{3/2})}
+{1 + (2/x^{1/2}) +(1/x^{3/2})}\\
+&= \frac{\displaystyle \lim_{x\to \infty} (1/x^{1/2})
+ - 4 \lim_{x\to \infty} (1/x^{3/2})}
+{\displaystyle 1 + 2 \lim_{x\to \infty}(1/x^{1/2})
+ + \lim_{x\to \infty} (1/x^{3/2})}
+= \frac{0}{1} = 0
+\end{align*}
+grâce encore à la proposition~\ref{limite2} qui nous donne
+$\displaystyle \lim_{x\to \infty}(1/x^{1/2}) = \lim_{x\to \infty}(1/x^{3/2}) = 0$.
+
+\subQ{c} Si nous factorisons $x^4$ à l'extérieur de la racine carrée et
+$x^8$ à l'extérieur de la racine quatrième, alors
+\[
+\frac{\sqrt{4x^4+5}}{\left(x^8 + x^2 + 1\right)^{1/4}}
+= \frac{x^2 \sqrt{4 + (5/x^4)}}{x^2\left(1 + (1/x^6) + (1/x^8)\right)^{1/4}}
+= \frac{\sqrt{4 + (5/x^4)}}{\left(1 + (1/x^6) + (1/x^8)\right)^{1/4}} \ .
+\]
+Ainsi,
+\begin{align*}
+\lim_{x\to \infty} \frac{\sqrt{4x^4+5}}{ \left(x^8 + x^2 + 1\right)^{1/4}}
+&= \lim_{x\to \infty}
+\frac{\sqrt{4 + (5/x^4)}}{\left(1 + (1/x^6) + (1/x^8)\right)^{1/4}}\\
+&= \frac{\sqrt{\displaystyle 4 + \lim_{x\to \infty} (5/x^4)}}
+{\left(\displaystyle 1 + \lim_{x\to \infty} (1/x^6)
++ \lim_{x\to \infty} (1/x^8)\right)^{1/4}}
+= \frac{\sqrt{4}}{1^{1/4}} = 2
+\end{align*}
+car $\displaystyle \lim_{x\to \infty}(1/x^r) = 0$ pour $r>0$ comme nous
+avons énoncé à la proposition~\ref{limite2} .
+\end{egg}
+
+\begin{egg}
+Déterminons si la limite suivante existe
+\[
+\lim_{x\rightarrow \infty} \left(\sqrt{x+1}-\sqrt{x}\right)
+\]
+et, si elle existe, qu'elle est cette limite.
+
+Remarquons que
+\[
+\sqrt{x+1}-\sqrt{x} = \left
+(\sqrt{x+1}-\sqrt{x}\right)
+\left(\frac{\sqrt{x+1}+\sqrt{x}}{\sqrt{x+1}+\sqrt{x}}\right)
+= \frac{1}{\sqrt{x+1}+\sqrt{x}} \ .
+\]
+Puisque $\sqrt{x+1}+\sqrt{x}$ croît sans borne supérieure lorsque $x$
+augmente, nous avons
+\[
+\lim_{x\rightarrow \infty} \left(\sqrt{x+1}-\sqrt{x}\right)
+= \lim_{x\rightarrow \infty} \frac{1}{\sqrt{x+1}+\sqrt{x}} = 0 \ .
+\]
+\label{conjinfty}
+\end{egg}
+
+Nous avons
+\[
+\lim_{n\rightarrow \infty} f(x_n) = \infty
+\]
+si la suite $\displaystyle \left\{ f(x_n) \right\}_{n=1}^\infty$
+satisfait la définition~\ref{def_of_lim_at_inf} de convergence vers
+plus l'infini.  De même,
+\[
+\lim_{n\rightarrow \infty} f(x_n) = -\infty
+\]
+si la suite $\displaystyle \left\{ f(x_n) \right\}_{n=1}^\infty$
+satisfait la définition~\ref{def_of_lim_at_inf} de convergence vers
+moins l'infini.  Nous pouvons ainsi donner la définition suivante.
+
+\begin{focus}{\dfn} \index{Limite infinie d'une fonction}
+Soit $f$ une fonction définie pour $x$ près de $c$.  Nous écrivons
+\[
+\lim_{x\rightarrow c} f(x) = +\infty  \quad \text{(resp. $-\infty$)}
+\]
+si
+\[
+\lim_{n\rightarrow \infty} f(x_n) = +\infty  \quad \text{(resp. $-\infty$)} 
+\]
+{\em quelle que soit la suite}
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ de
+{\em nombres différents de $c$} qui tend vers $c$.
+Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
+(resp. moins l'infini) lorsque $x$ converge (ou tend) vers $c$}.
+
+Il n'est pas nécessaire que $f$ soit définie à $c$, et nous pouvons avoir
+$c = +\infty$ ou $-\infty$.
+\label{def_of_inf_lim_of_f}
+\end{focus}
+
+\begin{egg}
+Si $\displaystyle f(x) = \frac{2}{(x-3)^2}$, que se passe-t-il lorsque
+$x$ approche $3$?  Remarquons que $f(x)$ n'est pas définie pour
+$x=3$.
+
+Une façon de montrer que
+\[
+\lim_{x\rightarrow 3} \frac{2}{(x-3)^2} = \infty
+\]
+serait de montrer que, quelle que soit la suite
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $3$, la
+suite
+$\displaystyle \left\{\frac{2}{(x_n-3)^2}\right\}_{n=1}^\infty$
+tend vers plus l'infini.   Nous ne ferons pas cela mais le lecteur
+peut vérifier avec une suite
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+de son choix qui tend vers $3$ que
+$\displaystyle \left\{\frac{2}{(x_n-3)^2}\right\}_{n=1}^\infty$
+tend vers plus l'infini.
+
+Nous utilisons une autre approche (un peu moins rigoureuse) pour nous
+convaincre que
+\[
+\lim_{x\rightarrow 3} \frac{2}{(x-3)^2} = \infty \; .
+\]
+Si $x$ est très près de $3$ avec $x>3$ alors $x-3$ est très près de
+zéro avec $x-3>0$.  Donc $(x-3)^2$ est encore plus près de zéro que
+$x-3$ peut l'être si $0<x-3<1$.  Ainsi, $2/(x-3)^2 >0$ est très grand
+car nous divisons par un très petit nombre.   Plus $x-3>0$ sera petit, plus
+$2/(x-3)^2 >0$ sera grand.  Un raisonnement semblable
+pour $x$ très près de $3$ avec $x<3$, montre que $2/(x-3)^2>0$ devient
+aussi de plus en plus grand lorsque $3-x>0$ devient de plus en plus
+petit.
+
+Si nous résonnons à partir du graphe de $f$ près de $3$ que nous retrouvons
+à la figure~\ref{LIM4}, nous pouvons conclure que la fonction $f$ croît
+sans borne supérieure lorsque $x$ tend vers $3$.  La droite $x=3$ est
+appelée une
+{\bfseries asymptote verticale}\index{Asymptote verticale} pour $f$. 
+\end{egg}
+
+\MATHfig{4_limites/lim_inf4}{8cm}{Asymptote verticale pour
+$f(x) = 2/(x-3)^2$}{Le graphe de $f(x) = 2/(x-3)^2$.  $f$ croit sans
+limite supérieure lorsque $x$ approche $3$.  La droite $x=3$ est une
+asymptote verticale.}{LIM4}
+
+\begin{egg}
+Si $\displaystyle f(x) = \frac{2}{x^2-9}$, que se passe-t-il lorsque
+$x$ approche $3$?  Remarquons que $f(x)$ n'est pas définie pour
+$x=3$.
+
+Si $x$ est très près de $3$ avec $x>3$ alors $x^2-9$ est très près de
+zéro avec $x^2-9>0$.  Donc $2/(x^2-9)>0$ est très grand car nous divisons
+par un très petit nombre.  Si $x$ est très près de $3$ avec $x<3$
+alors $x^2-9$ est très près de zéro avec $x^2-9<0$.  Donc
+$2/(x^2-9)<0$ est très petit car nous divisons par un nombre négatif qui
+est très petit en valeur absolue.
+
+Le graphe de $f$ près de $3$ que nous retrouvons à la figure~\ref{LIM3}
+indique que la fonction $f$ croît sans borne supérieure lorsque $x$
+approche $3$ avec $x>3$ et la fonction $f$ décroît sans borne
+inférieure lorsque $x$ approche $3$ avec $x<3$.  La fonction
+$2/(x^2-9)$ ne tend pas vers plus l'infini ou moins l'infini lorsque
+$x$ tend vers $3$.
+\end{egg}
+
+\MATHfig{4_limites/lim_inf3}{8cm}{Asymptote verticale pour
+$f(x) = 2/(x^2-9)$}{Le graphe de $f(x) = 2/(x^2-9)$.  $f$ croît sans
+limite supérieure lorsque $x$ approche $3$ avec $x>3$ et $f$ décroît
+sans limite inférieure lorsque $x$ approche $3$ avec $x<3$.}{LIM3}
+
+Si $f$ est une fonction qui n'est pas définie en un point $c$,
+l'exemple précédent suggère de considérer le comportement de cette
+fonction lorsque nous nous approchons de $c$ avec des valeurs plus petites
+que $c$ (i.e. par la gauche) ou des valeurs plus grandes que $c$ (i.e.
+par la droite).
+
+\begin{focus}{\dfn} \index{Limite infinie d'une fonction!à droite}
+\index{Limite infinie d'une fonction!à gauche}
+Soit $f$ une fonction définie pour $x>c$.  Nous écrivons
+\[
+\lim_{x\rightarrow c^+} f(x) = +\infty  \quad \text{(resp. $-\infty$)}
+\]
+si
+\[
+\lim_{n\rightarrow \infty} f(x_n) = +\infty  \quad \text{(resp. $-\infty$)} 
+\]
+{\em quelle que soit la suite}
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n >c$}
+qui tend vers $c$.
+Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
+(resp. moins l'infini) lorsque $x$ converge par la droite vers $c$}.
+De même, nous écrivons
+\[
+\lim_{x\rightarrow c^-} f(x) = \infty \quad \text{(resp. $-\infty$)}.
+\]
+si
+\[
+\lim_{n\rightarrow \infty} f(x_n) = +\infty  \quad \text{(resp. $-\infty$)} 
+\]
+{\em quelle que soit la suite}
+$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n <c$}
+qui tend vers $c$.
+Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
+(resp. moins l'infini) lorsque $x$ converge par la gauche vers $c$}
+(figure~\ref{LIM_INFINI}).
+\end{focus}
+
+\PDFfig{4_limites/lim_infini}{Limites à droite et à gauche}
+{Dans le graphe à de gauche
+$\displaystyle \lim_{x\rightarrow c^-} f(x) = \infty$
+alors que dans le graphe à de droite 
+$\displaystyle \lim_{x\rightarrow c^+} f(x) = -\infty$.}{LIM_INFINI}
+
+\begin{egg}
+À l'exemple précédent, nous avons
+\[
+\lim_{x\rightarrow 3^-} \frac{2}{x^2-9} = -\infty \qquad
+\text{et} \qquad 
+\lim_{x\leftarrow 3^+} \frac{2}{x^2-9} = \infty \; .
+\]
+La droite $x=3$ est appelée une {\bfseries asymptote verticale} pour $f$.
+\index{Asymptote verticale}
+\end{egg}
+
+\subsection{Des définitions plus pratiques \theory}
+
+Dans les exemples précédents, nous nous sommes inspiré du graphe de la
+fonction pour déterminer les limites à l'infini et les limites
+infinies en un point.  Ce n'est pas une approche rigoureuse et elle
+dépend de notre capacité à tracer le graphe de la fonction.  Il nous
+faut donc une définition de limite à l'infini et une définition de
+limite infinie en un point qui soient en accord avec la
+définition~\ref{def2_conv} de limite d'une fonction en un point en
+termes de $\epsilon$ et $\delta$.
+
+La définition~\ref{def2_conv} de la limite d'une fonction en un point
+(équivalent à celle donné à la définition~\ref{def1_conv}) ne faisait
+pas appelle aux suites.  Nous pouvons faire de même pour la définition de la
+limite d'une fonction à l'infini
+(définition~\ref{def_of_lim_of_f_at_inf}) et la définition de la limite
+infinie d'une fonction en un point (définition~\ref{def_of_inf_lim_of_f}).
+
+Ce sont ces définitions qui nous permettent de déterminer
+rigoureusement si une limite à l'infini existe et qu'elle est cette
+limite, ou si une fonction à une limite infinie en un point.
+
+\begin{focus}{\dfn} \index{Limite d'une fonction!à l'infini}
+Soit $f$ une fonction définie pour $x$ positif.  Nous écrivons
+\[
+\lim_{x\rightarrow \infty} f(x) = C
+\]
+et nous disons que $f(x)$ dent vers $C$ lorsque $x$ dent vers plus l'infini
+si la condition suivante est satisfaite.  Il existe une
+{\em unique constante $C$} telle que, pour toute valeur $\epsilon>0$,
+nous pouvons trouver une constante $M>0$ (qui peut dépendre de $\epsilon$)
+pour laquelle $f(x)$ est dans l'intervalle $]C-\epsilon,C+\epsilon[$
+si $x>M$ (figure~\ref{LIM_INFINI1}).
+
+De façons semblables, nous pouvons définir la limite vers moins l'infini.
+\label{epM_def_of_lim_at_inf}
+\end{focus}
+
+\PDFfig{4_limites/lim_infini1}{Asymptote horizontale}
+{La fonction $f$ tend vers $C$ lorsque $x$ tend vers plus l'infini.
+Pour $\epsilon>0$ donné, nous pouvons voir à partir du graphe de $f$ qu'il
+existe $M>0$ tel que $f(x)$ est entre $C-\epsilon$ et $C+\epsilon$ si
+$x>M$.}{LIM_INFINI1}
+
+\begin{focus}{\dfn} \index{Limite infinie d'une fonction}
+Soit $f$ une fonction définie pour $x$ près d'un point $c$.  Nous écrivons
+\[
+\lim_{x\rightarrow c} f(x) = +\infty
+\]
+et nous disons que $f(x)$ tend vers plus l'infini lorsque $x$ tend vers $c$
+si la condition suivante est satisfaite.
+{\em Pour toute constante $M$}, il existe une constante $\delta>0$
+(qui peut dépendre de $M$) pour laquelle $f(x) > M$ lorsque $x$ est
+dans l'intervalle $]c-\delta,c+\delta[$ (figure~\ref{LIM_INFINI0}).
+
+De façons semblables, nous pouvons définir la convergence vers moins
+l'infini, et les convergences à droite et à gauche vers plus ou moins
+l'infini.
+\end{focus}
+
+\PDFfig{4_limites/lim_infini0}{Asymptote verticale}
+{La fonction $f$ tend vers plus l'infini lorsque $x$ tend vers
+$c$.  Pour $M>0$ donné, nous pouvons voir à partir du graphe de $f$ qu'il
+existe $\delta>0$ tel que $f(x)>M$ si $x$ est entre $c-\delta$ et
+$c+\delta$.}{LIM_INFINI0}
+
+\begin{egg}
+Revenons à $\displaystyle f(x) = \frac{2}{x^2-9}$ que nous avons étudié
+précédemment.  Montrons à l'aide des définitions précédentes que 
+\[
+\lim_{x\rightarrow c^-} f(x) = -\infty \quad \text{and} \quad
+\lim_{x\rightarrow c^+} f(x) = +\infty \; .
+\]
+
+Prenons un très grand nombre $M$ (e.g.\ $M=10^6$).  Existe-t-il un
+nombre $\delta>0$ tel que
+\[
+f(x)=\frac{2}{x^2-9} > M
+\]
+lorsque $3<x<3+\delta$?  Cherchons les valeurs de $x>3$ telles que
+$\displaystyle \frac{2}{x^2-9} > M$; c'est-à-dire, telles que
+$x^2 < 9 + 2/M$.  Il faut donc que
+\[
+3<x < \sqrt{9+2/M} = 3 + \left(\sqrt{9+2/M} - 3\right) \; .
+\]
+Si $\delta = \sqrt{9+2/M} - 3$, alors $\delta > 0$ car
+$M>0$.  De plus, $f(x)>M$ pour $3<x<3+\delta$.  Le lecteur est invité à
+calculer $\delta$ pour une valeur $M$ de son choix.  Nous venons de
+montrer que quel que soit $M>0$, nous pouvons toujours trouver un nombre
+$\delta>0$ tel que $f(x)>M$ pour $3<x<3+\delta$.  Ce qui prouve bien
+que $f(x)$ dent vers $+\infty$ lorsque $x$ tend par la droite vers
+$3$.
+
+De même, prenons un très petit nombre $M$ (e.g.\ $M=-10^8$).
+Existe-t-il un nombre $\delta>0$ tel que
+\[
+f(x)=\frac{2}{x^2-9} > M
+\]
+lorsque $3-\delta <x <3$?  Cherchons les valeurs de $x$ entre $0$ et
+$3$ telles que $\displaystyle \frac{2}{x^2-9} < M$; c'est-à-dire,
+telles que $x^2 > 9 + 2/M$.  Il faut donc que
+\[
+3> x > \sqrt{9+2/M} = 3 - (3 - \sqrt{9+2/M})
+\]
+où nous assumons que $M<-2/9$ pour que $9+2/M$ soit positif.
+Si $\delta = 3 - \sqrt{9+2/M}$, alors $\delta > 0$ car $M < -2/9$.
+De plus, $f(x)<M$ pour $3-\delta<x<3$.  Nous venons de montrer que
+quel que soit $M<0$, nous pouvons toujours trouver un nombre
+$\delta>0$ tel que $f(x)<M$ pour $3>x>3-\delta$.  Ce qui prouve bien
+que $f(x)$ tend vers $-\infty$ lorsque $x$ tend par la gauche vers $3$. 
+\end{egg}
+
+\begin{egg}
+Revenons au calcul de la limite
+\[
+\lim_{x\rightarrow \infty} \left(\sqrt{x+1}-\sqrt{x}\right)
+\]
+que nous avons étudié à l'exemple~\ref{conjinfty}.
+
+Démontrons que
+\[
+\lim_{x\rightarrow \infty} \left(\sqrt{x+1}-\sqrt{x}\right)
+= \lim_{x\rightarrow \infty} \frac{1}{\sqrt{x+1}+\sqrt{x}} = 0
+\]
+à partir de notre définition de limite à l'infini.  Soit
+$\epsilon > 0$ quelconque mais fixe.  Si nous prenons 
+$\displaystyle M = \frac{1}{4\epsilon^2}$, nous obtenons
+\[
+\left| \frac{1}{\sqrt{x+1}+\sqrt{x}} - 0 \right|
+= \frac{1}{\sqrt{x+1}+\sqrt{x}} < \frac{1}{2\sqrt{x}}
+< \frac{1}{2\sqrt{1/(4\epsilon^2)}} = \epsilon
+\]
+pour $x>M$.
+\end{egg}
+
+Pour terminer, nous considérons le cas où nous avons une limite infinie à
+l'infini.
+
+\begin{focus}{\dfn} \index{Limite infinie à l'infini}
+Soit $f$ une fonction définie pour $x$ positif.  Nous écrivons
+\[
+\lim_{x\rightarrow +\infty} f(x) = +\infty
+\]
+et nous disons que $f(x)$ tend vers plus l'infini lorsque $x$ tend vers
+plus l'infini si {\em pour toute constante $M>0$} il existe une constante
+$m>0$ (qui peut dépendre de $M$) pour laquelle $f(x) > M$ lorsque $x>m$.  De
+même, nous écrivons
+\[
+\lim_{x\rightarrow +\infty} f(x) = -\infty
+\]
+et nous disons que $f(x)$ tend vers moins l'infini lorsque $x$ tend vers
+plus l'infini si {\em pour toute constante $M<0$} il existe une constante
+$m>0$ (qui peut dépendre de $M$) pour laquelle $f(x) < M$ lorsque $x>m$.
+
+De façons semblables, nous pouvons définir la convergence de $f(x)$ vers plus
+l'infini ou moins l'infini lorsque $x$ converge vers moins l'infini.
+\end{focus}
+
+\subsection{Comportement asymptotique semblable \life}
+
+\begin{focus}{\dfn}
+\index{Comportement asymptotique semblable!au voisinage d'un point}
+Soit $f$ et $g$ deux fonctions telles que $f(x)$ et $g(x)$ tendent
+vers l'infini lorsque $x$ tend vers $c$.  Nous disons que $f$ et $g$ ont un
+{\bfseries comportement asymptotique semblable} lorsque $x$ tend vers
+$c$ si
+\[
+\lim_{x\rightarrow c} \frac{f(x)}{g(x)} = 1 \; .
+\]
+\end{focus}
+
+Si $f$ et $g$ ont un comportement asymptotique semblable près de $c$,
+alors $f(x) \approx g(x)$ pour $x$ très près de $c$.  Ainsi, les fonctions
+$f$ et $g$ ont des graphes semblables pour $x$ près de $c$.
+
+De même,
+
+\begin{focus}{\dfn} \index{Comportement asymptotique semblable!à l'infinité}
+Deux fonctions $f$ et $g$ ont un
+{\bfseries comportement asymptotique semblable} lorsque $x$ tend vers
+plus l'infini (resp. moins l'infini) si
+\[
+\lim_{x\rightarrow +\infty} \frac{f(x)}{g(x)} = 1 \qquad
+(\text{resp.}\quad
+\lim_{x\rightarrow -\infty} \frac{f(x)}{g(x)} = 1 \;) \; .
+\]
+\end{focus}
+
+\begin{egg}
+À l'exemple~\ref{asympt5}, nous avons montré que
+$\displaystyle \lim_{x\rightarrow +\infty} g(x) = 5$ 
+où $\displaystyle g(x)= 5 + e^{2-x/10}$.  Si nous posons $f(x) = 5$ pour
+tout $x$, alors
+\[
+\lim_{x\rightarrow +\infty} \frac{f(x)}{g(x)} = 1 \; .
+\]
+Donc $g$ et $f$ ont des graphes semblables lorsque $x$ est très grand.
+\end{egg}
+
+Nous reviendrons sur l'étude du comportement asymptotique des
+fonctions à la section~\ref{asympt_comp}.
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Limites}
+
+\begin{question}
+Utilisez une approche numérique et une approche graphique
+(c'est-à-dire que vous devez utiliser un logiciel ou une calculatrice
+graphique pour tracer le graphe) pour trouver la valeur de la limite
+suivante si elle existe.
+\[
+\lim_{x\rightarrow 0}\frac{e^{2x} - 1}{x} \ .
+\]
+\label{4Q1}
+\end{question}
+
+\begin{question}
+Le graphe de la fonction $p$ est donné ci-dessous.
+\MATHgraph{4_limites/discount1}{8cm}
+Évaluez graphiquement
+$\displaystyle \lim_{t\rightarrow 1^-} p(t)$,
+$\displaystyle \lim_{t\rightarrow 1^+} p(t)$ et
+$\displaystyle \lim_{t\rightarrow 1} p(t)$ si cela est possible.
+\label{4Q2}
+\end{question}
+
+\begin{question}
+À l'aide de suites de valeurs numériques, estimez la valeur des limites
+suivantes.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{3.5em}}}l@{\hspace{1em}}l}
+\subQ{a} & $\displaystyle \lim_{x\rightarrow 0} \frac{1-\cos(x)}{x}$ &
+\subQ{b} & $\displaystyle \lim_{x\rightarrow 0} \frac{\ln(1-x)}{x}$
+\end{tabular}
+\end{center}
+\label{4Q3}
+\end{question}
+
+\begin{question}
+Nous savons que $\displaystyle \lim_{x\rightarrow 0^+} \sqrt{x} = 0$.
+Pour quelles valeurs de $x$ aurons-nous que $\sqrt{x} < 0.1$?  Que 
+$\sqrt{x} < 0.01$?  Est-ce que $\sqrt{x}$ approche rapidement $0$
+lorsque $x>0$ approche $0$?
+\label{4Q4}
+\end{question}
+
+\begin{question}
+Le graphe de la fonction $f$ est donné ci-dessous.
+\PDFgraph{4_limites/discount2}
+Calculez les limites à droite et à gauche aux points $x=1$ et $x=2$.
+Est-ce que la limite de la fonction existe aux points $x=1$ et $x=2$?
+\label{4Q5}
+\end{question}
+
+\begin{question}
+Soit $v(t) = 1 + t^2$.  Évaluez la limite
+$\displaystyle \lim_{t\rightarrow 0} v(t)$.  Soit $\alpha$ la valeur de cette
+limite.
+\begin{enumerate}
+\item Pour quelles valeurs de $t$ aurons-nous que $|v(t) - \alpha| < 1$?
+\item Pour quelles valeurs de $t$ aurons-nous que $|v(t) - \alpha| < 0.5$?
+\item Pour quelles valeurs de $t$ aurons-nous que $|v(t) - \alpha| < 0.01$?
+\end{enumerate}
+\label{4Q6}
+\end{question}
+
+\begin{question}[\eng \life]
+Évaluez si possible la limite $\displaystyle \lim_{x\to 0} x^2\sin(1/x)$.
+\label{4Q7}
+\end{question}
+
+\begin{question}[\eng]
+La fonction de Heaviside est définie par
+\[
+H(x) =
+\begin{cases}
+0 & \quad \text{si} \quad x < 0 \\
+1 & \quad \text{si} \quad x \geq 0
+\end{cases} \ .
+\]
+Est-ce que $\displaystyle \lim_{x\to 0} H(x) = 1$?  Justifiez votre
+réponse.
+\label{4Q8}
+\end{question}
+
+\subsection{Fonctions continues}
+
+\begin{question}
+Déterminez si les limites suivantes existent.  Évaluez la limite
+quand elle existe.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \lim_{t\rightarrow 0} \frac{1+t+t^2}{1+t}$ &
+\subQ{b} & $\displaystyle \lim_{x\rightarrow 0} \frac{e^x}{1+x}$ &
+\subQ{c} & $\displaystyle \lim_{x\to 2} \frac{(x-2)}{2+\sqrt{2x^2-4}}$ \\[0.9em]
+\subQ{d} & $\displaystyle \lim_{z\rightarrow 0} \frac{3z}{1+\ln(1+z)}$ &
+\subQ{e} & $\displaystyle \lim_{x\to 3} \frac{\cos(\pi/x)}{x^2-5}$ & &
+\end{tabular}
+\end{center}
+\label{4Q9}
+\end{question}
+
+\begin{question}
+Déterminez si les limites suivantes existent.  Évaluez la limite
+quand elle existe.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \lim_{x\to 3} \frac{(x-3)}{2-\sqrt{x^2-5}}$ &
+\subQ{b} & $\displaystyle \lim_{x\to 5} \frac{|x-5|}{x^2-25}$ &
+\subQ{c} & $\displaystyle \lim_{x\rightarrow 0}
+    \frac{3-\sqrt{9-3x}}{8x}$ \\[0.9em]
+\subQ{d} & $\displaystyle \lim_{x\to 1} \frac{|x-2|-1}{x^2-1}$ &
+\subQ{e} & $\displaystyle \lim_{x\to -3} \frac{|x+3|(5+x)}{x+3}$ &
+\subQ{f} & $\displaystyle \lim_{x\to 1} \frac{5x^4 + 3x^2-8}{12x^2-11x-1}$
+\end{tabular}
+\end{center}
+\label{4Q10}
+\end{question}
+
+\begin{question}[\life]
+Le volume d'une culture au temps $t$ en secondes est donnée par la
+formule $V(t)=V_0 e^{\alpha t}$ ml où $V_0 = V(0) =1$ ml est le
+volume initial.  Sachant que le volume est de $2.71828$ ml après
+$1000$ secondes (i.e. $V(1000) = 2.71828$ ml), trouvez $\alpha$.
+Déterminez les valeurs de $t$ pour lesquelles le volume $V(t)$ après
+$t$ secondes est $2.71828$ ml avec une marge d'erreur de $0.1$ ml.
+C'est-à-dire, trouvez $t$ tel que
+$2.71828 -0.1 < V(t) < 2.71828 +0.1$.
+\label{4Q11}
+\end{question}
+
+\begin{question}
+Donnez une formule mathématique pour définir la fonction continue $f$
+telle que $f(x)= -1$ pour $x<-0.1$, $f(x)= 1$ pour $x>0.1$, et $f(x)$
+est linéaire pour $-0.1 < x < 0.1$.
+\label{4Q12}
+\end{question}
+
+\begin{question}[\life]
+Un neurone a la réaction suivante lorsqu'il reçoit une impulsion
+électrique.  Si le voltage $V$ de l'impulsion électrique est
+supérieure à une valeur $V_0$, le neurone produit une impulsion
+électrique de voltage $2V$. Au contraire, si le voltage $V$ de
+l'impulsion électrique est inférieure à cette valeur $V_0$, le neurone
+produit une impulsion électrique de voltage $V_1$.  Donnez une formule
+mathématique pour la réponse du neurone à une impulsion électrique?
+Si nous savons que la réponse du neurone à une impulsion électrique est
+une fonction continue, quelle doit être la valeur de $V_1$?
+\label{4Q13}
+\end{question}
+
+\begin{question}
+Soit
+\[
+f(x) =
+\begin{cases}
+\displaystyle a \sin\left(\frac{\pi x}{2}\right) &
+\quad \text{si} \quad x < 3 \\
+\displaystyle \frac{x^2}{2} - 4 & \quad \text{si} \quad x \geq 3
+\end{cases}
+\]
+Trouvez la valeur de $a$ pour que $f$ soit continue sur la droite
+réelle.  Donnez une justification claire et complète.
+\label{4Q14}
+\end{question}
+
+\begin{question}
+Soit
+\[
+f(x) = \begin{cases}
+a x^2 + 4x & \quad \text{si}\quad x < 3 \\
+x^2 + a x &  \quad \text{si}\quad x \geq 3
+\end{cases}
+\]
+Trouvez la valeur de $a$ pour que $f$ soit continue sur la droite
+réelle.  Donnez une justification claire et complète.
+\label{4Q15}
+\end{question}
+
+\begin{question}
+Soit
+\[
+f(x) = \begin{cases}
+\displaystyle \frac{x^2 - 2 x- 3}{x-3} & \quad \text{si} \quad x<3 \\
+a x^2 + x + b & \quad \text{si}\quad  3 \leq x < 4 \\
+\displaystyle b \sqrt{x} + \frac{5 a x}{2} &  \quad \text{si}\quad x \geq 4
+\end{cases}
+\]
+Trouvez les valeurs de $a$ et $b$ pour que $f$ soit continue sur la
+droite réelle.  Donnez une justification claire et complète.
+\label{4Q16}
+\end{question}
+
+\begin{question}[\life \eng]
+Utilisez le Théorème des valeurs intermédiaires pour démontrer que
+l'équation $e^x + x^2 -2 = x$ a au moins une solution.
+\label{4Q17}
+\end{question}
+
+\begin{question}
+Montrez qu'il existe au moins une solution de l'équation suivante sur
+l'intervalle donnée.  Ne pas oublier d'indiquer le théorème que vous
+avez utilisé et de vérifier que ses hypothèses sont satisfaites.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\tan(x) + 4x = x^2+e^x$ sur $[0,\pi/4]$ &
+\subQ{b} & $\displaystyle e^{\cos(x/2)}=2\sin(x/2)$ sur $[0,\pi]$
+\end{tabular}
+\end{center}
+\label{4Q18}
+\end{question}
+
+\begin{question}[\eco]
+Le prix de l'essence a augmenté de \$$2.10$ à \$$2.50$ par litre au cours de
+la semaine passée, pouvons-nous conclure à l'aide du Théorème des valeurs
+intermédiaires que le prix de l'essence a été de \$$2.25$ le litre à un
+moment au cours de la semaine passée?  Justifiez votre réponse.
+\label{4Q19}
+\end{question}
+
+\subsection{Limites à l'infini et limites infinies}
+
+\begin{question}[\eco]
+Un diapason est un petit instrument en acier qui a la forme d'une
+fourche et qui produit (approximativement) la note {\bfseries La}
+lorsqu'il vibre.  La fréquence $x$ (en hertz) d'un bon diapason devrait
+être très proche de la fréquence exacte du {\bfseries La} qui est de
+$440$ hertz.  Une marque de diapason coûte $5/|x-440|$ dollars où $x$
+est la fréquence du diapason.  Combien coûtera un tel diapason si nous
+demandons une précision de $0.1$\%? De $0.01$\%?  Pouvons-nous se permettre
+un diapason parfait?
+\label{4Q20}
+\end{question}
+
+\begin{question}
+Nous savons que
+$\displaystyle \lim_{x\rightarrow 0^+} \frac{1}{\sqrt{x}} = +\infty$.
+Pour quelles valeurs de $x$ aurons-nous que
+$\displaystyle \frac{1}{\sqrt{x}} >10$? Que 
+$\displaystyle \frac{1}{\sqrt{x}} >100$?  Est-ce que
+$\displaystyle \frac{1}{\sqrt{x}}$ croît rapidement ou lentement
+lorsque $x>0$ approche $0$?
+\label{4Q21}
+\end{question}
+
+\begin{question}
+Utilisez des suites pour évaluer
+$\displaystyle \lim_{t\rightarrow 1}\ (1-t)^{-4}$.
+\label{4Q22}
+\end{question}
+
+\begin{question}
+Évaluez numériquement la limite suivante.
+\[
+\lim_{y\rightarrow 1^+} y^2\ln(y-1) \ .
+\]
+\label{4Q23}
+\end{question}
+
+\begin{question}
+Déterminez si les limites suivantes existent.  Évaluez celles qui
+existent.  Pour celles qui n'existent pas, expliquez pourquoi.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{1em}}l@{\hspace{3.5em}}}l@{\hspace{1em}}l}
+\subQ{a} &
+$\displaystyle \lim_{x\rightarrow \infty} \frac{x^2+5x-4}{3x^2 +1}$ &
+\subQ{b} &
+$\displaystyle \lim_{x\rightarrow \infty} \frac{x-(8x^3+3)^{1/3}}{x}$ &
+\subQ{c} & $\displaystyle \lim_{x\rightarrow 0}\; \frac{1}{x}$ \\[1em]
+\subQ{d} &
+$\displaystyle \lim_{x\rightarrow \infty} \left(\sqrt{x^2+3x}
+- \sqrt{x^2 + 7x}\right)$ &
+\subQ{e} &
+$\displaystyle \lim_{x\rightarrow \infty} \frac{2e^{2x} -e^{-3x}}
+{3e^{2x} - 4e^{-5x}}$ & &
+\end{tabular}
+\end{center}
+\label{4Q24}
+\end{question}
+
+\begin{question}[\life \eng]
+Évaluez si possible la limite
+$\displaystyle \lim_{x\to \infty} \frac{\sin^2(x)}{1+x^2}$.
+\label{4Q25}
+\end{question}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

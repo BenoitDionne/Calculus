@@ -1,0 +1,21 @@
+\begin{picture}(0,0)%
+\includegraphics{17_vector_calculus/Green.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(6447,1948)(-464,-1700)
+\put(3826,-1411){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x,y) = \sigma(t)$}%
+}}}}
+\put(3826,-736){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\partial S$ poss\`ede la}}}}
+\put(3826,-961){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}repr\'esentation}}}}
+\put(3826,-1186){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}param\'etrique}}}}
+\put(1951,-811){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$S$}}}}
+\put(2326, 89){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\displaystyle \VEC{t}(t)=\frac{1}{\|\sigma'(t)\|}\; \sigma(t)$}}}}
+\put(-449,-1411){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\displaystyle \int_{\partial S} F \cdot \dx{\VEC{s}} = \iint_S \curl F \cdot \kk \dx{S}$}}}}
+\end{picture}%

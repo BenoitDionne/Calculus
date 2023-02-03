@@ -1,0 +1,909 @@
+\chapter[Intégrales multiples \eng]{Intégrales multiples\\ \eng}
+\label{chapIntMult}
+
+\compileTHEO{
+
+Dans ce chapitre, nous généralisons la notion d'intégration d'une fonction
+définie sur un intervalle à l'intégration d'une fonction à valeurs
+réels définie sur un domaine de $\RR^n$ où $n \geq 2$.  Grâce au
+Théorème de Fubini, nous pourrons réduire le calcul d'intégrales de
+fonctions de plusieurs variables au calcul d'intégrales
+{\em emboîtées} de fonctions définies sur des intervalles.  Nous
+terminons le chapitre avec une section sur la méthode de substitution
+pour les intégrales de fonctions de plusieurs variables.  Chose
+surprenante, le déterminant va jouer une rôle important dans la
+méthode de substitution.
+
+Ce chapitre exige de bonnes capacités à visualiser les objets dans
+l'espace.
+
+\section{Définition de l'Intégrale}\label{DefIntMulti}
+
+La définition de l'intégrale double d'une fonction $f:D\rightarrow \RR$ où
+$D \subset \RR^2$ est un rectangle est très semblable à celle de l'intégrale
+définie d'une fonction d'une variable $f:I\rightarrow \RR$ où $I\subset \RR$
+est un intervalle.  Au lieu de partager un intervalle en sous-intervalles,
+nous partageons un rectangle en sous-rectangles.
+
+Soit $f:D\rightarrow \RR$ un fonction continue (sauf possiblement à quelques
+points) et bornée sur le rectangle
+\[
+D=\left\{(x,y): a\leq x \leq b \text{ et } c\leq y \leq d \right\} \; .
+\]
+Soit $a=x_0 < x_1 < x_2 < \ldots < x_p = b$ une partition de l'intervalle
+$[a,b]$ et $c=y_0 < y_1 < y_2 < \ldots < y_{q} = b$ une partition de
+l'intervalle $[c,d]$.  Pour $0 \leq i < p$ et $0 \leq j < q$, nous
+définissons les rectangles
+\[
+A_{i,j} = \left\{ (x,y) : x_i\leq x < x_{i+1} \text{ et }
+y_j\leq y < y_{j+1} \right\} \; .
+\]
+L'ensemble des rectangles $A_{i,j}$ forme une
+{\bfseries partition}\index{Partition} $\cal P$
+de $D$ en sous-rectangles (figure~\ref{VOLUME2}).
+
+\PDFfig{16_var_mult_int/volume2}{Partition d'un rectangle en sous-rectangle}
+{Partition d'un rectangle $D$ en $p\times q$ sous-rectangle $A_{i,j}$ pour
+$i=0$,$1$, \ldots, $p-1$ et $q=0$, $1$, \ldots, $q-1$.}{VOLUME2}
+
+L'aire d'un rectangle $A_{i,j}$ est
+$\Delta A_{i,j} = \Delta x_i \, \Delta y_j$ où $\Delta x_i = x_{i+1}-x_i$ et
+$\Delta y_j = y_{j+1}-y_j$.  Nous définissons une mesure de la grosseur de la
+partition $\cal P$ par
+\[
+\| {\cal P} \| = \max \left\{ \Delta x_i + \Delta y_j : 0\leq i < p
+\text{ et } 0 \leq j < q \right\} \; .
+\]
+
+Pour chaque rectangle $A_{i,j}$, nous choisissons
+$\left(x_i^\ast, y_j^\ast\right)$ dans ce rectangle.  La somme
+\[
+S_{\cal P} = \sum_{A_{i,j}\in\cal P} f\left(x_i^\ast,y_j^\ast\right) \Delta A_{i,j}
+= \sum_{\substack{0 \leq i < p\\ 0 \leq j < q}}
+f\left(x_i^\ast,y_j^\ast\right) \Delta x_i \, \Delta y_j
+\]
+est une {\bfseries somme de Riemann}\index{Somme de Riemann} pour la
+partition ${\cal P}$.
+Une même partition a un nombre infini de sommes de
+Riemann selon le choix des points
+$\left(x_i^\ast, y_j^\ast\right) \in A_{i,j}$ pour
+$0\leq i <p$ et $0\leq j < q$. 
+
+\begin{focus}[\theory]{\dfn} \label{defDI_rig}
+Soit $f:D\rightarrow \RR$ un fonction continue presque
+partout\footnotemark\ et bornée sur le rectangle
+\[
+D=\left\{(x,y): a\leq x \leq b \text{ et } c\leq y \leq d \right\}
+\; .
+\]
+L'{\bfseries intégrale double}\index{Intégrale double} de $f$ sur $D$,
+dénotés $\displaystyle \iint_D f(x,y) \dx{A}$, est le nombre $I$ tel
+que, pour tout $\epsilon > 0$, il existe $\delta >0$ pour lequel
+\[
+\left| I - S_{\cal P} \right| < \epsilon
+\]
+quelle que soit la partition ${\cal P}$ avec $\|{\cal P}\|<\delta$
+et le choix de points $(x_i^\ast,y_j^\ast)$ utilisés pour la somme de
+Riemann $S_{\cal P}$.  Le rectangle $D$ est appelé le
+{\bfseries domaine d'intégration}\index{Domaine d'intégration}.  La
+fonction $f$ est appelée {\bfseries l'intégrande}\index{Intégrande}.
+\end{focus}
+
+\footnotetext{Dans les livres d'analyse, ils parlent d'un ensemble de
+mesure zéro.  Pour nous, ce sont des ensembles qui contiennent
+seulement des points ou des courbes isolées, dont l'aire est nul.}
+
+Comme à la Section~\ref{Riemann_int}, nous pourrions donner une
+définition plus générale de l'intégrale double.
+
+Il découle de la définition de l'intégrale double que nous pouvons
+estimer la valeur de l'intégrale
+$\displaystyle \iint_D f(x,y) \dx{A}$ en choisissant
+des sommes de Riemann pour des partitions ${\cal P}_n$ telles que
+$\|{\cal P}_n\|$ approche $0$ lorsque $n$ augmente.  Nous avons
+\begin{equation}\label{defDI_int_cpm}
+\iint_D f(x,y) \dx{A} = \lim_{n\rightarrow 0}  S_{{\cal P}_n} \; .
+\end{equation}
+Si $f(x,y) \geq 0$ pour tout $(x,y) \in D$, alors
+$f\left(x_i^\ast,y_j^\ast\right) \Delta x_i \, \Delta y_j$ est
+le volume du solide définie par
+\[
+T_{i,j} = \left\{ (x,y,z) : (x,y) \in A_{i,j} \text{ et }
+0 \leq z \leq f(x^\ast,y^\ast) \right\}
+\]
+(figure~\ref{VOLUME1}).
+Nous avons alors que $\displaystyle \int_D f(x,y) \dx{A}$ est le volume du
+solide définie par
+\[
+T = \left\{ (x,y,z) : (x,y) \in D \text{ et } 0 \leq z \leq f(x,y)
+\right\} \; ,
+\]
+le solide dont la base est le rectangle $D$, les cotés sont les plans
+verticaux $x=a$, $x=b$, $y=c$ et $y=d$, et qui est sous la surface
+$y=f(x,y)$.
+
+\PDFfig{16_var_mult_int/volume1}{Illustration de ce que représente un terme de
+la somme de Riemann dans la définition de l'intégrale double} {Illustration
+de ce que représente un terme de la somme de Riemann dans la définition de
+l'intégrale double.}{VOLUME1}
+
+\begin{focus}{\dfn}
+Si $f:R\rightarrow \RR$ est une fonction continue presque partout et
+bornée dont le domaine $R$ est un ensemble borné qui n'est pas un
+rectangle, nous choisissons un rectangle $D$ qui contient $R$ et nous
+posons
+\[
+g(x,y) = \begin{cases} f(x,y) & \quad \text{si} \quad (x,y) \in R \\
+0 & \quad \text{si} \quad (x,y) \in D\setminus R
+\end{cases} \; .
+\]
+L'intégrale de $f$ sur $R$ est alors définie par
+\[
+\iint_R f(x,y) \dx{A} = \iint_D g(x,y) \dx{A} \; .
+\]
+\end{focus}
+
+Nous pourrions de la même façon définir l'intégrale triple d'une fonction
+$f:\RR^3 \to \RR$ où nous utiliserions des boites dans $\RR^3$ au lieu
+des rectangles de $\RR^2$ pour définir l'intégrale.  Nous utilisons la
+notation $\displaystyle \iiint_D f(\VEC{x}) \dx{V}$ pour
+désigner l'{\bfseries intégrale triple}\index{Intégrale triple}.
+Toutes les propriétés que nous allons énoncer pour l'intégrale double
+sont aussi vrais pour l'intégrale triple.
+
+Comme la définition de l'intégrale double ressemble énormément à celle de
+l'intégrale d'une fonction d'une variable, il n'est pas surprenant que
+l'intégrale double possède des propriétés semblables à celle de l'intégrale
+d'une fonction d'une variable.
+
+\begin{focus}{\prp}
+\begin{enumerate}
+\item Soit $D\subset \RR^2$ et $f,g:D \rightarrow \RR$ deux fonctions
+continues presque partout et bornées sur $D$.  Alors
+\[
+\iint_D \left( \alpha f(x,y) + \beta g(x,y) \right) \dx{A} =
+\alpha \iint_D f(x,y) \dx{A} + \beta \iint_D g(x,y) \dx{A}
+\]
+quels que soient $\alpha$ et $\beta$ dans $\RR$.
+\item Si $D = D_1 \cup D_2 \subset \RR^2$ où $D_1 \cap D_2$ est un
+ensemble négligeable de points\footnotemark, et $f:D\rightarrow \RR$
+est une fonction continue presque partout et bornée, alors
+\[
+\iint_D d \dx{A} = \iint_{D_1} f \dx{A} + \iint_{D_2} f \dx{A} \; .
+\]
+\end{enumerate}
+\end{focus}
+
+\footnotetext{Un ensemble négligeable est ce que nous avons caractérisé
+précédemment comme étant un ensemble de mesure zéro, soit un ensemble
+qui contient seulement des points ou des courbes isolées,}
+
+\section{Théorème de Fubini}
+
+Il n'est pas toujours facile d'évaluer les intégrales doubles lorsque le
+domaine d'intégra\-tion n'est pas un rectangle.  Le théorème suivant va nous
+permette de calculer les intégrales doubles sur des domaines $D$ \flqq
+simple\frqq\ à l'aide des techniques d'intégration de fonctions d'une
+variable que nous avons étudiées précédemment.
+
+\begin{focus}[][Théorème de Fubini]{\thm}
+Soit $f:D\rightarrow \RR$ un fonction continue presque partout et
+bornée sur le rectangle
+\[
+D=\left\{(x,y): a\leq x \leq b \text{ et } c\leq y \leq d \right\}
+\; .
+\]
+Nous avons que
+\[
+\iint_D f(x,y) \dx{A} = \int_a^b \int_c^d f(x,y) \dx{y} \dx{x}
+= \int_c^d \int_a^b f(x,y) \dx{x} \dx{y} \; .
+\]
+\end{focus}
+
+En d'autres mots, il y a des choix pour évaluer l'intégrale de $f$ sur
+un rectangle $D$,
+\begin{enumerate}
+\item Nous évaluons l'intégrale $\displaystyle \int_c^d f(x,y) \dx{y}$ en
+assumant que $x$ est constant pour obtenir une fonction $g(x)$ et par la
+suite nous évaluons l'intégrale $\displaystyle \int_a^b g(x) \dx{x}$.
+\item Nous évaluons l'intégrale $\displaystyle \int_a^b f(x,y) \dx{x}$ en
+assumant que $y$ est constant pour obtenir une fonction de $h(y)$ et par la
+suite nous évaluons l'intégrale $\displaystyle \int_c^d h(y) \dx{y}$.
+\end{enumerate}
+
+Soit
+\[
+R = \left\{ (x,y) : a\leq x \leq b \text{ et } g_1(x) \leq y \leq
+g_2(x) \right\} \; ,
+\]
+le domaine d'intégration qui est représenté dans le dessin à gauche dans
+la figure~\ref{VOLUME3}.  Il découle du théorème de Fubini et de la définition
+d'une intégrale double sur un domaine qui n'est pas un rectangle que
+\[
+\iint_R f(x,y) \dx{A} = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y) \dx{y} \dx{x}
+\; .
+\]
+De même, soit
+\[
+R = \left\{ (x,y) : c\leq y \leq d \text{ et } h_1(y) \leq x \leq
+h_2(y) \right\} \; ,
+\]
+le domaine d'intégration qui est représenté dans le dessin à droite dans la
+figure~\ref{VOLUME3}.  Nous avons que
+\[
+\iint_R f(x,y) \dx{A} = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x,y) \dx{x} \dx{y}
+\; .
+\]
+
+\PDFfig{16_var_mult_int/volume3}{Intégrale double à l'aide du théorème de
+Fubini}{Intégrale double pour des domaines qui se prête bien au théorème de
+Fubini.}{VOLUME3}
+
+\begin{egg}
+Évaluons l'intégrale double $\displaystyle \iint_R (x-2y) \dx{A}$
+où $R$ est le domaine définie par
+\[
+R = \left\{ (x,y) : 1 \leq x \leq 3 \text{ et }
+1+x \leq y \leq 2x \right\} \; .
+\]
+Le dessin du domaine $R$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume4}
+Nous avons
+\begin{align*}
+\iint_R (x-2y) \dx{A} &= \int_1^3 \int_{x+1}^{2x} (x-2y) \dx{y}\dx{x}
+= \int_1^3 \left(xy-y^2\right)\bigg|_{y=x+1}^{y=2x} \dx{x} \\
+&= \int_1^3 \left( (2x^2-4x^2) - \left(x(x+1)-(x-1)^2\right) \right)\dx{x} \\
+&= \int_1^3 \left( -2x^2 - 3 x + 1\right) \dx{x}
+= \left( -\frac{2x^3}{3} - \frac{3x}{2} + x\right)\bigg|_1^3
+= - \frac{82}{3} \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Évaluons l'intégrale double $\displaystyle \iint_R 3x \dx{A}$
+où $R$ est le domaine bornée par $y=x$ et $y=x^2-4x+4$.
+
+La valeur de $x$ pour les points d'intersection de ces deux courbes
+est donné par
+\[
+  x = x^2-4x+4 \Rightarrow x^2-5x+4 = (x-4)(x-1) = 0
+  \Rightarrow x=1 \quad \text{ou} \quad x = 4 \ .
+\]
+Il y a deux points d'intersection, $(1,1)$ et $(4,4)$.  Le dessin
+du domaine $R$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume5}
+
+Nous déduisons de la forme du domaine qu'il est préférable d'intégrer par
+rapport à $y$ en premier et par rapport à $x$ par la suite.  Ainsi,
+\begin{align*}
+\iint_R 3x \dx{A} &= \int_1^4 \int_{x^2-4x+4}^{x} 3x \dx{y}\dx{x}
+= \int_1^4 \left( 3xy \right)\bigg|_{y=x^2-4x+4}^{x} \dx{x} \\
+&= \int_1^4 \left( 3x^2 - 3x(x^2-4x+4) \right)\dx{x}
+= \int_1^4 \left( -3x^3 +15 x^2 -12x \right) \dx{x} \\
+&= \left( -\frac{3}{4}\, x^4 + 5\, x^3 - 6x^2\right)\bigg|_1^4
+= \frac{135}{4} \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Évaluons l'intégrale double $\displaystyle \iint_R (y^2+ x) \dx{A}$ où
+$R$ est le domaine bornée par les paraboles $x=y^2$ et $x=3-2y^2$.
+
+La valeur de $x$ pour les points d'intersection de ces deux paraboles
+est donné par
+\[
+  y^2 = 3-2y^2 \Rightarrow y^2 = 1 \Rightarrow x= \pm 1 \ .
+\]
+Il y a deux points d'intersection, $(1,1)$ et $(1,-1)$.  Le dessin du
+domaine $R$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume6}
+
+Nous déduisons de la forme du domaine qu'il est préférable d'intégrer par
+rapport à $x$ en premier et par rapport à $y$ par la suite.  Ainsi,
+\begin{align*}
+\iint_R (y^2+x) \dx{A} &= \int_{-1}^1 \int_{y^2}^{3-2y^2} (y^2-x) \dx{x}\dx{y}
+= \int_{-1}^1 \left( xy^2 + \frac{1}{2}\, x^2 \right)
+\bigg|_{x=y^2}^{3-2y^2} \dx{y} \\
+&= \int_{-1}^1 \left( \left(y^2(3-2y^2) +\frac{1}{2}\,(3-2y^2)^2\right)
+-\left( y^4  + \frac{1}{2}\, y^4\right) \right)\dx{y} \\
+&= \int_{-1}^1 \left( -\frac{3}{2}\,y^4 -3\, y^2 +\frac{9}{2} \right) \dx{y}
+= \left( -\frac{3}{10}\, y^5 - y^3 +\frac{9}{2}\,y\right)\bigg|_{-1}^1
+= \frac{32}{5} \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Calculons le volume du solide borné par le cylindre $y^2+z^2 = 16$
+et les plans $x=0$, $y=0$, $z=0$ et $y = 2x$.  Nous supposons que
+$x,y,z \geq 0$.
+
+Traçons un dessin du solide en question pour justifier le choix de
+notre intégrale.  Le dessin du solide est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume18}
+
+Le volume de ce solide est donc
+\[
+V = \int_0^2 \int_{2x}^4 \sqrt{16-y^2} \dx{y}\dx{x} \ .
+\]
+Il serait possible de calculer cette intégrale à l'aide de la
+substitution trigonométrique $y = 4\sin(\theta)$ mais nous pouvons éviter
+ce trouble en changeant l'ordre d'intégration.
+\[
+V = \int_0^4 \int_0^{y/2} \sqrt{16-y^2} \dx{x}\dx{y}
+= \int_0^4 \left( x \sqrt{16-y^2}\right)\bigg|_{x=0}^{x=y/2} \dx{y}
+= \int_0^4 \frac{y}{2} \sqrt{16-y^2} \dx{y}
+\]
+Pour calculer cette intégrale, nous utilisons la substitution
+$u= 16 - y^2$.  Donc $\dx{u} = -2 y \dx{y}$, $u=16$ lorsque $y=0$ et $u=0$
+lorsque $y=4$.  Ainsi,
+\[
+V = -\frac{1}{4} \int_{16}^0 u^{1/2} \dx{u} 
+= -\frac{1}{6} u^{3/2}\bigg|_{16}^0
+= \frac{1}{6} (16)^{3/2} = \frac{32}{3} \ .
+\]
+\end{egg}
+
+\section{Substitution}
+
+Nous avons vu au Théorème~\ref{OneDSubstRule} la règle de substitution
+suivante.  Si $g$ est une fonction différentiable (croissante ou
+décroissante) et $f$ est un fonction intégrable sur l'image de $[a,b]$
+par $g$, alors
+\begin{equation}\label{SubtOriented}
+\int_a^b f(g(x))g'(x)  \dx{x} = \int_{g(a)}^{g(b)} f(y) \dx{y} \; .
+\end{equation}
+Nous aimerions pouvoir généraliser cette méthode aux fonctions de
+plusieurs variables.  Cependant, la formule précédente utilise le fait
+qu'il y a une direction croissante évidente sur la l'axe des $x$.  Ce
+n'est pas le cas si nous nous trouvons dans le plan ou dans l'espace.
+l'intégrale de Riemann que nous avons introduite au
+Chapitre~\ref{chapter_integr} et que nous utilisons dans la formule
+(\ref{SubtOriented}) est orientée
+(e.g. $\displaystyle \int_a^b = - \int_b^a$) alors que l'intégrale de
+Riemann que nous avons introduite dans ce chapitre ne l'est pas.
+
+Dans la formule ci-dessus, si $g'(x) < 0$ sur l'intervalle $[a,b]$,
+alors $g(a) > g(b)$ et nous pouvons écrire
+\begin{align*}
+\int_a^b f(g(x)) |g'(x)|  \dx{x} &=
+\int_a^b f(g(x)) (-g'(x))  \dx{x} = - \int_a^b f(g(x)) g'(x)  \dx{x} \\
+&= -\int_{g(a)}^{g(b)} f(y) \dx{y} = \int_{g(b)}^{g(a)} f(y) \dx{y} \; ,
+\end{align*}
+où la borne inférieure est plus petite que la borne supérieure pour
+cette dernière intégrale.  Si nous utilisons la définition de
+l'intégrale que nous avons introduite au début du chapitre, nous
+pouvons écrire
+\begin{equation}\label{SubtNonOriented}
+  \int_{[a,b]} f(g(x)) |g'(x)|  \dx{x} = \int_{g([a,b])} f(y) \dx{y} \; ,
+\end{equation}
+C'est donc la formule (\ref{SubtNonOriented}) que nous allons
+généraliser.   Notons que
+\[
+  g([a,b]) \equiv \{ g(x) : x \in [a,b] \}
+\]
+est l'image de l'intervalle $[a,b]$ par la fonction $g$.
+
+\begin{focus}{\thm}
+Supposons que $g:\RR^2 \to \RR^2$ soit une fonction de classe $C^1$ et
+$U$ est un ensemble ouvert de $\RR^2$ tel que $\diff g(\VEC{u})$ est
+une matrice inversible pour tout $\VEC{u} \in U$.  Si $V = g(U)$ et
+$f:V \to \RR$ est une fonction intégrable, alors
+\[
+  \iint_{U} f(g(\VEC{x})) |\det \diff g(\VEC{x})| \dx{A} =
+  \iint_{V} f(\VEC{y}) \dx{A}
+\]
+(figure~\ref{substND}).
+\index{Règle de substitution}\index{Changement de variables}
+\label{NDSubstRule}
+\end{focus}
+
+\PDFfig{16_var_mult_int/substND}{Changement de variable pour
+intégrales multiples}{Représentation schématique du changement de
+variable pour intégrales multiples}{substND}
+
+Si nous posons $\VEC{y} = g(\VEC{x})$, alors $y_i = g_i(x_1,x_2)$ pour
+$i=1$ et $2$, et
+\[
+\diff g(\VEC{x}) =
+\begin{pmatrix}
+  \displaystyle \pdydx{y_1}{x_1} & \displaystyle \pdydx{y_1}{x_2} \\[0.8em]
+  \displaystyle \pdydx{y_2}{x_1} & \displaystyle \pdydx{y_2}{x_2}
+\end{pmatrix}
+\]
+Le {\bfseries Jacobian}\index{Jacobian} de la fonction $g$, dénoté
+$\displaystyle \frac{\partial(y_1,y_2)}{\partial(x_1,x_2)}$, est
+définie par
+\[
+    \frac{\partial(y_1,y_2)}{\partial(x_1,x_2)} = \det \diff g(\VEC{x}) \ .
+\]
+C'est cette dernière expression pour $\det \diff g(\VEC{x})$
+que nous utiliserons le plus souvent pour représenter la règle de
+substitution précédente.
+\[
+  \iint_{U} f(g(\VEC{x})) \left|
+    \frac{\partial(y_1,y_2)}{\partial(x_1,x_2)} \right|
+  \dx{A} = \iint_{V} f(\VEC{y}) \dx{A}
+\]
+
+La règle de substitution a naturellement une extension à $\RR^n$ pour
+$n>2$.  Par exemple, dans $\RR^3$, nous remplaçons l'intégrale double
+par une intégrale triple pour obtenir une formule de la forme
+\[
+  \iiint_{U} f(g(\VEC{x})) |\det \diff g(\VEC{x})| \dx{V} =
+  \iiint_{V} f(\VEC{y}) \dx{V}
+\]
+avec
+\[
+\diff g(\VEC{x}) =
+\begin{pmatrix}
+  \displaystyle \pdydx{y_1}{x_1} & \displaystyle \pdydx{y_1}{x_2}
+  & \displaystyle \pdydx{y_1}{x_3} \\[0.8em]
+  \displaystyle \pdydx{y_2}{x_1} & \displaystyle \pdydx{y_2}{x_2}
+  & \displaystyle \pdydx{y_2}{x_3} \\[0.8em]
+  \displaystyle \pdydx{y_3}{x_1} & \displaystyle \pdydx{y_3}{x_2}
+  & \displaystyle \pdydx{y_3}{x_3}
+\end{pmatrix} \ .
+\]
+Le {\bfseries Jacobian}\index{Jacobian} de la fonction $g$ est alors
+définie par
+\[
+\frac{\partial(y_1,y_2,y_3)}{\partial(x_1,x_2,x_3)} = \det \diff g(\VEC{x}) \ .
+\]
+
+\begin{egg}
+Afin d'obtenir une intégrale qui est simple à calculer, utilisons la
+méthode de substitution pour évaluer l'intégrale
+$\displaystyle \int_{-a}^a \int_0^{\sqrt{a^2-y^2}} (x^2 + y^2)^{3/2}
+\dx{x} \dx{y}$.
+Nous invitons le lecteur a essayer de calculer directement cette intégrale.
+
+Il faut premièrement avoir une bonne idée du domaine d'intégration
+$V$.  Le dessin du domaine d'intégration est donné ci-dessous.
+\PDFgraph{16_var_mult_int/SubstNDEgg1}
+
+Puisque $V$ est un demi-cercle de rayon $a$ centré à l'origine, nous
+utilisons le changement de coordonnées en
+{\bfseries coordonnées polaires}\index{Coordonnées polaires}.
+La région $V$ est l'ensemble des points
+\[
+  (x,y) = g(r,\theta) = (r \cos(\theta),r \sin(\theta))
+\]
+pour
+$(r,\theta) \in U = \{ (r,\theta) : 0 \leq r \leq a \ , \ -\pi/2 \leq \theta
+\leq \pi/2 \}$.
+Puisque
+\[
+\left| \frac{\partial(x,y)}{\partial(r,\theta)} \right| = 
+  \left| \det \begin{pmatrix}
+  \displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}\\[0.8em]
+  \displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta} 
+  \end{pmatrix} \right|
+= \left| \det \begin{pmatrix}
+\cos(\theta) & -r \sin(\theta) \\
+\sin(\theta) & r \cos(\theta)
+  \end{pmatrix}\right|  = r \ ,
+\]
+nous obtenons
+\begin{align*}
+\int_{-a}^a \int_0^{\sqrt{a^2-y^2}} (x^2 + y^2)^{3/2} \dx{x} \dx{y}
+&= \int_{-\pi/2}^{\pi/2} \int_{-2}^2 \left(r^2\cos^2(\theta) + r^2
+   \sin^2(\theta)\right)^{3/2} r \dx{r}\dx{\theta} \\
+&= \int_{-\pi/2}^{\pi/2} \int_{-2}^2 (r^2)^{3/2} r \dx{r} \dx{\theta}
+=  \int_{-\pi/2}^{\pi/2} \int_{-2}^2 r^4 \dx{r} \dx{\theta} \\
+&= \int_{-\pi/2}^{\pi/2} \frac{r^5}{5}\bigg|_{r=0}^{2} \dx{\theta}
+= \frac{2^5}{5} \int_{-\pi/2}^{\pi/2} \dx{\theta}
+= \frac{2^5}{5} \theta\, \bigg|_{-\pi/2}^{\pi/2} = \frac{32\pi}{5}
+\end{align*}
+\label{SubstNDEgg1Text}
+\end{egg}
+
+\begin{rmk}
+À l'exemple précédent, $r$ représente la variable $x_1$ dans la
+formule de la règle de substitution, théorème~\ref{NDSubstRule},
+$\theta$ représente $x_2$, $x$ représente $y_1$ et $y$ représente
+$y_2$.
+\end{rmk}
+
+\begin{egg}
+Calculons la masse de la demi-sphère supérieure $S$ de rayon $2$ centrée à
+l'origine dont la densité est donnée par $\rho(x,y,z) = z$.
+\PDFgraph{16_var_mult_int/MassEgg1}
+
+En coordonnées cartésienne, la masse est donnée par la formule
+\[
+  M = \int_{-2}^2 \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}
+  \int_0^{\sqrt{4-x^2-y^2}} z \dx{z} \dx{y} \dx{x} \ .
+\]
+Il est certainement possible de calculer cette intégrale mais nous pouvons
+simplifier l'intégrale à l'aide d'une substitution.  Nous allons
+utilisé les {\bfseries coordonnées cylindriques}\index{Coordonnées
+ cylindriques}.  La demi-sphère $S$ est l'ensemble des points
+\[
+  (x,y,z) = (r \cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq \theta < 2\pi$, $0 \leq r \leq 2$ et
+$ 0 \leq z \leq \sqrt{4-x^2-y^2} = \sqrt{4-r^2}$.
+Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| = 
+\left| \det \begin{pmatrix}
+  \displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}
+  & \displaystyle \pdydx{x}{z} \\[0.8em]
+  \displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta}
+  & \displaystyle \pdydx{y}{z} \\[0.8em]
+  \displaystyle \pdydx{z}{r} & \displaystyle \pdydx{z}{\theta}
+  & \displaystyle \pdydx{z}{z}
+\end{pmatrix} \right|
+= \left| \det \begin{pmatrix}
+  \cos(\theta) & -r \sin(\theta) & 0 \\
+  \sin(\theta) & r \cos(\theta) & 0 \\
+  0 & 0  & 1
+\end{pmatrix} \right|
+= r \ ,
+\]
+nous avons
+\begin{align*}
+M &= \int_0^{2\pi} \int_0^2 \int_0^{\sqrt{4-r^2}} z r \dx{z} \dx{r} \dx{\theta}
+= \int_0^{2\pi} \int_0^2
+\left( \frac{z^2}{2} \bigg|_{z=0}^{\sqrt{4-r^2}} \right) r \dx{r} \dx{\theta} \\
+& = \int_0^{2\pi} \int_0^2 \frac{1}{2} (4-r^2) r \dx{r} \dx{\theta}
+= \int_0^{2\pi} \left( r^2 - \frac{r^4}{8} \right)\bigg|_{r=0}^{2} \dx{\theta}
+= 2 \int_0^{2\pi} \dx{\theta} = 4 \pi \ .
+\end{align*}
+\label{Mass3DEgg1}
+\end{egg}
+
+\PDFfig{16_var_mult_int/PolarCoords}{Coordonnées polaires}
+{Représentation en coordonnées sphériques du point
+$\VEC{p} = (r\cos(\theta)\sin(\phi), r\sin(\theta)\sin(\phi), r\cos(\phi))$
+pour $0 \leq \phi \leq \pi$, $0 \leq \theta < 2\pi$ et $r \geq 0$.}
+{PolarCoords}
+
+\begin{egg}
+Comme à l'exemple~\ref{Mass3DEgg1}, calculons la masse de la
+demi-sphère supérieure $S$ de rayon $2$ centrée à l'origine.
+Cependant, cette fois ci, la densité est donnée par
+$\rho(x,y,z) = \sqrt{x^2+y^2+z^2}$.
+
+En coordonnées cartésienne, la masse est donnée par la formule
+\[
+  M = \int_{-2}^2 \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}
+  \int_0^{\sqrt{4-x^2-y^2}} x^2 + y^2 + z^2 \dx{z} \dx{y} \dx{x} \ .
+\]
+Nous pourrions utiliser les coordonnées cylindriques comme nous avons
+fait à l'exemple précédent mais la forme de la formule pour la densité
+suggère un autre changement de coordonnées.   Nous allons
+utiliser les {\bfseries coordonnées sphériques}\index{Coordonnées
+sphériques} (figure~\ref{PolarCoords}).
+La demi-sphère $S$ est l'ensemble des points
+\[
+  (x,y,z) = (r \cos(\theta)\sin(\phi), r\sin(\theta)\sin(\phi),r \cos(\phi))
+\]
+pour
+$0 \leq \theta < 2\pi$, $0 \leq \phi \leq \pi/2$ et $0 \leq r \leq 2$.
+
+Puisque $x^2 + y^2 + z^2 = r^2$ et
+\begin{align*}
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} \right| &= 
+\left| \det \begin{pmatrix}
+\displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}
+& \displaystyle \pdydx{x}{\phi} \\[0.8em]
+\displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta}
+& \displaystyle \pdydx{y}{\phi} \\[0.8em]
+\displaystyle \pdydx{z}{r} & \displaystyle \pdydx{z}{\theta}
+& \displaystyle \pdydx{z}{\phi}
+\end{pmatrix} \right| \\
+&= \left| \det \begin{pmatrix}
+\cos(\theta)\sin(\phi) & -r \sin(\theta)\sin(\phi) &
+  r\cos(\theta)\cos(\phi) \\
+\sin(\theta)\sin(\phi) & r \cos(\theta)\sin(\phi) &
+ r\sin(\theta)\cos(\phi) \\
+\cos(\phi) & 0 & -r\sin(\phi)
+\end{pmatrix} \right|
+= r^2 \sin(\phi) \ ,
+\end{align*}
+l'intégrale pour calculer la masse devient
+\begin{align*}
+M &= \int_0^{2\pi} \int_0^2 \int_0^{\pi/2}  r^4 \sin(\phi) \dx{\phi}
+\dx{r} \dx{\theta}
+= \int_0^{2\pi} \int_0^2
+\left(-\cos(\phi) \bigg|_{\phi=0}^{\pi/2}\right) r^4 \dx{r} \dx{\theta} \\
+& = \int_0^{2\pi} \int_0^2 r^4 \dx{r} \dx{\theta}
+= \int_0^{2\pi} \frac{r^5}{5}\bigg|_{r=0}^{2} \dx{\theta}
+= \frac{32}{5} \int_0^{2\pi} \dx{\theta} = \frac{64\pi}{5} \ .
+\end{align*}
+\end{egg}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Théorème de Fubini}
+
+\begin{question}
+Évaluez les intégrales suivantes.
+
+\subQ{a} $\displaystyle \iint_R \sin(2x+y) \dx{A}$ où
+$R = \{ (x,y) : 0 \leq x \leq \pi/4 \ , \ 0 \leq y \leq \pi/2 \}$.
+
+\subQ{b} $\displaystyle \iint_R \frac{2+y}{3+x} \dx{A}$ où
+$R = \{ (x,y) : -1 \leq x \leq 1 \ , \ -1 \leq y \leq 2 \}$.
+\label{16Q1}
+\end{question}
+
+\begin{question}
+Évaluez $\displaystyle \iint_R (2x+3y)^2 \dx{A}$ où $R$ est la région
+bornée qui est délimitée par $y=x+1$, $y=-x+1$ et $y=0$.
+\label{16Q2}
+\end{question}
+
+\begin{question}
+Évaluez chacune des intégrales ci-dessous en changeant l'ordre
+d'intégration.
+
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \int_0^1 \int_{y^{1/3}}^1 \sqrt{x^4+1} \dx{x}\dx{y}$
+& \subQ{b} &
+$\displaystyle \int_0^{\pi^{1/4}} \int_{y^2}^{\pi^{1/2}} y\sin(x^2)
+\dx{x}\dx{y}$
+\end{tabular}
+\end{center}
+\label{16Q3}
+\end{question}
+
+\begin{question}
+Pour chacune des intégrales ci-dessous, dessinez le domaine
+d'intégration $D$ et donnez une intégrale équivalente en changeant
+l'ordre d'intégration.
+
+\subQ{a} $\displaystyle \int_0^4 \int_{-\sqrt{x}}^{\sqrt{x}} f(x,y) \dx{y}\dx{x}
++ \int_4^9\int_{-\sqrt{x}}^{6-x} f(x,y) \dx{y} \dx{x}$ \\
+\subQ{b} $\displaystyle \int_{-6}^{-3} \int_{-\sqrt{6-x}}^{\sqrt{6-x}}
+f(x,y) \dx{y}\dx{x} + \int_{-3}^2 \int_{-\sqrt{6-x}}^{-x} f(x,y) \dx{y}\dx{x}$
+\label{16Q4}
+\end{question}
+
+\begin{question}
+Nous pourrions vérifier que le {\bfseries moment par rapport à l'axe des
+$x$}\index{Moment par rapport à l'axe des $x$} d'une surface plane
+$D$ de densité $\rho(x,y)$ est
+$\displaystyle M_x = \iint_D y \rho(x,y) \dx{A}$.  De même,
+le {\bfseries moment par rapport à l'axe des $y$}\index{Moment par
+rapport à l'axe des $y$} d'une surface plane $D$ de densité
+$\rho(x,y)$ est
+$\displaystyle M_y = \iint_D x \rho(x,y) \dx{A}$.   Le
+{\bfseries centre de masse}\index{Centre de masse} est le point
+$\displaystyle \left(\frac{M_y}{M}, \frac{M_x}{M}\right)$ où $M$ est
+la masse de la surface plane.
+
+Trouvez la masse, les moments par rapport à l'axe des $x$ et à l'axe
+des $y$, et le centre de masse de la surface plane $D$ bornée par
+l'axe des $x$, et les droites $y=x$ et $y = -3x + 4$.  La densité de
+la surface est donnée par $\rho(x,y) = x$.
+\label{16Q5}
+\end{question}
+
+\begin{question}
+Calculez le volume du solide dont la base est la région du plan $x,y$ bornée
+par la droite $y=x$ et la parabole $x=y^2-2y$, et qui est bornée au-dessus
+par $z=x^2+y^2$.
+\label{16Q6}
+\end{question}
+
+\begin{question}
+Calculez le volume du solide $S$ sous le paraboloïde $z = x^2 +y^2$ et
+au dessous de la région $D$ du plan $x,y$ bornée par l'axe des $x$, l'axe
+des $y$ et la droite $x+y=1$.
+\label{16Q7}
+\end{question}
+
+\begin{question}
+Calculez le volume du solide $S = \{ (x,y,z) : 1 \leq x \leq 2 \ , \
+-1 \leq y \leq 1 \ \text{et} \ 0 \leq z \leq x^2-y^2 \}$.  Tracez un
+dessin du solide en question pour justifier le choix de votre
+intégrale.
+\label{16Q8}
+\end{question}
+
+\begin{question}
+Dessinez le solide borné par les surfaces suivantes:
+$z = 4y^2$, $z = 4$, $x=0$ et $x = 2$.
+Utilisez une intégrale pour calculer le volume de ce solide.
+\label{16Q9}
+\end{question}
+
+\begin{question}
+Calculez le volume du solide borné par le cylindre $x^2+z^2 = 9$ et les plans
+$x=0$, $y=0$, $z=0$ et $x+2y = 2$.  Nous supposons que $x,y,z \geq 0$.
+Tracez un dessin du solide en question pour justifier le choix de
+votre intégrale.
+\label{16Q10}
+\end{question}
+
+\begin{question}
+Calculez le volume du solide $S$ formé de l'intersection des cylindres
+$x^2+y^2=4$ et $x^2+z^2=4$.
+Tracez un dessin du solide en question pour justifier le choix de
+votre intégrale.
+\label{16Q11}
+\end{question}
+
+\begin{question}
+Calculez le volume du tétraèdre délimité par les plans $x=0$, $y=0$, $z=0$
+et $\displaystyle 2x+y+ \frac{z}{3}=1$.
+\label{16Q12}
+\end{question}
+
+\begin{question}
+Calculez le volume du tétraèdre de sommets au points $(0,0,0)$,
+$(0,0,1)$, $(0,2,0)$ et $(2,2,0)$.
+\label{16Q13}
+\end{question}
+
+\begin{question}
+Évaluez l'intégrale $\displaystyle \iint_S xy \dx{V}$ où $S$ est le tétraèdre
+$S$ délimité par les plans $y=0$, $z=0$, $y=x$ et
+$\displaystyle 3x+ 3y+ 2z=6$.
+\label{16Q14}
+\end{question}
+
+\begin{question}
+Évaluez l'intégrale $\displaystyle \iint_S xz \dx{V}$ où $S$ est le tétraèdre
+$S$ dont les sommets sont $(0,0,0)$, $(0,1,0)$, $(1,1,0)$ et $(0,1,1)$.
+\label{16Q15}
+\end{question}
+
+\begin{question}
+Récrivez l'intégrale
+$\displaystyle \int_0^2 \int_0^{y^3} \int_0^{y^2} f(x,y,z) \dx{z}\dx{x}\dx{y}$
+en changeant l'ordre d'intégration: (1) dans l'ordre $\dx{z}\dx{y}\dx{x}$,
+(2) dans l'ordre $\dx{x}\dx{y}\dx{z}$ et (3)  dans l'ordre
+$\dx{y}\dx{z}\dx{x}$. 
+\label{16Q16}
+\end{question}
+
+\begin{question}
+Récrivez l'intégrale
+$\displaystyle \int_{0}^{4} \int_{\sqrt{x}}^{2} \int_{0}^{2-y}
+f(x,y,z) \dx{z}\dx{y}\dx{x}$ en changeant l'ordre d'intégration: (1)
+dans l'ordre $\dx{x}\dx{z}\dx{y}$ et (2) dans l'ordre
+$\dx{y}\dx{x}\dx{z}$.
+\label{16Q17}
+\end{question}
+
+\subsection{Substitution}
+
+\begin{question}
+Calculez le volume du solide défini par $x^2 + y^2 \leq 1$ et
+$z^2 \leq x^2 + y^2$.
+\label{16Q18}
+\end{question}
+
+\begin{question}
+Soit l'intégrale $\displaystyle \int_0^2 \int_{-\sqrt{x^2+y^2}}^0
+\frac{xy}{\sqrt{x^2+y^2}} \dx{y} \dx{x}$.
+
+\subQ{a} Dessinez le domaine d'intégration $D$.\\
+\subQ{b} Récrivez l'intégrale en coordonnées polaires.\\
+\subQ{c} Évaluez l'intégrale.
+\label{16Q19}
+\end{question}
+
+\begin{question}
+Soit $R$ la région à l'intérieure de la sphère $x^2 + y^2 + z^2 = 9$
+et au dessus de la surface définit par $z = \sqrt{x^2+y^2}$.   Donnez
+l'intégrale triple avec les bornes d'intégration qui va donner le
+volume $V$ de cette région.
+
+\subQ{a} Utilisez les coordonnées cartésiennes avec l'ordre
+d'intégration $\dx{z}\dx{y}\dx{x}$. \\
+\subQ{b} Utilisez les coordonnées cylindriques avec l'ordre
+d'intégration $\dx{z}\dx{r}\dx{\theta}$. \\
+\subQ{c} Utilisez les coordonnées sphériques avec l'ordre
+d'intégration $\dx{r}\dx{\theta}\dx{\phi}$.
+\label{16Q20}
+\end{question}
+
+\begin{question}
+Dessinez la région déterminée par les bornes d'intégration de
+l'intégrale suivante et utilisez les coordonnées cylindriques pour
+évaluer cette intégrale.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $ \displaystyle
+\int_{-1}^1 \int_0^{\sqrt{1-x^2}}\int_{x^2+y^2}^1 z \dx{z}\dx{y}\dx{x}$ &
+\subQ{b} & $\displaystyle
+\int_0^{\sqrt{2}} \int_{-\sqrt{2-y^2}}^{\sqrt{2-y^2}}
+\int_{1+x^2+y^2}^{5-x^2-y^2}z \dx{z}\dx{x}\dx{y}$
+\end{tabular}
+\end{center}
+\label{16Q21}
+\end{question}
+
+\begin{question}
+Dessinez la région déterminée par les bornes d'intégration de
+l'intégrale suivante et utilisez les coordonnées sphériques pour
+évaluer cette intégrale.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $ \displaystyle
+\int_{-1}^1 \int_0^{\sqrt{1-x^2}}\int_{\sqrt{x^2+y^2}}^1 z \dx{z}\dx{y}\dx{x}$ &
+\subQ{b} & $\displaystyle \int_0^1 \int_x^{\sqrt{2-x^2}}
+\int_{\sqrt{x^2+y^2}}^{\sqrt{4-x^-y^2}} \dx{z}\dx{y}\dx{x}$
+\end{tabular}
+\end{center}
+\label{16Q22}
+\end{question}
+
+\begin{question}
+Soit l'intégrale
+\[
+\int_0^{1/\sqrt{2}} \int_y^{\sqrt{1-y^2}}
+\int_0^{\sqrt{1-x^2-y^2}} (x^2+y^2+z^2) \dx{z}\dx{x}\dx{y} \ .
+\]
+\subQ{a} Tracez le dessin de la région $E$ déterminée par les bornes
+d'intégration de l'intégrale.\\
+\subQ{b} Utilisez la substitution appropriée pour évaluer cette
+intégrale.
+\label{16Q23}
+\end{question}
+
+\begin{question}
+Déterminez le volume du solide bornée par la surface
+$z = 25 - x^2-y^2$ et le plan $z=16$. 
+\label{16Q24}
+\end{question}
+
+\begin{question}
+Calculez le volume de la région au dessus de la paraboloïde d'équation
+$z = x^2 + y^2$ et au dessous du cône d'équation $z = \sqrt{x^2+y^2}$.
+\label{16Q25}
+\end{question}
+
+\begin{question}
+Calculez le volume du solide borné par les surfaces $z^2 = x^2 + y^2$
+et $x^2+y^2 = 4$.
+\label{16Q26}
+\end{question}
+
+\begin{question}
+Calculez le volume du solide borné par le paraboloïde
+$z = 4x^2 + 3y^2$ et le cylindre parabolique $y^2 + z = 4$.
+\label{16Q27}
+\end{question}
+
+\begin{question}
+Nous cherchons la masse du solide délimité par la partie supérieure ($z>0$)
+de la sphère de rayon $16$ centrée à l'origine et le plan $z=2$.
+La densité est donnée par
+$\displaystyle \rho(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$ g/cm$^3$.
+
+\subQ{a} Utilisez les coordonnées cylindrique pour trouver cette
+masse.\\
+\subQ{b} Utilisez les coordonnées sphériques pour trouver cette
+masse.
+\label{16Q28}
+\end{question}
+
+\begin{question}
+Quelle est la masse du cornet de crème glacée bornée par la sphère
+$x^2+y^2+z^2 =25$ et le cône $\displaystyle \frac{16}{9} z^2 = x^2 + y^2$ pour
+$z\geq 0$ si la densité est donnée par $\rho(x,y,z) = x^2+y^2$ g/cm$^3$.
+\label{16Q29}
+\end{question}
+
+\begin{question}
+Considérez une sphère de rayon $R_1$ centrée à l'origine qui est
+percée par un cylindre de rayon $R_2 < R_1$ dont l'axe est un diamètre
+de la sphère.  Si la densité de la sphère est donnée par
+$\rho(x,y,z) = x^2+y^2+z^2$, quelle est la masse de
+la sphère percée par le cylindre?
+\label{16Q30}
+\end{question}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

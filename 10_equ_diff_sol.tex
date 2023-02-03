@@ -1,0 +1,1874 @@
+\section{Équations différentielles}
+
+\subsection{Introduction}
+
+\compileSOL{\SOLUb}{\ref{10Q1}}{
+La fonction $\displaystyle y(t) = t^2\sin(t)$ est une solution car
+\[
+\dydx{y}{t}(t) = \dfdx{\left( t^2\sin(t)\right)}{t}
+= \left(\dfdx{ t^2 \right)}{t} \sin(t) + t^2 \left( \dfdx{\sin(t)\right)}{t}
+= 2 t \sin(t) + t^2 \cos(t)
+\]
+pour tout $t$.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q2}}{
+\subQ{a} (1)
+\[
+L(t) = \int 6.48 e^{-0.09t} \dx{t} = -72 e^{-0.09t} + C .
+\]
+Nous obtenons $5 = -72 + C$ de la condition initiale $L(0)=5$.  Donc
+$C=77$.  Ainsi $\displaystyle L(t) = -72 e^{-0.09t} + 77$ et
+$L(5) - L(1) \approx 19.89$.
+
+(2) Il découle du Théorème fondamental du calcul que
+\begin{align*}
+L(5) - L(1) &= \int_1^5 \dydx{L}{t} \dx{t} = \int_1^5 6.48 e^{-0.09t} \dx{t}
+= -72 e^{-0.09t} \bigg|_1^5 \\
+&= -72 e^{-0.45} + 72 e^{-0.09} \approx 19.89 \ .
+\end{align*}
+
+\subQ{b} (1)
+\[
+P(t) = \int 5.0 e^{-2.0t} \dx{t} = -2.5 e^{-2 t} + C \ .
+\]
+Nous obtenons $2 = -2.5 +C$ de la condition initiale $P(0)= 2$.  Donc
+$C=4.5$.  Ainsi, $\displaystyle P(t) = -2.5 e^{-2 t} + 4.5$ et
+$P(10) - P(5) \approx 0.000113495$.
+
+(2) Il découle du Théorème fondamental du calcul que
+\begin{align*}
+P(10) - P(5) &= \int_5^{10} \dydx{P}{t} \dx{t} =
+\int_5^{10} 5.0 e^{-2.0t} \dx{t} = -2.5 e^{-2 t} \bigg|_5^{10} \\
+&= -2.5 e^{-20} + 2.5 e^{-10} \approx 0.000113495  \ .
+\end{align*}
+
+\subQ{c} (1)
+\[
+A(t) = \int 523.8 (t-1981)^2 \dx{t} = 174.6 (t-1981)^3 + C \ .
+\]
+Nous obtenons $C=13,400$ de la condition initiale $A(1981)=13,400$.
+Ainsi, $\displaystyle A(t) = 174.6 (t-1981)^3 + 13,400$ et
+$A(1987) - A(1985) \approx 26,539.2$.
+
+(2) Il découle du Théorème fondamental du calcul que
+\begin{align*}
+A(1987) - A(1985) &= \int_{1985}^{1987} \dydx{A}{t} \dx{t} =
+\int_{1985}^{1987} 523.8 (t-1981)^2 \dx{t}
+= 174.6 (t-1981)^3 \bigg|_{1985}^{1987} \\
+&= 174.6 \times 6^3 - 174.6 \times 4^3 \approx 26,539.2 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{10Q3}}{
+Nous sommes intéressé à la variation d'une fonction ($L$, $P$ et $A$) sur un
+intervalle de temps.  Nous ne sommes pas intéressé à trouver la valeur
+de la fonction à un temps donné.
+
+Si $F(t) + C$ est une primitive de $f(t)$ où $C$ est une constante
+quelconque, alors
+\[
+\int_a^b f(t) \dx{t} = \left( F(t) + C \right)\bigg|_a^b 
+= \left( F(b) + C \right) - \left( F(a) + C\right) = F(b) - F(a) \ .
+\]
+Donc l'intégrale ne dépend pas de la constante d'intégration qui elle
+dépend de la condition initiale.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q4}}{
+Soit $x(t)$ le nombre moyen de moustiques par km$^2$ au temps $t$.
+L'énoncé de la question dit que $x'(t) = 2200+10e^{0.8t}$.
+L'augmentation cherché est la différence entre le nombre moyen de
+moustiques au $9^e$ jour et le nombre moyen de moustiques au $5^e$
+jour.  Notons que
+$\displaystyle \int_5^9 x'(t) \dx{t} = x(9)-x(5)$ est la variation du
+nombre moyen de moustiques entre $t=5$ et $t=9$ jours.  Ainsi,
+l'augmentation cherché est de
+\begin{align*}
+x(9) - x(5) &= \int_5^9 x'(t) \dx{t} =
+\int_5^9 \left( 2200+10e^{0.8t}\right) \dx{t} \\
+&= \left(2200t + 12.5 e^{0.8t} \right)\big|_5^9 \approx 24860.41 \quad
+\text{moustiques.}
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{10Q5}}{
+La distance parcourue par la pierre est
+\[
+p(5) - p(1) = \int_1^5 \dydx{p}{t}(t) \dx{t}
+= \int_1^5 \left( -9.8 t - 5.0 \right) \dx{t}
+= \left(-4.9 t^2 - 5.0 t\right)\bigg|_1^5
+= -137.60 \ \text{m} \ .
+\]
+La distance est négative car le déplacement positif est vers le haut.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q6}}{
+\subQ{a} Graphe de $v(t) = e^t$.
+\MATHgraph{10_equ_diff/guepard}{8cm}
+
+\subQ{b} Puisque $\displaystyle \dydx{x}{t}(t) = v(t)$, nous obtenons
+$\displaystyle \dydx{x}{t}(t) = e^t$.
+
+\subQ{c} $x(t) = \int v(t) \dx{t} = \int e^t \dx{t} = e^t + C$ où $C$ est une
+constante.  Si $x(0)=0$, alors $0 = 1 + C$.  Ce qui
+donne $C=-1$ et donc $x(t) = e^t - 1$.
+
+\subQ{d} Graphe de $x(t) = e^t -1$.
+\MATHgraph{10_equ_diff/guepard2}{8cm}
+
+\subQ{e} Nous cherchons $t$ tel que $x(t) = e^t -1 = 200$.  Donc,
+$t = \ln(201) \approx 5.3033$ s.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q7}}{
+\subQ{a}
+\PDFgraph{10_equ_diff/escargot1}
+
+\subQ{b} Puisque $\displaystyle \dydx{x}{t}(t) = v(t)$, nous avons
+$\displaystyle \dydx{x}{t}(t) = 0.1 + 0.2 e^{-t}$.
+
+\subQ{c}
+\[
+x(t) = \int \left( 0.1 + 0.2 e^{-t} \right) \dx{t} = 0.1 t - 0.2
+e^{-t} + C \ .
+\]
+La condition initiale $x(0)=0$ donne $-0.2 + C = 0$.  Donc $C=0.2$.
+La position en mètres de l'escargot en fonction du temps en minutes est
+$x(t) = 0.1 t - 0.2 e^{-t} + 0.2$.
+
+\subQ{d}
+Nous avons $x(t) = 0.1 t - 0.2 e^{-t} + 0.2$, $x'(t) = 0.1 + 0.2 e^{-t}$ et
+$x''(t) = - 0.2 e^{-t}$.  Le tableau suivant résume l'information que
+nous avons pour $x$.
+\[
+\begin{array}{c|c|c|c}
+t & 0 & 0<t < +\infty & +\infty \\
+\hline
+x(t) & 0 & + & +\infty \\
+x'(t) & 0.3 & + & \\
+x''(t) & -0.2 & - & \\
+\hline
+& \multicolumn{2}{|c|}{\text{croît et}} & \\
+& \multicolumn{2}{|c|}{\text{concave}} &
+\end{array}
+\]
+Le graphe de $x=x(t)$ aura l'allure suivante.
+\PDFgraph{10_equ_diff/escargot2}
+
+\subQ{e} Il faut trouver $t$ tel que
+$x(t) = 0.1 t - 0.2 e^{-t} + 0.2 = 1$.  Le seul outil que nous possédons pour
+résoudre cette équation est la méthode de Newton.
+Posons
+\[
+f(t) = x(t) - 1 = 0.1 t - 0.2 e^{-t} - 0.8 \ .
+\]
+Le problème est maintenant de trouver $t$ tel que $f(t)=0$.  Nous avons
+$f'(t) = 0.1 +0.2 x^{-t}$.  Il découle du Théorème des valeurs
+intermédiaire que $f(x) = 0$ pour une valeur de $x$ entre $8$ et $9$
+car $f(8)<0$ et $f(9)>0$.  Prenons $t_0 = 8.5$.  Le méthode de Newton
+produit la suite donnée dans le tableau ci-dessous.
+\[
+\begin{array}{c|c|c}
+n & t_n & t_{n+1} = t_n - \frac{f(t_n)}{f'(t_n)} \\
+\hline
+0 & 8.5 & 8.000610156811808 \\
+1 & 8.000610156811808 & 8.000670475566364 \\
+2 & 8.000670475566364 & 8.000670475567583 \\
+3 & 8.000670475567583 & 8.000670475567581 \\
+4 & 8.000670475567581 &
+\end{array}
+\]
+% Voir escargot.m pour les calculs
+Donc, il faut une petit peu plus de $8$ minutes à l'escargot pour traverser
+le trottoir.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q8}}{
+\subQ{a}
+\[
+p(t) = \int \left(5t^2 + 5t^{-2}\right)\dx{t} = \frac{5}{3} \, t^3
+- 5 \, t^{-1} + C \ .
+\]
+Si $p(1)=12$, alors $\displaystyle \frac{5}{3} - 5 + C = 12$
+et ainsi $\displaystyle C=\frac{46}{3}$.  Nous avons tracé le graphe de
+$\displaystyle p(t)=\frac{5}{3} \, t^3 - 5 \, t^{-1} + \frac{46}{3}$
+et celui de $\displaystyle p'(t) = 5t^2 + \frac{5}{t^2}$ ci-dessous.
+\MATHgraph{10_equ_diff/quest_ppm}{8cm}
+
+\subQ{b}
+\[
+M(t) = \int M'(t) \dx{t} = \int \left( t^3 + t^{-3} \right) \dx{t} 
+= \int t^3 \dx{t} + \int t^{-3} \dx{t}
+= \frac{t^4}{4} + \frac{t^{-2}}{-2} + C \ .
+\]
+Si $M(2)= 8$, alors
+$\displaystyle 8 = \frac{2^4}{4} + \frac{2^{-2}}{-2} + C = \frac{31}{8} + C$
+et ainsi $\displaystyle C = \frac{33}{8}$.  Nous obtenons la solution
+\[
+M(t) = \frac{t^4}{4} + \frac{t^{-2}}{-2} + \frac{33}{8} \ .
+\]
+Nous avons tracé les graphes de $M$ et $M'$ ci-dessous.
+\MATHgraph{10_equ_diff/equdiff1}{8cm}
+
+\subQ{c}
+\[
+p(t) = \int p'(t) \dx{t} = -0.25 \int t^3 \dx{t} = -\frac{t^4}{16} + C \ .
+\]
+De plus, la condition initiale $p(0)=5$ nous donne que $C=5$.
+La solution cherchée est donc $\displaystyle p(t) = -\frac{t^4}{16} + 5$.
+Le graphe de $p$ et celui de $p'$ sont donnés ci-dessous.
+\MATHgraph{10_equ_diff/masse}{8cm}
+La fonction $p(t)$ est de plus en plus décroissante lorsque $t>0$
+augmente car $p'(t) = -0.25 t^3 < 0$ diminue lorsque $t>0$ augmente.
+
+\subQ{d}
+\[
+M(t) = \int 2 t^{-1/2} \dx{t} = 4 t^{1/2} + C
+\]
+où $C$ est une constante. Il découle de $M(0)=5$ que
+$C=5$.  Ainsi, $\displaystyle M(t) = 4 t^{1/2} + 5$.
+Les graphes de $M(t)$ et $M'(t)$ sont donnés ci-dessous.
+\MATHgraph{10_equ_diff/quest_mass}{8cm}
+La fonction $M(t)$ est de moins en moins croissante
+lorsque $t>0$ augmente car $M'(t) = 2/\sqrt{t} > 0$ diminue lorsque
+$t$ augmente.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q9}}{
+\[
+L(t) = \int L'(t) \dx{t} = \int 10^{-3} t(365-t) \dx{t}
+= 10^{-3} \int ( 365 t - t^2) \dx{t}
+= \frac{365}{2000} t^2 - \frac{1}{3000} t^3 + C \ .
+\]
+La condition initiale $L(100)=1000$ donne
+\[
+\frac{365}{2000} \times 100^2 - \frac{1}{3000}\times 100^3 + C =
+1825 - \frac{1000}{3} + C =  1000 \Rightarrow
+C = \frac{1475}{3} = 491.\overline{6} \ .
+\]
+Ainsi,
+\[
+L(t) = \frac{365}{2000} t^2 - \frac{1}{3000} t^3 + \frac{1475}{3}
+\]
+et $L(200) = 5125$
+}
+
+\compileSOL{\SOLUb}{\ref{10Q10}}{
+\subQ{a}
+Puisque $T$ est une fonction sinusoïdale de moyenne $20$, d'amplitude
+$10$, de période $182.5$ et de phase $90$, nous obtenons le graphe
+suivant.
+\MATHgraph{10_equ_diff/quest_insect}{8cm}
+
+\subQ{b}  Il faut déterminer $L(t)$.  C'est-à-dire, il faut résoudre
+\[
+\dydx{L}{t} = 0.001\,T(t) 
+= 0.02 + 0.01 \cos\left(\frac{2\pi (t-90)}{182.5}\right) \ .
+\]
+Nous avons
+\[
+L(t) = \int L'(t) \dx{t} 
+= \int \left( 0.02 + 0.01 \cos\left(\frac{2\pi (t-90)}{182.5}\right)
+\right) \dx{t} \ .
+\]
+Si $y = 2\pi(t-90)/182.5$, alors
+$\displaystyle \dx{y} = (2\pi/182.5) \dx{t}$ et
+\begin{align*}
+L(t) &= \frac{182.5}{2\pi}
+\int \left( 0.02 + 0.01 \cos\left(\frac{2\pi (t-90)}{182.5}\right)
+\right) \left(\frac{2\pi}{182.5}\right) \dx{t} \\
+&= \frac{182.5}{2\pi} \int \left( 0.02 + 0.01 \cos(y) \right) \dx{y}
+= \frac{182.5}{2\pi} \left( 0.02 y + 0.01 \sin(y) \right) + C \\
+&= \frac{182.5}{2\pi} \left( 0.02 \left(\frac{2\pi(t-90)}{182.5}\right) +
+0.01 \sin\left(\frac{2\pi(t-90)}{182.5}\right) \right) + C \\
+&= 0.02 \left(t-90\right) +
+\frac{1.825}{2\pi} \sin\left(\frac{2\pi(t-90)}{182.5}\right) + C \ .
+\end{align*}
+Il faut utiliser la condition initiale $L(0)=0.1$ cm pour déterminer
+$C$; c'est-à-dire,
+\[
+-1.8 + \frac{1.825}{2\pi} \sin\left(-\frac{180\pi}{182.5}\right) + C = 0.1
+\Rightarrow C\approx  1.9125 \ .
+\]
+Donc
+\[
+L(t) = 0.02 \left(t-90\right) +
+\frac{1.825}{2\pi} \sin\left(\frac{2\pi(t-90)}{182.5}\right) + 1.9125
+\]
+et $L(30) = 0.4569$.
+
+\subQ{c} Il faut utiliser la condition $L(150)=0.1$ cm pour déterminer
+la valeur de $C$ dans la solution générale
+\[
+L(t) = 0.02 \left(t-90\right) +
+\frac{1.825}{2\pi} \sin\left(\frac{2\pi(t-90)}{182.5}\right) + C \ .
+\]
+Nous obtenons
+\[
+1.2 + \frac{1.825}{2\pi} \sin\left(\frac{120 \pi}{182.5}\right) + C = 0.1
+\Rightarrow C\approx -1.3556 \ .
+\]
+Donc
+\[
+L(t) = 0.02 \left(t-90\right) +
+\frac{1.825}{2\pi} \sin\left(\frac{2\pi(t-90)}{182.5}\right) -1.3556
+\]
+et $L(300) = 3.0801$.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q11}}{
+\subQ{a} Nous avons $\displaystyle P(t) = \int \frac{5}{1+2t} \dx{t}$.
+Si $u=1+2t$, alors $\displaystyle \dx{u} = 2 \dx{t}$ et
+\begin{align*}
+P(t) &= \int \frac{5}{1+2t} \dx{t}
+= \frac{5}{2} \int \frac{1}{1+2t} (2) \dx{t}
+= \frac{5}{2} \int \frac{1}{u} \dx{u} \bigg|_{u=1+2t} \\
+&= \frac{5}{2} \ln|u| \bigg|_{u=1+2t} + C
+= \frac{5}{2} \ln|1+2t| + C \ .
+\end{align*}
+La condition initiale $P(0)=5$ nous donne que $C=5$.  Donc
+$\displaystyle P(t) = \frac{5}{2} \ln|1+2t| + 5$.  Nous avons que
+$P(t) \to \infty$ lorsque $t\to \infty$.
+
+\subQ{b} Nous avons $\displaystyle P(t) = \int \frac{5}{(1+t)^2} \dx{t}$.
+Si $y=1+t$, alors $\dx{y} = \dx{t}$ et
+\[
+P(t) = \int \frac{5}{(1+t)^2} \dx{t} = \int \frac{5}{y^2} \dx{y}
+= -\frac{5}{y} + C = - \frac{5}{1+t} + C \ .
+\]
+La condition initiale $p(0)=0$ nous donne $C=5$.  Donc
+$\displaystyle P(t) = -\frac{5}{1+t} + 5$.
+La figure ci-dessous contient le graphe de $P$ sur l'intervalle $[0,20]$.
+\MATHgraph{10_equ_diff/quest_chm}{8cm}
+La fonction $P(t)$ est de moins en moins croissante
+lorsque $t>0$ augmente car $P'(t) = 5/(1+t)^2 > 0$ diminue lorsque $t$
+augment.  De plus,
+\[
+\lim_{t\rightarrow \infty} P(t) = 
+\lim_{t\rightarrow \infty} \left(-\frac{5}{1+t} +5\right) = 5 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{10Q12}}{
+\subQ{a}
+\[
+W(t) = \int W'{t} \dx{t} = \int (4t-t^2) e^{-3t} \dx{t} \ .
+\]
+Pour évaluer cette dernière intégrale, nous utilisons la méthode d'intégration
+par parties.  Nous avons $f(t) g'(t) = (4t-t^2) e^{-3t}$ avec
+$f(t) = 4t-t^2$ et $g'(t) = e^{-3t}$.  Donc,
+$f'(t) = 4 - 2t$, $g(x) = -e^{-3t}/3$ et
+\begin{align*}
+W(t) &= \int (4t-t^2) e^{-3t} \dx{t} = \int f(t) g'(t) \dx{t}
+= f(t) g(t) - \int f'(t) g(t) \dx{t} \\
+&= -\frac{1}{3}(4t-t^2) e^{-3t} + \frac{1}{3}\int (4 - 2t)e^{-3t} \dx{t} \ .
+\end{align*}
+Nous utilisons la méthode d'intégration par parties une deuxième fois pour
+évaluer l'intégrale à droite ci-dessus.
+Nous avons $f(t) g'(t) = (4 - 2t)e^{-3t}$ avec $f(t) = (4 - 2t)$ et
+$g'(t) = e^{-3t}$.  Donc, $f'(t) = -2$, $g(t) = -e^{-3t}/3$ et
+\begin{align*}
+\int (4 - 2t)e^{-3t} \dx{t} &= \int f(t) g'(t) \dx{t}
+= f(t) g(t) - \int f'(t) g(t) \dx{t} \\
+&= -\frac{1}{3} (4-2t) e^{-3t} - \frac{2}{3} \int e^{-3t} \dx{t}
+= -\frac{1}{3} (4-2t) e^{-3t} + \frac{2}{9} e^{-3t} + C \ .
+\end{align*}
+Finalement, nous obtenons
+\begin{align*}
+W(t) &= -\frac{1}{3}(4t-t^2) e^{-3t} + \frac{1}{3} \left(
+-\frac{1}{3} (4-2t) e^{-3t} + \frac{2}{9} e^{-3t} + C \right) \\
+&= -\frac{1}{3}(4t-t^2) e^{-3t} -\frac{1}{9} (4-2t) e^{-3t} +
+\frac{2}{27} e^{-3t} + D
+\end{align*}
+où $D=C/3$.  Il découle de $W(0)=0$ que
+\[
+-\frac{4}{9} + \frac{2}{27} + D = 0
+\Rightarrow D = 10/27 \ .
+\]
+Ainsi,
+\[
+W(t) = -\frac{1}{3}(4t-t^2) e^{-3t} -\frac{1}{9} (4-2t) e^{-3t} +
+\frac{2}{27} e^{-3t} + \frac{10}{27}
+\]
+et
+$\displaystyle W(2) = -\frac{34}{27} e^{-6} + \frac{10}{27} \approx 0.36725$.
+
+\subQ{b} Il faut trouver la valeur de $t>0$ (s'il y en a une) à
+laquelle $W'(t)$ atteint son maximum absolu.  Nous avons
+\[
+W''(t) = (4-2t) e^{-3t} - 3 (4t-t^2) e^{-3t}
+= (3t^2 - 14 t + 4) e^{-3t} \ .
+\]
+Les points critiques de $W'$ sont les racines du polynôme
+$3t^2 - 14 t + 4$; c'est-à-dire,
+\[
+t_+ = \frac{14 + \sqrt{14^2-4\times 3\times 4}}{2\times 3}
+\approx 4.3609
+\quad \text{et} \quad
+t_- = \frac{14 - \sqrt{14^2-4\times 3\times 4}}{2\times 3}
+\approx 0.3057 \ .
+\]
+Nous avons l'information suivante pour la fonction $W'(t)$.
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+t & 0 & 0<t < t_- & t_- & t_- < t < t_+ & t_+& t_+ < t < +\infty & +\infty \\
+\hline
+W'(t) & 0 & + & + & +|- & - & - & 0 \\
+W''(t) & + & + & 0 & - & 0 & + & 0 \\
+\hline
+\text{comportement} & \multicolumn{2}{|c|}{\text{croît}} & \text{max.} &
+\text{décroît} & \text{min.} & \text{croît} & \text{asymptote} \\
+\text{de } W' & \multicolumn{2}{|c|}{} & \text{local} & & \text{local}
+& & \text{horizontal}
+\end{array}
+\]
+La fonction $W'$ passe de positive à négative au point $t=4$ d'où le
+symbole $+|-$.  Donc, le maximum global pour $W'(t)$ est à $t= t_-$ où
+$W'(t_-) \approx 0.4514$.
+
+\subQ{c} Si $W'(t) = 0.4514$ pour tout $t$, alors $W(t) = 0.4514 t +
+C$.  Nous obtenons de $W(0)=0$ que $C = 0$.  Donc $W(t) = 0.4514 t$ et 
+$W(2) = 0.9028$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q13}}{
+\subQ{a}
+$\displaystyle M(t) = \int (1+t^2) e^{-2t} \dx{t}$.
+Si $u=-2t$, alors $\dx{u} = -2 \dx{t}$, $t^2= u^2/4$ et
+\begin{align*}
+M(t) &= -\frac{1}{2} \int (1+t^2) e^{-2t} (-2) \dx{t}
+= -\frac{1}{2}
+\int \left( 1 + \frac{u^2}{4}\right)e^u \dx{u} \bigg|_{u=-2t} \\
+&= -\frac{1}{2} \int e^u \dx{u}\bigg|_{u=-2t} - \frac{1}{8}
+\int u^2 e^u \dx{u}\bigg|_{u=-2t}
+\end{align*}
+Nous avons montrer à la question~\ref{7Q4} (b) que
+\[
+\int u^2 e^u \dx{u} = u^2 e^u - 2 u e^u + 2 e^u + C \ .
+\]
+Donc,
+\begin{align*}
+M(t) &= -\frac{1}{2} e^u \bigg|_{u=-2t} - \frac{1}{8}
+\left( u^2 e^u - 2 u e^u + 2 e^u \right)\bigg|_{u=-2t} + C \\
+&= -\frac{1}{2} e^{-2t} - \frac{1}{8}
+\left( (-2t)^2 e^{-2t} - 2 (-2t) e^{-2t} + 2 e^{-2t} \right) + C
+= - \left( \frac{t^2}{2} + \frac{t}{2} + \frac{3}{4}\right) e^{-2t}
++ C \ .
+\end{align*}
+Il découle de la condition initiale $M(0)=1$ que $C= 7/4$.  Donc,
+\[
+M(t) = -\left( \frac{t^2}{2} + \frac{t}{2} + \frac{3}{4}\right) e^{-2t}
++ \frac{7}{4} \ .
+\]
+et
+$\displaystyle M(1) = -\left(\frac{1}{2}+ \frac{1}{2} + \frac{3}{4}
+\right) e^{-2} + \frac{7}{4} \approx 1.51316$ .
+
+\subQ{b} Il faut trouver le maximum absolu de $M'(t) = (1+t^2) e^{-2t}$
+pour $t\geq 0$.  Nous avons $M''(t) = -2 (t^2-t+1)e^{-2t} <0$ pour tout
+$t\geq 0$ car $t^2-t+1 >$ pour tout $t$; ce polynôme n'a pas de
+racines réelles.  Donc $M'$ est une fonction décroissante.  Ainsi, le
+maximum absolu de $M'$ est à $t=0$ où $M'(0)= 1$.
+
+\subQ{c} Si $M'(t) = 1$ pour tout $t$, alors $M(t) = t + C$.
+Nous obtenons $C=1$ de la condition initiale $M(0)=1$.  Donc $M(t) = t + 1$
+et $M(1) = 2$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q14}}{
+\subQ{a} Soit $x(t)$ la distance entre le sol et l'objet au temps $t$.
+L'accélération est $x''(t) = -10.5$.  La vitesse est
+$\displaystyle x'(t) = \int x''(t) \dx{t} = -10.5 t + C$ où
+$C$ est une constante qui est déterminée à l'aide de la vitesse
+initiale.  La distance entre l'objet et le sol est
+$\displaystyle x(t) = \int x'(t) \dx{t}
+= -\frac{10.5}{2}\; t^2 + C t + D$ où $D$ est une
+constante qui est déterminée par la hauteur initiale de l'objet
+lorsqu'il est lancé.
+
+Nous obtenons $C=5$ de $x'(0) = 5$ et $D=100$ de $x(0)=100$. 
+La distance entre l'objet et le sol est donc
+$\displaystyle x(t) = -\frac{10.5}{2}\; t^2 + 5 t + 100$.
+
+\subQ{b} La hauteur maximale atteint par l'objet est lorsque
+$x'(t)=-10.5 t + 5=0$; c'est-à-dire, $t= 5/10.5 \approx 0.47619$ s.
+À ce moment, l'objet sera à sa hauteur maximale de
+$x(5/10.5) \approx 101.1905$ m.
+
+\subQ{c} Il faut trouver $t>0$ tel que $x(t) = 100$; c'est-à-dire,
+tel que
+\[
+x(t) = -\frac{10.5}{2}\; t^2 + 5 t + 100 = 100
+\Rightarrow -\frac{10.5}{2}\; t^2 + 5 t = 0
+\Rightarrow -\frac{10.5}{2}\; t + 5 = 0
+\]
+car nous pouvons ignorer le cas où $t=0$ qui correspond au moment où
+l'objet est lancé vers le haut.  Ainsi, à
+$t = 10/10.5 \approx 0.95238$ s, l'objet sera à une hauteur de $100$ m.
+Sa vitesse à ce moment sera $x'(10/10.5) = -5$ m/s.  Le signe
+négatif indique que l'objet se dirige vers le sol.
+
+\subQ{d} L'objet frappe le sol au temps $t$ où $x(t)=0$.  Or
+$\displaystyle -\frac{10.5}{2}\; t^2 + 5 t + 100$ a une seul racine
+positive qui est
+$\displaystyle t_s =
+\frac{-5 - \sqrt{5^2 -4 \times (-10.5/2)\times 100}}{2 (-10.5/2)}
+\approx 4.8664497$.  Donc l'objet frappe le sol après $t_s$ s à une
+vitesse de $x'(t_s) \approx -46.097722$ m/s.
+
+\subQ{e} Le graphe de la position $x$ et celui de la vélocité $x'$
+sont donnés ci-dessous.
+\MATHgraph{10_equ_diff/gravite}{8cm}
+}
+
+\compileSOL{\SOLUa}{\ref{10Q15}}{
+Soit $C(t)$ la concentration en $\mu$mol/l au temps $t$ en secondes.  Nous
+avons dans l'énoncé du problème que $C(0)=10$ et $C'(t) = 50 \, e^{-2t}$.
+Donc,
+\[
+C(s) - C(0) = \int_0^s C\,'(t) \dx{t}
+= \int_0^s 50 \, e^{-2t} \dx{t} = -25 \, e^{-2t}\bigg|_0^s
+= 25(1 - e^{-2s}) \ .
+\]
+En substituant la condition initiale $C(0)=10$ dans cette équation,
+nous obtenons
+\[
+C(s) = 10 + 25 \left(1- \frac{1}{e^{2s}}\right)
+\]
+pour $s\geq 0$.  Notons que $C$ est une fonction croissante car
+$C'(t) = 50 \, e^{-2t}>0$ pour tout $t$.  La concentration maximale
+de toxine dans la cellule, si elle pouvait vivre indéfiniment, est
+\[
+\lim_{s\rightarrow \infty}\left(10 + 25 \left(1- \frac{1}{e^{2s}}\right)\right)
+= 10 + 25 = 35 \ .
+\]
+Donc la cellule va mourir empoisonnée après un certain temps $t$ donné par
+\[
+30 = 10 + 25 \left(1- \frac{1}{e^{2t}}\right)
+\Rightarrow t = \frac{1}{2}\;\ln(5) \approx 0.8047 \ \text{seconde}
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{10Q17}}{
+$\displaystyle x(t) = - \frac{1}{2} + \frac{3}{2} e^{2t}$ est une
+solution car
+\[
+x'(t) = \dfdx{\left(-\frac{1}{2} + \frac{3}{2} e^{2t}\right)}{t}
+= 3 e^{2t}
+\quad \text{et} \quad
+1 + 2x(t) = 1 + 2\left( - \frac{1}{2} + \frac{3}{2} e^{2t} \right) = 3 e^{2t}
+\ .
+\]
+Donc $x'(t) = 1 + 2x(t)$ pour tout $t$.
+De plus, la condition initial $x(0)=1$ est satisfaite car
+$x(0) = -1/2 + 3/2e^0= 1$.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q18}}{
+À $t=0$, nous avons $g'(0) = g^2(0)+2\times 0 = 1 > 0$.  Donc
+la fonction $g$ est croissante à $t=0$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q19}}{
+$b(t) = \ln(t)$ est une solution car
+\[
+b'(t) = \dfdx{\left( \ln(t) \right)}{t} = \frac{1}{t} 
+\quad \text{et} \quad
+e^{-b(t)} = e^{-\ln(t)} = e^{\ln(t^{-1})} = t^{-1} = \frac{1}{t}  \ .
+\]
+Donc $b'(t) = e^{-b(t)}$ pour tout $t$.
+
+Puisque $b'(t) = e^{-b(t)} > 0$ pour tout $t>0$, la fonction
+$b$ est strictement croissante.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q20}}{
+La fonction $b$ est une solution car
+\[
+b'(t) = \dfdx{\left(3 e^{2t} - 0.5\right)}{t}
+= 6 e^{2t} = 1 + 2 \left( 3 e^{2t} -0.5\right) = 1 + 2b(t)
+\]
+pour tout $t$ et $b(0)= 3 - 0.5 = 2.5$ .
+
+Il faut premièrement noter que $b(t) = -1/2$ pour tout $t$ est une
+solution de l'équation différentielle.   Puisque $b(0) = 2.5 > -1/2$,
+nous avons que $b'(t) > 0$ pour tout $t>0$ car $b'(t)$ peut changer de
+signe seulement lorsque $t$ satisfait $b'(t) = 1 + 2 b(t) = 0$;
+c'est-à-dire, lorsque $t$ satisfait $b(t) = -1/2$.
+Comme les solutions ne peuvent pas se couper par unicité des
+solutions, la solution $b(t)$ qui satisfait $b(0)=2.5$ doit satisfaire
+$b(t) > -1/2$ pour tout $t$ et donc $b'(t) = 1 + 2b(t) > 0$ pour tout
+$t$.  Nous avons que $b(t)$ est strictement croissante pour $t>0$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q21}}{
+La fonction $b$ est une solution car
+\[
+b'(t) = \dfdx{\left(e^{-t}\right)}{t} = - e^{-t} = - b(t)
+\]
+pour tout $t$ et $b(0) = e^{0} = 1$.
+
+Premièrement, il faut noter que $b(t) = 0$ pour tout $t$ est une
+solution de l'équation différentielle.   Puisque $b(0) = 1 > 0$, nous
+avons que $b'(t) < 0$ pour tout $t>0$ car $b'(t)$ peut changer de
+signe seulement lorsque $t$ satisfait $b'(t) = -b(t) = 0$;
+c'est-à-dire, lorsque $b(t) = 0$.  Comme les
+solutions ne peuvent pas se couper par unicité des solutions, la
+solution $b(t)$ qui satisfait $b(0)=1$ doit satisfaire $b(t) > 0$ pour
+tout $t$ et donc $b'(t) = -b(t) < 0$ pour tout $t$.  Nous avons que
+$b(t)$ est strictement décroissante.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q22}}{
+La fonction $b(t) = 5 + 20e^{-2t}$ est une solution car
+\[
+b'(t) = \dfdx{\left( 5 + 20e^{-2t} \right)}{t} = -40 e^{-2t} 
+\quad \text{et} \quad
+10 - 2b(t) = 10 -2\left( 5 + 20e^{-2t} \right) = -40 e^{-2t}  \ .
+\]
+Donc $b'(t) = 10 - 2b(t)$ pour tout $t$.
+De plus la condition initial $b(0)=25$ est satisfaite car
+$b(0) = 5 + 20e^0= 25$.
+
+Puisque $e^{-2t}$ est une fonction décroissante, $b(t) = 5 + 20e^{-2t}$ est
+aussi une fonction décroissante.  
+
+Notons premièrement que $b(t) = 5$ pour tout $t$ est une solution de
+l'équation différentielle..  Puisque $b(0) = 25 > 5$, nous avons que
+$b'(t) < 0$ pour tout $t>0$ car $b'(t)$ peut changer de signe
+seulement lorsque $t$ satisfait $b'(t) = 10 - 2 b(t) = 0$;
+c'est-à-dire, lorsque $t$ satisfait $b(t) = 5$. Comme 
+les solutions ne peuvent pas se couper par unicité des solutions, la
+solution $b(t)$ qui satisfait $b(0)=25$ doit satisfaire $b(t) > 5$
+pour tout $t$ et donc $b'(t) = 10 -2 b(t) < 0$ pour tout $t$.
+Nous avons que $b(t)$ est strictement décroissante.
+}
+
+\subsection{Équations différentielles séparables}
+
+\compileSOL{\SOLUb}{\ref{10Q25}}{
+La phrase \flqq le taux de décomposition du Césium $137$ est proportionnel à
+la quantité de Césium $137$ présent\frqq\ se traduit par l'expression
+mathématique $q'(t) = k q(t)$ où $k$ est la constante
+de proportionnalité et $q(t)$ est la quantité de Césium $137$ au temps $t$.
+La solution générale de cette équation différentielle est
+$ q(t) = q_0 e^{kt}$ où $q_0$ est la quantité de Césium $137$ au temps $t=0$.
+
+Pour déterminer la valeur de $k$, il faut utiliser le fait que la demie-vie du
+Césium $137$ est $30$ ans.  Donc
+\[
+\frac{q_0}{2} = q_0 e^{30k} \ .
+\]
+Si nous résolvons pour $k$, nous trouvons
+$\displaystyle k = \frac{1}{30} \, \ln(1/2) \approx -0.023104906$.
+
+Si la quantité initiale de Césium $137$ est $q_0 = 50$ mg, il restera
+$\displaystyle q(50) = 50 e^{50k} \approx 15.749013$ mg 
+après $50$ ans.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q26}}{
+\subQ{a} Puisque $\displaystyle y'(t) = 2 y(t)$, nous obtenons
+\[
+\int \frac{1}{y} \dx{y} = \int \frac{y'(t)}{y(t)} \dx{t} = \int 2
+\dx{t} \ .
+\]
+Donc
+\[
+\ln|y(t)| = 2t + C  \Rightarrow
+e^{\ln|y(t)|} = e^{2t + C} \Rightarrow
+|y(t)| = e^{2t+C} = e^{2t} e^C \Rightarrow
+y(t) = D e^{2t} \ ,
+\]
+où $D = \pm e^C$.  Notons que $D=0$ est aussi acceptable car l'équation
+différentielle $y'(t) = 2 y(t)$ est satisfaite par $y(t)=0$ pour tout $t$.
+La condition initiale $y(0)= 3$ donne $D e^0 = D = 3$.  La solution
+cherchée est $y(t) = 3 e^{2t}$.
+
+\subQ{b}
+\[
+\int \frac{1}{x^2} \dx{x} = \int 3 t \dx{t} \Rightarrow
+-\frac{1}{x} = \frac{3}{2}t^2 + D \ .
+\]
+Ainsi
+\[
+x = \frac{-1}{ (3/2) t^2 + D} = \frac{-2}{3 t^2 + 2D} \ .
+\]
+La condition initiale $x(1)=-2/5$ nous donne
+$\displaystyle -\frac{2}{5} = \frac{-2}{3+2D}$.
+Nous obtenons $D=1$ et donc $\displaystyle x(t) = \frac{-2}{3 t^2 + 2}$.
+
+\subQ{c}
+Si nous séparons les variables, nous obtenons
+\begin{equation}\label{EDquestc}
+\int \frac{1}{1000-h} \dx{h} = \int \dx{t} \ .
+\end{equation}
+Si $u = 1000-h$, alors $\dx{u} = -\dx{h}$ et
+\[
+\int \frac{1}{1000-h} \dx{h}
+= - \int \frac{1}{1000-h}\, ( -1) \dx{h}
+= - \int \frac{1}{u} \dx{u}
+= - \ln|u| + E
+= - \ln|1000-h| + E
+\]
+où $E$ est une constante.  Nous déduisons de (\ref{EDquestc}) que
+\[
+- \ln|1000-h| = t + C
+\]
+où $C$ est une constante.  Ainsi,
+\begin{align*}
+\ln|1000-h| = -t - C &\Rightarrow |1000-h| = e^{-t-C} = e^{-C} e^{-t} \\
+&\Rightarrow 1000-h = D e^{-t}
+\end{align*}
+où $D = \pm e^{-C}$.  Notons que $D=0$ est aussi valable
+car $h(t) = 1000$ pour tout $t$ est une solution de
+$\displaystyle \dydx{h}{t} = 1000 -h$.  Nous obtenons donc
+\[
+h(t) = 1000 - D e^{-t}
+\]
+avec $D$ une constante réelle.  Pour satisfaire $h(0)=500$, nous devons
+choisir $D$ tel que $\displaystyle 500 = 1000 - D$; c'est-à-dire,
+$D=500$.  Finalement, nous trouvons $h(t) = 1000 - 500 e^{-t}$.
+
+\subQ{d}
+Si nous séparons les variables, nous obtenons
+\[
+\int (1+2g) \dx{g} = \int 5 \dx{t} 
+\Rightarrow g + g^2 = 5 t + C
+\]
+pour une constante $C$.  Il faut utiliser la condition initiale
+$g(0)=0$ pour déterminer $C$.  Si nous substituons $t=0$ dans la
+relation $g(t) + g^2(t) = 5t + C$, nous obtenons $g(0) = 0 = C$.
+
+La solution implicite de l'équation différentielle est
+$g + g^2 = 5t$.  Il n'est pas toujours possible de trouver une forme
+explicite pour la solution.  Dans le cas présent, il existe une
+forme explicite pour $g$ grâce à la formule pour trouver les racines
+d'un polynôme de degré deux.  En effet, nous déduisons de
+$g^2 + g - 5t = 0$ que
+\[
+g(t) = \frac{1}{2} \left( -1 + \sqrt{ 1+ 20t}\right) \ .
+\]
+Notez que
+$\displaystyle g(t) = \frac{1}{2} \left( -1 - \sqrt{ 1+ 20t}\right)$
+ne satisfait pas $g(0) = 0$.
+
+\subQ{f} Si nous séparons les variables, nous avons
+\[
+\int \frac{1}{y} \dx{y} = \int \frac{1}{1+x^2} \dx{x} \ .
+\Rightarrow
+\ln|y| = \arctan(x) + C \ .
+\]
+Donc $\displaystyle y = D e^{\arctan(x)}$ où $D = \pm e^C$ est une
+constante.  Notons que $D=0$ est aussi acceptable car nous obtenons la
+solution triviale $y(x)=0$ pour tout $x$.  La condition initiale $y(0)=2$
+donne $D=2$.  La solution particulière est donc
+$\displaystyle y = 2 e^{\arctan(x)}$.
+
+\subQ{g} Si nous séparons les variables, nous avons
+\begin{align*}
+\int \frac{1}{y-1} \dx{y} = \int (x+2) \dx{x}
+&\Rightarrow  \ln|y-1| = \frac{x^2}{2} +2x +C
+\Rightarrow |y - 1| = e^C e^{x^2/2 + 2x} \\
+&\Rightarrow y = 1 + D e^{x^2/2 + 2x}
+\end{align*}
+où $D\equiv \pm e^C$ est une constante.  Notons que $D=0$ est aussi
+acceptable car nous obtenons la solution trivial $y(x) = 1$ pour tout
+$x$.  La condition $y(1)=0$ nous donne $0=1+De^{2.5}$ et donc 
+$D=-e^{-2.5}$.  Nous obtenons la solution particulière
+$\displaystyle y = 1 - e^{x^2/2 + 2x - 2.5}$.
+
+\subQ{h} Si nous séparons les variables, nous avons
+\[
+\int \frac{1}{6y^2} \dx{y} = \int \frac{1}{1+9x^2} \dx{x}
+= \int \frac{1}{1+(3x)^2} \dx{x} \ .
+\]
+Si $u=3x$ dans l'intégrale à droite, alors $\dx{u} = 3\dx{x}$ et
+\[
+\int \frac{1}{1+(3x)^2} \dx{x} = \frac{1}{3} \int \frac{1}{1+u^2} \dx{u}
+= \frac{1}{3} \arctan(u) + E
+= \frac{1}{3} \arctan(3x) + E
+\]
+où $E$ est une constante arbitraire.  Donc,
+\[
+-\frac{1}{6y} = \frac{1}{3} \arctan(3x) + C
+\Rightarrow y = \frac{1}{-2\arctan(3x)-6C}
+\]
+où $C$ est une constante arbitraire.  Si nous substituons $x=0$ dans cette
+dernière équation, nous obtenons $\displaystyle 1 = \frac{1}{-6C}$ car
+$\displaystyle y(0) = 1$.  Donc $C=-1/6$ et
+$\displaystyle y = \frac{1}{-2\arctan(3x) + 1}$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q27}}{
+\subQ{a}
+\[
+\dydx{x}{t} = 2x + \frac{1}{x} = \frac{2x^2+1}{x} \ .
+\]
+Si nous séparons les variables, nous obtenons
+\begin{equation}\label{EDquesta}
+\int \frac{x}{2x^2+1} \dx{x} = \int \dx{t} \ .
+\end{equation}
+Si $u = 2x^2+1$, alors $\dx{u} = 4x \dx{x}$ et
+\[
+\int \frac{x}{2x^2+1} \dx{x}
+= \frac{1}{4} \int \frac{1}{2x^2+1}\, ( 4x ) \dx{x}
+= \frac{1}{4} \int \frac{1}{u} \dx{u}
+= \frac{1}{4} \ln|u| + E
+= \frac{1}{4} \ln(2x^2+1) + E
+\]
+où $E$ est une constante.  Nous obtenons de (\ref{EDquesta}) que
+\[
+\frac{1}{4} \ln(2x^2+1) = t + C
+\]
+où $C$ est une constante.  Ainsi,
+\begin{align*}
+\ln(2x^2+1) = 4t + 4C &\Rightarrow 2x^2+1 = e^{4t+4C} = e^{4C}\,e^{4t}
+\Rightarrow x^2 = \frac{1}{2}\left(e^{4C}\,e^{4t} - 1\right) \\
+&\Rightarrow x = \pm\sqrt{\frac{1}{2}\left(e^{4C}\,e^{4t} - 1\right)} \ .
+\end{align*}
+Si $D=e^{4C}$ (notez que cette constante est positive), alors 
+\[
+x = \pm \sqrt{\frac{1}{2}\left(D\,e^{4t} - 1\right)} \ .
+\]
+Cette solution est valable seulement si $D\,e^{4t} - 1 \geq 0$;
+c'est-à-dire, $t \geq -\ln(D)/4$.
+
+\subQ{b} Si $y=x^2$, nous avons
+\begin{equation}\label{sol1}
+\dydx{y}{t} = 2x\,\dydx{x}{t} = 2x \left(2x + \frac{1}{x}\right)
+= 4x^2 +2 = 4y+2 \ .
+\end{equation}
+
+\subQ{c} (\ref{sol1}) est une équation différentielle séparable pour $y$,
+nous avons
+\begin{equation}\label{EDquestb}
+\int \frac{1}{4y+2} \dx{y} = \int \dx{t} \ .
+\end{equation}
+Si $u=4y+2$, alors $\dx{u} = 4 \dx{y}$ et
+\[
+\int \frac{1}{4y+2} \dx{y}
+= \frac{1}{4} \int \left(\frac{1}{4y+2} \right) 4\dx{y}
+= \frac{1}{4} \int \frac{1}{u} \dx{u} = \frac{1}{4} \ln|u| + E
+= \frac{1}{4} \ln|4y+2| + E
+\]
+où $E$ est une constante.  Nous obtenons de (\ref{EDquestb}) que
+\[
+\frac{1}{4} \ln|4y+2| = t + C
+\]
+où $C$ est une constante.  Donc,
+\begin{align*}
+\ln|4y+2| = 4t+4C &\Rightarrow |4y+2| = e^{4t+4C} = e^{4C} e^{4t}
+\Rightarrow 4 y + 2 = E e^{4t} 
+\Rightarrow y = \frac{ E e^{4t} - 2}{4}
+\end{align*}
+où $E = \pm e^{4C}$.  Notons que $E=0$ est aussi acceptable car $y(t)
+= -1/2$ pour tout $t$ est aussi une solution de (\ref{sol1}).
+
+\subQ{d}
+Si nous substituons $y$ par $x^2$ dans
+$\displaystyle y = \frac{ E e^{4t} - 2}{4}$, nous obtenons
+\[
+x^2 = \frac{E e^{4t} - 2}{4} \Rightarrow x
+= \pm \sqrt{\frac{De^{4t} - 1}{2}}
+\]
+pour $D = E/2 > 0$.  Cette formule est valide seulement
+si $De^{4t} - 1 \geq 0$; c'est-à-dire, $t> - \ln(D)/4$ comme nous avons vu
+précédemment.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q28}}{
+Utilisons la méthode de séparation des variables pour trouver $c(t)$ qui
+satisfait
+\begin{equation}\label{10Q20equ}
+\dydx{c}{t} = \frac{kA}{V} \left( C - c \right) \ .
+\end{equation}
+La méthode de séparation des variables nous donne
+\[
+\int \frac{1}{C-c} \dx{c} = \int \frac{kA}{V} \dx{t} \ .
+\]
+Donc,
+\begin{align*}
+- \ln|C- c| = \frac{kA t}{V} + D &
+\Rightarrow \ln|C- c| = -\frac{kA t}{V} - D
+\Rightarrow |C-c| = e^{-kA t/V}e^{-D} \\
+& \Rightarrow C-c = E e^{-kA t/V} \Rightarrow c = C-Ee^{-kA t/V}
+\end{align*}
+où $E = \pm e^{-D}$.  Notons que $E=0$ est aussi acceptable
+car $c(t) = C$ pour tout $t$ est une solution de (\ref{10Q20equ}).
+$E$ est une constante que nous devons déterminer à l'aide de la condition
+initiale.  Nous avons
+\[
+c(0) = c_0 \Rightarrow  C-E = c_0 \Rightarrow E = C - c_0 \ .
+\]
+La solution est donc $\displaystyle c(t) = C-(C-c_0) e^{-kA t/V}$.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q30}}{
+En séparant les variables, nous trouvons
+\[
+\int y^{-1.1} \dx{y} = \int \dx{t} \ .
+\]
+Donc,
+\[
+-10 y^{-0.1} = t + C \Rightarrow y^{0.1} = -\frac{10}{t + C} \ .
+\]
+Cette dernière relation impose une condition sur les valeurs de $t$.
+Puisque $y^{0,1} \geq 0$, nous devons avoir $t+C < 0$ pour satisfaire
+l'équation.  Nous assumons que $t < -C$ par la suite.  Nous pouvons alors
+résoudre pour $y$ pour obtenir
+\[
+y = \left(\frac{10}{t + C}\right)^{10}  \ .
+\]
+Pour déterminer $C$, il faut utiliser la condition initiale $y(0)=100$
+pour obtenir $100 = (10/C)^{10}$.  Ainsi, $C= \pm 10^{4/5}$.  Nous devons
+choisir $C = - 10^{4/5}$ car la condition $t<-C$ n'inclut pas $t=0$
+si $C= 10^{4/5}$.  La solution est
+\[
+y = \left( \frac{10}{t - 10^{4/5}} \right)^{10} \quad \text{pour} \quad
+t < 10^{4/5} \ .
+\]
+Notons que $\displaystyle \lim_{t\to (10^{4/5})^-} y(t) = \infty$.
+
+Cette équation est plus délicate à résoudre car elle ne satisfait pas
+le théorème d'existence et d'unicité des équation différentielle.  La
+fonction $y^{1.1}$ n'est pas définie pur $y<0$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q31}}{
+\subQ{a}
+\[
+\int \frac{1+x}{x} \dx{x} = \int \dx{t} \Rightarrow
+\int \left(\frac{1}{x} + 1\right) \dx{x} = \int \dx{t} \Rightarrow
+\ln|x| + x = t + C \ .
+\]
+Il faut utiliser la condition initiale $x(0)=1$ pour déterminer la
+valeur de $C$.  Si nous substituons $x=1$ et $x=0$ dans
+$\ln|x| + x = t + C$, nous obtenons $\ln(1) + 1 = 0 + C$;
+c'est-à-dire, $C=1$.  La solution est donnée dans la forme
+implicite $\ln|x| + x = t + 1$.  Il est impossible d'écrire $x$ en fonction
+de $t$.
+
+\subQ{b}  Le graphe de $t= t(x) = \ln|x| + x - 1$ pour $0\leq x \leq 10$
+est donné ci-dessous.
+\MATHgraph{10_equ_diff/implxlnx1}{8cm}
+
+\subQ{c}  Le graphe de $x = x(t)$ est obtenu du graphe de 
+$t = t(x)$ par une réflexion de ce dernier par rapport à l'axe $x=t$.
+\MATHgraph{10_equ_diff/implxlnx2}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{10Q32}}{
+Si $y = 2x -1$, alors
+\[
+y'= 2 x'= 2 \left(2x-1\right) = 2 y \ .
+\]
+Cette dernière équation différentielle est bien connue.  Sa solution générale
+est $y(t) = y_0 e^{2t}$ où $y_0$ est la condition initiale à $t=0$.
+
+La solution générale de $\displaystyle \dydx{x}{t} = 2x-1$ est donc
+\[
+x = \frac{y+1}{2} = \frac{y_0 e^{2t} + 1}{2} 
+= \frac{ (2 x_0 - 1) e^{2t} + 1}{2}
+\]
+où $x_0$ est la condition initiale à $t=0$ pour
+$\displaystyle \dydx{x}{t} = 2x-1$.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q33}}{
+\subQ{a}
+la température $T(t)$ du café au temps $t$ satisfait l'équation
+différentielle $\displaystyle \dydx{T}{t} = K ( M- T)$ où la constante $M$
+est la température ambiante et la constant positive $K$ est associé à la
+conductivité thermique du café.  Le temps est mesuré en minutes et la
+température en degré Celsius.
+
+\subQ{b}
+Utilisons la méthode de séparation des variables pour résoudre l'équation
+différentielle en (a).
+\begin{align*}
+\int \frac{1}{M-T} \dx{T} = \int K \dx{t} &\Rightarrow
+- \ln|M-T| = K t + C \Rightarrow \ln|M-T| = -K t - C \\
+& \Rightarrow |M-T| = e^{-C} e^{-K t}
+\Rightarrow M-T = D e^{-Kt}
+\end{align*}
+où $D = \pm e^{-C}$.  Notons que $D=0$ est aussi acceptable car
+$T(t)=M$ pour tout $t$ est une solution; le café est à la température
+ambiante.  Donc la solution générale est
+\[
+T(t) = M - D e^{-Kt} \quad , \quad t \geq 0 \ .
+\]
+Si $t=0$, alors $T_0 = M - D$ et ainsi $D=M-T_0$.  La solution est donc
+\[
+T(t) = M - (M-T_0) e^{-Kt} \quad , \quad t \geq 0 \ ,
+\]
+où $T_0$ est la température initiale à $t=0$.
+
+\subQ{c}
+Il est donné dans l'énoncé de la question que $T_0 = 60^\circ$C et
+$M=22^\circ$C.   Pour déterminer $K$, nous utilisons l'information qui
+vient de nous être fournie.  À savoir que $T(20) = 40^{\circ}$C.  Ainsi,
+\[
+40 = T(20) = 22 - (22-60)e^{-20K} \Rightarrow K = -
+\frac{1}{20}\,\ln\left(\frac{9}{19}\right) \approx 0.03736072 \ .
+\]
+Donc, la température du café après une heure est
+\[
+T(60) = 22 - (22-60)e^{-0.03736072\times 60} \approx 26.038781^\circ\text{C}
+\ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{10Q34}}{
+\subQ{a} Si $T(t)$ est la température au temps $t$, nous avons alors
+$\displaystyle \dydx{T}{t} = K(M - T)$ où $M$ est la température à
+l'extérieur de la maison, que nous assumons constante, et $K$ est une
+constante positive.  Dans le cas présent $M = -12$ C.
+
+\subQ{b} Nous utilisons la méthode de séparation des variables.  Nous avons
+\begin{align*}
+\int \frac{1}{-12 - T} \dx{T} = \int K \dx{t}
+& \Rightarrow -\ln|-12 - T| = Kt + C \\
+& \Rightarrow  |-12 - T| = e^{-Kt -C} = e^{-C}e^{-Kt}
+\Rightarrow T = -12 - D e^{-Kt}
+\end{align*}
+où $D = \pm e^{-C}$.  Notons que $D=0$ est aussi acceptable car
+$T(t) = -12$ pour tout $t$ est une solution.
+
+Pour simplifier nos calculs, nous assumons que 13h00 correspond à
+$t =0$.  Donc 22h00 correspond à $t=9$.  Nous obtenons des
+conditions $T(0) = 20$ et $T(9) = 15$ que
+$20 = -12 - D$ et $15 = -12 - D e^{-9K}$.  La première équation nous
+donne $D= -32$ et la deuxième équation nous donne
+\[
+15 = -12 + 32 e^{-9K} \Rightarrow
+e^{9K} = \frac{32}{27} \Rightarrow
+K = \frac{1}{9}\ln\left(\frac{32}{27}\right)
+= \frac{1}{9}\left( 5\ln(2) - 3\ln(3)\right) \ .
+\]
+La solution est donc
+\[
+  T = -12 + 32 e^{-( 5\ln(2) - 3\ln(3))t/9} \ .
+\]
+À sept heures le matin suivant, donc à $t=18$ ($18$ heures après le
+début de la panne), la température dans la maison est de
+\[
+  T(18) = -12 + 32 e^{-2( 5\ln(2) - 3\ln(3))} = 10.78 \ \text{C} \ .
+\]
+
+\subQ{c} Comme la température durant la nuit est probablement
+inférieure à la température de $-12$ C observée durant la journée, nous
+devons donc s'attende à se que la température à l'intérieure de la
+maison soit inférieure à $10.78$ C.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q35}}{
+\subQ{a} Nous obtenons de
+\begin{equation}\label{reproduct}
+\dydx{b}{t} = \frac{1}{1+t}\,b
+\end{equation}
+que
+\[
+\int \frac{1}{b} \dx{b} = \int \frac{1}{1+t} \dx{t} \ .
+\]
+Ainsi,
+\[
+\ln|b| = \ln|1+t| + C \Rightarrow |b| = e^C |1+t|
+\Rightarrow b = D(1+t)
+\]
+où $D=\pm e^C$ est une constante.  Notons que $D=0$ est aussi
+acceptable car $b(t) = 0$ pour tout $t$ (aucun individu) est une
+solution.
+
+\subQ{b} Si $b(0)=10^6$, alors $D=10^6$.  La solution de
+(\ref{reproduct}) avec la condition initiale $b(0)=10^6$ est
+\[
+y = 10^6 (1+t) = 10^6 \, t + 10^6 \ .
+\]
+C'est une droite de pente $10^6$ qui passe par $(0,10^6)$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q36}}{
+\subQ{a}
+Nous pouvons séparer les variables dans l'équation
+\[
+\dydx{y}{t} = -2 \sqrt{y}
+\]
+pour obtenir
+\[
+\int y^{-1/2} \dx{y} = - \int 2 \dx{t} \ .
+\]
+Donc
+\[
+2 y^{1/2} = -2\,t + E \Rightarrow y^{1/2} = -t +
+\frac{E}{2} \ .
+\]
+Puisque $y^{1/2}(t) \geq 0$, nous devons donc avoir $t \leq D = E/2$.
+Ainsi,
+\[
+y = \left(-t + D\right)^2 \quad \text{pour} \quad  t \leq D \ .
+\]
+Remarquons que le côté droit de l'équation différentielle
+\[
+\dydx{y}{t} = F(y) = -2 \sqrt{y}
+\]
+ne satisfait pas le théorème d'existence et d'unicité des solutions
+car $F'(y) = - y^{-1/2}$ n'est pas définie à $y=0$.  Nous pouvons
+aussi vérifiez que nous avons bien trouvé une solution.  Nous avons
+\[
+y' = -2\, (-t+D)
+\quad \text{et} \quad
+-2\sqrt{y} = -2 \sqrt{ (-t+D)^2 } = -2 |-t+D| = -2 (-t+D)
+\]
+car $t\geq D$.  Donc
+$\displaystyle \dydx{y}{t} = -2 \sqrt{y}$ pour $t\leq D$.
+
+\subQ{b} la condition initiale $y(0)=16$ donne $16 = D^2$ et ainsi $D=4$ ou
+$D=-4$.  La solution $y=(-t+D)^2$ avec $D=-4$ n'est pas acceptable car 
+elle est valable seulement pour $t\leq -4$, un intervalle qui ne
+contient pas l'origine.
+
+La solution de l'équation différentielle qui satisfait la condition
+initiale $y(0)=16$ est donc donnée par $D=4$.  Nous obtenons
+$y= (-t+4)^2$ pour $t\leq 4$.  Le graphe de la solution de
+l'équation différentielle avec $y(0)=16$ est donné ci-dessous.
+\MATHgraph{10_equ_diff/toricelli}{8cm}
+
+\subQ{c} Si $y(t) = (-t+4)^2$, alors $y(t)=0$ pour $t=4$ secondes.
+
+\subQ{d} La solution de l'équation différentielle
+\[
+\dydx{y}{t} = -2 y
+\]
+est $y = C e^{-2t}$.  La condition initiale $y(0)=16$ donne $C=16$.
+Donc, la solution de cette équation différentielle qui satisfait la condition
+initiale $y(0)=16$ est $y = 16 e^{-2t}$.
+
+D'après ce modèle, la profondeur de l'eau dans le cylindre après $4$
+secondes serait $y(4) = 16 e^{-8} = 0.0053674\ldots$ cm.
+}
+
+\subsection{Équations différentielles autonomes}
+  
+\compileSOL{\SOLUb}{\ref{10Q37}}{
+\subQ{a} Le portrait de phases est donné ci-dessous.
+\PDFgraph{10_equ_diff/sect_eqdsol}
+
+Les points d'équilibre sont $x=1$, $1.5$ et $2.5$ car $f(x)=0$ pour
+ces valeurs de $x$.  La direction des flèches est déterminée par
+l'équation différentielle $x'(t) = f(x(t))$.
+Sur les intervalles où la fonction $f$ est positive, nous avons $x'(t) >0$.
+Donc, la solution $x(t)$ est croissante. Par contre, sur les
+intervalles où la fonction $f$ est négative, nous avons $x'(t) <0$ et la
+solution $x$ est décroissant.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q38}}{
+\subQ{a} Les points d'équilibre sont les solutions de
+$f(x)= 1 - x^2 = 0$.  Donc $1$ et $-1$ sont les deux seuls points
+d'équilibre.  Nous avons que $f'(x) = -2x$. Ainsi, le point d'équilibre
+$x=1$ est stable car $f'(1) = -2 < 0$.  Par contre, le point
+d'équilibre $x=-1$ est instable car $f'(-1) = 2 > 0$.
+
+\subQ{b} Les points d'équilibre sont les solutions de
+$f(y) = \alpha e^{\beta y} - 1 =0$.  Donc
+$y = - \ln(\alpha)/\beta$ est le seul point d'équilibre.  Notons que la
+condition $\alpha>0$ est nécessaire pour que $\ln(\alpha)$ soit définie.
+Nous avons $f'(y) = \alpha \beta e^{\beta y} < 0$ pour tout $y$ car 
+$\alpha>0$ et $\beta<0$.  En particulier, $f'(-\ln(\alpha)/\beta)<0$.
+Le point d'équilibre $y=-\ln(\alpha)/\beta$ est donc stable quels que
+soient $\alpha>0$ et $\beta<0$.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q39}}{
+\subQ{a}\\
+\subI{I} Nous avons une équation différentielle de la forme
+\[
+\dydx{x}{t} = f(x)
+\]
+où $f(x) = x^2-4x+3$.  Les points d'équilibres sont les valeurs de $x$
+telles que $f(x)=0$.  L'équation $f(x)=x^2-4x+3=(x-1)(x-3)=0$ a deux
+racines, $x=1$ et $x=3$.  Ce sont donc nos deux points d'équilibre.
+
+Nous savons qu'un point d'équilibre $p$ est (asymptotiquement) stable si
+$f'(p) < 0$ et instable si $f'(p) > 0$,  Puisque $f'(x) = 2x-4$, nous avons
+que $x=3$ est instable car $f'(3) = 2>0$ et $x=1$ est (asymptotiquement)
+stable car $f'(1) = -2 < 0$.
+
+\subI{II}
+\PDFgraph{10_equ_diff/portraitP7}
+
+\subI{III} L'équation différentielle est séparable.  La méthode de
+séparation des variables nous donne
+\begin{equation}\label{10Q39P7}
+\int \frac{1}{x^2-4x+3} \dx{x} = \int \dx{t} \ .
+\end{equation}
+Il faut utilisé la méthode des fractions partielles pour évaluer
+l'intégrale du coté gauche de l'égalité.  Nous avons
+\[
+\frac{1}{x^2-4x+3} = \frac{A}{x-3} + \frac{B}{x-1} =
+\frac{A(x-1)+B(x-3)}{(x-1)(x-3)} \ .
+\]
+Donc $1=B(x-3)+A(x-1)$.  Si nous substituons $x=3$ dans
+$1=B(x-3)+A(x-1)$, nous obtenons $1= 2A$ et ainsi $A=1/2$.
+Si nous substituons $x=1$ dans $1=B(x-3)+A(x-1)$, nous obtenons
+$1= -2B$ et ainsi $B=-1/2$.  En conséquence,
+\begin{align*}
+\int \frac{1}{x^2-4x+3} \dx{x} &= \frac{1}{2} \int \frac{1}{x-3} \dx{x}
+-\frac{1}{2} \int \frac{1}{x-1} \dx{x} \\
+&= \frac{1}{2} \ln|x-3| - \frac{1}{2} \ln|x-1| + E
+= \frac{1}{2} \ln \left(\frac{|x-3|}{|x-1|}\right) + E
+\end{align*}
+où $E$ est une constante.  Il découle de (\ref{10Q39P7}) que
+\[
+\ln \left(\frac{|x-3|}{|x-1|}\right) = 2t + 2C
+\]
+où $C$ est une constante.  Après avoir évalué l'exponentiel des deux cotés de
+l'égalité, nous obtenons
+\[
+\frac{|x-3|}{|x-1|} = e^{2t+2C}=e^{2C}\,e^{2t} \Rightarrow 
+\frac{x-3}{x-1} = D \,e^{2t}
+\]
+où $D=\pm e^{2C}$.  Si nous substituons $x=5$ et $t=0$ donnés par $x(0)=5$
+dans cette équation, nous obtenons $D = 1/2$.  La solution implicite est
+donc
+\[
+\frac{x-3}{x-1} = \frac{e^{2t}}{2} \ .
+\]
+Si nous résolvons l'équation précédente pour $x$, nous trouvons
+\begin{align*}
+\frac{x-3}{x-1} = \frac{e^{2t}}{2}
+&\Rightarrow 2(x-3) = e^{2t} (x-1)
+\Rightarrow 2x - 6 = x e^{2t} - e^{2t} \\
+&\Rightarrow 2x - x e^{2t} = 6 - e^{2t}
+\Rightarrow x = \frac{6-e^{2t}}{2 - e^{2t}} \ .
+\end{align*}
+
+\subQ{b}\\
+\subI{I} Nous avons une équation différentielle de la forme
+\[
+\dydx{x}{t} = f(x)
+\]
+où $f(x) = x^2-7x+10$.  Les points d'équilibres sont les valeurs de
+$x$ telles que $f(x)=0$.  L'équation $f(x)=x^2-7x+10=(x-2)(x-5)=0$ a deux
+racines, $x=2$ et $x=5$.  Ce sont donc nos deux points d'équilibre.
+
+Nous savons qu'un point d'équilibre $p$ est (asymptotiquement) stable si
+$f'(p) < 0$ et instable si $f'(p) > 0$,  Puisque $f'(x) = 2x-7$, nous avons que
+$x=5$ est instable car $f'(5) = 3>0$ et $x=2$ est (asymptotiquement)
+stable car $f'(2) = -3 < 0$.
+
+\subI{II} Le tableau ci-dessous donne le signe de
+$f$ sur chacun des intervalles délimités par les points d'équilibre.
+\[
+\begin{array}{c|c|c|c}
+\text{intervalle} & x < 2 & 2 < x < 5 & 5 < x \\
+\hline
+\text{signe de }f(x) & + & - & +
+\end{array}
+\]
+Nous obtenons le portrait de phase suivant.
+\PDFgraph{10_equ_diff/portraitP8}
+
+\subI{III} L'équation différentielle est séparable.  La méthode de
+séparation des variables nous donne
+\begin{equation}\label{10Q39P8}
+\int \frac{1}{x^2-7x+10} \dx{x} = \int \dx{t} = t + C \ .
+\end{equation}
+Il faut utilisé la méthode des fractions partielles pour évaluer
+l'intégrale du coté gauche de l'égalité.  Nous avons
+\[
+\frac{1}{x^2-7x+10} = \frac{A}{x-5} + \frac{B}{x-2} =
+\frac{A(x-2)+B(x-5)}{(x-2)(x-5)} \ .
+\]
+Donc $1=A(x-2)+B(x-5)$.  Si nous substituons $x=2$ dans
+$1=A(x-2)+B(x-5)$, nous obtenons $1= -3B$ et ainsi $B=-1/3$,  Si nous
+substituons $x=5$ dans $1=A(x-2)+B(x-5)$, nous obtenons 
+$1=3A$ et donc $A=1/3$.  En conséquence,
+\begin{align*}
+\int \frac{1}{x^2-7x+10} \dx{x} &= \frac{1}{3} \int \frac{1}{x-5} \dx{x}
+- \frac{1}{3} \int \frac{1}{x-2} \dx{x} \\
+&= \frac{1}{3} \ln|x-5| - \frac{1}{3} \ln|x-2| + E
+= \frac{1}{3} \ln \left(\frac{|x-5|}{|x-2|}\right) + E
+\end{align*}
+où $E$ est une constante.  Il découle de (\ref{10Q39P8}) que
+\[
+\ln \left(\frac{|x-5|}{|x-2|}\right) = 3t + 3C
+\]
+où $C$ est une constante.  Après avoir évalué  l'exponentiel des deux cotés de
+l'égalité, nous obtenns
+\[
+\frac{|x-5|}{|x-2|} = e^{3t+3C}=e^{3C}\,e^{3t} 
+\Rightarrow \frac{x-5}{x-2} = D \,e^{3t}
+\]
+où $D=\pm e^{3C}$.  Si nous substituons $x=7$ et $t=0$ donnés par $x(0)=7$
+dans cette équation, nous obtenons $D = 2/5$.  La solution implicite est 
+donc
+\[
+\frac{x-5}{x-2} = \frac{2 e^{3t}}{5} \ .
+\]
+Si nous résolvons l'équation précédente pour $x$, nous trouvons
+\begin{align*}
+\frac{x-5}{x-2} = \frac{2 e^{3t}}{5}
+&\Rightarrow 5(x-5) = 2(x-2) e^{3t} = 2x e^{3t} - 4 e^{3t}
+\Rightarrow 5x -25 = 2x e^{3t} - 4 e^{3t}\\
+&\Rightarrow (5 - 2 e^{3t})x = 25 - 4 e^{3t}
+\Rightarrow x = \frac{5- 4 e^{3t}}{5 - 2 e^{3t}} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{10Q40}}{
+À partir du portrait de phases donné dans l'énoncé de la question, nous
+concluons que la solution $x(t)$ de l'équation différentielle
+$x'(t) = f(x(t))$ avec la
+condition initiale $x(0)= x_0 = 5 \in ]4,6[$ est une fonction croissante
+telle que $\lim_{t\rightarrow \infty} x(t) = 6$.  Le graphe de $x(t)$
+pourrait avoir l'allure suivante.
+\PDFgraph{10_equ_diff/port_sol}
+}
+
+\compileSOL{\SOLUb}{\ref{10Q41}}{
+\subQ{a} Nous avons l'équation différentielle
+$\displaystyle \dydx{y}{t} = f(y)$ avec
+$f(x) = y(y^2 -6 y + 5) = y(y-5)(y-1)$.  Les
+points d'équilibre sont les solutions de $f(y) = 0$.  Nous avons trois
+points d'équilibre: $y=0$, $y=1$ et $y=5$.
+
+\subQ{b} La dérivée de $f$ est $f'(y) = 3y^2 -12 y + 5$.
+Puisque $f'(0) = 5 >0$, $f'(1) = -4 <0$ et $f'(5) = 20 >0$, nous avons
+que les points d'équilibre $y=0$ et $y=5$ sont instables alors que le
+point d'équilibre $y=1$ est (asymptotiquement) stable.
+
+\subQ{c} Le tableau ci-dessous donne le signe de
+$f$ sur chacun des intervalles délimités par les points d'équilibre.
+\[
+\begin{array}{c|c|c|c|c}
+\text{intervalle} & y < 0 & 0 < y < 1 & 1 < y < 5 & 5 < y \\
+\hline
+\text{signe de }f(y) & - & + & - & +
+\end{array}
+\]
+Nous obtenons le portrait de phase suivant.
+\PDFgraph{10_equ_diff/question4a}
+
+\subQ{d}
+Pour déterminer les points d'inflexion de $y$, il faut trouver les points
+où $f$ a un maximum local ou un minimum local.  Les points critiques
+de $f$ sont les solutions de $f'(y) = 3y^2 -12y +5=0$; c'est-à-dire,
+\[
+y_+ = \frac{1}{3} \left( 6 + \sqrt{21} \right) \approx  3.527525
+\quad \text{et} \quad
+y_- = \frac{1}{3} \left( 6 - \sqrt{21} \right)
+\approx 0.472475 \ .
+\]
+Comme $f'$ est un polynôme de degré deux avec un coefficient positif pour
+$y^2$, nous concluons que $f'$ passe de positif à négatif au point
+$x_-$ et de négatif à positif au point $x_+$ quand $y$
+augmente.  Donc $f$ a un maximum local à $x_-$ et un
+minimum local à $x_+$.
+La solution avec la condition initiale $y(0)=4$ a donc un point
+d'inflexion lorsque $y(t) = x_+ \approx 3.527525$.  Nous obtenons le
+graphe suivant pour la solution $y=y(t)$ avec $y(0)=4$.
+\PDFgraph{10_equ_diff/question4b}
+}
+
+\compileSOL{\SOLUa}{\ref{10Q42}}{
+Les points d'équilibre sont les valeurs de $\theta$ telles que 
+$f(\theta) = \theta\cos(\theta)=0$.  Nous trouvons $\theta =0$ et
+$\displaystyle \theta = \frac{\pi}{2} + n \pi$ pour $n\in \ZZ$.
+
+Les points d'équilibre dans l'intervalle $[-\pi,2\pi]$ sont
+$-\pi/2$, $0$, $\pi/2$ et $3\pi/2$.  Le tableau ci-dessous donne le signe de
+$f$ sur chacun des intervalles délimités par les points d'équilibre.
+\[
+\begin{array}{c|c|c|c|c|c}
+\rule[-0.5em]{0em}{1em} \text{intervalle} & -\pi < \theta <-\frac{\pi}{2} &
+\frac{\pi}{2}<\theta< \frac{3\pi}{2} & \frac{3\pi}{2}<\theta< 2\pi &
+-\frac{\pi}{2}<\theta< 0 & 0<\theta<\frac{\pi}{2} \\
+\hline
+\text{signe de }f(\theta) & + & - & + & - & +
+\end{array}
+\]
+Nous obtenons le portrait de phases suivant.
+\PDFgraph{10_equ_diff/portraitP2}
+}
+
+\compileSOL{\SOLUb}{\ref{10Q43}}{
+Les points d'équilibre sont les valeurs de $x$ telles que 
+$f(x) = x^2 =0$.  Il y a un seul point d'équilibre qui est $x=0$.
+
+Puisque $f(x) >0$ pour tout $x \neq 0$, nous obtenons le portrait de phases
+suivant.
+\PDFgraph{10_equ_diff/portraitP3}
+À partir du portrait de phases ci-dessus, nous pouvons conclure que le point
+d'équilibre $x=0$ n'est pas stable.  Puisque $f'(x) = 2x$, nous avons que
+$f'(0)=0$.  Le théorème de stabilité des points d'équilibre ne
+s'applique pas dans ce cas.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q44}}{
+Soit $p_1$ et $p_2$ deux points d'équilibre asymptotiquement stables
+et côte à côte pour une équation différentielle  $x' = f(x)$.  Puisqu'ils
+sont asymptotiquement stables, nous avons que $f$ est décroissante au
+voisinage de $p_1$ et il en est de même au voisinage de $p_2$.
+
+Puisque $f(p_1)=0$, nous avons que $f(x)<0$ pour $x>p_1$ et $x$
+suffisamment près de $p_1$.  Soit $x_1\in]p_1,p_2[$ tel que $f(x_1)<0$.
+
+De même. puisque $f(p_2)=0$, nous avons que $f(x)>0$ pour $x<p_2$ et
+$x$ suffisamment près de $p_2$.  Soit $x_2\in]p_1,p_2[$ tel que $f(x_2)>0$.
+
+D'après le théorème des valeurs intermédiaires, puisque
+$f(x_1) < 0 < f(x_2)$, il existe $p$ entre $x_1$ et $x_2$ tel que
+$f(p)=0$.  Nous avons donc trouver un point d'équilibre entre $p_1$ et
+$p_2$.  Ce qui contredit que $p_1$ et $p_2$ sont deux points d'équilibre
+asymptotiquement stable et côte à côte.  Donc l'hypothèse que $p_1$ et
+$p_2$ sont deux points d'équilibre asymptotiquement stables et côte à
+côte n'est pas possible.
+}
+
+\subsection{Applications}
+
+\compileSOL{\SOLUa}{\ref{10Q48}}{
+Nous avons l'équation différentielle 
+$\displaystyle \dydx{C}{t} = f(C)$ où
+$\displaystyle f(C) = 5-C + \frac{C}{2+C}$
+car $\beta =1$ et $\gamma = 5$.  Les points d'équilibre sont les
+solutions de $f(C)=0$; c'est-à-dire, les solutions de
+\[
+5-C + \frac{C}{2+C} = 0 \Rightarrow (5-C)(2+C) + C = 0
+\Rightarrow -C^2 + 4C + 10 = 0 \ .
+\]
+Les solutions de cette dernière équation sont $C_\pm = 2 \pm \sqrt{14}$.  Ce
+sont les deux seules points d'équilibre.  La concentration
+$C_- = 2 - \sqrt{14}<0$ n'a pas de sens physique.
+
+La dérivée de $f$ est $\displaystyle f'(C) = -1 + \frac{2}{(2+C)^2}$.
+Ainsi, $C_+$ est un point d'équilibre stable car
+$f(C_+) \approx -0.966629547 < 0$.  Par contre,
+$C_-$ est instable car $f(C_-) \approx 28.966629547 > 0$.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q49}}{
+Pour $\beta = 1.0$ et $\Gamma = 5.0$, l'équation (\ref{reactdiff}) devient
+\[
+\dydx{C}{t} = (5-C) + 0.5\,C = 5 - 0.5\,C \ .
+\]
+
+\subQ{a} Nous avons une équation différentielle de la forme
+$\displaystyle \dydx{C}{t} = F(C)$ où
+$F(C) = 5 - 0.5\,C$.  Les points d'équilibre sont les valeurs de $C$
+telles que $F(C)=0$.  Le seul point d'équilibre est $C_e=10$.
+
+\subQ{b} Puisque $F'(C) = -0.5$, le point d'équilibre $C_e$ est
+(asymptotiquement) stable car $F'(C_e) = -0.5 <0$.
+
+\subQ{c} Le portrait de phases de l'équation différentielle
+ordinaire (\ref{reactdiff}) est donné ci-dessous.
+\PDFgraph{10_equ_diff/reactDiff1}
+
+\subQ{d} Le champ de pentes pour l'équation différentielle
+ordinaire (\ref{reactdiff}) est donné ci-dessous.
+\MATHgraph{10_equ_diff/reactDiff2}{8cm}
+
+\subQ{e} Nous aurions une équation différentielle ordinaire de la forme
+$\displaystyle \dydx{C}{t} = F(C)$ où $F(C) = 5 - C$.  Les points d'équilibre
+sont les valeurs de $C$ telles que données par $F(C)=0$.  Le seul
+point d'équilibre est $C_e=5$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q50}}{
+Supposons que $P(t)$ est le nombre de gnous au temps $t$ en années.
+La solution de l'équation logistique
+$P'(t) = K P(t) (1-P(t)/M)$ est $\displaystyle P(t) = \frac{M}{1+Ce^{-Kt}}$
+où $C$ est une constante.  
+
+Il est dit dans l'énoncé du problème que $M=1800$.  De plus,
+$P(0)=1000$ et $P(1) = 1100$.  Utilisons cette 
+information pour trouver les valeurs de $K$ et $C$.  Les variables $C$
+et $K$ sont déterminés par les équations
+$\displaystyle 1000 = P(0) = \frac{1800}{1+C}$ (qui provient de
+$P(0) = 1000$) et
+$\displaystyle 1100 = P(1) = \frac{1800}{1+Ce^{-K}}$ (qui provient de 
+$P(1) = 1100$).
+La solution de la première équation est $C=4/5$.  Si nous substituons
+cette valeur de $C$ dans la deuxième équation, nous obtenons
+$\displaystyle 1100 = \frac{1800}{1+4e^{-K}/5}$.
+La solution de cette dernière équation est
+$\displaystyle K= -\ln\left( \frac{35}{44}\right) \approx 0.22884$.  Donc
+\[
+P(t) \approx \frac{1800}{1+4e^{-0.22884 t}/5} \ .
+\]
+Pour trouver la valeur de $t$ telle que $P(t) = 1500$, il faut
+résoudre pour $t$ l'équation
+$\displaystyle 1500 = \frac{9000}{5+4e^{-Kt}}$.  Nous obtenons
+$\displaystyle t = \ln(4)/K \approx 6.0579$ années.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q51}}{
+\subQ{a} Nous avons une équation différentielle de la forme
+$\displaystyle \dydx{N}{t} = F(N)$ où
+\[
+F(N) = \frac{5\,N^2}{1+N^2} - 2\,N
+= \frac{-2\,N^3 +5\,N^2 -2\,N}{1+N^2} \ .
+\]
+Les points d'équilibre sont les valeurs de $N$ telles que
+\[
+0 = F(N)= \frac{-2\,N^3 +5\,N^2 -2\,N}{1+N^2} \ ;
+\]
+c'est-à-dire, les valeurs de $N$ telles que
+\[
+-2\,N^3 +5\,N^2 -2\,N = N\left(-2\,N^2 + 5\,N-2\right)
+= -2\,N\left(N-\frac{1}{2}\right)\left(N-2\right) = 0 \ .
+\]
+Nous trouvons trois points d'équilibre: $N_1=0$, $N_2=1/2$ et $N_3=2$.
+
+\subQ{b} La dérivée de $F$ est
+\begin{align*}
+F'(N) &= \dfdx{\left(\frac{5\,N^2}{1+N^2} - 2\,N\right)}{N}
+= \frac{10\,N(1+N^2)-5\,N^2\,(2\,N)}{(1+N^2)^2} -2 \\
+&= \frac{10\,N}{(1+N^2)^2} - 2
+= \frac{-2\,N^4 -4\,N^2 + 10\,N -2}{(1+N^2)^2} \ .
+\end{align*}
+Le point d'équilibre $N_1=0$ est asymptotiquement stable car
+$F'(0) = -2 <0$.  De même, le point d'équilibre $N_3 = 2$ est
+asymptotiquement stable car $F'(2) = -6/5<0$.  Par contre,
+le point d'équilibre $N_2=1/2$ est instable car
+$F'(1/2) = 6/5 >0$. 
+
+\subQ{c} Le tableau ci-dessous donne le signe de
+$F$ sur chacun des intervalles délimités par les points d'équilibre.
+\[
+\begin{array}{c|c|c|c|c}
+\text{intervalle} & N < 0 & 0 < N < 1/2 & 1/2 < N < 2 & 2 < N \\
+\hline
+\text{signe de }F(N) & + & - & + & -
+\end{array}
+\]
+Nous obtenons le portrait de phase suivant.
+\PDFgraph{10_equ_diff/population1}
+
+\subQ{d} Le champ de pentes pour l'équation différentielle
+ordinaire (\ref{q5_edo}) est donné ci-dessous.
+\MATHgraph{10_equ_diff/population2}{8cm}
+
+\subQ{e} En supposant que $N\geq 0$ (ce qui est raisonnable pour une
+population), nous avons que la population va augmenter si $1/2 < N(0) <2$. 
+Dans ce cas $N(t) \rightarrow 2$ lorsque $t \rightarrow \infty$.
+
+Dans les autres cas, si $N(0)<1/2$ alors $N$ est une fonction décroissante et
+$N(t)\rightarrow 0$ lorsque $t \rightarrow \infty$.  La population va
+disparaître.  Si $N(0)>2$ alors $N$ est aussi une fonction décroissante mais 
+$N(t)\rightarrow 2$ lorsque $t \rightarrow \infty$.  La population approche
+un état d'équilibre stable; c'est-à-dire, $N(t)=2$ pour tout $t$.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q52}}{
+\subQ{a} Nous avons une équation différentielle de la forme
+$\displaystyle \dydx{p}{t} = f(p)$ où $f(p) = 2\,p(1-d-p)- p$.  Les
+points d'équilibre sont le solutions de
+\[
+f(p)=2\,p(1-d-p)- p = p(1-2\,p -2\,d) =0 \ .
+\]
+Nous trouvons deux points d'équilibre: $p=0$ et $p = (1-2d)/2$.
+Pour que $0\leq p \leq 1$, il faut que $-1/2 \leq d\leq 1/2$.
+Nous ne pouvons pas avoir $-1/2$ des sections habitées comme nous ne
+pouvons pas avoir $3/2$ des sections habitées.
+
+\subQ{b} L'équation différentielle lorsque $d=1/4$ est
+\begin{equation} \label{levinsF1}
+f(p) = p(1-2\,p - 1/2) = p(1-4p)/2 \ .
+\end{equation}
+C'est un polynôme qui est concave.  Le graphe de cette fonction
+est donné dans la figure ci-dessous.  Les points d'équilibre $p=0$ et
+$p= 1/4$ sont les racines de ce polynôme.
+
+{\renewcommand{\labelitemi}{\textbullet}
+\begin{itemize}
+\item $f(p)>0$ pour $0<p<1/4$.  Donc $p'(t)>0$ lorsque $p(t)$
+se trouve entre $0$ et $1/4$.  C'est-à-dire que $p$ est une fonction
+croissante lorsque $p(t)$ se trouve entre $0$ et $1/4$.
+\item $f(p)<0$ pour $p<0$ et $p>1/4$.  Donc
+$p'(t)<0$ lorsque $p(t)$ est inférieur à $0$ ou supérieur à $1/4$.
+C'est-à-dire que $p$ est une fonction décroissante lorsque $p(t)$ est
+inférieur à $0$ ou supérieur à $1/4$.  Seul $1/4< p(t) \leq 1$ est
+intéressant.
+\end{itemize}
+}
+Le portrait de phases pour $d=1/4$ est donné dans la figure
+ci-dessous.  Le point d'équilibre $p=0$ est instable alors que le
+point d'équilibre $p=1/4$ est asymptotiquement stable.
+\PDFgraph{10_equ_diff/levins_1}
+
+L'équation différentielle lorsque $d=3/4$ est
+\begin{equation} \label{levinsF2}
+f(p) = p(1-2\,p - 3/2) = -p(1+4p)/2 \ .
+\end{equation}
+C'est un polynôme qui est concave.  Le graphe de cette fonction
+est donnée dans la figure ci-dessous.  Les points d'équilibre $p=0$ et
+$p=-1/4$ sont les racines de ce polynôme.
+
+{\renewcommand{\labelitemi}{\textbullet}
+\begin{itemize}
+\item $f(p)>0$ pour $-1/4<p<0$.  Donc $p'(t)>0$ lorsque $p(t)$ se
+trouve entre $-1/4$ et $0$.  C'est-à-dire que $p$ est une fonction
+croissante lorsque $p(t)$ se trouve entre $-1/4$ et $0$.  Ces valeurs
+de $p$ n'ont pas d'intérêt car elles sont négatives.
+\item $f(p)<0$ pour $p>0$ et $p<-1/4$.  Donc $p'(t)<0$ lorsque
+$p(t)$ est inférieur à $-1/4$ ou supérieur à $0$.  C'est-à-dire que
+$p$ est une fonction décroissante lorsque $p(t)$ est inférieur à
+$-1/4$ ou supérieur à $0$.  Seules les valeurs de $p(t)$ entre $0$ et
+$1$ sont intéressantes.
+\end{itemize}
+}
+Le portrait de phases pour $d=3/4$ est donné dans la figure ci-dessous.
+Le point d'équilibre $p=0$ est asymptotiquement stable alors que le
+point d'équilibre $p=-1/4$ est instable.
+\PDFgraph{10_equ_diff/levins_2}
+
+\subQ{c} Puisque $f(p) = p(1-2\,p -2\,d)$, nous avons $f'(p) = 1-4\,p - 2\,d$.
+
+le point d'équilibre $p=0$ est asymptotiquement stable pour
+$d>1/2$ car $f'(0) = 1-2\,d < 0$ pour $d>1/2$.  Par contre,
+ce point d'équilibre est instable pour
+$d<1/2$ car $f'(0) = 1-2\,d > 0$ pour $d<1/2$.
+
+Pour le point d'équilibre $p=(1-2d)/2$, nous avons
+\[
+f'\left(\frac{1-2d}{2}\right) = 1-4\,\left(\frac{1-2d}{2}\right) - 2\,d
+= -1 + 2\,d \ .
+\]
+Ainsi, le point d'équilibre $p=(1-2d)/2$
+est asymptotiquement stable pour $d<1/2$ car
+$f'\left((1-2d)/2\right)<0$ pour $d<1/2$.  Par contre,
+le point d'équilibre $p=(1-2d)/2$ est instable pour $d>1/2$ car
+$f'\left((1-2d)/2\right)>0$ pour $d>1/2$.
+
+Les points d'équilibre $0$ et $(1-2d)/2$ échangent leur stabilité
+lorsque $d=1/2$.
+
+\subQ{d} Lorsque $d=1/4$ ($1/4$ des sections sont détruites), la fraction des
+sections habitées approche $1/4$ (soit $25$\% du territoire) lorsque $t$
+tend vers plus l'infini.  La population va survivre.  Par contre. lorsque
+$d=3/4$ ($3/4$ des sections sont détruites), la fraction des sections
+habitées approche $0$ (soit $0$\% du territoire) lorsque $t$ tend vers
+plus l'infini.  La population ne survivra pas.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q53}}{
+Si $Q(t)$ est la quantité de sel dans l'eau du réservoir au temps
+$t$, alors
+\[
+\dydx{Q}{t} = \underbrace{0.01 \times 10}_{\substack{
+  \text{\footnotesize quantité de sel ajoutée}\\
+  \text{\footnotesize par minute}}} \quad -
+\underbrace{0.01 Q(t)}_{\substack{
+  \text{\footnotesize quantité de sel perdue}\\
+  \text{\footnotesize par minute}}} \ .
+\]
+Utilisons la méthode de séparation des variables pour résoudre
+cette équation différentielle.
+\begin{align*}
+\int \frac{1}{0.1 -0.01 Q} \dx{Q} = \int \dx{t}
+& \Rightarrow -100 \ln | 0.1 - 0.01 Q | = t + C \\
+& \Rightarrow  | 0.1 - 0.01 Q | = e^{-0.01 C} e^{-0.01 t} \\
+& \Rightarrow  0.1 - 0.01 Q = D e^{-0.01 t}
+\Rightarrow Q = 10 -100 D e^{-0.01 t}
+\end{align*}
+où $\displaystyle D=\pm e^{-0.01 C}$.   Notons que $D=0$ est aussi
+acceptable car $Q(t) = 10$ pour tout $t$ est un solution.
+
+La concentration initiale est de $0.025$ kg/l, donc $Q(0)= 25$ g/l.
+La condition initiale $Q(0)=25$ donne $25 = 10 -100 D$ et ainsi $D= -0.15$.
+
+Si la concentration de sel est de $0.02$ kg/l, nous avons $20$
+kg de sel dans l'eau du réservoir.  Il faut trouver $t$ tel que
+$20 = 10 + 15 e^{-0.01 t}$.  Ce qui donne
+$t = -100 \ln(2/3) = 40.5465\ldots$ minutes.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q54}}{
+Soit $Q(t)$ la quantité de sel (en kg) dans le réservoir au temps $t$ (en
+minutes).  La fonction $Q$ satisfait l'équation différentielle suivante.
+\[
+\dydx{Q}{t} = \underbrace{0.1 \times 5 + 0.05 \times
+  15}_{\substack{\text{\footnotesize quantité de sel ajoutée}\\
+  \text{\footnotesize par minute}}} \quad -
+\underbrace{0.02 Q(t)}_{\substack{
+  \text{\footnotesize quantité de sel perdue}\\
+  \text{\footnotesize par minute}}} \ .
+\]
+Nous allons résoudre l'équation différentielle
+$\displaystyle Q'= 1.25 - 0.02 Q$ avec la condition
+initiale $Q(0)= Q_0$; c'est-à-dire, $Q_0$ kg de sel au temps $t=0$.
+Utilisons la méthode de séparation des
+variables pour résoudre ce problème.
+\begin{align*}
+\int \frac{1}{1.25 - 0.02 Q} \dx{Q} = \int \dx{t} & \Rightarrow
+- \frac{1}{0.02} \ln|1.25 - 0.02 Q| = t + C \\
+& \Rightarrow \ln|1.25 - 0.02 Q| = -0.02 t -0.02 C \\
+& \Rightarrow 1.25 -0.02 Q = D e^{-0.02t}
+\end{align*}
+où $D = \pm e^{-0.02 C}$.  Notons que $D=0$ est aussi acceptable car,
+pour $D=0$, nous obtenons le point d'équilibre $Q(t) = 1.25/0.02 =
+62.5$ kg pour tout $t$.  Ainsi,
+$\displaystyle Q(t) = 62.5 - 50 D e^{-0.02t}$ avec
+$D\in \RR$.  La condition initiales $Q(0)=Q_0$ donne
+$D= 0.02 (62.5-Q_0)$.   
+
+La quantité de sel dans le réservoir après $t$ minutes est donc
+\[
+Q(t) = 62.5 - (62.5 - Q_0) e^{-0.02t} \ .
+\]
+
+Nous remarquons que le volume du liquide dans le réservoir ne change pas.
+À chaque minute, il y a $20$ litres de saumure qui est ajoutée et $20$
+litres du liquide dans le réservoir qui est retiré.  Le volume de
+liquide dans le réservoir demeure donc à $1000$ litres.  Ainsi, la
+concentration de sel dans le réservoir après $t$ minutes est
+$\displaystyle C(t) = Q(t)/1000$ kg/l.
+}
+
+\compileSOL{\SOLUb}{\ref{10Q55}}{
+\subQ{a}
+Nous avons une équation différentielle de la forme
+$\displaystyle \dydx{x}{t} = f(x) = a x - x^2$ où $a$ est un paramètre.
+Les points d'équilibre sont les solutions de $f(x) = 0$; c'est-à-dire,
+$x=0$ et $x=a$.
+
+\subQ{b}
+Nous avons que $f'(x) = a -2x$.  Puisque $f'(0) =  a$, le point
+d'équilibre $x=0$ est stable pour $a<0$ et instable pour
+$a>0$.  De même, puisque $f'(a) = -a$, le point
+d'équilibre $x=a$ est stable pour $a>0$ et instable pour
+$a<0$.  Nous obtenons le {\em diagramme de bifurcation} suivant.
+\PDFgraph{10_equ_diff/biff}
+Nous avons ajouté quelques portraits de phases au diagramme de bifurcation
+ci-dessus pour illustrer comment le diagramme de bifurcation résume
+l'évolution des portraits de phases lorsque $a$ traverse l'origine.
+
+\subQ{c}
+Lorsque $a$ traverse l'origine, la stabilité des points d'équilibre
+$x=0$ et $x=a$ change.
+}
+
+\compileSOL{\SOLUa}{\ref{10Q56}}{
+\subQ{a} Nous avons une équation différentielle de la forme
+\[
+\dydx{b}{t} = f(b) = b(1-b) - hb = (1-h)b - b^2 \ .
+\]
+Les points d'équilibre sont les solutions de $f(b)=0$; c'est-à-dire,
+$b=0$ et $b=1-h$.
+
+\subQ{b}
+Nous avons que $f'(b) = (1-h) - 2b$.  Puisque $f'(0) = 1-h$, le point
+d'équilibre $b=0$ est stable pour $h>1$ et instable pour
+$h<1$.  De même, puisque $f'(1-h) = -(1-h)$, le
+point d'équilibre $b=1-h$ est stable pour $h<1$ et instable pour
+$h>1$.  Nous obtenons le {\em diagramme de bifurcation} suivant.
+\PDFgraph{10_equ_diff/biff2}
+Nous avons ajouté quelques portraits de phases au diagramme de bifurcation
+ci-dessus pour illustrer comment le diagramme de bifurcation résume
+l'évolution des portraits de phases lorsque $h$ traverse $h=1$.
+
+\subQ{c} Nous avons une {\em bifurcation transcritique} lorsque $h$ traverse
+la valeur $1$.
+}
+
+\subsection{Méthode d'Euler}
+
+\compileSOL{\SOLUb}{\ref{10Q59}}{
+Nous avons $h = (2-1)/10 = 0.1$ et $t_i = 1 +h\,i = 1+0.1 \,i$ pour
+$i=0$, $1$, $2$, \ldots, $10$.
+
+L'équation différentielle est de la forme $y'=f(t,y)$ où $f(t,y) = (y+t)/t$.
+Soit $y$, la solution de l'équation différentielle ci-dessus avec la
+condition initiale $y(1)=0$.
+Les approximations $w_i$ de $y(t_i)$ pour $i=0$, $1$, $2$, \ldots, $10$ sont
+donc données par $w_0 = y_0 = y(t_0) = y(1) = 0$ et
+$w_{i+1} = w_i + h\,f(t_i,w_i) = w_i + 0.1 (w_i+t_i)/t_i$
+pour $i=0,1,2,\ldots,9$.  Ainsi,
+\begin{align*}
+w_1 &= w_0 + 0.1 \,\frac{w_0+t_0}{t_0} = 0 + 0.1 \, \frac{0+1}{1} = 0.1 \\
+w_2 &= w_1 + 0.1 \,\frac{w_1+t_1}{t_1} = 0.1 + 0.1 \,
+\frac{0.1+1.1}{1.1} = 0.2\overline{09} \\
+w_3 &= w_2 + 0.1 \,\frac{w_2+t_2}{t_2} = 0.2\overline{09} + 0.1 \,
+\frac{0.2\overline{09}+1.2}{1.2} = 0.326\overline{51} \\
+w_4 &= w_3 + 0.1 \,\frac{w_3+t_3}{t_3} = 0.326\overline{51} + 0.1 \,
+\frac{0.326\overline{51}+1.3}{1.3} = 4.5\overline{163170} \\
+w_5 &= 0.5838911\ldots \\
+w_6 &=0.7228171\ldots \\
+w_7 &=0.8679932\ldots \\
+w_8 &=1.0190516\ldots \\
+w_9 &=1.1756656\ldots \\
+w_{10} &=1.3375428\ldots
+\end{align*}
+
+Pour déterminer si les approximations sont des surestimations ou
+sous-estimation des valeurs $y(t_i)$, il faut déterminer à l'aide du
+champ de pentes si les solutions seront convexe ou
+concave (figure~\ref{eulergraph}).  Le champ de pentes de
+l'équation différentielle $y' = (y + t)/t$ est donné dans la figure
+ci-dessous.  Nous voyons que les solutions seront convexe et donc nos
+approximation seront des sous-estimations des valeurs exactes.
+\MATHgraph{10_equ_diff/eulerCP}{8cm}
+}
+
+\compileSOL{\SOLUb}{\ref{10Q60}}{
+\subQ{a} Nous avons $h = (1-0)/10 = 0.1$ et
+$x_i =  h\,i = 0.1 \,i$ pour $i=0$, $1$, $2$, \ldots, $10$.
+
+L'équation différentielle est de la forme $y'=f(x,y)$ où
+$\displaystyle f(x,y) = \frac{3x^2}{2y}$.  Soit $y$ la solution de
+l'équation différentielle $y'=f(x,y)$ avec la condition initiale $y(1)=1$.
+Les approximations $w_i$ de $y(x_i)$ pour $i=0$, $1$, $2$, \ldots, $10$ sont
+données par $w_0 = y_0 = y(x_0) = y(0) = 1$ et
+$\displaystyle w_{i+1} = w_i + h\,f(x_i,w_i) = w_i + \frac{0.3 x_i^2}{2w_i}$
+pour $i=0$, $1$. $2$, \ldots, $9$.  Ainsi,
+\begin{align*}
+w_1 &= w_0 + \frac{0.3 x_0^2}{2w_0}
+= 1 + \frac{0.3\times 0^2}{2\times 1}= 1 \\
+w_2 &= w_1 + \frac{0.3 x_1^2}{2w_1}
+= 1 + \frac{0.3 \times 0.1^2}{2\times 1} = 1.0015 \\
+w_3 &= w_2 + \frac{0.3 x_2^2}{2w_2}
+= 1.0015 + \frac{0.3 \times 0.2^2}{2\times 1.0015}
+\approx 1.007491013479780 \\
+w_4 &= w_3 + \frac{0.3 x_3^2}{2w_3} \approx 1.020890636721453 \\
+w_5 &\approx 1.044399521156984 \\
+w_6 &\approx 1.080305320844116 \\
+w_7 &\approx 1.130291189614814 \\
+w_8 &\approx 1.195318680473207 \\
+w_9 &\approx 1.275631990696047 \\
+w_{10} &\approx 1.370878896454269
+\end{align*}
+
+\subQ{b} Utilisons la méthode de séparation des variables pour
+résoudre l'équation différentielle $\displaystyle y'=\frac{3x^2}{2y}$
+avec la condition initiale $y(1)=1$.
+\[
+\int 2 y \dx{y} = \int 3 x^2 \dx{x} \Rightarrow
+y^2 = x^3 + C \Rightarrow y = \sqrt{x^3 + C} \ .
+\]
+Il découle de la condition initiale $y(0)=1$ que $C=1$.  La solution
+cherchée est $\displaystyle y(x) = \sqrt{x^3 + 1}$.
+
+\subQ{c} L'erreur absolue est
+\[
+|w_{10} - y(1)| \approx |1.370878896454269 - \sqrt{2} | \approx
+0.043334665918826 \ .
+\]
+Si nous comparons avec la valeur de
+$\displaystyle y(1) = \sqrt{2} \approx 1.414213562373095$,
+l'erreur absolue est acceptable.  {\em L'erreur relative} (relative à la
+valeur estimée) est donnée par
+\[
+\frac{|w_{10} - y(1)|}{|y(1)|} \approx 0.030642236131655 \ .
+\]
+Ceci représente une erreur relative d'environ $3.06$ \%.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

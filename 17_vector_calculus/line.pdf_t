@@ -1,0 +1,17 @@
+\begin{picture}(0,0)%
+\includegraphics{17_vector_calculus/line.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(2796,977)(956,-302)
+\put(971,-233){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\VEC{a}=\sigma(a)$}}}}
+\put(1755,516){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\VEC{b}=\sigma(b)$}}}}
+\put(1413,200){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\Gamma$}}}}
+\put(2787,337){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\VEC{t}(\sigma(t)) =\frac{1}{\|\sigma'(t)\|}\sigma'(t)$}}}}
+\end{picture}%

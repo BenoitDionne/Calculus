@@ -1,0 +1,899 @@
+\section{Intégrales multiples}
+
+\subsection{Théorème de Fubini}
+
+\compileSOL{\SOLUb}{\ref{16Q1}}{
+\subQ{a} Grâce au Théorème de Fubini, nous avons
+\begin{align*}
+\iint_R \sin(2x+y) \dx{A} &= \int_0^{\pi/4} \int_0^{\pi/2} \sin(2x+y)
+\dx{y}\dx{x}
+= \int_0^{\pi/4} \left( -\cos(2x + y) \right)\bigg|_{y=0}^{\pi/2} \dx{x} \\
+&= \int_0^{\pi/4} \left( -\cos(2x + \pi/2) + \cos(2x) \right) \dx{x} \\
+&=  \frac{-1}{2}\sin(2x + \pi/2) \bigg|_0^{\pi/4}
+    + \frac{1}{2} \sin(2x) \bigg|_0^{\pi/4} \\
+&=  \frac{-1}{2}\sin(\pi) + \frac{1}{2} \sin(\pi/2)
+  + \frac{1}{2} \sin(\pi/2) - \frac{1}{2} \sin(0) = 1 \ .
+\end{align*}
+
+\subQ{b} Grâce au Théorème de Fubini, nous avons
+\begin{align*}
+\iint_R \frac{2+y}{3+x} \dx{A} &= \int_{-1}^1 \int_{-1}^2 \frac{2+y}{3+x}
+                             \dx{y}\dx{x}
+= \int_{-1}^1 \left( \frac{2y + y^2/2}{3+x} \right)\bigg|_{y=-1}^2 \dx{x} \\
+&= \int_{-1}^1 \left( \frac{6}{3+x} + \frac{3}{2(3+x)} \right) \dx{x} 
+= \int_{-1}^1 \frac{15}{2(3+x)} \dx{x} \\
+&=  \frac{15}{2} \ln(3+x) \bigg|_{-1}^1
+=  \frac{15}{2} \left(\ln(4) - \ln(2) \right)
+= \frac{15}{2} \ln(2) \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q2}}{
+Le dessin de la région $R$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/surf1}
+\begin{align*}
+\iint_R (2x+3y)^2 \dx{A} &= \int_0^1 \int_{y-1}^{1-y} (2x+3y)^2 \dx{x}\dx{y}
+= \frac{1}{6} \int_0^1 \left(2x+3y\right)^3\bigg|_{x=y-1}^{1-y} \dx{y} \\
+& = \frac{1}{6} \int_0^1 \left( (2+y)^3 - (5y-2)^3 \right) \dx{y}
+= \frac{1}{6} \left( \frac{1}{4} (2+y)^4 - \frac{1}{20} (5y-2)^4
+\right)\bigg|_0^1 \\
+&= \frac{1}{24} \left( 3^4 - 2^4 \right) - \frac{1}{120}
+\left(3^4 - (-2)^4 \right) = \frac{13}{6} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q3}}{
+\subQ{a} Le dessin du domaine d'intégration est est donné ci-dessous.
+\PDFgraph{16_var_mult_int/surf2}
+\begin{align*}
+\int_0^1 \int_{y^{1/3}}^1 \sqrt{x^4+1} \dx{x}\dx{y} &=
+\int_0^1 \int_0^{x^3} \sqrt{x^4+1} \dx{y}\dx{x} 
+= \int_0^1 \left( y \sqrt{x^4+1}\right)\bigg|_{y=0}^{x^3} \dx{x} \\
+&= \int_0^1 x^3 \sqrt{x^4+1} \dx{x} \ .
+\end{align*}
+Si $u=x^4+1$, alors $\dx{u} = 4 x^3 \dx{x}$, $u=1$
+lorsque $x=0$ et $u=2$ lorsque $x=1$.  Donc
+\[
+\int_0^1 \int_{y^{1/3}}^1 \sqrt{x^4+1} \dx{x}\dx{y} =
+\frac{1}{4} \int_1^2 u^{1/2} \dx{u}
+= \frac{1}{6} u^{3/2}\bigg|_1^2 = \frac{\sqrt{2}}{3} - \frac{1}{6} \ .
+\]
+
+\subQ{b} Le dessin du domaine d'intégration est donné ci-dessous.
+\PDFgraph{16_var_mult_int/surf3}
+\begin{align*}
+\int_0^{\pi^{1/4}} \int_{y^2}^{\pi^{1/2}} y \sin(x^2) \dx{x}\dx{y}
+&= \int_0^{\pi^{1/2}} \int_0^{\sqrt{x}} y \sin(x^2) \dx{y}\dx{x} 
+= \int_0^{\pi^{1/2}} \left( \frac{y^2}{2} \sin(x^2)
+\right)\bigg|_{y=0}^{\sqrt{x}} \dx{x} \\
+&= \frac{1}{2} \int_0^{\pi^{1/2}} x \sin{x^2} \dx{x}
+= - \frac{1}{4} \cos(x^2)\bigg|_0^{\pi^{1/2}} = \frac{1}{2} \ .    
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q4}}{
+\subQ{a} Le dessin du domaine d'intégration est donné ci-dessous.
+\PDFgraph{16_var_mult_int/orderQ1}
+La valeur de $x$ aux points d'intersection de la courbe $x=y^2$ avec la
+droite $y=6-x$ est donnée par
+\[
+  x = (6-x)^2 \Rightarrow x^2 -13 x + 36 = (x-9)(x-4) = 0
+\Rightarrow x=4 \quad \text{ou} \quad x = 9 \ .
+\]
+Nous avons donc les points d'intersections $(4,2)$ et $(9,-3)$.
+\[
+  \int_0^4 \int_{-\sqrt{x}}^{\sqrt{x}} f(x,y) \dx{y}\dx{x}
+  + \int_4^9\int_{-\sqrt{x}}^{6-x} f(x,y) \dx{y} \dx{x}
+ = \int_{-3}^2 \int_{y^2}^{6-y} f(x,y) \dx{x}\dx{y} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{16Q5}}{
+Le dessin de la surface plane $D$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/MomentEgg1}
+La valeur de $x$ au point d'intersection des deux droites est donnée par
+\[
+  x = -3x + 4 \Rightarrow 4x = 4 \Rightarrow x = 1 \ .
+\]
+Nous trouvons le point d'intersection $(1,1)$.
+
+La masse de $S$ est
+\begin{align*}
+M &= \iint_D p(x,y) \dx{A} = \int_0^1 \int_y^{(4-y)/3} x \dx{x}\dx{y}
+= \int_0^1 \left( \frac{x^2}{2}\right)\bigg|_{x=y}^{(4-y)/3} \dx{y} \\
+&= \int_0^1 \left( \frac{(4-y)^2}{18} - \frac{y^2}{2}\right) \dx{y}
+= -\frac{(4-y)^3}{54}\bigg|_0^1 - \frac{y^3}{6}\bigg|_0^1 = \frac{14}{27} \ .
+\end{align*}
+Cette ordre d'intégration a été choisie car elle nous évite a avoir à
+découper l'intégrale en deux comme c'est le cas si l'intégration est
+par rapport à $y$ en premier.
+
+Le moment par rapport à l'axe des $x$ est
+\begin{align*}
+M_x &= \iint_D y p(x,y) \dx{A} = \int_0^1 \int_y^{(4-y)/3} yx \dx{x}\dx{y}
+= \int_0^1 \left( y \frac{x^2}{2}\right)\bigg|_{x=y}^{(4-y)/3} \dx{y} \\
+&= \int_0^1 \left( \frac{y(4-y)^2}{18} - \frac{y^3}{2}\right)\dx{y}
+= -\frac{4}{9} \int_0^1 ( y^3 + y^2 - 2y) \dx{y}
+= -\frac{4}{9} \left( \frac{y^4}{4} + \frac{y^3}{3} - y^2\right)\bigg|_0^1
+= \frac{5}{27} \ .
+\end{align*}
+
+Le moment par rapport à l'axe des $y$ est
+\begin{align*}
+M_y &= \iint_D x p(x,y) \dx{A} = \int_0^1 \int_y^{(4-y)/3} x^2 \dx{x}\dx{y}
+= \int_0^1 \left( \frac{x^3}{3}\right)\bigg|_{x=y}^{(4-y)/3} \dx{y} \\
+&= \int_0^1 \left( \frac{(4-y)^3}{81} - \frac{y^3}{3} \right) \dx{y}
+= -\frac{(4-y)^4}{324}\bigg|_0^1 - \frac{y^4}{12}\bigg|_0^1
+= \frac{37}{81} \ .
+\end{align*}
+
+Ainsi, le centre de masse est
+\[
+  (\overline{x}, \overline{y}) = \left(\frac{M_y}{M} , \frac{M_x}{M} \right)
+  = \left(\frac{37}{42}, \frac{5}{14} \right) \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{16Q6}}{
+Le dessin de la base du solide est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume11}
+La valeur de $y$ aux points d'intersection de la droite $y=x$ et de la
+parabole $x=y^2-2y$ est donnée par
+\[
+y= y^2-2y \Rightarrow 0=y^2-3y=y(y-3) \Rightarrow y = 0 \text{ ou }
+y = 3 \ .
+\]
+Nous trouvons donc les points d'intersection $(0,0)$ et $(3,3)$.  Nous
+déduisons à partir du dessin ci-dessus qu'il est préférable d'intégrer par
+rapport à $x$ en premier puis par rapport à $y$.
+
+Le volume du solide est
+\begin{align*}
+V &= \int_0^3 \int_{y^2-2y}^y (x^2+y^2) \dx{x}\dx{y}
+= \int_0^3 \left(\frac{x^3}{3}+y^2x\right)\bigg|_{x=y^2-2y}^y \dx{y} \\
+&= \int_0^3 \left( -\frac{y^6}{3} + 2y^5 -5 y^4 + 6 y^3\right)
+\dx{y}
+= \left( -\frac{y^7}{21} + \frac{y^6}{3} -y^5 + \frac{3 y^4}{2}\right)
+\bigg|_0^3 = \frac{3^5}{14} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{16Q7}}{
+Le dessin du solide $D$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume19}
+Le volume du solide est
+\begin{align*}  
+V & =\iint_D (x^2 + y^2) \dx{A} = \int_0^1 \int_0^{1-x} (x^2 + y^2) \dx{y}\dx{x}
+  = \int_0^1 \left( x^2 y + \frac{y^3}{3}\right)\bigg|_{y=0}^{1-x} \dx{x} \\
+& = \int_0^1 \left( x^2 (1-x) + \frac{(1-x)^3}{3}\right) \dx{x}
+ = \left( \frac{x^3}{3} - \frac{x^4}{4} -
+   \frac{(1-x)^4}{12}\right)\bigg|_0^1 = \frac{1}{6} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q8}}{
+Le dessin du solide $S$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume17}
+
+Soit $R = \{ (x,y) : 1 \leq x \leq 2 \ , \ -1 \leq y \leq 1\}$.
+Puisque $x^2 - y^2 \geq 0$ pour $(x,y)\in R$, nous pouvons calculer le
+volume $V$ de $S$ avec la formule suivante. 
+\begin{align*}
+V & =\iint_R \left( x^2 - y^2 \right) \dx{A} = \int_1^2 \int_{-1}^1 (x^2 - y^2)
+\dx{y}\dx{x}
+= \int_1^2 \left( x^2 y - \frac{y^3}{3} \right)\bigg|_{y=-1}^1 \dx{x} \\
+&= \int_1^2 \left( \left(x^2 - \frac{1}{3}\right) -\left( -x^2
++ \frac{1}{3}\right)\right) \dx{x} 
+= \int_1^2 \left( 2x^2 - \frac{2}{3} \right) \dx{x}
+=  \frac{2}{3} \left( x^3- x \right)\bigg|_1^2 = 4 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q10}}{
+Le dessin du solide est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume12}
+Le volume de ce solide est
+\begin{align*}
+V &= \int_0^2 \int_0^{-x/2 + 1} \sqrt{9-x^2} \dx{y}\dx{x}
+= \int_0^2 \left( y \sqrt{9-x^2}\right)\bigg|_{y=0}^{-x/2+1} \dx{x} \\
+&= \int_0^2 \left( -\frac{x}{2} +1 \right)\sqrt{9-x^2} \dx{x}
+= -\frac{1}{2} \int_0^2 x \sqrt{9-x^2} \dx{x}  + \int_0^2 \sqrt{9-x^2} \dx{x}
+\ .
+\end{align*}
+Pour calculer la première intégrale, nous utilisons la substitution
+$u=9-x^2$.  Donc $\dx{u} = -2 x \dx{x}$, $u=9$ lorsque $x=0$ et $u=5$
+lorsque $x=2$.  Pour calculer la deuxième intégrale, nous utilisons la
+substitution trigonométrique $x=3\cos(\theta)$.  Donc
+$\dx{x} = -3\sin(\theta) \dx{\theta}$,
+$\theta =\pi/2$ lorsque $x=0$ et $\theta = \arccos(2/3)$ lorsque
+$x=2$.  Ainsi,
+\begin{align*}
+V &= \frac{1}{4} \int_9^5 u^{1/2} \dx{u} 
+-9 \int_{\pi/2}^{\arccos(2/3)} \sin^2(\theta) \dx{\theta}
+= -\frac{1}{4} \int_5^9 u^{1/2} \dx{u} +\frac{9}{2}
+\int_{\arccos(2/3)}^{\pi/2} \left( 1 - \cos(2\theta)\right)\dx{\theta} \\
+&= -\frac{1}{6} u^{3/2}\bigg|_{u=5}^9 +\frac{9}{2}
+\left( \theta - \frac{1}{2}\sin(2\theta)
+\right)\bigg|_{\theta=\arccos(2/3)}^{\pi/2} \\
+&= -\frac{1}{6} (27- 5^{3/2}) + \frac{9}{2}
+\left( \frac{\pi}{2} - \arccos(2/3) + \frac{1}{2}\sin(2\arccos(2/3)) \right) \\
+&= -\frac{1}{6} (27- 5^{3/2}) + \frac{9}{2}
+\left( \frac{\pi}{2} - \arccos(2/3) + \frac{2\sqrt{5}}{9} \right)
+= -\frac{9}{2} + \frac{19\sqrt{5}}{18} + \frac{9\pi}{4} -
+\frac{9}{2}\arccos(2/3) \ . 
+\end{align*}
+où nous avons utilisé la relation
+$\sin(2\theta) = 2\cos(\theta)\sin(\theta)$ pour 
+évaluer $\sin(2\arccos(2/3))$.
+}
+
+\compileSOL{\SOLUa}{\ref{16Q11}}{
+Le dessin de la partie du solide $S$ qui se trouve dans la région
+définie par $x,y,z \geq 0$ est présenté ci-dessous.
+\PDFgraph{16_var_mult_int/volume13}
+Le solide $S$ est formé de huit pièces de cette forme.
+Le volume du solide est
+\begin{align*}
+V &= 8 \int_0^2 \int_0^{\sqrt{4-x^2}} \int_0^{\sqrt{4-x^2}}
+\dx{z}\dx{y}\dx{x}
+= 8 \int_0^2 \int_0^{\sqrt{4-x^2}} \sqrt{4-x^2} \dx{y}\dx{x} \\
+&= 8 \int_0^2 ( 4-x^2 ) \dx{x} = 8 \left( 4x - \frac{x^3}{3}
+\right)\bigg|_{x=0}^2
+= 8 \left( 8 - \frac{8}{3} \right) = \frac{128}{3} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q12}}{
+La figure ci-dessous contient le dessin du tétraèdre.
+\PDFgraph{16_var_mult_int/volume8}
+L'intersection du plan $\displaystyle 2x+y+ \frac{z}{3}=1$ avec le plan $z=0$
+est la droite $\displaystyle 2x+y =1$.
+
+Le volume du tétraèdre est
+\begin{align*}
+V &= \int_0^{1/2} \int_0^{1-2x} \int_0^{3(1-2x-y)} \dx{z}\dx{y}\dx{x}
+= \int_0^{1/2} \int_0^{1-2x} z\bigg|_{z=0}^{3(1-2x-y)} \dx{y}\dx{x} \\
+&= 3\int_0^{1/2} \int_0^{1-2x} (1-2x-y) \dx{y}\dx{x}
+= 3\int_0^{1/2} \left(y-2xy-\frac{1}{2}y^2\right)\bigg|_{y=0}^{1-2x} \dx{x} \\
+& = 3\int_0^{1/2} \left((1-2x)-2x(1-2x) -\frac{1}{2}(1-2x)^2\right)\dx{x} \\
+& = 3\int_0^{1/2} \left( (1-2x)^2 -\frac{1}{2}(1-2x)^2\right)\dx{x}
+= \frac{3}{2} \int_0^{1/2} (1-2x)^2 \dx{x}
+= - \frac{1}{4} (1-2x)^3\bigg|_0^{1/2} = \frac{1}{4} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{16Q13}}{
+La figure ci-dessous contient le dessin du tétraèdre $S$.
+\PDFgraph{16_var_mult_int/volume21}
+Le volume $V$ to tétraède est
+\begin{align*}
+V & = \int_0^2 \int_x^2 \int_0^{1-y/2} \dx{z} \dx{y}\dx{x}
+= \int_0^2 \int_x^2 \left(1 - \frac{y}{2}\right) \dx{y}\dx{x}
+= \int_0^2 \left(y - \frac{y^2}{4}\right)\bigg|_{y=x}^2  \dx{x} \\
+& = \int_0^2 \left(1 - x + \frac{x^2}{4}\right) \dx{x}
+= \left(x - \frac{x^2}{2} + \frac{x^3}{12}\right)\bigg|_0^2 
+= \frac{2}{3} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q14}}{
+La figure ci-dessous contient le dessin du tétraèdre.
+\PDFgraph{16_var_mult_int/volume14}
+L'intersection du plan $\displaystyle 3x+ 3y+ 2z=6$ avec le plan $z=0$
+est la droite $\displaystyle y=-x+2$.
+Ainsi,
+\begin{align*}
+\int_S xy \dx{V} &
+= \int_0^1 \int_y^{2-y} \int_0^{3-3x/2-3y/2} xy\dx{z}\dx{x}\dx{y}
+= \int_0^1 \int_y^{2-y} xyz\bigg|_{z=0}^{3-3x/2-3y/2} \dx{x}\dx{y} \\
+&= \int_0^1 \int_y^{2-y} \left(3xy- \frac{3x^2y}{2}-\frac{3xy^2}{2}\right)
+\dx{x}\dx{y}
+= \int_0^1 \left(\frac{3x^2y}{2}- \frac{x^3y}{2}-\frac{3x^2y^2}{4}\right)
+\bigg|_{x=y}^{2-y}\dx{y} \\
+&= \int_0^1 \left(\frac{3(2-y)^2y}{2}- \frac{(2-y)^3y}{2}-
+\frac{3(2-y)^2y^2}{4}\right)
+- \left(\frac{3y^3}{2}- \frac{y^4}{2}-\frac{3y^4}{4}\right) \dx{y} \\
+&= \int_0^1 \left( y^4 - 3 y^2 + 2 y\right)
+\dx{y}
+= \left( \frac{y^5}{5} - y^3 + y^2 \right)\bigg|_0^1 = \frac{1}{5} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{16Q15}}{
+La figure ci-dessous contient le dessin du tétraèdre $S$.
+\PDFgraph{16_var_mult_int/volume15}
+L'équation du plan qui contient les points $\VEC{0}$, $(1,1,0)$ et $(0,1,1)$
+est donnée par $( (x,y,z)-(0,0,0) ) \cdot \VEC{n} = 0$ où $\VEC{n}$
+est un vecteur perpendiculaire au plan.  Nous obtenons un vecteur
+perpendiculaire au plan a l'aide du produit vectoriel des vecteurs
+$(1,1,0)$ et $(0,1,1)$ qui sont deux vecteurs du plan.
+Puisque
+\[
+  \VEC{n} = (1,1,0) \times (0,1,1) = (1,-1,1) \ ,
+\]
+l'équation du plan qui contient les trois points est donnée par
+\[
+(x,y,z) \cdot (-1,1,-1) = 0 \Rightarrow z = -x + y \ .
+\]
+Ainsi,
+\begin{align*}
+\int_S xz \dx{V} &
+= \int_0^1 \int_x^1 \int_0^{-x+y} xz\dx{z}\dx{y}\dx{x}
+= \int_0^1 \int_x^1 \frac{xz^2}{2} \bigg|_{z=0}^{-x+y} \dx{y}\dx{x}
+= \int_0^1 \int_x^1 \frac{x(-x+y)^2}{2} \dx{y}\dx{x} \\
+&= \int_0^1 \frac{x(-x+y)^3}{6}\bigg|_{y=x}^1\dx{x}
+= \int_0^1 \frac{x(-x+1)^3}{6} \dx{x}
+= \frac{1}{6} \int_0^1 \left( -x^4 +3 x^3 - 3x^2 +x\right) \dx{x} \\
+&= \frac{1}{6} \left( -\frac{x^5}{5} + \frac{3 x^4}{4} - x^3
++ \frac{x^2}{2} \right)\bigg|_0^1 = \frac{1}{120} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q16}}{
+La figure ci-dessous contient un dessin du solide $S$ décrit par les
+bornes d'intégration.
+\PDFgraph{16_var_mult_int/volume16}
+Nous avons
+\[
+\int_0^2 \int_0^{y^3} \int_0^{y^2} f(x,y,z) \dx{z}\dx{x}\dx{y} =
+\int_0^8 \int_{x^{1/3}}^{2} \int_0^{y^2} f(x,y,z) \dx{z}\dx{y}\dx{x} \ ,
+\]
+\[
+\int_0^2 \int_0^{y^3} \int_0^{y^2} f(x,y,z) \dx{z}\dx{x}\dx{y} =
+\int_0^4 \int_{z^{1/2}}^{2} \int_0^{y^3} f(x,y,z) \dx{x}\dx{y}\dx{z}
+\]
+et
+\begin{align*}
+\int_0^2 \int_0^{y^3} \int_0^{y^2} f(x,y,z) \dx{z}\dx{x}\dx{y} &=
+\int_0^8 \int_0^{x^{2/3}} \int_{x^{1/3}}^2 f(x,y,z) \dx{y}\dx{z}\dx{x} \\
+&\qquad + \int_0^8 \int_{x^{2/3}}^4 \int_{z^{1/2}}^2 f(x,y,z) \dx{y}\dx{z}\dx{x}
+\ .
+\end{align*}
+Pour la dernière intégrale, il faut trouver la projection dans le plan
+$x$,$z$ de l'intersection des surfaces $z=y^2$ et $x=y^3$ pour $x,y,z\geq 0$.
+L'intersection est une courbe donnée par l'équation
+$z^{1/2} = x^{1/3}$; c'est-à-dire, $z= x^{2/3}$.
+Pour $0\leq x \leq 8$ et $0 \leq z \leq x^{2/3}$, nous avons que
+$x^{1/3} \leq y \leq 2$.  Pour $0\leq x \leq 8$ et
+$\leq x^{2/3} \leq z \leq 4$, nous avons que $z^{1/2} \leq y \leq 2$.  
+}
+
+\subsection{Substitution}
+
+\compileSOL{\SOLUb}{\ref{16Q19}}{
+\subQ{a}
+\PDFgraph{16_var_mult_int/coordPolQ1}
+
+\subQ{b}
+Le domaine $D$ est formé des points
+$(x,y) = (r \cos(\theta), r \sin(\theta))$ pour $0 \leq r \leq 2$ et
+$-\pi/2 \leq \theta \leq 0$.  Ainsi,
+\[
+\left| \frac{\partial(x,y)}{\partial(r,\theta)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta) & -r\sin(\theta)\\
+\sin(\theta) & r\cos(\theta) \\
+\end{pmatrix} \right| = r
+\]
+et
+\begin{align*}
+\int_0^2 \int_{-\sqrt{x^2+y^2}}^0
+\frac{xy}{\sqrt{x^2+y^2}} \dx{y} \dx{x}
+&= \int_{-\pi/2}^0\int_0^2 \frac{r^2 \cos(\theta)\sin(\theta)}{r}
+\; r\dx{r}\dx{\theta} \\
+&= \int_{-\pi/2}^0\int_0^2 r^2 \cos(\theta)\sin(\theta) \dx{r}\dx{\theta} \ .
+\end{align*}
+
+\subQ{c}
+\begin{align*}
+  \int_{-\pi/2}^0\int_0^2 r^2 \cos(\theta)\sin(\theta) \dx{r}\dx{\theta}
+&= \int_{-\pi/2}^0 \left(\frac{r^3}{3}
+\cos(\theta)\sin(\theta) \right)\bigg|_{r=0}^2  \dx{\theta} \\
+&= \frac{8}{3} \int_{-\pi/2}^0 \cos(\theta)\sin(\theta) \dx{\theta}
+= \frac{8}{3} \left( \frac{1}{2} \sin^2(\theta) \right)\bigg|_{-\pi/2}^0
+= -\frac{4}{3} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q20}}{
+Le dessin de la région $R$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume20}
+Si nous substituons $z^2 = x^2 + y^2$ pour $z \geq 0$ dans
+$x^2 + y^2 + z^2 = 9$, nous obtenons $2z^2 = 9$.  Donc $z = 3/\sqrt{2}$.
+L'intersection de la sphère $x^2 + y^2 + z^2 = 9$ avec la surface
+$z = \sqrt{x^2 + y^2}$ est donc le cercle donné par
+$x^2 + y^2 = (3/\sqrt{2})^2 = 9/2$  et $z=3/\sqrt{2}$.
+
+\subQ{a} Avec les coordonnées cartésiennes, nous avons
+\[
+  V = \int_{-3/\sqrt{2}}^{3/\sqrt{2}} \int_{-\sqrt{9/2 - x^2}}^{\sqrt{9/2 - x^2}}
+  \int_{\sqrt{x^2+y^2}}^{\sqrt{9-x^2-y^2}} \dx{z}\dx{y}\dx{x} \ .
+\]
+Le calcul de cette intégrale n'est pas à conseiller.
+
+\subQ{b} En coordonnées cylindriques, la région $R$ est l'ensemble des
+points
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq \theta < 2\pi$, $0 \leq r \leq 3/\sqrt{2}$ et
+$r = \sqrt{x^2+y^2} \leq z \leq \sqrt{9 - x^2 - y^2} = \sqrt{9 - r^2}$.
+Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta) & -r\sin(\theta) & 0 \\
+\sin(\theta) & r\cos(\theta) & 0 \\
+0 & 0 & 1
+\end{pmatrix} \right| = r \ ,
+\]
+le volume de la région $R$ est
+\[
+  V = \int_0^{2\pi} \int_0^{3/\sqrt{2}}\int_r^{\sqrt{9-r^2}}
+r  \dx{z}\dx{r}\dx{\theta} \ .
+\]
+
+\subQ{c} En coordonnées sphériques, la région $R$ est l'ensemble des
+points
+\[
+(x,y,z) = (r\cos(\theta)\sin(\phi), r\sin(\theta)\sin(\phi), r\cos(\phi))
+\]
+pour $0 \leq \theta < 2\pi$, $0 \leq \phi \leq \pi/2$ et
+$0 \leq r \leq 3$.
+Remarquons que l'intersection du cône avec le plan $x=0$ donne
+$|y|= |z|$.  L'angle entre l'axe des $z$ et le côté du cône est donc
+$\pi/4$.  Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta)\sin(\phi) & -r\sin(\theta)\sin(\phi) & r\cos(\theta)\cos(\phi) \\
+\sin(\theta)\sin(\phi) & r\cos(\theta)\sin(\phi) & r\sin(\theta)\cos(\phi) \\
+\cos(\phi) & 0 & -r\sin(\phi)
+\end{pmatrix} \right| =
+r^2\sin(\phi) \ ,
+\]
+le volume de la région $R$ est
+\[
+  V = \int_0^{2\pi} \int_0^{\pi/4}\int_0^3  r^2\sin(\phi)
+  \dx{r}\dx{\phi}\dx{\theta} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{16Q21}}{
+\subQ{a} Le dessin de la région $R$ est donné ci-dessous.
+\PDFgraph{16_var_mult_int/cylcoordQ1}
+En coordonnées cylindriques, la région $R$ est l'ensemble des points
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq \theta \leq \pi$, $0 \leq r \leq 1$ et
+$x^2+y^2 = r^2 \leq z \leq 1$.
+Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta) & -r\sin(\theta) & 0 \\
+\sin(\theta) & r\cos(\theta) & 0 \\
+0 & 0 & 1
+\end{pmatrix} \right| = r \ ,
+\]
+nous avons
+\begin{align*}
+\iint_R z \dx{V} &= \int_0^{\pi} \int_0^1\int_{r^2}^1 zr
+\dx{z}\dx{r}\dx{\theta}
+= \int_0^{\pi} \int_0^1 \left( \frac{z^2}{2} \, r\right)\bigg|_{z=r^2}^1
+\dx{r}\dx{\theta} \\
+&= \int_0^{\pi} \int_0^1 \left( \frac{r}{2} - \frac{z^5}{2}\right)
+\dx{r}\dx{\theta} 
+= \int_0^{\pi} \left( \frac{r^2}{4} - \frac{z^6}{12}\right)\bigg|_{r=0}^1 
+\dx{\theta}
+= \frac{1}{6} \int_0^{\pi} \dx{\theta} = \frac{\pi}{6} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q22}}{
+\subQ{b} Nous avons que $0 \leq x \leq 1$ et
+$x \leq y \leq \sqrt{2-x^2}$.  Donc, pour $x$ fixe entre $0$ et
+$1$, le poins $(x,y)$ se trouve sur le segment qui va du
+point $(x,x)$ au point $(x,\sqrt{2-x^2})$; un point sur le cercle
+$x^2+y^2 = 2$.  L'ensemble de ces points forme la région $D$
+représentée dans la figure ci-dessous.
+\PDFgraph{16_var_mult_int/SphericCoordsQ2a}
+Nous avons que $\sqrt{x^2+y^2} \leq z \leq \sqrt{4-x^2-y^2}$.  Donc, pour
+$(x,y)$ dans la région $D$, le point $(x,y,z)$ se trouve sur le
+segment qui va du point $(x,y,\sqrt{x^2+y^2})$ au point
+$(x,y,\sqrt{4-x^2-y^2})$.  le point $(x,y,\sqrt{x^2+y^2})$ fait partie
+de l'hyperboloïde $z^2 = x^2 + y^2$ alors que le point\\
+$(x,y,\sqrt{4-x^2 -y^2})$ fait partie de la sphère $x^2 + y^2 + z^2 = 4$.
+
+Pour trouver l'intersection de l'hyperboloïde avec la sphère, nous
+substituons $x^2 + y^2 = z^2$ dans $x^2 + y^2 + z^2 = 4$ pour obtenir
+$2z^2 = 4$.  Donc $z = \sqrt{2}$ puisque nous considérons la région
+$z>0$.   L'intersection est le cercle $x^2+y^2 = 2$ avec
+$z = \sqrt{2}$.
+
+Le dessin de la région $E$ définie par les bornes d'intégration est
+donné ci-dessous.
+\PDFgraph{16_var_mult_int/SphericCoordsQ2b}
+
+En coordonnées sphériques, la région $E$ est l'ensemble des points
+\[
+(x,y,z) = (r\cos(\theta)\sin(\phi), r\sin(\theta)\sin(\phi), r \cos(\phi))
+\]
+pour $0 \leq r \leq 2$, $\pi/4 \leq \theta \leq \pi/2$ et
+$0 \leq \phi \leq \pi/4$.  Puisque
+\begin{align*}
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} \right| &= 
+\left| \det \begin{pmatrix}
+  \displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}
+  & \displaystyle \pdydx{x}{\phi} \\[0.8em]
+  \displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta}
+  & \displaystyle \pdydx{y}{\phi} \\[0.8em]
+  \displaystyle \pdydx{z}{r} & \displaystyle \pdydx{z}{\theta}
+  & \displaystyle \pdydx{z}{\phi}
+\end{pmatrix} \right| \\
+&= \left| \det \begin{pmatrix}
+\cos(\theta)\sin(\phi) & -r \sin(\theta)\sin(\phi) &
+ r\cos(\theta)\cos(\phi) \\
+ \sin(\theta)\sin(\phi) & r \cos(\theta)\sin(\phi) &
+ r\sin(\theta)\cos(\phi) \\
+ \cos(\phi) & 0 & -r\sin(\phi)
+\end{pmatrix} \right|
+= r^2 \sin(\phi) \ ,
+\end{align*}
+nous obtenons
+\begin{align*}
+& \int_0^1 \int_x^{\sqrt{2-x^2}}
+\int_{\sqrt{x^2+y^2}}^{\sqrt{4-x^2-y^2}} \dx{z}\dx{y}\dx{x}
+= \int_{\pi/4}^{\pi/2} \int_0^{\pi/4} \int_0^2  r^2 \sin(\phi) \dx{r} \dx{\phi}
+\dx{\theta} \\
+&\qquad = \int_{\pi/4}^{\pi/2} \int_0^{\pi/4} \left(
+\frac{r^3}{3}\right)\bigg|_{r=0}^2 \dx{\phi} \dx{\theta}
+= \frac{8}{3} \int_{\pi/4}^{\pi/2} \int_0^{\pi/4} \sin(\phi)
+\dx{\phi}\dx{\theta} \\
+&\qquad  = \frac{8}{3} \int_{\pi/4}^{\pi/2}
+\left(-\cos(\phi)\right)\bigg|_{\phi=0}^{\pi/4} \dx{\theta}
+= \frac{8}{3}\left(1 - \frac{\sqrt{2}}{2}\right)
+\int_{\pi/4}^{\pi/2} \dx{\theta}
+= \frac{2\pi}{3}\left(1 - \frac{\sqrt{2}}{2}\right) \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{16Q23}}{
+\subQ{a} Nous avons que $0 \leq y \leq 1/\sqrt{2}$ et
+$y \leq x \leq \sqrt{1-y^2}$.  Donc, pour $y$ fixe entre $0$ et
+$1/\sqrt{2}$, le point $(x,y)$ se trouve sur le segment qui va du
+point $(y,y)$ au point $(\sqrt{1-y^2},y)$; un point sur le cercle
+$x^2+y^2 = 1$.  L'ensemble de ces points forme la région $D$
+représentée dans la figure ci-dessous.
+\PDFgraph{16_var_mult_int/SphericCoordsQ1a}
+Nous avons que $0 \leq z \leq \sqrt{1-x^2-y^2}$.  Donc, pour $(x,y)$ dans la
+région $D$, le point $(x,y,z)$ se trouve sur le segment qui va du
+point $(x,y,0)$ au point $(x,y,\sqrt{1-x^2 -y^2}$; un point sur la
+sphère $x^2+y^2 + z^2= 1$.
+
+Le dessin de la région $E$ définie par les bornes d'intégration est
+donné ci-dessous.
+\PDFgraph{16_var_mult_int/SphericCoordsQ1b}
+
+Nous pourrions utiliser les coordonnées cylindriques à partir de la région
+$D$ mais comme la hauteur est déterminée par la sphère de rayon $1$ et
+l'integrande est $x^2 + y^2 + z^2$, le carré de la distance du point  
+$(x,y,z)$ à l'origine, les coordonnées sphériques sont préférables.
+La région $E$ est l'ensemble des points
+\[
+(x,y,z) = (r \cos(\theta)\sin(\phi), r\sin(\theta)\sin(\phi), r \cos(\phi))
+\]
+pour $0 \leq r \leq 1$, $0 \leq \theta \leq \pi/4$ et
+$0 \leq \phi \leq \pi/2$.  Puisque
+\begin{align*}
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} \right| &= 
+\left| \det \begin{pmatrix}
+  \displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}
+  & \displaystyle \pdydx{x}{\phi} \\[0.8em]
+  \displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta}
+  & \displaystyle \pdydx{y}{\phi} \\[0.8em]
+  \displaystyle \pdydx{z}{r} & \displaystyle \pdydx{z}{\theta}
+  & \displaystyle \pdydx{z}{\phi}
+\end{pmatrix} \right| \\
+&= \left| \det \begin{pmatrix}
+\cos(\theta)\sin(\phi) & -r \sin(\theta)\sin(\phi) &
+ r\cos(\theta)\cos(\phi) \\
+ \sin(\theta)\sin(\phi) & r \cos(\theta)\sin(\phi) &
+ r\sin(\theta)\cos(\phi) \\
+ \cos(\phi) & 0 & -r\sin(\phi)
+\end{pmatrix} \right|
+= r^2 \sin(\phi)
+\end{align*}
+et $x^2 + y^2 + z^2 = r^2$, nous obtenons
+\begin{align*}
+& \int_0^{1/\sqrt{2}} \int_y^{\sqrt{1-y^2}}
+\int_0^{\sqrt{1-x^2-y^2}} (x^2+y^2+z^2) \dx{z}\dx{x}\dx{y} 
+= \int_0^{\pi/4} \int_0^{\pi/2} \int_0^1  r^4 \sin(\phi) \dx{r} \dx{\phi}
+\dx{\theta} \\
+&\qquad = \int_0^{\pi/4} \int_0^{\pi/2} \left(
+\frac{r^5}{5} \sin(\phi) \right)\bigg|_{r=0}^1 \dx{\phi} \dx{\theta}
+= \frac{1}{5} \int_0^{\pi/4} \int_0^{\pi/2} \sin(\phi) \dx{\phi} \dx{\theta} \\
+&\qquad = \frac{1}{5} \int_0^{\pi/4}
+\left(-\cos(\phi)\right)\bigg|_{\phi=0}^{\pi/2} \dx{\theta}
+= \frac{1}{5} \int_0^{\pi/4} \dx{\theta} = \frac{\pi}{20} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q24}}{
+L'intersection entre la surface $z = 25 - x^2 - y^2$ et le
+plan $z=16$ est donnée par $16 = 25 -x^2-y^2$.  Nous obtenons le cercle
+$x^2+y^2=9$ avec $z=16$.
+\PDFgraph{16_var_mult_int/volume7}
+
+\subI{1$^e$ méthode}
+Le volume du solide est
+\begin{align*}
+V &= \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} \int_{16}^{25-x^2-y^2}
+\dx{z}\dx{y}\dx{x}
+= \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+z\bigg|_{z=16}^{25-x^2-y^2} \dx{y}\dx{x} \\
+&= \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} \left( 9-x^2-y^2 \right)
+\dx{y}\dx{x}
+= \int_{-3}^3 \left( 9 y - x^2y - \frac{y^3}{3} \right)
+\bigg|_{y=-\sqrt{9-x^2}}^{\sqrt{9-x^2}} \dx{x} \\
+&= 2\int_{-3}^3 \left( 9 - x^2 - \frac{1}{3}(9-x^2)\right)\sqrt{9-x^2} \dx{x}
+= 2\int_{-3}^3 \left( 6 - \frac{2}{3}x^2 \right)\sqrt{9-x^2} \dx{x} \ .
+\end{align*}
+Avec la substitution trigonométrique $x=3 \cos(\theta)$ pour
+$0\leq \theta\leq \pi$, nous obtenons $\dx{x} = -3 \sin(\theta) \dx{\theta}$,
+$\theta= \pi$ lorsque $x=-3$ et $\theta = 0$ lorsque $x=3$.  Ainsi,
+\begin{align*}
+V &= -18\int_{\pi}^0 \left( 6 - 6\cos^2(\theta) \right)\sin^2(\theta)
+ \dx{\theta}
+= 108\int_0^{\pi} \left( 1 - \cos^2(\theta) \right)\sin^2(\theta) \dx{\theta}\\
+&= 108\int_0^{\pi} \sin^2(\theta) \dx{\theta}
+- 108\int_0^{\pi} \cos^2(\theta) \sin^2(\theta) \dx{\theta} \\
+&= 54\int_0^{\pi} (1-\cos(2\theta)) \dx{\theta}
+- 27 \int_0^{\pi} (1-\cos^2(2\theta)) \dx{\theta} \\
+&= 54\pi - \frac{27}{2}\int_0^{\pi} (1- \cos(4\theta)) \dx{\theta}
+= 54\pi - \frac{27\pi}{2} = \frac{81\pi}{2}\ .
+\end{align*}
+
+\subI{2$^e$ méthode}
+En coordonnées cylindriques, la région $E$ bornée par la surface
+$z = 25 - x^2-y^2$ et le plan $z=16$ est formée des points
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq \theta < 2\pi$, $0 \leq r \leq 3$ et
+$16 \leq z \leq 25 - x^2 -y^2 = 25 - r^2$.  Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta) & -r\sin(\theta) & 0 \\
+\sin(\theta) & r\cos(\theta) & 0 \\
+0 & 0 & 1
+\end{pmatrix} \right| = r \ ,
+\]
+le volume du solide est
+\begin{align*}
+V &= \int_0^3 \int_0^{2\pi} \int_{16}^{25-r^2} r \dx{z}\dx{\theta}\dx{r}
+= \int_0^3 \int_0^{2\pi} rz\bigg|_{z=16}^{25-r^2} \dx{\theta}\dx{r}
+= \int_0^3 \int_0^{2\pi} r\left( 9-r^2 \right) \dx{\theta}\dx{r} \\
+& = 2\pi \int_0^3 \left( 9 r - r^3 \right) \dx{r}
+= 2\pi \left( \frac{9}{2} r^2 - \frac{r^4}{4}\right)\bigg|_0^3
+= \frac{81\pi}{2} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{16Q25}}{
+Soit $E$ la région au dessus de la paraboloïde d'équation
+$z = x^2 + y^2$ et au dessous du cône d'équation $z = \sqrt{x^2+y^2}$.
+La figure ci-dessous présente une coupe transversale de $E$ selon le
+plan $x=0$.
+\PDFgraph{16_var_mult_int/volume22}
+
+L'intersection de la paraboloïde et du cône est donnée par la solution
+de $x^2+y^2 = \sqrt{x^2+y^2}$.  Les deux solutions possibles sont $x^2+y^2=0$
+avec $z=0$, et $x^2 + y^2 = 1$ avec $z=1$.
+
+En coordonnées cylindriques, $E$ est l'ensemble des points
+\[ 
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq r \leq 1$, $0 \leq \theta \leq 2\pi$ et
+$r^2 = x^2 + y^2 \leq z \leq \sqrt{x^2+y^2} = r$.  Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta) & -r\sin(\theta) & 0 \\
+\sin(\theta) & r\cos(\theta) & 0 \\
+0 & 0 & 1
+\end{pmatrix} \right| = r \ ,
+\]
+le volume du solide $E$ est
+\begin{align*}
+\iiint_E \dx{V} &=
+\int_0^{2\pi} \int_0^1 \int_{r^2}^{r} r \dx{z}\dx{r}\dx{\theta}
+= \int_0^{2\pi} \int_0^1  rz\bigg|_{z=r^2}^{r} \dx{r}\dx{\theta} \\
+&= \int_0^{2\pi}\int_0^1  \left(r^2 - r^3 \right) \dx{r}\dx{\theta}
+= \int_0^{2\pi} \left(\frac{r^3}{3} - \frac{r^4}{4} \right)\bigg|_{r=0}^1
+\dx{\theta}
+= \frac{1}{12} \int_0^{2\pi}  \dx{\theta} = \frac{\pi}{6} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q27}}{
+Soit $E$ le solide borné par le paraboloïde $z = 4x^2 + 3y^2$ et le
+cylindre parabolique $y^2 + z = 4$.  Le dessin du solide $E$ est
+donné ci-dessous.
+\PDFgraph{16_var_mult_int/volume23}
+
+Les points $(x,y,z)$ de l'intersection des deux surfaces doivent
+satisfaire $z = 4 - y^2 = 4x^2 + 3y^2$; c'est-à-dire,
+$x^2 +y^2 = 1$ et $z = 4 - y^2$.   Cela décrit une courbe.
+
+En coordonnées cylindriques, la région $E$ est l'ensemble des points
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq r \leq 1$, $0 \leq \theta \leq 2\pi$ et
+$3r^2 + r^2\cos^2(\theta)  \leq z \leq 4 - r^2\sin^2(\theta)$ car
+$4x^2 + 3y^2 = 4r^2 \cos^2(\theta) + 3 r^2 \sin^2(\theta)
+= 3r^2 + r^2\cos^2(\theta)$ et
+$4 - y^2 = 4 - r^2\sin^2(\theta)$.  Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta) & -r\sin(\theta) & 0 \\
+\sin(\theta) & r\cos(\theta) & 0 \\
+0 & 0 & 1
+\end{pmatrix} \right| = r \ ,
+\]
+le volume du solide est
+\begin{align*}
+\iiint_E \dx{V} &=
+\int_0^{2\pi} \int_0^1 \int_{3r^2+r^2\cos(\theta)}^{4-r^2\sin(\theta)}
+r \dx{z}\dx{r}\dx{\theta}
+= \int_0^{2\pi} \int_0^1 rz\bigg|_{z=3r^2+r^2\cos(\theta)}^{4-r^2\sin(\theta)}
+ \dx{r}\dx{\theta} \\
+&= \int_0^{2\pi}\int_0^1  \left(4 - 3r^2 -r^2\sin^2(\theta)
+- r^2\cos^2(\theta) \right)r \dx{r}\dx{\theta} \\
+&= 4 \int_0^{2\pi}\int_0^1  \left(r - r^3\right) \dx{r}\dx{\theta}
+= 4 \int_0^{2\pi} \left(\frac{r^2}{2} - \frac{r^4}{4} \right)\bigg|_{r=0}^1
+\dx{\theta}
+= \int_0^{2\pi}  \dx{\theta} = 2\pi \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q29}}{
+Soit $E$ la région bornée par la sphère $x^2+y^2+z^2 =25$ et le cône
+$\displaystyle \frac{16}{9} z^2 = x^2 + y^2$ pour $z\geq 0$.
+
+L'intersection de la sphère avec le cône est donnée par
+\[
+25-x^2-y^2 = z^2 = \frac{9}{16}\left( x^2 + y^2 \right) \ .
+\]
+Nous obtenons $16=x^2+y^2$ et $z=3$.  Le dessin du cornet est donné
+ci-dessous.
+\PDFgraph{16_var_mult_int/volume9}
+
+Afin de calculer la masse du cône, nous utilisons les coordonnées
+sphériques.  La région $E$ est l'ensemble des points
+\[
+(x,y,z) = (r\cos(\theta)\sin(\phi), r\sin(\theta)\sin(\phi), r\cos(\phi))
+\]
+pour $0 \leq \theta < 2\pi$, $0 \leq \phi \leq \arccos(3/5)$ et
+$0 \leq r \leq 4$.  Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} \right| =
+\left| \det \begin{pmatrix}
+\cos(\theta)\sin(\phi) & -r\sin(\theta)\sin(\phi) & r\cos(\theta)\cos(\phi) \\
+\sin(\theta)\sin(\phi) & r\cos(\theta)\sin(\phi) & r\sin(\theta)\cos(\phi) \\
+\cos(\phi) & 0 & -r\sin(\phi)
+\end{pmatrix} \right| = r^2\sin(\phi) \ ,
+\]
+la masse du cône est
+\begin{align*}
+M &= \int_0^5 \int_0^{2\pi} \int_0^{\arccos(3/5)} r^4\sin^3(\phi)
+\dx{\phi}\dx{\theta}\dx{r} \\
+&= \int_0^5 \int_0^{2\pi} \int_0^{\arccos(3/5)} r^4(1-\cos^2(\phi))
+\sin(\phi) \dx{\phi}\dx{\theta}\dx{r} \ .
+\end{align*}
+Si $u=\cos(\phi)$, alors $\dx{u} = -\sin(\phi)\dx{\phi}$, $u=1$
+lorsque $\phi=0$ et $u = 3/5$ lorsque $\phi=\arccos(3/5)$.  Donc
+\begin{align*}
+M &= -\int_0^5 \int_0^{2\pi} \int_1^{3/5} r^4(1-u^2) \dx{u} \dx{\theta}\dx{r} 
+= \int_0^5 \int_0^{2\pi} \int_{3/5}^1 r^4(1-u^2) \dx{u} \dx{\theta}\dx{r} \\
+& = \int_0^5 \int_0^{2\pi} r^4\left( u - \frac{u^3}{3}\right)\bigg|_{u=3/5}^1
+\dx{\theta}\dx{r} 
+= \frac{52}{375} \int_0^5 \int_0^{2\pi} r^4 \dx{\theta}\dx{r} \\
+&= \frac{104\pi}{375} \int_0^5 r^4 \dx{r}
+= \frac{104\pi}{375} \left(\frac{r^5}{5}\bigg|_{r=0}^5 \right)
+= \frac{520\pi}{3} \ \text{g.}
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{16Q30}}{
+Soit $E$ la sphère de rayon $R_1$ centrée à l'origine qui est percée
+par un cylindre de rayon $R_2 < R_1$ dont l'axe est un diamètre de la
+sphère.  Nous pouvons supposer que l'axe du cylindre est l'axe des $z$
+car la densité est une fonction de la distance à l'origine seulement.
+L'équation du cylindre est donc alors $x^2+y^2=R_2^2$.
+
+Le dessin du solide $E$ est donnée ci-dessous.
+\PDFgraph{16_var_mult_int/volume10}
+Nous avons enlevé une tranche du solide pour mieux voir la partie de
+la sphère qui a été enlevée.  Pour calculer la masse du solide, nous
+allons calculer la masse de la sphère (avant d'être percée par le
+cylindre) puis soustraire de cette masse la masse de la partie de la
+sphère qui a été enlevée par le passage du cylindre.
+
+\subQ{i} La masse de la sphère peut être facilement calculée à l'aide des
+coordonnée sphériques
+\[
+  (x,y,z) = (r\cos(\theta)\sin(\phi), r\sin(\theta)\sin(\phi), r\cos(\phi))
+\]
+pour $0 \leq \theta < 2\pi$, $0 \leq \phi \leq \pi$ et $0 \leq r \leq R_1$.
+Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} \right| =
+r^2\sin(\phi) \ ,
+\]
+la masse de la sphère est
+\begin{align*}
+M_s &= \int_0^{R_1} \int_0^{2\pi} \int_0^\pi r^4
+\sin(\phi)\dx{\phi}\dx{\theta} \dx{r}
+= -\int_0^{R_1} \int_0^{2\pi} r^4 \cos(\phi)\bigg|_{\phi=0}^\pi
+\dx{\theta} \dx{r} \\
+& = 2\int_0^{R_1} \int_0^{2\pi} r^4 \dx{\theta} \dx{r}
+= 4\pi \int_0^{R_1} r^4 \dx{r}
+= \frac{4\pi r^5}{5}\bigg|_0^{R_1} = \frac{4\pi}{5} R_1^5 \ .
+\end{align*}
+
+\subQ{ii} Pour calculer la masse de la partie cylindrique qui a été
+retirée de la sphère, nous utilisons les coordonnées cylindriques
+\[
+  (x,y,z) = (r\cos(\theta), r\sin(\theta), z)
+\]
+pour $0 \leq \theta < 2\pi$, $0 \leq r \leq R_2$ et
+\[
+-\sqrt{R_1^2-r^2} = -\sqrt{R_1^2 - x^2 - y^2} \leq z \leq
+\sqrt{R_1^2 - x^2 - y^2} = \sqrt{R_1^2-r^2} \ .
+\]
+Puisque
+\[
+\left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| = r \ ,
+\]
+la masse de cette partie cylindrique est
+\begin{align*}
+M_c &= \int_0^{R_2} \int_0^{2\pi} \int_{-\sqrt{R_1^2-r^2}}^{\sqrt{R_1^2-r^2}}
+\left( z^2 + r^2 \right) r \dx{z}\dx{\theta}\dx{r}
+= \int_0^{R_2} \int_0^{2\pi} 
+\left( \left( \frac{z^3}{3} + r^2 z \right)r \right)
+\bigg|_{z=-\sqrt{R_1^2-r^2}}^{\sqrt{R_1^2-r^2}} \dx{\theta}\dx{r} \\
+&= \frac{2}{3} \int_0^{R_2} \int_0^{2\pi} 
+\left( R_1^2+2r^2 \right) \sqrt{R_1^2-r^2}\ r \dx{\theta}\dx{r}
+= \frac{4\pi}{3} \int_0^{R_2} \left( R_1^2+2r^2 \right)
+\sqrt{R_1^2-r^2}\ r \dx{r} \ . 
+\end{align*}
+Pour calculer cette dernière intégrale, posons $u=R_1^2-r^2$.  Donc
+$\dx{u} = -2 r\dx{r}$, $u= R_1^2$ lorsque $r=0$ et $u=R_1^2-R_2^2$ lorsque
+$u=R_2$.  Ainsi,
+\begin{align*}
+M_c &= -\frac{2\pi}{3} \int_{R_1^2}^{R_1^2-R_2^2}
+\left( R_1^2+2 (R_1^2-u) \right) u^{1/2} \dx{u}
+= \frac{2\pi}{3} \int_{R_1^2-R_2^2}^{R_1^2}
+\left( 3 R_1^2 u^{1/2} -2 u^{3/2} \right) \dx{u} \\
+&= \frac{2\pi}{3} \left( 2 R_1^2 u^{3/2} - \frac{4}{5} u^{5/2})
+\right)\bigg|_{R_1^2-R_2^2}^{R_1^2}
+= \frac{4\pi}{5} R_1^5
+- \frac{4\pi}{15}\left( 3 R_1^4 - R_1^2 R_2^2 - 2 R_1^4\right)
+\sqrt{R_1^2-R_2^2} \ .
+\end{align*}
+La masse de notre solide est
+\[
+M_s-M_c = \frac{4\pi}{15}\left( 3 R_1^4 - R_1^2 R_2^2 - 2 R_1^4\right) \ .
+\]
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

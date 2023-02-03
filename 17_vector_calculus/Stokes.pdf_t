@@ -1,0 +1,23 @@
+\begin{picture}(0,0)%
+\includegraphics{17_vector_calculus/Stokes.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(7066,1926)(586,-1630)
+\put(601,-1561){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}param\'etrique $\VEC{x} = \rho(\VEC{u})$}%
+}}}}
+\put(6451,-1486){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\VEC{x} = \sigma(t)$}%
+}}}}
+\put(1959,137){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\displaystyle \VEC{n}(\VEC{u}) = \frac{1}{\left\|\pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u})\right\|} \; \left( \pdydx{\rho}{u_1}(\VEC{u})\times \pdydx{\rho}{u_2}(\VEC{u})\right)$}}}}
+\put(601,-1336){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$S$ poss\`ede la repr\'esentation}}}}
+\put(601,-661){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\displaystyle \oint_{\partial S} F \cdot \dx{\VEC{s}} = \iint_S \curl F \cdot \dx{\VEC{S}}$}}}}
+\put(6451,-1261){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}param\'etrique}}}}
+\put(6451,-811){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}$\partial S$ poss\`ede la}}}}
+\put(6451,-1036){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}repr\'esentation}}}}
+\end{picture}%

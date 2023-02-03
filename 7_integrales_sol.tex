@@ -1,0 +1,2425 @@
+\section{Intégrale}
+
+\subsection{Intégrales indéfinies}
+
+\compileSOL{\SOLUb}{\ref{7Q1}}{
+\subQ{a} Puisque
+$\displaystyle \int x^\alpha \dx{x} = \frac{x^{\alpha+1}}{\alpha+1} + C$
+pour $\alpha \neq -1$, nous avons
+$\displaystyle \int -x^{-2} \dx{x} = x^{-1} + C$ pour $\alpha = -2$.
+
+\subQ{b} Puisque
+$\displaystyle \int x^\alpha \dx{x} = \frac{x^{\alpha+1}}{\alpha+1} + C$
+pour $\alpha \neq -1$, nous avons  
+\[
+10 \int x^{-9} \dx{x} = 10 \left( \frac{1}{-8} x^{-8} \right) + C
+= -\frac{5}{4x^8} + C
+\]
+pour $\alpha = -9$.
+
+\subQ{c} Puisque
+$\displaystyle \int x^\alpha \dx{x} = \frac{x^{\alpha+1}}{\alpha+1} + C$
+pour $\alpha \neq -1$, nous avons  
+\begin{align*}
+\int \left(5z^{-1.2} -1.2\right) \dx{z} &=
+5 \int z^{-1.2} \dx{z} - 1.2 \int 1 \dx{z} =
+5 \left( \frac{z^{-0.2}}{-0.2} \right) - 1.2 z + C \\
+&= -25 z^{-0.2} - 1.2 z + C                                          
+\end{align*}
+pour $\alpha = -0.2$ et $\alpha = 0$ respectivement.
+
+\subQ{d} Puisque
+$\displaystyle \int x^\alpha \dx{x} = \frac{x^{\alpha+1}}{\alpha+1} + C$
+pour $\alpha \neq -1$, nous avons  
+\[
+\int \left( \frac{1}{\sqrt[5]{t}} + 3t \right) \dx{t}
+= \int \left( t^{-1/5} + 3t \right) \dx{t}
+= \int t^{-1/5} \dx{t} + \int 3t \dx{t}
+= \frac{5}{4}\, t^{4/5} + \frac{3}{2} t^2 + C
+\]
+pour $\alpha = -1/5$ et $\alpha =1$ respectivement.
+
+\subQ{e}
+Puisque $\displaystyle \dfdx{\left(2^x\right)}{x} = 2^x \ln(2)$,
+nous avons
+\[
+\int 2^x \dx{x} = \frac{2^x}{\ln(2)} + C \ .
+\]
+
+\noindent Note: Nous pourrions aussi évaluer cette intégrale sans avoir
+recours à la règle pour dériver les expressions de la forme $a^x$ où
+$a>0$.  Notons que
+\[
+\int 2^x \dx{x} = \int e^{x\ln(2)} \dx{x} \ .
+\]
+Si $y=x\ln(2)$, alors $\dx{y} = \ln(2) \dx{x}$.  Ainsi,
+\begin{align*}
+\int 2^x \dx{x} = \int e^{x\ln(2)} \dx{x} 
+&= \frac{1}{\ln(2)} \int e^{x\ln(2)} \ln(2) \dx{x}
+= \frac{1}{\ln(2)} \int e^{y} \dx{y} \\
+&= \frac{1}{\ln(2)} \left( e^{y} + C \right)
+= \frac{1}{\ln(2)} e^{x\ln(2)} + D
+= \frac{2^x}{\ln(2)} + D \ ,
+\end{align*}
+où $D = C/\ln(2)$.
+
+\subQ{f}
+\[
+\int \left( e^x + \frac{1}{x}\right) \dx{x}
+= \int e^x \dx{x} + \int \frac{1}{x} \dx{x} = e^x + \ln|x| + C \ .
+\]
+
+\subQ{g}
+\[
+\int \frac{(3t+2)^2}{4t^2}\dx{t} = \int \frac{9t^2+12t+4}{4t^2}\dx{t} =
+\int \left( \frac{9}{4} + 3 t^{-1} + t^{-2} \right) \dx{t} =
+\frac{9t}{4} + 3\,\ln|t| - t^{-1} + C \ .
+\]
+
+\subQ{h}
+\begin{align*}
+\int \frac{(x^{1/3} + 1)^2}{x^{2/3}} \dx{x}
+&= \int \frac{x^{2/3} + 2 x^{1/3} + 1}{x^{2/3}} \dx{x}
+= \int \left( 1 + 2 x^{-1/3} + x^{-2/3}\right) \dx{x} \\
+&= x + 3 x^{2/3} + 3 x^{1/3} + C \ .
+\end{align*}
+
+\noindent Note: nous pourrions aussi utiliser la substitution $u = x^{1/3} + 1$
+pour résoudre cette intégrale.  Nous obtenons
+$\dx{u} = (1/3) x^{-2/3} \dx{x}$.  Ainsi,
+\[
+\int \frac{(x^{1/3} + 1)^2}{x^{2/3}} \dx{x}
+= 3 \int u^2 \dx{u}
+= u^3 + C
+= \left(x^{1/3} + 1\right)^3 + C \ .
+\]
+Vérifiez que cette réponse est équivalent à la réponse précédente.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q2}}{
+\subQ{a}
+Si $y=1+4t$, alors $\dx{y} = 4 \dx{t}$ et
+\[
+\int \frac{1}{1+4t} \dx{t} = \frac{1}{4} \int \frac{1}{1+4t}\,4 \dx{t}
+= \frac{1}{4} \int \frac{1}{y}\dx{y} = \frac{1}{4} \ln|y| + C
+= \frac{1}{4} \ln|1+4t| + C \ .
+\]
+
+\subQ{b}
+Si $y=5-3x$, alors $\dx{y} = -3 \dx{x}$ et
+\[
+\int \frac{1}{5-3x} \dx{x} = -\frac{1}{3} \int \frac{1}{5-3x} (-3) \dx{x} = 
+-\frac{1}{3} \int \frac{1}{y} \dx{y} = -\frac{1}{3} \ln|y| + C
+= -\frac{1}{3} \ln|5-3x| +C \ .
+\]
+
+\subQ{c}
+Si $y = 3x/7$, alors
+$\displaystyle \dx{y} = \frac{3}{7} \dx{x}$ et
+\[
+\int 3 e^{3x/7}\dx{x} =
+7\int e^{3x/7} \left( \frac{3}{7} \right) \dx{x}
+= 7 \int e^y\dx{y}\bigg|_{y=3x/7}
+= 7 e^y \bigg|_{y=3x/7} +C = 7 e^{3x/7} +C \ .
+\]
+
+\subQ{d}
+Si $\displaystyle y = 1+\frac{t}{3}$, alors
+$\displaystyle \dx{y} = \frac{1}{3} \dx{t}$ et
+\begin{align*}
+\int \left( 1 + \frac{t}{3}\right)^7 \dx{t} &=
+3 \int \left( 1 + \frac{t}{3}\right)^7 \frac{1}{3} \dx{t}
+= 3 \int y^7 \dx{y} \bigg|_{y=1+t/3} \\
+&= \frac{3}{8} y^8\bigg|_{y=1+ t/3} + C
+= \frac{3}{8} \left(1+\frac{t}{3}\right)^8 + C \ .
+\end{align*}
+
+\subQ{e}
+Si $\displaystyle y = 1+ e^z$, alors
+$\displaystyle \dx{y} = e^z \dx{z}$ et
+\[
+\int \frac{e^z}{1+ e^z} \dx{z} = \int \frac{1}{y} \dx{y}\bigg|_{y = 1+ e^z}
+= \ln|y|\; \bigg|_{y = 1+ e^z} + C = \ln|1+ e^z| + C \ .
+\] 
+
+\subQ{f}
+Si $\displaystyle u = 1+y^2$, alors
+$\displaystyle \dx{u} = 2y \dx{y}$ et
+\begin{align*}
+\int 3y \sqrt{1+y^2} \dx{y} &= \frac{3}{2} \int \sqrt{1+y^2}
+\left( 2y\right) \dx{y}
+= \frac{3}{2} \int \sqrt{u} \dx{u}\bigg|_{u = 1+y^2} \\
+&= u^{3/2} \bigg|_{u = 1+y^2} + C = (1+y^2)^{3/2} + C \ .
+\end{align*}
+
+\subQ{g}
+Si $\displaystyle u = \ln(x)$, alors
+$\displaystyle \dx{u} = \frac{1}{x} \dx{y}$ et
+\[
+\int \frac{1}{x\ln(x)} \dx{x} = \int \frac{1}{\ln(x)}
+\left( \frac{1}{x}\right) \dx{x}
+= \int \frac{1}{u} \dx{u} \bigg|_{u = \ln(x)}
+= \ln|u|\bigg|_{u = \ln(x)} + C = \ln|\ln(x)| + C \ .
+\]
+
+\subQ{h}
+Si $u=1+x+2x^2$, alors $\dx{u} = (1+4x) \dx{x}$ et
+\[
+\int \frac{1+4x}{\sqrt{1+x+2x^2}} \dx{x} =
+\int \frac{1}{\sqrt{u}} \dx{u} = \int u^{-1/2} \dx{u}
+= 2 u^{1/2} + C = 2 \sqrt{1+x+2x^2} + C \ .
+\]
+
+\subQ{i}
+Si $y=x^3+1$, alors $\dx{y} = 3x^2 \dx{x}$ et
+\[
+\int x^2 \sqrt{x^3+1} \dx{x} = \frac{1}{3} \int \sqrt{x^3+1}\; (3 x^2) \dx{x}
+= \frac{1}{3} \int y^{1/2} \dx{y}
+= \frac{2}{9} y^{3/2} + C = \frac{2}{9} (x^3+1)^{3/2} + C \ .
+\]
+
+\subQ{j}
+Si $u=1+e^t$, alors $\dx{u} = e^t \dx{t}$ et
+\[
+\int e^t\left( 1 + e^t\right)^4 \dx{t} =
+\int \left( 1 + e^t\right)^4 \, e^t \dx{t} = \int u^4 \dx{u}
+= \frac{u^5}{5} + C = \frac{1}{5}(1+e^t)^5 + C \ .
+\]
+
+\subQ{k}
+Si $y=1+x^{1/2}$, alors $\dx{y} = (1/2) x^{-1/2} \dx{x}$ et
+\begin{align*}
+\int \frac{1}{\sqrt{x}(1+\sqrt{x})^{11}} \dx{x}
+&= 2 \int (1+\sqrt{x})^{-11} \left(\frac{1}{2} x^{-1/2}\right) \dx{x}
+= 2 \int y^{-11} \dx{y} \\
+&= -\frac{1}{5} y^{-10} + C = -\frac{1}{5} (1+x^{1/2})^{-10} + C \ .
+\end{align*}
+
+\subQ{l}
+Si $u=1/t$, alors $\dx{u} = -(1/t^2) \dx{t}$ et
+\[
+\int \frac{e^{1/t}}{t^2} \dx{t} =
+- \int e^{1/t} \left(-\frac{1}{t^2}\right) \dx{t}
+= -\int e^u \dx{u} = -e^u + C = -e^{1/t} + C \ .
+\]
+
+\subQ{m}
+Si $u=\ln(x)$, alors $\dx{u} = (1/x) \dx{x}$ et
+\[
+\int \frac{\ln(x)}{x} \dx{x} = \int u \dx{u}
+= \frac{u^2}{2} + C = \frac{1}{2} (\ln(x))^2 + C \ .
+\]
+
+\noindent Note: Nous pourrions aussi utiliser la méthode d'intégration
+par parties.  Nous avons $\displaystyle \frac{\ln(x)}{x} = f(x)g'(x)$ où
+$f(x)= \ln(x)$ et $g'(x)=x^{-1}$.  Ainsi $f'(x) = x^{-1}$, $g(x) = \ln(x)$
+et
+\[
+\int \frac{\ln(x)}{x} \dx{x} = \int f(x) g'(x) \dx{x}
+= f(x) g(x) - \int f'(x) g(x) \dx{x}
+= (\ln(x))^2 - \int \frac{\ln(x)}{x} \dx{x}
+\]
+Après avoir isolé l'intégrale du côté gauche, nous obtenons la
+primitive
+\[
+\int \frac{\ln(x)}{x} \dx{x} = \frac{1}{2} (\ln(x))^2 \ .
+\]
+Comme nous pouvons constater, cette approche est beaucoup plus longue.
+
+\subQ{n}
+Puisque $x^2-9 = (x-3)(x+3)$, nous obtenons
+\[
+\int \frac{x+3}{x^2-9} \dx{x} = \int \frac{x+3}{(x-3)(x+3)} \dx{x}
+= \int \frac{1}{x-3} \dx{x} = \ln|x-3| + C \ ,
+\]
+où la dernière intégrale est calculée à l'aide de la substitution
+$u=x-3$.
+
+\subQ{o}
+Puisque
+\[
+\int e^{t}\left( 2 + e^{2t}\right) \dx{t}
+= \int \left( 2e^{t} + e^{3t}\right) \dx{t}
+= 2 \int e^{t} \dx{t} + \int e^{3t} \dx{t}
+= 2 e^t + \int e^{3t} \dx{t} \ ,
+\]
+il n'y a qu'une simple intégrale à calculer.  Si $y=3t$,
+alors $\dx{y} = 3\dx{t}$ et
+\[
+\int e^{3t} \dx{t} = \frac{1}{3} \int e^{3t} \left( 3 \right)\dx{t}
+= \frac{1}{3} \int e^y \dx{y} = \frac{1}{3} e^y + C
+= \frac{1}{3} e^{3t} + C \ .
+\]
+Donc
+\[
+\int e^{t}\left( 2 + e^{2t}\right) \dx{t} =
+2 e^t + \frac{1}{3} e^{3t} + C \ .
+\]
+
+\subQ{p}
+Si $\displaystyle t = u^5$, alors $\dx{t} = 5u^4 \dx{u}$ et 
+\[
+\int \frac{t^{3/5}}{1+t^{2/5}} \dx{t} 
+= \int \frac{u^3}{1+u^2} \left( 5 u^4\right) \dx{u}
+= \int \frac{5u^7}{1+u^2} \dx{u} \ .
+\]
+Si nous divisons $5u^7$ par $1+u^2$, nous obtenons
+\[
+\frac{5u^7}{1+u^2} = 5u^5 - 5u^3 + 5u - \frac{5u}{1+u^2} \ .
+\]
+Donc
+\begin{align*}
+\int \frac{t^{3/5}}{1+t^{2/5}} \dx{t} &= \int \frac{5u^7}{1+u^2} \dx{u}
+= \int \left( 5u^5 - 5u^3 + 5u - \frac{5u}{1+u^2} \right) \dx{u} \\
+&=  5 \int u^5 \dx{u} - 5 \int u^3 \dx{u} + 5 \int u \dx{u}
+- 5 \int \frac{u}{1+u^2} \dx{u} \\
+&= \frac{5u^6}{6} - \frac{5u^4}{4} + \frac{5u^2}{2} -
+5 \int \frac{u}{1+u^2} \dx{u} \ .
+\end{align*}
+Pour évaluer $\displaystyle \int \frac{u}{1+u^2} \dx{u}$, nous posons
+$v= 1+u^2$.  Ainsi,
+\[
+\dydx{v}{u} = 2 u \Rightarrow \frac{1}{2} \dx{v} = u \dx{u}
+\]
+et
+\[
+\int \frac{u}{1+u^2} \dx{u} = \frac{1}{2} \int \frac{1}{v} \dx{v}
+= \frac{1}{2} \ln|v| + C = \frac{1}{2} \ln|1+u^2| + C \ .
+\]
+Finalement,
+\begin{align*}
+\int \frac{t^{3/5}}{1+t^{2/5}} \dx{t} &=
+\frac{5u^6}{6} - \frac{5u^4}{4} + \frac{5u^2}{2} -
+5 \int \frac{u}{1+u^2} \dx{u} \\
+&= \frac{5u^6}{6} - \frac{5u^4}{4} + \frac{5u^2}{2} - \frac{5}{2} \ln|1+u^2|
+- 5C \\
+&= \frac{5t^{6/5}}{6} - \frac{5t^{4/5}}{4} + \frac{5t^{2/5}}{2} -
+\frac{5}{2} \ln|1+t^{2/5}| + D
+\end{align*}
+où $D = -5C$.  Ne pas oublier que $u = t^{1/5}$.
+
+\subQ{q} Si $u=x^2+1$, alors $\dx{u} = 2 x \dx{u}$ et
+\[
+\int \frac{x}{(1+x^2)^9}\dx{x} =
+\int \frac{1}{2(1+x^2)^9}\ 2x\dx{x} =
+\int \frac{1}{2u^9} \dx{u} = -\frac{1}{16 u^8} + C
+= - \frac{1}{16 (x^2+1)^8} + C \ .
+\]
+
+\subQ{r} Si $u=x^2+1$, alors $\dx{u} = 2 x \dx{u}$,
+$x^2 = u -1$ et
+\begin{align*}
+\int \frac{x^3}{(1+x^2)^9}\dx{x} &=
+\int \frac{x^2}{(1+x^2)^9}\ x\dx{x} =
+\frac{1}{2} \int \frac{u-1}{u^9}\dx{u} =
+\int \left( \frac{1}{2u^8} - \frac{1}{2u^9} \right)\dx{u} \\
+&= - \frac{1}{14 u^7} + \frac{1}{16 u^8} + C
+= - \frac{1}{14 (x^2+1)^7} + \frac{1}{16 (x^2+1)^8} + C \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q3}}{
+\subQ{a}
+Si $y=2\pi(x-2)$, alors $\dx{y} = 2\pi \dx{x}$ et
+\begin{align*}
+\int \cos(2\pi(x-2)) \, \dx{t} &=
+\frac{1}{2\pi} \int \cos(2\pi(x-2)) \, 2\pi \dx{t}
+= \frac{1}{2\pi} \int \cos(y) \dx{y} \\
+&= \frac{1}{2\pi} \sin(y) + C
+= \frac{1}{2\pi} \sin(2\pi(x-2)) + C \ .
+\end{align*}
+
+\subQ{b} Puisque $1-\cos^2(\theta) = \sin^2(\theta)$, nous obtenons
+\[
+\int \frac{\cos(\theta)}{1-\cos^2(\theta)} \dx{\theta}
+= \int \frac{\cos(\theta)}{\sin^2(\theta)} \dx{\theta}
+= \int \cot(\theta) \csc(\theta) \dx{\theta}
+= - csc(\theta) + C \ .
+\]
+
+Pour ceux qui auraient oublié que la dérivée de $\csc(\theta)$ est
+$-\cot(\theta)\csc(\theta)$, il est toujours possible d'utiliser la
+règle de substitution.
+\[
+\int \frac{\cos(\theta)}{1-\cos^2(\theta)} \dx{\theta}
+= \int \frac{\cos(\theta)}{\sin^2(\theta)} \dx{\theta} \ .
+\]
+Si $u=\sin(\theta)$, alors
+$\dx{u} = \cos(\theta) \dx{\theta}$ et
+\[
+\int \frac{\cos(\theta)}{\sin^2(\theta)} \dx{\theta} =
+\int \frac{1}{u^2} \dx{u} = \int u^{-2} \dx{u} = - u^{-1} + C
+= - \frac{1}{\sin(\theta)} + C = -\csc(\theta) + C \ .
+\]
+
+\subQ{c}
+Puisque $1-\sin^2(\theta) = \cos^2(\theta)$, nous obtenons
+\[
+\int \frac{\sin(\theta)}{1-\sin^2(\theta)} \dx{\theta}
+= \int \frac{\sin(\theta)}{\cos^2(\theta)} \dx{\theta}
+= \int \tan(\theta)\sec(\theta) \dx{\theta}
+= \sec(\theta) + C \ .
+\]
+
+Pour ceux qui auraient oublié que la dérivée de $\sec(\theta)$ est
+$\tan(\theta)\sec(\theta)$, il est toujours possible d'utiliser la
+règle de substitution.  
+\[
+\int \frac{\sin(\theta)}{1-\sin^2(\theta)} \dx{\theta}
+= \int \frac{\sin(\theta)}{\cos^2(\theta)} \dx{\theta} \ .
+\]
+Si $u=\cos(\theta)$, alors $\dx{u} = -\sin(\theta) \dx{\theta}$
+et
+\[
+\int \frac{\sin(\theta)}{\cos^2(\theta)} \dx{\theta} =
+- \int \frac{1}{u^2} \dx{u} = -\int u^{-2} \dx{u} = u^{-1} + C
+= \frac{1}{\cos(\theta)} + C = \sec(\theta) + C \ .
+\]
+
+\subQ{d}
+Si $y=x^{3/2}+1$, alors $\dx{y} = (3/2) x^{1/2} \dx{x}$ et
+\begin{align*}
+\int \sqrt{x}\, \sin(x^{3/2}+1) \dx{x} &=
+\frac{2}{3} \int \sin(x^{3/2}+1)\; \left(\frac{3}{2} x^{1/2} \right)\dx{x} =
+\frac{2}{3} \int \sin(y) \dx{y} \\
+&= - \frac{2}{3} \cos(y) + C = -\frac{2}{3} \cos\left(x^{3/2}+1\right) + C \ .
+\end{align*}
+
+\subQ{e}
+Si $u= 1/t$, alors $\dx{u} = -(1/t^2) \dx{t}$ et
+\begin{align*}
+\int \frac{\cos(1/t)}{t^2} \dx{t} &=
+-\int \cos\left(\frac{1}{t}\right)\left( \frac{-1}{t^2}\right) \dx{t} =
+-\int \cos(u) \dx{u} \\
+&= -\sin(u) + C = -\sin\left(\frac{1}{t}\right) + C \ .
+\end{align*}
+
+\subQ{f}
+Puisque
+\[
+\int \frac{1}{x^2+9} \dx{x} = \frac{1}{9} \int \frac{1}{(x/3)^2+1} \dx{x} \ ,
+\]
+nous posons $u=x/3$.  Ainsi, $\dx{u} = (1/3) \dx{x}$ et
+\begin{align*}
+\frac{1}{9} \int \frac{1}{(x/3)^2+1} \dx{x}
+&= \frac{1}{3} \int \frac{1}{(x/3)^2+1} \left(\frac{1}{3}\right) \dx{x}
+= \frac{1}{3} \int \frac{1}{u^2+1} \dx{u} \\
+&= \frac{1}{3} \left( \arctan(u) + C \right)
+= \frac{1}{3} \arctan(x/3) + D \ ,
+\end{align*}
+où $D=C/3$.
+
+\subQ{g}
+Puisque le degré du numérateur est plus grand ou égale au degré du
+dénominateur, il faut diviser $x^3+1$ par $x^2+3$.
+\[
+\frac{x^3+1}{x^2+3} = x + \frac{-3x+1}{x^2+3}
+= x + \frac{-3x}{x^2+3} + \frac{1}{x^2+3} \ .
+\]
+Ainsi,
+\[
+I = \int x \dx{x} - \int \frac{3x}{x^2+3} \dx{x} + \int
+\frac{1}{x^2+3}\dx{x}
+= \frac{x^2}{2} - \int \frac{3x}{x^2+3} \dx{x} +
+\int \frac{1}{x^2+3}\dx{x} \ .
+\]
+Pour calculer
+\[
+\int \frac{3x}{x^2+3} \dx{x} \ ,
+\]
+nous utilisons la substitution $u=x^2+3$.  Donc $\dx{u} = 2x \dx{x}$ et
+\[
+\int \frac{3x}{x^2+3} \dx{x}
+= \frac{3}{2} \int \frac{1}{x^2+3}\left( 2x\right) \dx{x}
+= \frac{3}{2} \int \frac{1}{u} \dx{u}
+= \frac{3}{2} \ln|u| + C_1 = \frac{3}{2}\ln(x^2+3) + C_1 \ .
+\]
+Pour calculer
+\[
+\int \frac{1}{x^2+3}\dx{x} =
+\frac{1}{3} \int \frac{1}{\left(x/\sqrt{3}\right)^2+1}\dx{x} \ ,
+\]
+nous utilisons la substitution $u=x/\sqrt{3}$.  Donc
+$\dx{u} = 1/\sqrt{3} \; \dx{x}$ et
+\begin{align*}
+\int \frac{1}{x^2+3}\dx{x} &=
+\frac{1}{3} \int \frac{1}{\left(x/\sqrt{3}\right)^2+1}\dx{x}
+= \frac{\sqrt{3}}{3}
+\int \frac{1}{\left(x/\sqrt{3}\right)^2+1}
+\left(\frac{1}{\sqrt{3}}\right) \dx{x} \\
+&= \frac{\sqrt{3}}{3} \int \frac{1}{u^2+1} \dx{u}
+= \frac{\sqrt{3}}{3} \arctan(u) + C_2
+= \frac{\sqrt{3}}{3} \arctan\left(\frac{x}{\sqrt{3}}\right) + C_2 \ .
+\end{align*}
+Ainsi,
+\[
+I = \frac{x^2}{2} - \frac{3}{2}\ln(x^2+3)
++ \frac{\sqrt{3}}{3} \arctan\left(\frac{x}{\sqrt{3}}\right) + C
+\]
+où $C = -C_1 + C_2$.
+
+\subQ{k} Si $u=x^3+1$, alors $\dx{u} = 3 x^2 \dx{x}$ et
+\[
+\int x^2\sin(x^3+1) \dx{x}
+= \frac{1}{3} \int \sin(u) \dx{u}
+= -\frac{1}{3} \cos(u) + C = -\frac{1}{3} \cos(x^3+1) + C \ .
+\]
+
+\subQ{l} Il faut en premier diviser car le degré du numérateur
+est égal au degré du dénominateur.
+\[
+\frac{(2t+1)^2}{1+t^2}
+= \frac{4t^2+4t+1}{1+t^2}
+= 4 + \frac{4t-3}{t^2+1}
+= 4 + 2 \left(\frac{2t}{t^2+1}\right) -3 \left(\frac{1}{t^2+1}\right) \ .
+\]
+Ainsi,
+\[
+\int \frac{(2t+1)^2}{1+t^2}\dx{t}
+= \int 4 \dx{t} + 2 \int \frac{2t}{t^2+1} \dx{t}
+-3 \int \frac{1}{t^2+1} \dx{t}
+= 4 t +2 \ln(t^2+1) -3 \arctan(t) + C \; .
+\]
+La première intégrale ainsi que la troisième intégrale se calcul
+directement à partir des formules de base.  Pour la deuxième
+intégrale, nous posons $u=t^2+1$.  Donc $\dx{u} = 2t \dx{t}$ et
+\[
+\int \frac{2t}{1+t^2}\dx{t} = \int \frac{1}{u}\dx{u}
+= \ln|u| + C = \ln(1+t^2) + C \ .
+\]
+
+\subQ{m} Il découle de l'identité trigonométrique $\cos^2(x) + \sin^2(x) = 1$
+que
+\[
+\int \sin^5(x) \cos^4(x) \dx{x} = \int \sin^4(x) \cos^4(x) \sin(x) \dx{x} 
+= \int \left(1- \cos^2(x)\right)^2 \cos^4(x) \sin(x) \dx{x} \ .
+\]
+Si $u = \cos(x)$, alors $\dx{u} = -\sin(x) \dx{x}$ et
+\begin{align*}
+\int \sin^5(x) \cos^4(x) \dx{x} &= - \int \left(1- u^2\right)^2 u^4 \dx{u}
+= -\int \left( u^4 - 2 u^6 + u^8\right) \dx{u} \\
+&= -\left( \frac{u^5}{5} - \frac{2 u^7}{7} + \frac{u^9}{9}\right) + C \\
+&= -\left( \frac{\cos^5(x)}{5} - \frac{2 \cos^7(x)}{7}
++ \frac{\cos^9(x)}{9}\right) + C \ .
+\end{align*}
+
+\subQ{n} Il découle de  l'identité trigonométrique $\cos^2(x) + \sin^2(x) = 1$,
+que
+\[
+\int \frac{\sin^5(x)}{\cos^4(x)} \dx{x}
+= \int \frac{\sin^4(x)}{\cos^4(x)} \sin(x) \dx{x}
+= \int \frac{\left(1-\cos^2(x)\right)^2}{\cos^4(x)} \sin(x) \dx{x} \ .
+\]
+Si $u = \cos(x)$, alors $\dx{u} = -\sin(x) \dx{x}$ et
+\begin{align*}
+\int \frac{\sin^5(x)}{\cos^4(x)} \dx{x} &
+= - \int \frac{\left(1-u^2\right)^2}{u^4} \dx{u}
+= - \int \left( u^{-4} - 2 u^{-2} + 1 \right) \dx{u} \\
+&= - \int  u^{-4}\dx{u} +2 \int u^{-2}\dx{u} - \int \dx{u}
+= \frac{1}{3 u^3} - \frac{2}{u} - u  + C \\
+&=  \frac{1}{3 cos^3(x)} - \frac{2}{\cos(x)} - \cos(x) + C \ .
+\end{align*}
+
+\subQ{o} Il découle de l'identité trigonométrique $\cos^2(x) + \sin^2(x) = 1$
+que
+\[
+  \int \cos^3(x) \sin^2(x) \dx{x}=
+  \int (1 - \sin^2(x)) \sin^2(x) \cos(x) \dx{x} \ .
+\]
+Si $u = \sin(x)$, alors $\dx{u} = \cos(x) \dx{x}$ et
+\begin{align*}
+  \int \cos^3(x) \sin^2(x) \dx{x} &=
+ \int ( 1- u^2) u^2 \dx{u} = \int ( u^2 - u^4) \dx{u} \\
+ &= \frac{1}{3} u^3 - \frac{1}{5} u^5 + C 
+   = \frac{1}{3} \sin^3(x) - \frac{1}{5} \sin^5(x) + C \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q4}}{
+\subQ{a}
+Grâce aux propriétés du logarithme, nous avons
+\[
+\int \ln\left(\sqrt{x}\right) \dx{x}
+= \int \ln\left(x^{1/2}\right) \dx{x}
+= \frac{1}{2} \int \ln(x) \dx{x} \ .
+\]
+Pour calculer cette dernière intégrale, nous utilisons la méthode
+d'intégration par parties.  Nous avons
+$\displaystyle \ln(x) = f(x)g'(x)$ où $f(x) = \ln(x)$ et
+$g'(x) = 1$.  Ainsi, $f'(x) = 1/x$, $g(x) = x$ et
+\begin{align*}
+\frac{1}{2} \int \ln(x) \dx{x}
+&= \frac{1}{2} \left( \int f(x)\,g'(x)\,\dx{x} \right)
+= \frac{1}{2} \left( f(x)g(x) - \int g(x)\,f'(x) \dx{x} \right) \\
+&= \frac{1}{2} \left( x\ln(x) - \int \dx{x} \right)
+= \frac{x\ln(x)}{2} - \frac{x}{2} + \frac{C}{2}
+=  \frac{x\ln(x)}{2} - \frac{x}{2} + D
+\end{align*}
+où $D=C/2$.
+
+\subQ{b}
+Nous avons $x^2 e^x = f(x) g'(x)$ pour $f(x)=x^2$ et $g'(x) = e^x$.  Donc
+$g(x) = e^x$, $f'(x) = 2x$ et
+\[
+\int x^2 e^x\dx{x} = \int f(x)\,g'(x)\,\dx{x}
+= f(x)g(x) - \int g(x)\,f'(x) \dx{x} 
+= x^2 e^x - 2\int x e^x\dx{x} \ .
+\]
+Nous devons encore utiliser la méthode d'intégration par parties pour évaluer
+$\displaystyle \int x e^x\dx{x}$.  Nous avons $x e^x = f(x) g'(x)$ pour
+$f(x)=x$ et $g'(x) = e^x$.  Donc $g(x) = e^x$, $f'(x) = 1$ et
+\[
+\int x e^x\dx{x} = \int f(x)\,g'(x)\,\dx{x}
+= f(x)g(x) - \int g(x)\,f'(x) \dx{x} 
+= x e^x - \int e^x\dx{x} = x e^x - e^x + C \ .
+\]
+Nous obtenons donc
+\[
+\int x^2 e^x\dx{x} = x^2 e^x - 2\int x e^x\dx{x} 
+= x^2 e^x - 2 \left( x e^x - e^x + C \right)
+= x^2 e^x - 2 x e^x + 2 e^x + D
+\]
+où $D=-2C$.
+
+\subQ{c}
+Puisque
+\[
+\int \frac{x}{e^{3x}} \dx{x} = \int x e^{-3x} \dx{x} \ ,
+\]
+nous avons $f(x) g'(x) = x e^{-3x}$ pour $f(x) = x$ et $g'(x) = e^{-3x}$.  Donc
+$f'(x) = 1$, $g(x) = -e^{-3x}/3$ et
+\begin{align*}
+\int x e^{-3x} \dx{x} &= \int f(x) g'(x) \dx{x}
+= f(x) g(x) - \int f'(x) g(x) \dx{x} \\ 
+&= -\frac{xe^{-3x}}{3} + \int \frac{e^{-3x}}{3} \dx{x}
+= -\frac{xe^{-3x}}{3} - \frac{e^{-3x}}{9} + C \ .
+\end{align*}
+
+\subQ{d}
+Nous utilisons la méthode d'intégration par parties.  Nous avons
+$f(x) g'(x) = x^2 e^{-x}$ pour $f(x) = x^2$ et $g'(x) = e^{-x}$.  Donc
+$f'(x) = 2 x$, $g(x) = -e^{-x}$ et
+\[
+\int x^2 e^{-x} \dx{t} = \int f(x) g'(x) \dx{x}
+= f(x) g(x) - \int f'(x) g(x) \dx{x}
+= -x^2 e^{-x} + \int 2xe^{-x} \dx{x} \ .
+\]
+Nous utilisons la méthode d'intégration par parties une deuxième fois.
+Nous avons $f(x) g'(x) = 2x e^{-x}$ pour $f(x) = 2x$ et $g'(x) = e^{-x}$.  Donc
+$f'(x) = 2$, $g(x) = -e^{-x}$ et
+\begin{align*}
+\int 2x e^{-x} \dx{t} = \int f(x) g'(x) \dx{x}
+= f(x) g(x) - \int f'(x) g(x) \dx{x} \\
+= -2x e^{-x} + \int 2 e^{-x} \dx{x}
+= -2x e^{-x} - 2 e^{-x} + C \ .
+\end{align*}
+Finalement,
+\[
+\int x^2 e^{-x} \dx{t}
+= -x^2 e^{-x} -2xe^{-x} - 2e^{-x} +C \ .
+\]
+
+\subQ{e}
+Si $y=x^2$, alors $\dx{y} = 2x \dx{x}$ et
+\[
+\int x^3 \, e^{x^2} \dx{x} = \frac{1}{2} \int x^2 \, e^{x^2} (2x) \dx{x}
+= \frac{1}{2} \int y e^y \dx{y} \ .
+\]
+Il suffit donc de calculer cette dernière intégrale à l'aide de la méthode
+d'intégration par parties.  Nous avons $f(y) g'(y) = y e^y$ avec $f(y) = y$ et
+$g'(y) = e^y$.  Donc $f'(y) = 1$, $g(y) = e^y$ et
+\[
+\int y e^y \dx{y} = \int f(y) g'(y) \dx{y}
+= f(y) g(y) - \int f'(y) g(y) \dx{y}
+= ye^y - \int e^y \dx{y} = y e^y - e^y + C \ .
+\]
+Finalement,
+\[
+\int x^3 \, e^{x^2} \dx{x}
+= \frac{1}{2} \left( x^2 e^{x^2} - e^{x^2} + C \right)
+= \frac{1}{2} x^2 e^{x^2} - \frac{1}{2} e^{x^2} + D \ ,
+\]
+où $D=C/2$.
+
+\subQ{f}
+Nous utilisons la méthode d'intégration par parties pour évaluer cette
+intégrale.\\
+Nous avons $f(x) g'(x) = (x^2+x^6) \ln(x)$ avec $f(x) = \ln(x)$ et
+$g'(x) = (x^2+x^6)$.  Donc $f'(x) = 1/x$, $g(x) = x^3/3 + x^7/7$ et 
+\begin{align*}
+\int (x^2+x^6) \ln(x) \dx{x} &= \int f(x) g'(x) \dx{x}
+= f(x) g(x) - \int f'(x) g(x) \dx{x} \\
+&= \left(\frac{x^3}{3} + \frac{x^7}{7}\right)\ln(x)
+- \int \left(\frac{x^2}{3} + \frac{x^6}{7}\right) \dx{x} \\
+&= \left(\frac{x^3}{3} + \frac{x^7}{7}\right)\ln(x)
+- \left(\frac{x^3}{9} + \frac{x^7}{49}\right) + C \ .
+\end{align*}
+
+\subQ{g} Si $y=x^2+2$, alors $\dx{y} = 2 x \dx{x}$ et
+\[
+\int x^3\ln(x^2+2) \dx{x} = \frac{1}{2}\int x^2 \ln(x^2+2)(2x) \dx{x} =
+\frac{1}{2} \int (y-2) \ln(y) \dx{y} \ .
+\]
+Cette dernière intégrale peut être évalué à l'aide de la méthode
+d'intégration par parties.  L'intégrande est
+$\displaystyle (y-2)\ln(y) = f(y)g'(y)$ où $f(y)=\ln(y)$ et
+$g'(y)=(y-2)$.  Donc $\displaystyle f'(y)= \frac{1}{y}$,
+$\displaystyle g(y) = \frac{(y-2)^2}{2}$ et
+\begin{align*}
+\int (y-2) \ln(y) \dx{y} &= f(y)g(y)- \int g(y)f'(y) \dx{y}
+= \frac{(y-2)^2}{2} \ln(y) - \frac{1}{2} \int \frac{(y-2)^2}{y} \dx{y} \\
+&= \frac{(y-2)^2}{2} \ln(y) - \frac{1}{2}
+\int \left( y - 4 + \frac{4}{y} \right) \dx{y} \\
+&= \frac{(y-2)^2}{2} \ln(y) - \frac{1}{2}
+\left( \frac{y^2}{2} - 4y  + 4\ln(y) \right) + C\\
+&= \frac{(y-2)^2}{2} \ln(y) - \frac{y^2}{4} + 2y  - 2 \ln(y) + C \ .
+\end{align*}
+Puisque $y=x^2+2$, nous obtenons
+\begin{align*}
+\int x^3 \ln(x^2+2) \dx{x} &=
+\frac{1}{2}\left( \frac{x^4}{2} \ln(x^2+2) - \frac{(x^2+2)^2}{4} + 2(x^2+2)
+- 2 \ln(x^2+2) + C \right) \\
+&=\left(\frac{x^4}{4} - 1\right)\ln(x^2+2) - \frac{x^4-4x^2-12}{8} + D
+\end{align*}
+où $D = C/2$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q5}}{
+\subQ{a}
+Si $y=\pi \theta$, alors $\dx{y} = \pi \dx{\theta}$ et
+\[
+\int \theta \cos(\pi\theta) \dx{\theta}
+= \frac{1}{\pi^2} \int (\pi \theta) \cos(\pi\theta)\; \pi \dx{\theta}
+= \frac{1}{\pi^2} \int y \cos(y) \dx{y} \ .
+\]
+Nous utilisons la méthode d'intégration par parties pour évaluer cette dernière
+intégrale.  Nous avons $f(y) g'(y) = y \cos(y)$ avec $f(y) = y$ et 
+$g'(y) = \cos(y)$.  Donc $f'(y) = 1$, $g(y) = \sin(y)$ et
+\begin{align*}
+\int y \cos(y) \dx{y} &= \int f(y) g'(y) \dx{y}
+= f(y) g(y) - \int f'(y) g(y) \dx{y} \\
+&= y\sin(y) - \int \sin(y) \dx{y}
+= y\sin(y) + \cos(y) + C \ .
+\end{align*}
+Finalement,
+\[
+\int \theta \cos(\pi\theta) \dx{\theta}
+= \frac{1}{\pi^2} \left(
+\pi \theta \sin(\pi \theta) + \cos(\pi\theta) + C \right)
+= \frac{1}{\pi} \theta \sin(\pi \theta) + \frac{1}{\pi^2} \cos(\pi\theta)
++ D \ ,
+\]
+où $D = C/\pi^2$.
+
+\subQ{b}
+Posons
+\[
+I = \int e^x\sin(x) \dx{x} \ .
+\]
+Nous avons $e^x\sin(x) = f(x)\,g'(x)$ pour $f(x)=e^x$ et
+$g'(x)=\sin(x)$.  Donc $f'(x) = e^x$, $g(x) = -\cos(x)$ et
+\begin{align}
+I &= \int e^x\sin(x) \dx{x} = \int f(x)\,g'(x)\,\dx{x}
+= f(x)g(x) - \int g(x)\,f'(x) \dx{x} \nonumber \\
+&= -e^x\cos(x) + \int e^x \cos(x)  \dx{x} \; . \label{twoIPs3}
+\end{align}
+Utilisons une seconde fois la méthode d'intégration par parties pour évaluer
+l'intégrale 
+\[
+\int e^x \cos(x) \dx{x} \; .
+\]
+Nous avons $e^x\cos(x) = f(x)\,g'(x)$ pour $f(x)=e^x$ et $g'(x)=\cos(x)$.  Donc
+$f'(x) = e^x$, $g(x) = \sin(x)$ et
+\begin{align*}
+\int e^x \cos(x) \dx{x} & = \int f(x)\,g'(x)\,\dx{x}
+= f(x)g(x) - \int g(x)\,f'(x) \dx{x} \\
+&= e^x \sin(x) - \int e^x \sin(x) \dx{x} = e^x \sin(x) - I \; .
+\end{align*}
+Si nous substituons cette expression dans (\ref{twoIPs3}), nous obtenons
+\[
+I = -e^x\cos(x) + e^x \sin(x) - I
+\]
+et, après avoir isolé $I$, nous trouvons
+\[
+I = \frac{1}{2}\left(e^x\sin(x) - e^x \cos(x)\right) \ ,
+\]
+une primitive de $\displaystyle \int e^x\sin(x) \dx{x}$.  Ainsi,
+\[
+\int e^x\sin(x) \dx{x}
+= \frac{1}{2}\left(e^x\sin(x) - e^x \cos(x)\right) + C \ .
+\]
+
+\subQ{c} Si $u = \theta^2$, alors
+$\dx{u} = 2 \theta \dx{\theta}$ et
+\[
+\int \theta^3 \sin(\theta^2) \dx{\theta} =
+\int \theta^2 \sin(\theta^2) \,\theta \dx{\theta} =
+\frac{1}{2} \int u \sin(u) \dx{u} \ .
+\]
+Cette dernière intégrale est évaluée à l'aide de la méthode
+d'intégration par parties.  L'intégrande est
+$u \sin(u) = f(u)g'(u)$ où $f(u)=u$ et $g'(u) = \sin(u)$.  Donc
+$f'(u)=1$, $g(u) = -\cos(u)$ et
+\begin{align*}
+\int u \sin(u) \dx{u} &= f(u)g(u)-\int g(u)f'(u) \dx{u}
+= -u \cos(u) + \int \cos(u) \dx{u} \\
+&= -u \cos(u) + \sin(u) + C \, .
+\end{align*}
+Ainsi,
+\[
+\int \theta^3 \sin(\theta^2) \dx{\theta} =
+\frac{1}{2} \left( -u \cos(u) + \sin(u) + C \right)
+= -\frac{1}{2} \theta^2 \cos\left(\theta^2\right)
++ \frac{1}{2} \sin\left(\theta^2\right) + D
+\]
+où $D = C/2$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q6}}{
+\subQ{a}
+Puisque le degré du numérateur est plus grand ou égale au degré du
+dénominateur, il faut diviser $x^4+3$ par $x^2-4x+3$.
+\[
+\frac{x^4+3}{x^2-4x+3} = x^2+4x+13 + \frac{40x-36}{x^2-4x+3} \ .
+\]
+Ainsi,
+\begin{align*}
+\int \frac{x^4+3}{x^2-4x+3} \dx{x} &=
+\int ( x^2+4x+13 ) \dx{x} + \int \frac{40x-36}{x^2-4x+3} \dx{x}\\
+&= \frac{x^3}{3} + 2 x^2 +13x + \int \frac{40x-36}{x^2-4x+3} \dx{x}
+\end{align*}
+Pour évaluer la dernière intégrale, nous notons que $x^2-4x+3 = (x-3)(x-1)$.
+Ainsi,
+\[
+\frac{40x-36}{x^2-4x+3} = \frac{A}{x-3} + \frac{B}{x-1} \ .
+\]
+Comme nous avons des racines réelles distinctes, nous pouvons utiliser
+la technique suivante pour déterminer la valeur de $A$ et de $B$.  Si
+nous mettons l'équation précédente sur un même dénominateur commun et
+nous comparons les numérateurs, nous obtenons
+\[
+40x-36 = A(x-1) + B(x-3) \ .
+\]
+Si $x=1$, alors $4 = -2B$ et ainsi $B=-2$.
+Si $x=3$, alors $84 = 2A$ et ainsi $A=42$.
+Donc
+\[
+\frac{40x-36}{x^2-4x+3} = \frac{42}{x-3} + \frac{-2}{x-1}
+\]
+et
+\[
+\int \frac{40x-36}{x^2-4x+3} \dx{x}
+= \int \frac{42}{x-3} \dx{x} + \int \frac{-2}{x-1} \dx{x}
+= 42 \ln|x-3| -2 \ln|x-1| +C \ .
+\]
+Nous obtenons finalement,
+\[
+\int \frac{x^4+3}{x^2-4x+3} \dx{x}
+= \frac{x^3}{3} + 2 x^2 +13x + 42 \ln|x-3| -2 \ln|x-1| +C \ .
+\]
+
+\subQ{b}
+Puisque le degré du numérateur, $x-9$, est plus petit que le degré du
+dénominateur, $(x+5)(x-2)$, nous n'avons pas à diviser.  le dénominateur est
+déjà factorisé.  Nous avons
+\[
+\frac{x-9}{(x+5)(x-2)} = \frac{A}{x+5} + \frac{B}{x-2}
+= \frac{A(x-2) + B(x+5)}{(x+5)(x-2)}
+= \frac{(A+B)x + (5B-2A)}{(x+5)(x-2)} \ .
+\]
+De $A+B=1$, nous obtenons $B=1-A$ que nous substituons dans $5B-2A=-9$ pour
+obtenir $5(1-A)-2A=-9$.  Donc $A=2$ et $B=1-A=-1$.  Ainsi,
+\[
+\int \frac{x-9}{(x+5)(x-2)} \dx{x} =
+\int \left(\frac{2}{x+5} + \frac{-1}{x-2}\right) \dx{x}
+= 2 \ln(x+5) - \ln(x-2) + C \ .
+\]
+
+\subQ{c}
+Puisque le degré du numérateur, $1$, est plus petit que le degré du
+dénominateur, $x^2+x+1$, nous n'avons pas a diviser.
+Le polynôme $x^2+x+1$ n'a pas de racines réelles.  Donc nous ne
+pouvons pas utiliser la méthode d'intégration par fractions partielles.
+Nous complétons le carré du polynôme $x^2+x+1$.  Ainsi,
+\[
+\int \frac{1}{x^2+x+1} \dx{x} =
+\int \frac{1}{\left(x + \frac{1}{2}\right)^2 + \frac{3}{4}} \dx{x} 
+= \frac{4}{3} \int \frac{1}
+{\left( \frac{2}{\sqrt{3}}\left(x + \frac{1}{2}\right) \right)^2 + 1} \dx{x} 
+\ .
+\]
+Si nous posons
+$u= \frac{2}{\sqrt{3}}\left(x+\frac{1}{2}\right)$, alors
+$\dx{u} = \frac{2}{\sqrt{3}} \dx{x}$ et
+\begin{align*}
+\int \frac{1}{x^2+x+1} \dx{x} &= \frac{2}{\sqrt{3}}
+\int \frac{1}
+{\left( \frac{2}{\sqrt{3}}\left(x + \frac{1}{2}\right) \right)^2 + 1}
+\left(\frac{2}{\sqrt{3}}\right) \dx{x} 
+= \frac{2}{\sqrt{3}} \int \frac{1}{u^2 + 1} \dx{u} \\
+&= \frac{2}{\sqrt{3}} \arctan(u) + C
+= \frac{2}{\sqrt{3}} \arctan\left(\frac{2}{\sqrt{3}}
+\left(x+\frac{1}{2}\right)\right) + C \ .
+\end{align*}
+
+\subQ{d}
+Puisque le degré du numérateur, $1$, est plus petit que le degré du
+dénominateur, $t^2+6t+8$, nous n'avons pas à diviser.  Le dénominateur peut
+être factorisé.  Nous avons $t^2+6t+8 = (t+2)(t+4)$.  Nous utilisons donc la
+méthode d'intégration par fractions partielles.  Nous avons
+\[
+\frac{1}{(t+2)(t+4)} = \frac{A}{t+2} + \frac{B}{t+4}
+=\frac{A(t+4)+B(t+2)}{(t+2)(t+4)}
+=\frac{(A+B)t + (4A+2B)}{(t+2)(t+4)} \ .
+\]
+Donc $A+B=0$ et $4A+2B=1$.  La solution de ces deux équations est
+$A = -B = 1/2$.  Ainsi,
+\begin{align*}
+\int \frac{1}{t^2+6t+8} \dx{t} &= \int \frac{1}{(t+2)(t+4)} \dx{t}
+= \frac{1}{2} \int \frac{1}{t+2} \dx{t}
+- \frac{1}{2} \int \frac{1}{t+4} \dx{t} \\
+&= \frac{1}{2} \ln|t+2| - \frac{1}{2} \ln|t+4| + C \ .
+\end{align*}
+
+\subQ{e}
+Puisque le degré du numérateur, $1$, est plus petit que le degré du
+dénominateur, $x^2-4x+13$, nous n'avons pas a diviser.  Le polynôme
+$x^2-4x+13$ n'a pas de racines réelles.  Donc nous ne pouvons pas
+utiliser la méthode d'intégration par fractions partielles.  Nous
+complétons le carré du polynôme $x^2-4x+13$.  Ainsi,
+\[
+\int \frac{1}{x^2-4x+13} \dx{x}
+= \int \frac{1}{(x-2)^2 + 9} \dx{x}
+= \frac{1}{9} \int \frac{1}{ \left( \frac{x-2}{3}\right)^2 + 1} \dx{x} \ .
+\]
+Si $\displaystyle u= \frac{x-2}{3}$, alors
+$\dx{u} = \frac{1}{3}\dx{x}$ et
+\begin{align*}
+\int \frac{1}{x^2-4x+13} \dx{x}
+&= \frac{1}{3}
+\int \frac{1}{ \left( \frac{x-2}{3}\right)^2 + 1}
+\left(\frac{1}{3}\right)\dx{x}
+= \frac{1}{3} \int \frac{1}{u^2 + 1} \dx{u} \\
+&= \frac{1}{3} \arctan(u) + C
+= \frac{1}{3} \arctan\left(\frac{x-2}{3}\right) + C \ .
+\end{align*}
+
+\subQ{f}
+Puisque le degré du numérateur, $1$, est plus petit que le degré du
+dénominateur, $x^2-9$, nous n'avons pas a diviser.
+Puisque le dénominateur peut être factorisé, la méthode d'intégration par
+fractions partielles peut être utilisée.  Nous avons
+$x^2-9 = (x-3)(x+3)$ et
+\[
+\frac{1}{(x-3)(x+3)} = \frac{A}{x-3} + \frac{B}{x+3}
+=\frac{A(x+3)+B(x-3)}{(x-3)(x+3)}
+=\frac{(A+B)x + (3A-3B)}{(x-3)(x+3)} \ .
+\]
+Donc $A+B=0$ et $3A-3B=1$.  La solution de ces deux équations est
+$A = -B = 1/6$.  Ainsi,
+\begin{align*}
+\int \frac{1}{x^2-9} \dx{x} &= \int \frac{1}{(x-3)(x+3)} \dx{x}
+= \frac{1}{6} \int \frac{1}{x-3} \dx{t}
+- \frac{1}{6} \int \frac{1}{x+3} \dx{t} \\
+&= \frac{1}{6} \ln|x-3| - \frac{1}{6} \ln|x+3| + C \ .
+\end{align*}
+
+\subQ{g}
+Puisque le degré du numérateur, $1$, est plus petit que le degré du
+dénominateur, $x^2-x -2$, nous n'avons pas à diviser.
+Puisque le dénominateur peut être factorisé, la méthode d'intégration
+par fractions partielles peut être utilisée.  Nous avons
+$x^2 -x -2 = (x-2)(x+1)$ et
+\[
+\frac{1}{(x-2)(x+1)} = \frac{A}{x-2} + \frac{B}{x+1}
+=\frac{A(x+1)+B(x-2)}{(x-2)(x+1)}
+=\frac{(A+B)x + (A-2B)}{(x-2)(x+1)} \ .
+\]
+Donc $A+B=0$ et $A-2B=1$.  La solution de ces deux équations est
+$A = -B = 1/3$.  Ainsi,
+\begin{align*}
+\int \frac{1}{x^2 -x -2} \dx{x} &= \int \frac{1}{(x-2)(x+1)} \dx{x}
+= \frac{1}{3} \int \frac{1}{x-2} \dx{t}
+- \frac{1}{3} \int \frac{1}{x+1} \dx{t} \\
+&= \frac{1}{3} \ln|x-2| - \frac{1}{3} \ln|x+1| + C \ .
+\end{align*}
+
+\subQ{h}
+Puisque le degré du numérateur est plus grand ou égale au degré du
+dénominateur, il faut diviser $t^2+1$ par $t^2+3t+2$. 
+\[
+\frac{t^2+1}{t^2+3t+2} = 1 - \frac{3t+1}{t^2+3t+2} \ .
+\]
+Ainsi,
+\[
+\int \frac{t^2+1}{t^2+3t+2} \dx{t} =
+\int 1 \dx{t} - \int \frac{3t+1}{t^2+3t+2} \dx{t}
+= t - \int \frac{3t+1}{t^2+3t+2} \dx{t} \ .
+\]
+Pour évaluer la dernière intégrale, nous notons que $t^2+3t+2 = (t+2)(t+1)$.
+Ainsi,
+\[
+\frac{3t+1}{t^2+3t+2} = \frac{A}{t+2} + \frac{B}{t+1} \ .
+\]
+Comme nous avons des racines réelles distinctes, nous pouvons utiliser
+la technique suivante pour déterminer la valeur de $A$ et de $B$.  Si
+nous écrivons l'équation précédente sur un même dénominateur commun et
+nous comparons les numérateurs, nous obtenons
+\[
+3t+1 = A(t+1) + B(t+2) \ .
+\]
+Si $t=-1$, alors $-2 = B$ et ainsi $B=-2$.
+Si $t=-2$, alors $-5 = -A$ et ainsi $A=5$.
+Donc
+\[
+\frac{3t+1}{t^2+3t+2} = \frac{5}{t+2} - \frac{2}{t+1}
+\]
+et
+\[
+\int \frac{3t+1}{t^2+3t+2} \dx{t}
+= \int \frac{5}{t+2} \dx{t} - \int \frac{2}{t+1} \dx{t}
+= 5 \ln|t+2| - \ln|t+1| +C \ .
+\]
+Nous obtenons finalement,
+\[
+\int \frac{t^2+1}{t^2+3t+2} \dx{t} = t - 5 \ln|t+2| + \ln|t+1| +C \ .
+\]
+
+\subQ{i} Puisque que le degré du numérateur est plus grand ou égal au
+degré du dénominateur, il faut premièrement diviser.  Nous avons
+$\displaystyle \frac{x^3-x-2}{x^2-4} = x + \frac{3x-2}{x^2-4}$.
+
+Puisque $x^2-4 = (x-2)(x+2)$, nous avons que
+\[
+\frac{3x-2}{x^2-4} = \frac{A}{x-2} + \frac{B}{x+2}
+\]
+pour deux constantes $A$ et $B$.  Si nous mettons sur un même commun
+dénominateur et comparons les numérateurs, nous obtenons
+\[
+3x-2 = A(x+2) + B(x-2) \ .
+\]
+Si $x=2$, alors $4=4A$ et ainsi $A=1$.  Si $x=-2$, alors $-8 = -4B$ et
+ainsi $B=2$.  Donc
+\[
+\frac{3x-2}{x^2-4} = \frac{1}{x-2} + \frac{2}{x+2} \ .
+\]
+Nous avons
+\begin{align*}
+\int \frac{x^3-x-2}{x^2-4} \dx{x}
+&= \int x \dx{x} + \int \frac{3x-2}{x^2-4} \dx{x}
+= \int x \dx{x} + \int \frac{1}{x-2} \dx{x}
++ \int \frac{2}{x+2} \dx{x} \\
+&= \frac{x^2}{2} + \ln|x-2| +2 \ln|x+2| + C \ .
+\end{align*}
+
+\subQ{j}
+Puisque le degré du numérateur est plus petit que le degré du
+dénominateur nous n'avons pas à diviser.
+Puisque le dénominateur peut être factorisé, la méthode d'intégration
+par fractions partielles peut être utilisée.  Nous avons
+$x^2+2x-15 = (x+5)(x-3)$ et
+\[
+\frac{9x+29}{x^2+2x-15} = \frac{A}{x+5} + \frac{B}{x-3}
+= \frac{A(x-3)+B(x+5)}{x^2+3x-15} \ .
+\]
+Donc $9x+29 = A(x-3)+B(x+5)$.  Si $x=3$, alors $56 = 8B$ et ainsi
+$B=7$.  Si $x=-5$, alors $-16 = -8A$ et ainsi $A=2$.  Donc
+\[
+\int \frac{9x+29}{x^2+2x-15}\dx{x} = \int \frac{2}{x+5} \dx{x}
++ \int \frac{7}{x-3} \dx{x} = 2\ln|x+5|+ 7\ln|x-3| + C \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{7Q7}}{
+\subQ{a} Puisque le degré du numérateur est plus petit que le degré du
+dénominateur, nous n'avons pas a diviser.  Pour utiliser la méthode
+d'intégration par fractions partielles, nous remarquons que
+$x^3+3x = x(x^2+3)$ où $x^2+3$ est irréductible.  Nous déduisons de
+\[
+\frac{x^2-x+6}{x^3+3x} = \frac{A}{x} + \frac{Bx+C}{x^2+3}
+= \frac{A(x^2+3)+x(Bx+C)}{x(x^2+3)}
+= \frac{(A+B)x^2+Cx+3A}{x(x^2+3)}
+\]
+que $x^2-x+6 = (A+B)x^2+Cx+3A$,  En comparant les coefficients des puissances
+de $x$, nous obtenons les trois équations: $A+B=1$, $C=-1$ et $3A=6$.
+Donc $A=2$, $B=-1$ et $C=-1$.  Ainsi,
+\begin{equation} \label{fracPDT}
+\int \frac{x^2-x+6}{x^3+3x} \dx{x}
+= \int \left( \frac{2}{x} - \frac{x+1}{x^2+3}\right)\dx{x}
+=  \int \frac{2}{x} \dx{x} - \int \frac{x}{x^2+3} \dx{x}
+- \int \frac{1}{x^2+3} \dx{x} \ .
+\end{equation}
+La première intégrale est simple à évaluer.  Nous avons
+\[
+\int \frac{2}{x} \dx{x} = 2 \ln|x| + C_1 \ .
+\]
+Pour évaluer $\displaystyle \int \frac{x}{x^2+3} \dx{x}$, nous posons
+$u=x^2+3$.   Alors $\dx{u} = 2 x \dx{x}$ et
+\begin{align*}
+\int \frac{x}{x^2+3} \dx{x} &= \frac{1}{2} \int \frac{1}{x^2+3} (2x) \dx{x}
+= \frac{1}{2} \int \frac{1}{u}\dx{u} \bigg|_{u=x^2+3} \\
+&= \frac{1}{2} \ln|u| \bigg|_{u=x^2+3} + C_2
+= \frac{1}{2} \ln|x^2+3| + C_2 \ .
+\end{align*}
+Finalement, pour évaluer
+\[
+\int \frac{1}{x^2+3} \dx{x} = \frac{1}{3}
+\int \frac{1}{ \left(\frac{x}{\sqrt{3}}\right)^2+1} \dx{x} \ , 
+\]
+nous posons $u= x/\sqrt{3}$.  Alors $\dx{u} = (1/\sqrt{3})\dx{x}$ et
+\begin{align*}
+\int \frac{1}{x^2+3} \dx{x} &= 
+\frac{1}{\sqrt{3}}
+\int \frac{1}{ \left(x/\sqrt{3}\right)^2+1}
+\left( \frac{1}{\sqrt{3}} \right) \dx{x}
+= \frac{1}{\sqrt{3}} \int \frac{1}{u^2+1}\dx{u}\bigg|_{u=x/\sqrt{3}} \\
+&= \frac{1}{\sqrt{3}} \arctan(u)\bigg|_{u=x/\sqrt{3}} + C_3
+= \frac{1}{\sqrt{3}} \arctan\left(\frac{x}{\sqrt{3}}\right) + C_3 \ .
+\end{align*}
+Ainsi, (\ref{fracPDT}) donne
+\[
+\int \frac{x^2-x+6}{x^3+3x} \dx{x}
+= 2 \ln|x| - \frac{1}{2} \ln|x^2+3|
+- \frac{1}{\sqrt{3}} \arctan\left(\frac{x}{\sqrt{3}}\right) + C
+\]
+où $C=C_1 - C_2 -C_3$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q8}}{
+Nous avons
+\[
+f'(x) = \int f''(x) \dx{x} = \int \left( 1 + x^{4/5} \right) \dx{x}
+= x + \frac{5 x^{9/5}}{9} + C
+\]
+et
+\[
+f(x) = \int f'(x) \dx{x}
+= \int \left( x + \frac{5 x^{9/5}}{9} + C \right) \dx{x}
+= \frac{1}{2}x^2 + \frac{25}{126} x^{14/5} + C x + D \ ,
+\]
+où $C$ et $D$ sont deux constantes quelconques.
+}
+
+\subsection{Définition de l'intégrale définie}
+
+\compileSOL{\SOLUb}{\ref{7Q9}}{
+Nous avons $\Delta t = 1/5$ et $t_i = 0 + i \Delta t = i/5$ pour $i=0$, $1$,
+$2$, $3$, $4$ et $5$.  Il y a donc cinq intervalles de la forme
+$[t_i, t_{i+1}]$ pour $i=0$, $1$, $2$, $3$ et $4$; c'est-à-dire,
+$[0,1/5]$, $1/5, 2/5]$, ... et $[4/5, 5/5]$.
+
+Posons $f(t) = 1 + t^3$.  La somme de Riemann à gauche est donnée par
+$t_i^\ast = t_i = i/5$ pour $i=0$, $1$, $2$, $3$ et $4$.  Ainsi,
+\begin{align*}
+G_5 &= \sum_{i=0}^4 f(t_i^\ast) \Delta t
+= \sum_{i=0}^4 \left(1 + \left(\frac{i}{5}\right)^3\right)
+\left( \frac{1}{5} \right) \\
+&= \frac{1}{5} (1 + 0^3)
++ \frac{1}{5} \left(1 + \left(\frac{1}{5}\right)^3\right)
++ \frac{1}{5} \left(1 + \left(\frac{2}{5}\right)^3\right) \\
+&\qquad + \frac{1}{5} \left(1 + \left(\frac{3}{5}\right)^3\right)
++ \frac{1}{5} \left(1 + \left(\frac{4}{5}\right)^3\right)
+= \frac{29}{25} \ .
+\end{align*}
+
+La somme de Riemann à droite est donnée par
+$t_i^\ast = t_{i+1} = (i+1)/5$ pour $i=0$, $1$, $2$, $3$ et $4$.  Ainsi,
+\begin{align*}
+D_5 &= \sum_{i=0}^4 f(t_i^\ast) \Delta t
+= \sum_{i=0}^4 \left(1 + \left(\frac{i+1}{5}\right)^3\right)
+\left( \frac{1}{5} \right) \\
+&= \frac{1}{5} \left(1 + \left(\frac{1}{5}\right)^3\right)
++ \frac{1}{5} \left(1 + \left(\frac{2}{5}\right)^3\right)
++ \frac{1}{5} \left(1 + \left(\frac{3}{5}\right)^3\right) \\
+&\qquad + \frac{1}{5} \left(1 + \left(\frac{4}{5}\right)^3\right)
++ \frac{1}{5} \left(1 + \left(\frac{5}{5}\right)^3\right)
+= \frac{34}{25} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUa}{\ref{7Q10}}{
+La distance parcourue est $\displaystyle \int_0^{10} v(t) \dx{t}$.  C'est
+cette intégrale qu'il faut estimer à l'aide des sommes de Riemann.
+
+Nous avons $\Delta t = 5$ et $t_i = 0 + 5i$ pour $i=0$, $1$, $2$, \ldots, $10$.
+La somme de Riemann à droite est
+\begin{align*}
+D_{10} &= \sum_{i=1}^{10} v(t_i) \Delta t
+= \left( 12.2 + 11.8 + 11.5 + 11.3 + 11.2 + 11.2 \right. \\
+&\qquad \left. + 11.3 + 11.6 + 12.0 + 12.5\right) (5) = 583 \ \text{m.}
+\end{align*}
+La somme de Riemann à gauche est
+\begin{align*}
+G_{10} &= \sum_{i=0}^9 v(t_i) \Delta t
+= \left( 12.7 + 12.2 + 11.8 + 11.5 + 11.3 + 11.2 \right. \\
+&\qquad \left. +11.2 + 11.3 + 11.6 + 12.0 \right) (5) = 584 \ \text{m.}
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q11}}{
+Il faut choisir des sous-intervalles de longueur $\Delta t =(2-0)/5$.  Nous
+obtenons une partition de l'intervalle $[0,2]$ en sous-intervalles de
+la forme $[t_i, t_{i+1}]$ où $t_i = 0 + i \, \Delta t = 2i/5$ pour
+$i=0$, $1$, $2$, $3$, $4$ et $5$.
+
+La somme de Riemann à droite est
+\[
+D_5 = \sum_{i=1}^5 f(t_i) \Delta t =
+\left( \left(\frac{2}{5}\right)^2 + \left(\frac{4}{5}\right)^2
++ \left(\frac{6}{5}\right)^2 + \left(\frac{8}{5}\right)^2
++ \left(\frac{10}{5}\right)^2 \right)\left( \frac{2}{5} \right)
+= 3.52 \ .
+\]
+La somme de Riemann à gauche est
+\[
+G_5 = \sum_{i=0}^4 f(t_i) \Delta t =
+\left( \left(\frac{0}{5}\right)^2 +\left(\frac{2}{5}\right)^2
++ \left(\frac{4}{5}\right)^2 + \left(\frac{6}{5}\right)^2
++ \left(\frac{8}{5}\right)^2 \right)\left( \frac{2}{5} \right)
+= 1.92  \ .
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{7Q12}}{
+Il faut choisir $\Delta x = (6-1)/5=1$ et $x_i = 1 + i \Delta x = 1+i$ pour
+$i=0$, $1$, $2$, $3$, $4$ et $5$.  Nous avons les cinq intervalles
+$[1, 2]$, $[2, 3]$, ..., et $[4, 5]$.
+
+La somme de Riemann où les points au choix sont les points milieux des
+intervalles est
+\begin{align*}
+S_5 &= \left( (\sqrt{1.5} -2) + (\sqrt{2.5} -2) +
+(\sqrt{3.5} -2) + (\sqrt{4.5} -2) + (\sqrt{5.5} -2) \right)(1) \\
+& \approx -0.856759 \ .
+\end{align*}
+Donc $\displaystyle \int_1^6 (\sqrt{x}-2) \dx{x} \approx -0.856759$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q13}}{
+Il faut choisir $\Delta x = (10-2.5)/5=1.5$ et
+$x_i = 2.5 + i \Delta x = 2.5+ 1.5 i$
+pour $i=0$, $1$, $2$, $3$, $4$ et $5$.  Nous avons les cinq
+intervalles $[2.5, 4]$, $[4, 5.5]$, $[5.5,7]$, $7,8.5]$ et $[8.5, 10]$
+qui possèdent les points milieux $3.25$, $4.75$, $6.25$, $7.75$ et
+$9.25$ respectivement.  Ainsi,
+\begin{align*}
+\int_{2.5}^{10} \sin(\sqrt{x}) \dx{x} \approx S_5
+&= \big( \sin(\sqrt{3.25}) + \sin(\sqrt{4.75}) + \sin(\sqrt{6.25}) \\
+& \qquad + \sin(\sqrt{7.75}) + \sin(\sqrt{9.25}) \big)(1.5) \approx 
+4.2634178 \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q14}}{
+Il faut choisir $\Delta x = 5$ et $x_i = i \Delta x = 5 i$
+pour $i=0$, $1$, $2$, $3$, $4$ et $5$.  Nous avons les cinq
+intervalles $[0, 5]$, $[5, 10]$, \ldots, et $[20, 25]$.
+
+La somme de Riemann à gauche est
+\[
+G_5 = ( f(0) + f(5) + f(10) + f(15) + f(20) ) (5) =-475 \ .
+\]
+La somme de Riemann à droite est
+\[
+D_5 = ( f(5) + f(10) + f(15) + f(20) + f(25) ) (5) =-85 \ .
+\]
+Puisque $f$ est une fonction croissante,
+$-475 = G_5 \leq \int_0^{25} f(x) \dx{x} \leq D_5 = -85$.
+}
+
+\compileSOL{\SOLUa}{\ref{7Q15}}{
+Il faut choisir $\Delta x = 2$ et $x_i = i \Delta x = 2 i$
+pour $i=0$, $1$, $2$, $3$ et $4$.  Nous avons les quatre intervalles
+$[0, 2]$, $[2, 4]$, $[4,6]$ et $[6, 8]$.
+
+\subQ{a} Puisque $v$ décroît, la somme a droite
+\[
+D_4 = (v(2)+v(4)+v(6)+v(8)) \times 2 = 65
+\] 
+donne une borne inférieure et la somme a gauche
+\[
+G_4 = (v(0)+v(2)+v(4)+v(6)) \times 2 = 73
+\]
+donne une borne supérieure.
+
+\subQ{b} Puisque
+$\displaystyle G_N \geq \int_0^8 v(t) \dx{t} \geq D_N$ pour une
+fonction décroissante $v(t)$. 
+
+Il faut choisir $\Delta t$ tel que
+\[
+  G_N - D_N = ( v(0) - v(8) ) \times \Delta t < 0.1 \ .
+\]
+C'est-à-dire, $\Delta t < 0.1/(10 - 6) = 0.025$.  Il faut donc
+avoir
+\[
+  \Delta t = \frac{8}{N} < 0.025 \Rightarrow 
+  N > \frac{8}{0.025} = 320 \quad \text{sous-intervalles.}
+\]
+}
+
+\compileSOL{\SOLUa}{\ref{7Q16}}{
+C'est une somme de la forme
+$\displaystyle \sum_{j=1}^n f(x_j) \Delta x$ où $f(x)=x^3$, $n=5$,
+$\Delta x = 0.4$, et $x_j = 0 + j \Delta x$ pour $j=1$, $2$, $3$, $4$
+et $5$.  C'est donc une somme de Riemann pour
+$\displaystyle \int_0^2 x^3 \dx{x}$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q17}}{
+C'est la somme de Riemann à droite avec $f(x)=x\sin(x)$,
+$\Delta x = \pi/n$ et $x_j = 0 + \pi j /n$ pour $i=0$, $1$, $2$, \ldots, $n$.
+C'est donc une somme de Riemann pour l'intégrale
+$\displaystyle \int_0^\pi x \sin(x) \, \dx{x}$.
+}
+
+\compileSOL{\SOLUa}{\ref{7Q18}}{
+Il faut choisir $\Delta x = 3/N$ et $x_i = 2 + i \Delta x = 2 + 3i/N$ pour
+$i=0$, $1$, $2$, $3$, \ldots, $N$.  Nous avons $N$ intervalles de la forme
+$[x_i, x_{i+1}]$ pour $i=0$, $1$, $2$, \ldots, $N-1$.
+
+Puisque la somme à droite est demandée, il faut que $x_i^\ast = x_{i+1}$
+pour $i=0$, $1$, $2$, \ldots, $N-1$ dans la définition générale des
+sommes de Riemann.  Ainsi,
+\begin{align*}
+\int_2^5 \sqrt{2 + x^{1/3}} \dx{x}
+& \approx \sum_{i=0}^{N-1} \sqrt{ 2 + \left( x_i^\ast\right)^{1/3}} \Delta x
+= \frac{3}{N} \sum_{i=0}^{N-1} \sqrt{ 2 +
+  \left( 2 + \frac{3(i+1)}{N}\right)^{1/3}} \\
+& = \frac{3}{N} \sum_{i=1}^{N} \sqrt{ 2 +
+  \left( 2 + \frac{3i}{N}\right)^{1/3}} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q19}}{
+\subQ{a} La valeur de l'intégrale donnée est l'aire de la région sous
+la courbe $y=f(x)$, au dessus de l'axe des $x$, et entre les droites
+$x=4$ et $x=9$.  Divisons l'intervalle en trois sous-intervalles:
+$[4,5]$, $[5,8]$ et $[8,9]$.  Entre $4$ et $5$, nous avons un rectangle dont
+l'aire est $2$, Entre $5$ et $8$, nous avons un rectangle auquel nous
+soustrayons la demi d'un disque de rayon $1.5$.  Donc l'aire est
+$6 - \pi(1.5)^2/2$.  Finalement, entre $8$ et $9$, nous avons un triangle
+dont l'aire est $1$.  La valeur de l'intégrale est
+$2+6-\pi(1.5)^2/2 + 1 = 5.4657082647\ldots$
+
+\subQ{b} La valeur de l'intégrale donnée est l'aire de la région sous
+la courbe $y=f(x)$, au dessus de l'axe des $x$, et entre les droites
+$x=-2$ et $x=2$.  Divisons l'intervalle en deux sous-intervalles:
+$[-2,0]$ et $[0,2]$.  Entre $-2$ et $0$, nous avons un un trapèze dont
+l'aire est $2(10/3 + 2)/2 = 16/3$.  Entre $0$ et $2$, nous avons un
+carré dont la longueur des côtés est $2$ auquel est ajouté le
+quart d'un disque rayon $1.5$.  Donc l'aire est $4 + \pi(1.5)^2/4$.
+La valeur de l'intégrale est $16/3 + 4 +\pi(1.5)^2/4 = 11.1004792\ldots$
+}
+
+\compileSOL{\SOLUb}{\ref{7Q22}}{
+Nous avons l'information suivante sur la fonction $f$.
+\[
+\begin{array}{c|c|c|c}
+x & 0<x<5 & 5 & 5 < x < 10 \\
+\hline
+f'(x) & + & 0 & - \\
+\hline
+\text{Comportement} & \text{croît} & \text{max. local} & \text{décroît} \\
+\text{de } f & \text{et concave} & \text{et concave} & \text{et concave}
+\end{array}
+\]
+La fonction $f$ est concave l'intervalle $]0,10[$ car $f'$ est
+décroissante sur cet intervalle.
+
+Puisque $\displaystyle f(z) = f(0) + \int_0^z f'(x) \dx{x}
+= 1 + \int_0^z f'(x) \dx{x}$, nous avons
+\[
+f(5) = f(0) + \int_0^5 f'(x) \dx{x}
+= 1 + \int_0^5 f'(x) \dx{x} = 1 + 5 = 6
+\]
+car l'aire sous la courbe $y=f'(x)$ pour $0 \leq x \leq 5$ est $5$
+et
+\[
+  f(10) = f(0) + \int_0^{10} f'(x) \dx{x} = 1
+\]
+car $\displaystyle \int_0^{10} f'(x) \dx{x} = 0$ puisque l'aire entre
+la courbe $y=f'(x)$ et l'axe des $x$ pour $0\leq x \leq 5$ est égale à
+l'aire entre la courbe $y=f'(x)$ et l'axe des $x$ pour $5\leq x \leq 10$.
+Il ne faut pas oublier que $\displaystyle \int_5^{10} f'(x) \dx{x}$ est
+moins l'aire entre l'axe des $x$ et la courbe $y=f'(x)$.
+
+Le graphe de $f$ a la forme suivante.
+\PDFgraph{7_integrales/integral1_sol}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q23}}{
+Nous avons l'information suivante sur la fonction $f$.
+\[
+\begin{array}{c|c|c|c}
+x & 0<x<3 & 3 & 3 < x < 6 \\
+\hline
+f'(x) = F(x) & + & 0 & - \\
+\hline
+\text{Comportement} & \text{décroît} & \text{min. local} & \text{croît} \\
+\text{de } f & \text{et convexe} & \text{et convexe} & \text{et convexe}
+\end{array}
+\]
+La fonction $f$ est convexe sur l'intervalle $]0,6[$ car $f'$ est
+croissante sur cet intervalle.
+
+Nous avons
+\[
+f(z) = f(1) + \int_1^z F(x) \dx{x} = 3 + \int_1^z F(x) \dx{x} \ .
+\]
+
+Puisque $F(x)<0$ pour $0 \leq x \leq 3$, la valeur de l'intégrale
+$\displaystyle \int_z^1 F(x) \dx{x}$ pour $z < 1$ est négative car c'est
+moins l'aire enter l'axe des $x$ et la courbe $y=F(x)$.
+\PDFgraph{7_integrales/integral3_sol1}
+Donc $\displaystyle \int_0^1 F(x) \dx{x} = -\frac{5}{3}$ et
+\[
+f(0) = f(1) + \int_1^0 F(x) \dx{x} = f(1) - \int_0^1 F(x) \dx{x}
+= 3 -\left(-\frac{5}{3}\right) = \frac{14}{3} \ .
+\]
+
+Pour $1\leq z \leq 3$, nous avons toujours
+$\displaystyle \int_1^z F(x)\dx{x} <0$ car $F(x)<0$ pour
+$0 \leq x \leq 3$.  L'intégrale est moins l'aire entre la courbe $y=F(x)$ et
+l'axe des $x$ pour $1 \leq x \leq z$.
+Donc $\displaystyle \int_1^3 F(x) \dx{x} = -\frac{4}{3}$ et
+\[
+f(3) = f(1) + \int_1^3 F(x) \dx{x} = 3 + \int_1^3 F(x) \dx{x}
+= 3 - \frac{4}{3} = \frac{5}{3} \ .
+\]
+
+Finalement, pour $z > 3$, nous avons
+\[
+f(z) = f(1) + \int_1^z F(x) \dx{x} = f(1) + \int_1^3 F(x) \dx{x}
++ \int_3^z F(x) \dx{x} \ .
+\]
+Puisque $F(x)>0$ pour $x>3$, l'intégrale
+$\displaystyle \int_3^z F(x) \dx{x}$ est l'aire entre la courbe
+$y=F(x)$ et l'axe des $x$.  Donc
+$\displaystyle \int_3^6 F(x) \dx{x} = 3$ et
+\[
+  f(6) = f(1) + \int_1^3 F(x) \dx{x} + \int_3^6 F(x) \dx{x}
+  = \frac{5}{3} + 3 = \frac{14}{3} \ .
+\]
+Cela n'est pas surprenant car l'aire entre la courbe $y=F(x)$ et l'axe
+des $x$ pour $0\leq x \leq 3$ est égale à l'aire entre la courbe
+$y=F(x)$ et l'axe des $x$ pour $3\leq x \leq 6$.  Donc
+$\displaystyle \int_0^{6} F(x) \dx{x} = 0$ et
+$\displaystyle f(6) = f(0) + \int_0^6 F(x) \dx{x} = f(0)$.
+
+Le graphe de $f$ a la forme suivante.
+\PDFgraph{7_integrales/integral3_sol2}
+}
+
+\compileSOL{\SOLUa}{\ref{7Q24}}{
+Nous avons l'information suivante sur la fonction $g$.
+\[
+\begin{array}{c|c|c|c|c|}
+x & 0<x<2 & 2 & 2 < x < 3.5 & 3.5 \\
+\hline
+g'(x) = G(x) & + & 0 & - & - \\
+\hline
+\text{Comportement}
+& \text{croît} & \text{max. local} & \text{décroît} & \text{point} \\
+\text{de } g & \text{et concave} & \text{et concave} & \text{et concave}
+& \text{d'inflexion}
+\end{array} \quad \ldots
+\]
+\[
+\ldots \quad \begin{array}{|c|c|c}
+3.5 < x < 5 & 5 & 5 < x \\
+\hline
+- & 0 & + \\
+\hline
+\text{décroît} & \text{min. local} & \text{croît} \\
+\text{et convexe} & \text{et convexe} & \text{et convexe}
+\end{array}
+\]
+La fonction $g$ est convexe lorsque $g'$ est croissante et
+$g$ est concave lorsque $g'$ est décroissante.
+
+Puisque $g'(x) = G(x)$ pour tout $x$, nous avons
+\[
+g(z) = g(1) + \int_1^z G(x) \dx{x} = 10 + \int_1^z G(x) \dx{x} \ .
+\]
+
+Pour $0\leq z \leq 1$, nous avons
+$\displaystyle \int_1^z G(x)\dx{x} = - \int_z^1 G(x) \dx{x}$
+où $\displaystyle \int_z^1 G(x)\dx{x} > 0$ car $G(x)>0$.
+\PDFgraph{7_integrales/integral4_sol1}
+L'aire entre la courbe $y=G(x)$ et l'axe des $x$ pour $0\leq x \leq 1$
+est approximativement $1.5$.  Donc
+\[
+g(0) = g(1) + \int_1^0 G(x) \dx{x} = g(1) - \int_0^1 G(x) \dx{x}
+\approx 10 - 1.5 = 8.5 \ .
+\]
+
+Nous avons
+\[
+g(2) = g(1) + \int_1^2 G(x) \dx{x} \approx 10 + 0.5 = 10.5
+\]
+car l'aire entre la courbe $y=G(x)$ et l'axe des $x$ pour
+$1\leq x \leq 2$ est approximativement $0.5$. 
+
+Pour $2\leq z \leq 5$. Nous avons $\displaystyle \int_2^z G(x)\dx{x} <0$ car
+$G(x)<0$ pour $2 < x < 5$.  C'est moins l'aire entre la courbe
+$y=G(x)$ et l'axe des $x$.
+\PDFgraph{7_integrales/integral4_sol2}
+L'aire entre la courbe $y=G(x)$ et l'axe des $x$ pour $2\leq x \leq 5$
+est approximativement $1.5$.  Donc
+\[
+g(5) = g(1) + \int_1^2 G(x) \dx{x} + \int_2^5 G(x) \dx{x}
+\approx 10.5 - 1.5 = 9 \ .
+\]
+
+Finalement, pour $z>5$, nous avons
+\[
+g(z) = g(1) + \int_1^z G(x) \dx{x} = g(1) + \int_1^5 G(x) \dx{x}
++ \int_5^z F(x) \dx{x} \ .
+\]
+Puisque $G(x)>0$ pour $x>5$, nous avons que
+$\displaystyle \int_5^z G(x) \dx{x}$ est l'aire entre la courbe
+$y=G(x)$ et l'axe des $x$.  Donc
+$\displaystyle \int_5^6 F(x) \dx{x} \approx 0.5$ et
+\[
+  g(6) = g(1) + \int_1^5 G(x) \dx{x} + \int_6^6 G(x) \dx{x}
+  \approx 9 + 0.5 = 9.5 \ .
+\]
+
+Le graphe de $g$ a la forme suivante.
+\PDFgraph{7_integrales/integral4_sol3}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q25}}{
+\subQ{a}
+Nous avons l'information suivante sur la fonction $g$.
+\[
+\begin{array}{c|c|c|c|c|c|}
+x & 0<x<2 & 2 & 2 < x < 3 & 3 & 3 < x < 4 \\
+\hline
+f'(x) & - & - & - & 0 & + \\
+\hline
+\text{Comportement}
+& \text{décroît} & \text{point} & \text{décroît} & \text{min. local} &
+\text{croît} \\
+\text{de } f & \text{et concave} & \text{d'inflexion} & \text{et convexe}
+& \text{et convexe} & \text{et convexe}
+\end{array} \quad \ldots
+\]
+\[
+\ldots \quad \begin{array}{|c|c|c|c}
+4 & 4 < x < 6 & 6 & 6 < x \\
+\hline
++ & + & 0 & - \\
+\hline
+\text{point} & \text{croît} & \text{max. local} & \text{décroît} \\
+\text{d'inflexion} & \text{et concave} & \text{et concave} & \text{et concave}
+\end{array}
+\]
+La fonction $f$ est convexe lorsque $f'$ est croissante et
+$f$ est concave lorsque $f'$ est décroissante.
+
+Nous avons $f(0)=2$ par hypothèse.  Comme l'intégrale d'une fonction
+sur un intervalle représente l'aire sous son graphe lorsque la fonction est
+positive et moins l'aire au-dessus de son graphe si la fonction est
+négative, nous obtenons les valeurs de $f$ suivantes.
+\begin{align*}
+f(2) &= f(0) + \int_0^2 f'(x) \dx{x} = 2 - 3 = -1 \quad , \quad
+f(3) = f(2) + \int_2^3 f'(x) \dx{x} = -1 - 1  = -2 \ , \\
+f(4) &= f(3) + \int_3^4 f'(x) \dx{x} = -2 + 1 = -1 \quad \text{et} \quad
+f(6) = f(4) + \int_4^6 f'(x) \dx{x} = -1 + 2 = 1 \ .
+\end{align*}
+
+\subQ{b}
+\PDFgraph{7_integrales/area9a_sol}
+}
+
+\compileSOL{\SOLUa}{\ref{7Q26}}{
+Nous avons l'information suivante sur la fonction $V$.
+\[
+\begin{array}{c|c|c|c|c|c|}
+x & 0<t<20 & 20 & 20 <  < 60 & 60 & 60 < t \\
+\hline
+V'(t) & - & - & - & 0 & + \\
+\hline
+\text{Comportement}
+& \text{décroît} & \text{min. local} & \text{croît} & \text{point} &
+\text{croît} \\
+\text{de } V & \text{et convexe} & \text{et convexe} & \text{et convexe}
+& \text{d'inflexion} & \text{et concave}
+\end{array}
+\]
+La fonction $V$ est convexe lorsque $V'$ est croissante et
+$V$ est concave lorsque $V'$ est décroissante.
+
+Si nous utilisons le Théorème fondamental du calcul, nous avons que
+\[
+V(z) - V(0) = \int_0^z V'(t)\dx{t} \ .
+\]
+L'aire entre la courbe $y=V'(t)$, l'axe des $t$ et les droites $t=0$
+et $t=20$ est environ $500$.  Donc
+\[
+V(20) = V(0) + \int_0^{20} V'(t)\dx{t} \approx 1000 - 500 = 500 \ .
+\]
+L'aire entre la courbe $y=V'(t)$, l'axe des $t$ et les droites $t=20$
+et $t=60$ est environ $1200$.  Donc
+\[
+V(60) = V(20) + \int_{20}^{60} V'(t)\dx{t} \approx 500 + 1200 = 1700 \ .
+\]
+Finalement, L'aire entre la courbe $y=V'(t)$, l'axe des $t$ et les
+droites $t=60$ et $t=100$ est environ $1300$.  Donc
+\[
+V(100) = V(60) + \int_{60}^{100} V'(t)\dx{t} \approx 1700 + 1300 =
+3000 \ .
+\]
+
+Le graphe de $V$ a la forme suivante.
+\PDFgraph{7_integrales/ass8B_sol}
+}
+
+\subsection{Intégrales définies}
+
+\compileSOL{\SOLUb}{\ref{7Q27}}{
+Pour calculer les intégrales, nous utilisons le Théorème fondamental du calcul.
+\[
+\int_1^2 \left(\frac{2}{t} + \frac{t}{2}\right)\dx{t}
+= \left( 2\ln(t) + \frac{1}{4} t^2\right)\bigg|_{t=1}^2
+= \left( 2\ln(2) + 1 \right) - \left( 2\ln(1) + \frac{1}{4}\right)
+= 2\ln(2) + \frac{3}{4}
+\]
+et
+\[
+\int_2^3 \left(\frac{2}{t} + \frac{t}{2}\right)\dx{t}
+= \left( 2\ln(t) + \frac{1}{4} t^2\right)\bigg|_{t=2}^3
+= \left( 2\ln(3) + \frac{9}{4} \right) - \left( 2\ln(2) + 1\right)
+= 2\ln(3/2) + \frac{5}{4} \ .
+\]
+Finalement,
+\begin{align*}
+\int_1^3 \left(\frac{2}{t} + \frac{t}{2}\right)\dx{t} 
+&= \int_1^2 \left(\frac{2}{t} + \frac{t}{2}\right)\dx{t}
++\int_2^3 \left(\frac{2}{t} + \frac{t}{2}\right)\dx{t} \\
+&= 2\ln(2) + \frac{3}{4} + 2\ln(3/2) + \frac{5}{4}
+= 2\ln(3) + 2 \ .
+\end{align*}
+
+Si les valeurs de deux des intégrales sont connues, alors la valeur de
+la troisième intégrale peut être déterminée à l'aide d'une des trois
+formules suivantes:
+$\displaystyle \int_1^3 = \int_1^2 + \int_2^3$ (que nous avons utilisé
+ci-dessus), $\displaystyle \int_1^2 = \int_1^3 - \int_2^3$ et
+$\displaystyle \int_2^3 = \int_1^3 - \int_1^2$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q28}}{
+\subQ{a}
+\[
+\int_2^5 f(x) \dx{x} = \int_2^8 f(x) \dx{x} - \int_5^8 f(x) \dx{x}
+= 5 - 7 = -2 \ .
+\]
+
+\subQ{b}
+\[
+  \int_5^8 (2f(x)+3x)\dx{x} = 2 \int_5^8 f(x) \dx{x} + 3 \int_5^8 x \dx{x}
+  = 14 + \frac{3x^2}{2}\bigg|_5^8 = \frac{145}{2} \ .
+\]
+
+\subQ{c}
+Si $u = -1-3t$, alors $\dx{u} = -3 \dx{t}$, $u=5$ lorsque
+$t=-2$, $u=2$ lorsque $t=-1$ et
+\[
+\int_{-2}^{-1} f(-1-3t) \dx{t}
+= -\frac{1}{3} \int_5^2 f(u) \dx{u}
+= \frac{1}{3} \int_2^5 f(u) \dx{u} = \frac{-2}{3} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{7Q29}}{
+\subQ{a}
+\[
+\int_1^5 \frac{5}{x^3} \dx{x} = 5 \int_1^5 x^{-3} \dx{x}
+= 5 \left(\frac{x^{-2}}{-2}\right)\bigg|_{x=1}^5
+= -\frac{5}{2} \left( 5^{-2} - 1^{-2}\right) = \frac{12}{5} \ .
+\]
+
+\subQ{b}
+\begin{align*}
+\int_1^8 \left( \frac{2}{\sqrt[3]{x}} +3\right)\dx{x}
+&= 2 \int_1^8 x^{-1/3} \dx{x} + 3 \int_1^8 \dx{x}
+= 2 \left(\frac{3}{2} x^{2/3}\right)\bigg|_1^8 + 3 x \bigg|_1^8 \\
+&= 3 \left( 8^{2/3} - 1^{2/3} \right) + 3 (8-1)
+= 30 \ .
+\end{align*}
+
+\subQ{c}
+\begin{align*}
+\int_1^4 \left(e^x + \frac{1}{x}\right)\dx{x}
+&= \int_1^4 e^x \dx{x} + \int_1^4 \frac{1}{x} \dx{x}
+= e^x\bigg|_1^4 + \ln(x) \bigg|_1^4 \\
+&= e^4 - e + \ln(4) - \ln(1) = e^4 - e + \ln(4) \ .
+\end{align*}
+
+\subQ{d}
+\[
+\int_1^2 \frac{3}{t^4} \dx{t} = 3\int_1^2 t^{-4} \dx{t}
+= - t^{-3} \bigg|_1^2 = - \left( 2^{-3} - 1^{-3}\right) = \frac{7}{8} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{7Q30}}{
+\subQ{a}
+Si $u=x/5$, alors $\dx{u} = (1/5)\dx{x}$, $u=0$ lorsque
+$x=0$ et $u=1$ lorsque $x=5$.  Donc
+\[
+\int_0^5 3 e^{x/5} \dx{x} = 15 \int_0^5 e^{x/5} (1/5) \dx{x}
+= 15 \int_0^1 e^u\dx{u} = 15 e^u \bigg|_0^1 = 15 e \ .
+\]
+
+\subQ{b}
+Si $u= 1 + t/2$, alors $\dx{u} = (1/2)\dx{t}$, $u=1$
+lorsque $x=0$ et $u=3$ lorsque $x=4$.  Donc
+\[
+\int_0^4 \left(1+\frac{t}{2}\right)^4 \dx{t}
+= 2 \int_0^4 \left(1+\frac{t}{2}\right)^4 \left(\frac{1}{2}\right) \dx{t}
+= 2 \int_1^3 u^4 \dx{u} = \frac{2}{5} u^5 \bigg|_1^3
+= \frac{2}{5} \left( 3^5 - 1^5\right) = \frac{484}{5} \ .
+\]
+
+\subQ{c}
+Si $u= 1 + 2t$, alors $\dx{u} = 2\dx{t}$, $u=3$ lorsque
+$x=1$ et $u=21$ lorsque $x=10$.  Donc
+\begin{align*}
+\int_{1}^{10} (1+2t)^{-4} \dx{t}
+&= \frac{1}{2} \int_{1}^{10} (1+2t)^{-4} (2) \dx{t}
+= \frac{1}{2} \int_3^{21} u^{-4} \dx{u}
+= -\frac{1}{6} u^{-3} \bigg|_3^{21} \\
+&= -\frac{1}{6} \left( (21)^{-3} - 3^{-3} \right)
+= -\frac{1}{2 \times 3^4} \left( \frac{1}{7^3}- 1\right)
+% = \frac{1}{2 \times 3^4} \times \frac{ 2\times 3^2 \times 19}{7^3}
+= \frac{19}{3^2\times 7^3} \ .
+\end{align*}
+
+\subQ{d}
+Si $u= 1 + 4t$, alors $\dx{u} = 4\dx{t}$, $u=1$ lorsque
+$x=0$ et $u=9$ lorsque $x=2$.  Donc
+\[
+\int_{0}^{2} \frac{1}{1+4t} \dx{t}
+= \frac{1}{4} \int_{0}^{2} \frac{1}{1+4t} (4) \dx{t}
+= \frac{1}{4} \int_1^9 \frac{1}{u} \dx{u}
+= \frac{1}{4} \ln(u) \bigg|_1^9
+= \frac{1}{4} \left( \ln(9) - \ln(1) \right) 
+= \frac{1}{2} \ln(3) \ .
+\]
+
+\subQ{e}
+Si $u=1+2x^3$, alors $\displaystyle \dx{u} = 6 x^2 \dx{x}$, $u=1$
+lorsque $x=0$ et $u=3$ lorsque $x=1$.  Ainsi,
+\[
+\int_0^1 x^2(1+2x^3)^5 \dx{x} = \frac{1}{6} \int_0^1 (1+2x^3)^5 (6 x^2 )\dx{x}
+= \frac{1}{6} \int_1^3 u^5 \dx{u}
+= \frac{1}{36} u^6 \bigg|_1^3 = \frac{81}{4} \ .
+\]
+
+\subQ{f}
+Si $u= x^{1/2}$, alors $\dx{u} = (1/2) x^{-1/2} \dx{x}$,
+$u=1$ lorsque $x=1$ et $u=2$ lorsque $x=4$.  Ainsi,
+\[
+\int_1^4 \frac{e^{\sqrt{x}}}{\sqrt{x}} \dx{x}
+= 2 \int_1^4 e^{\sqrt{x}} \left( \frac{1}{2\sqrt{x}}\right) \dx{x}
+= 2 \int_1^2 e^{u} \dx{u} = = 2 e^{u}\bigg|_1^2
+= 2(e^2-e) = 2e(e-1) \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{7Q32}}{
+\subQ{a}
+\begin{align*}
+\int_0^\pi \left(2\sin(\theta)+3\cos(\theta)\right)\dx{\theta}
+&= 2\int_0^\pi \sin(\theta) \dx{\theta} +3 \int_0^\pi \cos(\theta)\dx{\theta}
+= -2 \cos(\theta)\bigg|_0^\pi + 3 \sin(\theta)\bigg|_0^\pi \\
+&= -2 \left( \cos(\pi) - \cos(0)\right) + 3 \left( \sin(\pi) - \sin(0)\right)
+= 4 \ .
+\end{align*}
+
+\subQ{b} Si $u=\sin(x)$, alors $\dx{u} = \cos(x)\dx{x}$,
+$u=1$ lorsque $x=\pi/2$ et $u=1/\sqrt{2}$ lorsque $x=3\pi/4$.  Ainsi,
+\begin{align*}
+\int_{\pi/2}^{3\pi/4} \sin^5(x) \cos^3(x) \dx{x} &=
+\int_{\pi/2}^{3\pi/4} \sin^5(x) (1-\sin^2(x)) \cos(x) \dx{x}
+= \int_1^{1/\sqrt{2}} u^5 (1-u^2) \dx{u} \\
+&= -\int_{1/\sqrt{2}}^1 (u^5 - u^7) \dx{u}
+= \left(-\frac{u^6}{6} + \frac{u^8}{8}\right) \bigg|_{1/\sqrt{2}}^1 \\
+&= -\frac{1}{6} + \frac{1}{8} + \frac{1}{48} - \frac{1}{128} =
+-\frac{11}{384} \ .
+\end{align*}
+
+\subQ{c} Nous avons que
+\begin{align*}
+\int_0^{\pi/2} \sin^2(x)\cos^2(x)\dx{x} &=
+\frac{1}{4} \int_0^{\pi/2} (1-\cos(2x))(1+\cos(2x))\dx{x}
+= \frac{1}{4} \int_0^{\pi/2} (1-\cos^2(2x))\dx{x} \\
+&= \frac{1}{4} \int_0^{\pi/2}
+\left(1-\frac{1}{2}\left(1+\cos(4x)\right)\right) \dx{x}
+= \frac{1}{8} \int_0^{\pi/2} \left(1-\cos(4x)\right) \dx{x} \ .
+\end{align*}
+Si $u = 4x$, alors $\dx{u} = 4 \dx{x}$, $u=0$ lorsque
+$x=0$ et $u=2\pi$ lorsque $x=\pi/2$.  Ainsi,
+\begin{align*}
+\int_0^{\pi/2} \sin^2(x)\cos^2(x)\dx{x} &=
+\frac{1}{32} \int_0^{\pi/2} \left(1-\cos(4x)\right) \times 4 \dx{x}
+=\frac{1}{32} \int_0^{2\pi} (1- \cos(u)) \dx{u}\\
+&= \frac{1}{32} \left( u - \sin(u) \right)\bigg|_0^{2\pi}
+= \frac{\pi}{16} \ .
+\end{align*}
+Si nous interprétons l'intégrale en termes de l'aire de la région
+entre la courbe et l'axe des $x$, il est facile de constater que
+$\displaystyle \int_0^{2\pi} \cos(x)\dx{x} = 0$ car l'aire de la
+région en dessous de l'axe des $x$ égale l'aire de la région au dessus
+de l'axe des $x$.
+
+\subQ{d}
+Si $u=\tan(x)$, alors $\dx{u} = \sec^2(x) \dx{x}$, $u=0$
+lorsque $x=0$ et $u=1$ lorsque $x=\pi/4$.  Ainsi,
+\begin{align*}
+\int_0^{\pi/4} \tan^2(x)\sec^4(x)\dx{x}
+&= \int_0^{\pi/4} \tan^2(x)\sec^2(x)\sec^2(x)\dx{x} \\
+&= \int_0^{\pi/4} \tan^2(x)\left(1+\tan^2(x)\right)\sec^2(x)\dx{x} \\
+&= \int_0^1 u^2\left(1+u^2\right)\dx{u}
+= \left( \frac{u^3}{3} + \frac{u^5}{5} \right)\bigg|_0^1 
+= \frac{8}{15} \ .
+\end{align*}
+
+\subQ{e}
+Puisque $\displaystyle \frac{x^3+x+1}{x^2+4} = x + \frac{-3x+1}{x^2+4}$,
+nous avons
+\[
+\int_0^2 \frac{x^3+x+1}{x^2+4} = \int_0^1 x \dx{x}
+-3 \int_0^2 \frac{x}{x^2+4} \dx{x} + \int_0^2 \frac{1}{x^2+ 4} \dx{x} \ .
+\]
+Pour évaluer $\displaystyle \int_0^2 \frac{x}{x^2+4}$, nous posons
+$u=x^2+4$.  Donc $\dx{u} = 2x \dx{x}$, $u=4$ lorsque $x=0$ et
+$u=8$ lorsque $x=2$.  Ainsi,
+\[
+\int_0^2 \frac{x}{x^2+4} \dx{x}
+= \frac{1}{2} \int_0^2 \frac{2x}{x^2+4} \dx{x}
+= \frac{1}{2} \int_4^8 \frac{1}{u} \dx{u}
+= \frac{1}{2} \ln(u) \bigg|_{u=4}^8
+= \frac{1}{2} \left( \ln(8) - \ln(4) \right)
+= \frac{1}{2} \ln(2) \ .
+\]
+Pour évaluer
+\[
+\int_0^2 \frac{1}{x^2+ 4} \dx{x}
+= \frac{1}{4} \int_0^2 \frac{1}{\left(x/2\right)^2+ 1} \dx{x} \ ,
+\]
+nous posons $u=x/2$.  Donc $\dx{u} = (1/2) \dx{x}$, $u=0$ lorsque
+$x=0$ et $u=1$ lorsque $x=2$.  Ainsi,
+\begin{align*}
+\int_0^2 \frac{1}{x^2+ 4} \dx{x}
+&= \frac{1}{4} \int_0^2 \frac{1}{\left(x/2\right)^2+ 1} \dx{x}
+= \frac{1}{2} \int_0^1 \frac{1}{u^2+1} \dx{u} \\
+&= \frac{1}{2} \arctan(u)\bigg|_{u=0}^1
+= \frac{1}{2} \left(\arctan(1) - \arctan(0)\right)
+= \frac{1}{2}\left( \frac{\pi}{4} - 0 \right)  = \frac{\pi}{8} \ .
+\end{align*}
+Finalement,
+\[
+\int_0^2 \frac{x^3+x+1}{x^2+4} = \frac{x^2}{2}\bigg|_{x=0}^2
+-\frac{3}{2} \ln(2) + \frac{\pi}{8}
+= 2 -\frac{3}{2} \ln(2) + \frac{\pi}{8} \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{7Q33}}{
+\subQ{a} Si $t=\sec(\theta)$, alors
+$\dx{t} = \sec(\theta)\tan(\theta) \dx{\theta}$, $\theta = \pi/4$
+lorsque $t = \sqrt{2}$ et $\theta = \pi/3$ lorsque $t=2$.  Notons que
+nous considérons $\sec$ comme une fonction de $[0,\pi/2[$ dans
+$[1,\infty[$ pour que la fonction inverse $\arcsec$ soit bien définie.
+Ainsi,
+\begin{align*}
+\int_{\sqrt{2}}^{2} \frac{1}{t^3\sqrt{t^2-1}} \dx{t} &=
+\int_{\pi/4}^{\pi/3} \frac{1}{\sec^3(\theta)\sqrt{\sec^2(\theta)-1}} \,
+\sec(\theta)\tan(\theta) \dx{\theta} \\
+&= \int_{\pi/4}^{\pi/3} \frac{1}{\sec^3(\theta)\tan(\theta)} \,
+\sec(\theta)\tan(\theta) \dx{\theta} \\
+&= \int_{\pi/4}^{\pi/3} \frac{1}{\sec^2(\theta)}\dx{\theta}
+= \int_{\pi/4}^{\pi/3} \cos^2(\theta)\dx{\theta}
+= \int_{\pi/4}^{\pi/3} \frac{1}{2}\left(1+\cos(2\theta)\right) \dx{\theta} \\
+&= \left(\frac{\theta}{2} + \frac{1}{4}\sin(2\theta)\right)
+\bigg|_{\pi/4}^{\pi/3}
+= \frac{\pi}{6} + \frac{\sqrt{3}}{8} - \frac{\pi}{8} - \frac{1}{4}
+= 0.0974060450\ldots
+\end{align*}
+car $\sqrt{\sec^2(\theta)-1} = \sqrt{\tan^2(\theta)} = \tan(\theta)$
+pour $\theta \in [0,\pi/2[$.
+
+Si nous avions calculé l'intégrale indéfinie en premier, les calculs
+auraient été un peu plus difficiles.  Comme précédemment, nous posons
+$t=\sec(\theta)$.  Donc $\dx{t} = \sec(\theta)\tan(\theta)
+\dx{\theta}$ et
+\begin{align*}
+\int \frac{1}{t^3\sqrt{t^2-1}} \,\text{d}t &=
+\int \frac{1}{\sec^3(\theta)\sqrt{\sec^2(\theta)-1}}\,\sec(\theta)\tan(\theta)
+ \dx{\theta} \\
+&= \int \frac{1}{\sec^3(\theta)\tan(\theta)} \,\sec(\theta)\tan(\theta)
+\dx{\theta}
+= \int \frac{1}{\sec^2(\theta)}\, \dx{\theta}
+= \int \cos^2(\theta)\dx{\theta} \\
+&= \int \frac{1}{2}\left(1+\cos(2\theta)\right) \dx{\theta}
+= \frac{\theta}{2} + \frac{1}{4}\sin(2\theta) + C \\
+&= \frac{\arcsec(t)}{2} + \frac{1}{4}
+\big(2\cos(\theta)\sin(\theta)\big) + C \\
+&= \frac{\arcsec(t)}{2} + \frac{1}{4}
+\left(2 \frac{1}{t} \sqrt{1-\left(\frac{1}{t}\right)^2}\right) + C
+= \frac{\arcsec(t)}{2} + \frac{\sqrt{t^2-1}}{2t^2} + C
+\end{align*}
+puisque $t=\sec(\theta)$ donne $\cos(\theta) = 1/t$ et
+$\sin(\theta) = \sqrt{1 - \cos^2(\theta)} = \sqrt{1 -(1/t)^2}$.
+
+\subQ{b} Si $t=4\sin(\theta)$, alors
+\[
+\sqrt{16-t^2} = 4\sqrt{1-\sin^2(\theta)} = 4 |\cos(\theta)| = 4\cos(\theta)
+\]
+car $-\pi/2 \leq \theta \leq \pi/2$.  De plus,
+$\dx{t} = 4 \cos(\theta)\dx{\theta}$, $\theta=0$ lorsque $t=0$ et
+$\theta = \pi/3$ lorsque $t=2\sqrt{3}$.  Donc
+\begin{align*}
+\int_{0}^{2\sqrt{3}} \frac{t^3}{\sqrt{16-t^2}}\dx{t} &=
+\int_0^{\pi/3} \frac{4^3\sin^3(\theta)}{4\cos(\theta)} \; 4\cos(\theta)
+\dx{\theta}
+= 64 \int_{0}^{\pi/3} \sin^3(\theta) \dx{\theta} \\
+&= 64 \int_{0}^{\pi/3} (1-\cos^2(\theta)) \sin(\theta) \dx{\theta} \ .
+\end{align*}
+Si $u=\cos(\theta)$, alors $\dx{u} = - \sin(\theta) \dx{\theta}$,
+$u=1$ lorsque $\theta=0$ et $u=1/2$ lorsque $\theta = \pi/3$.
+Donc
+\begin{align*}
+\int_{0}^{2\sqrt{3}} \frac{t^3}{\sqrt{16-t^2}}\dx{t}
+&= 64 \int_{0}^{\pi/3} (1-\cos^2(\theta)) \sin(\theta) \dx{\theta}
+= -64 \int_1^{1/2} (1-u^2) \dx{u} \\
+&= 64 \int_{1/2}^1 (1-u^2) \dx{u} 
+= 64 \left( u - \frac{u^3}{3} \right)\bigg|_{1/2}^1 = \frac{40}{3} \ .
+\end{align*}
+}
+
+\compileSOL{\SOLUb}{\ref{7Q34}}{
+\subQ{a} Nous avons
+\[
+\int_{-2}^{2}\left(y^4+5y^3\right) \dx{y}
+= \int_{-2}^{2}y^4 \dx{y} + 5\int_{-2}^{2}y^3 \dx{y} \ .
+\]
+Puisque $y \mapsto y^3$ est une fonction impaire que nous intégrons
+sur un intervalle symétrique par rapport à l'origine, nous avons que
+$\displaystyle \int_{-2}^2 y^3 \dx{y} = 0$.
+Puisque $y \mapsto y^4$ est une fonction paire que nous intégrons sur
+un intervalle symétrique par rapport à l'origine, nous avons que
+\[
+  \int_{-2}^2 y^4 \dx{y} = 2\int_0^2 y^4 \dx{y} 
+= \frac{2}{5} y^5 \bigg|_{y=0}^2 = \frac{2^6}{5} \ .
+\]
+Donc
+\[
+\int_{-2}^{2}\left(y^4+5y^3\right) \dx{y} = \frac{2^6}{5} \ .
+\]
+
+\subQ{b} Puisque $x \mapsto x \sqrt{x^2+a^2}$ est une fonction impaire
+et que nous intégrons sur un intervalle symétrique par rapport à
+l'origine, nous avons que
+\[
+\int_{-a}^{a} x \sqrt{x^2+a^2} \dx{x} = 0 \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{7Q35}}{
+\subQ{a}
+\[
+\int_{-\pi/2}^{\pi/2}\left(x^2 -20 \sin(x)\right) \dx{x}
+= \int_{-\pi/2}^{\pi/2} x^2 \dx{x} -20 \int_{-\pi/2}^{\pi/2}\sin(x) \dx{x} \ .
+\]
+Puisque $x \mapsto \sin(x)$ est une fonction impaire que nous
+intégrons sur un intervalle symétrique par rapport à l'origine, nous
+avons que $\displaystyle \int_{-\pi/2}^{\pi/2} \sin(x) \dx{x} = 0$.  Puisque 
+$x \mapsto x^2$ est une fonction paire que nous intégrons sur un
+intervalle symétrique par rapport à l'origine, nous avons que
+\[
+  \int_{-\pi/2}^{\pi/2} x^2 \dx{x} = 2\int_0^{\pi/2} x^2 \dx{x}
+= \frac{2}{3} x^3 \bigg|_{y=0}^{\pi/2} = \frac{\pi^3}{12} \ .
+\]
+Donc
+\[
+\int_{-\pi/2}^{\pi/2}\left(x^2 -20 \sin(x)\right) \dx{x}
+= \frac{\pi^3}{12} \ .
+\]
+
+\subQ{b} Sur l'intervalle $[2,5]$, nous avons trois périodes de la
+fonction $\cos(2\pi(x-2))$.  Si nous considérons la région bornée qui est
+délimitée par l'axe des $x$ et la courbe $\cos(2\pi(x-2))$, l'aire en
+dessous de l'axe des $x$ est égale à l'aire au-dessus de l'axe des $x$.
+Donc $\displaystyle \int_{2}^{5}\cos(2\pi(x-2)) \dx{x} = 0$.
+
+\noindent Note: Si $y= 2\pi(x-2)$, alors
+$\dx{y} = 2\pi \dx{x}$, $y=0$ lorsque $x=2$ et $y= 6 \pi$ lorsque
+$x=5$.  Ainsi,
+\begin{align*}
+\int_{2}^{5}\cos(2\pi(x-2)) \dx{x}
+&= \frac{1}{2\pi} \int_{2}^{5}\cos(2\pi(x-2))\; (2\pi) \dx{x}
+= \frac{1}{2\pi} \int_{0}^{6\pi}\cos(y) \dx{y} \\
+&= \frac{1}{2\pi} \big( \sin(y) \big)\bigg|_{0}^{6\pi}
+= \frac{1}{2\pi} \big( \sin(6\pi) - \sin(0) \big) = 0 \ .
+\end{align*}
+C'est beaucoup de calculs que nous avons pu éviter avec notre
+observation sur le graphe de la fonction $\cos(2\pi(x-2))$
+ci-dessus.
+
+\subQ{c} Puisque la fonction $f(x) = x^{16} \sin(2x)$ est impaire
+(i.e. $f(-x) = -f(x)$) et que le domaine d'intégration est symétrique
+par rapport à l'origine,  Nous avons que
+$\displaystyle \int_{-\pi}^{\pi} x^{16} \sin(2x) \dx{x} = 0$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q36}}{
+Puisque
+\[
+\int_a^x f(s) \dx{s} = \int_a^x (5s+1)^7 \dx{s}
+= \frac{(5s+1)^8}{40}\bigg|_a^x
+= \frac{(5x+1)^8}{40} - \frac{(5a+1)^8}{40} \ ,
+\]
+nous avons
+\[
+\dfdx{ \int_a^x f(s) \dx{s} }{x} =
+\dfdx{ \left( \frac{(5x+1)^8}{40} - \frac{(5a+1)^8}{40} \right)}{x}
+= \dfdx{ \left( \frac{(5x+1)^8}{40} \right) }{x} = (5x+1)^7 = f(x) \ .
+\]
+}
+
+\compileSOL{\SOLUb}{\ref{7Q37}}{
+Nous utilisons la deuxième version du Théorème fondamental pour résoudre ces
+problèmes.
+
+\subQ{a} 
+\[
+g'(y) = \dfdx{ \left(\int_2^y t^2\sin(t) \dx{t} \right) }{y}
+= t^2\sin(t) \bigg|_{t=y} = y^2 \sin(y) \ ,
+\]
+
+\subQ{b}
+Nous avons que $h(x)= h_1(h_2(y))$, où
+$\displaystyle h_1(z) = \int_2^z \arctan(t) \dx{t}$ et $h_2(x)= 1/x$.
+Ainsi, $h'(x) = h_1'(h_2(x)) h_2'(x)$.  Or,
+\[
+h_1'(z) = \dfdx{ \left( \int_2^z \arctan(t) \dx{t} \right)}{z}
+= \arctan(t)\bigg|_{t=z} = \arctan(z) \quad \text{et} \quad
+h_2'(x) = -\frac{1}{x^2} \ .
+\]
+Donc
+\[
+h'(x) = - \frac{1}{x^2} \arctan\left(\frac{1}{x}\right) \ .
+\]
+}
+
+\subsection{Intégrales impropres}
+
+\compileSOL{\SOLUb}{\ref{7Q38}}{
+\subQ{a}
+\begin{align*}
+\int_0^\infty e^{-3x} \dx{x} &= \lim_{q\to \infty} \int_0^q e^{-3x} \dx{x}
+= \lim_{q\to \infty} \left(- \frac{1}{3} e^{-3x}\bigg|_0^q\right)
+= \lim_{q\to \infty} \left(\frac{1}{3} - \frac{1}{3} e^{-3q}\right) \\
+&= \frac{1}{3} -\frac{1}{3}\, \lim_{q\to \infty} e^{-3q} = \frac{1}{3}
+\end{align*}
+car $\displaystyle \lim_{q\to \infty} e^{-3q} = 0$.
+
+\subQ{b}
+\[
+\int_0^\infty \frac{1}{(2+5x)^4} \dx{x}
+= \lim_{q\rightarrow \infty} \int_0^q \frac{1}{(2+5x)^4} \dx{x} \ .
+\]
+Si $u=2+5x$, alors $\dx{u} = 5 \dx{x}$, $u=2$ lorsque $x=0$ et $u=2+5q$
+lorsque $x=q$.  Ainsi,
+\begin{align*}
+\int_0^q \frac{1}{(2+5x)^4} \dx{x}
+&= \frac{1}{5} \int_0^q \frac{1}{(2+5x)^4}\; 5 \dx{x}
+= \frac{1}{5} \int_2^{2+5q} \frac{1}{u^4} \dx{u} \\
+&= -\frac{1}{15}\; u^{-3}\bigg|_2^{2+5q}
+= -\frac{1}{15}\; \left( (2+5q)^{-3} - 2^{-3} \right) \ .
+\end{align*}
+Finalement,
+\[
+\int_0^\infty \frac{1}{(2+5x)^4} \dx{x}
+= \lim_{q\rightarrow \infty}\ - \frac{1}{15} \left( \frac{1}{(2+5q)^3} -
+  \frac{1}{8} \right) = \frac{1}{120} \ .
+\]
+L'intégrale converge.
+
+\subQ{c} Remarquons qu'en plus d'être une intégrale sur un domaine
+infini, l'intégrande $1/\sqrt[3]{x}$ n'est pas borné lorsque $x$
+approche l'origine.  Il faut donc diviser l'intégrale en deux.
+\[
+\int_0^\infty \frac{1}{\sqrt[3]{x}} \dx{x}
+= \int_0^1 \frac{1}{\sqrt[3]{x}} \dx{x}
++ \int_1^\infty \frac{1}{\sqrt[3]{x}} \dx{x} \ .
+\]
+Nous aurions pu choisir une autre valeur que $1$ pour diviser
+l'intégrale, cela ne changerait pas le résultat final.
+Nous avons
+\[
+\int_0^1 \frac{1}{\sqrt[3]{x}} \dx{x} =
+\lim_{q\rightarrow 0^+} \int_q^1 x^{-1/3} \dx{x}
+= \lim_{q\rightarrow 0^+} \left( \frac{3}{2} x^{2/3} \right)\bigg|_q^1
+= \lim_{q\rightarrow 0^+} \frac{3}{2} \left(1 - q^{2/3} \right)
+= \frac{3}{2} \ .
+\]
+La première intégrale impropre converge.  Par contre,
+\[
+\int_1^\infty \frac{1}{\sqrt[3]{x}} \dx{x} =
+\lim_{q\rightarrow \infty} \int_1^q x^{-1/3} \dx{x}
+= \lim_{q\rightarrow \infty} \left( \frac{3}{2} x^{2/3} \right)\bigg|_1^q
+= \lim_{q\rightarrow \infty} \frac{3}{2} \left(q^{2/3} -1 \right)
+= \infty \ .
+\]
+La second intégrale impropre diverge.  Donc
+$\displaystyle \int_0^\infty \frac{1}{\sqrt[3]{x}} \dx{x} $ diverge.
+
+Nous aurions pu utiliser les propositions~\ref{impr_comp1} et
+\ref{impr_comp2} pour répondre à cette question mais un retour à la
+définition de l'intégrale impropre a parfois ses bénéfices.
+
+\subQ{d}
+\begin{align*}
+\int_2^\infty \frac{1}{x\sqrt{x}} \dx{x}
+&= \lim_{q \rightarrow \infty} \int_2^q x^{-3/2} \dx{x}
+= \lim_{q \rightarrow \infty} \left( -2x^{-1/2} \right)\big|_2^q \\
+&= \lim_{q \rightarrow \infty} \left( -2q^{-1/2} + \sqrt{2}\right)
+= \sqrt{2} = 1.414\ldots
+\end{align*}
+L'intégrale converge.
+
+\subQ{e}
+\[
+\int_1^e \frac{2}{x\sqrt{\ln(x)}} \dx{x} = \lim_{q\to 1^+} \int_q^e
+\frac{2}{x\sqrt{\ln(x)}} \dx{x} \ .
+\]
+Si $y=\ln(x)$, alors $\dx{y} = (1/x)\dx{x}$,
+$y=\ln(q)$ lorsque $x=q$ et $y=1$ lorsque $x=e$.  Ainsi,
+\[
+\int_q^e \frac{2}{x\sqrt{\ln(x)}} \dx{x}
+= \int_{\ln(q)}^1 \frac{2}{\sqrt{y}} \dx{y}
+= \int_{\ln(q)}^1 2 y^{-1/2} \dx{y}
+= 4 y^{1/2} \bigg|_{\ln(q)}^1
+= 4 - 4 \sqrt{\ln(q)} \ .
+\]
+Donc
+\[
+\int_1^e \frac{2}{x\sqrt{\ln(x)}} \dx{x}
+= \lim_{q\to 1^+} \left( 4 - 4 \sqrt{\ln(q)} \right)
+= 4 - 4 \sqrt{\ln(1)} = 4 \ .
+\]
+L'intégrale converge.
+
+\subQ{f}
+\[
+\int_{-\infty}^0 3x^2 e^{-x^3} \dx{x} = \lim_{q\to -\infty}
+\int_q^0 3x^2 e^{-x^3} \dx{x} \ .
+\]
+Si $y=-x^3$, alors $\dx{y} = -3 x^2 \dx{x}$,
+$y=-q^3$ lorsque $x=q$ et $y=0$ lorsque $x=0$.  Ainsi,
+\[
+\int_q^0 3x^2 e^{-x^3} \dx{x} =
+-\int_{-q^3}^0 e^y \dx{y} = -e^y \bigg|_{-q^3}^0
+= e^{-q^3} - 1 \ .
+\]
+Donc
+\[
+\int_{-\infty}^0 3x^2 e^{-x^3} \dx{x} = \lim_{q\to -\infty}
+\left( e^{-q^3} - 1 \right) = +\infty \ .
+\]
+L'intégrale diverge.
+
+\subQ{i} C'est la somme de deux intégrales impropres:
+\[
+\int_0^3\frac{2}{(x-2)^{4/3}}\dx{x} = \int_0^2\frac{2}{(x-2)^{4/3}}\dx{x}
++ \int_2^3\frac{2}{(x-2)^{4/3}}\dx{x} \ .
+\]
+Or,
+\begin{align*}
+\int_0^2\frac{2}{(x-2)^{4/3}}\dx{x}
+&= \lim_{N\rightarrow 2^-} \int_0^N\frac{2}{(x-2)^{4/3}}\dx{x}
+= \lim_{N\rightarrow 2^-} \left(-\frac{6}{(x-2)^{1/3}}\right) \bigg|_0^N \\
+&= \lim_{N\rightarrow 2^-} \left(- \frac{6}{(N-2)^{1/3}}
+- \frac{6}{2^{1/3}} \right) = \infty \ .
+\end{align*}
+Donc l'intégrale $\displaystyle \int_0^3\frac{2}{(x-2)^{4/3}}\dx{x}$ diverge.
+
+\subQ{j} Considérons $\displaystyle \int_0^N \frac{x}{1+x^4} \dx{x}$.
+Si $u=x^2$, alors $\dx{u}=  2x \dx{x}$, $u = N^2$ lorsque $x=N$ et
+$u=0$ lorsque $x=0$.  Donc
+\[
+\int_0^N \frac{x}{1+x^4} \dx{x}
+= \frac{1}{2} \int_0^{N^2} \frac{1}{1+u^2} \dx{u}
+= \frac{1}{2} \arctan(u) \bigg|_0^{N^2}
+= \frac{1}{2} \arctan(N^2) \ .
+\]
+Ainsi,
+\begin{align*}
+\int_0^\infty \frac{x}{1+x^4} \dx{x}
+&= \lim_{N\to \infty} \int_0^N \frac{x}{1+x^4} \dx{x}
+= \frac{1}{2} \lim_{N\rightarrow \infty} \int_0^{N^2} \frac{1}{1+u^2} \dx{u} \\
+&= \frac{1}{2} \lim_{N\rightarrow \infty} \arctan(N^2)
+= \frac{\pi}{4} \ .
+\end{align*}
+L'intégrale converge.
+
+\subQ{k}
+\begin{align*}
+\int_0^\infty \frac{1}{(1+3x)^{3/2}} \dx{x} &=
+\lim_{q\to \infty} \int_0^q \frac{1}{(1+3x)^{3/2}} \dx{x}
+= \lim_{q\to \infty} -\frac{2}{3(1+3x)^{1/2}} \bigg|_0^q \\
+&= \lim_{q\to \infty} \left( \frac{2}{3} -\frac{2}{3(1+3q)^{1/2}} \right)
+= \frac{2}{3} - \frac{2}{3} \lim_{q\to \infty} \frac{1}{(1+3q)^{1/2}}
+= \frac{2}{3}
+\end{align*}
+car $\displaystyle \lim_{q\to \infty} \frac{1}{(1+3q)^{1/2}} = 0$.
+L'intégrale converge.
+
+\subQ{l}
+Puisque $\displaystyle \frac{1}{x^2+x-6} = \frac{1}{(x+3)(x-2)}$,
+l'intégrande n'est pas borné au voisinage du point $x=2$ de l'intervalle
+$[0,4]$.  Il faut diviser l'intégrale en deux intégrales impropres.
+\[
+\int_0^4 \frac{1}{x^2+x-6} \dx{x} =
+\int_0^2 \frac{1}{x^2+x-6} \dx{x} + \int_2^4 \frac{1}{x^2+x-6} \dx{x} \ .
+\]
+La méthode des fractions partielles donne
+$\displaystyle \frac{1}{x^2+x-6} = \frac{1}{5(x-2)} - \frac{1}{5(x+3)}$.
+Ainsi,
+\begin{align*}
+\lim_{q\to 2^-} \int_0^q \frac{1}{x^2+x-6} \dx{x} &=
+\lim_{q\to 2^-} \frac{1}{5}
+\int_0^q \left( \frac{1}{x-2} - \frac{1}{x+3}\right)\dx{x}
+= \lim_{q\to 2^-} \frac{1}{5} \left( \ln|x-2| - \ln|x+3|\right)\bigg|_0^q \\
+&= \lim_{q\to 2^-} \frac{1}{5} \left( \ln|q-2| -\ln(2) - \ln|q+3| +
+\ln(3)\right) = -\infty
+\end{align*}
+car $\displaystyle \lim_{q\to 2^-} \ln|q+3| = \ln(5)$ et
+$\displaystyle \lim_{q\to 2^-} \ln|q-2| = \lim_{q\to 0^+} \ln(q) = -\infty$.
+Donc $\displaystyle \int_0^2 \frac{1}{x^2+x-6} \dx{x}$ diverge.  Ce qui
+implique que $\displaystyle \int_0^4 \frac{1}{x^2+x-6} \dx{x}$ diverge.
+L'intégrale converge.
+
+\subQ{n} Nous avons par définition que
+\[
+\int_1^2\frac{3}{\sqrt[3]{x-1}} \dx{x} = \lim_{q\to 1^+}
+\int_q^2\frac{3}{\sqrt[3]{x-1}} \dx{x} \ .
+\]
+Or,
+\[
+\int_q^2\frac{3}{\sqrt[3]{x-1}} \dx{x}
+= \int_q^2 3(x-1)^{-1/3} \dx{x} = \frac{9}{2} (x-1)^{2/3}\bigg|_q^2
+= \frac{9}{2} - \frac{9}{2} (q-1)^{2/3} \ .
+\]
+Ainsi,
+\[
+\int_1^2\frac{3}{\sqrt[3]{x-1}} \dx{x} = \lim_{q\to 1^+}
+\left( \frac{9}{2} - \frac{9}{2} (q-1)^{2/3} \right)
+=\frac{9}{2} - \frac{9}{2} (1-1)^{2/3} = \frac{9}{2} \ .
+\]
+Nous avons utiliser le fait que $(x-1)^{2/3}$ est continue à $x=1$.
+L'intégrale converge.
+
+\subQ{p}
+\[
+\int_1^2 \frac{x}{\sqrt{2-x}} \dx{x}
+= \lim_{q\to 2^-} \int_1^q \frac{x}{\sqrt{2-x}} \dx{x} \ .
+\]
+Si $u=2-x$, alors $\dx{u} = -\dx{x}$, $u=2-q$ lorsque
+$x=q$ et $u=1$ lorsque $x=1$.  Ainsi,
+\begin{align*}
+\int_1^q \frac{x}{\sqrt{2-x}} \dx{x}
+&= -\int_1^{2-q} \frac{2-u}{\sqrt{u}} \dx{u}
+= -\int_1^{2-q} \left( 2u^{-1/2} - u^{1/2} \right) \dx{u} \\
+&= -\left( 4 u^{1/2} - \frac{2}{3}u^{3/2} \right) \bigg|_1^{2-q} 
+= -4(2-q)^{1/2} + \frac{2}{3} (2-q)^{3/2} + \frac{10}{3}  \ .
+\end{align*}
+Donc
+\[
+\int_1^2 \frac{x}{\sqrt{2-x}} \dx{x}
+= \lim_{q\to 2^-}
+\left( -4(2-q)^{1/2} + \frac{2}{3} (2-q)^{3/2} + \frac{10}{3}\right) 
+= \frac{10}{3} \ .
+\]
+L'intégrale converge.
+
+\subQ{q}
+\[
+\int_0^8 \frac{x}{(8-x)^{2/3}} \dx{x} =
+\lim_{q\to 8^-} \int_0^q \frac{x}{(8-x)^{2/3}} \dx{x} \ .
+\]
+Si $u=8-x$, alors $\dx{u} = -\dx{x}$, $u=8$ lorsque $x=0$
+et $u=8-q$ lorsque $x=q$.  Donc 
+\begin{align*}
+\int_0^q \frac{x}{(8-x)^{2/3}} \dx{x}
+&= -\int_8^{8-q} \frac{8-u}{u^{2/3}} \dx{u}
+= \int_{8-q}^8 \left( 8 u^{-2/3} - u^{1/3}\right) \dx{u}
+= \left( 24 u^{1/3} - \frac{3}{4} u^{4/3}\right)\bigg|_{8-q}^8\\
+&= \left(24\times 8^{1/3} - \frac{3}{4} \times 8^{4/3} \right)
+- \left(24 (8-q)^{1/3} - \frac{3}{4} (8-q)^{4/3}\right) \\
+&=  36- 24 (8-q)^{1/3} + \frac{3}{4} (8-q)^{4/3} \ .
+\end{align*}
+Ainsi
+\[
+\int_0^8 \frac{x}{(8-x)^{2/3}} \dx{x} =
+\lim_{q\to 8^-} \left(36- 24 (8-q)^{1/3} + \frac{3}{4} (8-q)^{4/3}\right)
+= 36 \ .
+\]
+L'intégrale converge.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q39}}{
+\subQ{a} 
+Remarquons que l'intégrande $1/(x^{1/3} +x^3)$ n'est pas borné lorsque $x$
+approche l'origine.  Puisque que $x^{1/3} + x^3 \geq x^{1/3}$ pour
+$0 \leq x \leq 1$, nous avons que $0 \leq 1/(x^{1/3} +x^3) \leq 1/x^{1/3}$ pour
+$0 < x \leq 1$.  Il découle du test de comparaison que
+$\displaystyle \int_0^1 \frac{1}{x^{1/3}+x^3} \dx{x}$ converge
+car $\displaystyle \int_0^1 \frac{1}{x^{1/3}} \dx{x}$ converge d'après la
+proposition~\ref{impr_comp2} avec $p = 1/3 < 1$.
+
+\subQ{b}
+Le problème est que le domaine d'intégration est infini.  Puisque que
+$x^{1/3} + x^3 \geq x^3$ pour
+$x \geq 1$, nous avons que $0 \leq 1/(x^{1/3} +x^3) \leq 1/x^3$ pour
+$x \geq 1$.  Il découle du test de comparaison que
+$\displaystyle \int_1^\infty \frac{1}{x^{1/3}+x^3} \dx{x}$ converge
+car $\displaystyle \int_1^\infty \frac{1}{x^3} \dx{x}$ converge d'après la
+proposition~\ref{impr_comp1} avec $p = 3 > 1$.
+
+\subQ{c}
+Comme en (b), le problème est que le domaine d'intégration est
+infini.  Puisque $x^2 + x^{4/3} \leq 2x^2$ pour $x \geq 1$, nous avons que
+$1/(x^2 +x^{4/3}) \geq 1/(2x^2)$ pour $x \geq 1$.  Donc
+$x/(x^2 +x^{4/3}) \geq 1/(2x)$ pour $x \geq 1$.
+Il découle du test de comparaison que
+$\displaystyle \int_1^\infty \frac{x}{x^2+x^{4/3}} \dx{x}$ diverge
+car $\displaystyle \int_1^\infty \frac{1}{2x}\dx{x}$ diverge d'après
+la proposition~\ref{impr_comp1} avec $p = 1 \leq 1$.
+}
+
+\compileSOL{\SOLUb}{\ref{7Q40}}{
+\subQ{a}
+Remarquons que l'intégrande $1/(x^2\, e^x)$ n'est pas borné lorsque $x$
+approche l'origine.  Puisque que $e^x \leq e$ pour $0 \leq x \leq 1$,
+nous avons que $x^2 e^x \leq e\, x^2$ pour $0 \leq x \leq 1$.  Ainsi,
+\[
+\frac{1}{x^2\, e^x} \geq \frac{1}{e\, x^2}
+\]
+pour $0 \leq x \leq 1$.  Il découle du test de
+comparaison que $\displaystyle \int_0^1 \frac{1}{x^2\, e^x} \dx{x}$
+diverge car $\displaystyle \int_0^1 \frac{1}{e\, x^2} \dx{x}
+= \frac{1}{e} \int_0^1 \frac{1}{x^2} \dx{x}$ diverge d'après la
+proposition~\ref{impr_comp2} avec $p=2 \geq 1$.
+
+\subQ{b}
+Puisque que $\sqrt{x}+ e^x \geq e^x$ pour $x \geq 0$, nous avons
+\[
+0 \leq \frac{1}{\sqrt{x} + e^x} \leq \frac{1}{e^x}
+\]
+pour $x \geq 0$.  Or,
+\[
+\int_1^\infty \frac{1}{e^x} \dx{x}
+= \lim_{q\rightarrow \infty} \int_1^q e^{-x} \dx{x}
+= \lim_{q\rightarrow \infty} (-e^{-x})\bigg|_1^q
+= \lim_{q\rightarrow \infty} \; (-e^{-q} + e^{-1})
+= \frac{1}{e} \ .
+\]
+Il découle du test de comparaison que
+$\displaystyle \int_1^\infty \frac{1}{\sqrt{x}+ e^x} \dx{x}$
+converge car $\displaystyle \int_1^\infty \frac{1}{e^x} \dx{x}$ converge.
+De plus,
+\[
+0 \leq \int_1^\infty \frac{1}{\sqrt{x}+ e^x} \dx{x}
+\leq
+\int_1^\infty \frac{1}{e^x} \dx{x} = \frac{1}{e} \ .
+\]
+
+\subQ{c}
+Puisque
+$\displaystyle 0\leq \frac{\sin^2 x}{x^3 + 2} \leq \frac{1}{x^3}$ pour
+$x \geq 1$, il découle du test de comparaison que
+$\displaystyle \int_1^\infty \frac{\sin^2 x}{x^3 + 2} \dx{x}$
+converge car $\displaystyle \int_1^\infty \frac{1}{x^3} \dx{x}$ converge
+d'après la proposition~\ref{impr_comp1} avec $p = 3 >1$.  De plus,
+\[
+0 \leq \int_1^\infty \frac{\sin^2 x}{x^3 + 2} \dx{x}
+\leq
+\int_1^\infty \frac{1}{x^3} \dx{x} = \frac{1}{2} \ .
+\]
+
+\subQ{d} Puisque
+$\displaystyle 0 \leq \frac{1+\cos^2x}{x^2} \leq \frac{2}{x^2}$ pour
+$x\neq 0$, il découle du test de comparaison que
+$\displaystyle \int_1^\infty\frac{1+\cos^2x}{x^2}\dx{x}$ converge car
+$\displaystyle \int_1^\infty\frac{2}{x^2} \dx{x}$ converge d'après la
+proposition~\ref{impr_comp1} avec $p = 2 >1$.  De plus,
+fait,
+\[
+  0 \leq \int_1^\infty\frac{1+\cos^2x}{x^2}\dx{x}
+  \leq \int_1^\infty\frac{2}{x^2} \dx{x} = 2 \ .
+\]
+
+\subQ{e}
+Notons que $2\sqrt{x}+1 \geq 1$ et, pour $0\leq x \leq 1$,
+$x^4+3x \leq x+3x = 4x$.  Donc
+\[
+\frac{2\sqrt{x}+1}{x^4+3x} \geq \frac{1}{4x}
+\]
+pour $0 \leq x \leq 1$.
+Il découle du test de comparaison que
+$\displaystyle \int_0^1 \frac{2\sqrt{x}+1}{x^4+3x} \dx{x}$
+diverge car $\displaystyle \int_0^1 \frac{1}{4x}$ diverge d'après la
+proposition~\ref{impr_comp2} avec $p=1 \geq 1$.
+
+\subQ{g} Pour $x$ très grand, nous avons que
+$\displaystyle \frac{2\sqrt{x}+3}{x^2+2x}$ se \lgm comporte\rgm\ comme
+$\displaystyle \frac{2\sqrt{x}}{x^2} = \frac{2}{x^{3/2}}$.
+Puisque l'intégrale 
+$\displaystyle \int_1^{\infty} \frac{1}{x^{3/2}}\dx{x}$ converge grâce
+à la proposition~\ref{impr_comp1} avec $p = 3/2 >1$, il est tentant de
+d'essayer de démontrer que
+$\displaystyle \frac{2\sqrt{x}+3}{x^2+2x} < \frac{A}{x^p}$ pour une
+constante $A$ et $p > 1$.
+
+Puisque
+\begin{equation}\label{VAone}
+2\sqrt{x} + 3 \leq 2\sqrt{x} + 3\sqrt{x} = 5\sqrt{x}
+\end{equation}
+pour $x\geq 1$ et $x^2+2x \geq x^2$ pour $x\geq 1$, nous obtenons
+\begin{equation}\label{VAtwo}
+\frac{1}{x^2+2x} \leq \frac{1}{x^2}
+\end{equation}
+pour $x\geq 1$.  Nous déduisons de (\ref{VAone}) et (\ref{VAtwo}) que
+\[
+0 \leq \frac{2\sqrt{x}+3}{x^2+2x}
+= (2\sqrt{x}+3) \left(\frac{1}{x^2+2x}\right)
+\leq 5\sqrt{x} \left( \frac{1}{x^2}\right) = \frac{5}{x^{3/2}}
+\]
+pour $x\geq 1$.
+
+Il découle du test de comparaison que
+$\displaystyle \int_1^\infty \frac{2\sqrt{x}+3}{x^2+2x} \dx{x}$
+converge car $\displaystyle \int_1^\infty \frac{5}{x^{3/2}}\dx{x}$
+converge.  De plus,
+\begin{align*}
+0 &\leq \int_1^\infty \frac{2\sqrt{x}+3}{x^2+2x} \dx{x}
+\leq \int_1^\infty \frac{5}{x^{3/2}}\dx{x}
+= 5 \lim_{N\to \infty} \int_1^N x^{-3/2} \dx{x}\\
+&= -10 \lim_{N\to \infty} x^{-1/2}\bigg|_1^N
+= -10 \lim_{N\to \infty} \left( \frac{1}{\sqrt{N}} - 1 \right)
+= 10 \ .
+\end{align*}
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

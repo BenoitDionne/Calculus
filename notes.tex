@@ -1,0 +1,145 @@
+\input{preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncomment and add the value for the variables that you want to
+% modified.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setUO{}         % University of the author
+% \setUOfac{}      % Faculty of the author
+% \setUOdept{}     % Department of the author
+% \setUOauthor{}   % Name of the author
+% \setUOtitle{}    % Title of the book
+% \setUOyear{}     % Year of publication
+% \setUOlogoloc{}{}   % The first argument is the location of the logo
+%                     % of the university and the second are the
+%                     % arguments for includegraphics{}
+%                     % The second argument is broken right now
+
+\setTHEO
+% comment \setSOLUa and \setSOLUc and comment out \setHIDE
+\setSOLUa    % Hide those solutions, comment out to show these solutions. 
+\setSOLUb
+% \setSOLUc   % Theoretical questions that we generally hide,
+              % comment out to show these solutions. 
+%\setHIDE      % Used to hide some parts of the solutions
+
+\begin{document}
+
+% \hypersetup{pageanchor=false}
+
+% \setUOtitle{Calcul différentiel et intégral à uOttawa\\[0.6em]
+%     1$^{er}$ édition}
+\titlePage
+
+\opensource
+
+\pagenumbering{roman}
+
+\UOtableofcontents
+% \UOtablesfigureslist
+
+\include{1_avant-propos}
+\clearemptydoublepage
+
+\pagenumbering{arabic}
+
+\include{2_fonctions}
+\cleardoublepage
+
+\include{3_suites_series}
+\cleardoublepage
+
+\include{4_limites}
+\cleardoublepage
+
+\include{5_derivees}
+\cleardoublepage
+
+\include{6_derivees_appl}
+\cleardoublepage
+
+\include{7_integrales}
+\cleardoublepage
+
+\include{8_integrales_appl}
+\cleardoublepage
+
+\include{9_series_ent}
+\cleardoublepage
+
+\include{10_equ_diff}
+\cleardoublepage
+
+\include{11_vecteurs}
+\cleardoublepage
+
+\include{12_alg_lin}
+\cleardoublepage
+
+\include{13_repr_param}
+\cleardoublepage
+
+\include{14_var_mult_fonct}
+\cleardoublepage
+
+\include{15_var_mult_der}
+\cleardoublepage
+
+\include{16_var_mult_int}
+\cleardoublepage
+
+\include{17_vector_calculus}
+\cleardoublepage
+
+\include{18_syst_equ_diff}
+\cleardoublepage
+
+\chapter[Solutions]{Solutions}
+
+\input{2_fonctions_sol}
+
+\input{3_suites_series_sol}
+
+\input{4_limites_sol}
+
+\input{5_derivees_sol}
+
+\input{6_derivees_appl_sol}
+
+\input{7_integrales_sol}
+
+\input{8_integrales_appl_sol}
+
+\input{9_series_ent_sol}
+
+\input{10_equ_diff_sol}
+
+\input{11_vecteurs_sol}
+
+\input{12_alg_lin_sol}
+
+\input{13_repr_param_sol}
+
+\input{14_var_mult_fonct_sol}
+
+\input{15_var_mult_der_sol}
+
+\input{16_var_mult_int_sol}
+
+\input{17_vector_calculus_sol}
+
+\input{18_syst_equ_diff_sol}
+
+\cleardoublepage
+%\clearemptydoublepage
+
+\UObibliography
+\UOindex
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

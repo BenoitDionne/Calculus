@@ -1,0 +1,2249 @@
+\chapter[Fonctions]{Fonctions}\label{ChapFonct}
+
+\compileTHEO{
+
+Ce chapitre présente les objets fondamentaux sur lesquels nous allons
+travailler dans les prochains chapitres.  Ces objets sont les
+{\em fonctions}.  Les principales propriétés des fonctions sont aussi
+définies dans ce chapitre.  Nous terminons le chapitre avec une
+introduction à quelques unes des fonctions de base: les fonctions
+trigonométriques, exponentielles et logarithmiques.  Les fonctions
+exponentielles sont définies de façon intuitive dans ce chapitre.
+Elles sont revues de façon plus rigoureuse au chapitre suivant.
+
+\section{Qu'est-ce qu'une fonction?}
+
+\begin{focus}{\dfn} \index{Fonction}
+Une {\bfseries fonction} $f$ est une opération d'un
+ensemble $X$ à un ensemble $Y$ qui, à chaque élément de $X$, associe
+un seul élément de $Y$.  Nous écrivons $f:X\rightarrow Y$ pour désigner une
+fonction $f$ de $X$ dans $Y$.
+\end{focus}
+
+\begin{egg}
+À la figure~\ref{FUNCT1}, nous définissons à l'aide d'un diagramme une
+fonction $f$ d'un ensemble $X$ de pays à un ensemble $Y$ de villes.
+La fonction $f$ donne la capitale du pays.  À chacun des pays de $X$
+est associé une seule ville dans $Y$ qui est sa capital.
+
+Il n'est pas nécessaire que toutes les villes de $Y$ soient des
+capitales de pays.  Par exemple, Toronto n'est pas la capitale d'un
+pays mais d'une province.
+
+Nous écrivons
+\[
+f(\text{Canada}) = \text{Ottawa} \quad , \quad f(\text{Angleterre}) =
+\text{Londres} \quad , \quad \text{etc}.
+\]
+\label{CAPITALS}
+\end{egg}
+
+\PDFfig{2_fonctions/funct1}{Définition d'une fonction}{Définition d'une
+  fonction $f$ à l'aide d'un diagramme}{FUNCT1}
+
+\begin{egg}
+Le tableau suivant définit une fonction $g$ qui, à chaque nombre
+entier plus grand que $1$ (ligne du haut), associe les diviseurs
+premiers de ce nombre entier (ligne du bas).
+\[
+\begin{array}{c|c|c|c|c|c|c|c|c|c}
+x & 2 & 3 & \ldots & 6 & \ldots & 27 & \ldots & 1372455084 &
+\ldots \\
+\hline
+g(x) & \{2\} & \{3\} & \ldots & \{2,3\} & \ldots & \{3\} &
+\ldots & \{2,3,7,11,13,17,47\} & \ldots
+\end{array}
+\]
+
+La fonction $g$ est donc une fonction qui va de l'ensemble $X$ des
+nombres entiers plus grand que $1$ à l'ensemble $Y$ des ensembles de
+nombres premiers.
+
+Nous écrivons
+\[
+g(2) = \{2\} \quad , \quad g(1372455084) = \{2,3,7,11,13,17,47\}
+\quad , \ldots
+\]
+\label{TABLE}
+\end{egg}
+
+\begin{egg}
+La fonction $h$ qui suit est définie à l'aide d'une expression
+algébrique.
+\[
+h(x) = x^3-2x+1 \; .
+\]
+La fonction $h$ est définie pour tout $x \in X = \RR$ (l'ensemble des
+nombres réels) et donne une seule valeur $h(x) \in Y = \RR$.  Nous
+disons alors que $h$ est une fonction de $\RR$ dans $\RR$ que nous
+dénotons $h:\RR \rightarrow \RR$. 
+
+Nous écrivons
+\[
+h(1) = 0 \quad , \quad h(2) = 5 \quad , \quad h(\pi)=
+12.26706787812110\ldots \quad , \quad \ldots
+\]
+Pour la valeur $h(\pi)$, les points de suspension après le
+dernier $0$ indiquent qu'il y a une infinité de chiffres qui
+suivent.
+
+Dans l'expression
+\[
+y=h(x)=x^3 -2x +1 \ ,
+\]
+la variable $x$ est appelée la {\bfseries variable indépendante}
+\index{Fonction!variable indépendante} et la variable $y$ est appelée
+la {\bfseries variable dépendante} \index{Fonction!variable dépendante}
+car elle dépend de $x$.
+\label{GRAPH_SET}
+\end{egg}
+
+\begin{focus}{\dfn} \index{Fonction!graphe}
+Si $f$ est une fonction qui va d'un ensemble $X$ à un ensemble $Y$,
+nous définissons le {\bfseries graphe de la fonction}
+$f$ comme étant l'ensemble
+\[
+\text{graphe de }f = \left\{ (x,f(x)) : x \in X \right\} \; .
+\]
+\end{focus}
+
+Pour une fonction qui va de $\RR$ dans $\RR$, il est plus fréquent de
+représenter le graphe de cette fonction par la courbe du plan
+cartésien qui est tracée par l'ensemble des points du graphe.  Le
+graphe est donc un sous-ensemble du plan cartésien.
+
+\begin{egg}
+Nous retrouvons à la figure~\ref{FUNCT2} la représentation dans le plan
+cartésien du graphe de la fonction $h$ définie à
+l'exemple~\ref{GRAPH_SET}.
+\end{egg}
+
+\MATHfig{2_fonctions/funct2}{8cm}{Graphe de $h(x) = x^3-2x+1$}
+{Graphe de $y= h(x) = x^3-2x+1$ pour $-2 \leq x \leq 2$.}{FUNCT2}
+
+\section{Image et domaine d'une fonction}
+
+\begin{focus}{\dfn} \index{Fonction!image}
+L'{\bfseries image} d'une fonction $f$ qui va
+d'un ensemble $X$ à un ensemble $Y$ est l'ensemble des éléments $y \in Y$
+pour lesquelles il existe au moins un élément $x \in X$ tel que
+$f(x) = y$.  Nous écrivons
+\[
+\IM f \equiv \left\{ y \in Y : f(x) = y \quad
+\text{pour au moins un élément} \quad x \in X \right\} \; .
+\]
+\end{focus}
+
+\begin{egg}
+Pour l'exemple~\ref{CAPITALS}, l'image de $f$ est l'ensemble
+\[
+\IM f = \left\{ \text{Berlin, Londres, Paris, Ottawa} \right\} \; .
+\]
+\end{egg}
+
+\begin{rmk}
+Pour l'exemple~\ref{TABLE}, nous ne connaissons pas tous les éléments de
+l'image de $g$ et il n'existe pas de formule pour les générer.
+\end{rmk}
+
+\begin{egg}
+Pour l'exemple~\ref{GRAPH_SET}, l'image de $h$ est l'ensemble des
+nombres réels comme nous pouvons le constater à partir du graphe de $h$ à
+la figure~\ref{FUNCT2}.  Nous écrivons
+\[
+\IM h = \RR\; .
+\]
+\end{egg}
+
+\begin{focus}{\dfn} \index{Fonction!domaine}
+Le {\bfseries domaine} d'une fonction $f$ qui
+va d'un ensemble $X$ à un ensemble $Y$ est l'ensemble $X$ sur lequel
+la fonction $f$ est définie.  Nous écrivons
+\[
+\DO f = X \; .
+\]
+\end{focus}
+
+\begin{egg}
+Pour l'exemple~\ref{CAPITALS}, la fonction $f$ est définie pour tous
+les pays de l'ensemble $X$.  Le domaine de $f$ est donc l'ensemble
+$X$ au complet.
+\[
+\DO f = X = \left\{ \text{Allemagne, Angleterre, Canada, France}
+\right\} \; .
+\]
+\end{egg}
+
+\begin{egg}
+La fonction $h$ de l'exemple~\ref{GRAPH_SET} est définie pour tous les
+nombres réels.  Le domaine de $h$ est donc $\RR$.
+\end{egg}
+
+\begin{egg}
+Le graphe de la fonction $h(x) = \sqrt{x}$ est donné à la
+figure~\ref{SQRT}.  Nous avons que
+\[
+\DO h = \{ x \in \RR :  x\geq 0 \}
+\qquad \text{ et } \qquad
+\IM h = \{ y \in \RR : y \geq 0 \}\; .
+\]
+\end{egg}
+
+\MATHfig{2_fonctions/squareroot}{8cm}{Graphe de $y= \sqrt{x}$}
+{Graphe de $y= \sqrt{x}$ pour $0 \leq x \leq 3$}{SQRT}
+
+\section{Composition de fonctions}
+
+\begin{focus}{\dfn} \index{Fonction!composition}
+Si $f$ est une fonction qui va de l'ensemble $X$ à l'ensemble $Y$ et
+$g$ est une fonction qui va de l'ensemble $Y$ à l'ensemble $Z$, nous
+pouvons définir une nouvelle fonction $g\circ f$ qui va aller de
+l'ensemble $X$ à l'ensemble $Z$ en posant
+\[
+(g\circ f)(x) \equiv g(f(x))
+\]
+pour tous les éléments $x$ dans l'ensemble $X$.  La nouvelle
+fonction $g\circ f$ est appelée la {\bfseries composition}
+des fonctions $f$ et $g$.
+\end{focus}
+
+\begin{egg}
+Deux fonctions sont définies par le diagramme à la figure~\ref{COMPO}.
+La fonction $f$ donne la ville où demeure chacune des personnes de
+l'ensemble $X$ et la fonction $g$ donne la province où se situe
+chacune des villes de l'ensemble $Y$.  La composition $g\circ f$ est
+donc la fonction qui donne la province où demeure chacune des
+personnes de l'ensemble $X$.  Ainsi, nous obtenons
+\begin{align*}
+(g\circ f)(\text{Françoise}) &= g(f(\text{Françoise})) =
+g(\text{Montréal}) = \text{Québec}
+\intertext{et}                               
+(g\circ f)(\text{Patrice}) &= g(f(\text{Patrice})) = g(\text{Winnipeg})
+= \text{Manitoba} \; .
+\end{align*}
+\label{F_COMPO}
+\end{egg}
+
+\PDFfig{2_fonctions/composition}{Composition de fonctions}
+{Définition des fonctions $f$ et $g$ pour l'exemple~\ref{F_COMPO}}{COMPO}
+
+\begin{egg}
+Soit $F$ la fonction qui donne pour chaque personne sa mère biologique
+et soit $M$ la fonction qui donne pour chaque personne son père
+biologique.
+
+La composition des fonctions $F$ et $M$, dénotée $F \circ M$, est la
+fonction qui donne pour chaque personne la mère biologique du père
+biologique de cette personne (une des grand-mères de la personne).
+Rappelons que dans la composition $F \circ M$,
+{\em la fonction $M$ est exécutée en premier et la fonction $F$ en
+second}.  La fonction $M$ donne le père biologique de la personne
+donnée initialement.  Puis, la fonction $F$ avec comme argument le
+père biologique de la personne donnée initialement donne la mère
+biologique de ce père.
+
+Quel est le résultat de la composition $F \circ M \circ F$?
+\label{PEOPLES}
+\end{egg}
+
+\begin{egg}
+Regardons un exemple de fonctions dont le domaine et l'image font
+parties des nombres réels.  Plus précisément, considérons les
+fonctions $f(x) = x^2+3$ et $g(x) = 3 x - 2$.  Ainsi,
+\begin{align*}
+(f\circ g)(x) &\equiv f(g(x)) = f(3x - 2) = (3x-2)^2 + 3
+= 9 x^2 - 12 x + 7
+\intertext{et}
+(g\circ f)(x) &\equiv g(f(x)) = g(x^2+3) = 3(x^2+3) - 2
+= 3 x^2 + 7 \; .
+\end{align*}
+Ces compositions donnent bien des fonctions qui sont différentes
+du produit $f g$ qui est
+\[
+(f g)(x) \equiv f(x) g(x) = (x^2+3)(3 x-2) = 3 x^3  -2 x^2 + 9x -6 \; .
+\]
+\end{egg}
+
+\MATHfig{2_fonctions/compog}{8cm}{Graphe de $g(x) = x^2 -1$}
+{Graphe de $y= g(x) = x^2 -1$ pour $-2 \leq x \leq 2$}{COMPOG}
+
+\MATHfig{2_fonctions/compohg}{8cm}{Graphe de $y= h(g(x))$}
+{Graphe de $y= h(g(x)) = \sqrt{x^2 -1}$ pour $1 \leq |x| \leq 3$}{COMPOHG}
+
+\begin{egg}
+Nous pouvons composer les fonctions $g(x) = x^2 - 1$
+(figure~\ref{COMPOG}) et $h(x) = \sqrt{x}$ pour obtenir de nouvelles
+fonctions.  Le domaine de $g$ est $\RR$ et
+l'image de $g$ est $\{ y \in \RR : y \geq -1 \}$.  De plus, le domaine
+de $h$ est $\{ x \in \RR : x \geq 0 \}$ et l'image de $h$ est
+$\{ y \in \RR : y \geq 0 \}$.
+
+Pour définir la composition $h \circ g$, il faut avoir
+\begin{equation} \label{funct_domimg1}
+\IM g \subset \DO h \; .
+\end{equation}
+Ce qui n'est pas le cas présentement.  Il faut restreindre $g$
+à l'ensemble des $x$ tels que $x^2-1 \geq 0$ pour satisfaire
+(\ref{funct_domimg1}).  Avec la restriction $|x|\geq 1$, nous avons
+maintenant que
+\begin{equation} \label{funct_domimg2}
+\IM g = \{ x : x\geq 0\} = \DO h
+\end{equation}
+et la composition $h\circ g$ est définie par
+\[
+(h\circ g)(x) = h(g(x)) = h(x^2-1) = \sqrt{x^2-1} \quad \text{pour}
+\quad |x|\geq 1 \; .
+\]
+Il découle de (\ref{funct_domimg2}) que l'image de $h\circ g$ est
+l'image de $h$ car l'image de $g$ est tout le domaine de $h$.  Le
+domaine de $h \circ g$ est $\{ x \in \RR : |x| \geq 1 \}$ et l'image
+de $h\circ g$ est $\{ y \in \RR : y \geq 0 \}$.  Le
+graphe de $h\circ g$ est donné à la figure~\ref{COMPOHG}.
+
+Puisque
+\[
+\IM h = \{ y | y \geq 0 \} \subset \RR = \DO g \; ,
+\]
+La fonction $g\circ h$ est définie par
+\[
+(g\circ h)(x) = g(h(x)) = g(\sqrt{x}) = \left(\sqrt{x}\right)^2-1 = x
+- 1 \quad \text{pour} \quad x\geq 0 \; .
+\]
+Le domaine de $g\circ h$ est déterminé par le domaine de la racine
+carrée.  Puisque $h$ peut atteindre toutes les valeurs réelles plus
+grandes ou égales à zéro, nous avons que l'image de $g\circ h$ est
+l'image de $g$.  Ainsi,
+\[
+\DO g\circ h = \{ x \in \RR : x \geq 0 \} \quad
+\text{et} \quad \IM g\circ h = \{ y \in \RR : y \geq -1 \} \;.
+\]
+Le graphe de $g\circ h$ est donné à la figure~\ref{COMPOGH}.
+\end{egg}
+
+\MATHfig{2_fonctions/compogh}{8cm}{Graphe de $y= g(h(x))$}
+{Graphe de $y= g(h(x)) = x -1$ pour $0 \leq x \leq 2$}{COMPOGH}
+
+\begin{rmk}
+Il serait tentant de dire que
+$\displaystyle (g\circ h)(x) = x - 1$ pour tout $x$ mais cela est vrai
+seulement si $x\geq 0$ car la fonction $h$ n'est pas définie pour les
+nombres négatifs et nous ne pouvons donc pas définir $g(h(x))$ pour $x<0$;
+l'expression $\left(\sqrt{x}\right)^2-1$ n'est pas définie pour $x<0$.
+
+La fonction $f(x) = x -1$ n'est pas la fonction $g\circ h$.  Il est
+vrai que $(g\circ h)(x) = f(x)$ pour $x \geq 0$ mais $f$ est définie
+pour toutes les valeurs réelles de $x$ alors que $g\circ h$ ne l'est
+pas.  Nous disons que $f$ est une {\bfseries extension}
+\index{Fonction!extension} de la fonction $g\circ h$.  Il ne faut donc
+pas utiliser l'extension d'une fonction pour déterminer le domaine et
+l'image de celle ci car cela peut conduire à des erreurs.  Dans le cas
+présent,
+\[
+\DO f = \RR \qquad \text{et} \qquad \IM f = \RR \; ,
+\]
+ce qui est différent du domaine et de l'image de $g\circ h$.
+\end{rmk}
+
+\section{Fonctions inverses (réciproques)}
+
+Commençons par revoir la définition de l'inverse pour l'addition et
+de l'inverse pour la multiplication, cela nous sera utile pour bien
+comprendre ce qu'est l'inverse d'une fonction.
+
+\subsection{Inverse additif d'un nombre réel}
+
+Le nombre $0$ est {\bfseries l'élément neutre} \index{Élément neutre}
+pour l'addition; c'est le nombre $y$ tel que $y + x = x + y = x$ pour
+tout nombre réel $x$.
+
+\begin{egg} Nous avons $5+0=0+5=5$, $27/4 + 0 = 0 + 27/4 = 27/4$ et
+$\pi+0 = 0 + \pi = \pi$.
+\end{egg}
+
+{\bfseries L'inverse additif} \index{Inverse additif} 
+d'un nombre réel $x$ est le nombre réel $z$ tel que $x+z = z+x =0$.
+
+\begin{egg} L'inverse additif de $5$ est $-5$ car $5 + (-5) = 0$.  De même,
+l'inverse additif de $\pi$ est $-\pi$ car $\pi + (-\pi) = 0$.
+\end{egg}
+
+\subsection{Inverse multiplicatif d'un nombre réel}
+
+Le nombre $1$ est {\bfseries l'élément neutre} \index{Élément neutre}
+pour la multiplication; c'est le nombre $y$ tel que $y \times x = x
+\times y = x$ pour tout nombre réel $x$.
+
+\begin{egg}
+Nous avons $5\times 1= 1\times 5 = 5$,
+$(27/4) \times 1 = 1 \times (27/4) = 27/4$
+et $\pi \times 1 = 1 \times \pi = \pi$.
+\end{egg}
+
+{\bfseries L'inverse multiplicatif}\index{Inverse multiplicatif}
+d'un nombre réel $x \neq 0$ est le nombre réel $z$ tel que
+$x \times z = z \times x = 1$.
+
+\begin{egg}
+L'inverse multiplicatif de $5$ est $0.2$ car
+$5 \times 0.2 = 0.2 \times 5 = 1$.  De même, l'inverse multiplicatif
+de $27/4$ est $4/27$ car $(27/4) \times (4/27) = (4/27) \times (27/4) = 1$.
+\end{egg}
+
+\begin{rmk}
+Le nombre $0$ n'a pas d'inverse multiplicatif car il n'existe pas de
+nombre réel $y$ tel que $0 \times y = 1$.
+\end{rmk}
+
+\subsection{Inverse (réciproque) d'une fonction}
+
+Avant de définir l'inverse d'une fonction, il faut bien comprendre que
+l'opération pour laquelle nous voulons définir un inverse n'est pas
+l'addition ou la multiplication de fonctions mais la composition de
+fonctions.
+
+L'addition et la multiplication de fonctions sont en fait des
+opérations sur les éléments de l'image des fonctions (à valeurs
+réelles).  La composition de fonctions est indépendante des opérations
+d'addition et de multiplication des fonctions.
+
+Comme nous l'avons fait pour l'inverse additif et l'inverse multiplicatif,
+il faut définir l'élément neutre de la composition de fonctions.
+
+\begin{focus}{\dfn}
+La fonction qui joue le rôle {\bfseries d'élément neutre}
+\index{Élément neutre} pour la composition de fonctions est la
+{\bfseries fonction identité} \index{Fonction identité}, dénotée
+$\Id$, qui est définie par $\Id(z) = z$ pour tout élément $z$ du
+domaine.  Pour chaque élément $z$ du domaine, la fonction identité
+redonne cet élément $z$.
+\end{focus}
+
+Si $f$ est une fonction d'un ensemble $X$ dans un ensemble $Y$, nous
+pouvons facilement voir que
+\[
+f \circ \Id = f \qquad \text{et} \qquad \Id \circ f = f \; .
+\]
+C'est à dire, $(f\circ \Id)(x) = f(\Id(x)) = f(x)$ et
+$(\Id\circ f)(x) = \Id(f(x))= f(x)$ pour tout $x$.
+
+Remarquons la similarité avec la propriété de l'élément neutre pour
+l'addition (i.e. $0 + x = x + 0 = x$ pour tout $x$) et de l'élément
+neutre pour la multiplication (i.e. $1 \times x = x \times 1 = x$ pour
+tout $x$).
+
+\begin{egg}
+La fonction $\Id$, qui à une personne redonne cette même personne, est
+l'élément neutre pour la composition de fonctions qui agissent sur les
+personnes comme les fonctions $F$ et $M$ de l'exemple~\ref{PEOPLES}.
+
+Par exemple, nous avons $\Id \circ F = F$ car $F$ donne pour chaque
+personne sa mère biologique et par la suite $\Id$ redonne cette mère.
+\end{egg}
+
+\begin{egg}
+Pour la composition de fonctions dont le domaine et l'image sont des
+sous-ensembles des nombres réels, l'élément neutre $\Id$ est la
+fonction qui à chaque nombre réel $x$ redonne le nombre réel $x$.
+
+Par exemple, si $p(x) = x^2 + 5x$, alors $\Id \circ p = p \circ \Id = p$
+car $(\Id \circ p)(x) = \Id(p(x)) = p(x)$ et
+$(p \circ \Id)(x) = p(\Id(x)) = p(x)$ pour tout nombre réel $x$.
+\end{egg}
+
+En s'inspirant de la définition de l'inverse pour l'addition et de
+l'inverse pour la multiplication, nous définissons l'inverse pour la
+composition de fonctions.
+
+\begin{focus}{\dfn} \index{Fonction!inverse}
+{\bfseries L'inverse d'une fonction} $f$ qui
+va d'un ensemble $X$ à un ensemble $Y$ est la fonction $g$ qui va de
+l'ensemble $Y$ à l'ensemble $X$ et qui satisfait
+\[
+f\circ g = \Id \qquad \text{et}  \qquad  g \circ f = \Id \; ,
+\]
+C'est-à-dire, $g(f(x)) = x$ pour tout $x \in X$ et $f(g(y)) = y$
+pour tout $y\in Y$.  Nous dénotons par $f^{-1}$ la fonction $g$ qui est
+l'inverse de $f$.
+\end{focus}
+
+Cette définition est équivalente à l'énoncé suivant qui est
+souvent utilisé comme défini\-tion de l'inverse d'une fonction.
+
+\begin{focus}{\dfn}
+L'inverse de la fonction $f$ qui va d'un ensemble $X$ à un ensemble
+$Y$ est la fonction $f^{-1}$ qui va de l'ensemble $Y$ à l'ensemble $X$
+et qui satisfait
+\[
+x = f^{-1}(y) \qquad \text{si et seulement si} \qquad y = f(x) \; .
+\]
+\end{focus}
+
+En effet, si $y=f(x)$ alors $f^{-1}(y) = f^{-1}(f(x)) = x$ et si
+$x = f^{-1}(y)$ alors $f(x) = f(f^{-1}(y)) = y$ par définition de l'inverse
+d'une fonction.
+
+\begin{egg}
+Nous retrouvons à la figure~\ref{INVERSE1} un diagramme qui définit
+d'une fonction $f$ qui à chaque pays dans $X$ assigne sa capitale dans
+$Y$.  La fonction inverse $f^{-1}$ est donc la fonction qui, à chaque
+capitale dans $Y$, assigne le pays dont elle est la capitale dans $X$.
+
+La fonction $f^{-1}$ est définie à la figure~\ref{INVERSE1} par les
+flèches formées de tirets.
+\label{FMOINS1}
+\end{egg}
+
+\PDFfig{2_fonctions/inverse1}{Définition des fonctions $f$ et $f^{-1}$}
+{Définition des fonctions $f$ et $f^{-1}$ de l'exemple~\ref{FMOINS1}}
+{INVERSE1}
+
+\begin{egg}
+L'inverse de la fonction $f(x) = x/3 + 1$ est la fonction $g(x) = 3x - 3$ car
+\[
+(g \circ f)(x) = g(f(x)) = g\left( \frac{1}{3}x + 1 \right)
+= 3\left(\frac{1}{3}x+1\right) - 3 = x = \Id(x)
+\]
+pour tout $x$.  De même, nous pouvons vérifier que
+$(f \circ g)(x) = f(g(x)) = \Id(x)$ pour tout $x$.
+
+Ainsi, pour $f(x) = x/3 + 1$, nous obtenons $f^{-1}(x) = 3x + 3$.
+\end{egg}
+
+Nous avons vu que $0$ n'avait pas d'inverse multiplicatif mais que tous les
+autres nombres réels avaient un inverse multiplicatif.  La situation
+est encore plus complexe pour les fonctions car elles n'ont pas toutes
+un inverse.
+
+\begin{egg}
+Par exemple, la fonction $F$ de l'exemple~\ref{PEOPLES} qui donne pour
+chaque personne sa mère biologique n'a pas d'inverse.  Si nous donnons une
+mère, alors nous ne pouvons pas déterminer uniquement la personne pour qui
+elle est la mère sauf si cette mère a eu un seul enfant.
+\end{egg}
+
+\begin{rmk}
+En Ontario, nous utilisons très fréquemment l'expression
+{\bfseries la réciproque d'une fonction} pour désigner l'inverse
+d'une fonction.  Ce n'est pas le cas dans tous les pays de la
+francophonie.  Les anglophones utilisent l'inverse d'une fonction. 
+\end{rmk}
+
+\subsection{Comment déterminer si une fonction a un inverse}
+
+Pour déterminer si une fonction $f$ (en tant que fonction de son
+domaine à son image) a un inverse il faut vérifier que pour chaque
+élément $y$ de son image il existe un seul et unique élément $x$ du
+domaine de $f$ tel que la fonction $f$ évaluée à $x$ donne $y$
+(i.e. $f(x)=y$).  Nous donnons un nom spéciale aux fonctions qui
+possèdent cette propriété.
+
+\begin{focus}{\dfn} \index{Fonction!injective}
+Une fonction $f$ qui va d'un ensemble $X$ à un ensemble $Y$ est
+{\bfseries injective} si $f(x_1) = f(x_2)$
+implique que $x_1 = x_2$.
+\end{focus}
+
+\PDFfig{2_fonctions/diagram}{Fonction qui n'a pas d'inverse}
+{Définition d'une fonction $f$ qui n'a pas d'inverse.  Cette fonction
+est discutée à l'exemple~\ref{EX_DIAGR}}{DIAGR}
+
+\begin{egg}
+Une fonction $f$ est définie par le diagramme à la
+figure~\ref{DIAGR}.  Cette fonction n'a pas d'inverse car les nombres
+$3$ et $4$ donnent tous les deux la couleur noir.  Nous ne pouvons
+donc pas définir une fonction inverse de $Y$ dans $X$ pour $f$; quelle
+serait alors la valeur assignée à la couleur noir?
+\label{EX_DIAGR}
+\end{egg}
+
+Une autre notion important dans le contexte générale de l'étude des
+fonctions est la notion suivante.
+
+\begin{focus}{\dfn} \index{Fonction!surjective}
+Une fonction $f$ qui va d'un ensemble $X$ à un ensemble $Y$ est
+{\bfseries surjective} si, pour tout
+$y \in Y$, il existe au moins un $x \in X$ tel que $f(x) = y$.
+\end{focus}
+
+En d'autres mot, une fonction $f: X \to Y$ est surjective si
+$\IM f = Y$; tous les éléments de $Y$ sont dans l'image de la fonction.
+Ce concept jouera un rôle secondaire dans notre recherche de
+fonctions inverses car nous considérerons seulement les fonctions
+$f : X \to Y$ avec $Y = \IM f$.
+
+Il y a plusieurs façons de vérifier si une fonction est injective;
+c'est-à-dire que pour chaque valeur $y$ dans l'image d'une fonction
+$f$ il existe une seule valeur $x$ dans le domaine de cette fonction
+$f$ qui satisfasse $f(x) = y$.
+
+\subsubsection{Méthode algébrique}
+
+Illustrons cette méthode à l'aide d'un exemple.
+
+\begin{egg}
+Considérons la fonction $f(x) = x/3 +1$ que nous avons vu précédemment.
+Supposons que $x_1$ et $x_2$ soient deux nombres tels que
+$f(x_1) = f(x_2) = y$.  Le but est de montrer que $x_1 = x_2$ et que
+nous avons en fait évalué la fonction $f$ au même point pour obtenir
+$y$.
+
+Nous obtenons de $f(x_1) = f(x_2)$ que $x_1/3  + 1 = x_2/3 +1$.
+Après avoir soustrait $1$ de chaque côté de l'égalité, nous trouvons
+$x_1/3 = x_2/3$.  Une multiplication par $3$ des deux cotés de cette
+nouvelle égalité nous donne $x_1 = x_2$.  Ce que nous voulions
+démontrer.
+\end{egg}
+
+\begin{egg}
+Est-ce que la fonction $\displaystyle f(x) = \frac{1+3x}{5-2x}$ a un
+inverse sur $\RR \setminus \{5/2\}$, son domaine?
+
+Cela revient à montrer que $f$ est injective.  Supposons que
+$f(x_1) = f(x_2)$.  Alors
+\begin{align*}
+f(x_1) = f(x_2) & \Leftrightarrow \frac{1+3x_1}{5-2x_1}
+= \frac{1+3x_2}{5-2x_2} \\
+&\Leftrightarrow (1+3x_1)(5-2x_2) = (1+3x_2)(5-2x_1) \\
+&\Leftrightarrow 5+15x_1-2x_2 -6 x_1x_2 = 5+ 15 x_2 -2x_1 - 6x_1 x_2 \\
+&\Leftrightarrow 15x_1-2x_2= 15 x_2 -2x_1 \\
+&\Leftrightarrow 17x_1 = 17 x_2 \\
+&\Leftrightarrow x_1 = x_2  \ .
+\end{align*}
+\label{invEGG}
+\end{egg}
+
+\subsubsection{Test de la droite horizontale}
+
+Pour ce test, nous utiliserons le graphe de la fonction $f$ et nous
+vérifierons que chaque droite horizontale (i.e.\ $y$ est constant) coupe
+le graphe de la fonction $f$ en un seul point.  L'abscisse $x$ de ce
+point est la seule valeur du domaine de $f$ telle que $f(x) = y$.
+
+\begin{egg}
+À la figure~\ref{GRAPH}, nous avons tracé le graphe de $f(x) = x/3 +1$ et
+quelques droites horizontales pour nous convaincre que chaque droite
+horizontale coupe le graphe de la fonction en un seul point.  Ce qui
+support le fait que la fonction $f$ est injective.
+\end{egg}
+
+\PDFfig{2_fonctions/one2one}{Graphe de $f(x) = x/3 +1$}
+{Le graphe de $\displaystyle f(x) = x/3 +1$ et de quelques droites
+horizontales}{GRAPH}
+
+\subsection{Comment trouver l'inverse d'une fonction}
+
+Après avoir vérifié qu'une fonction est injective et donc qu'un
+inverse existe, nous pouvons chercher son inverse.
+
+\subsubsection{Méthode algébrique}
+
+Si $y=f(x)$, il faut résoudre pour $x$ en fonction de $y$.  L'exemple
+suivant va illustrer cette méthode.
+
+\begin{egg}
+Dans le cas simple de la fonction $f(x) = x/3 +1$, nous posons
+$y = f(x) = x/3 +1$ et nous résolvons pour $x$.  Nous soustrayons $1$
+de chaque côté de l'égalité précédente pour obtenir $y - 1 =  x/3$.
+Puis nous multiplions les deux côtés de cette nouvelle égalité par $3$
+pour obtenir $x = 3y - 3$.  Donc $x=f^{-1}(y) = 3y-3$.
+
+Par tradition, nous utilisons $y$ pour la variable dépendante et
+$x$ pour la variable indépendante.  Nous échangeons donc $x$ et $y$ pour
+obtenir $y = f^{-1}(x) = 3 x - 3$ pour $x\in \RR$.
+\end{egg}
+
+\begin{egg}
+Même si $f$ est donnée par un simple polynôme, il n'est pas toujours
+possible de trouver une expression algébrique pour l'inverse de $f$.
+
+Par exemple, soit $f(x) = x^6 + x^2 + 3$.  Il est facile de tracer le
+graphe de $f$ et de remarquer que $f$ satisfait le test de la droite
+horizontale.  Nous sommes donc certain que l'inverse de $f$ existe.
+
+Cependant, nous ne pouvons résoudre l'équation $y=x^6+x^2+3$ pour $x$
+en fonction de $y$ afin d'obtenir $x = f^{-1}(y)$.  En fait, il a été
+démontré par Evariste Galois, un mathématicien français du $18^e$
+siècle, qu'il n'existe pas de formule générale pour trouver les
+racines d'un polynôme de degré plus grand que quatre comme c'est le
+cas pour les polynômes de degré deux.
+\end{egg}
+
+\begin{egg}
+À l'exemple~\ref{invEGG}, nous avons montré que la fonction
+$\displaystyle f(x) = \frac{1+3x}{5-2x}$ était injective.  Il existe
+donc un inverse de $f$ en tant que fonction définie sur
+$\RR\setminus \{5/2\}$.  Trouvons cet inverse.
+
+Puisque
+\begin{align*}
+y = f(x) = \frac{1+3x}{5-2x} &
+\Leftrightarrow y(5-2x) = 1+3x \Leftrightarrow 5y -2xy = 1 + 3x \\
+&\Leftrightarrow 5y -1 = 2xy + 3x = (2y+3)x
+\Leftrightarrow x = \frac{5y -1}{2y+3} \ ,
+\end{align*}
+nous avons $\displaystyle x=f^{-1}(y) = \frac{5y -1}{2y+3}$.  Comme par
+tradition nous utilisions $y$ pour la variable dépendante et $x$
+pour la variable indépendante, nous échangeons $x$ et $y$ pour obtenir
+$\displaystyle y=f^{-1}(x) = \frac{5x -1}{2x+3}$.  La fonction
+$f^{-1}$ a comme domaine l'image de la fonction $f$ qui est
+$\RR \setminus \{-3/2\}$.
+\end{egg}
+
+\subsubsection{Méthode graphique}
+
+\begin{focus}{\mth}
+Si $f$ est une fonction qui possède une fonction inverse $f^{-1}$,
+alors nous obtenons le graphe de $f^{-1}$ en faisant la réflexion du
+graphe de $f$ par rapport à la droite $y=x$.
+\end{focus}
+
+\PDFfig{2_fonctions/inverse}{Graphe de $f^{-1}$ obtenu par réflexion du
+graphe de $f$}{Graphe de $f^{-1}$ obtenu par réflexion du
+graphe de $f$ par rapport à la droite $y=x$}{INVERSE} 
+
+\begin{rmk}[\theory]
+Pour justifier cet énoncé, nous utiliserons le dessin à la
+figure~\ref{INVERSE}.
+Nous fixons $z$ et cherchons les coordonnées du point $B$ qui est
+le point symétrique au point $A = (z,f(z))$ par rapport à la droite
+$y=x$.  Nous voulons montrer que les coordonnées du point $B$ sont
+$(f(z),z)$, un point du graphe de $f^{-1}$ car $z = f^{-1}(f(z))$.
+
+Si $B$ est le point qui est symétrique au point $A$ par rapport à la
+droite $y=x$, alors les angles $\angle AEC$ et $\angle BEC$ sont des
+angles droits et les segments $\sgm{AE}$ et $\sgm{BE}$ sont de même
+longueur.
+
+Nous traçons la droite horizontale $y = f(z)$ qui coupe la droite $y=x$ en
+$C$.  Puisque les angles $\angle AEC$ et $\angle BEC$ sont égaux et les
+côtés $\sgm{AE}$ et $\sgm{CE}$ adjacents à l'angle $\angle AEC$ sont
+respectivement de même longueur que les côtés $\sgm{BE}$ et $\sgm{CE}$
+adjacents à l'angle $\angle BEC$, il en découle que les triangles
+$\triangle ACE$ et $\triangle BCE$ sont congruents.  Ainsi les
+segments $\sgm{AC}$ et $\sgm{CB}$ sont de même longueur et les angles
+$\angle ACE$ et $\angle BCE$ sont égaux.
+
+Puisque la droite $y=x$ fait un angle de $\pi/4$ avec l'axe des $x$,
+nous avons que $\angle ACE = \pi/4$.  Il s'en suit que $\angle ACB = \pi/2$.
+La droite qui passe par $B$ et $C$ est donc verticale.  Comme les
+coordonnées du point $C$ sont $(f(z),f(z))$, nous avons donc que
+l'abscisse du point $B$ est $f(z)$.
+
+Le point d'intersection de la droite qui passe par $B$ et $C$ avec
+l'axe des $x$ est $F=(f(z),0)$.  Pour trouver l'ordonnée du point $B$,
+nous utilisons le fait que la longueur du segment $\sgm{BC}$, qui est
+aussi la longueur du segment $\sgm{AC}$, est $z-f(z)$.
+L'ordonnée du point $B$ est donc la somme des longueurs des segments
+$\sgm{FC}$ et $\sgm{CB}$.  C'est-à-dire que l'ordonnée du point $B$
+est $f(z) + (z - f(z)) = z$.  Ce qui confirme que les coordonnées de
+$B$ sont $(f(z),z)$.
+\end{rmk}
+
+\subsection[Influence du domaine et de l'image]{Influence du domaine
+  et de l'image d'une fonction sur la définition de son inverse}
+
+Une question que nous n'avons pas abordée précédemment est l'influence du
+domaine et de l'image d'une fonction sur la définition de son
+inverse.
+
+\begin{egg}
+Considérons la fonction $f(x) = x^2 -1$ pour toutes les valeurs
+réelles de $x$.  Cette fonction n'a pas d'inverse car elle n'est pas
+injective.  Par exemple, $f(-1) = f(1) = 0$.  Il est aussi facile de
+voir à partir du graphe de $f$ que cette fonction ne satisfait pas le
+test de la droite horizontale.
+
+Par contre, si nous considèrons $f(x) = x^2-1$ pour $x\geq 0$ seulement,
+alors $f$ a un inverse qui est $f^{-1}(x) = \sqrt{x+1}$ pour
+$x\geq -1$.  Nous retrouvons à la figure~\ref{INVERSE2} les graphes de
+$f$ et $f^{-1}$.
+
+Utilisons la méthode algébrique pour trouver l'inverse de
+$f(x) = x^2-1$ pour $x\geq 0$.  Nous additionnons $1$ de chaque
+côté de $y = f(x) = x^2 -1$ pour obtenir $y + 1 =  x^2$.
+Puis nous prenons la racine carrée des deux côtés de cette dernière
+égalité pour obtenir $x = \sqrt{y + 1}$.
+Donc $x = f^{-1}(y) = \sqrt{y+1}$ pour $y \geq -1$.
+
+Par tradition, nous échangeons $x$ et $y$ pour obtenir
+\[
+y = f^{-1}(x) = \sqrt{x + 1} \quad \text{pour} \quad x\geq -1 \; .
+\]
+
+Sans l'hypothèse que $x\geq 0$, nous aurions obtenu
+$\displaystyle x = \pm \sqrt{y + 1}$.  Or, cette formule ne peut pas
+définir une fonction car nous avons deux valeurs pour chaque valeur de $y$.
+\end{egg}
+
+\PDFfig{2_fonctions/inverse2}{Graphes de $f(x) = x^2 -1$ et $f^{-1}$}
+{Graphes de $f(x) = x^2 -1$ pour $x\geq 0$ et de
+$f^{-1}(x) = \sqrt{x+1}$ pour $x\geq -1$.}{INVERSE2}
+
+\section{Fonctions trigonométriques \life \eng}
+
+Vous avez probablement vu la définition du cosinus et sinus d'un angle
+à partir d'un triangle droit.  Si $\triangle ABC$ est un triangle avec
+un angle droit au sommet $C$ et $\theta$ est l'angle au sommet $A$
+(figure~\ref{TRIG1}), alors le cosinus et le sinus de $\theta$
+sont définis par
+\[
+\cos(\theta) = \frac{|\sgm{AC}|}{|\sgm{AB}|}
+\qquad \text {et} \qquad
+\sin(\theta) = \frac{|\sgm{BC}|}{|\sgm{AB}|}
+\]
+où $|\sgm{AC}|$, $|\sgm{BC}|$ et $|\sgm{AB}|$ sont les longueurs des
+segments $\sgm{AC}$, $\sgm{BC}$ et $\sgm{AB}$ respectivement.  Cette
+définition est excellente pour les angles aiguës (moins de
+$90^\circ$) mais comment définir le cosinus ou sinus d'un angle obtus
+(plus de $90^\circ$).
+
+\PDFfig{2_fonctions/trig0}{Définition du sinus et cosinus d'un angle à
+partir du cercle unité}{Définition du sinus et cosinus de l'angle
+$\theta$ à partir du cercle unité.}{TRIG0}
+
+Une autre façon de définir le
+{\bfseries cosinus et sinus d'un angle en radians} est avec le cercle
+unité.
+
+\begin{focus}{\dfn}
+Soit $D$, l'intersection du cercle de rayon $1$ centré à l'origine
+avec la droite émanant de l'origine et qui forme un angle $\theta$
+avec l'axe des $x$ lorsque nous nous déplaçons dans le sens contraire aux
+aiguilles d'une montre (figure~\ref{TRIG0}).  L'abscisse du
+point $D$ est $\cos(\theta)$\index{Cosinus} et l'ordonnée du point $D$
+est $\sin(\theta)$\index{Sinus}.
+\end{focus}
+
+\PDFfig{2_fonctions/trig1}{Définition du sinus et cosinus d'un angle à
+partir d'un triangle}{Définition du sinus et cosinus de l'angle
+$\theta$ à partir d'un triangle.}{TRIG1}
+
+À partir de maintenant, au lieu de calculer les angles en degrés, nous
+calculons les angles en radians.  N'oubliez pas que le nombre $\pi$
+est le rapport de la circonférence d'un cercle sur son diamètre.
+Ainsi,  $360^\circ$ correspond à $2\pi$ radians, la circonférence d'un
+cercle de rayon $1$.
+
+Les deux définitions du cosinus et sinus que nous venons de donner
+sont équivalentes.  Considérons le dessin à la figure~\ref{TRIG1}.
+Si le sommet $A$ du triangle $\triangle ABC$ est à l'origine,
+$\sgm{AC}$ repose sur l'axe des $x$, $D$ est le point d'intersection
+de la droite contenant le segment $\sgm{AB}$ avec le cercle de rayon
+$1$ centré à l'origine, et $E$ est le point d'intersection de la
+droite perpendiculaire à $\sgm{AC}$ passant par $D$ avec l'axe des
+$x$, alors les triangles $\triangle ABC$ et $\triangle ADE$ sont
+semblables.  Ainsi,
+\[
+\cos(\theta) = \frac{|\sgm{AC}|}{|\sgm{AB}|} = \frac{|\sgm{AE}|}{|\sgm{AD}|} =
+|\sgm{AE}|
+\qquad \text{ et } \qquad
+\sin(\theta) = \frac{|\sgm{BC}|}{|\sgm{AB}|} = \frac{|\sgm{DE}|}{|\sgm{AD}|} =
+|\sgm{DE}|
+\]
+car $|\sgm{AD}|=1$.
+
+Il faut bien comprendre que l'angle positif $\theta$ représenté dans les
+dessins des figures~\ref{TRIG0} et \ref{TRIG1} est l'angle mesuré lorsque nous
+nous déplaçons dans le sens contraire aux aiguilles d'une montre à
+partir de l'axe des $x$.
+
+Le Tableau~\ref{BAS_VAL} donne quelques valeurs du sinus et cosinus
+qu'il faut mémoriser.  Nous verrons plus tard que nous pouvons
+utiliser les identités trigonométriques pour trouver d'autres valeurs
+du sinus et cosinus.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c}
+$\theta$ & $0$ & $\pi/6$ & $\pi/4$ & $\pi/3$ & $\pi/2$ \\
+\hline
+$\cos(\theta)$ & $1$ & $\sqrt{3}/2$ &
+$\sqrt{2}/2$ & $1/2$ & $0$ \\
+\hline
+$\sin(\theta)$ & $0$ & $1/2$ &
+$\sqrt{2}/2$ & $\sqrt{3}/2$ & $1$
+\end{tabular}
+\end{center}
+\caption{Valeurs de $\cos(\theta)$ et $\sin(\theta)$ pour quelques
+valeurs de $\theta$. \label{BAS_VAL}}
+\end{table} 
+
+Soit $\triangle ABC$ le triangle avec un angle droit au point $C$ et
+un angle de $\theta$ radians au sommet $A$ (figure~\ref{TRIG1}).
+Pour $\theta \neq n\pi + \pi/2$ où $n \in \ZZ$, la tangente de l'angle
+$\theta$ est définie par
+\[
+\tan(\theta) = \frac{|\sgm{BC}|}{|\sgm{AC}|} \; .
+\]
+
+Nous pouvons aussi définir la tangente de l'angle $\theta$ à l'aide du
+cercle unité.  Si nous utilisons le triangle $\triangle ABC$
+représenté à la figure~\ref{TRIG1}, alors la
+{\bfseries tangente de l'angle $\theta$}\index{Tangent} est  
+\[
+\tan(\theta) = \frac{|\sgm{BC}|}{|\sgm{AC}|}
+= \frac{|\sgm{DE}|}{|\sgm{AE}|}
+= \frac{\sin(\theta)}{\cos(\theta)}
+\quad , \quad \theta \neq \frac{\pi}{2} + n\pi \ \text{pour} \ n\in \ZZ \; .
+\]
+
+Il ne faut pas oublier que l'angle positif $\theta$ est l'angle mesuré
+lorsque nous nous déplaçons dans le sens contraire aux aiguilles d'une
+montre à partir de l'axe des $x$.
+
+Il y a trois autres fonctions trigonométriques qui peuvent être utiles
+de temps à autre.  Nous donnons leurs définitions à partir du triangle
+$\triangle ABC$ représenté à la figure~\ref{TRIG1}.
+
+La {\bfseries cotangente d'un angle $\theta$}\index{Cotangente} est
+définie par la relation
+\[
+\cot(\theta) = \frac{|\overline{AC}|}{|\overline{BC}|} 
+= \frac{|\overline{AE}|}{|\overline{DE}|} 
+= \frac{\cos(\theta)}{\sin(\theta)} \ , \ \theta \neq
+n \pi \ \text{pour} \ n\in \ZZ \; .
+\]
+La {\bfseries sécante d'un angle $\theta$}\index{Sécante} est définie
+par la relation
+\[
+\sec(\theta) = \frac{|\overline{AB}|}{|\overline{AC}|} 
+= \frac{|\overline{AD}|}{|\overline{AE}|} 
+= \frac{1}{\cos(\theta)} \ , \ \theta \neq
+\frac{\pi}{2} + n \pi \ \text{pour} \ n\in \ZZ \; .
+\]
+Finalement, la {\bfseries cosécante d'un angle $\theta$}\index{Cosécante}
+est définie par la relation
+\[
+\csc(\theta) = \frac{|\overline{AB}|}{|\overline{BC}|} 
+= \frac{|\overline{AD}|}{|\overline{DE}|} 
+= \frac{1}{\sin(\theta)} \ , \ \theta \neq
+n \pi \ \text{pour} \ n\in \ZZ \, .
+\]
+
+\begin{rmk}
+Notons que  $\cos(\theta) \neq \cos(\theta)$.
+
+La fonction $\cos(x)$ définie dans le cours de
+{\bfseries Fonctions} de $11^e$ année en Ontario assume
+que $x$ est mesuré en degrés.  Alors que la fonction $\cos(x)$
+définie dans le cours de {\bfseries Fonctions Avancées} de $12^e$
+assume que $x$ est mesuré en radians.
+
+La même notation a été utilisée pour dénoter deux différentes
+fonctions.  Par exemple, $\cos(10) \neq \cos(10)$ si l'angle du
+premier cosinus est $10$ degrés et celui du deuxième cosinus est $10$
+radians.  Il est aussi mélangeant d'écrire $\displaystyle \cos(10) =
+\cos\left( 10 (\pi/180)\right)$; il faut comprendre que
+l'angle du premier cosinus est $10$ degrés alors que celui du deuxième
+cosinus est $\displaystyle 10 (\pi/180)$ radians.
+
+Si nous dénotons par $\cos_{d}$ le cosinus où l'angle est mesuré en
+degrés et par $\cos$ le cosinus où l'angle est mesuré en radians,
+alors il est maintenant clair que $\cos_{d}(10) \neq \cos(10)$ et
+$\displaystyle \cos_{d}(10) = \cos\left( 10 (\pi/180) \right)$.
+
+Il aurait été préférable de donner des noms différents au cosinus pour
+les angles en degrés et au cosinus pour les angles en radians.
+Malheureusement, la tradition veut que nous utilisions le même nom
+(i.e. $\cos$) dans les deux cas.
+
+À moins d'avis contraire, l'argument des fonctions trigonométriques
+sera toujours mesuré en radians.  Il sera très clairement spécifié si
+jamais nous devons utiliser les fonctions trigonométriques où les angles
+sont mesurés en degrés.
+
+Cette nuance entre le cosinus où les angles sont mesurés en degrés et
+celui où les angles sont mesurés en radians aura des conséquences très
+importante lors de l'étude du calcul différentiel et intégral pour les
+fonctions trigonométriques.
+
+La remarque précédente au sujet du cosinus est aussi valable pour les
+autres fonctions trigonométriques.
+\end{rmk}
+
+\begin{rmk}
+Remarquons que $\sin \theta \neq \theta \sin$.  En fait, cette
+dernière expression n'a aucun sens.  Il faut noter qu'un grand nombre
+d'auteurs utilisent la notation  $\sin \theta$ pour désigner
+$\sin(\theta)$.  C'est donc le sinus qui est évalué à $\theta$ et non
+pas le produit du sinus par le monôme $\theta$.
+
+L'utilisation de $\sin \theta$, $\cos \theta$ et $\tan \theta$ pour
+désigner $\sin(\theta)$, $\cos(\theta)$ et $\tan(\theta)$
+respectivement est une tradition que nous éviterons dans le présent
+document.  De cette façon, nous ne risquerons pas de retrouver une
+expression du genre $\sin \theta + 1$. Est-ce $\sin(\theta+1)$ ou
+$\sin(\theta) + 1$?
+\end{rmk}
+
+\subsection{Identités trigonométriques}
+
+Puisque $\cos(\theta)$ et $\sin(\theta)$ sont les coordonnés d'un
+point du cercle de rayon $1$ centré à l'origine, nous obtenons le
+résultat suivant.
+
+\begin{focus}{\prp}
+\[
+\cos^2(\theta) + \sin^2(\theta) = 1 \quad \text{pour} \quad \theta \in
+\RR \ .
+\]
+\end{focus}
+
+Puisque $\theta$ et $\theta+2\pi$ représentent le même point du cercle
+de rayon $1$ centré à l'origine, nous obtenons le résultat suivant.
+
+\begin{focus}{\prp}
+\[
+\cos(\theta + 2\pi) = \cos(\theta) \quad \text{et} \quad
+\sin(\theta + 2\pi) = \sin(\theta) \quad \text{pour} \quad \theta \in \RR \; .
+\]
+\end{focus}
+
+Nous disons que le cosinus et le sinus sont des fonctions
+{\bfseries périodiques} de {\bfseries période} $2\pi$\index{Période}.
+Il s'en suit que nous avons les mêmes égalités si $2\pi$ est remplacé
+par $-2\pi$, $4\pi$, $-4\pi$, etc.
+
+Il est facile de déduire plusieurs identités trigonométriques à partir
+du cercle unité.
+
+Puisque les triangles $\triangle 0BE$, $\triangle OCG$,
+$\triangle ODG$ et $\triangle OAE$ représentés à la figure~\ref{TRIG4} sont
+congruents, nous obtenons les identités suivantes.
+
+\begin{focus}{\prp}
+\[
+\begin{array}{lcl}
+\cos(\theta) = \cos(-\theta) ,&& \sin(\theta) = -\sin(-\theta), \\
+\cos(\theta) = -\cos(\pi - \theta) ,&& \sin(\theta) = \sin(\pi - \theta),\\
+\cos(\theta) = -\cos(\pi + \theta) & \quad\text{et}\quad &
+\sin(\theta) = -\sin(\pi+\theta)
+\end{array}
+\]
+pour $\theta \in \RR$. \label{fonct_ident_trigsA}
+\end{focus}
+
+Puisque les triangles $\triangle 0AB$ et $\triangle ODC$ représentés à la
+figure~\ref{TRIG5} sont congruents, nous obtenons les identités
+suivantes.
+
+\begin{focus}{\prp}
+\[
+\cos(\theta) = \sin\left(\frac{\pi}{2} - \theta\right)
+\quad \text{et} \quad
+\sin(\theta) = \cos\left(\frac{\pi}{2} - \theta\right)
+\quad \text{pour} \quad \theta \in \RR \ .
+\]
+\label{fonct_ident_trigsB}
+\end{focus}
+
+Ce sont seulement quelques unes des identités trigonométriques que
+nous pouvons déduire à partir du cercle unité.
+
+\PDFfig{2_fonctions/trig4}{Identités trigonométriques provenant de
+  réflexions par rapport aux axes}{Identités trigonométriques
+  provenant de réflexions par rapport aux axes}{TRIG4} 
+
+\PDFfig{2_fonctions/trig5}{Identités trigonométriques provenant d'une
+  réflexion par rapport à la droite $y=x$}{Identités trigonométriques
+  provenant d'une réflexion par rapport à la droite $y=x$}{TRIG5}
+
+Finalement, les {\bfseries formules d'addition}
+\index{Formules d'addition en trigonométrie}
+suivantes seront d'une très grande utilité lors de la résolution
+d'équations impliquant les cosinus et sinus.  Elles sont aussi
+utilisées pour simplifier les {\em intégrales}
+(chapitre~\ref{chapter_integr}) que nous retrouvons souvent dans les
+applications.
+
+\begin{focus}{\prp}
+\[
+\cos(\theta_1 + \theta_2) = \cos(\theta_1)\cos(\theta_2)
+- \sin(\theta_1)\sin(\theta_2)
+\]
+et
+\[
+\sin(\theta_1 + \theta_2) = \cos(\theta_1)\sin(\theta_2) +
+\sin(\theta_1)\cos(\theta_2)
+\]
+pour $\theta_1, \theta_2 \in \RR$.
+\end{focus}
+
+\begin{rmk}[\theory]
+Nous entendons souvent dire qu'il n'y a qu'une et une seule façon de
+résoudre un problème de mathématique.  Pour contredire cette
+affirmation, nous donnons plusieurs démonstrations différentes des
+formules d'addition pour le sinus et le cosinus. Toutes ces
+démonstrations sont bonnes.  Il est donc possible d'avoir plus d'une
+bonne façon de résoudre un problème mathématique.
+
+\subI{Première démonstration}
+Nous utilisons le dessin à la figure~\ref{fonct_trig_SUM}.  Nous
+assumons donc que $\theta_1$ et $\theta_2$ sont entre $0$ et $\pi/2$.
+Pour les autres valeurs de $\theta_1$ et $\theta_2$, la démonstration
+peut être réduite au présent cas à l'aide des identités
+trigonométriques données
+au propositions~\ref{fonct_ident_trigsA} et \ref{fonct_ident_trigsB}.
+
+\PDFfig{2_fonctions/trig_sum}{Règle d'addition pour les sinus et
+  cosinus}{Cette figure sert à la première démonstration de la règle
+  d'addition pour les sinus et cosinus qui est donnée à la
+  remarque~\ref{proof_add}.}{fonct_trig_SUM}
+
+Le triangle $\triangle OBC$ est semblable au triangle $\triangle EDC$.
+En particulier, $\angle COB = \angle CED$.  Si nous considérons le
+triangle $\triangle OCE$, nous trouvons que la longueur de l'hypoténuse
+$\overline{EC}$ du triangle $\triangle EDC$ est $\sin(\theta_2)$.
+Ainsi, $|\overline{ED}|=\sin(\theta_2)\cos(\theta_1)$ et
+$|\overline{DC}|=\sin(\theta_2)\sin(\theta_1)$ par définition du
+cosinus et du sinus à partir d'un triangle droit.  De même, si nous
+considérons le triangle $\triangle OCE$, nous trouvons que la longueur
+de l'hypoténuse $\overline{OC}$ du triangle $\triangle OBC$ est
+$\cos(\theta_2)$.  Ainsi,
+$|\overline{OB}|=\cos(\theta_2)\cos(\theta_1)$ et
+$|\overline{BC}|=\cos(\theta_2)\sin(\theta_1)$ par définition du
+cosinus et du sinus à partir d'un triangle droit.
+
+Nous avons donc
+\[
+\sin(\theta_1+\theta_2) = |\overline{AE}| = |\overline{BC}| + |\overline{DE}|
+= \cos(\theta_2)\sin(\theta_1) + \sin(\theta_2)\cos(\theta_1) 
+\]
+et
+\[
+\cos(\theta_1+\theta_2) = |\overline{OA}| = |\overline{OB}| - |\overline{DC}|
+= \cos(\theta_2)\cos(\theta_1) - \sin(\theta_2)\sin(\theta_1) \; .
+\]
+
+\subI{Deuxième démonstration} Cette démonstration fait appel aux
+nombres complexes que le lecteur n'a probablement pas vu.  Nous
+donnons quand même cette démonstration puisqu'elle est très courte et
+élégante, en espérant que cela pourra inciter certains lecteurs à
+approfondir leurs connaissances en mathématiques au delà du cours de
+calcul différentiel et intégral.
+
+Puisque $e^{\theta i} = \cos(\theta) + i \sin(\theta)$ où $i$ est le
+nombre complexe tel que $i^2=-1$ et $\theta \in \RR$, nous avons
+\begin{equation} \label{complex_equ1}
+e^{(\theta_1+\theta_2)i} = \cos(\theta_1+\theta_2) + i \sin(\theta_1+\theta_2)
+\end{equation}
+et
+\begin{align}
+&e^{(\theta_1+\theta_2)i} = e^{\theta_1 i} e^{\theta_2 i} =
+\big( \cos(\theta_1) + i \sin(\theta_1) \big)
+\big( \cos(\theta_2) + i \sin(\theta_2) \big) \nonumber \\
+&\quad = \big( \cos(\theta_1)\cos(\theta_2)- \sin(\theta_1)\sin(\theta_2) \big)
++\big( \sin(\theta_1)\cos(\theta_2) + \cos(\theta_1)\sin(\theta_2)\big)i \ .
+\label{complex_equ2}
+\end{align}
+Si nous comparons la partie réelle et imaginaire de (\ref{complex_equ1}) et 
+(\ref{complex_equ2}), nous obtenons
+\begin{align*}
+\cos(\theta_1+\theta_2) &= \cos(\theta_1)\cos(\theta_2)-
+\sin(\theta_1)\sin(\theta_2)
+\intertext{et}
+\sin(\theta_1+ \theta_2) &= \sin(\theta_1)\cos(\theta_2) +
+\cos(\theta_1)\sin(\theta_2) \; .
+\end{align*}
+Évidemment, cette démonstration est très courte mais fait appel à
+l'identité $e^{\theta i} = \cos(\theta) + i \sin(\theta)$ qui n'est
+pas triviale à démontrer.
+
+% \PDFfig{2_fonctions/trigadd}{Règle d'addition pour les sinus et
+%   cosinus}{Cette figure sert à la troisième démonstration de la règle
+%   d'addition pour les sinus et cosinus qui est donnée à la
+%   remarque~\ref{proof_add}}{proof_pict}
+
+% \subI{Troisième démonstration} Cette démonstration de la règle
+% d'addition pour le sinus et cosinus demande beaucoup plus de calculs
+% algébriques que la première démonstration.
+
+% La démonstration est basée sur le dessin de la
+% figure~\ref{proof_pict}.
+
+% Puisque les triangles $\triangle ABD$ et $\triangle CED$ ont un angle
+% commun au sommet $D$ et possèdent tous les deux un angle droit
+% (i.e. $\angle CED = \angle ABD = \pi/2$), ils sont donc semblables.
+% Il s'en suit que $\angle DCE = \angle DAB = \alpha + \beta$.
+
+% À l'aide de la définition des fonctions trigonométriques pour le
+% triangle $\triangle CED$, nous trouvons que
+% \begin{align*}
+% \cos(\alpha+\beta) &= \frac{\sin(\beta)}{a}
+% \intertext{et}
+% \sin(\alpha+\beta) &= \frac{b}{a} \; .
+% \end{align*}
+
+% Donc
+% \begin{align*}
+% a &= \frac{\sin(\beta)}{\cos(\alpha+\beta)}
+% \intertext{et}
+% b &= a \sin(\alpha+\beta) = \frac{\sin(\beta)\sin(\alpha+\beta)}
+% {\cos(\alpha+\beta)} \; .
+% \end{align*}
+
+% De même. à l'aide de la définition des fonctions trigonométriques pour
+% le triangle $\triangle ABD$, nous trouvons que
+% \begin{align*}
+% \cos(\alpha+\beta) &= \frac{\cos(\alpha)}{b+\cos(\beta)}
+% \intertext{et}
+% \sin(\alpha+\beta) &= \frac{a+\sin(\alpha)}{b+\cos(\beta)} \; .
+% \end{align*}
+
+% Ainsi,
+% \begin{align}
+% \cos(\alpha+\beta) &= \frac{\cos(\alpha)}
+% {\displaystyle \frac{\sin(\beta)\sin(\alpha+\beta)}{\cos(\alpha+\beta)}
+% + \cos(\beta)} \nonumber \\
+% &= \frac{\cos(\alpha)\cos(\alpha+\beta)}
+% {\sin(\beta)\sin(\alpha+\beta)+ \cos(\beta)\cos(\alpha+\beta)}
+% \label{add_1}
+% \intertext{et}
+% \sin(\alpha+\beta) &=
+% \frac{\displaystyle \frac{\sin(\beta)}{\cos(\alpha+\beta)}+\sin(\alpha)}
+% {\displaystyle \sin(\beta)\frac{\sin(\alpha+\beta)}{\cos(\alpha+\beta)}
+% + \cos(\beta)} \nonumber \\
+% &= \frac{\sin(\beta)  +\sin(\alpha)\cos(\alpha+\beta)}
+% {\sin(\beta)\sin(\alpha+\beta) + \cos(\beta)\cos(\alpha+\beta)} \; .
+% \label{add_2}
+% \end{align}
+
+% Si nous résolvons l'équation (\ref{add_1}) ci-dessus en fonction de
+% $\sin(\alpha+\beta)$, nous trouvons
+% \begin{equation} \label{add_3}
+% \sin(\alpha+\beta) = \frac{\cos(\alpha)-\cos(\beta)\cos(\alpha+\beta)}
+% {\sin(\beta)} \; .
+% \end{equation}
+% Si maintenant nous substituons cette expression pour $\sin(\alpha+\beta)$
+% dans (\ref{add_2}) et nous résolvons pour $\cos(\alpha+\beta)$, nous
+% trouvons
+% \begin{equation} \label{add_4}
+% \cos(\alpha+\beta) = \frac{\cos^2(\alpha)-\sin^2(\beta)}
+% {\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)} \; .
+% \end{equation}
+
+% Finalement, si nous substituons l'expression pour $\cos(\alpha+\beta)$ que
+% nous venons de donner en (\ref{add_4}) dans (\ref{add_3}), nous trouvons
+% l'expression suivante pour $\sin(\alpha+\beta)$.
+% \begin{equation}\label{add_5}
+% \sin(\alpha+\beta) = \frac{\cos(\alpha)\sin(\alpha)+\cos(\beta)\sin(\beta)}
+% {\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)} \; .
+% \end{equation}
+
+% Or, grâce à l'identité $\cos^2(\theta)+\sin^2(\theta)=1$, nous avons que
+% \[
+% \cos^2(\alpha)-\sin^2(\beta) =
+% \left(\cos(\alpha)\cos(\beta) + \sin(\alpha)\sin(\beta)\right)
+% \left(\cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)\right)
+% \]
+% et
+% \begin{multline*}
+% \cos(\alpha)\sin(\alpha)+\cos(\beta)\sin(\beta) = \\
+% \left(\cos(\alpha)\cos(\beta) + \sin(\alpha)\sin(\beta)\right)
+% \left(\cos(\alpha)\sin(\beta) + \sin(\alpha)\cos(\beta)\right) \ .
+% \end{multline*}
+
+% Si nous substituons ces deux expressions dans (\ref{add_4}) et
+% (\ref{add_5}) respectivement, nous trouvons finalement
+% \begin{align*}
+% \cos(\alpha+\beta) &= \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)
+% \intertext{et}
+% \sin(\alpha+\beta) &= \cos(\alpha)\sin(\beta) + \sin(\alpha)\cos(\beta) \; .
+% \end{align*}
+
+% Le lecteur a probablement remarqué que nous avons supposé que
+% $\alpha+\beta \neq \pi/2$ car, dans ce cas, $\cos(\alpha+\beta) = 0$
+% et nous aurions une division par $0$.  Le cas $\alpha+\beta=\pi/2$ est en
+% fait très simple à démontrer.  Pour cela, nous considérons la
+% figure~\ref{Sproof_pict}.   Nous trouvons que
+% \begin{align*}
+% \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta) &=
+% \cos(\alpha)\sin(\alpha) - \sin(\alpha)\cos(\alpha) \\
+% &= 0 = \cos(\pi/2) = \cos(\alpha+\beta)
+% \intertext{et}
+% \cos(\alpha)\sin(\beta) + \sin(\alpha)\cos(\beta) &=
+% \cos^2(\alpha) +\sin^2(\alpha) = 1 = \sin(\pi/2) = \sin(\alpha+\beta) \; .
+% \end{align*}
+
+% \PDFfig{2_fonctions/trigadd2}{Règle d'addition pour les sinus et
+%   cosinus}{Cette figure sert à la troisième démonstration de la règle
+%   d'addition pour les sinus et cosinus qui est donnée à la
+%   remarque~\ref{proof_add} lorsque la somme des angles est
+%   $\pi/2$.}{Sproof_pict}
+
+% Les autres cas où le raisonnement précédent ne fonctionne pas
+% (e.g. $\cos(\alpha) = \sin(\beta)=0$) peuvent tous être facilement
+% traités comme nous venons de le faire pour le cas $\alpha+\beta=\pi/2$.
+\label{proof_add}
+\end{rmk}
+
+\begin{egg}
+Quelle est la valeur de $\displaystyle \sin(2\pi/3)$?
+
+Puisque $\sin(\theta) = \sin(\pi - \theta)$, nous avons que
+\[
+\sin\left(\frac{2\pi}{3}\right) = \sin\left(\pi - \frac{\pi}{3}\right)
+= \sin\left(\frac{\pi}{3}\right) = \frac{\sqrt{3}}{2}
+\]
+où la dernière égalité provient du Tableau~\ref{BAS_VAL}.
+\end{egg}
+
+\begin{egg}
+Quelle est la valeur de $\sin(7\pi/12)$?
+
+Puisque $7\pi/12 = \pi/3 + \pi/4$, nous obtenons de la formule d'addition
+pour le sinus que
+\begin{align*}
+\sin\left(\frac{7\pi}{12}\right) &=
+\sin\left(\frac{\pi}{3} + \frac{\pi}{4}\right)
+= \cos\left(\frac{\pi}{3}\right) \sin\left(\frac{\pi}{4}\right) +
+\sin\left(\frac{\pi}{3}\right) \cos\left(\frac{\pi}{4}\right) \\
+&= \frac{1}{2} \times \frac{\sqrt{2}}{2} + \frac{\sqrt{3}}{2}
+\times \frac{\sqrt{2}}{2}
+= \frac{\sqrt{2}}{4} \left( 1 + \sqrt{3}\right) \; .
+\end{align*}
+\end{egg}
+
+\begin{egg}
+Montrons que
+\begin{equation}\label{db_angle}
+\cos^2(\theta) = \frac{1}{2} \left( 1 + \cos(2\theta) \right)
+\end{equation}
+quel que soit $\theta$.
+
+Si nous substituons $\theta_1$ et $\theta_2$ par $\theta$ dans la
+formule d'addition pour le cosinus, nous obtenons
+\[
+\cos(2 \theta) = \cos^2(\theta) - \sin^2(\theta) \; .
+\]
+Puisque $\sin^2(\theta) = 1 - \cos^2(\theta)$, il découle de
+l'équation ci-dessus que
+\begin{equation} \label{doubleAngle}
+\cos(2 \theta) = 2 \cos^2(\theta) - 1 \; .
+\end{equation}
+D'où
+\[
+\cos^2(\theta) = \frac{1}{2} \left( 1 + \cos(2\theta) \right) \; .
+\]
+\end{egg}
+
+Il existe une formule pour $\sin^2(\theta)$ qui est
+semblable à celle donnée en (\ref{db_angle}).  La proposition suivante
+inclus ces deux formules. 
+
+\begin{focus}{\prp}\index{Formules de l'angle double}
+\[
+\cos^2(\theta) = \frac{1}{2} \left( 1 + \cos(2\theta) \right)
+\quad \text{et} \quad 
+\sin^2(\theta) = \frac{1}{2} \left( 1 - \cos(2\theta) \right) \; .
+\]
+La première formule est la {\bfseries formule de l'angle double pour
+le cosinus} alors que la deuxième formule est la {\bfseries formule de
+l'angle double pour le sinus}. \label{db_angle_prp}
+\end{focus}
+
+Nous laissons au lecteur la tâche de vérifier la formule de l'angle
+double pour le sinus comme nous l'avons fait pour la formule de l'angle
+double pour le cosinus.
+
+\begin{rmk}
+Les deux formules données à la proposition~(\ref{db_angle_prp}) vont
+s'avérer très utiles pour évaluer certaines {\em intégrales} au
+chapitre~\ref{chapter_integr}.
+\end{rmk}
+
+Pour terminer, mentionnons deux identités trigonométriques qui
+font appel à la tangente, la cotangente, la sécante et la cosécante.
+Si nous divisons l'identité $\cos^2(\theta) + \sin^2(\theta) = 1$ tour
+à tour par $\cos^2(\theta)$ et par $\sin^2(\theta)$, nous obtenons les
+deux identités suivantes.
+
+\begin{focus}{\prp}
+\[
+\begin{array}{ll}
+1 + \tan^2(\theta) = \sec^2(\theta) &\quad \text{pour} \quad \theta \neq
+\displaystyle \frac{\pi}{2} + n \pi \ \text{pour} \ n \in \ZZ \; . \\[0.5em]
+\cot^2(\theta) + 1 = \csc^2(\theta) &\quad \text{pour} \quad \theta \neq
+n \pi \ \text{pour} \ n \in \ZZ \; .
+\end{array}
+\]
+\end{focus}
+
+\subsection{Graphes des fonctions trigonométriques}
+
+Le cosinus et le sinus sont deux fonctions définies pour tous les
+nombres réels.  Les graphes de ces fonctions sont donnés à la
+figure~\ref{TRIG2-3}.
+
+Nous déduisons à partir de leurs définitions que
+\[
+-1 \leq \cos(\theta) \leq 1 \qquad \text{et} \qquad
+-1 \leq \sin(\theta) \leq 1
+\]
+quel que soit l'angle $\theta$.   Ainsi,
+\[
+\DO \cos = \DO \sin = \RR \qquad et \qquad
+\IM \cos = \IM \sin = \{ x : -1 \leq x \leq 1 \} \; .
+\]
+
+\PDFfigD[h]{2_fonctions/trig3}{2_fonctions/trig2}{Graphes de $x=\cos(\theta)$
+et $y=\sin(\theta)$}{Graphes de $x=\cos(\theta)$ et $y=\sin(\theta)$}
+{TRIG2-3}
+
+Puisque $\cos(\theta) = \sin(\theta+ \pi/2)$ pour tout $\theta$, le
+graphe du cosinus est une translation par $\pi/2$ vers le gauche du
+graphe du sinus.
+
+La tangente est une fonction qui n'est pas définie pour tous les
+angles.  Le graphe de la tangente est donné à la figure~\ref{TRIG6}.
+Nous avons que
+\[
+\DO \tan = \left\{ \theta : \theta \neq n \pi + \frac{\pi}{2} \; ,
+\quad  n\in \ZZ \right\}
+\qquad \text{et} \qquad \IM \tan = \RR \; .
+\]
+De plus, $\tan(\theta) = \tan(\theta+\pi)$ quel que soit
+$\theta \neq n \pi + \pi/2$ pour $n\in\ZZ$.  La tangente est donc une
+fonction {\bfseries périodique} de {\bfseries période}
+\index{Période d'une fonction} $\pi$.
+
+\MATHfig{2_fonctions/trig6}{8cm}{Graphe de $y=\tan(\theta)$}
+{Graphe de $y=\tan(\theta)$}{TRIG6}
+
+Le graphe de la cotangente, le graphe de la sécante et
+le graphe de la cosécante sont donnés à la figure~\ref{TRIG7}.  Nous
+avons que
+\begin{align*}
+\DO\ \cot &= \left\{ \theta : \theta \neq n \pi \; ,
+\ n\in \ZZ \right\} \qquad \text{et} \qquad
+\IM\ \cot = \RR \; ,\\
+\DO\ \sec &= \left\{ \theta : \theta \neq n \pi + \frac{\pi}{2}
+\ , \ n\in \ZZ \right\} \qquad \text{et} \qquad
+\IM\ \sec = \{ y : |y| \geq 1 \}  \; ,
+\intertext{et}
+\DO\ \csc &= \left\{ \theta : \theta \neq n \pi
+\ , \ n\in \ZZ \right\} \qquad \text{et} \qquad
+\IM\ \cot = \{ y : |y| \geq 1 \} \; .
+\end{align*}
+
+Comme la tangente, la cotangente est une fonction
+{\bfseries périodique} de {\bfseries période} $\pi$.  La
+sécante et la cosécante sont des fonctions
+{\bfseries périodiques} de {\bfseries période} $2\pi$.
+
+\MATHfig{2_fonctions/trig7}{10cm}{Graphe de $y=\cot(\theta)$,
+  $y=\sec(\theta)$, et $y=\csc(\theta)$}
+{Graphe de $y=\cot(\theta)$, $y=\sec(\theta)$, et $y=\csc(\theta)$}
+{TRIG7}
+
+\begin{focus}{\dfn} \index{Fonctions sinusoïdales}
+Une {\bfseries fonctions sinusoïdales} est une fonctions de la forme
+\begin{equation} \label{sinuso}
+y = M + A\;\cos\left(\frac{2\pi}{P}\left(x-X\right)\right)
+\end{equation}
+où $M$, $A$, $P$ et $X$ sont des constantes.  La signification
+graphique de ces constantes est donnée à la figure~\ref{sinuso_fig}.  La
+constante $M$ est la
+{\bfseries moyenne}\index{Fonctions sinusoïdales!moyenne} de la fonction
+sinusoïdale, la constante $A$ est
+l'{\bfseries amplitude}\index{Fonctions sinusoïdales!amplitude} de
+l'onde décrite par la fonction sinusoïdale, la constante $P$ est la
+{\bfseries période}\index{Fonctions sinusoïdales!période} et la
+constante $X$ est la
+{\bfseries phase}\index{Fonctions sinusoïdales!phase} de l'onde
+décrite par la fonction sinusoïdale.
+\end{focus}
+
+Dans certains livres, le sinus est utilisé pour définir les fonctions
+sinusoïdales.  C'est-à-dire que
+\[
+y = M + A\;\sin\left(\frac{2\pi}{P}\left(x-X\right)\right) \ .
+\]
+En changeant seulement la phase, nous pouvons produire avec cette
+formule n'importe laquelle des ondes données par la formule
+(\ref{sinuso}).
+
+\PDFfig{2_fonctions/sinusoid}{Graphe d'une fonction sinusoïdale}
+{Graphe d'une fonction sinusoïdale}{sinuso_fig}
+
+\begin{egg}
+Traçons le graphe de la fonction $y=f(x) = 3+5 \cos((2\pi/7)(x+4))$.
+
+La moyenne de cette fonction sinusoïdale est $M=3$, son amplitude est
+$A=5$, sa période est $P=7$ et sa phase est $X=-4$.  Le graphe d'une
+période de cette fonction est donné à la figure~\ref{sinuso_egg}.
+\end{egg}
+
+\PDFfig{2_fonctions/sinusoid2}{Graphe de $y=f(x) = 3+5 \cos((2\pi/7)(x+4))$}
+{Graphe de $y=f(x) = 3+5 \cos((2\pi/7)(x+4))$}{sinuso_egg}
+
+\begin{egg}
+La température moyenne du corps pour une période de $24$
+heures est de $36.8^\circ$C avec un minimum de $36.5^\circ$C à 2h00 et
+un maximum de $37.1^\circ$C à 14h00.  Supposons que la
+température $T$ du corps en fonction du temps $t$ soit décrite par
+une fonction sinusoïdale.   Quelle est cette fonction?
+
+Dans la formule (\ref{sinuso}), la moyenne est $M=36.8$, l'amplitude
+est $A=(37.1-36.5)/2 = 0.3$, la phase est $X=14$ heures et la période
+est naturellement $P=24$ heures.  Nous trouvons donc
+\[
+T = 36.8 + 0.3 \cos\left(\frac{2\pi}{24}(t-14)\right)
+\]
+où $T$ est la température en degrés centigrades et $t$ est le temps en
+heures.
+\end{egg}
+
+\subsection{Fonctions trigonométriques inverses}
+
+Le graphe de la fonction sinus est donné à la figure~\ref{SIN}.  Il
+est clair par le test des droites horizontales que cette fonction
+n'est pas injective et donc n'a pas d'inverse.
+
+\MATHfig{2_fonctions/sin1}{8cm}{Graphe de $y=\sin(x)$}
+{Graphe de $y=\sin(x)$ pour $-6 \leq x \leq 6$}{SIN}
+
+Mais! Il y a bien une fonction $\sin^{-1}$ sur les calculatrices.
+Quelle est cette fonction?
+
+Nous définissons la fonction inverse pour le sinus en restreignant le
+domaine du sinus à l'intervalle $-\pi/2 \leq x \leq \pi/2$.  C'est la
+courbe tracée en vert que nous retrouvons sur le graphe
+à la figure~\ref{SIN}.
+
+\begin{focus}{\dfn} \index{Arcsinus}
+Sur l'intervalle $-\pi/2 \leq x \leq \pi/2$, la fonction $\sin$ est
+bien injective et nous pouvons définir son inverse $\sin^{-1}$ par la
+formule standard
+\[
+x = \sin^{-1}(y) \qquad \text{si et seulement si} \qquad y = \sin(x)
+\]
+pour $-\pi/2 \leq x \leq \pi/2$ et $-1 \leq y \leq 1$.  La fonction
+$\sin^{-1}$ est appelée l'{\bfseries arcsinus} et est
+aussi dénotée $\arcsin$; c'est-à-dire, $\sin^{-1}(x) \equiv \arcsin(x)$.
+\end{focus}
+
+En d'autres mots, $x = \sin^{-1}(y)$ est l'angle en radians entre
+$-\pi/2$ et $\pi/2$ qu'il faut pour que $\sin(x) = y$.
+
+La définition de $\sin^{-1}$ explique pourquoi cette fonction sur
+votre calculatrice n'acceptera jamais d'arguments plus petits que $-1$
+et plus grands que $1$.
+
+Nous retrouvons à la figure~\ref{ASIN} le graphe de la fonction
+$\sin^{-1}$.  Le lecteur peut vérifier que le graphe de $\sin^{-1}$
+est bien obtenu d'une réflexion par rapport à la droite $y=x$ du
+graphe de $\sin$.
+
+\MATHfig{2_fonctions/arcsin1}{8cm}{Graphe de $y=\sin^{-1}(x)$}
+{Graphe de $y=\sin^{-1}(x)$ pour $-1 \leq x \leq 1$}{ASIN}
+
+De même, nous pouvons définir l'inverse pour le cosinus.
+
+\begin{focus}{\dfn} \index{Arccosinus}
+Sur l'intervalle $0 \leq x \leq \pi$, la fonction $\cos$ est bien
+injective et nous pouvons définir son inverse $\cos^{-1}$ par la formule
+standard
+\[
+x = \cos^{-1}(y) \qquad \text{si et seulement si} \qquad y = \cos(x)
+\]
+pour $0 \leq x \leq \pi$ et $-1 \leq y \leq 1$.  La fonction
+$\cos^{-1}$ est appelée {\bfseries arccosinus} et
+est aussi dénotée $\arccos$; c'est-à-dire,
+$\cos^{-1}(x) \equiv \arccos(x)$.
+\end{focus}
+
+Finalement, nous pouvons définir l'inverse pour la tangente.
+
+\begin{focus}{\dfn} \index{Arctangente}
+Sur l'intervalle $-\pi/2 < x < \pi/2$,  la fonction $\tan$ est bien
+injective et nous pouvons définir son inverse $\tan^{-1}$ par la formule
+standard
+\[
+x = \tan^{-1}(y) \qquad \text{si et seulement si} \qquad y = \tan(x)
+\]
+pour $-\pi/2 < x < \pi/2$ et $y$ réels.  La fonction $tan^{-1}$ est
+appelée l'{\bfseries arctangente} et est aussi
+dénotée $\arctan$; c'est-à-dire, $\tan^{-1}(x) \equiv \arctan(x)$.
+\end{focus}
+
+Le graphe de $\cos^{-1}$ est donné à la figure~\ref{ACOS} et celui de
+$\tan^{-1}$ est donné à la figure~\ref{ATAN}.
+
+\MATHfig{2_fonctions/arccos1}{8cm}{Graphe de $y=\cos^{-1}(x)$}
+{Graphe de $y=\cos^{-1}(x)$ pour $-1 \leq x \leq 1$}{ACOS}
+
+\MATHfig{2_fonctions/arctan1}{8cm}{Graphe de $y=\tan^{-1}(x)$}
+{Graphe de $y=\tan^{-1}(x)$ pour $x$ réels}{ATAN}
+
+\begin{rmk}
+Remarquons que $\displaystyle \sin^{-1} \neq \sin^{-1}$
+
+Il faut bien comprendre que $\sin^{-1}$ sur la calculatrice n'est pas
+égale à $\left(\sin(x)\right)^{-1} = 1/\sin(x)$.  Par exemple,
+\[
+\sin^{-1}\left(\frac{1}{2}\right) = \frac{\pi}{6} = 0.52359877559830\ldots
+\]
+alors que
+\[
+\left(\sin\left(\frac{1}{2}\right)\right)^{-1}
+= \frac{1}{\sin\left(1/2\right)} =
+2.08582964293349\ldots
+\]
+\end{rmk}
+
+\begin{egg}
+Montrons que $\displaystyle \sin(\arccos(x)) = \sqrt{1-x^2}$ pour
+$-1\leq x \leq 1$. 
+
+Soit $\theta = \arccos(x)$ où $0 \leq \theta \leq \pi$.  Nous
+déduisons des deux dessins à la figure~\ref{arcXX3} que
+$\sin(\theta) = \sqrt{1-x^2}$.
+\end{egg}
+
+\PDFfig{2_fonctions/arcXX3}{Représentation graphique de
+$\cos(\theta)$ pour $0\leq \theta \leq \pi$}{Représentation
+graphique de $\cos(\theta)=x$ pour $-1 \leq x \leq 1$ et
+$0\leq \theta \leq \pi$.}{arcXX3}
+
+% \begin{egg}
+% Montrons que
+% $\displaystyle \sin(\arcsec(x)) = \sqrt{1-\frac{1}{x^2}}$
+% pour $|x|>1$.
+
+% Soit $\theta = \arcsec(x)$ où $\pi/2 < \theta \leq \pi$ pour $x\leq -1$
+% et $0 \leq \theta < \pi/2$ pour $x \geq 1$.
+% \end{egg}
+
+\section{Fonctions exponentielles et logarithmiques}
+
+\subsection{Fonctions exponentielles}\label{cerclevicieux}
+
+Le but de cette section est de donner un sens à l'expression $b^p$
+pour le plus grand ensemble possible de {\bfseries base} $b$ et
+d'{\bfseries exposant} $p$.  Nous résumons ci-dessous ce qui est connu
+au sujet de l'exponentiel d'un nombre.
+
+{\renewcommand{\labelitemi}{\textbullet}
+\begin{itemize}
+\item L'expression $b^p$ n'est pas définie pour $b=p=0$.
+\item $b^p =1$ pour $b>0$ et $p=0$.  Par exemple, $\pi^0 = 1$.
+\item Si $b \in \RR$ et $p$ est un entier positif,
+\[
+b^{p} = \underbrace{b \times b \times \ldots \times b}_{\text{p fois}}
+\; .
+\]
+Par exemple, $\pi^3 = \pi \times \pi \times \pi$.
+\item Si $b \in \RR$ et $p = 1/n$ où $n$ est un nombre impair, $y=b^p$
+  est le nombre réel tel que $y^n = b$.  Par exemple,
+  $(-8)^{1/3} = -2$ car $(-2)^3 = -8$.
+\item Si $b \geq 0$ et $p = 1/n$ où $n$ est un nombre pair, $y=b^p$
+  est le {\bfseries nombre réel positif} tel que $y^n = b$.  Par exemple,
+  $16^{1/4} = 2$ car $2^4 = 16$.
+\item Si $p = m/n$, nous calculons $\displaystyle \left(b^{1/n}\right)^m$
+  s'il est possible de calculer $\displaystyle b^{1/n}$ en premier.
+  Il est toujours avantageux de simplifier la fraction $m/n$ avant de
+  faire les calculs.  Par exemple, $(-8)^{2/3} = 4$ car $(-8)^{1/3} = -2$ et
+  $\displaystyle \left((-8)^{1/3}\right)^2 = (-2)^2 = 4$.  De même,
+  $16^{3/4} = 8$ car $16^{1/4} =2$ et
+  $\displaystyle \left(16^{1/4}\right)^3 = 2^3 = 8$.
+\item Si $p<0$, nous définissons $b^p$ comme étant le nombre
+  $1/b^{-p}$ si $b^{-p}$ est définie.  Par exemple,
+  $\pi^{-3} = 1/\pi^3 = 1/(\pi \times \pi \times \pi)$.
+\end{itemize}
+}
+
+Aucune définition n'est donnée pour $b^p$ lorsque $b$ est un nombre
+réel positif et $p$ est un exposant réel quelconque.  Pour calculer
+$4^2$, il suffit de multiplier $4$ par lui-même.  Pour calculer
+$4^{1/2}$, il suffit de trouver le nombre positif $y$ tel que $y^2=4$;
+c'est-à-dire, $y=2$ dans le cas présent.  Mais que devons-nous faire
+pour obtenir la valeur de $4^\pi$?  Nous pouvons utiliser
+la définition suivante.
+
+\begin{focus}{\dfn} \label{pr_def_of_exp}
+Pour $b >1$ et $p \in \RR$, nous définissons le {\bfseries nombre exponentiel}
+$b^p$ comme étant le plus petit nombre réel\footnotemark\ $M$ tel que
+$M \geq  b^r$ pour tout nombre rationnel $r\leq p$.
+
+Pour $0<b<1$ et $p \in \RR$, nous définissons le {\bfseries nombre exponentiel}
+$b^p$ comme étant le plus grand nombre réel $M$ tel que $M \leq  b^r$
+pour tout nombre rationnel $r\leq p$.
+
+Naturellement, si $b=1$, nous obtenons $b^p = 1$ pour tout $p\in \RR$.
+\end{focus}
+
+\footnotetext{{\bfseries L'Axiome de complétude} des nombres réels dit
+  que tout ensemble non vide et borné supé\-rieurement possède une
+  plus petite borne supérieure.}
+
+Ainsi, $4^\pi$ est le plus petit nombre réel $M$ tel que $4^r \leq M$
+pour tout nombre rationnel $r\leq \pi$.  De même, $4^2 = 16$ car
+$M=16$ est le plus petit nombre tel que $4^r \leq M$ pour tout nombre
+rationnel $r\leq 2$; le nombre $2$ est une valeur possible pour $r$. 
+
+La définition que nous venons de donner pour le nombre exponentiel
+$b^p$ avec $b\in]0,\infty[$ et $p\in \RR$ n'est pas facile à utiliser.
+Il faut généralement beaucoup de travail pour évaluer un nombre
+exponentiel avec cette définition.  Pour l'instant, cette définition
+sera suffisante pour nos besoins.
+
+En fait, cette définition d'un nombre exponentiel manque de rigueur.
+Il faudrait démontrer que cette définition est consistante.  Par
+exemple, est-ce que cette définition de $b^p$ pour $b>1$ est
+équivalente à \lgm $b^p$ est le plus grand nombre réel $M$ tel que $M
+\leq  b^r$ pour tout nombre rationnel $r\geq p$\rgm ?  Comme nous verrons 
+prochainement, cela revient à exiger que les limites à droite et à
+gauche de $b^r$ soient égales à $r=p$.  Il y a bien d'autres questions
+de ce genre que nous pourrions poser au sujet de cette définition.  
+De plus, il est difficile de démontrer les propriétés des exposants
+avec cette définition.
+
+Nous donnerons à la section~\ref{DEFofE} une définition équivalent du
+nombre exponentiel $b^p$, $b\in]0,\infty[$ et $p\in \RR$, qui sera
+plus facile à manipuler que celle ci-dessus.  Avec la définition
+présentée à la section~\ref{DEFofE}, il est facile de déduire les
+propriétés des exposants.  De plus, les calculatrices et ordinateurs
+utilisent cette définition (avec quelques subtilités additionnelles)
+pour évaluer les nombres exponentiels.
+
+Pour l'instant, la valeur d'un nombre exponentiel comme $4^\pi$ sera estimée
+par $4^r$ pour des valeurs rationnelles de $r$ très près de $\pi$ et
+inférieures à $\pi$.  Quelle valeur de $r$, proche de $\pi$, doit-on
+utiliser pour obtenir une bonne approximation de $4^\pi$?  Cette
+question ne sera pas abordée.
+
+\begin{focus}{\dfn} \index{Fonction exponentielle}
+Si $b$ est un nombre réel positif, la fonction
+$f:\RR\rightarrow ]0,\infty[$ définie par $f(x) = b^x$ pour tout $x$
+réel est appelée une {\bfseries fonction exponentielle}.
+\end{focus}
+
+Les fonctions exponentielles satisfont les propriétés suivantes.
+
+\begin{focus}{\prp}
+Si $a$ et $b$ sont des nombres réels positifs et $x$ et $y$ sont des
+nombres réels, alors
+\[
+a^{-x} = \frac{1}{a^x} \; , \quad a^x a^y = a^{x+y} \; ,
+\quad a^x b^x = (ab)^x \quad \text{et} \quad
+\left(a^x\right)^y = \left(a^y\right)^x = a^{xy} \; .
+\]
+\end{focus}
+
+Nous retrouvons les graphes de quelques fonctions exponentielles à la
+figure~\ref{EXP1}.
+\MATHfig{2_fonctions/exp1}{8cm}{Graphes de $y=3^x$, $y=2^x$
+et $y=(1/2)^x$}{Graphes de $y=3^x$, $y=2^x$ et $y=(1/2)^x$}{EXP1}
+
+Si $f$ est la fonction définie par $f(x) = b^x$ pour tout $x$, nous
+déduisons des graphes à la figure~\ref{EXP1} que le domaine de $f$ est
+$\RR$ et que son image est $\{ x \in \RR : x > 0 \}$.  De plus, $f$
+est une fonction croissante pour $b>1$ et décroissante pour $0<b<1$.
+
+\subsection{Fonctions logarithmiques}
+
+La fonction logarithmique n'est rien d'autre que la fonction inverse
+de $f(x) = b^x$ où $b$, la {\bfseries base}, est un nombre réel
+positif.  Si nous appliquons la définition de l'inverse d'une fonction à
+la fonction $b^y$, nous obtenons:
+
+\begin{focus}{\dfn} \index{Fonction logarithmique}
+La {\bfseries fonction logarithmique} $\log_b$ est définie par
+\[
+y = \log_b(x)  \quad \text{si et seulement si} \quad  b^y = x
+\]
+pour $x>0$ et $y\in\RR$.
+\end{focus}
+
+Nous donnons à la figure~\ref{LOG1} le graphe des fonctions $f(x) = b^x$
+et $f^{-1}(x) = \log_b(x)$ pour $b=3$.  Puisque le domaine de
+$f(x) = b^x$ est $\RR$ et son image est $\{ x \in \RR : x > 0 \}$, nous
+obtenons bien que le domaine de $\log_b$ est $\{ x \in \RR : x > 0 \}$
+et son image est $\RR$.
+
+\MATHfig{2_fonctions/log1}{8cm}{Graphes de $y=3^x$ et de $y=\log_3(x)$}
+{Graphes de $y=3^x$ (tirets) et de $y=\log_3(x)$ (ligne pleine)}{LOG1}
+
+Puisque $y=\log_b(x)$ est l'exposant qu'il faut donner à $b$ pour
+obtenir $x$ (i.e. pour que $b^y = x$), il est alors simple de vérifier
+à partir de cet énoncé que les fonctions logarithmiques satisfont les
+propriétés suivantes.
+
+\begin{focus}{\prp}
+Si $a$, $b$, $x$ et $y$ sont des nombres positifs réels et $p$ est
+un nombre réel, alors
+\begin{align}
+\log_b(x^p) &= p \log_b(x) \; , \label{log_id1} \\
+\log_b(x y ) &= \log_b(x) + \log_b(y) \label{log_id2}
+\intertext{et}
+\frac{\log_a(x)}{\log_a(y)} &= \log_y(x) \label{log_id3} \; .
+\end{align}
+\end{focus}
+
+\begin{egg}
+Si $b$, $x$ et $y$ sont des nombres positifs réels, alors
+\[
+\log_b(\frac{x}{y}) = \log_b(x) - \log_b(y)
+\]
+car
+\[
+\log_b(\frac{x}{y}) = \log_b(x\, y^{-1}) = \log_b(x) + \log_b(y^{-1})
+= \log_b(x) - \log_b(y) \; ,
+\]
+où la deuxième égalité provient de (\ref{log_id2}) et la troisième
+égalité provient de (\ref{log_id1}).
+\end{egg}
+
+\begin{egg}
+Démontrons à partir de la définition du logarithme que
+$\log_b(x^p) = p \log_b(x)$.
+
+Si $y = \log_b(x^p)$ alors $b^y = x^p$ par définition du logarithme.
+Donc $b^{y/p} = x$.  Une deuxième utilisation de la définition du
+logarithme donne $\log_b(x) = y/p$.  Ainsi, si nous résolvons cette
+dernière équation pour $y$, nous trouvons $p\log_b(x) = y = \log_b(x^p)$.
+\end{egg}
+
+\begin{egg}
+Démontrons que $\displaystyle \frac{\log_a(x)}{\log_a(y)} = \log_y(x)$
+à partir de la définition du logarithme.
+
+Si $v = \log_a(x)$ et $w = \log_a(y)$, alors $a^v = x$ et $a^w = y$
+par définition du logarithme.  Nous obtenons de $a^w = y$ que
+$a = y^{1/w}$.  Si nous substituons cette expression pour $a$ dans
+$a^v = x$, nous trouvons $x = \left(y^{1/w}\right)^v = y^{v/w}$.  Une
+deuxième utilisation de la définition du logarithme donne
+$\displaystyle \log_y(x) = \frac{v}{w} = \frac{\log_a(x)}{\log_a(y)}$ par
+définition de $v$ et $w$.
+\end{egg}
+
+La base la plus importante pour les fonctions exponentielles et
+logarithmiques est donnée par le {\bfseries nombre d'Euler}
+$e = 2.718281828459\ldots$ que nous définirons correctement à la
+section~\ref{nbrE}.  Comme pour $\pi$, ce nombre se retrouve sur
+toutes les calculatrices scientifiques car il joue un rôle fondamental
+en mathématique.  En raison de son importance, nous donnons un nom spécial
+à la fonction logarithmique en base $e$.
+
+\begin{focus}{\dfn} \index{Logarithme naturel}\index{Logarithme népérien}
+Le {\bfseries logarithme naturel} ou {\bfseries logarithme népérien}
+est défini par $\ln(x) = \log_e(x)$ pour $x>0$.
+\end{focus}
+
+La définition précédente est équivalente à
+\[
+y=\ln(x) \quad \Leftrightarrow \quad e^y = x \; .
+\]
+La fonction $\ln:]0,\infty[\rightarrow \RR$ est l'inverse de la fonction
+exponentielle $f(x) = e^x$.
+
+\begin{egg}
+Démontrons à partir de la définition du logarithme que
+$\log_b(x^p) = p \log_b(x)$.
+
+Si $y = \log_b(x^p)$ alors $b^y = x^p$ par définition du logarithme.
+Donc $b^{y/p} = x$.  Une deuxième utilisation de la définition du
+logarithme donne $\log_b(x) = y/p$.  Ainsi, si nous résolvons cette
+dernière équation pour $y$, nous trouvons $p\log_b(x) = y = \log_b(x^p)$.
+\end{egg}
+
+\begin{egg}
+Un modèle fréquemment utilisé pour décrire une population est de la
+forme $P(t) = P_0 e^{\alpha t}$ où $P(t)$ est le nombre d'individus au
+temps $t$, $P_0$ est le nombre initial d'individus, et $\alpha$ est le
+\lgm taux de croissance relatif\rgm.  Le taux de croissance relatif
+est défini comme étant le taux de croissance (instantané) au temps $t$
+divisé par le nombre total d'individus au temps $t$.  Dans ce modèle,
+nous supposons que ce rapport est constant et égale à $\alpha$.  Nous
+justifierons ce modèle au chapitre~\ref{chap_equ_diff} sur les équations
+différentielles.
+
+Déterminons le temps nécessaire pour que la population soit
+$2.5$ plus grande si $\alpha =1.5$.  Supposons que le temps soit
+mesuré en heures.
+
+Il faut donc trouver $t$ tel que $\displaystyle P(t) = 2.5 P_0$.
+C'est-à-dire, il faut trouver $t$ tel que $P_0 e^{1.5 t}  = 2.5 P_0$.  Ainsi,
+\[
+P_0 e^{1.5 t}  = 2.5 P_0 \Rightarrow e^{1.5 t}  = 2.5
+\Rightarrow 1.5 t = \ln\left( e^{1.5 t} \right) = \ln(2.5)
+\Rightarrow t = \frac{\ln(2.5)}{1.5} \approx 0.61086 \ .
+\]
+Il faut donc approximativement $0.61086$ heure pour que la population
+soit $2.5$ fois plus grande.
+
+Si la population prend $3$ jours pour être $2.5$ plus grande, quel est
+le taux de croissance relatif?
+
+Puisque $P(3) = 2.5 P_0$, nous avons
+\[
+P_0 e^{3 \alpha} = 2.5 P_0 \Rightarrow e^{3 \alpha} = 2.5
+\Rightarrow 3\alpha = \ln\left( e^{3 \alpha} \right)= \ln(2.5)
+\Rightarrow \alpha = \frac{\ln(2.5)}{3} \approx 0.3054 \ .
+\]
+
+Quelle est le nombre initial d'individus si nous avons $\alpha = 0.5$ et
+$10^6$ individus après $10$ jours?
+
+Puisque $\displaystyle 10^6 = P(10) = P_0 e^{0.5 \times 10}$, nous
+obtenons $\displaystyle P_0 = \frac{10^6}{e^{5}} \approx 6738$ individus.
+\end{egg}
+
+}  % End of theory
+
+\section{Exercices}
+
+\subsection{Algèbre}
+
+\begin{question}
+Simplifiez si possible les expressions suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle (3^4)^{0.5}$ &
+\subQ{b} & $\displaystyle 2^{2^3} \times 2^{2^2}$ &
+\subQ{c} & $\displaystyle \log_3(1)$  \\[0.7em]
+\subQ{d} & $\displaystyle \log_{10}(5) + \log_{10}(20)$ &
+\subQ{e} & $\displaystyle \log_{10}(500) - \log_{10}(50)$ &
+\subQ{f} & $\displaystyle \log_{42.3}(42.3^7)$
+\end{tabular}
+\end{center}
+\label{2Q1}
+\end{question}
+
+\begin{question}
+Simplifiez si possible les expressions suivantes.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \frac{(x^4 y^{1/4})^{1/2}}{y^{1/2}}$ &
+\subQ{b} & $\displaystyle \frac{x+1}{x-2} + \frac{x+1}{x-3} +
+ \frac{-9x+21}{x^2-5x+6}$
+\end{tabular}
+\end{center}
+\label{2Q2}
+\end{question}
+
+\begin{question}
+Utilisez la division de polynômes pour écrire
+$\displaystyle \frac{x^3 + 2x^2 +x+3}{x+2}$ sous la forme
+$p(x)+r(x)/q(x)$ où le degré de $r(x)$ est plus petite que le degré de
+$q(x)$.
+\label{2Q3}
+\end{question}
+
+\begin{question}
+Factorisez les polynômes suivants.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $x^2+x-6$ &
+\subQ{b} & $3x^2 - 5 x -2$ &
+\subQ{c} & $\displaystyle x^{3/2} + x^{1/2}-12 x^{-1/2}$
+\end{tabular}
+\end{center}
+\label{2Q4}
+\end{question}
+
+\begin{question}
+Cette question fait appel à ce que vous avez appris au secondaire sur les
+polynôme de degré deux.
+
+\subQ{a} Quelles sont les racines du polynôme $\displaystyle x^2 + 2x -2$?\\
+\subQ{b} Tracez la parabole $\displaystyle y=x^2+2x-2$.  N'oubliez
+pas d'indiquer sur votre graphe l'intersection avec les axes.  S'il y
+a une valeur maximale ou minimale, indiquez la sur le graphe.
+\label{2Q5}
+\end{question}
+
+\begin{question}
+Quelle valeur devez-vous donner à $c$ dans le polynôme $4x^2 -12x + c$
+pour que les racines soient égales?
+\label{2Q6}
+\end{question}
+
+\begin{question}
+Résolvez les équations suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $7\times 5^{3x} = 21$ &
+\subQ{b} & $4\times 3^{-2x+1} = 7\time 3^{3x}$ &
+\subQ{c} & $\displaystyle \log_{10}(100^x) = 3$
+\end{tabular}
+\end{center}
+\label{2Q7}
+\end{question}
+
+\begin{question}
+Quelles sont les valeurs de $x$ pour lesquelles
+$\displaystyle e^x + 2e^{-x} = 3$?
+\label{2Q8}
+\end{question}
+
+\begin{question}
+Résolvez les équations suivantes.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle \frac{2x}{x+1} = \frac{2x-1}{x}$ &
+\subQ{b} & $\displaystyle \frac{1}{x+1} + \frac{3}{x-1} = 4$ \\[1em]
+\subQ{c} & $\ln(x-3)+\ln(x-5) = \ln(2x-6)$ &
+\subQ{d} & $|x-2| = 5$ \\[1em]
+\subQ{e} & $|x-2| = |2x-5|$ &
+\subQ{f} & $|x^2 - 4| = 4$ \\[1em]
+\subQ{g} & $\ln(2) - \ln(x) = \ln(3-x)$ & &
+\end{tabular}
+\end{center}
+\label{2Q9}
+\end{question}
+
+\begin{question}
+Résolvez les inégalités suivantes.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle 5 -\frac{6}{x} < 4$ &
+\subQ{b} & $x^2 -4x + 3 > 0$ &
+\subQ{c} & $\displaystyle \frac{2}{x+1} >\frac{1}{x-3}$ \\[1em]
+\subQ{d} & $\displaystyle \frac{x^2}{x+2}  < 1$ &
+\subQ{e} & $\displaystyle \frac{x}{x-3}  < \frac{-6}{x+1}$  &
+\subQ{f} & $|x-2| < 5$ \\[1em]
+\subQ{g} & $|x^2-2x - 5| < |x-1|$ & & & &
+\end{tabular}
+\end{center}
+\label{2Q10}
+\end{question}
+
+\subsection{Functions}
+
+\begin{question}
+Quel est l'image de la fonction $f(x) = 3 + 2x-x^2$?
+\label{2Q11}
+\end{question}
+
+\begin{question}
+Une fonction $f$ est définie par le graphe ci-dessous.  Déterminez
+si $f$ est injective.
+\PDFgraph{2_fonctions/probl167}
+\label{2Q12}
+\end{question}
+
+\begin{question}
+Déterminez si les fonctions suivantes ont un inverse.  Si une fonction
+a un inverse, trouvez cet inverse.  Bien indiquer le domaine et
+l'image de la fonction et de son inverse.
+\begin{center}
+\begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle g(x) =5^{x^3}$ &
+\subQ{b} & $\displaystyle f(x) = \sqrt{ \frac{x+1}{x-1} }$ &
+\subQ{c} & $\displaystyle h(x) = \left(\frac{x}{x+1}\right)^{10}$ \\
+\subQ{d} & $\displaystyle y=f(x) = \left(\frac{2x+7}{3}\right)^{-1/2}$ &
+& & &
+\end{tabular}
+\end{center}
+\label{2Q13}
+\end{question}
+
+\begin{question}
+Quelle est la forme la plus simple pour $(f\circ g)(x)$ où
+$\displaystyle f(x) = \sqrt{x^2-1}$ et $g(x) = \sqrt{x^2+1}$?
+\label{2Q14}
+\end{question}
+
+\begin{question}
+Écrivez les fonctions suivantes comme la composition de fonctions
+simples.  Pour nous, les fonctions simples sont $f(x)=x^a$,
+$a^x$, $\log_b(x)$, ..., et le produit et la somme de telles
+fonctions.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle f(x) = \frac{5}{1+5^x}$ &
+\subQ{b} & $\displaystyle h(t) = (1-t^2)^{-4}$
+\end{tabular}
+\end{center}
+\label{2Q15}
+\end{question}
+
+\begin{question}[\eng \life]
+Écrivez la fonction $\displaystyle g(x) = \cos(\sqrt{1+x^2})$ comme la
+composition de fonctions simples.  Pour nous, les fonctions simples
+sont $f(x)=x^a$, $a^x$, $\log_b(x)$, $\cos(x)$, ..., et le produit et
+la somme de telles fonctions.
+\label{2Q16}
+\end{question}
+
+\subsection{Trigonométrie}
+
+\begin{question}[\eng \life]
+Vérifiez les identités trigonométriques suivantes pour
+$\theta = 0$, $\pi/4$, $\pi/2$ et $\pi$.
+
+\subQ{a} $\displaystyle \cos(\theta-\pi) = - \cos(\theta)$.
+
+\subQ{b} $\cos(2\theta) = \cos^2(\theta) - \sin^2(\theta)$.
+\label{2Q17}
+\end{question}
+
+\begin{question}[\eng \life]
+Si $\cos(\theta)=1/2$, quelles sont les valeurs possibles pour
+$\sin(\theta)$?
+\label{2Q18}
+\end{question}
+
+\begin{question}[\eng \life]
+Pour chacun des graphes ci-dessous, donnez la moyenne, l'amplitude, la
+période et la phase de la fonction sinusoïdale qui possède ce graphe.
+Puis, écrivez la fonction sinusoïdale dans chacun des cas.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0em}}l@{\hspace{2em}}}l@{\hspace{0em}}l}
+\subQ{a} & \MATHgraphRow{2_fonctions/sinusoidale1_a}{7cm}{-5cm} &
+\subQ{b} & \MATHgraphRow{2_fonctions/sinusoidale1_b}{7cm}{-5cm} \\
+\subQ{c} & \MATHgraphRow{2_fonctions/sinusoidale1_c}{7cm}{-5cm} &
+\subQ{d} & \MATHgraphRow{2_fonctions/sinusoidale1_d}{7cm}{-5cm}
+\end{tabular}
+\end{center}
+\label{2Q19}
+\end{question}
+
+\begin{question}[\eng \life]
+Écrivez les fonctions sinusoïdales suivantes sous la forme standard
+\[
+  f(t) = M + A \cos\left( \frac{2\pi}{P}\left( t- T\right)\right)
+\]
+avec $A>0$.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $f(t) = 2 - \cos(t)$ & \subQ{b} & $f(t) = 2 + \sin(t)$ \\
+\subQ{c} & $\displaystyle f(x) = -3 + 5\sin\left(\frac{\pi}{2}(2-x)\right)$ &
+\end{tabular}
+\end{center}
+\label{2Q20}
+\end{question}
+
+\begin{question}[\eng \life]
+Pour chacune des fonctions sinusoïdale suivantes, déterminez la
+moyenne, l'amplitude, la période et la phase.  De plus, Tracez le
+graphe de la fonction.  Bien indiquer sur votre dessin la moyenne,
+l'amplitude, la période et la phase.
+\begin{center}
+\begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
+\subQ{a} & $\displaystyle h(z) = 1 + 5 \cos\left(\frac{\pi z}{2} -
+  \frac{3\pi}{2}\right)$ &
+\subQ{b} & $f(x)= 6 \sin(3x-6) -4$\\[1em]
+\subQ{c} & $W(y) = -2.0 + 3.0\cos\left(4\pi(y+0.1)\right)$ & &
+\end{tabular}
+\end{center}
+\label{2Q21}
+\end{question}
+
+\begin{question}
+Quelle est la fonction sinusoïdale $f$ qui oscille entre $36.6$ et
+$37.2$, et dont la période est $24$ et la phase est $13$?
+Tracez le graphe de cette fonction en indiquant la période,
+l'amplitude, la moyenne et la phase sur votre graphe.
+\label{2Q22}
+\end{question}
+
+\begin{question}[\eng \life]
+Quel est le cosinus de l'angle $\theta$ dans le dessin suivant?
+\PDFgraph{2_fonctions/triangle1}
+\label{2Q23}
+\end{question}
+
+\begin{question}[\eng \life]
+Si $\displaystyle \sin(\theta)=\frac{1}{x}$, quelles sont les valeurs
+possible pour $\tan(\theta)$?
+\label{2Q24}
+\end{question}
+
+\begin{question}[\eng \life]
+Montrez que
+$\displaystyle \tan(\arcsin(x)) = \frac{x}{\sqrt{1-x^2}}$ pour $-1<x<1$.
+\label{2Q25}
+\end{question}
+
+\subsection{Fonctions exponentielles}
+
+\begin{question}
+Quelques valeurs de deux fonctions sont données dans le tableau
+ci-dessous.  Une des fonctions est linéaire (de la forme $mx+b$) et
+l'autre est exponentielle (de la forme $p\, b^x$).  Trouvez une formule
+pour chacune des fonctions.
+\[
+\begin{array}{c|cccc}
+$x$ & 2& 4& 6& 8 \\
+\hline
+$f(x)$ & 0.75& 0.1875 & 0.046875 & 0.011719 \\
+\hline
+$g(x)$ & 5.7& 10.3& 14.9& 19.5
+\end{array}
+\]
+\label{2Q26}
+\end{question}
+
+\begin{question}
+Le poids $S$ en kilogrammes d'un individu au temps $t$ en jours est
+donné par la formule $\displaystyle S(t) = S_0 10^{\alpha t}$ où le
+poids initial est $S_0 = S(0) = 2.34$ kg et le taux de croissance
+par rapport au poids de l'individu est $\alpha = 0.693$.  Combien de temps
+faut-il pour que le poids de l'individu double?  Pour que le poids
+soit $10$ fois plus grand?
+\label{2Q27}
+\end{question}
+
+\begin{question}
+La population d'un territoire double à tous les $24$ ans.  Si la
+population initiale est de $500$ individus (par km$^2$), quel sera le
+nombre d'individus (par km$^2$) après $12$ années? Il faut se rappeler
+que le nombre d'individus dans la population au temps $t$ en années
+est donné par une formule de la forme
+$\displaystyle p(t) = p_0 e^{\alpha t}$ où $p_0$ est le nombre initial
+d'individus et $\alpha$ est une constante représentant le taux de
+croissance par rapport à la taille de la population.
+
+Suggestion: vous pouvez déterminer $\alpha$ à l'aide du temps
+nécessaire pour que la population double.
+\label{2Q28}
+\end{question}
+
+\begin{question}
+Le volume (en cm$^3$) d'un organisme au temps $t$ (en seconde) est
+donné par l'expression $V(t) = V_0 e^{\alpha t}$.  Quelles sont les
+unités de $\alpha$?  Si $V_0 = 2$ et $\alpha = 0.1$, combien faut-il
+de temps pour que le volume double?  Pour qu'il quadruple?
+\label{2Q29}
+\end{question}
+
+\begin{question}
+La quantité de Carbone-14 (en atomes) que nous retrouvons dans les os
+d'un animal, $t$ années après son décès, est donnée par
+$\displaystyle Q(t) = Q_0 e^{-0.000122\; t}$ où $Q_0$ est la quantité de
+carbone-14 au moment du décès.  Quelle est la demie-vie du carbone-14?
+\label{2Q30}
+\end{question}
+
+\begin{question}
+Si une population a une demie-vie de $43$ ans et le nombre d'individus
+au départ est de $1600$ (par m$^2$), combien de temps faut-il pour que
+la population soit de $200$ individus (par m$^2$)?  Trouvez une
+formule pour le nombre $P(t)$ d'individus (par m$^2$) au temps $t$
+dans cette population.  Combien faut-il de temps pour que la
+population soit de $437$ individus (par m$^2$)?
+\label{2Q31}
+\end{question}
+
+\begin{question}[\eng \life]
+Tracez le graphe de la fonction $g(t) = e^t \cos(2\pi t)$ pour $0<t<3$.
+Il n'est pas nécessaire que le graphe soit très précis mais il doit
+bien décrire le comportement qualitatif de la fonction.
+\label{2Q32}
+\end{question}
+
+\begin{question}[\eng \life]
+Tracez le graphe de la fonction $W(t) = e^{-t}\cos(2\pi t)$ pour $t\geq 0$.
+Il n'est pas nécessaire que le graphe soit très précis mais il doit
+bien décrire le comportement qualitatif de la fonction.
+\label{2Q33}
+\end{question}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 

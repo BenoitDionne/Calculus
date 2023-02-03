@@ -1,0 +1,392 @@
+\section{Suites et séries}
+
+\subsection{Suites}
+
+\compileSOL{\SOLUb}{\ref{3Q1}}{
+\subQ{a} Nous avons
+\[
+\lim_{n\to \infty} \frac{2^n}{3^{n+1}}
+  = \lim_{n\to \infty} \frac{1}{3}\left(\frac{2}{3}\right)^n
+  = \frac{1}{3} \lim_{n\to \infty} \left(\frac{2}{3}\right)^n = 0 \ .
+\]
+La deuxième égalité provient du théorème~\ref{suite3} et la troisième
+égalité de la proposition~\ref{suite1}.
+
+\subQ{b} Puisque
+$\displaystyle \ln(n+3) - \ln(n) = \ln\left(\frac{n+3}{n}\right)
+= \ln\left(1 + \frac{3}{n}\right)$, nous avons
+\[
+\lim_{n\to \infty} \left( \ln(n+3) - \ln(n) \right)
+= \lim_{n\to \infty} \ln\left(1 + \frac{3}{n}\right)
+= \ln\left(\lim_{n\to \infty} \left(1 + \frac{3}{n}\right)\right)
+= \ln(1) = 0 \ .
+\]
+Nous verrons lors de l'étude des fonctions continues que la deuxième
+égalité, lorsque nous passons la limite à l'intérieure de la fonction
+$\ln$, est valide.
+
+\subQ{d}
+\[
+  \left\{ 3 + \sin\left(n\frac{\pi}{2}\right) \right\}_{n=1}^\infty
+=  \left\{4, 3, 2, 3, 4, 3, 2, 3, \ldots \right\} \ .
+\]
+La suite $4, 3, 2, 3$ est répétée un nombre infini de fois.  Donc, le
+terme générale de la suite n'approche pas une valeur unique et fixe.
+}
+
+\subsection{Séries}
+
+\compileSOL{\SOLUb}{\ref{3Q4}}{
+\subQ{a}
+Après $n$ années, le nombre d'unités produites dans la première année
+et qui sont toujours en usage est de $5000 ( 1 - 0.01)^n$, le nombre
+d'unités produites dans la deuxième année et qui sont toujours en
+usage est de $5000 ( 1- 0.01)^{n-1}$, \ldots, le nombre d'unités
+produites dans l'avant dernière année et qui sont toujours en usage
+est de $5000( 1 - 0.01)^2$, et le nombre d'unités produites dans la
+dernière année et qui sont toujours en usage est de $5000( 1 - 0.01)$.
+Ainsi, après $n$ années, le nombre d'unités produites et qui sont
+toujours en usage est
+\[
+P_n = \sum_{i=1}^n 5000 (1- 0.1)^i = 5000 \sum_{i=1}^n 0.9^i
+= 5000 \left(\frac{ 1 - 0.9^{n+1}}{ 1- 0.9}\right) = 50000 (1-0.9^{n+1}) \ .
+\]
+
+\subQ{b} Le niveau de stabilisation du marché pour ces cerfs-volants
+est de
+\[
+\lim_{n\rightarrow \infty} 50000 ( 1- 0.9^n) = 50000
+\]
+unités.
+}
+
+\compileSOL{\SOLUb}{\ref{3Q5}}{
+\subQ{b} Puisque
+\[
+  \sum_{n=1}^\infty \frac{2^n+1}{6^n} =
+\sum_{n=1}^\infty \left( \left(\frac{1}{3}\right)^n +
+  \left(\frac{1}{6}\right)^n \right)
+\]
+est la somme de deux séries géométriques convergente,
+\[
+\sum_{n=0}^\infty \left(\frac{1}{3}\right)^n =
+\frac{1}{1- 1/3} = \frac{3}{2}
+\qquad \text{et} \qquad 
+\sum_{n=0}^\infty \left(\frac{1}{6}\right)^n =
+\frac{1}{1- 1/6} = \frac{6}{5} \ ,
+\]
+la série converge et sa somme est
+$\displaystyle \frac{3}{2}+\frac{6}{5} = \frac{27}{10}$.
+
+\subQ{c} Nous avons que
+\[
+\frac{2^n - 3^{n+2}}{5^{n+1}} = \frac{2^n}{5^{n+1}}
+- \frac{3^{n+2}}{5^{n+1}}
+= \frac{1}{5} \left(\frac{2}{5}\right)^n
+- \frac{3^2}{5} \left(\frac{3}{5}\right)^n \ .
+\]
+De plus, $\displaystyle \sum_{n=0}^\infty \left(\frac{2}{5}\right)^n$ et
+$\displaystyle \sum_{n=0}^\infty \left(\frac{3}{5}\right)^n$ sont deux
+séries géométriques convergentes.  La première séries est de raison
+$\displaystyle r= \frac{2}{5}$ et converge vers
+$\displaystyle \frac{1}{1-2/5} = \frac{5}{3}$.
+La seconde série est de raison $\displaystyle r= \frac{3}{5}$ et
+converge vers $\displaystyle \frac{1}{1-3/5} = \frac{5}{2}$.  Nous avons
+donc que
+\[
+\sum_{n=0}^\infty \frac{2^n - 3^{n+2}}{5^{n+1}}
+= \frac{1}{5} \sum_{n=0}^\infty \left(\frac{2}{5}\right)^n
+- \frac{3^2}{5} \sum_{n=0}^\infty \left(\frac{3}{5}\right)^n
+= \frac{1}{5} \left(\frac{5}{3}\right)
+- \frac{3^2}{5} \left(\frac{5}{2}\right)
+ = -\frac{25}{6} \ .
+\]
+
+\subQ{e} Puisque $\displaystyle 5^n 2^{-2n} =
+\left(\frac{5}{4}\right)^n$ ne converge pas vers $0$ lorsque $n$ tend
+vers l'infini, la série diverge.
+
+\subQ{f} Nous avons que
+\[
+\frac{30}{n^2 + 3 n +2} = \frac{30}{(n+2)(n+1)}
+= \frac{A}{n+2} + \frac{B}{n+1} = \frac{A(n+1) + B(n+2)}{(n+2)(n+1)} \ .
+\]
+Pour que l'égalité soit satisfaite, nous devons avoir
+$30 = A(n+1) + B(n+2)$.  Si $n=-1$, nous obtenons $30 = B$.  Si 
+$n=-2$, nous obtenons $30 = -A$.  Donc
+\[
+\frac{30}{(n+2)(n+1)} = \frac{-30}{n+2} + \frac{30}{n+1} \ .
+\]
+Nous avons la série télescopique
+\begin{align*}
+\sum_{n=0}^N \frac{30}{(n+2)(n+1)}
+&= \sum_{n=0}^N \left(\frac{-30}{n+2} + \frac{30}{n+1}\right) \\
+&= \left(-\frac{30}{2} + 30\right)
++ \left(\frac{-30}{3} + \frac{30}{2}\right)
++ \left(\frac{-30}{4} + \frac{30}{3}\right)
++ \left(\frac{-30}{5} + \frac{30}{4}\right) \\
+& \qquad + \ldots + \left(\frac{-30}{N+2} + \frac{30}{N+1}\right)
+= 30 - \frac{30}{N+2} \ .
+\end{align*}
+Puisque $\displaystyle \lim_{N\to \infty}\frac{30}{N+2} = 0$, nous
+obtenons
+\[
+  \sum_{n=0}^\infty \frac{30}{(n+2)(n+1)} =
+\lim_{N\to \infty}\left( 30 - \frac{30}{N+2}\right) =  30 \ .
+\]
+
+\subQ{g} Nous avons que
+\[
+\frac{1}{n(n+5)} = \frac{A}{n} + \frac{B}{n+5} = \frac{A(n+5) + Bn}{n(n+5)} \ .
+\]
+Pour que l'égalité soit satisfaite, nous devons avoir
+$1 = A(n+5) + Bn$.  Donc, $5A=1$ et $A+B = 0$.  Nous obtenons
+$A = -B = 1/5$.
+\[
+\frac{1}{n(n+5)} = \frac{1}{5n} - \frac{1}{5(n+1)} \ .
+\]
+Nous avons la série télescopique
+\begin{align*}
+\sum_{n=1}^N \frac{1}{n(n+5)}
+&= \sum_{n=1}^N \left(\frac{1}{5n} - \frac{1}{5(n+1)}\right) \\
+&= \left(\frac{1}{5} - \frac{1}{10}\right)
++ \left(\frac{1}{10} - \frac{1}{15}\right)
++ \left(\frac{1}{15} - \frac{1}{20}\right)
++ \left(\frac{1}{20} - \frac{1}{25}\right) \\
+& \qquad + \ldots + \left(\frac{1}{5N} - \frac{1}{5(N+1)}\right)
+= \frac{1}{5} - \frac{1}{5(N+1)} \ .
+\end{align*}
+Puisque $\displaystyle \lim_{N\to \infty}\frac{1}{5(N+1)} = 0$, nous
+obtenons
+\[
+  \sum_{n=1}^\infty \frac{1}{n(n+1)} =
+\lim_{N\to \infty}\left( \frac{1}{5} - \frac{1}{5(N+1)}\right) =  \frac{1}{5} \ .
+\]
+}
+
+\subsection{Tests de convergence}
+
+\compileSOL{\SOLUb}{\ref{3Q6}}{
+\subQ{b} Puisque
+\[
+\lim_{n\rightarrow \infty} \left(1+\frac{2}{n}\right)^n =
+\lim_{n\rightarrow \infty} \left( \left(1+\frac{2}{n}\right)^{n/2} \right)^2
+= \left( \lim_{n\rightarrow \infty} \left(1+\frac{2}{n}\right)^{n/2} \right)^2
+= e^2 \neq 0 \ ,
+\]
+la série $\displaystyle \sum_{n=1}^\infty \left(1+\frac{2}{n}\right)^n$
+diverge.
+
+\subQ{f} Nous utilisons le test du quotient avec
+$\displaystyle a_n = \frac{(n+1)^2}{n!}$.  Puisque
+\begin{align*}
+\lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}
+&= \lim_{n\rightarrow \infty} \frac{(n+2)^2 n!}{(n+1)^2 (n+1)!}
+= \lim_{n\rightarrow \infty} \left(\frac{n+2}{n+1}\right)^2\;\frac{1}{n+1}  \\
+& = \lim_{n\rightarrow \infty} \left(\frac{1+2/n}{1+1/n}\right)^2
+\lim_{n\rightarrow \infty} \frac{1}{n+1} = 1 \times 0 = 0 < 1 \ ,
+\end{align*}
+la série converge.
+
+\subQ{g} Il y a plusieurs façons de démontrer que cette série converge.
+
+Nous pouvons comparer avec la série 
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ qui converge car c'est
+une série de la forme
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$ avec $p>1$
+(proposition~\ref{Pseries}).
+Notons que
+\[
+ \frac{1}{n(n^3+5)^{1/3}} \leq \frac{1}{n(n^3)^{1/3}} = \frac{1}{n^2}
+\]
+pour tout $n$.  Nous obtenons donc que la série
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n(n^3+5)^{1/3}}$ converge
+grâce au Test de comparaison.
+
+Nous aurions aussi pu utiliser le Test de comparaison à la
+limite (théorème~\ref{comp_lim_theo}) avec la série
+convergente $\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ pour
+obtenir la même conclusion car
+\[
+\lim_{n\rightarrow \infty} \frac{1/(n(n^3+5)^{1/3})}{1/n^2} 
+= \lim_{n\rightarrow \infty} \frac{n^2}{n(n^3+5)^{1/3}} 
+= \lim_{n\rightarrow \infty} \left(\frac{n^3}{n^3+5}\right)^{1/3}
+= \lim_{n\rightarrow \infty} \left(\frac{1}{1+5/n^3}\right)^{1/3}
+= 1
+\]
+un nombre réel positif.
+
+\subQ{i} Nous avons la séries $\displaystyle \sum_{n=1}^\infty a_n$ avec
+$\displaystyle a_n = \frac{n}{5^n}$.  Puisque
+\[
+\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|
+= \lim_{n\rightarrow \infty} \left| \frac{(n+1)5^n}{n5^{n+1}} \right|
+= \lim_{n\rightarrow \infty} \frac{n+1}{5n}
+= \frac{1}{5} \lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)
+ = \frac{1}{5} < 1 \ ,
+\]
+la série converge grâce au théorème~\ref{Alembert}.
+
+\subQ{m} Puisque $-3 \leq 3\sin(n) \leq 3$ pour tout $n$, nous avons
+$2 \leq 5+3\sin(n) \leq 8$ pour tout $n$.   Puisque
+$3n^3 < 3n^3 + n +4$ pour tout $n>0$, nous avons
+$\displaystyle \frac{1}{3n^3} > \frac{1}{3n^3 + n +4}$ pour tout
+$n>0$.  Ainsi
+\[
+0 < \frac{5+3\sin(n)}{3n^3+n+4} \leq \frac{8}{3n^3}  \ .
+\]
+Or la série
+$\displaystyle \sum_{n=1}^\infty \frac{8}{3n^3} = 
+\frac{8}{3} \sum_{n=1}^\infty \frac{1}{n^3}$ converge grâce à la
+proposition~\ref{Pseries} avec $p=3>1$.  Donc, nous obtenons du Test de
+comparaison que la séries
+$\displaystyle \sum_{n=1}^\infty \frac{5+3\sin(n)}{3n^3+n+4}$
+converge.
+}
+
+\subsection{Convergence absolue et séries alternées}
+
+\compileSOL{\SOLUb}{\ref{3Q7}}{
+\subQ{b} La séries
+$\displaystyle \sum_{n=2}^\infty \frac{(-1)^n}{\ln(n)}$
+est une série alternée de la forme
+$\displaystyle \sum_{n=2}^\infty (-1)^na_n$
+avec $\displaystyle a_n = \frac{1}{\ln(n)}$.
+Nous avons $a_n >0$ et $a_{n+1} < a_n$ pour tout $n$, et
+$\displaystyle \lim_{n\to \infty} a_n = 0$.  Donc, grâce au
+théorème~\ref{altTest}, la série converge.
+
+Par contre, $\displaystyle \frac{1}{\ln(n)} > \frac{1}{n}$ pour tout
+$n > 1$ et $\displaystyle \sum_{n=2}^\infty \frac{1}{n}$ diverge (la série
+harmonique).  Donc, par le test de comparaison,
+$\displaystyle \sum_{n=2}^\infty \frac{1}{\ln(n)}$ diverge.
+
+En conclusion, $\displaystyle \sum_{n=2}^\infty \frac{(-1)^n}{\ln(n)}$
+converge seulement conditionnellement.
+
+\subQ{c} Nous pouvons montrer à l'aide du Test de d'Alembert que
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n n!}{(2n+1)!}$
+converge absolument.  En effet, avec
+$\displaystyle a_n = \frac{(-1)^n n!}{(2n+1)!}$,
+\[
+\lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}
+= \lim_{n\to\infty} \left|\frac{(-1)^{n+1} (n+1)!}{(2n+3)!}\right|
+\, \left|\frac{(2n+1)!}{(-1)^n n!}\right|
+= \lim_{n\to\infty} \frac{(n+1)}{(2n+2)(2n+3)} = 0 < 1 \ .
+\]
+
+\subQ{d} La séries
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{\sqrt{n(n+2)}}$
+est une série alternée de la forme
+$\displaystyle \sum_{n=2}^\infty (-1)^na_n$ avec
+$\displaystyle a_n = \frac{1}{\sqrt{n(n+2)}}$.
+Nous avons $a_n >0$, $a_{n+1} < a_n$ pour tout $n$, et
+$\displaystyle \lim_{n\to \infty} a_n = 0$.  Donc, grâce au
+théorème~\ref{altTest}, la série converge.
+
+Par contre,
+\[
+  \lim_{n\to \infty} \frac{1/n}{1/\sqrt{n(n+2)}}
+  = \lim_{n\to \infty} \frac{1}{n}\sqrt{n(n+2)}
+  = \lim_{n\to \infty} \sqrt{1 + \frac{2}{n}} = \sqrt{1} = 1
+\]
+et $\displaystyle \sum_{n=2}^\infty \frac{1}{n}$ diverge (série
+harmonique).  Donc, par le test de comparaison à la limite, \\
+$\displaystyle \sum_{n=2}^\infty \frac{1}{\sqrt{n(n+2)}}$ diverge.
+
+En conclusion, $\displaystyle \sum_{n=2}^\infty \frac{(-1)^n}{\sqrt{n(n+2)}}$
+converge seulement conditionnellement.
+
+\subQ{e} Puisque $\displaystyle \sum_{n=1}^\infty \frac{1}{n^{3/2}}$ et 
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ converge
+(proposition~\ref{Pseries} avec $p=3/2$ et $p=2$ respectivement), nous avons
+que
+$\displaystyle \sum_{n=1}^\infty \left(\frac{1}{n^{3/2}} + \frac{1}{n^2}\right)$
+converge (théorème~\ref{series_linear}).  Donc\\
+$\displaystyle \sum_{n=1}^\infty (-1)^n\left(\frac{1}{n^{3/2}}
+  + \frac{1}{n^2}\right)$ converge absolument.
+
+\subQ{f} la suite
+$\displaystyle \sum_{n=1}^\infty (-1)^n \frac{n^2}{(2n+1)(2n+3)}$
+ne converge pas absolument car \\
+$\displaystyle \lim_{n\rightarrow \infty} \frac{n^2}{(2n+1)(2n+3)} = 1/4 \neq 0$.
+Elle ne converge même pas simplement car \\
+$\displaystyle \left\{(-1)^n \frac{n^2}{(2n+1)(2n+3)}\right\}_1^\infty$
+ne converge pas vers $0$.
+}
+
+\compileSOL{\SOLUb}{\ref{3Q8}}{
+Nous avons une série alternée
+$\displaystyle \sum_{n=1}^\infty (-1)^{n+1} a_n$
+avec $\displaystyle a_n = \frac{1}{3^n}$.  Vérifions les conditions du
+test des séries alternées.  Nous avons $a_n>0$ sans aucun doute.  De plus
+$\displaystyle \lim_{n\to \infty} a_n = 0$ grâce à la 
+proposition~\ref{suite1}.  Finalement,
+$\displaystyle a_n = \frac{1}{3^n} > \frac{1}{3^{n+1}} = a_{n+1}$. 
+Donc la série alternée
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}}{3^n}$ converge.
+
+Il faut trouver $N$ tel que $|S_n - S |<10^{-3}$ pour tout $n\geq N$.
+Or, pour une série alternée, nous avons que $|S_n - S |< a_{n+1}$.  Il
+suffit donc de trouver $n$ tel que
+$\displaystyle \frac{1}{3^{n+1}} \leq 0.001$.
+\begin{align*}
+\frac{1}{3^{n+1}} \leq 0.001 & \Rightarrow 1000 \leq 3^{n+1}
+\Rightarrow \ln(1000) = 3\ln(10) \leq (n+1) \ln(3) \\
+&\Rightarrow \frac{3\ln(10)}{\ln(3)} -1 \leq n
+\Rightarrow 5.2877\ldots \leq n \ .
+\end{align*}
+Donc six termes ($N=6$) est suffisant.
+}
+
+\compileSOL{\SOLUa}{\ref{3Q9}}{
+Nous avons une série alternée $\displaystyle \sum_{n=1}^\infty (-1)^n a_n$
+avec $a_n = n/4^n$.  Vérifions les conditions du test des séries
+alternées.  Nous avons évidemment $a_n >0$.  Puisque
+\[
+  2^n > n \Rightarrow
+  \left(\frac{1}{2}\right)^n = \frac{2^n}{4^n} > \frac{n}{4^n} \geq 0
+\]
+et $\displaystyle \lim_{n\to \infty}\left(\frac{1}{2}\right)^n = 0$
+(proposition~\ref{suite1}), nous avons grâce au Théorème des gendarmes
+(théorème~\ref{gendarmeS}) que
+$\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.  Finalement,
+\[
+  \frac{3n}{4} > \frac{1}{4} \Rightarrow n > \frac{n+1}{4}
+  \Rightarrow \frac{n}{4^n} > \frac{n+1}{4^{n+1}}
+  \Rightarrow a_n > a_{n+1}
+\]
+pour $n>0$.  Donc la série alternée
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n \, n}{4^n}$ converge.
+
+Pour déterminer $N$ tel que $|S_n - S |<10^{-3}$ pour tout $n\geq N$,
+il suffit de trouver $n$ tel que $|S_n - S |< a_{n+1} < 10^{-3}$.
+Pour simplifier les calculs, nous choisissons $n$ tel que
+\[
+a_{n+1} = \frac{n+1}{4^{n+1}} < \left(\frac{1}{2}\right)^{n+1} <
+10^{-3} \ .
+\]
+Si nous résolvons pour $n$, nous trouvons
+\begin{align*}
+\left(\frac{1}{2}\right)^{n+1} < 10^{-3}
+&  \Rightarrow 10^3 < 2^{n+1}
+\Rightarrow \log_{10}(10^3) < \log_{10}(2^{n+1}) = (n+1)\log_{10}(2) \\
+& \Rightarrow 3 - \log_{10}(2) < n\log_{10}(2)
+  \Rightarrow n> \frac{3 -\log_{10}(2)}{\log_{10}(2)} \approx 8.966 \ .
+\end{align*}
+Donc $N=9$ est un choix acceptable et nous avons
+\[
+  \sum_{n=1}^\infty \frac{(-1)^n \, n}{4^n} \approx
+  \sum_{n=1}^9 \frac{(-1)^n \, n}{4^n} \approx -0.1600075
+\]
+avec une erreur d'au plus $10^{-3}$.
+
+\noindent Note: Nous pouvons vérifier en calculant directement $a_{n+1}$ que
+$n = 6$ est la plus petite valeur qui donne $a_{n+1} < 10^{-3}$.
+Donc, nous avons surestimé la valeur de $n$. 
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "notes"
+%%% End: 
