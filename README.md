@@ -1,7 +1,15 @@
 # Calculus
-Manuscript for calculus for life science and engineering (University of Ottawa)
+Textbook in French for calculus for life science and engineering (University of Ottawa)
 
-To compile:  pdflatex notes.tex , pdflatex notes.tex , pdflatex notes.tex , makeindex notes.idx , padlatex notes.pdf , makeindex notes.idx , pdflatex notes.tex 
+The textbook is written in LateX with the figures produced with xfig and matlab.
 
-Or, on linux, execute make_notes.sh in a shell.
+To compile: execute  pdflatex notes.tex two or three times, makeindex notes.idx, padlatex notes.pdf, makeindex notes.idx and pdflatex notes.tex .  Or, on linux, execute make_notes.sh in a shell.
 
+It is expected that instructors who adopt this textbook for their course will adapt it for their needs.  For instance, they may edit the main file "notes.tex" to keep only the chapters that they require for their course.  They may also add examples and exercises by editing the appropriate LaTeX files.
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+
+https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+
+Benoit Dionne
+2023
