@@ -3,7 +3,7 @@ Textbook in French for calculus for life science and engineering (University of 
 
 The textbook is written in LateX with the figures produced with xfig and matlab.
 
-To compile: execute  pdflatex notes.tex two or three times, makeindex notes.idx, padlatex notes.pdf, makeindex notes.idx and pdflatex notes.tex .  Or, on linux, execute make_notes.sh in a shell.
+To compile: execute  pdflatex notes.tex two or three times, makeindex notes.idx, padfatex notes.pdf, makeindex notes.idx and pdflatex notes.tex .  Or, on linux, execute make_notes.sh in a shell.
 
 It is expected that instructors who adopt this textbook for their course will adapt it for their needs.  For instance, they may edit the main file "notes.tex" to keep only the chapters that they require for their course.  They may also add examples and exercises by editing the appropriate LaTeX files.
 
