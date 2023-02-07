@@ -1,7 +1,7 @@
 # Calculus
 Textbook in French for calculus for life science and engineering (University of Ottawa)
 
-The textbook is written in LateX with the figures produced with xfig and matlab.
+The textbook is written in LaTeX with the figures produced with xfig and matlab.
 
 To compile: execute  pdflatex notes.tex two or three times, makeindex notes.idx, padfatex notes.pdf, makeindex notes.idx and pdflatex notes.tex .  Or, on linux, execute make_notes.sh in a shell.
 
