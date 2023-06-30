@@ -168,7 +168,7 @@ V_0 = -12 \times 1.1 \times 24^2 + \frac{1.1}{3} \times 24^3 + 24
 Nous obtenons $\beta = 105.6$ l/h.
 \end{egg}
 
-\begin{focus}{\dfn} \index{Équation différentielle}
+\begin{defn} \index{Équation différentielle}
 Une {\bfseries équation différentielle} est une équation de la forme
 \begin{equation}\label{equ_diff}
 G(x, y(x), y'(x), y''(x), \ldots) = 0 \qquad , \qquad a<x<b
@@ -176,7 +176,7 @@ G(x, y(x), y'(x), y''(x), \ldots) = 0 \qquad , \qquad a<x<b
 où $G$ est une équation de plusieurs variables et $y$ est une fonction
 inconnue qui satisfait l'équation pour tout $x$ dans l'intervalle
 $]a,b[$.
-\end{focus}
+\end{defn}
 
 Le but est de trouver les fonctions $y$ qui satisfont (\ref{equ_diff}).
 
@@ -200,11 +200,11 @@ $G(t, g(t), g'(t), g''(t)) = g''(t) + 5\, g(t) = 0$ si et seulement si
 $g''(t) + 5 g(t) = 0$.
 \end{egg}
 
-\begin{focus}{\dfn} \index{Solution}
+\begin{defn} \index{Solution}
 Une fonction $\phi$ est une {\bfseries solution} de l'équation
 différentielle (\ref{equ_diff}) si cette équation est satisfaite pour
 tout $x$ dans l'intervalle $]a,b[$ lorsque $y$ est remplacé par $\phi$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Les trois équations suivantes sont des équations différentielles pour
@@ -257,12 +257,12 @@ la forme $\phi(x) = A \sin(2x) + B\cos(2x) + e^{-x}$ où $A$ et $B$
 sont des constantes.
 \end{egg}
 
-\begin{focus}{\dfn}\index{Ordre d'une équation différentielle}
+\begin{defn} \index{Ordre d'une équation différentielle}
 \index{Degré d'une équation différentielle}
 {\bfseries L'ordre (ou degré) d'une équation différentielle} est le
 degré maximal des dérivées qui apparaissent dans l'équation
 différentielle.
-\end{focus}
+\end{defn}
 
 Ainsi, (\ref{equ_diff_1}) est d'ordre un alors que (\ref{equ_diff_2})
 et (\ref{equ_diff_3}) sont d'ordre deux.
@@ -277,14 +277,14 @@ d'équations différentielles du premier ordre que nous appelons
 
 \section{Équations différentielles séparables}
 
-\begin{focus}{\dfn} \index{Équation différentielle!séparable}
+\begin{defn} \index{Équation différentielle!séparable}
 Une {\bfseries équation différentielle séparable} est une équation
 différentielle de la forme
 \begin{equation}\label{equ_diff_sep}
 g(y(x)) y'(x) = f(x)
 \end{equation}
 où $f$ et $g$ sont deux fonctions.
-\end{focus}
+\end{defn}
 
 Si nous intégrons par rapport à $x$ des deux côtés de l'égalité, nous
 obtenons
@@ -379,11 +379,11 @@ où $E\in \RR$ est une constante.
 Nous pouvons spécifier une solution particulière de la famille de solutions
 d'une équation différentielle en ajoutant une condition initiale.
 
-\begin{focus}{\dfn} \index{Condition initiale}
+\begin{defn} \index{Condition initiale}
 Une {\bfseries condition initiale} pour une équation différentielle
 $G(x,y(x),y'(x))=0$ d'ordre un est une condition de la forme
 $y(x_0)=y_0$ où $x_0$ et $y_0$ sont des valeurs données.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Trouvons la solution de l'équation différentielle
@@ -675,7 +675,7 @@ donner des conditions suffisantes pour l'existence et l'unicité des
 solutions.  Il est inutile d'essayer de trouver une solution si la
 théorie nous dit qu'aucune solution existe.
 
-\begin{focus}[][Existence et Unicité]{\thm}
+\begin{theorem}[Existence et Unicité]
 Considérons l'équation différentielle
 \begin{equation}\label{exist_unic}
 y'(x) = F(x,y(x))
@@ -692,7 +692,7 @@ R = \{ (x,y) : a < x < b \quad \text{et}\quad -\infty < y < \infty \}
 $F$ est différentiable sur $R$ et $(x_0,y_0) \in R$ alors il existe
 une et une seule solution de l'équation différentielle
 (\ref{exist_unic}) avec la condition initiale $y(x_0)=y_0$.
-\end{focus}
+\end{theorem}
 
 \PDFfig{10_equ_diff/exist}{Domaine d'existence et d'unicité des solutions
 satisfaisant une condition initiale}{Domaine d'existence et
@@ -820,11 +820,11 @@ différentielles de la forme (\ref{equ_diff_CP}) n'ont pas.
 Remarquons que le côté droit de (\ref{equ_diff_AUTO}) ne dépend pas
 explicitement de $x$.
 
-\begin{focus}{\dfn} \index{Équation différentielle!autonome}
+\begin{defn} \index{Équation différentielle!autonome}
 Une équation différentielle de la forme (\ref{equ_diff_AUTO})
 (i.e. dont le côté droit ne dépend pas explicitement de $x$) est dite
 {\bfseries autonome}.
-\end{focus}
+\end{defn}
 
 \subsection{Points d'équilibre}
 
@@ -835,21 +835,21 @@ Si $F(p)=0$, alors $\phi(x) = p$ pour tout $x$ est une solution de
 (\ref{equ_diff_AUTO}) car $\phi'(x) = 0$ et
 $F(\phi(x)) = F(p) = 0$ pour tout $x$.
 
-\begin{focus}{\dfn} 
+\begin{defn} 
 Une solution constante de l'équation différentielle autonome
 (\ref{equ_diff_AUTO}) est appelée un
 {\bfseries point d'équilibre}\index{Équation différentielle!point
   d'équilibre} ou
 {\bfseries état d'équilibre}\index{Équation différentielle!point
   d'équilibre}. 
-\end{focus}
+\end{defn}
 
 Pour apprécier l'importance des points d'équilibre, il faut considérer
 le {\em portrait de phases} de l'équation différentielle
 (\ref{equ_diff_AUTO}).  Le portrait de phases explique aussi pourquoi
 les solutions constantes sont appelées des {\em points d'équilibre}.
 
-\begin{focus}{\dfn}
+\begin{defn}
 {\bfseries L'orbite}\index{Équation différentielle!orbite d'une
   solution} d'une solution $\phi$ d'une équation
 différentielle autonome (\ref{equ_diff_AUTO}) est l'image
@@ -862,7 +862,7 @@ indiquer la direction parcourue quand $x$ augmente).
 Le {\bfseries portrait de phases} d'une équation différentielle
 autonome est l'ensemble des orbites représentés sur la droite
 réelle. \index{Équation différentielle!portrait de phases}
-\end{focus}
+\end{defn}
 
 \begin{rmk}[\theory]
 Une conséquence importante du théorème d'existence et d'unicité des
@@ -958,7 +958,7 @@ jamais avoir la valeur $10$ dans sont image car $10$ est l'image de la
 solution constante $y(t) = 10$ pour tout $x$.
 \end{rmk}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Un point d'équilibre $p$ pour (\ref{equ_diff_AUTO}) est
 {\bfseries stable}\index{Équation différentielle!point
   d'équilibre!stable} si toute solution de (\ref{equ_diff_AUTO}) avec
@@ -973,7 +973,7 @@ Un point d'équilibre $p$ pour (\ref{equ_diff_AUTO}) est
 stable et de plus, toute solution de (\ref{equ_diff_AUTO}) avec une
 condition initiale assez près de $p$ tend vers $p$ lorsque $x$ tend
 vers plus l'infini.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Dans le cas de la loi de Newton pour la chaleur qui a été étudiée à
@@ -985,11 +985,11 @@ montre que le point d'équilibre $10$ est asymptotiquement stable.
 Il y a une façon simple de déterminer si un point d'équilibre est
 asymptotiquement stable.
 
-\begin{focus}{\thm} \label{oneDstabth}
+\begin{theorem} \label{oneDstabth}
 Si $p$ est une point d'équilibre de (\ref{equ_diff_AUTO}), alors $p$
 est asymptotiquement stable si $F'(p)<0$.  Si $F'(p)>0$, le point
 d'équilibre est instable.
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 L'équation différentielle pour la loi de Newton pour la chaleur est de
@@ -1168,7 +1168,8 @@ pentes\footnote{Les segments de droites que nous traçons pour produire
   horizontal va seulement de $0$ à $2$ alors que l'axe vertical va de
   $0$ à $7$, les segments paraissent de moins en moins longs lorsque
   la pente augmente.  Si nous avions utilisé la même échelle pour les deux
-  axes, les solutions auraient convergé trop rapidement vers $y=5$.}
+  axes, les solutions auraient visuellement convergé trop rapidement
+  vers $y=5$.}
 pour l'équation logistique (\ref{logistic_diff_equ}) lorsque $k=0.8$
 et $M=5$. Nous assumons que $y(t)$ est le nombre d'individus par unité
 d'aire (e.g.\ par km$^2$) ou de volume (e.g.\ par cm$^3$) au temps $t$.
@@ -1950,10 +1951,10 @@ là qu'un bon détecteur d'oxyde de carbone est utile.
 
 \section{Famille de courbe orthogonales \eng}
 
-\begin{focus}{\dfn} \index{Famille de courbes}
+\begin{defn} \index{Famille de courbes}
 Une équation de la forme $F(x,y,c)=0$, où $c$ est une paramètre réel,
 représente une {\bfseries famille de courbes} dans le plan.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 L'équation $F(x,y,r) = x^2+y^2-r^2 = 0$ définit la famille des cercles
@@ -1963,12 +1964,12 @@ $y=x^2 +c$.  L'équation
 $F(x,y,r) = y - c e^x = 0$ définit la famille des courbes $y=ce^x$.
 \end{egg}
 
-\begin{focus}{\dfn} \index{Famille de courbes orthogonales}
+\begin{defn} \index{Famille de courbes orthogonales}
 Une famille de courbes $F(x,y,c)=0$ est {\bfseries orthogonale} à une
 autre famille de courbes $G(x,y,d)=0$ si, en tout point où une courbe
 de la première famille coupent une courbe de la deuxième famille, les
 tangentes à ces deux courbes sont perpendiculaires l'une à l'autre.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 La famille des cercles de rayon $r$ centrés à l'origine
@@ -2002,7 +2003,7 @@ C'est ce raisonnement qui nous permet d'utiliser la méthode suivante
 pour trouver une famille de courbes orthogonale à une famille donnée
 de courbes.
 
-\begin{focus}{\mth}
+\begin{meth}
 \begin{enumerate}
 \item Dérivez l'équation $F(x,y,c)=0$ pour en déduire une
 équation différentielle $y'(x) = f(x,y)$ qui ne dépend pas du
@@ -2019,7 +2020,7 @@ famille de courbes $F(x,y,c)=0$.
 La constante $d$ de la famille $G(x,y,d)=0$ est la constante
 d'intégration que apparaît lorsque nous résolvons une équation
 différentielle sans condition initiale.
-\end{focus}
+\end{meth}
 
 Lors de la première étape de la méthode précédente, il est essentiel
 d'éliminer la constant $c$ car autrement nous obtenons seulement une
@@ -2110,14 +2111,14 @@ seulement un petit changement de la solution de (\ref{IVP}).
 Le théorème suivant donne des conditions suffisantes pour que
 (\ref{IVP}) soit bien posée.
 
-\begin{focus}[\theory]{\thm}
+\begin{theorem}[+\theory]
 Soit
 \[
 R = \{(x,y) : x_0 \leq x \leq x_f \text{ et } -\infty < y < \infty \} \; .
 \]
 Si $f:R \rightarrow \RR$ est différentiable, alors (\ref{IVP}) est
 bien posé.
-\end{focus}
+\end{theorem}
 
 La méthode numérique que nous allons introduire dans le reste de cette
 section n'est pas très efficace mais elle est simple et permet
@@ -2145,7 +2146,7 @@ La {\bfseries méthode d'Euler} est une méthode simple pour résoudre
 numériquement des équations différentielles d'ordre un avec une
 condition initiale.
 
-\begin{focus}[][Méthode d'Euler]{\mth} \index{Méthode d'Euler}
+\begin{meth}[Méthode d'Euler] \index{Méthode d'Euler}
 Soit $y$, la solution d'une équation différentielle avec une condition
 initiale comme nous retrouvons en (\ref{IVP}).  Soit $N$ un entier
 positif, $h=(x_f-x_0)/N$ et $x_i=x_0+ih$ pour $i=0$, $1$, $2$, \ldots,
@@ -2158,7 +2159,7 @@ w_0 & = y_0
 \end{split}
 \end{equation}
 pour $i=1$, $2$, \ldots, $N$.
-\end{focus}
+\end{meth}
 
 \PDFfig{10_equ_diff/euler}{La solution numérique à l'aide de la méthode
 d'Euler d'une équation différentielle}{Le graphe d'une solution

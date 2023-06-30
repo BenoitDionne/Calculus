@@ -114,7 +114,7 @@ $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ approche $1$.
 \MATHfig{4_limites/der3}{8cm}{Graphe de $g(x) = x^2 + 1$}
 {Graphe de $g(x) = x^2 + 1$ pour $x$ près de $1$.}{DER3}
 
-\begin{focus}{\dfn} \index{Limite d'une fonction}
+\begin{defn} \index{Limite d'une fonction}
 Soit $f$ une fonction définie pour $x$ près de $c$ (il n'est pas
 nécessaire que $f$ soit définie à $c$).  Nous écrivons
 \[
@@ -132,13 +132,13 @@ $f(x) \to C$ lorsque $x \to c$.  Nous disons que
 lorsque $x$ converge (ou tend) vers $c$}.  Nous disons aussi que
 {\bfseries $C$ est la limite de $f$ au point $c$}.
 \label{def1_conv}
-\end{focus}
+\end{defn}
 
 Il est aussi nécessaire à l'occasion de considérer seulement les suites
 $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui approchent $c$ par la
 droite ou la gauche.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Si, dans la définition de la limite d'une fonction $f$ en un point
 $c$, nous considérons seulement les suites
 $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n < c$}, nous
@@ -164,7 +164,7 @@ et nous disons que {\bfseries $f(x)$ converge (ou tend) vers la valeur $C$
 lorsque $x$ converge (ou tend) par la droite vers $c$}.  nous disons aussi que
 {\bfseries $C$ est la limite à droite de $f$ au point $c$}.
 \index{Limite d'une fonction!à droite}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Soit $g(x) = \sin(x)/x$. Quelle est la limite de $g(x)$ lorsque $x$
@@ -351,7 +351,7 @@ d'un fonction en un point.  C'est cette définition qui est généralement
 utilisée pour démontrer rigoureusement que la limite d'une fonction
 $f$ en un point $c$ est une valeur $C$.
 
-\begin{focus}{\dfn} \index{Limite d'une fonction!en un point}
+\begin{defn} \index{Limite d'une fonction!en un point}
 Soit $f$ une fonction définie pour $x \neq c$ (il n'est pas
 nécessaire que $f$ soit définie à $x=c$).  Nous écrivons
 \[
@@ -366,7 +366,7 @@ $\epsilon$) tel que
 Nous disons que {\bfseries $f(x)$ converge (ou tend) vers la valeur $C$
 lorsque $x$ converge vers $c$}.
 \label{def2_conv}
-\end{focus}
+\end{defn}
 
 \PDFfig{4_limites/epsdelt}{Définition avec $\epsilon$ et
 $\delta$ de la limite d'une fonction en un point}{Pour $\epsilon$
@@ -429,10 +429,10 @@ pour $x>1$.  Si nous prenons $\delta = \min\{1, 2\epsilon\}$, alors
 pour $|x-2|<\delta$.
 \end{egg}
 
-\begin{focus}{\prp}
+\begin{prop}
 Les définitions de convergence données aux définitions~\ref{def1_conv}
 et \ref{def2_conv} sont équivalente.
-\end{focus}
+\end{prop}
 
 \begin{proof}
 \subQ{i} Supposons que $\displaystyle \lim_{x\rightarrow c} f(x) = C$
@@ -485,7 +485,7 @@ d'une fonction en un point.  Nous avons déjà vu une version de ce théorème
 (théorème~\ref{gendarmeS}) pour les suites.  La présente version
 en est une conséquence.
 
-\begin{focus}[][des gendarmes ou sandwich]{\thm}
+\begin{theorem}[des gendarmes ou sandwich]
 \index{Théorème des gendarmes}\index{Théorème sandwich}
 Soit $f$, $g$ et $h$; trois fonctions telles que
 $f(x) \leq g(x) \leq h(x)$ pour $x$ près de $c$.  Si
@@ -497,7 +497,7 @@ alors
 \lim_{x\rightarrow c} g(x) = L \; .
 \]
 \label{gendarmeF}
-\end{focus}
+\end{theorem}
 
 \begin{egg}[\theory]
 La méthode algébrique de l'exemple~\ref{egg_contcont1} n'est pas utile
@@ -555,7 +555,7 @@ $\displaystyle \lim_{x\rightarrow 0} \sin(x)/x = 1$.}{SINXX}
 
 Comme pour les limites de suites, nous avons les propriétés suivantes.
 
-\begin{focus}{\thm} \label{lim_funct_scd}
+\begin{theorem} \label{lim_funct_scd}
 Supposons que $\displaystyle \lim_{x\rightarrow c} f(x) = A$ et
 $\displaystyle \lim_{x\rightarrow c} g(x) = B$.
 \begin{enumerate}
@@ -566,7 +566,7 @@ $\displaystyle \lim_{x\rightarrow c}\; (k\; f(x)) = kA$.
 \item Si $B \neq 0$ (donc $g(x) \neq 0$ pour $x$ près de $c$),
 alors $\displaystyle \lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \frac{A}{B}$.
 \end{enumerate}
-\end{focus}
+\end{theorem}
 
 Les quatre conclusions du théorème précédent sont souvent énoncées de
 la façon suivante.
@@ -594,14 +594,14 @@ Si nous utilisons la définition de limite introduite à la section
 précédente pour définir la continuité d'une fonction au point $x=c$,
 nous obtenons l'énoncé suivant.
 
-\begin{focus}{\dfn} \index{Fonction continue!en un point}
+\begin{defn} \index{Fonction continue!en un point}
 Soit $f$ une fonction à valeurs réelles définie près d'un point $c$ et
 au point $c$.  La fonction $f$ est {\bfseries continue au point $c$}
 si
 \[
 \lim_{x\rightarrow c} f(x) = f(c)  \; .
 \]
-\end{focus}
+\end{defn}
 
 En d'autres mots, $f$ est continue au point $c$ si $f(c)$ existe et
 $f(x_n)$ approche $f(c)$ quelle que soit la suite
@@ -653,11 +653,11 @@ Le graphe de $f$ est le graphe à la figure~\ref{DER4} où le point
 $(0,1)$ est maintenant représenté par un cercle plein.
 \end{egg}
 
-\begin{focus}{\dfn} \index{Fonction continue!sur un intervalle}
+\begin{defn} \index{Fonction continue!sur un intervalle}
 Si une fonction $f$ est continue en tout point d'un intervalle
 (e.g.\ $]a,b[$, $[a,b]$, $[a,b[$ or $]a,b]$) nous disons que la fonction
 $f$ est {\bfseries continue cet intervalle}.
-\end{focus}
+\end{defn}
 
 Il est toujours préférable (si c'est possible) d'utiliser des
 fonctions continues pour décrire les phénomènes physiques,
@@ -743,7 +743,7 @@ La définition en termes de $\epsilon$ et $\delta$ de la limite d'une
 fonction à un point nous donne une définition de la continuité qui est
 équivalente à celle que nous venons de donner.
 
-\begin{focus}{\dfn} \index{Fonction continue!en un point}
+\begin{defn} \index{Fonction continue!en un point}
 Soit $f$ une fonction à valeurs réelles définie près d'un point $c$ et
 au point $c$.  La fonction $f$ est continue au point $x=c$ si,
 {\em quel que soit le petit nombre $\epsilon >0$} qui est donné, nous
@@ -752,7 +752,7 @@ tel que
 \[
 |f(x) - f(c)| < \epsilon \quad \text{si} \quad |x-c|\leq \delta \; .
 \]
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Nous illustrons à la figure~\ref{EPSDELTC} la deuxième formulation de la
@@ -773,7 +773,7 @@ $c+\delta$.}{EPSDELTC}
 
 Les résultats suivants découlent de la définition d'une fonction continue.
 
-\begin{focus}{\prp}
+\begin{prop}
 \begin{enumerate}
 \item Les fonctions polynomiales, trigonométriques, exponentielles et
   logarithmiques sont des fonctions continues sur leur domaine.
@@ -784,7 +784,7 @@ Les résultats suivants découlent de la définition d'une fonction continue.
 \item La composition de deux fonctions continues donne une nouvelle
   fonction continue.
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 Si $\displaystyle \{ x_n\}_{n=0}^\infty$ est une suite qui converge
 vers un point $c$ du domaine d'une fonction continue $f$, alors
@@ -798,7 +798,7 @@ appel aux suites $\displaystyle \{ x_n\}_{n=0}^\infty$ qui converge
 vers $c$, nous obtenons le résultat suivant qui est très utile pour
 calculer des limites.
 
-\begin{focus}{\prp} \label{interLim}
+\begin{prop} \label{interLim}
 Soit $f$ une fonction continue et $g$ une fonction dont l'image est un
 sous-ensemble du domaine de $f$.  Nous pouvons donc considérer la
 composition $f\circ g$.   Si $\displaystyle \lim_{x\to r} g(x) = s$
@@ -807,7 +807,7 @@ $\displaystyle \lim_{x\to r} f(g(x)) = f(s)$.  En d'autres mots,
 \[
 \lim_{x \to r} f(g(x)) = f\left(\lim_{x\to r} g(x)\right)
 \]
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Calculons les limites suivantes si elles existent.
@@ -877,7 +877,7 @@ Montrons que
 h(x) = \begin{cases}
 \pi/2 & \quad \text{si} \quad x>0 \\
 -\pi/2 & \quad \text{si} \quad x<0
-\end{cases} \; .
+\end{cases} \ .
 \]
 
 Premièrement, montrons que
@@ -885,7 +885,7 @@ Premièrement, montrons que
 \sin(h(x)) = \begin{cases}
 1 & \quad \text{si} \quad x>0 \\
 -1 & \quad \text{si} \quad x<0
-\end{cases} \; .
+\end{cases} \ .
 \]
 Posons $\theta_1 = \arctan(x)$ et $\theta_2 = \arctan(1/x)$.  Nous avons 
 $-\pi/2 < \theta_1, \theta_2 < \pi/2$ et
@@ -948,13 +948,13 @@ $-\pi/2 < \theta_1, \theta_2 < 0$.}{arcXX2}
 Les fonctions continues possèdent une propriété très importante que
 nous utiliserons lors de l'étude des fonctions au prochain chapitre.
 
-\begin{focus}[][Théorème des valeurs intermédiaires]{\thm}
+\begin{theorem}[Théorème des valeurs intermédiaires]
 \index{Théorème des valeurs intermédiaires}
 Soit $f$ une fonction continue sur l'intervalle $[a,b]$ et soit $m$
 une valeur entre $f(a)$ et $f(b)$.  Il existe au moins une valeur $c$
 telle que  $a\leq c \leq b$ et $f(c) = m$ (figure~\ref{CONTFCT}).
 \label{TVI}
-\end{focus}
+\end{theorem}
 
 \PDFfig{4_limites/contfct}{Théorème des valeurs intermédiaires}
 {Illustration du théorème des valeurs intermédiaires.}{CONTFCT}
@@ -985,7 +985,7 @@ limite à l'infini pour les suites.  Nous obtenons la définition suivante
 de limite d'une fonction $f$ lorsque $x$ tend vers plus ou moins
 l'infini.
 
-\begin{focus}{\dfn} \index{Limite d'une fonction!à l'infini}
+\begin{defn} \index{Limite d'une fonction!à l'infini}
 Si la définition~\ref{def1_conv} est satisfaite lorsque $c$ est
 remplacé par $\infty$, nous disons que {\bfseries $f(x)$ converge (ou tend)
 vers la constante $C$ lorsque $x$ converge (ou tend) vers plus
@@ -1001,7 +1001,7 @@ l'infini} et nous écrivons
 \lim_{x\rightarrow -\infty} f(x) = C \; .
 \]
 \label{def_of_lim_of_f_at_inf}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Revenons à l'exemple précédent avec
@@ -1077,7 +1077,7 @@ $x$ tend vers plus l'infini.
 Les propositions \ref{suite1} et \ref{suite2} ne sont pas limitées à
 la suite $\displaystyle \{n\}_{n=1}^\infty$.
 
-\begin{focus}{\prp} \label{limite1}
+\begin{prop} \label{limite1}
 Soit $r$ un nombre réel positif.  Alors
 \[
 \lim_{x\rightarrow \infty} r^x=
@@ -1087,9 +1087,9 @@ Soit $r$ un nombre réel positif.  Alors
 0 &\qquad \text{pour $0 < r < 1$}
 \end{cases} \; .
 \]
-\end{focus}
+\end{prop}
 
-\begin{focus}{\prp} \label{limite2}
+\begin{prop} \label{limite2}
 Soit $r$ un nombre réel.  Alors
 \[
 \lim_{x\rightarrow \infty} \frac{1}{x^r}=
@@ -1099,7 +1099,7 @@ Soit $r$ un nombre réel.  Alors
 \infty &\qquad \text{pour $r<0$}
 \end{cases} \; .
 \]
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Dans les deux propositions précédentes, nous faisons référence à la
@@ -1203,7 +1203,7 @@ si la suite $\displaystyle \left\{ f(x_n) \right\}_{n=1}^\infty$
 satisfait la définition~\ref{def_of_lim_at_inf} de convergence vers
 moins l'infini.  Nous pouvons ainsi donner la définition suivante.
 
-\begin{focus}{\dfn} \index{Limite infinie d'une fonction}
+\begin{defn} \index{Limite infinie d'une fonction}
 Soit $f$ une fonction définie pour $x$ près de $c$.  Nous écrivons
 \[
 \lim_{x\rightarrow c} f(x) = +\infty  \quad \text{(resp. $-\infty$)}
@@ -1221,7 +1221,7 @@ Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
 Il n'est pas nécessaire que $f$ soit définie à $c$, et nous pouvons avoir
 $c = +\infty$ ou $-\infty$.
 \label{def_of_inf_lim_of_f}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Si $\displaystyle f(x) = \frac{2}{(x-3)^2}$, que se passe-t-il lorsque
@@ -1300,7 +1300,7 @@ fonction lorsque nous nous approchons de $c$ avec des valeurs plus petites
 que $c$ (i.e. par la gauche) ou des valeurs plus grandes que $c$ (i.e.
 par la droite).
 
-\begin{focus}{\dfn} \index{Limite infinie d'une fonction!à droite}
+\begin{defn} \index{Limite infinie d'une fonction!à droite}
 \index{Limite infinie d'une fonction!à gauche}
 Soit $f$ une fonction définie pour $x>c$.  Nous écrivons
 \[
@@ -1329,7 +1329,7 @@ qui tend vers $c$.
 Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
 (resp. moins l'infini) lorsque $x$ converge par la gauche vers $c$}
 (figure~\ref{LIM_INFINI}).
-\end{focus}
+\end{defn}
 
 \PDFfig{4_limites/lim_infini}{Limites à droite et à gauche}
 {Dans le graphe à de gauche
@@ -1370,7 +1370,7 @@ Ce sont ces définitions qui nous permettent de déterminer
 rigoureusement si une limite à l'infini existe et qu'elle est cette
 limite, ou si une fonction à une limite infinie en un point.
 
-\begin{focus}{\dfn} \index{Limite d'une fonction!à l'infini}
+\begin{defn} \index{Limite d'une fonction!à l'infini}
 Soit $f$ une fonction définie pour $x$ positif.  Nous écrivons
 \[
 \lim_{x\rightarrow \infty} f(x) = C
@@ -1384,7 +1384,7 @@ si $x>M$ (figure~\ref{LIM_INFINI1}).
 
 De façons semblables, nous pouvons définir la limite vers moins l'infini.
 \label{epM_def_of_lim_at_inf}
-\end{focus}
+\end{defn}
 
 \PDFfig{4_limites/lim_infini1}{Asymptote horizontale}
 {La fonction $f$ tend vers $C$ lorsque $x$ tend vers plus l'infini.
@@ -1392,7 +1392,7 @@ Pour $\epsilon>0$ donné, nous pouvons voir à partir du graphe de $f$ qu'il
 existe $M>0$ tel que $f(x)$ est entre $C-\epsilon$ et $C+\epsilon$ si
 $x>M$.}{LIM_INFINI1}
 
-\begin{focus}{\dfn} \index{Limite infinie d'une fonction}
+\begin{defn} \index{Limite infinie d'une fonction}
 Soit $f$ une fonction définie pour $x$ près d'un point $c$.  Nous écrivons
 \[
 \lim_{x\rightarrow c} f(x) = +\infty
@@ -1406,7 +1406,7 @@ dans l'intervalle $]c-\delta,c+\delta[$ (figure~\ref{LIM_INFINI0}).
 De façons semblables, nous pouvons définir la convergence vers moins
 l'infini, et les convergences à droite et à gauche vers plus ou moins
 l'infini.
-\end{focus}
+\end{defn}
 
 \PDFfig{4_limites/lim_infini0}{Asymptote verticale}
 {La fonction $f$ tend vers plus l'infini lorsque $x$ tend vers
@@ -1486,7 +1486,7 @@ pour $x>M$.
 Pour terminer, nous considérons le cas où nous avons une limite infinie à
 l'infini.
 
-\begin{focus}{\dfn} \index{Limite infinie à l'infini}
+\begin{defn} \index{Limite infinie à l'infini}
 Soit $f$ une fonction définie pour $x$ positif.  Nous écrivons
 \[
 \lim_{x\rightarrow +\infty} f(x) = +\infty
@@ -1504,11 +1504,11 @@ $m>0$ (qui peut dépendre de $M$) pour laquelle $f(x) < M$ lorsque $x>m$.
 
 De façons semblables, nous pouvons définir la convergence de $f(x)$ vers plus
 l'infini ou moins l'infini lorsque $x$ converge vers moins l'infini.
-\end{focus}
+\end{defn}
 
 \subsection{Comportement asymptotique semblable \life}
 
-\begin{focus}{\dfn}
+\begin{defn}
 \index{Comportement asymptotique semblable!au voisinage d'un point}
 Soit $f$ et $g$ deux fonctions telles que $f(x)$ et $g(x)$ tendent
 vers l'infini lorsque $x$ tend vers $c$.  Nous disons que $f$ et $g$ ont un
@@ -1517,7 +1517,7 @@ $c$ si
 \[
 \lim_{x\rightarrow c} \frac{f(x)}{g(x)} = 1 \; .
 \]
-\end{focus}
+\end{defn}
 
 Si $f$ et $g$ ont un comportement asymptotique semblable près de $c$,
 alors $f(x) \approx g(x)$ pour $x$ très près de $c$.  Ainsi, les fonctions
@@ -1525,7 +1525,7 @@ $f$ et $g$ ont des graphes semblables pour $x$ près de $c$.
 
 De même,
 
-\begin{focus}{\dfn} \index{Comportement asymptotique semblable!à l'infinité}
+\begin{defn} \index{Comportement asymptotique semblable!à l'infinité}
 Deux fonctions $f$ et $g$ ont un
 {\bfseries comportement asymptotique semblable} lorsque $x$ tend vers
 plus l'infini (resp. moins l'infini) si
@@ -1534,7 +1534,7 @@ plus l'infini (resp. moins l'infini) si
 (\text{resp.}\quad
 \lim_{x\rightarrow -\infty} \frac{f(x)}{g(x)} = 1 \;) \; .
 \]
-\end{focus}
+\end{defn}
 
 \begin{egg}
 À l'exemple~\ref{asympt5}, nous avons montré que

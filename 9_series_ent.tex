@@ -15,7 +15,7 @@ de la fonction $e^x$ donnée dans la dernière section du chapitre.
   
 \section{Convergence des séries entières} 
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une {\bfseries série entière au voisinage de $c \in \RR$} (ou
 {\bfseries près de $c$})\index{Série entière} est une séries de la forme
 \[
@@ -26,12 +26,12 @@ nombres réels.  Les nombres $a_n$ pour $n=0$, $1$, $2$, \ldots sont
 appelés les {\bfseries coefficients} \index{Série entière!coefficient}
 de la série et $a_n (x-c)^n$ pour $n=0$, $1$, $2$, \ldots\ sont les
 {\bfseries termes de la série}. \index{Série entière!terme}
-\end{focus}
+\end{defn}
 
 Pour chaque valeur de $x$, nous avons une série de nombres réels pour
 laquelle il faut déterminer la convergence.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit
 \[
 \sum_{n=0}^\infty a_n (x-c)^n
@@ -50,7 +50,7 @@ de la série. \index{Série entière!somme partielle}
 le contexte détermine si $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ fait
 référence à la série entière où la limite de la série entière pour une valeur
 de $x$.
-\end{focus}
+\end{defn}
 
 Selon la valeur de $x$, la série peut converger (absolument ou
 conditionnellement) ou diverger.
@@ -101,14 +101,14 @@ $x>11/5$ car nous avons alors que
 pour $|x-2|<1/5$ et divergeait pour $|x-2|>1/5$.  Le théorème suivant
 confirme que c'est typique des séries entières.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Soit $\displaystyle \left\{a_n\right\}_{n=0}^\infty$ une suite de nombres
 réels et $c$ un nombre réelle.  Soit que la séries entière
 $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ diverge pour toute valeur
 de $x \neq c$ ou il existe un nombre $R>0$ ($R=\infty$ est admissible)
 tel que la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
 converge absolument pour $|x-c|<R$ et diverge pour $|x-c|>R$.
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 Le théorème précédent ne dit rien au sujet de la convergence de la série
@@ -144,7 +144,7 @@ $a_n>0$ et $a_{n+1} < a_n$ pour tout $n$.  De plus
 $\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
 \end{egg}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Le {\bfseries rayon de convergence} d'une série entière
 $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ est le nombre $R$ tel que la
 série converge pour $|x-c|<R$ et diverge pour $|x-c|>R$.
@@ -154,7 +154,7 @@ L'{\bfseries intervalle de convergence} est
 $\displaystyle \left\{x : \sum_{n=0}^\infty a_n (x-c)^n
 \text{ converge} \right\}$.
 \index{Série entière!intervalle de convergence}
-\end{focus}
+\end{defn}
 
 \begin{egg}[][Suite de l'exemple~\ref{entiere_eggS}]
 Le rayon de convergence de la série
@@ -166,14 +166,14 @@ $\displaystyle \left[\frac{9}{5} , \frac{11}{5}\right]$.
 Le théorème suivant est une conséquence du test du quotient pour les séries
 de nombres.
 
-\begin{focus}{\thm} \label{RadiusConvComp}
+\begin{theorem} \label{RadiusConvComp}
 Le rayon de convergence $R$ de la série entière
 $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ est donnée par
 \[
 \frac{1}{R} = \lim_{n\rightarrow \infty} \left|\frac{a_{n+1}}{a_n}\right|
 \]
 si cette limite existe.  Si la limite est $0$, alors $R=\infty$.
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 Trouvons le rayon de convergence et l'intervalle de convergence de la série
@@ -240,7 +240,7 @@ L'intervalle de convergence est $]-1,1[$.
 
 \section{Fonctions définies par des séries}
 
-\begin{focus}{\thm} \label{der_int_series}
+\begin{theorem} \label{der_int_series}
 Considérons la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
 dont le rayon de convergence est $R>0$, et la fonction
 $f:]c-R,c+R[\rightarrow \RR$ définie par
@@ -260,7 +260,7 @@ De plus, si $c-R<a<b<c+R$, l'intégrale de $f$ entre $a$
 \sum_{n=1}^\infty \left(\frac{a_n}{n+1} (x-c)^{n+1}\right) \bigg|_{x=a}^b \; .
 \end{equation}
 Cette série numérique converge.
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 En d'autres mots, l'équation (\ref{derseries}) dit que pour dériver une
@@ -288,7 +288,7 @@ Si nous remplaçons $x$ par $t$, $a$ par $c$ et $b$ par $x$ dans l'équation
 Puisque $\displaystyle F(x) = \int_c^x f(t) \dx{t}$ est une primitive
 de $f$, nous pouvons énoncer le corollaire suivant.
 
-\begin{focus}{\cor}
+\begin{cor}
 Considérons la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
 dont le rayon de convergence est $R>0$, et la fonction
 $f:]c-R,c+R[\rightarrow \RR$ définie par
@@ -302,7 +302,7 @@ par
 \]
 où $C$ est une constante.  La série précédente converge au moins pour
 $c-R<x<c+R$.
-\end{focus}
+\end{cor}
 
 \begin{egg}
 La série géométrique que nous avons vu à l'exemple~\ref{geoseries} est
@@ -414,7 +414,7 @@ vers $f(x)$ mais la fonction $f$ est définie pour tout $x\neq 1$.
 Malgré les points négatifs que nous venons de soulever, l'expression
 (\ref{problTaylor}) est très importante.
 
-\begin{focus}{\dfn} \index{Série de Taylor}\index{Série de MacLaurin}
+\begin{defn} \index{Série de Taylor}\index{Série de MacLaurin}
 Soit $f;]a,b[\rightarrow \RR$ une fonction infiniment différentiable.  La
 {\bfseries série de Taylor de $f$ près de $c \in ]a,b[$} est la série
 \begin{equation}\label{TaylorSeries}
@@ -426,9 +426,9 @@ Lorsque $c=0$, cette série est aussi appelée la
 Le symbole $\sim$ indique seulement que la série est associée à la fonction
 $f$.  Nous ne savons pas si la série converge ou si elle converge vers $f(x)$
 pour $x\in]a,b[$ près de $c$.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\mth}
+\begin{meth}
 Soit $f:]a,b[\rightarrow \RR$ une fonction infiniment différentiable et
 $c \in ]a,b[$.  Pour déterminer si la série de Taylor de $f$ près de $c$
 converge et si elle converge vers $f(x)$ pour $x\in]a,b[$ près de $c$, il
@@ -439,7 +439,7 @@ faut démontrer que le reste $r_k(x)$ définie en (\ref{TPfourTS2}) satisfait
 \frac{1}{(k+1)!} f^{(k+1)}(\xi(k,c,x)) (x-c)^{k+1} = 0
 \]
 pour $x$ près de $c$.
-\end{focus}
+\end{meth}
 
 \begin{rmk}[\theory]
 Le reste $r_k$ pour le Théorème de Taylor, théorème~\ref{theoTaylor}, est
@@ -621,8 +621,7 @@ $f^{(n)}(0) = -1$ lorsque $n=2$, $6$, $10$, \ldots \  La série de MacLaurin
 de $\cos(x)$ est donc
 \[
 \cos(x) \sim \sum_{n=0}^\infty \frac{1}{n!}\,f^{(n)}(0) \, x^n
-= \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} \, x^{2n}
-\; .
+= \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} \, x^{2n} \; .
 \]
 
 Montrons que cette série converge vers $\cos(x)$ pour tout $x$ en
@@ -668,8 +667,7 @@ $g^{(n)}(0) = -1$ lorsque $n=3$, $7$, $11$, \ldots \  La série de MacLaurin
 de $\sin(x)$ est donc
 \[
 \sin(x) \sim \sum_{n=0}^\infty \frac{1}{n!}\,g^{(n)}(0) \, x^n
-= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}\, x^{2n+1}
-\; .
+= \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}\, x^{2n+1} \; .
 \]
 
 Montrons que cette série converge vers $\sin(x)$ pour tout $x$ en
@@ -852,7 +850,7 @@ f^{(m)}(c) &= \sum_{k=m}^\infty k(k-1)(k-2)\ldots(k-m+1)\,a_k
 
 Nous avons donc démontré le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f$ une fonction définie par
 \[
 f(x) = \sum_{n=0}^\infty a_n \, (x-c)^n \quad \text{pour} \quad |x-c|<R
@@ -861,13 +859,13 @@ où $R>0$.  Alors
 \[
 a_n = \frac{1}{n!}\, f^{(n)}(c) \quad , \quad n=0,1,2,3,\ldots
 \]
-\end{focus}
+\end{prop}
 
 En d'autres mots, la série qui définit la fonction $f$ est la série de Taylor
 de $f$ près de $c$.  Un corollaire de la proposition précédente est le
 suivant.
 
-\begin{focus}{\cor} \label{uniqueSeries}
+\begin{cor} \label{uniqueSeries}
 Si
 \[
 \sum_{n=0}^\infty a_n \, (x-c)^n = \sum_{n=0}^\infty b_n \, (x-c)^n
@@ -888,7 +886,7 @@ a_n = b_n = \frac{1}{n!}\,f^{(n)}(c) \quad , \quad n=0,1,2,3,\ldots
 \]
 En d'autres mots, une fonction $f:\RR \rightarrow \RR$ peut avoir au
 plus une représentation en série entière près de $c$.
-\end{focus}
+\end{cor}
 
 Ce dernier corollaire peut nous aider à trouver la série de Taylor de
 certaines fonction sans avoir à calculer une dérivée.
@@ -1126,13 +1124,13 @@ Qu'arrive-t-il si $k$ est un nombre réel?  Existe-t-il une formule semblable
 à la formule du binôme si $k$ est un nombre réel quelconque?  Le théorème
 suivant répond à ces questions.
 
-\begin{focus}[][Série du binôme]{\thm}\label{bin_series}
+\begin{theorem}[Série du binôme] \label{bin_series}
 \index{Série du binôme}
 Soit $k\in \RR$.  Alors
 \begin{equation}\label{infinitebin}
 (1+x)^k = \sum_{n=0}^\infty \binom{k}{n} \, x^n \quad , \quad |x|<1 \; .
 \end{equation}
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 La formule (\ref{finitebin}) où $k$ est un entier non négatif est
@@ -1145,7 +1143,7 @@ entier positif,
 car un des facteurs au numérateur est nul.
 \end{rmk}
 
-\begin{proof}[\theory][Théorème~\ref{bin_series}]
+\begin{proof}[\UOproof\ (Théorème~\ref{bin_series}) \theory]
 Soit $f(x)=(1+x)^k$ où $k\in \RR$.  Nous avons
 \begin{align*}
 f'(x) &= k\,(1+x)^{k-1} \; ,\\
@@ -1242,7 +1240,7 @@ Puisque $g(0) =1$, nous avons que $g$ est une solution de (\ref{binODE}) pour
 $|x|<1$.  Par unicité des solutions $f(x)=g(x)$ pour $|x|<1$; c'est-à-dire,
 \[
 (1+x)^k = \sum_{n=0}^\infty \binom{k}{n} \, x^n \quad , \quad |x|<1 
-\; .
+\; .   \qedhere
 \]
 \end{proof}
 
@@ -1295,7 +1293,7 @@ calcul algébrique que la Définition~\ref{pr_def_of_exp}.
 La définition de $b^x$ pour $b>0$ et $x\in \RR$ requière la série entière de
 la fonction exponentielle $e^x$.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $E: \RR \rightarrow ]0,+\infty[$, la fonction définie par
 \[
 E(x) \equiv \sum_{n=0}^\infty \frac{x^n}{n!}
@@ -1311,15 +1309,15 @@ La fonction $E$ possède les propriétés suivantes.
 \item $E(a+b) = E(a)\, E(b)$ pour tous nombres réels $a$ et $b$.
 \item $\displaystyle \dydx{E}{x}(x) = E(x)$ pour tout $x$.
 \end{enumerate}
-\end{focus}
+\end{prop}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Le nombre $e$ est définie par
 \[
 e \equiv E(1) = \sum_{n=0}^\infty \frac{1}{n!}
 = \lim_{N\rightarrow \infty} \sum_{n=0}^N \frac{1}{n!} \; .
 \]
-\end{focus}
+\end{defn}
 
 Nous pouvons montrer que c'est le même nombre $e$ que nous avons
 défini précédemment par la formule
@@ -1335,28 +1333,28 @@ Pour cette raison,
 et puisque $E$ est continue et croissante, nous pouvons montrer que la
 définition suivante de $e^x$ correspond à la Définition~\ref{pr_def_of_exp}.
 
-\begin{focus}{\dfn}
+\begin{defn}
 \[
 e^x \equiv E(x) = \sum_{n=0}^\infty \frac{x^n}{n!} \quad , \quad x \in \RR \; .
 \]
-\end{focus}
+\end{defn}
 
 Il découle de cette définition que $e^x$ satisfait les propriétés des
 exposants: $e^{x+y} = e^x\, e^y$, $e^{xy} = (e^x)^y$, etc.
 
-\begin{focus}{\dfn}
+\begin{defn}
 La fonction inverse de $e^x$ est alors définie par
 \[
 y = \ln (x) \quad \Leftrightarrow \quad e^y=x
 \]
 pour $x>0$.
-\end{focus}
+\end{defn}
 
 Nous pouvons montrer avec cette définition que $\ln(x)$ satisfait les
 propriétés des logarithmes:
 $\ln(xy) = \ln(x)+\ln(y)$, $\ln(x^y) = y\ln(x)$, etc.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Pour $x\in \RR$ et $b>0$, nous définissons $b^x$ par
 \[
 b^x \equiv e^{x\ln(b)}
@@ -1365,7 +1363,7 @@ Pour $x > 0$ et $b>0$, nous définissons $\log_b(x)$ par
 \[
 \log_b{x} \equiv \frac{\ln(x)}{\ln(b)} \; .
 \]
-\end{focus}
+\end{defn}
 
 Ces définitions coïncident avec les définitions traditionnelles de $b^x$ et
 $\log_b(x)$ respectivement.  Par exemple, si $x$ est un entier positif,
@@ -1404,15 +1402,13 @@ e^u= \sum_{n=0}^\infty \frac{1}{n!}\, u^n \quad , \quad u \in \RR
 nous obtenons
 \[
 e^{-2x} = \sum_{n=0}^\infty \frac{1}{n!}\, (-2x)^n
-= \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n \quad , \quad x \in \RR
-\; .
+= \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n \quad , \quad x \in \RR \; .
 \]
 Ainsi,
 \begin{align*}
 (1+x)e^{-2x} &= (1+x) \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n
 = \sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^n +
-\sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^{n+1} \quad , \quad x \in \RR
-\; .
+\sum_{n=0}^\infty \frac{(-2)^n}{n!}\, x^{n+1} \quad , \quad x \in \RR \; .
 \end{align*}
 Si nous posons $m=n+1$ dans la deuxième série, nous obtenons
 \begin{align*}

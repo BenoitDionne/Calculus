@@ -16,13 +16,13 @@ variable à une limite en un point.
 
 \section{Definitions}
 
-\begin{focus}{\dfn} \index{Fonction!de plusieurs variables}
+\begin{defn} \index{Fonction!de plusieurs variables}
 Une {\bfseries fonction} $f$ de $n$ variables ($n>1$) est une
 opération d'un sous-ensemble $D$ de $\RR^n$ à l'ensemble
 $\RR^m$ ($m\geq 1$) qui, à chaque élément de $D$, associe un seul
 élément de $\RR^m$.  Nous écrivons $f:D\rightarrow \RR^m$ pour désigner une
 fonction $f$ de $D\subset \RR^n$ dans $\RR^m$.
-\end{focus}
+\end{defn}
 
 Les fonctions $f:D \rightarrow \RR^m$ où $D\subset \RR^n$ sont
 généralement définies par $m$ fonctions $f_i:\RR^n\rightarrow \RR$
@@ -45,7 +45,7 @@ Les définitions du domaine et de l'image d'une fonction que nous avons
 vu pour les fonctions d'une variable prennent la forme suivante dans
 le cas d'une fonction de plusieurs variables.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Le {\bfseries domaine}\index{Fonction!domaine} d'une fonction
 $f:D \rightarrow \RR^m$ est l'ensemble $D \subset \RR^n$ où la fonction $f$
 est définie.  Nous écrivons
@@ -60,7 +60,7 @@ moins un élément $\VEC{x} \in D$ tel que $f(\VEC{x}) = \VEC{y}$.
 \IM f &\equiv \left\{ \VEC{y} \in \RR^m : f(\VEC{x}) = \VEC{y}
 \text{ pour au moins un élément } \VEC{x} \in D \right\} \; .
 \end{align*}
-\end{focus}
+\end{defn}
 
 \begin{rmkList}
 \begin{enumerate}
@@ -103,7 +103,7 @@ $\RR^m$.  Les fonctions $f:\RR^n\rightarrow \RR^m$ définies par le
 produit d'une matrice avec un vecteur satisfont la définition
 suivante.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une fonction $f:\RR^n\rightarrow \RR^m$ est appelée une
 {\bfseries fonction linéaire}\index{Fonction linéaire} ou
 {\bfseries application linéaire}\index{Application linéaire} si
@@ -115,7 +115,7 @@ $\VEC{x} \in \RR^n$ et tout $\alpha \in \RR$.
 $\VEC{x}$ et $\VEC{y}$ de $\RR^n$. 
 \end{enumerate}
 \label{funct_lin_def} 
-\end{focus}
+\end{defn}
 
 \begin{egg}
 La matrice
@@ -293,7 +293,7 @@ $\displaystyle \frac{x_1^2}{3^2} + \frac{x_2^2}{2^2} = 1$.
 Pour les fonctions de plusieurs variables, la définition du graphe
 d'une fonction s'énonce de la façon suivante.
 
-\begin{focus}{\dfn} \index{Fonction!graphe}
+\begin{defn} \index{Fonction!graphe}
 Soit $f:D\rightarrow \RR$ une fonction définit sur un sous-ensemble
 $D\subset \RR^n$.  Nous définissons le {\bfseries graphe de la fonction}
 $f$ comme étant l'ensemble
@@ -302,7 +302,7 @@ $f$ comme étant l'ensemble
 : (x_1,x_2,\ldots,x_n) \in D \right\}
 \]
 de $\RR^{n+1}$.
-\end{focus}
+\end{defn}
 
 Seules les fonctions définies sur un ensemble $D \subset \RR^2$
 pourront être représentées par un dessin (certainement dans l'univers
@@ -315,7 +315,7 @@ $D \subset \RR^2$ dans $\RR$}{Pour obtenir le graphe $S$ de la fonction
 $f$, nous traçons dans le système de coordonnées cartésiennes l'ensemble
 des points $(x_1,x_2,f(x_1,x_2))$ pour $(x_1,x_2) \in D$.}{D3_GRAPH}
 
-\begin{focus}{\dfn} \index{Fonction affine}
+\begin{defn} \index{Fonction affine}
 Les {\bfseries fonctions affines} sont les fonctions
 $f:\RR^n \to \RR^m$ de la forme $f(\VEC{x}) = A \VEC{x} + \VEC{b}$
 pour $A$, une matrice de dimension \nm{n}{m}, et $\VEC{b} \in \RR^m$,
@@ -326,7 +326,7 @@ la définition~\ref{funct_lin_def}.
 En particulier, si $f:\RR^n \to \RR$, la fonction $f$ est de la forme
 $\displaystyle f(x,y) = \sum_{i=1}^n m_i\,x_i +b$ où les $m_i$ et
 $b$ sont des constantes.
-\end{focus}
+\end{defn}
 
 Dans le cas d'une fonction affine $f:\RR^2 \to \RR$, nous observons que le
 graphe de $f$ est un plan dans l'espace.
@@ -481,13 +481,13 @@ Même pour les fonctions de deux variables, il est souvent fort
 difficile de tracer le graphe d'une fonction.  Nous avons donc besoin de
 méthodes pour représenter l'information fournie par une fonction.
 
-\begin{focus}{\dfn} \index{Courbe de niveaux}
+\begin{defn} \index{Courbe de niveaux}
 Soit $f:D\rightarrow \RR$ une fonction définie sur un ensemble
 $D\subset \RR^2$.  Une {\bfseries courbe de niveaux} de $f$ est une
 courbe $C \subset D$ définie par l'équation $f(x_1,x_2) = k$ où $k$
 est une constante; c'est-à-dire,
 $\displaystyle C = \{ (x_1,x_2) \in D : f(x_1,x_2) = k \}$.
-\end{focus}
+\end{defn}
 
 En traçant plusieurs courbes de niveau d'une fonction $f$ sur une
 même figure, nous pouvons déterminer (approximativement) les maximums
@@ -528,7 +528,7 @@ suivante.
 % \subQ{b} $f(x,y) = \sqrt{(x+y)/(x-y)}$
 % \end{egg}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f:D\rightarrow \RR^2$ une fonction définie sur un ensemble
 $D\subset \RR^2$ et soit $M \subset \RR^3$ un plan défini par
 $x_2=m\,x_1+b$.  Une
@@ -539,7 +539,7 @@ de $f$; c'est-à-dire,
 C = \left\{ \left(x_1, x_2, f(x_1, x_2)\right) : x_2 = m\,x_1+b \text{ et }
 (x_1,x_2) \in D \right\} \; .
 \]
-\end{focus}
+\end{defn}
 
 Deux familles de plans verticaux sont généralement utilisées pour
 produire des sections verticales: les plans $x_1=k_1$ et $x_2=k_2$ où
@@ -613,7 +613,7 @@ dessin à droite.}{EUCLID}
 Nous commençons par définir la notion de convergence d'une suite de points
 dans $\RR^n$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Nous disons qu'une suite de points
 $\displaystyle \left\{\VEC{x}_k\right\}_{k=1}^\infty$ de $\RR^n$
 {\bfseries converge (ou tend) vers un point
@@ -629,12 +629,12 @@ Nous écrivons
 \]
 Nous disons que $\VEC{c}$ est la {\bfseries limite}\index{Suite!limite} de
 la suite $\displaystyle \left\{\VEC{x}_k\right\}_{k=1}^\infty$.
-\end{focus}
+\end{defn}
 
 La définition précédente de limite d'une suite est équivalente à la
 définition suivante en termes de $\epsilon$ et $\delta$.
 
-\begin{focus}[\theory]{\dfn}
+\begin{defn}[+\theory]
 Nous disons qu'une suite de points 
 $\displaystyle \left\{\VEC{x}_k\right\}_{k=1}^\infty$ de $\RR^n$
 {\bfseries converge (ou tend) vers un point
@@ -650,13 +650,13 @@ Nous écrivons
 \]
 Nous disons aussi que $\VEC{c}$ est la {\bfseries limite}\index{Suite!limite}
 de la suite $\displaystyle \left\{\VEC{x}_k\right\}_{k=1}^\infty$.
-\end{focus}
+\end{defn}
 
 Avant de définir la limite, la continuité et la dérivée d'une fonction
 de plusieurs variables à un point, il faut généraliser le concept
 d'intervalles que nous retrouvons sur la droite réelle.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Un sous-ensemble $V \subset \RR^n$ est
 {\bfseries ouvert}\index{Ensemble ouvert} si,
 {\em quel que soit $\VEC{v} \in V$}, nous pouvons trouver $\delta>0$ (qui
@@ -674,7 +674,7 @@ point $\VEC{c} \in \RR^n$ si $\VEC{c} \in V$ et $V$ est ouvert.
 L'ensemble $V\setminus \{\VEC{c}\}$, l'ensemble $V$ auquel nous avons enlevé
 le point $\VEC{c}$, est alors appelé un
 {\bfseries voisinage troué}\index{Voisinage troué} de $\VEC{c}$.
-\end{focus}
+\end{defn}
 
 Notons que les boules $B_\delta(\VEC{v})$ ne contiennent pas leur
 frontière $\{ \VEC{x} \in \RR^n : \|\VEC{x}-\VEC{c} \| = \delta \}$.
@@ -701,7 +701,7 @@ sujet principal de la géométrie fractale) .  En fait, il faut
 commencer par définir ce qu'est la frontière d'une ensemble dans
 $\RR^n$.
 
-\begin{focus}[\theory]{\dfn}
+\begin{defn}[+\theory]
 Soit $S$ un sous ensemble de $\RR^n$.  La {\bfseries frontière}
 \index{Frontière d'un ensemble} de $S$, dénotée $\partial S$, est
 l'ensemble des points $\VEC{x}$ tels que
@@ -710,7 +710,7 @@ $B_{\delta}(\VEC{x}) \cap S^c \neq \emptyset$ pour tout $\delta >0$,
 où $S^c = \RR^n \setminus S$ est le complément de l'ensemble $S$.  En
 d'autres mots, pour tout voisinage $V$ de $\VEC{x}$,
 $V \cap S \neq \emptyset$ et $V \cap S^c \neq \emptyset$.
-\end{focus}
+\end{defn}
 
 \begin{egg}[\theory]
 Soit
@@ -736,10 +736,10 @@ la frontière au complet.  Les ensembles qui contiennent leur frontière
 sont très importants et nous leurs donnons un nom.
 \end{egg}
 
-\begin{focus}[\theory]{\dfn}
+\begin{defn}[+\theory]
 Les ensembles $S \subset \RR^n$ tels que $\partial S \subset S$ sont
 appelés des {\bfseries ensembles fermés}\index{Ensemble fermé}.
-\end{focus}
+\end{defn}
 
 \begin{rmk}[\theory]
 Les intervalles fermés de la droite réelle sont des exemples
@@ -766,7 +766,7 @@ est un voisinage troué de $\VEC{c}$ car le point $\VEC{c}$ a été
 enlevé du voisinage $V$. 
 \end{egg}
 
-\begin{focus}{\dfn} \index{Limite d'une fonction!en un point}
+\begin{defn} \index{Limite d'une fonction!en un point}
 Soit $D$ un voisinage troué d'un point $\VEC{c} \in \RR^n$ et
 $f:D\rightarrow \RR^m$ une fonction.  Nous écrivons
 \[
@@ -786,14 +786,14 @@ Nous disons que
 {\bfseries $f(\VEC{x})$ converge (ou tend) vers le point $\VEC{w}$
 lorsque $\VEC{x}$ tend vers $\VEC{c}$}.  Nous disons aussi que
 {\bfseries $\VEC{w}$ est la limite de $f$ au point $\VEC{c}$}.
-\end{focus}
+\end{defn}
 
 Comme pour la définition de limite d'une fonction
 $f:\RR\rightarrow \RR$ à un point $c$, nous pouvons donner une
 définition équivalente à la définition précédente en termes de
 $\epsilon$ et $\delta$.
 
-\begin{focus}[\theory]{\dfn} \index{Limite d'une fonction!en un point}
+\begin{defn}[+\theory] \index{Limite d'une fonction!en un point}
 Soit $D$ un voisinage troué d'un point $\VEC{c} \in \RR^n$ et
 $f:D\rightarrow \RR^m$ une fonction.  nous écrivons
 \[
@@ -815,7 +815,7 @@ Nous disons que
 {\bfseries $f(\VEC{x})$ converge (ou tend) vers le point $\VEC{w}$
 lorsque $\VEC{x}$ tend vers $\VEC{c}$}.  Nous disons aussi que
 {\bfseries $\VEC{w}$ est la limite de $f$ au point $\VEC{c}$}.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Quelle est la valeur de la limite
@@ -893,7 +893,7 @@ Comme nous obtenons des limites différentes pour différentes valeurs de
 $m$ (le long de différentes droites), la limite n'existe pas.
 \end{egg}
 
-\begin{focus}{\dfn} \index{Fonction continue!en un point}
+\begin{defn} \index{Fonction continue!en un point}
 Soit $D$ un voisinage d'un point $\VEC{c} \in \RR^n$ et
 $f:D\rightarrow \RR^m$ une fonction.  La fonction $f$ est
 {\bfseries continue au point $\VEC{c}$} si
@@ -912,14 +912,14 @@ Notons que La fonction $f$ est définie au point $\VEC{c}$ car $\VEC{c}
 
 Si $f:D\rightarrow \RR$ est continue en tout point $\VEC{x} \in D$,
 nous disons que {\bfseries $f$ est continue sur} $D$.
-\end{focus}
+\end{defn}
 
 La définition en termes de $\epsilon$ et $\delta$ de la limite d'une
 fonction à un point nous permet d'écrire la définition suivante pour
 la continuité d'une fonction à un point.  Cette définition est
 évidemment équivalente à la définition précédente de la continuité.
 
-\begin{focus}[\theory]{\dfn} \index{Fonction continue!en un point}
+\begin{defn}[+\theory] \index{Fonction continue!en un point}
 Soit $D$ un voisinage d'un point $\VEC{c} \in \RR^n$ et
 $f:D\rightarrow \RR^m$ une fonction.  La fonction $f$ est
 {\bfseries continue} au point $\VEC{c}$ si,
@@ -933,7 +933,7 @@ tel que
 
 Si $f:D\rightarrow \RR$ est continue en tout point $\VEC{x} \in D$,
 nous disons que {\bfseries $f$ est continue sur} $D$.
-\end{focus}
+\end{defn}
 
 Comme pour les fonctions d'une variable, nous avons que les fonctions de
 plusieurs variables qui sont formées à partir de polynômes, de
@@ -944,12 +944,12 @@ nombres négatifs, \ldots).  En particulier, il est possible (sous
 certaines conditions) de composer les fonctions de plusieurs variables
 qui sont continues pour produire des fonctions continues.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Soit $V \subset \RR^n$ et $W \subset \RR^m$ deux ensembles ouverts.
 Soit $f:V\rightarrow \RR^m$ et $g:W\rightarrow \RR^k$ deux fonctions
 continues.  Si $f(V) \subset W$, alors $g\circ f:V\rightarrow \RR^k$
 est une fonction continue.
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 La fonction $f(x,y) = e^{\sqrt{x+2y}}$ est continue sur l'ensemble
@@ -1010,7 +1010,7 @@ associée à la limite de chacune des composantes
 $f_i:\RR^n\rightarrow \RR$ pour $i=1$, $2$, \ldots, $m$ de la fonction
 $f$.  Il en est de même pour la continuité.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $D$ un voisinage d'un point $\VEC{c} \in \RR^n$ et
 $f:D\rightarrow \RR^m$ une fonction.
 \[
@@ -1022,7 +1022,7 @@ si et seulement si
 \lim_{\VEC{x}\rightarrow \VEC{c}} f_i(\VEC{x}) = w_i
 \]
 pour $i=1$, $2$, \ldots, $m$.
-\end{focus}
+\end{prop}
 
 Il découle de cette proposition que si $\VEC{c} \in D$, alors
 \[
@@ -1034,12 +1034,12 @@ si et seulement si
 \]
 pour $i=1$, $2$, \ldots, $m$.  Nous avons donc la proposition suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $D$ un voisinage d'un point $\VEC{c} \in \RR^n$ et
 $f:D\rightarrow \RR^m$ une fonction.  La fonction $f$ est continue au
 point $\VEC{c}$ si et seulement si les fonctions $f_i$ pour $i=1$,
 $2$, \ldots, $m$ sont continues au point $\VEC{c}$.
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Soit $f:\RR^2 \rightarrow \RR^2$ une fonction définie par les deux
@@ -1079,13 +1079,13 @@ manuel, nous n'aborderons pas ce sujet.
 Il y a un résultat qui nous sera très utile par la suite et qui ne
 demande pas d'introduire de nouveaux concepts.
 
-\begin{focus}[][Théorème des valeurs extrêmes]{\thm}\label{TVEnD}
+\begin{theorem}[Théorème des valeurs extrêmes] \label{TVEnD}
 \index{Théorème des valeurs extrêmes}
 Soient $D \subset \RR^n$ un ensemble borné et fermé, et $f:D \to \RR$
 une fonction continue.  Alors, ils existent $\VEC{a}$ et $\VEC{b}$
 dans $D$ tels que $f(\VEC{a}) \leq f(\VEC{x}) \leq f(\VEC{b})$ pour
 tout $\VEC{x}$ dans $D$.
-\end{focus}
+\end{theorem}
 
 Le résultat précédent est une conséquence du fameux
 {\bfseries Théorème de Bolzano-Weier\-strass} qui est un des piliers de

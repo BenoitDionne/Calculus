@@ -47,7 +47,7 @@ $f$ n'a pas de dérivée au point $x=c$ ou $f'(c) = 0$.  Pour trouver
 les maximums et minimums locaux d'une fonction $f$, il faut donc
 analyser les points $c$ définis ci-dessous.
 
-\begin{focus}{\dfn} \index{Point critique}
+\begin{defn} \index{Point critique}
 Soit $f:]a,b[ \to \RR$ une fonction continue.
 Un {\bfseries point critique} de la fonction $f$ est un point
 $c \in ]a,b[$ qui {\em satisfait une des deux conditions} suivantes:
@@ -55,7 +55,7 @@ $c \in ]a,b[$ qui {\em satisfait une des deux conditions} suivantes:
 \item $f$ n'a pas de dérivée au point $x=c$.
 \item $f'(c) = 0$.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 En plus de pouvoir déterminer sur quels intervalles une fonction est
 croissante ou décrois\-sante et à quels points elle a un maximum ou
@@ -65,7 +65,7 @@ décroissante.  Ce type de comportement des fonctions porte le nom de
 {\bfseries courbure}\index{Courbure} de la fonction.  Nous observons deux
 types de courbure.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une fonction $f:]a,b[\to \RR$ est dite {\bfseries convexe} (ou
 {\bfseries concave vers le haut}) sur $]a,b[$ si
 \begin{equation} \label{conconv}
@@ -79,7 +79,7 @@ La fonction $f$ est dite {\bfseries concave} (ou
 {\bfseries concave vers le bas}) sur $]a,b[$
 si le signe $\leq$ est remplacé par $\geq$ en (\ref{conconv}).
 \index{Fonction!concave vers le bas} \index{Fonction!concave}
-\end{focus}
+\end{defn}
 
 \PDFfig{6_derivees_appl/convexe_def}{Exemple d'une fonction convexe}
 {Exemple d'une fonction convexe sur l'intervalle $]a,b[$.  La droite
@@ -96,7 +96,7 @@ facile à vérifier.  Cependant, le théorème suivant nous donnes un
 outil pour démontrer facilement qu'une fonction est convexe ou concave
 sur un intervalle.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f:]a,b[\to \RR$ une fonction différentiable.
 \begin{enumerate}
 \item Si $f'$ est une fonction strictement croissante sur l'intervalle
@@ -106,7 +106,7 @@ $]a,b[$, alors $f$ est convexe sur l'intervalle $]a,b[$
 l'intervalle $]a,b[$, alors $f$ est concave sur l'intervalle $]a,b[$
 (figure~\ref{CONCAVE}).
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 \PDFfig{6_derivees_appl/convexe}{Exemple d'une fonction convexe}
 {Fonction convexe sur l'intervalle $]a,b[$.  En tout point, le droite
@@ -124,7 +124,7 @@ Si $f'$ est une fonction différentiable, nous pouvons utiliser sa dérivée
 pour déterminer les intervalles où elle est croissante et décroissante
 comme nous avons fait pour la fonction $f$.
 
-\begin{focus}{\dfn}\index{Dérivée seconde}\index{Dérivée d'ordre supérieure}
+\begin{defn}\index{Dérivée seconde}\index{Dérivée d'ordre supérieure}
 Soit $f:]a,b[\rightarrow \RR$ une fonction différentiable telle que
 $f':]a,b[\to \RR$ est elle même une fonction différentiable.  La
 {\bfseries dérivée seconde de $f$} ou {\bfseries dérivée d'ordre 2 de $f$} 
@@ -140,9 +140,9 @@ $f^{(3)}$.
 Par induction, nous pouvons définir la {\bfseries n$^e$ dérivée de $f$} 
 ou {\bfseries dérivée d'ordre n de $f$} qui
 est dénotée $f^{(n)}$ ou $\displaystyle \dydxn{f}{x}{n}$.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\prp}\label{seccondDerCon}
+\begin{prop}\label{seccondDerCon}
 Soit $f:]a,b[\rightarrow \RR$ une fonction qui possède une dérivée
 d'ordre deux.
 \begin{enumerate}
@@ -151,21 +151,21 @@ $f''(x)>0$ pour tout $x$ entre $a$ et $b$.
 \item La fonction $f$ est concave sur un intervalle $]a,b[$ si
 $f''(x)<0$ pour tout $x$ entre $a$ et $b$.
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 Les points où la fonction change de convexe à concave et vice-versa
 sont très utiles pour tracer le graphe d'une fonction.  Nous leur donnons
 donc un nom.
 
-\begin{focus}{\dfn} \index{Point d'inflexion} 
+\begin{defn} \index{Point d'inflexion} 
 Un {\bfseries point d'inflexion} est un point du domaine de la
 fonction où la direction de la concavité change.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f:]a,b[ \to \RR$ une fonction différentiable.  Un point $p$ est
 un point d'inflexion si $f'$ a un maximum ou minimum local à $p$.
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Soit $f:\RR\rightarrow \RR$ une fonction différentiable.  Nous avons vu que
@@ -258,7 +258,7 @@ Avant de décrire la procédure pour tracer le graphe d'une fonction,
 nous pouvons énoncer deux méthodes pour déterminer si un point critique est
 un maximum ou un minimum local.
 
-\begin{focus}[][Test de la dérivée première]{\prp}
+\begin{prop}[Test de la dérivée première]
 \index{Test de la dérivée première}
 Soit $f:]a,b[ \to \RR$ une fonction continue et $c \in ]a,b[$ un
 point critique de la fonction $f$.  De plus, supposons que $f$ soit
@@ -270,7 +270,7 @@ differentiable sur l'intervalle $]a,b[$ sauf peut-être au point $c$.
   a un maximum local au point $c$.
 \end{enumerate}
 \label{Test2ndder}
-\end{focus}
+\end{prop}
 
 Pour le premier cas, nous déduisons du signe de la dérivée que $f$ est
 décroissante pour $x < c$ et croissante pour $x > c$.  Donc $f$ a un
@@ -278,7 +278,7 @@ minimum local à $x = c$.  Par contre, pour le deuxième cas,
 nous avons que $f$ est croissante pour $x < c$ et décroissante pour $x > c$.
 Donc $f$ a un maximum local à $x = c$.
 
-\begin{focus}[][Test de la dérivée seconde]{\prp}
+\begin{prop}[Test de la dérivée seconde]
 \index{Test de la dérivée seconde}
 Soit $f:]a,b[ \to \RR$ une fonction qui possède une dérivé d'ordre
 deux et $c \in ]a,b[$ un point critique de la fonction $f'$.
@@ -286,7 +286,7 @@ deux et $c \in ]a,b[$ un point critique de la fonction $f'$.
 \item Si $f''(c) > 0$, alors $f$ a un minimum local au point $c$.
 \item Si $f''(c) < 0$, alors $f$ a un maximum local au point $c$.
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 Pour le premier cas, nous déduisons du signe de la dérivée seconde que $f$
 est convexe au voisinage de $c$.  Donc $f$ a un minimum local à $x = c$.
@@ -304,7 +304,7 @@ il faut seulement calculer la première dérivée de $f$.
 Nous pouvons maintenant énoncer la procédure pour tracer le graphe d'une
 fonction.
 
-\begin{focus}{\mth}
+\begin{meth}
 Pour tracer le graphe d'une fonction $f$, il faut:
 \begin{enumerate}
 \item Trouver les points où $f$ n'est pas définie.  Ce sont les points
@@ -334,7 +334,7 @@ n'est pas dans le domaine de $f$).
 \item Tracer le graphe de $f$ intervalle par intervalle en utilisant
 toute l'information trouvée ci-dessus.
 \end{enumerate}
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Traçons le graphe de $f(x) = 1/(xe^x) = x^{-1} e^{-x}$.
@@ -590,13 +590,13 @@ pour tout $k>5$, nous avons que
 
 \section{Optimisation}\label{Optim1D}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $X$ un sous-ensemble de $\RR$ et $f:X \rightarrow \RR$.  Le
 {\bfseries supremum}\index{Supremum} de $f$ sur $X$ est le plus petit
 nombre réel $M$ tel que $f(x) \leq M$ pour tout $x \in X$. 
 L'{\bfseries infimum}\index{Infimum} de $f$ sur $X$ est le plus grand
 nombre réel $m$ tel que $f(x) \geq m$ pour tout $x \in X$.
-\end{focus}
+\end{defn}
 
 Un fonction ne possède pas toujours un supremum ou un infimum.
 La fonction $f(x) = 1/x$ pour $x>0$ n'a pas de supremum car $1/x$
@@ -622,7 +622,7 @@ Nous pouvons par contre imposer des conditions sur la fonction et son
 domaine pour garantir l'existence du maximum absolu et minimum
 absolu.
 
-\begin{focus}[][Théorème des valeurs extrêmes]{\thm}
+\begin{theorem}[Théorème des valeurs extrêmes]
 \index{Théorème des valeurs extrêmes}
 Soit $f:[a,b]\to \RR$ une fonction continue sur un intervalle
 {\bfseries fermé} $[a,b]$.  Alors ils existent $c_m$ et $c_M$ dans
@@ -630,7 +630,7 @@ l'intervalle $[a,b]$ tels que $f(c_m) \leq f(x) \leq f(c_M)$ pour tout
 $x \in [a,b]$.  Donc, $M$ est le maximum absolu de $f$ sur
 l'intervalle $[a,b]$ et $m$ est le minimum absolu $m$ de $f$ sur
 l'intervalle $[a,b]$.
-\end{focus}
+\end{theorem}
 
 Le théorème précédent demande que $f$ soit continue sur un intervalle
 fermé $[a,b]$.  Ces contraintes imposées sur $f$ et son domaine
@@ -665,14 +665,14 @@ maximum absolu sur l'intervalle $[a,b]$.
 maximum global}{La fonction n'a pas de maximum global dans
 l'intervalle fermé $[a,b]$}{GLOBAL_MAX2}
 
-\begin{focus}{\mth} \label{mthmaxth}
+\begin{meth} \label{mthmaxth}
 Pour trouver le maximum ou minimum absolu d'une fonction $f$ continue
 sur l'intervalle fermée $[a,b]$ et dérivable sur l'intervalle ouvert
 $]a,b[$, il suffit de trouver tous les points critiques de $f$ sur
 l'intervalle $]a,b[$ et de comparer les valeurs de $f$ à ces points et
 aux points $a$ et $b$.  La plus grande valeur est le maximum absolu et
 la plus petite valeur est le minimum absolu.
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Le nombre de saumons qui remontent une rivière de la
@@ -1422,7 +1422,7 @@ que $p_1(x)$ pour $x$ très près de $c$?  Les réponses à ces questions
 sont données par le théorème suivant qui lui-même est une
 généralisation (et découle) du théorème de la moyenne, théorème~\ref{MVT}.
 
-\begin{focus}[][Théorème de Taylor]{\thm}
+\begin{theorem}[Théorème de Taylor]
 \index{Théorème de Taylor}
 Soit $f$ une fonction continue sur l'intervalle $[a,b]$ et $(k+1)$ fois
 différentiables sur $]a,b[$ où $k\geq 0$.  Quel que soit $x$ et $c$ dans
@@ -1443,7 +1443,7 @@ Le polynôme $p_k$ est appelé le {\bfseries polynôme de Taylor de degré
   $k$ de $f$ pour $x$ près de $c$}\index{Polynôme de Taylor} et $r_k$
 est {\bfseries l'erreur de troncature}.
 \label{theoTaylor}
-\end{focus}
+\end{theorem}
 
 Au théorème précédent, nous insistons sur le fait que $\xi$ dépend de
 l'ordre $k$ du polynôme de Taylor, de $c$ et de $x$; d'où la notation
@@ -1825,7 +1825,7 @@ tendent vers $0$ ou $f(t)$ et $g(t)$ tendent vers plus l'infini
 lorsque $t$ tend vers plus l'infini.  C'est le genre de situations que
 nous allons présentement analyser.
 
-\begin{focus}{\dfn} \index{Comportement asymptotique à l'infini}
+\begin{defn} \index{Comportement asymptotique à l'infini}
 Soit $f$ et $g$ deux fonctions telles que
 \[
 \lim_{x\rightarrow \infty} f(x) = +\infty \quad \text{et} \quad
@@ -1847,12 +1847,12 @@ nous disons que $f(x)$ et $g(x)$ ont
 {\bfseries asymptotiquement le même type de croissance} lorsque $x$
 tend vers l'infini.
 \label{DAasymptinfty}
-\end{focus}
+\end{defn}
 
 La définition précédente n'est pas limitée au cas où $x$ tend vers
 $\infty$.  Nous obtenons la définition suivante.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une limite de la forme
 \[
 \lim_{x \rightarrow a} \frac{f(x)}{g(x)}
@@ -1864,7 +1864,7 @@ où
 \]
 est appelée une limite du {\bfseries type $\infty/\infty$}.  la
 variable $a$ peut être un nombre réel ou $\pm \infty$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Soit $f(x) = \ln(x)$ et $g(x)=x^{1/5}$.  Nous avons
@@ -1958,7 +1958,7 @@ plus lentement que $f(x)$ lorsque $x$ tend vers l'infini si
 \lim_{x \rightarrow \infty} \frac{f(x)}{g(x)} = \infty \; .
 \]
 
-\begin{focus}{\dfn} \index{Comportement asymptotique à l'origi\-ne}
+\begin{defn} \index{Comportement asymptotique à l'origi\-ne}
 Soit $f$ et $g$ deux fonctions telles que
 \[
 \lim_{x \rightarrow \infty} f(x) = 0 \quad \text{et} \quad
@@ -1981,13 +1981,13 @@ S'il existe un nombre réel non nul $L$ tel que
 nous disons que $f(x)$ et $g(x)$ ont {\bfseries asymptotiquement le même
 type de convergence vers l'origine} lorsque $x$ converge vers
 l'infini.
-\end{focus}
+\end{defn}
 
 Comme pour la définition~\ref{DAasymptinfty}, La définition précédente
 n'est pas limitée au cas où $x$ tend vers $\infty$.  Nous obtenons la
 définition suivante.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une limite de la forme
 \[
 \lim_{x \rightarrow a} \frac{f(x)}{g(x)}
@@ -1999,7 +1999,7 @@ où
 \]
 est appelée une limite du {\bfseries type $0/0$}.  La variable $a$
 peut être un nombre réel ou $\pm \infty$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Soit $f(x) = e^{-x}$ et $g(x)= 10/x^5$.  Nous avons
@@ -2117,7 +2117,7 @@ pouvoir comparer la \lgm vitesse\rgm\ de convergence de deux
 fonctions.  Dans le but d'éviter le calcul numérique de limite du type
 $\infty/\infty$ ou $0/0$, nous pouvons utiliser le résultat suivant.
 
-\begin{focus}[][Règle de l'Hospital]{\thm} \index{Règle de l'Hospital}
+\begin{theorem}[Règle de l'Hospital] \index{Règle de l'Hospital}
 Soit $f$ et $g$ deux fonctions différentiables sur
 l'intervalle $]a,b[$.  De plus, supposons que $g'(x) \neq 0$ pour tout
 $x\in ]a.b[$.  Si
@@ -2137,7 +2137,7 @@ alors
 Le théorème est aussi vrai si nous remplaçons $x\rightarrow a^+$ par
 $x\rightarrow b^-$ ou par $x \to c \in ]a,b[$.  De plus, le théorème
 reste valide pour $a=+\infty$ et $b=-\infty$.
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 Pour calculer les limites du type
@@ -2177,7 +2177,7 @@ pour $x$ très près de $c$.  Il est donc plausible que
 
 Pour démontrer la Règle de l'Hospital, nous aurons besoin du lemme suivant.
 
-\begin{focus}[\theory][Théorème de la moyenne de Cauchy]{\lmm}
+\begin{lemma}[Théorème de la moyenne de Cauchy+\theory]
 \index{Théorème de la moyenne de Cauchy}
 Si $f$ et $g$ sont deux fonctions continues sur l'intervalle $[a,b]$
 et différentiables sur l'intervalle $]a,b[$, et si de plus
@@ -2186,9 +2186,9 @@ entre $a$ et $b$ tel que
 \[
 \frac{f'(\xi)}{g'(\xi)} = \frac{f(b)-f(a)}{g(b)-g(a)} \; .
 \]
-\end{focus}
+\end{lemma}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ {\theory}]
 Ce lemme est une conséquence du théorème de la moyenne.  Posons
 \[
 h(x) = f(x) - f(a) - \frac{f(b)-f(a)}{g(b)-g(a)}
@@ -2213,7 +2213,7 @@ D'où
 Notons que $g'(\xi) \neq 0$ car $g'(x)\neq 0$ pour tout $x\in]a,b[$.
 \end{proof}
 
-\begin{proof}[\theory][Règle de l'Hospital]
+\begin{proof}[\UOproof\ (Règle de l'Hospital) \theory]
 Nous démontrons la Règle de l'Hospital seulement dans le cas où
 \begin{equation}\label{HospAss}
 \lim_{x\rightarrow a^+} f(x) = 0 \quad \text{et} \quad
@@ -2742,7 +2742,7 @@ méthode permet de construire une suite de nombres
 $\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ qui converge vers une
 racine de $f$.
 
-\begin{focus}[][Méthodes de Newton]{\mth} \index{Méthode de Newton}
+\begin{meth}[Méthodes de Newton] \index{Méthode de Newton}
 \begin{enumerate}
 \item Choisissez une valeur $x_0$ près de la racine $p$ de $f$ que vous
 voulez estimer.
@@ -2756,7 +2756,7 @@ $x_0$ et reprendre en (1).
 \item Répétez (2) jusqu'à ce que vous ayez une approximation $x_n$ de
 la racine $p$ qui satisfait la précision désirée.
 \end{enumerate}
-\end{focus}
+\end{meth}
 
 Justifions graphiquement la méthode de Newton.  Supposons que
 $x_n$ soit une approximation d'une racine $p$ de $f$ qui provient de
@@ -2776,14 +2776,14 @@ $\displaystyle \left\{x_n\right\}_{n=0}^\infty$ est produite avec la
 méthode de Newton et tend vers une racine $p$ de la fonction
 $f$}{NEWT}
 
-\begin{focus}[\theory]{\thm}
+\begin{theorem}[+\theory]
 Soit $f:\RR\rightarrow \RR$ une fonction dont la deuxième
 dérivée est une fonction continue.  Si $p$ est une racine de $f$
 telle que $f'(p) \neq 0$, alors il existe $\delta > 0$ tel que la
 suite $\displaystyle \left\{x_n\right\}_{n=0}^\infty$ produite par la
 méthode de Newton converge vers $p$ si la distance entre $p$ et $x_0$
 est plus petite que $\delta$; c'est-à-dire, si $|x_0-p|<\delta$.
-\end{focus}
+\end{theorem}
 
 \begin{rmk}[\theory]
 En d'autres mots, le théorème dit que si $f'(p)\neq 0$ et si $x_0$ est
@@ -2976,7 +2976,7 @@ de bonnes chances de nous donner une suite
 $\displaystyle \left\{x_n\right\}_{n=0}^\infty$ qui tend vers la
 racine dans ce petit intervalle.
 
-\begin{focus}[][Méthode de bissection]{\mth} \index{Méthode de bissection}
+\begin{meth}[Méthode de bissection] \index{Méthode de bissection}
 Soit $f$ une fonction continue sur l'intervalle $[a,b]$ et
 $f(a) f(b) < 0$;  c'est-à-dire que $f(a)$ et $f(b)$ sont de signe
 opposé.
@@ -2995,7 +2995,7 @@ emboîtés
 \]
 qui contiennent une racine de $f$.
 \end{enumerate}
-\end{focus}
+\end{meth}
 
 L'item~\ref{bisect_lbl1} mérite une attention toute particulière.  Par
 construction, nous avons toujours\\
@@ -3112,7 +3112,7 @@ bactéries croît sans borne supérieure.
 \label{sdd_egg1}
 \end{egg}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f$ une fonction de $\RR$ dans $\RR$.  Une équation de la forme
 \begin{equation} \label{sdddef}
 p_{n+1} = f(p_n) \quad , \quad n=0, 1, 2, \ldots
@@ -3131,7 +3131,7 @@ qui satisfait la condition initiale $p_0$ est une fonction
 $g:\NN \rightarrow \RR$ telle que $p_n = g(n)$ pour $n\in \NN$
 satisfait (\ref{sdddef}) et $g(0) = p_0$.
 \index{Système dynamique discret!solution}
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Les systèmes dynamiques discrets sont très fréquents en biologie.  Ils
@@ -3263,7 +3263,7 @@ lorsque $n$ tend vers plus l'infini?  Est-ce que $p_n$ croît sans
 borne supérieure comme c'est le cas pour notre population de bactéries
 de l'exemple~\ref{sdd_egg1}?
 
-\begin{focus}{\dfn} \index{Système dynamique discret!orbite d'une solution}
+\begin{defn} \index{Système dynamique discret!orbite d'une solution}
 Soit
 \[
 p_{n+1}= f(p_n) \quad \text{pour} \quad n=0, 1, 2, \ldots
@@ -3271,7 +3271,7 @@ p_{n+1}= f(p_n) \quad \text{pour} \quad n=0, 1, 2, \ldots
 un système dynamique discret.  L'{\bfseries orbite} (positive) de
 $p_0$ est la suite $\displaystyle \left\{ p_n \right\}_{n=0}^\infty$
 où $p_1 = f(p_0)$, $p_2 = f(p_1)$, $p_3 = f(p_2)$, \ldots
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Considérons un système dynamique discret
@@ -3506,7 +3506,7 @@ sont très importants et nous leur donnons un nom.
 \label{sol_lin_discr}
 \end{egg}
 
-\begin{focus}{\dfn}\index{Système dynamique discret!point d'équilibre}
+\begin{defn}\index{Système dynamique discret!point d'équilibre}
 \index{Système dynamique discret!point fixe}
 \index{Système dynamique discret!état d'équilibre}
 Soit $f$ une fonction de $\RR$ dans $\RR$.  Un point $p$ tel que
@@ -3516,7 +3516,7 @@ système dynamique discret
 \[
 p_{n+1} = f(p_n) \quad , \quad n=0, 1, 2, \ldots
 \]
-\end{focus}
+\end{defn}
 
 Les points d'équilibre d'un système dynamique discret
 \[
@@ -3538,7 +3538,7 @@ tend vers $15$.  C'est-à-dire que le point d'équilibre $p=15$ possède
 la propriété ci-dessous.
 \end{egg}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f$ une fonction de $\RR$ dans $\RR$.  Un point d'équilibre $p$ du
 système dynamique discret
 \[
@@ -3554,7 +3554,7 @@ Un point d'équilibre $p$ du système dynamique discret est
 de $p$, l'orbite $\displaystyle \left\{ p_n\right\}_{n=0}^\infty$
 \lgm s'éloigne\rgm\ de $p$.
 \index{Système dynamique discret!point d'équilibre!instable}
-\end{focus}
+\end{defn}
 \footnotetext{La définition de stabilité asymptotique que nous donnons
 n'est pas exactement la définition de stabilité asymptotique que
 nous retrouvons dans les ouvrages spécialisés sur ce sujet mais elle
@@ -3601,7 +3601,7 @@ p_n-p &= \alpha^n (p_0-p) \;, \\
 \end{align*}
 Nous obtenons donc le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 La {\bfseries solution générale}\index{Système dynamique
 discret!solution générale} du système dynamique discret  
 \[
@@ -3611,7 +3611,7 @@ est $p_n = \alpha^n (p_0-p) + p$ pour $n=0$, $1$, $2$, \ldots, où $p$ est le
 point d'équilibre du système.  Si le système dynamique discret n'a pas de
 point d'équilibre (i.e. $\alpha =1$), la solution est $p_n = p_0 + n \beta$
 pour $n=0$, $1$, $2$, \ldots
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Puisque $p=15$ est un point fixe du système dynamique discret
@@ -3714,14 +3714,14 @@ côtés de (\ref{nn_logistic}) par $M$, nous obtenons
 Si nous posons $x_n = p_n/M$ pour tout $n$, nous obtenons l'équation
 suivante.
 
-\begin{focus}{\dfn} \index{Équation logistique}
+\begin{defn} \index{Équation logistique}
 L'{\bfseries équation logistique} est le
 système dynamique discret de la forme
 \begin{equation}\label{logistic}
 x_{n+1} = r\;x_n ( 1-x_n) \quad , \quad n=0, 1, 2, \ldots
 \end{equation}
 \label{defOfLogEqu}
-\end{focus}
+\end{defn}
 
 Pour l'équation logistique, la fonction itérative est
 $f(x) = r x(1-x)$.
@@ -3964,7 +3964,7 @@ l'orbite pour $x_0 = 0.5$.}\label{AFFINE1-4}
 
 Les exemples précédents justifient le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Nous considérons le système dynamique discret
 \[
 x_{n+1} = f(x_n) \quad \text{pour} \quad n=0, 1, 2, 3, \ldots
@@ -3972,7 +3972,7 @@ x_{n+1} = f(x_n) \quad \text{pour} \quad n=0, 1, 2, 3, \ldots
 où la fonction itérative est $y=f(x) = m x +b$.  Si $p$ est un point
 d'équilibre de ce système dynamique discret alors ce point d'équilibre
 est asymptotiquement stable si $|m|<1$ et instable si $|m|>1$.
-\end{focus}
+\end{prop}
 
 Comment pouvons-nous déterminer la stabilité asymptotique d'un point
 d'équilibre $p$ d'un système dynamique discret
@@ -3998,7 +3998,7 @@ où $m = f'(p)$ et $b = f(p) - p\,f'(p)$.  En se basant sur le résultat
 précédent pour les fonctions itératives de la forme $f(x) = mx+b$,
 nous obtenons le résultat suivant.
 
-\begin{focus}{\thm} \label{sdd_stab_th}
+\begin{theorem} \label{sdd_stab_th}
 Soit $f:\RR \to \RR$ une fonction qui possède une dérivée continue.
 Soit $p$ un point d'équilibre du système dynamique discret
 \[
@@ -4007,7 +4007,7 @@ x_{n+1}=f(x_n) \quad \text{pour} \quad n=0, 1, 2, \ldots
 Le point d'équilibre $p$ est asymptotiquement stable si
 $|f'(p)| < 1$.  Il est instable si $|f'(p)|>1$.  Nous ne pouvons rien
 conclure lorsque $|f'(p)|=1$.
-\end{focus}
+\end{theorem}
 
 La démonstration de ce résultat, que nous donnerons prochainement, est
 une simple application des résultats du calcul différentiel que nous
@@ -4019,7 +4019,7 @@ x_{n+1} = r x_n (1-x_n) \quad , \quad n=0,1,2,\ldots
 \]
 Les points d'équilibre sont les solutions de
 \[
-r x (1-x) = x \; .
+r x (1-x) = x \ .
 \]
 Si $x\neq 0$, nous pouvons diviser des deux cotés de l'égalité par $x$ pour
 obtenir $r (1-x)=1$.  Ainsi, $x = 1 - 1/r$.  L'équation logistique a
@@ -4087,7 +4087,7 @@ Le comportement des orbites de l'équation logistique lorsque $r$ varie
 est fascinant.   Il existe un grand nombre de livres sur ce sujet.
 \end{rmk}
 
-\begin{proof}[\theory][Théorème~\ref{sdd_stab_th}]
+\begin{proof}[\UOproof\ (Théorème~\ref{sdd_stab_th}) \theory]
 La démonstration qu'un point fixe $p$ pour un système dynamique discret
 \[
 x_{n+1} = f(x_n) \quad , \quad n=0, 1, 2, 3, \ldots
@@ -4319,7 +4319,7 @@ gauche et $r=3.47\ldots$ pour le tableau de droite. \label{HS_LOGISTIC4}}
 
 Les deux exemples précédents justifient la définition suivante.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f:X \to X$ avec $X \subset \RR$.  Si
 $\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ est une orbite du
 système dynamique discret
@@ -4340,7 +4340,7 @@ points de cette orbite sont appelés des
 Si $k$ est le plus petit entier positif tel que $x_n = x_{n+k}$, alors
 $k$ est la {\bfseries période}\index{Système dynamique discret!période
   d'une orbite} de l'orbite.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 À l'exemple~\ref{eggper1}, $p=0.5130445095\ldots$ est un point
@@ -4384,7 +4384,7 @@ période $4$ pour l'équation logistique avec $r=3.47$}{Une orbite qui
 l'équation logistique avec $r=3.47$.  La condition initiale est
 $x_0=0.1$}{HS_LOGISTIC7}
 
-\begin{focus}{\dfn}
+\begin{defn}
 \index{Système dynamique discret!solution périodique!asymptotique stabilité}
 Soit $f: X \to X$ avec $X \subset \RR$, et
 $\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ une orbite périodique
@@ -4398,7 +4398,7 @@ la fonction
 \[
  g = \underbrace{f\circ f \circ \ldots \circ f}_{\text{$k$ copies de $f$}} \; .
 \]
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Nous invitons le lecteur à démontrer que la définition précédente est

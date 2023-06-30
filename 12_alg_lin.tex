@@ -66,7 +66,7 @@ droites.
 Nous présentons une autre façon de résoudre un système d'équations
 linéaires.
 
-\begin{focus}{\mth} \label{opOnRows}
+\begin{meth} \label{opOnRows}
 Pour résoudre les systèmes d'équations linéaires comme celui en
 (\ref{exSystLE1}), les trois opérations suivantes peuvent être
 utilisées pour réduire (avec une bonne combinaison de ses opérations)
@@ -77,7 +77,7 @@ solutions.
 \item Additionner une équation à une autre équation.
 \item Échanger l'ordre des équations.
 \end{enumerate}
-\end{focus}
+\end{meth}
 
 Les opérations (1) et (2) peuvent être combinées pour permettre
 l'addition d'un multiple d'une équation à une autre équation.
@@ -604,7 +604,7 @@ claire les systèmes d'équations linéaires.  En fait, cette notation va
 grandement influencer le développement des outils pour résoudre les
 systèmes d'équations linéaires.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une {\bfseries matrice}\index{Matrice} $A$ est un tableau de nombres
 de la forme
 \[
@@ -626,7 +626,7 @@ ligne et dans la $j^{e}$ colonne.\index{Matrice!composante}
 
 Nous disons que la matrice $A$ est {\bfseries carrée} lorsque $n=m$;
 nous avons le même nombre de lignes et colonnes.\index{Matrice!carrée}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 \[
@@ -653,7 +653,7 @@ $a_{3,2} = e^2$, $a_{3,5} = \sqrt{5}$, $b_{1,1} = 1$, $b_{1,3} = 7$, etc.
 Avant de définir des opérations sur les matrices, il faut définir
 quand deux matrices sont égales.
 
-\begin{focus}{\dfn} \index{Matrice!matrices égales}
+\begin{defn} \index{Matrice!matrices égales}
 Nous disons que deux matrices $A$ et $B$ sont {\bfseries égales}, dénoté
 $A = B$, lorsque les deux conditions suivantes sont satisfaites.
 \begin{enumerate}
@@ -661,7 +661,7 @@ $A = B$, lorsque les deux conditions suivantes sont satisfaites.
 \item Si $n$ est le nombre de lignes et $m$ est le nombre de colonnes,
 alors $a_{i,j}=b_{i,j}$ pour tout $1\leq i \leq n$ et $1\leq j \leq  m$.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 Nous voulons définir des opérations sur les matrices qui prolongeront les
 opérations sur les vecteurs que nous connaissons déjà; c'est-à-dire, le
@@ -670,7 +670,7 @@ produit scalaire de deux vecteurs.   Il faut premièrement généraliser
 la définition de vecteur que nous avons donnée pour $\RR^2$ et
 $\RR^3$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Un vecteur $\VEC{x} \in \RR^n$ est une liste de $n$ nombres réels que
 nous dénotons
 \begin{equation}\label{rowVect}
@@ -680,7 +680,7 @@ ou
 \begin{equation}\label{matrVect}
 \VEC{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} \; .
 \end{equation}
-\end{focus}
+\end{defn}
 
 La représentation du vecteur $\VEC{x}$ en (\ref{rowVect}) est associée
 à l'aspect géométrique des vecteurs (i.e.\ $\VEC{x}$ est le point où
@@ -705,14 +705,13 @@ des vecteurs $\VEC{x}$ et $\VEC{y}$ prennent alors la forme suivante.
 \VEC{x}+\VEC{y} =
 \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}
 + \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}
-= \begin{pmatrix} x_1+y_1 \\ x_2+y_2 \\ \vdots \\ x_n+y_n \end{pmatrix}
-\ .
+= \begin{pmatrix} x_1+y_1 \\ x_2+y_2 \\ \vdots \\ x_n+y_n \end{pmatrix} \ .
 \]
 
 La somme de matrices et le produit d'une matrice par un scalaire sont
 des reformulations de ces mêmes opérations pour les vecteurs.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $A$ et $B$ deux matrices de dimension \nm{n}{m} et $\alpha$
 un nombre réel.
 \begin{enumerate}
@@ -732,13 +731,13 @@ c_{i,j} = \alpha \, a_{i,j}
 \]
 pour $1\leq i \leq n$ et $1\leq j \leq  m$.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 Nous remarquons que la somme de matrices n'est pas définie si les matrices
 n'ont pas la même dimension.  La somme de matrices et le produit
 d'une matrice par un scalaire possèdent les propriétés suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 \begin{enumerate}
 \item $A+B = B+A$ pour toutes matrices $A$ et $B$ de dimension
 \nm{n}{m} (commutativité de l'addition).
@@ -753,7 +752,7 @@ de dimension \nm{n}{m} et tous nombres réels $\alpha$ et $\beta$.
 toute matrice $A$ de dimension \nm{n}{m} et tous nombres réels
 $\alpha$ et $\beta$.
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Si
@@ -790,12 +789,12 @@ Avant d'introduire le produit de deux matrices, revoyons le produit
 scalaire de deux vecteurs.  Pour cela, nous aurons besoin de la notion de
 {\em transposée d'une matrice}.
 
-\begin{focus}{\dfn} \index{Matrice!transposée}
+\begin{defn} \index{Matrice!transposée}
 Soit $A$ une matrice de dimension \nm{n}{m}, la
 {\bfseries transposée de $A$}, dénotée $A^\top$, est la matrice de
 dimension \nm{m}{n} dont les éléments $a_{i,j}^\top$ sont
 $a_{i,j}^\top = a_{j,i}$ pour $1 \leq i \leq m$ et $1\leq j \leq n$.
-\end{focus}
+\end{defn}
 
 La première ligne de $A$ est la première colonne de $A^\top$. La
 deuxième ligne de $A$ est la deuxième colonne de $A^\top$, etc.
@@ -858,7 +857,7 @@ $(x_1,x_2,\ldots,x_n)$ et $(y_1,y_2,\ldots, y_n)$ à droite du signe
 d'égalité et non plus les matrices de dimension \nm{n}{1} comme c'est
 le cas du côté gauche.
 
-\begin{focus}{\dfn}
+\begin{defn}
 À partir de maintenant, le
 {\bfseries produit scalaire}\index{Produit scalaire} de deux vecteurs
 $\VEC{x}$ et $\VEC{y}$ de $\RR^n$ sera définie par
@@ -866,12 +865,12 @@ $\VEC{x}$ et $\VEC{y}$ de $\RR^n$ sera définie par
   \ps{\VEC{x}}{\VEC{y}} = \VEC{x}^\top \VEC{y}
 \]
 \label{pstransposed}
-\end{focus}
+\end{defn}
 
 C'est cette présentation du produit scalaire de deux vecteurs que nous
 prolongeons pour définir le produit de deux matrices.
 
-\begin{focus}{\dfn} \index{Matrice!produit de deux matrices}
+\begin{defn} \index{Matrice!produit de deux matrices}
 Soit $A$ et $B$ deux matrices.  La matrice $A$ est de dimension
 \nm{n}{m} et la matrice $B$ est de dimension \nm{m}{q}.  Le produit
 $A\,B$ est la matrice $C$ de dimension \nm{n}{q} qui possède les
@@ -880,7 +879,7 @@ $A\,B$ est la matrice $C$ de dimension \nm{n}{q} qui possède les
 c_{i,j} = \sum_{k=0}^m a_{i,k} b_{k,j}
 \end{equation}
 pour $1\leq i \leq n$ et $1\leq j \leq q$.
-\end{focus}
+\end{defn}
 
 Les rectangles dans le produit suivant indiquent la ligne de $A$ et la
 colonne de $B$ qui sont utilisées pour calculer $c_{3,2}$.
@@ -983,7 +982,7 @@ colonnes de $B$ (i.e. $2$) n'est pas égal au nombre de lignes de $A$
 
 Le produit de matrices possède les propriétés suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 \begin{enumerate}
 \item $A(B\,C)= (A\,B)C$ pour toute matrice $A$ de dimension
 \nm{n}{m}, toute matrice $B$ de dimension \nm{m}{q} et toute matrice
@@ -995,7 +994,7 @@ $C$ de dimension \nm{q}{p} (associativité du produit de matrices).
 $A$ de dimension \nm{n}{m}, toute matrice $B$ de dimension \nm{m}{q}
 et tout nombre réel $\alpha$.
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 Le produit de nombres réels est commutatif; c'est-à-dire que
 $a\,b=b\,a$ pour tous les nombres réels $a$ et $b$.  Nous ne retrouvons
@@ -1043,19 +1042,19 @@ important.  La démonstration de ce résultat est une simple mais
 fastidieuse conséquence de la définition du produit de matrices.  Nous
 laissons donc le soin aux lecteurs de s'en convaincre.
 
-\begin{focus}{\prp} \label{transpAB}
+\begin{prop} \label{transpAB}
 Si $A$ est une matrice de dimension \nm{n}{m} et $B$ est une matrice
 de dimension \nm{m}{q} alors $(AB)^\top = B^\top\, A^\top$.
-\end{focus}
+\end{prop}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $A$, une matrice de dimension \nm{n}{m}, alors
 \[
 \ps{A\VEC{x}}{\VEC{y}} = \ps{\VEC{x}}{A^\top\VEC{y}}
 \]
 pour tout vecteur $\VEC{x}$ de $\RR^m$ et tout vecteur $\VEC{y}$ de
 $\RR^n$
-\end{focus}
+\end{prop}
 
 Comme les expressions de la forme $\ps{A\VEC{x}}{\VEC{y}}$ jouent un
 rôle prédominant en algèbre linéaire, nous allons prouver cette
@@ -1150,7 +1149,7 @@ le matrices.  Celle-ci est valide seulement pour les matrices carrées.
 Elle ne jouera pas un grand rôle dans ce manuel mais elle est utile en
 algèbre linéaire, en analyse numérique, etc.
 
-\begin{focus}{\dfn} \index{Matrice!Trace}
+\begin{defn} \index{Matrice!Trace}
 Soit la matrice carrée
 \[
 A =
@@ -1164,7 +1163,7 @@ a_{n,1} & a_{n,2} & \ldots & a_{n,n}
 la {\bfseries Trace} de la matrice $A$, dénotée $\tr(A)$, est la somme
 des éléments sur la diagonale de $A$; c'est-à-dire,
 $\displaystyle \tr(A) = \sum_{j=1}^n a_{j,j}$.
-\end{focus}
+\end{defn}
 
 \subsection{Inverse additif et multiplicatif d'une matrice}
 
@@ -1176,17 +1175,17 @@ tout nombre réel $a$. Est-ce que l'addition de matrices possède un
 élément neutre?  De même, est-ce que le produit de matrices possède un
 élément neutre?  Pour l'addition, la réponse est simple.
 
-\begin{focus}{\dfn}
+\begin{defn}
 $0$ dénote une matrice dont les composantes sont toutes nulles.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\prp}
+\begin{prop}
 La matrice $0$ de dimension \nm{n}{m} est l'élément neutre pour
 l'addition de matrices de dimension \nm{n}{m}.  C'est-à-dire que
 $0 + A = A + 0 = A$ pour toutes matrices $A$ de dimension \nm{n}{m}.
-\end{focus}
+\end{prop}
 
-\begin{focus}{\dfn} \index{Matrice!inverse additif}
+\begin{defn} \index{Matrice!inverse additif}
 {\bfseries L'inverse additif d'une matrice $A$} de dimension \nm{n}{m}
 est la matrice $B$ de dimension \nm{n}{m} telle que $A+B=B+A = 0$ où
 $0$ est la matrice nulle de dimension \nm{n}{m}.
@@ -1195,7 +1194,7 @@ Comme l'addition de matrices est définie par l'addition composante par
 composante, nous avons $b_{i,j} = -a_{i,j}$ pour $1\leq i \leq n$ et
 $1 \leq j \leq m$.  La matrice $B$ est dénotée $-A$.
 Nous avons $-A = (-1) A$.
-\end{focus}
+\end{defn}
 
 L'inverse additif d'une matrice $A$ est unique.  En effet, si $B$ et
 $C$ sont deux inverses additifs de $A$ alors
@@ -1216,24 +1215,24 @@ Certaines composantes d'une matrice carrée jouent un rôle particulier
 dans l'étude des matrices, c'est le cas des composantes qui forment la
 {\em diagonale} de la matrice. 
 
-\begin{focus}{\dfn} \index{Matrice!diagonale d'une matrice}
+\begin{defn} \index{Matrice!diagonale d'une matrice}
 Soit $A$ une matrice de dimension \nn.  La {\bfseries diagonale} de la
 matrice $A$ est l'ensemble des éléments $a_{1,1}$, $a_{2,2}$, \ldots,
 $a_{n,n}$ de $A$.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\dfn} \index{Matrice!identité}
+\begin{defn} \index{Matrice!identité}
 $\Id$ dénote une matrice carrée dont les composantes sur la diagonale sont
 $1$ et les autres composantes sont nulles.  La matrice $\Id$ est appelée la
 {\bfseries matrice identité}.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\prp}
+\begin{prop}
 La matrice $\Id$ de dimension \nn est l'élément neutre pour la
 multiplication de matrices carrées de dimension \nn.  C'est-à-dire que
 $\Id A = A \Id = A$ pour toutes matrices carrées $A$ de dimension
 \nn.
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Soit
@@ -1324,14 +1323,14 @@ Si $a = 4$, alors $b = 0.25$ est l'inverse de $a$ car $a\,b= b\,a = 1$.
 Comme pour la multiplication de nombres réels, nous pouvons définir
 l'inverse d'une matrice carrée.
 
-\begin{focus}{\dfn}
+\begin{defn}
 {\bfseries S'il existe, l'inverse (multiplicatif) d'une matrice carrée}
 \index{Matrice!inverse multiplicatif}\index{Matrice!inversible} $A$ de
 dimension \nn est la matrice $B$ de dimension \nn telle que
 $A\,B = B\, A = \Id$.  La matrice $B$ est dénotée $A^{-1}$.  Nous disons
 que la matrice carrée $A$ est {\bfseries inversible} si $A$ possède un
 inverse.
-\end{focus}
+\end{defn}
 
 Contrairement aux nombres réels, les matrices carrées ne possèdent pas
 toutes des inverses.  Par contre, si la matrice carrée $A$ a un
@@ -1423,10 +1422,10 @@ exprimé sous la forme
 A\,\VEC{x} = \VEC{b} \ .
 \end{equation}
 
-\begin{focus}{\prp}
+\begin{prop}
 Résoudre (\ref{systLE}) est équivalent à trouver les vecteurs
 $\VEC{x}$ qui satisfont (\ref{systLE3}) s'il y en a.
-\end{focus}
+\end{prop}
 
 La matrice $A$ est la matrice des coefficients de $\VEC{x}$ dans le
 système d'équations linéaires (\ref{systLE}).
@@ -1434,7 +1433,7 @@ système d'équations linéaires (\ref{systLE}).
 \subsection{Méthode d'élimination de Gauss\index{Méthode
   d'élimination de Gauss}}
 
-\begin{focus}{\dfn} \index{Matrice!augmentée}
+\begin{defn} \index{Matrice!augmentée}
 La {\bfseries matrice augmentée} associée au
 système d'équations linéaires (\ref{systLE}) est la matrice
 \[
@@ -1445,7 +1444,7 @@ a_{2,1} & a_{2,2} & a_{2,3} & \ldots & a_{2,m} & b_2 \\
 a_{n,1} & a_{n,2} & a_{n,3} & \ldots & a_{n,m} & b_n
 \end{array}\right) \; .
 \]
-\end{focus}
+\end{defn}
 
 Au lieu d'effectuer les opérations sur les équations du système
 d'équations linéaires (\ref{systLE}) présentées à la
@@ -1454,7 +1453,7 @@ sur les lignes de la matrice augmentée.  Afin de simplifier la
 description des opérations sur les lignes, nous utiliserons la
 terminologie suivante.
 
-\begin{focus}{\dfn}
+\begin{defn}
 \begin{enumerate}
 \item $R_i$ désigne la $i^e$ ligne.
 \item Multiplier la $i^e$ ligne par $\alpha$ est dénoté \quad
@@ -1464,7 +1463,7 @@ $\alpha\,R_i \to R_i$.
 \item Échanger la $i^e$ ligne et la $j^e$ ligne est dénoté \quad
 $R_i \leftrightarrow R_j$.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Utilisons la notation matricielle pour résoudre le système d'équations
@@ -1647,7 +1646,7 @@ $A\VEC{b}_k = \VEC{e}_k$ pour $1\leq k \leq n$.  C'est cette dernière
 propriété qui justifie la méthode suivante pour trouver l'inverse
 d'une matrice carrée si celui-ci existe.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $A$ est une matrice de dimension \nn qui possède une matrice
 inverse, alors la $k^e$ colonne $\VEC{b}_k$ de la matrice $A^{-1}$
 est la solution de l'équation
@@ -1657,7 +1656,7 @@ A\VEC{b}_k = \VEC{e}_k
 pour $1\leq k \leq n$.  De plus, si $A$ est une matrice de dimension
 \nn et une des équations $A\VEC{b}_k = \VEC{e}_k$ pour $1\leq k \leq
 n$ n'a pas de solution, alors $A$ n'est pas inversible.
-\end{focus}
+\end{prop}
 
 Soit $A$ une matrice inversible (i.e. qui a un inverse) de dimension
 \nn.  Pour trouver les $n$ colonnes de la matrice inverse $A^{-1}$, il
@@ -1775,13 +1774,13 @@ A^{-1} = \begin{pmatrix}
 Nous invitons le lecteur à vérifier que $A A^{-1} = A^{-1} A = \Id$.
 \end{egg}
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $A$ est une matrice inversible de dimension \nn et $\VEC{b}$ est un
 vecteur de dimension \nm{n}{1}, alors l'équation $A\VEC{x} = \VEC{b}$
 a une solution et cette solution est unique.  Cette solution est
 donnée par $\VEC{x} = A^{-1} \VEC{b}$.
 \label{AinvConc1}
-\end{focus}
+\end{prop}
 
 En effet, si $A$ est inversible, une solution de $A\VEC{x} = \VEC{b}$
 est donnée par $\VEC{x} = A^{-1} \VEC{b}$ car
@@ -1802,10 +1801,10 @@ inversible alors la seule solution de l'équation $A\VEC{x} = \VEC{0}$
 est $\VEC{x} = A^{-1}\VEC{0} = \VEC{0}$.  Ce qui est un peu plus
 surprenant est que l'inverse est aussi vrai.
 
-\begin{focus}{\prp} \label{AinvConc2}
+\begin{prop} \label{AinvConc2}
 Si $A$ est une matrice de dimension \nn telle que la seule solution de
 $A\VEC{x} = \VEC{0}$ est $\VEC{x}=\VEC{0}$, alors $A$ est inversible.
-\end{focus}
+\end{prop}
 
 \subsection{Intersection de trois plans dans $\mathbf{\RR^3}$}
 
@@ -1888,14 +1887,14 @@ Pour définir ce qu'est le déterminant d'une matrice $n \times n$, il
 faut premièrement définir ce qu'est une permutation des éléments de
 l'ensemble $\{ 1, 2, 3, \ldots, n\}$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Comme le nom l'indique, une {\bfseries permutation} des éléments de
 l'ensemble $\{ 1, 2, 3, \ldots, n\}$ est tout simplement une liste
 ordonnée $(\sigma_1, \sigma_2, \ldots, \sigma_n)$ de tous les éléments
 de $\{1, 2, 3, \ldots, n\}$.  En termes mathématiques, 
 $\sigma_i \in \{ 1, 2, 3, \ldots, n\}$ et $\sigma_i \neq \sigma_j$ pour
 $i \neq j$.
-\end{focus}
+\end{defn}
 
 Par exemple, les permutations de l'ensemble $\{1,2\}$ sont $(1,2)$ et
 $(2,1)$.  Les permutations de l'ensemble $\{1,2,3\}$ sont $(1,2,3)$,
@@ -1909,17 +1908,17 @@ l'ensemble $\{ (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), (3,2,1)
 dénotons par $S_{n}$ l'ensemble des permutations de l'ensemble
 $\{1,2,\ldots, n\}$. 
 
-\begin{focus}{\dfn}
+\begin{defn}
 Inverser deux éléments d'une permutation est appelé une
 {\bfseries transposition} sur une permutation.
-\end{focus}
+\end{defn}
 
 Par exemple, inverser le deuxième et troisième élément de $(1,3,2)$
 donne $(1,2,3)$, inverser le troisième et quatrième élément de
 $(1,4,3,2,5)$ donne $(1,4,2,3,5)$, et inverser le deuxième et
 quatrième élément de $(1,4,3,2)$ donne $(1,2,3,4)$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Le {\bfseries signe d'une permutation} de $S_{n}$ est définie par
 \[
 \sgn (\sigma_1, \sigma_2, \ldots, \sigma_n) =
@@ -1932,7 +1931,7 @@ Le {\bfseries signe d'une permutation} de $S_{n}$ est définie par
 (1,2,\ldots, n)
 \end{cases}
 \]
-\end{focus}
+\end{defn}
 
 Ainsi, $\sgn (2,1) = -1$ car une seule transposition est nécessaire
 pour réduire $(2,1)$ à $(1,2)$; il suffit d'inverser le premier et
@@ -1942,7 +1941,7 @@ deuxième et troisième élément de $(2,3,1)$ pour obtenir $(2,1,3)$ et
 nous inversons le premier et deuxième élément de $(2,1,3)$ pour obtenir
 $(1,2,3)$.
 
-\begin{focus}{\dfn} \index{Déterminant}
+\begin{defn} \index{Déterminant}
 Soit
 \[
 A = \begin{pmatrix} a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2} \end{pmatrix} \; .
@@ -1954,7 +1953,7 @@ défini par
 a_{1,\sigma_1} a_{2,\sigma_2} \\
 &= a_{1,1}a_{2,2} - a_{1,2}a_{2,1} \; .
 \end{align*}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Si
@@ -1964,7 +1963,7 @@ A= \begin{pmatrix} 1 & 2 \\ -1 & 5 \end{pmatrix}
 alors $\det(A) = 1\times 5 - 2 \times (-1) = 7$.
 \end{egg}
 
-\begin{focus}{\dfn} \index{Déterminant}
+\begin{defn} \index{Déterminant}
 Soit
 \[
 A = \begin{pmatrix} a_{1,1} & a_{1,2} & a_{1,3} \\
@@ -1982,7 +1981,7 @@ défini par
 &\quad + a_{1,2}a_{2,3}a_{3,1}
 + a_{1,3}a_{2,1}a_{3,2} - a_{1,3}a_{2,2}a_{3,1} \; .
 \end{align*}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Si
@@ -2001,7 +2000,7 @@ alors
 
 En générale, le déterminant est définie de la façons suivante.
 
-\begin{focus}{\dfn} \index{Déterminant}
+\begin{defn} \index{Déterminant}
 Si $A$ est une matrice de dimension \nn, le {\bfseries déterminant} de
 $A$, dénoté $\det(A)$, est définie par
 \begin{align*}
@@ -2010,7 +2009,7 @@ $A$, dénoté $\det(A)$, est définie par
 a_{1,\sigma_1} a_{2,\sigma_2}\cdots  a_{n,\sigma_n} \ .
 \end{align*}
 \label{gendeffdet}
-\end{focus}
+\end{defn}
 
 \subsection{Signe d'une permutation \theory}
 
@@ -2026,7 +2025,7 @@ cette permutation à la permutation trivial.
 Nous commençons par donner une définition plus précise d'une permutation
 sur l'ensemble $\{1,2,3,\ldots,n\}$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une {\bfseries permutation}\index{Permutation} sur l'ensemble
 $\{1,2,3,\ldots,n\}$ est
 une fonction injective de l'ensemble $\{1,2,3,\ldots,n\}$ dans lui
@@ -2039,9 +2038,9 @@ Une {\bfseries transposition}\index{Transposition} est une permutation
 $\tau \in \SN{n}$ qui est définie de la façon suivante.  Ils existent
 $i$ et $j$ dans $\{1,2,3,\ldots,n\}$ tels que $\tau(i) = j$, $\tau(j) = i$ et
 $\tau(k) =k$ pour $k \in \{1,2,3,\ldots,n\} \setminus \{i,j\}$.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $\sigma$ est une permutation sur l'ensemble $\{1,2,3,\ldots,n\}$ alors ils
 existent des transpositions $\tau_1$, $\tau_2$, \ldots, $\tau_s$ telles que
 \[
@@ -2055,12 +2054,12 @@ transpositions telles que
 \]
 alors $t$ est pair si et seulement si $s$ est pair (donc $t$ est impair si et
 seulement si $s$ est impair).
-\end{focus}
+\end{theorem}
 
 Ce dernier théorème nous permet donc de définir sans ambiguïté le signe d'une
 permutation sur l'ensemble $\{1,2,3,\ldots,n\}$
 
-\begin{focus}{\dfn} \index{Permutation!signe}
+\begin{defn} \index{Permutation!signe}
 Le {\bfseries signe} d'une permutation $\sigma \in \SN{n}$, dénoté
 $\sgn(\sigma)$, est définie par
 \[
@@ -2071,7 +2070,7 @@ $\sgn(\sigma)$, est définie par
 & \quad \text{pour représenter $\sigma$}
 \end{cases}
 \]
-\end{focus}
+\end{defn}
 
 Maintenant que nous savons que le signe d'une permutation est bien
 défini, nous pouvons dire que le déterminant d'une matrice carré est bien
@@ -2105,7 +2104,7 @@ Alors
 
 De façon semblable, nous pouvons démontrer la proposition suivante.
 
-\begin{focus}{\prp} \label{devROWCOL2_3}
+\begin{prop} \label{devROWCOL2_3}
 Si $A_{i,j}$ est la matrice de dimension \nm{2}{2} obtenue d'une
 matrice $A$ de dimension \nm{3}{3} en enlevant la $i^e$ ligne et la
 $j^e$ colonne, alors
@@ -2115,7 +2114,7 @@ $j^e$ colonne, alors
 \det(A) &= \sum_{i=1}^3 (-1)^{k+i} a_{i,k} \det(A_{i,k}) \label{devCOL}
 \end{align}
 quelle que soit la valeur de l'indice $k \in \{1,2,3\}$.
-\end{focus}
+\end{prop}
 
 La somme en (\ref{devROW}) est un développement selon une ligne pour
 calculer le déterminant de $A$ alors que la somme en (\ref{devCOL})
@@ -2173,7 +2172,7 @@ A = \left(\begin{array}{rrr}
 La proposition~\ref{devROWCOL2_3} a une version équivalent pour les
 matrices de dimension \nn avec $n$ un entier positif.
 
-\begin{focus}{\prp} \label{devROWCOL}
+\begin{prop} \label{devROWCOL}
 Si $A_{i,j}$ est la matrice de dimension \nm{(n-1)}{(n-1)} obtenue d'une
 matrice $A$ de dimension \nn en enlevant la $i^e$ ligne et la $j^e$ colonne,
 alors
@@ -2183,7 +2182,7 @@ alors
 \det(A) &= \sum_{i=1}^n (-1)^{k+i} a_{i,k} \det(A_{i,k})
 \end{align*}
 quelle que soit la valeur de l'indice $k \in \{1,2,3, \ldots, n\}$.
-\end{focus}
+\end{prop}
 
 Nous pouvons utiliser cette proposition récursivement pour calculer le
 déterminant d'une matrice.
@@ -2263,7 +2262,7 @@ il est très avantageux de développer selon la première colonne.  Ainsi,
 
 La matrice de l'exemple précédent est d'un type particulier.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une matrice $A$ de dimension \nn est
 {\bfseries triangulaire supérieure}\index{Matrice!triangulaire
   supérieure} si les composantes de $A$ qui sont sous la diagonale
@@ -2273,14 +2272,14 @@ Une matrice $A$ de dimension \nn est
 {\bfseries triangulaire inférieure}\index{Matrice!triangulaire
   inférieure} si les composantes de $A$ qui sont au-dessus de la
 diagonale sont nulles.  En d'autres mots, $a_{i,j} =0$ pour $i<j$.
-\end{focus}
+\end{defn}
 
 L'exemple précédent montre que le déterminant des matrices
 triangulaires supérieures (de dimensions \nm{2}{2} ou \nm{3}{3}) est
 le produit des éléments sur la diagonale.  Il en est de même pour les
 matrices triangulaires inférieures.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $A$ est une matrice triangulaire supérieure (ou triangulaire
 inférieure) de dimension \nn, alors
 \[
@@ -2288,7 +2287,7 @@ inférieure) de dimension \nn, alors
 \]
 C'est-à-dire que le déterminant de $A$ est le produit des éléments sur
 la diagonale de $A$.
-\end{focus}
+\end{prop}
 
 \begin{rmk}[\theory]
 La démonstration de cette proposition est très simple.  Le seul terme
@@ -2305,7 +2304,7 @@ valeur de $k$.
 
 Le déterminant possède les propriétés suivantes.
 
-\begin{focus}{\prp} \label{detProps}
+\begin{prop} \label{detProps}
 Soit $A$ un matrice de dimension \nn.
 \begin{enumerate}
 \item Si nous échangeons deux lignes (ou deux colonnes) de $A$, nous obtenons
@@ -2318,7 +2317,7 @@ Soit $A$ un matrice de dimension \nn.
   $\alpha$, nous obtenons une matrice $B$ telle que
   $\det(B) = \alpha \det(A)$.
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 Nous pouvons utiliser ces propriétés pour calculer le déterminant d'une
 matrice. Dans l'exemple qui suit, nous dénotons la $i^e$ ligne par $R_i$
@@ -2388,10 +2387,10 @@ supérieure est alors très simple a calculer puisque c'est le produit des
 Nous concluons cette section en remplissant la promesse que nous avons
 faite au premier paragraphe de la section.
 
-\begin{focus}{\thm} \label{AinvDetNN}
+\begin{theorem} \label{AinvDetNN}
 Soit $A$ une matrice de dimension \nn.  La matrice $A$ est inversible
 si et seulement si $\det(A) \neq 0$.
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 Comme nous avons promis lors de la présentation du produit vectoriel,
@@ -2431,14 +2430,14 @@ de vecteurs dans $\RR^n$.  Que voulons-nous dire par la suite de
 vecteurs $\displaystyle \{ \VEC{v}_j \}_{j=1}^\infty$ tend vers un
 vecteur $\VEC{w}$? 
 
-\begin{focus}{\dfn} \index{suite!convergence dans $\RR^n$}
+\begin{defn} \index{suite!convergence dans $\RR^n$}
 Nous disons que la suite de vecteurs
 $\displaystyle \left\{\VEC{v}_j\right\}_{j=0}^\infty$
 {\bfseries converge} (ou {\bfseries tend}) vers $\VEC{w}$ si
 $\| \VEC{v}_j - \VEC{w}\|\to 0$ lorsque $j \to \infty$.  Nous écrivons
 $\VEC{v}_j \rightarrow \VEC{w}$ lorsque $j\rightarrow \infty$ ou
 $\displaystyle \lim_{j\to \infty} \VEC{v}_j = \VEC{w}$.
-\end{focus}
+\end{defn}
 
 La formule introduite en (\ref{norm}) pour calculer la longueur d'un
 vecteur est utilisé dans la définition précédente pour calculer la
@@ -2449,16 +2448,16 @@ utilisée est
 \VEC{x} \in \RR^n \ .
 \]
 
-\begin{focus}{\prp}
+\begin{prop}
 La suite de vecteurs $\displaystyle \left\{\VEC{v}_j\right\}_{j=0}^\infty$
 converge vers $\VEC{w}$ si et seulement si la $i^{th}$ composante de
 $\VEC{v}_j$ converge vers la $i^{th}$ composante de $\VEC{w}$ lorsque
 $j\rightarrow \infty$ pour tout $i$.
-\end{focus}
+\end{prop}
 
 \section{Valeurs propres et vecteurs propres}
 
-\begin{focus}{\dfn} 
+\begin{defn} 
 Soit $A$ une matrice de dimension \nn.  Le nombre $\lambda$ est une
 {\bfseries valeur propre}\index{Valeur propre} de $A$ s'il existe un
 vecteur non nul $\VEC{v}$ tel que $A\VEC{v} = \lambda \VEC{v}$.
@@ -2467,7 +2466,7 @@ Les vecteurs non nuls $\VEC{v}$ qui satisfont
 $A\VEC{v} = \lambda \VEC{v}$ sont appelés les
 {\bfseries vecteurs propres}\index{Vecteur propre} de $A$ associés à
 la valeur propre $\lambda$.
-\end{focus}
+\end{defn}
 
 Notons que si $\VEC{v}$ est un vecteur propre associé à la valeur
 propre $\lambda$ alors $\alpha \VEC{v}$ pour $\alpha \in \RR$ est
@@ -2500,7 +2499,7 @@ $A - \lambda \Id$ n'a pas d'inverse si et seulement si
 $\det(A -\lambda \Id)=0$.  Nous obtenons ainsi la méthode suivante pour
 trouver les valeurs propres d'une matrice carré.
 
-\begin{focus}{\prp} \index{Polynôme caractéristique}
+\begin{prop} \index{Polynôme caractéristique}
 Les valeurs propres d'une matrice carrée $A$ sont les racines du
 {\bfseries polynôme caractéristique}
 \[
@@ -2512,12 +2511,12 @@ $\lambda$, il faut résoudre le système d'équations linéaires
 \[
 \left(A-\lambda \Id\right)\VEC{v} = \VEC{0} \; .
 \]
-\end{focus}
+\end{prop}
 
 Rappelons ce qu'est un {\em nombre complexe}.  Cela va être nécessaire
 pour l'étude des valeurs propres.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Un {\bfseries nombre complexe}\index{Nombre complexe} est un nombre de
 la forme
 \[
@@ -2529,33 +2528,33 @@ $b\in\RR$ est la
 {\bfseries partie imaginaire}\index{Nombre complexe!partie imaginaire}
 de $z$ et $i^2 = -1$.  L'ensemble des nombres complexes est dénoté
 $\CC$.
-\end{focus}
+\end{defn}
 
 Le nombre complexe $i$ est la racine carrée de $-1$.  Pour cette
 raison, il est fréquent de voir l'énoncé $i = \sqrt{-1}$.  Les nombres
 complexes dont la partie imaginaire est nulle représentent les nombres
 réelles.  Pour cette raison, $\RR \subset \CC$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Les opérations d'addition et de multiplication pour les nombres
 complexes $a_1+b_1\,i$ et $a_2 + b_2\,i$ sont définies par:
 \begin{enumerate}
 \item $(a_1+b_1\,i) + (a_2 + b_2\,i) = (a_1+a_2)+(b_1+b_2)\,i$ 
 \item $(a_1+b_1\,i)(a_2 + b_2\,i) = (a_1a_2-b_1 b_2)+(a_1 b_2+b_1 a_2)\,i$
 \end{enumerate}
-\end{focus}
+\end{defn}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Le {\bfseries complexe conjugué}\index{Nombre complexe!conjugué} d'un
 nombre complexe $z=a+b\,i$ est le nombre complexe
 $\overline{z} = a - b\, i$.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\dfn}
+\begin{defn}
 La {\bfseries valeur absolue}\index{Nombre complexe!valeur absolue}
 d'un nombre complexe $z=a+b\,i$ est définie par
 $|z| = \sqrt{a^2+b^2}$.
-\end{focus}
+\end{defn}
 
 Si $z = a + b \, i$ et $b=0$ (i.e. $z \in \RR$), alors
 $|z| = \sqrt{a^2} = |a|$.  La valeur absolue pour les nombres
@@ -2890,14 +2889,14 @@ complexes $v_1$, $v_2$, \ldots, $v_n$.  Nous définissons le
 $\overline{\VEC{v}}$ dont les composantes sont $\overline{v_1}$,
 $\overline{v_2}$, \ldots, $\overline{v_n}$.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $A$ une matrice de dimension \nn avec des composantes réelles.
 Si $\lambda$ est une valeur propre complexe de $A$ et $\VEC{v}$ est un
 vecteur propre de $A$ associé à la valeur propre $\lambda$, alors
 $\overline{\lambda}$ est une valeur propre de $A$ et
 $\overline{\VEC{v}}$ est un vecteur propre de $A$ associé à la valeur
 propre $\overline{\lambda}$.
-\end{focus}
+\end{prop}
 
 À l'exemple précédent, nous avons trouvé le vecteur propre
 $\displaystyle \VEC{x}_1 = \begin{pmatrix} i \\ 2 \end{pmatrix}$
@@ -3065,7 +3064,7 @@ $\lambda$ qui ne sont pas des multiples l'un de l'autre.  En fait, la
 situation est encore plus complexe.  Pour adresser ce problème, il
 faut introduire la notion suivante.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $\VEC{v}_1$, $\VEC{v}_2$, \ldots, $\VEC{c}_k$ des vecteurs de
 $\RR^n$.  Nous dirons que les vecteurs
 $\VEC{v}_1$, $\VEC{v}_2$, \ldots, $\VEC{c}_k$ sont
@@ -3078,7 +3077,7 @@ $\VEC{v}_1$, $\VEC{v}_2$, \ldots, $\VEC{c}_k$ sont
 pour des valeurs de $\alpha_i$ qui ne sont pas tous nulles.  
 Autrement, nous dirons que les vecteurs $\VEC{v}_1$, $\VEC{v}_2$,
 \ldots, $\VEC{v}_k$ sont {\bfseries linéairement dépendants}.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Deux vecteurs colinéaires $\VEC{v}_1$ et $\VEC{v}_2$ sont
@@ -3371,7 +3370,7 @@ valeurs propres de la matrice $A$ en (\ref{nDDDS}) va nous permettre
 de déterminer si toutes les orbites de (\ref{nDDDS}) vont converger
 vers $\VEC{0}$.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $A$ une matrice de dimension \nn et considérons le système
 dynamique discret $\VEC{v}_{k+1} = A \VEC{v}_k$ pour $k=0$, $1$, $2$,
 \ldots\   Si toutes les valeurs propres de la matrice $A$ sont
@@ -3379,7 +3378,7 @@ plus petites que $1$ en valeur absolue, alors les orbites
 $\displaystyle \left\{ \VEC{v}_k \right\}_{k=0}^\infty$ tendent vers
 l'origine (i.e.\ $\VEC{v}_k\rightarrow \VEC{0}$ lorsque 
 $k\rightarrow \infty$) quel que soit le choix de $\VEC{v}_0$.
-\end{focus}
+\end{prop}
 
 \begin{egg}[][suite de l'exemple~\ref{alglinpopeg}]
 Si nous revenons au système dynamique discret (\ref{nDDDS}) du début de
@@ -3491,7 +3490,7 @@ comme la matrice $A$ qui ont une structure assez spéciale.
 La matrice $A$ de l'exemple précédent a deux caractéristiques
 fondamentales que nous présentons dans la définition suivante. 
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une matrice $A$ de dimension \nn est appelée une
 {\bfseries matrice de Markov}\index{Matrice de Markov} si les
 composantes $a_{i,j}$ satisfont:
@@ -3504,18 +3503,18 @@ Une {\bfseries chaîne de markov}\index{Chaîne de Markov}
 ou {\bfseries procédure de Markov}\index{Procédure de Markov} est une
 système dynamique discret $\VEC{x}_{i+1} = A \VEC{x}_i$ où $A$ est une
 matrice de Markov.
-\end{focus}
+\end{defn}
 
 Les chaînes de Markov ont une propriété très particulière.
 
-\begin{focus}{\prp} \label{alglinMarkoV}
+\begin{prop} \label{alglinMarkoV}
 Un matrice de Markov $A$ possède toujours la valeur propre $1$.  Si nous
 considérons la chaîne de Markov $\VEC{x}_{j+1} = A \VEC{x}_j$ pour 
 $j=0$, $1$, $2$, \ldots\ avec une condition initiale $\VEC{x}_0$
 donnée, l'orbite
 $\displaystyle \left\{ \VEC{x}_j \right\}_{j=0}^\infty$ tend
 vers un vecteur propre de $A$ associé à la valeur propre $1$.
-\end{focus}
+\end{prop}
 
 \begin{egg}[][Suite de l'exemple~\ref{alglinMRKV}]
 Nous considérons la chaîne de Markov

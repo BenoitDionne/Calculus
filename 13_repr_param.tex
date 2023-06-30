@@ -15,8 +15,9 @@ la représentation paramétrique des courbes et peuvent servir de
 matériel optionnel pour les étudiants en génie.
 
 \section{Définition}
+ \
 
-\begin{focus}{\dfn} \index{Représentation paramétrique d'une courbe}
+\begin{defn} \index{Représentation paramétrique d'une courbe}
 Soit $I \subset \RR$ un sous-intervalle de la droite réelle.  De plus,
 soit $\displaystyle \left\{ \phi_1, \phi_2, \ldots, \phi_n \right\}$
 un ensemble de $n$ fonctions continues à valeurs réelles définies sur
@@ -51,7 +52,7 @@ pour $t\in \RR$.
 géométrique de la courbe alors (\ref{courbeD2}) associée à la
 représentation algébrique.  Le contexte détermine quelle forme est
 utilisée.
-\end{focus}
+\end{defn}
 
 \PDFfig{13_repr_param/param1}{Une courbe du plan donnée par une
 représentation paramétrique}{Une courbe dans le plan donnée par une
@@ -200,7 +201,7 @@ cette limite est
 
 Nous avons donc le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $\Gamma$, une courbe qui possède la représentation paramétrique
 \[
 (x_1,x_2, \ldots, x_n) =
@@ -228,7 +229,7 @@ dimension \nm{n}{1}, nous avons
 \end{pmatrix}
 \]
 Le contexte détermine quelle formulation doit être utilisée.
-\end{focus}
+\end{prop}
 
 \PDFfig{13_repr_param/param5}{tangente à une courbe donnée par une
 représentation paramétrique}{La courbe $\Gamma$ donnée par la
@@ -575,13 +576,13 @@ sont dans l'intervalle $[t_j, t_{j+1}]$ qui devient de plus en plus petit
 lorsque $k \rightarrow \infty$. Ainsi, si $k \rightarrow \infty$, nous
 obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 La longueur $L$ d'une courbe $\Gamma$ qui possède la représentation
 paramétrique $\phi:[a,b]\rightarrow \RR^2$ est
 \begin{equation}\label{arcLength}
 L = \int_a^b \sqrt{ (\phi_1'(t))^2 + (\phi_2'(t))^2} \dx{t} \; .
 \end{equation}
-\end{focus}
+\end{prop}
 
 \begin{rmk}[\theory]
 Avec la définition de l'intégrale de Riemann
@@ -644,13 +645,13 @@ utiliser la représentation $\phi:[a,b]\rightarrow \RR^2$ définie par
 $\phi_1(x)=x$ et $\phi_2(x) = f(x)$ pour obtenir le résultat suivant
 directement de (\ref{arcLength}).
 
-\begin{focus}{\prp}
+\begin{prop}
 La longueur $L$ d'une courbe $\Gamma$ qui peut être représentée par le
 graphe d'une fonction $f$ sur un intervalle $[a,b]$ est
 \begin{equation}\label{arcLength2}
 L = \int_a^b \sqrt{ 1 + (f'(t))^2} \dx{x} \; .
 \end{equation}
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Calculons la longueur de la courbe donnée par le graphe de
@@ -848,7 +849,7 @@ $[t_j,t_{j+1}]$ qui devient de plus en plus petit lorsque
 $k \rightarrow \infty$.   Ainsi, si $k \rightarrow \infty$, nous obtenons
 le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $S$ une surface produite par la rotation autour d'un axe $y=c$
 d'une courbe $\Gamma$ possédant la représentation paramétrique
 \[
@@ -866,7 +867,7 @@ A = 2\pi\, \int_a^b \left| \phi_1(t)- c \right| \,
 \sqrt{\left(\phi_1'(t)\right)^2 +
 \left( \phi_2'(t)\right)^2} \dx{t} \; .
 \]
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Comme pour le calcul de la longueur d'une courbe, lorsque que nous
@@ -884,7 +885,7 @@ $f:[a,b]\rightarrow \RR$, en prenant la représentation paramétrique
 \]
 pour $a \leq x \leq b$, nous obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $\Gamma$ une courbe représentée par le graphe d'une fonction
 différentiable $f$ sur l'intervalle $[a,b]$.  L'aire $A$ de la surface
 $S$ produite par la rotation de $\Gamma$ autour de l'axe $y=c$ est
@@ -892,7 +893,7 @@ $S$ produite par la rotation de $\Gamma$ autour de l'axe $y=c$ est
 A = 2\pi\, \int_a^b \left| f(x)-c \right| \, 
 \sqrt{1 + \left( f'(x) \right)^2} \dx{x} \; .
 \end{equation}
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Calculons l'aire $A$ de la surface $S$ obtenue par la rotation autour
@@ -1196,8 +1197,7 @@ pour $a\leq \theta \leq b$.  Puisque
 \[
 \phi_1'(\theta) = r'(\theta)\,\cos(\theta) - r(\theta)\,\sin(\theta)
 \quad \text{et} \quad
-\phi_2'(\theta) = r'(\theta)\,\sin(\theta) + r(\theta)\,\cos(\theta)
-\; ,
+\phi_2'(\theta) = r'(\theta)\,\sin(\theta) + r(\theta)\,\cos(\theta) \; ,
 \]
 nous avons
 \begin{align*}
@@ -1223,7 +1223,7 @@ L = \int_a^b \sqrt{\left(\phi_1'(\theta)\right)^2
 \]
 Nous avons donc le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $\Gamma$ une courbe donnée par une équation en coordonnées
 polaire $r = r(\theta)$ pour $a \leq \theta \leq b$.  La longueur $L$
 de cette courbe est donnée pas
@@ -1232,7 +1232,7 @@ L = \int_a^b
 \sqrt{\left(r'(\theta)\right)^2 + \left(r(\theta)\right)^2}
 \dx{\theta} \; .
 \end{equation}
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Traçons la courbe donnée par l'équation en coordonnées polaires
@@ -1302,14 +1302,14 @@ La somme précédente représente une somme de Riemann pour l'intégrale
 Si $k$ tend vers plus l'infini en (\ref{airePolaireAppr}), nous obtenons
 le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $R$ une région bornée par les droites $\theta=\alpha$ et
 $\theta = \beta$, et la courbe $r=r(\theta)$ pour
 $\alpha \leq \theta \leq \beta$.  L'aire $A$ de $R$ est
 \[
 A = \int_\alpha^\beta \frac{1}{2}\, r^2(\theta) \dx{\theta} \; .
 \]
-\end{focus}
+\end{prop}
 
 \PDFfig{13_repr_param/polar6}{Une région du plan bornée par une courbe
 définie en coordonnées polaires}{La région $R$ du plan est bornée par

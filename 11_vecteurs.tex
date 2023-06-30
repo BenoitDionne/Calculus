@@ -10,7 +10,7 @@ seront utilisés lors de l'étude des fonctions de plusieurs variables
 
 \section{Définition}
 
-\begin{focus}{\dfn} \index{Vecteur}
+\begin{defn} \index{Vecteur}
 Un {\bfseries vecteur} du plan $\RR^2$ est une flèche qui part de
 l'origine $\VEC{0} = (0,0)$ pour se terminer en un point
 $\VEC{p} = (p_1,p_2)$.   Puisque chaque vecteur est associé à un
@@ -22,7 +22,7 @@ part de l'origine $\VEC{0} = (0,0,0)$ pour se terminer en un point
 $\VEC{p} = (p_1,p_2,p_3)$.   Puisque chaque vecteur est associé à un
 unique point $\VEC{p}$ et vice-versa, le vecteur est dénoté par
 $\VEC{p}$
-\end{focus}
+\end{defn}
 
 La définition de vecteur pourrait être généralisée à l'espace $\RR^n$
 pour $n>3$.  Cela n'est cependant pas nécessaire pour le chapitre
@@ -42,7 +42,7 @@ vecteur $\VEC{p} = (2,5,3)$.
 $\VEC{p} = (2,5,3)$ de l'espace}{Représentation graphique du vecteur
 $\VEC{p} = (2,5,3)$ de l'espace}{VECT1}
 
-\begin{focus}{\dfn} \index{Vecteur!longueur} \label{norm} 
+\begin{defn} \index{Vecteur!longueur} \label{norm} 
 La {\bfseries longueur (euclidienne)} du vecteur $\VEC{p} = (p_1,p_2)$ est
 \[
 \|\VEC{p}\| \equiv \sqrt{p_1^2+p_2^2} \ ,
@@ -51,7 +51,7 @@ alors que celle du vecteur $\VEC{p} = (p_1,p_2,p_3)$ est
 \[
 \|\VEC{p}\| \equiv \sqrt{p_1^2+p_2^2+p_3^2} \;.
 \]
-\end{focus}
+\end{defn}
 
 Cette définition découle du théorème de Pythagore qui affirme que le
 carré de l'hypoténuse d'un triangle droit est égal à la somme des
@@ -79,7 +79,7 @@ des rôles majeurs dans l'analyse géométrique.
 
 \subsection{Produit d'un vecteur par un nombre réel}
 
-\begin{focus}{\dfn} \index{Vecteur!produit avec un nombre réel}
+\begin{defn} \index{Vecteur!produit avec un nombre réel}
 Soit $\VEC{p} = (p_1,p_2)$ et $\rho$ est un nombre réel.  Le
 {\bfseries produit} de $\rho$ avec le vecteur $\VEC{p}$ est le
 vecteur $\VEC{q}$ défini par la formule suivante.
@@ -94,7 +94,7 @@ $\VEC{q}$ défini par la formule suivante.
 \VEC{q} = \rho\, \VEC{p} = \rho (p_1,p_2,p_3)
 = (\rho p_1 , \rho p_2, \rho p_3) \; .
 \]
-\end{focus}
+\end{defn}
 
 Le vecteur $\VEC{q}$ est de longueur $|\rho| \|\VEC{p}\|$ et pointe dans la
 même direction que $\VEC{p}$ si $\rho > 0$ et dans la direction opposée à
@@ -115,7 +115,7 @@ $\VEC{p}=(2,5,3)$ est représenté à la figure~\ref{VECT1}}{VECT3}
 
 \subsection{Somme de vecteurs}
 
-\begin{focus}{\dfn} \index{Vecteur!somme de vecteurs}
+\begin{defn} \index{Vecteur!somme de vecteurs}
 Soit $\VEC{p} = (p_1,p_2)$ et $\VEC{q} = (q_1, q_2)$.  La
 {\bfseries somme} des vecteurs $\VEC{p}$ et $\VEC{q}$ est le
 vecteur $\VEC{r}$ défini par la formule suivante.
@@ -131,7 +131,7 @@ $\VEC{q}$ est le vecteur $\VEC{r}$ défini par la formule suivante.
 \VEC{r} = \VEC{p} + \VEC{q} = ( p_1, p_2, p_3) + (q_1, q_2, q_3)
 = (p_1+q_1, p_2+q_2, p_3+q_3) \; .
 \]
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Le résultat $\VEC{r} = (5,9,4)$ de la somme des vecteurs $\VEC{p} = (6,6,2)$
@@ -154,7 +154,7 @@ l'exemple~\ref{EX_SUM}}{VECT4}
 Les vecteurs suivants sont fondamental en analyse vectorielle.  Pour
 cette raison, ils ont leur propre notation.
 
-\begin{focus}{\dfn} \index{Vecteur!canonique}
+\begin{defn} \index{Vecteur!canonique}
 Dans le plan, les vecteurs $\ii = (1,0)$ et $\jj = (0.1)$ sont appelés
 les {\bfseries vecteurs canoniques}.  Si
 $\VEC{p}=(p_1,p_2)$, alors $\displaystyle \VEC{p} = p_1 \ii + p_2 \jj$.
@@ -163,7 +163,7 @@ De même, dans l'espace $\RR^3$, les {\bfseries vecteurs canoniques}
 sont les vecteurs $\ii = (1,0,0)$, $\jj = (0.1,0)$ et $\kk = (0,0,1)$.  Si
 $\VEC{p}=(p_1,p_2,p_3)$, alors
 $\displaystyle \VEC{p} = p_1 \ii + p_2 \jj + p_3 \kk$.
-\end{focus}
+\end{defn}
 
 Dans les livres de mathématiques, la notation
 $\VEC{e}_1$ pour $\ii$, $\VEC{e}_2$ pour $\jj$ et $\VEC{e}_3$ pour
@@ -176,7 +176,7 @@ vecteurs ont un rôle principalement algébrique, le produit scalaire est l'une
 des deux opérations sur les vecteurs qui a un usage principalement
 géométrique; l'autre opération étant le produit vectoriel.
 
-\begin{focus}{\dfn} \index{Vecteur!produit scalaire}
+\begin{defn} \index{Vecteur!produit scalaire}
 Le {\bfseries produit scalaire} de deux vecteurs,
 $\VEC{p} = (p_1,p_2)$ et $\VEC{q} = (q_1,q_2)$, est défini par la
 formule
@@ -192,7 +192,7 @@ par la formule
 \]
 Le produit scalaire des vecteurs $\VEC{p}$ et $\VEC{q}$ est aussi
 dénoté $\VEC{p} \cdot \VEC{q}$ quand cela ne cause pas de confusion.
-\end{focus}
+\end{defn}
 
 Pourquoi définir un produit de deux vecteurs comme nous venons de le faire?
 N'aurions-nous pas pu définir le produit de deux vecteurs composante par
@@ -202,13 +202,13 @@ d'interprétations géométriques du produit de deux vecteurs composante par
 composante.  Par contre, le produit scalaire défini ci-dessus a une
 interprétation géométrique très importante.
 
-\begin{focus}{\dfn} \label{dfncos}
+\begin{defn} \label{dfncos}
 Le cosinus de l'angle entre les vecteurs non nuls $\VEC{p}$ et
 $\VEC{q}$ (et ainsi l'angle entre ces vecteurs) est déterminé par
 \begin{equation}\label{CosVectors}
 \cos(\alpha) = \frac{\ps{\VEC{p}}{\VEC{q}}}{\|\VEC{p}\|\,\|\VEC{q}\|} \; .
 \end{equation}
-\end{focus}
+\end{defn}
 
 C'est cette définition qui fait le lien entre l'opération algébrique
 qu'est le produit scalaire de deux vecteurs et l'interprétation
@@ -227,12 +227,12 @@ l'angle entre $\VEC{p}$ et $\VEC{q}$ est $\pi/2$ ( $+n\pi$ pour
 $n \in \ZZ$).  Ceci justifie la définition suivante.
 \end{rmk}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $\VEC{p}$ et $\VEC{q}$, deux vecteurs.  Le vecteur $\VEC{p}$ est
 {\bfseries perpendiculaire}\index{Vecteur!perpendiculaire} ou
 {\bfseries orthogonal}\index{Vecteur!orthogonal} au vecteur
 $\VEC{q}$ (et vice-versa) si $\displaystyle \ps{\VEC{p}}{\VEC{q}} = 0$.
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Vous avez probablement appris que le produit des pentes de deux droites
@@ -334,7 +334,7 @@ puisque $\cos^2(\gamma) + \sin^2(\gamma) = 1$.
 Le produit vectoriel est une opération sur les vecteurs qui a un
 usage principalement géométrique.
 
-\begin{focus}{\dfn} \index{Vecteur!produit vectoriel}
+\begin{defn} \index{Vecteur!produit vectoriel}
 Si $\VEC{p} = (p_1,p_2,p_3)$ et $\VEC{q} = (q_1, q_2, q_3)$ sont deux
 vecteurs qui ne sont pas colinéaires (i.e.\ dont l'un n'est pas un
 multiple de l'autre), nous définissons le
@@ -348,7 +348,7 @@ $\VEC{p}$ et $\VEC{q}$ comme étant le vecteur
 Donc $\VEC{m} = \left(p_2 q_3 - p_3 q_2, p_3 q_1 - p_1 q_3,
 p_1 q_2 - p_2 q_1\right)$.
 \label{VecTProdDef}
-\end{focus}
+\end{defn}
 
 Nous fournirons à la remarque~\ref{DetermVectProd} de la
 section~\ref{DetermSect} une formule symbolique simple pour calculer
@@ -357,10 +357,10 @@ le produit vectoriel de deux vecteurs.
 Le vecteur qui résulte du produit vectoriel de deux vecteurs a une relation
 géométrique très particulière avec les deux vecteurs du produit.
 
-\begin{focus}{\prp}
+\begin{prop}
 Le vecteur $\VEC{m} = \VEC{p} \times \VEC{q}$ est
 perpendiculaire aux vecteurs $\VEC{p}$ et $\VEC{q}$.
-\end{focus}
+\end{prop}
 
 Pour vérifier que $\VEC{p} \times \VEC{q}$ est perpendiculaire à
 $\VEC{p}$, il suffit de vérifier que
@@ -378,7 +378,7 @@ p_1 q_2 - p_2 q_1\right)}{(p_1,p_2,p_3)} \\
 De même, nous pouvons vérifier que
 $\ps{(\VEC{p} \times \VEC{q})}{\VEC{q}} = 0$.
 
-\begin{focus}{\dfn} \index{Règle de la main droite}
+\begin{defn} \index{Règle de la main droite}
 La direction du vecteur $\VEC{p} \times \VEC{q}$ est déterminée par la
 {\bfseries règle de la main droite}.  C'est-à-dire, si la paume de
 votre main droite entoure la droite qui contient le vecteur
@@ -386,7 +386,7 @@ $\VEC{p} \times \VEC{q}$ de telle sorte que vos doigts indiquent la
 plus petite direction angulaire de $\VEC{p}$ à $\VEC{q}$, alors votre
 pouce pointe dans la direction de $\VEC{p} \times \VEC{q}$
 (figure~\ref{VECT10}).
-\end{focus}
+\end{defn}
 
 \PDFfig{11_vecteurs/vect10}{Le vecteur obtenu du produit vectoriel de deux
 vecteurs est orthogonal au plan généré par ces deux vecteurs}{Le vecteur
@@ -422,13 +422,13 @@ Ainsi,
 
 Nous obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \| \VEC{p} \times \VEC{q} \| = 
 = \|\VEC{p}\| \|\VEC{q}\| \sin(\theta)
 \]
 où $0 \leq \theta < \pi$ est l'angle entre $\VEC{p}$ et $\VEC{q}$.
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Nous avons que le plus petit angle entre les vecteurs $\ii$ et $\jj$ est
@@ -470,11 +470,11 @@ un vecteur.  Nous pouvons donc faire référence au point $\VEC{x}$ et à ses
 coordonnées à un certain moment et traiter $\VEC{x}$ comme un vecteur
 à d'autres moments.
 
-\begin{focus}{\dfn} \index{Représentation vectorielle d'une droite}
+\begin{defn} \index{Représentation vectorielle d'une droite}
 La formule (\ref{PVline}) est une {\bfseries représentation
 vectorielle} de la droite qui passe par $\VEC{p}$ et est parallèle au
 vecteur $\VEC{q}$.
-\end{focus}
+\end{defn}
 
 \PDFfig{11_vecteurs/vect8}{Représentation vectorielle d'une droite}
 {Représentation vectorielle d'une droite}{VECT8}
@@ -487,11 +487,11 @@ x_1 = p_1 + \alpha\; q_1 \ , \ x_2 = p_2 + \alpha\; q_2 \quad \text{et}
 \quad x_3 = p_3 + \alpha\; q_3 \; .
 \end{equation}
 
-\begin{focus}{\dfn} \index{Représentation paramétrique d'une droi\-te}
+\begin{defn} \index{Représentation paramétrique d'une droi\-te}
 la formule (\ref{RPline}) est une {\bfseries représentation
 paramétrique} de la droite qui passe par $\VEC{p}$ et est parallèle au
 vecteur $\VEC{q}$.  Le {\bfseries paramètre} est $\alpha$.
-\end{focus}
+\end{defn}
 
 Si nous supposons que $q_1$, $q_2$ et $q_3$ sont non nuls et que nous
 résolvons chacune des trois équations de la représentation paramétrique
@@ -506,12 +506,12 @@ Si $q_2$ et $q_3$ sont non nuls mais $q_1 = 0$, nous obtenons
 C'est une droite dans le plan $x=p_1$.  Le lecteur est invité à
 analyser les autres cas possibles.
 
-\begin{focus}{\dfn} \index{Représentation standard d'une droite}
+\begin{defn} \index{Représentation standard d'une droite}
 Les formules (\ref{RSline1}) et (\ref{RSline2}) sont des
 {\bfseries représentations standard}
 d'une droite qui passe par $\VEC{p}$ et est parallèle au vecteur
 $\VEC{q}$.
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Nous pouvons déduire à partir du dessin à la figure~\ref{VECT15} que,
@@ -715,7 +715,7 @@ coupent pas.
 
 \section{Équation d'un plan \eng} \label{EQU_PLAN1}
 
-\begin{focus}{\prp} \label{RSplan}
+\begin{prop} \label{RSplan}
 Le plan qui passe par un point $\VEC{p}$ et qui est perpendiculaire au
 vecteur $\VEC{m}$ (figure~\ref{VECT9}) est l'ensemble des
 points $\VEC{x}$ tels que le vecteur $\displaystyle \VEC{x}-\VEC{p}$ est
@@ -724,7 +724,7 @@ pouvons définir ce plan comme l'ensemble des points $\VEC{x}$ tels que
 \[
 \ps{\VEC{x}-\VEC{p}}{\VEC{m}} = 0 \; .
 \]
-\end{focus}
+\end{prop}
 
 \PDFfig{11_vecteurs/vect9}{Représentation vectorielle d'un plan}
 {Représentation vectorielle d'un plan}{VECT9}
@@ -751,7 +751,7 @@ perpendiculaire à $\VEC{m}$, nous avons
 \]
 Ainsi, $\ps{\VEC{m}}{\VEC{t}} = \ps{\VEC{m}}{\VEC{p}}$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 la formule (\ref{EQU_PLAN_S}) (ou (\ref{EQU_PLAN_S2})\;) est une
 {\bfseries représentation standard}\index{Représentation standard d'un
   plan} d'un plan qui contient le point $\VEC{p}$ et qui est
@@ -759,7 +759,7 @@ perpendiculaire au vecteur $\VEC{m}$.  Nous disons que le vecteur $\VEC{m}$
 est {\bfseries orthogonal} ou {\bfseries perpendiculaire}
 ou {\bfseries normal} au plan.\index{Vecteur!Perpendiculaire à un plan}
 \index{Vecteur!Orthogonal à un plan}\index{Vecteur!Normal à un plan}
-\end{focus}
+\end{defn}
 
 Si $m_3 \neq 0$, nous pouvons déduire de (\ref{EQU_PLAN_S}) que
 \[
@@ -812,7 +812,7 @@ donné trois points non alignés, comment pouvons-nous trouver un vecteur
 normal au plan qui contient ces trois points?  La réponse à cette
 question nous est fournie par le produit vectoriel.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $\VEC{p}$, $\VEC{u}$ et $\VEC{v}$ sont trois points non alignés
 d'un plan, alors $\VEC{s} = \VEC{u} - \VEC{p}$ et
 $\VEC{t} = \VEC{v} - \VEC{p}$ sont deux vecteurs parallèles au plan
@@ -822,7 +822,7 @@ point du plan, la représentation standard du plan est alors donnée par
 \[
 \ps{\VEC{x} - \VEC{p}}{\VEC{m}} = 0 \; .
 \]
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Trouvons l'équation du plan qui contient les trois points $(2,1,3)$,
@@ -873,11 +873,11 @@ de la forme
 \end{equation}
 où $\alpha$ et $\beta$ sont des nombres réels.
 
-\begin{focus}{\dfn} \index{Représentation vectorielle du plan}
+\begin{defn} \index{Représentation vectorielle du plan}
 La formule (\ref{pr_pln}) est une {\bfseries représentation vectorielle}
 du plan qui contient le point $\VEC{p}$ et est parallèle à deux
 vecteurs $\VEC{s}$ et $\VEC{t}$ qui ne sont pas colinéaires.
-\end{focus}
+\end{defn}
 
 \PDFfig{11_vecteurs/vect12}{Représentation d'un plan défini par un
 point et deux vecteurs qui ne sont pas colinéaires}{Représentation
@@ -897,12 +897,12 @@ x_3 &= p_3 + \alpha s_3 + \beta t_3 \label{paramRepc}
 \end{subequations}
 pour $\alpha$ et $\beta$ des nombres réels.
 
-\begin{focus}{\dfn} \index{Représentation paramétrique du plan}
+\begin{defn} \index{Représentation paramétrique du plan}
 L'ensemble des formules en (\ref{paramRep}) est une {\bfseries
 représentation paramétrique} du plan contenant $\VEC{p}$ et parallèle
 à deux vecteurs $\VEC{s}$ et $\VEC{t}$ qui ne sont pas colinéaires.
 Les {\bfseries paramètres} sont $\alpha$ et $\beta$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Les points $\VEC{x}=(x_1,x_2,x_3)$ du plan contenant $\VEC{p}=(1,2,3)$ et
@@ -1380,7 +1380,7 @@ du vecteur $\VEC{a}-\VEC{b}$.
 
 Pour résumer, nous avons le résultat suivant.
 
-\begin{focus}{\dfn} \index{Projection orthogonale}
+\begin{defn} \index{Projection orthogonale}
 Soit $\ell$ une droite qui contient le vecteur $\VEC{q}$.  Si
 $\VEC{a}$ un point quelconque, la {\bfseries projection (orthogonale)}
 du vecteur $\VEC{a}$ sur la droite $\ell$ est le vecteur
@@ -1391,7 +1391,7 @@ Le point $\VEC{b}$ est le point de la droite $\ell$ qui est le plus
 près de $\VEC{a}$.  Le vecteur $\VEC{a}-\VEC{b}$ est perpendiculaire à
 la droite $\ell$.  La plus courte distance entre $\VEC{a}$ et la droite
 $\ell$ est la longueur du vecteur $\VEC{a}-\VEC{b}$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Quelle est la plus courte distance entre le point $\VEC{a}=(1,1,1)$ et
@@ -1567,7 +1567,7 @@ vecteur $\VEC{a}-\VEC{b}$.
 
 Pour résumer, nous avons le résultat suivant.
 
-\begin{focus}{\dfn} \index{Projection orthogonale}
+\begin{defn} \index{Projection orthogonale}
 Soit $\cal M$ un plan qui contient deux vecteurs perpendiculaires
 $\VEC{p}$ et $\VEC{q}$.  Si $\VEC{a}$ un point quelconque, la
 {\bfseries projection (orthogonale)} du vecteur $\VEC{a}$ dans le plan
@@ -1580,7 +1580,7 @@ Le point $\VEC{b}$ est le point du plan $\cal M$ qui est le plus près
 de $\VEC{a}$.  Le vecteur $\VEC{a}-\VEC{b}$ est perpendiculaire au
 plan $\cal M$.  La plus courte distance entre $\VEC{a}$ et le plan
 $\cal M$ est la longueur du vecteur $\VEC{a}-\VEC{b}$.
-\end{focus}
+\end{defn}
 
 }  % End of theory
 

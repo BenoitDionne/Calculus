@@ -22,7 +22,7 @@ caractéristiques marquantes des fonctions.  Quelques unes des
 caractéristiques qu'une fonction peut avoir sont énoncées dans les
 trois prochaines définitions.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f:]a,b[ \rightarrow \RR$ une fonction.
 \begin{enumerate}
 \item La fonction $f$ est {\bfseries strictement croissante}
@@ -39,9 +39,9 @@ tels que $x<y$.
 \index{Fonction!Décroissante} si $f(x) \geq f(y)$ pour tout $x$ et $y$
  dans l'intervalle $]a,b[$ tels que $x<y$.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f:\RR \rightarrow \RR$ une fonction.
 \begin{enumerate}
 \item La fonction $f$ a un {\bfseries maximum local}
@@ -51,9 +51,9 @@ $x \neq c$ suffisamment près de $c$.
 \index{Fonction!Minimum local} au point $c$ si $f(x) > f(c)$ pour tout
 $x \neq c$ suffisamment près de $c$.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f:[a,b] \rightarrow \RR$ une fonction.
 \begin{enumerate}
 \item La fonction $f$ a un {\bfseries maximum global ou absolu}
@@ -68,7 +68,7 @@ pour tout $x\neq c$ dans $[a,b]$.  La valeur $f(c)$ est le minimum
 global de $f$ sur $[a,b]$.
 \end{enumerate}
 \label{maxminabs}
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Considérons la fonction continue dont le graphe est donné à la
@@ -128,11 +128,11 @@ dérivée de la fonction en ce point.
 
 \section{Taux de variation d'une fonction}\label{sect_TVI}
 
-\begin{focus}{\dfn} \index{Taux de variation moyen}
+\begin{defn} \index{Taux de variation moyen}
 Si $f$ est une fonction dont le domaine inclut l'intervalle $[a,b]$, le
 {\bfseries taux de variation moyen} de $f$ entre $a$ et $b$ est
 $\displaystyle \frac{f(b)-f(a)}{b-a}$
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Suite à une expérience de laboratoire sur une culture de bactéries
@@ -241,14 +241,14 @@ trouvé le même taux de variation instantané.
 \label{bacter1}
 \end{egg}
 
-\begin{focus}{\dfn} \index{Taux de variation instantané}
+\begin{defn} \index{Taux de variation instantané}
 Si $f$ est une fonction définie sur un intervalle ouvert contenant
 $a \in \RR$, le {\bfseries taux de variation instantané} de $f$ au
 point $a$ est la valeur $M$ unique (si une telle valeur existe) telle
 que le taux de variation moyen $\displaystyle \frac{f(b)-f(a)}{b-a}$
 tend vers $M$ lorsque $b$ tend vers $a$ avec $b$ plus petit ou
 plus grand que $a$.
-\end{focus}
+\end{defn}
 
 Remarquons que le taux de variation moyen
 \[
@@ -328,7 +328,7 @@ $x= 50 \; e^{-2t}$}{La sécante qui passe par $(1, 50 e^{-2})$ et
 $(1.001, 50 e^{-2.002})$ se confond à la courbe $x= 50 \; e^{-2t}$
 pour $t$ très près de $t=1$ heure.}{BACT3}
 
-\begin{focus}{\dfn} \index{Droite tangent}
+\begin{defn} \index{Droite tangent}
 Si $f$ est une fonction définie sur un intervalle ouvert qui contient
 $a \in \RR$.  La droite
 \[
@@ -340,7 +340,7 @@ $y=f(x)$ au point $(a,f(a))$.
 
 Nous avons que la distance entre $f(x)$ et $h(x)$ devient de plus en plus
 petite lorsque $x$ approche $a$.
-\end{focus}
+\end{defn}
 
 Au moment de donner la définition de la dérivée d'une fonction en un
 point, nous donnerons un sens mathématique à \lgm la distance entre $f(x)$
@@ -370,7 +370,7 @@ M = \lim_{b\rightarrow a} \frac{f(b)-f(a)}{b-a} \; .
 \]
 Nous obtenons la définition suivante.
 
-\begin{focus}{\dfn} \index{Dérivée d'une fonction à un point}
+\begin{defn} \index{Dérivée d'une fonction à un point}
 Soit $f$ une fonction définie dans un voisinage de $a$ incluant le
 point $a$.  La {\bfseries dérivée de $f$ au point $a$}, dénotée
 $f'(a)$ ou $\displaystyle \dydx{f}{x}(a)$, est
@@ -388,7 +388,7 @@ première limite pour obtenir la deuxième et de substituer $h=x-a$ dans
 la deuxième limite pour obtenir la première.  Nous avons que $x$
 approche $a$ si et seulement si $h=x-a$ approche $0$.  Notez que $h$
 peut être plus petit ou plus grand que $0$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 À l'exemple~\ref{bacter1}, nous avons montré numériquement que
@@ -400,7 +400,7 @@ où $g(t) = 50 e^{-2t}$.
 
 Pour l'exemple qui suit, nous aurons besoin de la définition suivante.
 
-\begin{focus}{\dfn} \index{Taux de croissance relatif}
+\begin{defn} \index{Taux de croissance relatif}
 Le {\bfseries taux de croissance relatif} d'une population au temps
 $t$ est
 \[
@@ -411,7 +411,7 @@ $t$ est
 En d'autres mots, si $p(t)$ est le nombre d'individus au temps $t$, le
 taux de croissance relatif au temps $t$ est
 $\displaystyle \frac{p'(t)}{p(t)}$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Estimons le taux de croissance relatif à $t=1$ et $t=2$ d'une
@@ -482,13 +482,13 @@ graphique de la dérivée.
 fonction en un point}{Interprétation graphique de la dérivée d'une
 fonction $f$ au point $x=a$}{DER6}
 
-\begin{focus}{\prp} \label{der_approx_ft}
+\begin{prop} \label{der_approx_ft}
 Si $f$ est une fonction différentiable au point $a$, alors
 \[
 f(x) \approx f(a) + f'(a) (x-a)
 \]
 pour $x$ très près de $a$.
-\end{focus}
+\end{prop}
 
 L'équation de la droite tangente est une formule simple pour estimer
 la fonction $f$ au voisinage du point $x=a$ (figure~\ref{DER19}).
@@ -500,13 +500,13 @@ section.
 En Analyse Mathématique, nous définissons la dérivée d'une fonction $f$ au
 point $a$ de la façon suivante.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f$ une fonction continue de $\RR$ dans $\RR$.  La dérivée de la
 fonction $f$ au point $a$ est le nombre $f'(a)$ qui satisfait
 \begin{equation} \label{RigDfn}
 \lim_{x\rightarrow a} \frac{|f(x) - f(a) - f'(a)(x-a)|}{|x-a|} = 0 \; .
 \end{equation}
-\end{focus}
+\end{defn}
 
 Cette définition de la dérivée est équivalent à la définition de la
 dérivée que nous avons donnée.  En effet, puisque
@@ -634,7 +634,7 @@ est appelée la {\bfseries dérivée de $f$}.  Comme la tradition veut
 que nous utilisions $x$ comme variable indépendante d'une fonction, nous
 obtenons la définition suivante.
 
-\begin{focus}{\dfn} \index{Dérivée d'une fonction} 
+\begin{defn} \index{Dérivée d'une fonction} 
 La {\bfseries dérivée} d'une fonction $f$ est la fonction $f'$ définie
 par
 \[
@@ -642,12 +642,12 @@ f'(x) \equiv \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
 \]
 pour toutes les valeurs de $x$ où la limite existe.  Nous utilisons aussi
 la notation $\displaystyle \dydx{f}{x}$ pour désigner $f'$.
-\end{focus}
+\end{defn}
 
 Puisque $f'(x)$ est la pente de la tangente au graphe de $f$ au point
 $(x,f(x))$, nous en déduisons les propriétés suivantes.
 
-\begin{focus}{\prp}\label{CDDth}
+\begin{prop}\label{CDDth}
 Soit $f:]a,b[\rightarrow \RR$ une fonction continue sur l'intervalle
 $]a,b[$.
 \begin{enumerate}
@@ -675,7 +675,7 @@ local à $x = c\in]a,b[$.  La fonction $f$ est strictement
 décroissante pour $x<c$ près de $c$ et strictement croissante pour
 $x>c$ près de $c$ (figure~\ref{DER12}).
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 \PDFfig{5_derivees/der9}{Fonction croissante}
 {$f'(x)>0$ pour $a < x < b$ entraîne que la fonction $f$ est
@@ -764,8 +764,8 @@ Le théorème qui suit a généralement peu d'utilité du point de vue
 numérique.  Par contre, il est très utile du point de vue conceptuelle
 comme les exemples qui suivront son énoncé vont démontrer. 
 
-\begin{focus}[][Théorème de la moyenne / Théorème des accroisse\-ments
- finis]{\thm}\label{MVT}
+\begin{theorem}[Théorème de la moyenne / Théorème des accroisse\-ments
+ finis] \label{MVT}
 \index{Théorème de la moyenne}\index{Théorème des accroissement finis}
 Si $f$ est une fonction continue sur l'intervalle $[a,b]$ et
 différentiable sur l'intervalle $]a,b[$, alors il existe une valeur
@@ -776,7 +776,7 @@ f'(\xi) = \frac{f(b)-f(a)}{b-a} \; .
 Nous insistons sur le fait que $\xi$ dépend de $a$ et $b$ (d'où la
 notation $\xi = \xi(a,b)$\ ) et donc varie si $a$ et $b$
 changent (figure~\ref{APPROX1}). 
-\end{focus}
+\end{theorem}
 
 \PDFfig{5_derivees/approx1}{Une représentation graphique du théorème de
 la moyenne}{Une représentation graphique du théorème de la
@@ -858,10 +858,10 @@ partir de la définition de la dérivée.
 points où elle n'est pas continue}{Cette fonction n'est pas continue
 à $x=a$ et donc sa dérivée n'existe pas à ce point,}{DER23}
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $f:]a,b[\rightarrow \RR$ est une fonction différentiable au point
 $c\in ]a,b[$, alors $f$ est continue au point $c$.
-\end{focus}
+\end{theorem}
 
 Nous démontrons ce théorème de la façon suivante.  Si la fonction
 $f$ est différentiable au point $c$, nous avons donc que la limite
@@ -894,7 +894,7 @@ kilomètres et le temps est en heures, la vitesse moyenne est en
 kilomètres par heure (km/h).  La formule pour calculer la vitesse
 moyenne entre $t=a$ heures et $t=b>a$ heures est donnée par
 \[
-\frac{x(b)-x(a)}{b-a} \quad km/h \; .
+\frac{x(b)-x(a)}{b-a} \quad km/h \ .
 \]
 Si $b$ est très près de $a$, alors nous pouvons assumer que la vitesse du
 véhicule entre $t=a$ et $t=b$ heures est (presque) constante et est
@@ -967,10 +967,10 @@ f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
 pour tout $x$.  La fonction constante à $0$ approche évidemment $0$
 quand nous approchons l'origine.  Nous obtenons donc la règle suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $c$ une constante.  Si $f(x) = c$ pour tout $x$, alors
 $f'(x) = 0$ pour tout $x$.
-\end{focus}
+\end{prop}
 
 Considérons maintenant la fonction $f$ définie par $f(x) = x$ pour
 tout $x$.  Si nous utilisons
@@ -1077,10 +1077,10 @@ nh^{n-1}x + h^n\right)-x^n\right) \\
 \end{align*}
 Nous obtenons la règle suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f(x) = x^n$ pour un entier $n\neq 0$, alors $f'(x) = n x^{n-1}$
 pour les valeurs de $x$ où $x^{n-1}$ est définie.
-\end{focus}
+\end{prop}
 
 \subsection{Dérivée du sinus et du cosinus \life \eng}
 
@@ -1234,12 +1234,12 @@ f\left(a-\frac{\pi}{2}\right)}{h} \\
 
 En combinant les deux cas précédents nous obtenons les formules suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \dfdx{\cos(x)}{x} = -\sin(x) \qquad \text{et} \qquad
-\dfdx{\sin(x)}{x} = \cos(x) \; .
+\dfdx{\sin(x)}{x} = \cos(x) \ .
 \]
-\end{focus}
+\end{prop}
 
 Soit $f(x) = \cos(x)$.  Pour démontrer que $f'(x) = -\sin(x)$, il faut
 se rappeler que
@@ -1318,14 +1318,14 @@ cultures A et B respectivement.
 
 L'exemple précédent suggère la règle suivante.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $f:]a,b[\rightarrow \RR$ et $g:]a,b[\rightarrow \RR$ sont deux fonctions
 différentiables et $f = c g$ où $c$ est une constante, alors
 \[
 f'(x) = c g'(x)
 \]
 pour tout $x \in ]a,b[$.
-\end{focus}
+\end{theorem}
 
 Vérifions à partir de la définition de la dérivée que la règle
 précédente est vrai.  Si $f(x) = c g(x)$ pour tout $x\in]a,b[$, alors
@@ -1389,7 +1389,7 @@ $z'(0.5) = 133 = 130 + 3 = x'(0.5) + y'(0.5)$.
 
 L'exemple précédent suggère la règle suivante pour la dérivée.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $f:]a,b[\rightarrow \RR$ et $g:]a,b[\rightarrow \RR$ sont deux
 fonctions différentiables et $q:]a,b[\rightarrow \RR$ est définie par
 $q=f+g$, alors
@@ -1397,7 +1397,7 @@ $q=f+g$, alors
 q'(x) = f'(x) + g'(x)
 \]
 pour tout $x\in ]a,b[$.
-\end{focus}
+\end{theorem}
 
 Vérifions à partir de la définition de la dérivée que la règle
 précédente est vraie.  Par définition de la dérivée de $q$,
@@ -1529,7 +1529,7 @@ $(x+\Delta x)(y+\Delta y) = xy + x\,\Delta y+y\,\Delta x+\Delta x\,\Delta y$.}
 
 La formule obtenue à l'exemple précédant suggère donc le résultat suivant.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $f:]a,b[\rightarrow \RR$ et $g:]a,b[\rightarrow \RR$ sont deux
 fonctions différentiables et $q:]a,b[\rightarrow \RR$ est définie par
 $q = fg$, alors
@@ -1537,7 +1537,7 @@ $q = fg$, alors
 q'(x) = f'(x) g(x) + f(x) g'(x)
 \]
 pour tout $x\in ]a,b[$.
-\end{focus}
+\end{theorem}
 
 Posons $q(x) = f(x) g(x)$ pour tout $x$.  Par définition de la
 dérivée,
@@ -1580,8 +1580,7 @@ croissance instantané de l'aire d'un rectangle dont la longueur des
 côtés varie en fonction du temps.  Notre formule pour la dérivée du
 produit de fonctions donne donc
 \[
-A'(t) = x'(t) y(t) + x(t) y'(t) = 2 y(t) + 3 x(t) \quad \text{m$^2$/s}
-\; .
+A'(t) = x'(t) y(t) + x(t) y'(t) = 2 y(t) + 3 x(t) \quad \text{m$^2$/s} \ .
 \]
 Nous observons que le taux de croissance instantané de l'aire du rectangle
 n'est pas constant par rapport au temps même si les taux de croissance
@@ -1594,7 +1593,7 @@ A'(0) = x'(0) y(0) + x(0) y'(0) = 2 \times 11 + 3 \times 10
 et celui à $t=1$ est
 \[
 A'(1) = x'(1) y(1) + x(1) y'(1) = 2 \times 14 + 3 \times 12
-= 64 \quad \text{m$^2$/s} \; .
+= 64 \quad \text{m$^2$/s} \ .
 \]
 
 Si nous étudions les unités utilisées, nous obtenons de la formule
@@ -1606,8 +1605,7 @@ m/s $\times$ m + m $\times$ m/s = m$^2$/s comme il se doit.
 Soit $q(x) = (x^3+2x)\sin(x)$.  La fonction $q$ est le produit des
 fonctions $f(x) = x^3+2x$ et $g(x) = \sin(x)$.  Ainsi,
 \[
-q'(x) = f'(x) g(x) + f(x) g'(x) = (3x^2 +2)\sin(x) + (x^3+2x)\cos(x)
-\; .
+q'(x) = f'(x) g(x) + f(x) g'(x) = (3x^2 +2)\sin(x) + (x^3+2x)\cos(x) \ .
 \]
 \end{egg}
 
@@ -1624,13 +1622,13 @@ g'(x) q(x) + g(x) q'(x) = p'(x)
 Or $g(x) = p(x) / q(x)$, donc
 \[
 g'(x) = \frac{p'(x)}{q(x)} - \frac{p(x) q'(x)}{q^2(x)}
-= \frac{p'(x) q(x) - p(x) q'(x)}{q^2(x)} \; .
+= \frac{p'(x) q(x) - p(x) q'(x)}{q^2(x)} \ .
 \]
 
 Cette formule pour calculer la dérivée du quotient de deux fonctions
 mérite d'être mise en évidence car elle est utile.
 
-\begin{focus}{\prp} \index{règle de dérivée du quotient}
+\begin{prop} \index{règle de dérivée du quotient}
 Soit $p:]a,b[\to \RR$ et $q:]a,b[\to \RR$ deux fonctions
 différentiables.  Si $q(x) \neq 0$ pour $a<x<b$, alors
 \[
@@ -1639,7 +1637,7 @@ différentiables.  Si $q(x) \neq 0$ pour $a<x<b$, alors
 \]
 Cette formule est appelée la {\bfseries règle de dérivée du
 quotient} de deux fonctions.
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Calculons la dérivée de $g(x) = (x^3+2)/(x^2+5x)$.
@@ -1671,7 +1669,7 @@ où nous avons utilisé l'identité $\cos^2(x) + \sin^2(x) = 1$.
 En procédant de la même façon que dans l'exemple précédent, nous
 obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \dfdx{\tan(x)}{x} = \sec^2(x) \ ,
 \quad \dfdx{\cot(x)}{x} = -\csc^2(x) \ ,
@@ -1681,7 +1679,7 @@ et
 \[
 \dfdx{\csc(x)}{x} = -\cot(x) \csc(x) \; .
 \]
-\end{focus}
+\end{prop}
 
 \subsection{Dérivée de fonctions composées}
 
@@ -1725,7 +1723,7 @@ des ours/degré.
 
 L'exemple précédent suggère la règle suivante.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Soit $f:]c,d[\rightarrow\RR$ et $g:]a,b[\rightarrow \RR$ deux
 fonctions différentiables telles que $g(x) \in ]c,d[$ pour tout
 $x\in]a,b[$.  La dérivée de la fonction $q:]a,b[\rightarrow \RR$
@@ -1733,7 +1731,7 @@ définie par $q = f \circ g$ est
 \[
 q'(x) = f'(g(x)) g'(x) \; .
 \]
-\end{focus}
+\end{theorem}
 
 Vérifions que cette règle est vraie à partir de la définition de la
 dérivée.  Par définition de la dérivée,
@@ -2130,13 +2128,13 @@ $e \approx 2.718281828$.  \label{TAB_EXP}}
 Les valeurs de $b$ dans le tableau~\ref{TAB_EXP} approche le nombre
 $e = 2.71828182852\ldots$.  Nous avons donc le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $e = 2.71828182852\ldots$ et $f(x) = e^x$ pour tout $x$, alors
 \[
 f'(x) = f(x)
 \]
 pour tout $x$.
-\end{focus}
+\end{prop}
 
 La formule (\ref{COND_EXP}) avec la base $b = e$ devient donc
 \[
@@ -2207,13 +2205,13 @@ $f'(y) = f(y)$ et $g'(x) = \ln(b)$, nous avons
 \]
 Nous obtenons la proposition suivante.
 
-\begin{focus}{\prp}\label{BexpX}
+\begin{prop}\label{BexpX}
 Si $b>0$, alors
 \[
 \dfdx{b^x}{x} = b^x \ln(b)
 \]
 pour tout $x$.
-\end{focus}
+\end{prop}
 
 La constante $C_b$ que nous cherchions est donc $\ln(b)$.
 
@@ -2268,12 +2266,12 @@ Or $f'(x) = f(x)$ et $f(g(x))=x$, donc
 
 Nous venons de démontrer la règle suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 Pour $x>0$, alors
 \[
 \dfdx{\ln(x)}{x} = \frac{1}{x} \; .
 \]
-\end{focus}
+\end{prop}
 
 Quelle est la dérivée de $\ln |x|$ pour tout $x \neq 0$?  Puisque
 $|x|=x$ pour $x>0$, nous avons
@@ -2290,12 +2288,12 @@ $h(x) = -x$.  Puisque $g'(y) = 1/y$ et $h'(x) = -1$, nous obtenons donc
 \]
 Nous pouvons donc généraliser le théorème précédent de la façon suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $x\neq 0$, alors
 \[
 \dfdx{\ln|x|}{x} = \frac{1}{x} \; .
 \]
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Quelle est la dérivée de $\log_5(x)$ pour tout $x>0$?
@@ -2467,13 +2465,13 @@ nous déduisons de la règle de la dérivée de fonctions composées que
 \]
 pour $x>0$.  Nous venons de démontrer la règle suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $\alpha \neq 0$ est un nombre réel, alors
 \[
 \dfdx{x^\alpha}{x} = \alpha x^{\alpha-1}
 \]
 pour tout $x>0$.
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Si $f(x) = x^{-1/2}$, alors
@@ -2530,21 +2528,21 @@ Nous en déduisons que
 \]
 Nous obtenons donc la formule suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \dfdx{\arcsin(x)}{x} = \frac{1}{\sqrt{1-x^2}}
 \]
 pour $-1<x<1$.
-\end{focus}
+\end{prop}
 
 De façon semblable, le lecteur peut démontrer la proposition suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \dfdx{\arccos(x)}{x} = \frac{-1}{\sqrt{1-x^2}}
 \]
 pour $-1<x<1$.
-\end{focus}
+\end{prop}
 
 Si maintenant nous dérivons les deux côtés de l'identité
 $x = \tan (\arctan(x))$
@@ -2567,12 +2565,12 @@ Nous en déduisons que
 \]
 Nous obtenons donc la formule suivante.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \dfdx{\arctan(x)}{x} = \frac{1}{1+x^2}
 \]
 pour $x\in \RR$.
-\end{focus}
+\end{prop}
 
 }  % End of theory
 

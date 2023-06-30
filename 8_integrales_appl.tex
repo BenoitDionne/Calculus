@@ -71,24 +71,24 @@ l'aide des sommes de Riemann si les courbes se croissent}{Estimation
 de l'aire entre deux courbes à l'aide des sommes de Riemann si les
 courbes se croissent}{AIRE2}
 
-\begin{focus}{\mth}
+\begin{meth}
 L'aire $A$ de la région $R$ entre les courbes $y=f(x)$ et $y=g(x)$, et
 entre les droites $x=a$ et $x=b$ est donnée par
 \[
 A = \int_a^b |f(x)-g(x)|\dx{x} \; .
 \]
-\end{focus}
+\end{meth}
 
 La procédure que nous avons utilisée pour obtenir la formule ci-dessus peut
 évidemment être modifiée pour donner la formule suivante.
 
-\begin{focus}{\mth}
+\begin{meth}
 L'aire $A$ de la région $R$ entre les courbes $x=f(y)$ et $x=g(y)$, et
 entre les droites $y=a$ et $y=b$ est donnée par
 \[
 A = \int_a^b |f(y)-g(y)|\dx{y} \; .
 \]
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Trouvons l'aire $A$ de la région $R$ bornée par les courbes $y=f(x)=x^2$ et
@@ -168,13 +168,13 @@ droite $y=2x+4$.}{AIRE6}
 
 \section{Valeur moyenne d'une fonction }
 
-\begin{focus}{\dfn} \index{Valeur moyenne}
+\begin{defn} \index{Valeur moyenne}
 La {\bfseries valeur moyenne} d'une fonction $f$ définie sur un intervalle
 $[a,b]$ est
 \[
 M_f = \frac{1}{b-a} \int_a^b f(x)\dx{x} \; .
 \]
-\end{focus}
+\end{defn}
 
 Pour justifier cette définition, rappelons que la formule pour calculer la
 moyenne de $k$ nombres $m_1$, $m_2$, \ldots, $m_k$ est
@@ -221,7 +221,7 @@ M_f = \frac{1}{2} \int_{-1}^1 x^2 \dx{x} =
 Comme pour la dérivée d'une fonction, il y a un théorème de la moyenne pour
 l'intégrale d'une fonction
 
-\begin{focus}[][Théorème de la moyenne pour l'intégrale]{\thm}
+\begin{theorem}[Théorème de la moyenne pour l'intégrale]
 \index{Théorème de la moyenne pour l'intégrale}
 Si $f$ est une fonction continue sur l'intervalle $[a,b]$, il existe un point
 $c \in [a,b]$ tel que
@@ -230,7 +230,7 @@ f(c) = \frac{1}{b-a} \int_a^b f(x) \dx{x} \; .
 \]
 C'est-à-dire que $f(c)$ est la valeur moyenne de $f$ sur l'intervalle
 $[a,b]$.
-\end{focus}
+\end{theorem}
 
 La conclusion du théorème précédent est illustrée à la figure~\ref{MOY_INT}.
 Cette figure est une représentation typique de la valeur moyenne d'une
@@ -348,7 +348,7 @@ où $A(s)$ est l'aire de la section engendrée par l'intersection du plan $x=s$
 avec le solide $S$.  Ainsi, si $k$ tend vers plus l'infini, nous
 obtenons le résultat suivant.
 
-\begin{focus}[][des tranches]{\mth}
+\begin{meth}[des tranches]
 Le volume $V$ d'un solide $S$ comme celui représenté à la
 figure~\ref{VOL3} est donné par
 \begin{equation}\label{comp_vol}
@@ -356,7 +356,7 @@ V = \int_a^b A(x)\dx{x}
 \end{equation}
 où $A(s)$ est l'aire de la section engendrée par l'intersection du
 plan $x=s$ avec le solide $S$.
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Trouvons le volume $V$ du tronc de pyramide $S$ représenté à la
@@ -477,7 +477,7 @@ A(x) = \pi\left(g(x)-c\right)^2 - \pi\left(f(x)-c\right)^2 \; .
 \]
 Nous obtenons donc la formule suivante pour calculer le volume du solide $S$.
 
-\begin{focus}[][des anneaux]{\mth}
+\begin{meth}[des anneaux]
 Soit $R$ une région bornée par les courbes $y=f(x)$ et $y=g(x)$, et les
 droites $x=a$ et $x=b$.  Soit $S$ le solide généré par la rotation de la
 région $R$ autour de l'axe $y=c$ qui ne coupe pas la région $R$.  Le volume
@@ -486,7 +486,7 @@ $V$ du solide $S$ est
 V = \pi \int_a^b \left|\left(g(x)-c\right)^2 -
   \left(f(x)-c\right)^2\right| \dx{x} \; .
 \end{equation}
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Quelle est le volume $V$ du solide $S$ obtenu par la rotation autour de l'axe
@@ -728,7 +728,7 @@ lorsque l'axe de rotation $x=c$ est à la gauche de la région $R$.
 
 Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
 
-\begin{focus}[][des cylindres]{\mth}
+\begin{meth}[des cylindres]
 Soit $R$ une région bornée par les courbes $y=f(x)$ et $y=g(x)$, et les
 droites $x=a$ et $x=b$.  Soit $S$ le solide généré par la rotation de la
 région $R$ autour de l'axe $x=c$ qui ne coupe pas la région $R$. Le volume
@@ -736,7 +736,7 @@ $V$ du solide $S$ est
 \begin{equation}\label{comp_vol_tube}
 V = 2 \pi \int_a^b |c-x| |f(x)-g(x)| \dx{x} \; .
 \end{equation}
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Quelle est le volume $V$ du solide $S$ obtenu de la rotation autour de l'axe
@@ -881,7 +881,7 @@ Mais, ces sommes représentent aussi des sommes de Riemann pour l'intégrale
 \]
 Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
 
-\begin{focus}{\mth} \index{Masse}
+\begin{meth} \index{Masse}
 Soit $S$ est solide dont la densité varie seulement dans une
 direction.  Nous pouvons supposer que cet direction est donnée par l'axe
 des $x$ et que $\rho(x)$ est la \lgm densité\rgm\ de la section $x=s$
@@ -890,7 +890,7 @@ $A(s)$ est l'aire de cette section, alors le masse du solide $S$ est
 \begin{equation}\label{comp_mass}
 M = \int_a^b \rho(x)A(x)\dx{x} \; .
 \end{equation}
-\end{focus}
+\end{meth}
 
 \section{Travail \eng}
 
@@ -956,7 +956,7 @@ l'objet de $L$ m à partir de l'origine est donnée par
 W = \int_0^L F(x) \dx{x} \; .
 \]
 
-\begin{focus}{\mth} \index{Travail}
+\begin{meth} \index{Travail}
 Le travail nécessaire pour déplacer un objet d'un point $x=a$ à un
 point $x=b$ (en ligne droite) est
 \[
@@ -964,7 +964,7 @@ W = \int_a^b F(x) \dx{x} \; ,
 \]
 où $F(x)$ est la force exercée sur l'objet lorsqu'il occupe la
 position $x$.
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Un objet se déplace en ligne droite sous l'effet d'une force.  Si cette force
@@ -1869,7 +1869,7 @@ M_2 = M_0\left(1+\frac{I}{100}\right)^2 \quad \text{dollars} \; .
 \]
 Par induction, après $n$ années, nous obtenons le résultat suivant.
 
-\begin{focus}{\mth} \index{Intérêt!Composé annuellement}
+\begin{meth} \index{Intérêt!Composé annuellement}
 Si $M_0$ est le dépôt initial (en dollars) et si l'intérêt est
 {\bfseries composé annuellement}
 au taux de $I$\%, alors le montant $M_n$ dans le compte après $n$
@@ -1877,7 +1877,7 @@ années est donnée par la formule
 \[
 M_n = M_0\left(1+\frac{I}{100}\right)^n \quad \text{dollars} \; .
 \]
-\end{focus}
+\end{meth}
 
 Si nous déposons dans un compte en banque la somme de $M_0$ dollars et que le
 taux d'intérêt est de $I$\% par année calculé $k$ fois par année, à la fin
@@ -1921,20 +1921,20 @@ M_2 = M_0\left(1+\frac{I}{100k}\right)^{2k} \quad
 \]
 Par induction, nous obtenons le résultat suivant.
 
-\begin{focus}{\mth} \index{Intérêt!Composé $k$ fois par année}
+\begin{meth} \index{Intérêt!Composé $k$ fois par année}
 Si $M_0$ est le dépôt initial (en dollars) et si l'intérêt est
 {\bfseries composé $k$ fois par année} au taux de $I$\%, alors le
 montant $M_n$ dans le compte après $n$ années est donnée par la formule
 \[
 M_n = M_0\left(1+\frac{I}{100k}\right)^{nk} \quad \text{dollars} \; .
 \]
-\end{focus}
+\end{meth}
 
 Dans le cas précédent où l'intérêt est composé $k$ fois par année, si le
 nombre $k$ de périodes devient de plus en plus grand (tend vers plus
 l'infini), nous obtenons la formule suivante.
 
-\begin{focus}{\mth} \index{Intérêt!Composé de façon continue} 
+\begin{meth} \index{Intérêt!Composé de façon continue} 
 Si $M_0$ est le dépôt initial (en dollars) et si l'intérêt est
 {\bfseries composé de façon continue}
 au taux $I$\% par année, alors le montant $M_n$ dans le compte après $n$
@@ -1942,7 +1942,7 @@ année est donnée par la formule
 \begin{equation} \label{eco_cont}
 M_n = M_0 \, e^{(nI)/100} \; .
 \end{equation}
-\end{focus}
+\end{meth}
 
 Dans le cas continue, $n$ peut être un nombre réel.  Nous ne sommes plus
 limité aux entiers comme dans les deux premiers cas.
@@ -1958,22 +1958,22 @@ Pour démontrer la formule (\ref{eco_cont}), il suffit de noter que
 
 \subsection{Valeurs présentes et futures}
 
-\begin{focus}{\dfn} \index{Valeur future}
+\begin{defn} \index{Valeur future}
 La {\bfseries valeur future} d'un montant $M_0$
 est le montant obtenu après $t$ années si le montant $M_0$ est placé
 aujourd'hui dans un compte en banque dont le taux d'intérêt est de
 $I$\% par année.
-\end{focus}
+\end{defn}
 
 Par exemple, si l'intérêt est composé de façon continue, la valeur
 future après $n$ année est $M_n = M_0 e^{nI/100}$.
 
-\begin{focus}{\dfn} \index{Valeur présente}
+\begin{defn} \index{Valeur présente}
 La {\bfseries valeur présente} d'un montant
 $M_t$ est le montant $M_0$ qu'il faut placer aujourd'hui dans un
 compte en banque dont le taux d'intérêt est de $I$\% pour obtenir
 $M_t$ dans $t$ années.
-\end{focus}
+\end{defn}
 
 Par exemple, si l'intérêt est composé de façon continue, la valeur
 présente de $M_t$ dollars dans $t$ années est
@@ -2043,7 +2043,7 @@ Remarquons que cette somme est une somme de Riemann pour l'intégrale
 \]
 Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
 
-\begin{focus}{\mth} \index{Valeur future}
+\begin{meth} \index{Valeur future}
 Si $R(t)$ représente est le taux investi dans un compte au temps $t$
 et si le taux d'intérêt est de $I$\% composé de façon continue, alors la
 valeur future $V_f$ des investissement après une période $T$ est
@@ -2051,7 +2051,7 @@ donnée par la formule
 \[
 V_f = \int_0^T e^{I\,(T-t)/100} \,R(t) \dx{t} \; .
 \]
-\end{focus}
+\end{meth}
 
 De façon semblable, nous pouvons obtenir la valeur présente $V_p$ des gains
 d'une grande entreprisse pour une période de temps $T$.  Nous assumons que
@@ -2084,7 +2084,7 @@ Remarquons que cette somme est une somme de Riemann pour l'intégrale
 \]
 Ainsi, si $k$ tend vers plus l'infini, nous obtenons le résultat suivant.
 
-\begin{focus}{\mth} \index{Valeur présente}
+\begin{meth} \index{Valeur présente}
 Si $R(t)$ représente est le taux investi dans un compte au temps $t$
 et si le taux d'intérêt est de $I$\% composé de façon continue, alors la
 valeur présente $V_p$ des investissement pour une période $T$ est
@@ -2092,7 +2092,7 @@ donnée par la formule
 \[
 V_p = \int_0^T e^{-I\;t/100} \,R(t) \dx{t} \; .
 \]
-\end{focus}
+\end{meth}
 
 \begin{egg}
 Si le taux de revenus d'une chaîne de locations de voitures est
@@ -2195,14 +2195,15 @@ Il est possible de déterminer si une série de termes positifs
 $\displaystyle \sum_{n=1}^\infty a_n$ converge à l'aide d'une intégrale 
 impropre.
 
-\begin{focus}[][Le test de l'intégrale]{\thm} \index{Test de l'intégrale}
+\begin{theorem}[Le test de l'intégrale] \index{Test de l'intégrale}
 Soit $f:[1,\infty[\rightarrow [0,\infty[$ une fonction continue et
 décroissante.  Si $\displaystyle \sum_{n=1}^\infty a_n$ est une série dont
 les termes sont donnés par $a_n = f(n)$ pour tout $n$, alors la série
 $\displaystyle \sum_{n=1}^\infty a_n$ converge si et seulement si l'intégrale
 impropre $\displaystyle \int_1^\infty f(x)\dx{x}$ converge.
-\end{focus}
+\end{theorem}
 
+\begin{proof}
 La démonstration de ce théorème est simple et repose sur les deux
 graphes donnés à la figure~\ref{int_TEST}.
 
@@ -2247,6 +2248,7 @@ a_1 + \lim_{n\rightarrow \infty} T_n = a_1 + \int_1^\infty f(x)\dx{x}
 Il découle du théorème~\ref{suiteBORN} que la suite
 $\displaystyle \{S_n\}_{n=1}^\infty$ converge.  C'est à dire que
 $\displaystyle \sum_{n=1}^\infty a_n$ converge.
+\end{proof}
 
 \begin{rmk}
 Dans la cas où la série $\displaystyle \sum_{n=1}^\infty a_n$

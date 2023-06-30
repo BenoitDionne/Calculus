@@ -13,12 +13,12 @@ Elles sont revues de façon plus rigoureuse au chapitre suivant.
 
 \section{Qu'est-ce qu'une fonction?}
 
-\begin{focus}{\dfn} \index{Fonction}
+\begin{defn} \index{Fonction}
 Une {\bfseries fonction} $f$ est une opération d'un
 ensemble $X$ à un ensemble $Y$ qui, à chaque élément de $X$, associe
 un seul élément de $Y$.  Nous écrivons $f:X\rightarrow Y$ pour désigner une
 fonction $f$ de $X$ dans $Y$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 À la figure~\ref{FUNCT1}, nous définissons à l'aide d'un diagramme une
@@ -98,14 +98,14 @@ car elle dépend de $x$.
 \label{GRAPH_SET}
 \end{egg}
 
-\begin{focus}{\dfn} \index{Fonction!graphe}
+\begin{defn} \index{Fonction!graphe}
 Si $f$ est une fonction qui va d'un ensemble $X$ à un ensemble $Y$,
 nous définissons le {\bfseries graphe de la fonction}
 $f$ comme étant l'ensemble
 \[
 \text{graphe de }f = \left\{ (x,f(x)) : x \in X \right\} \; .
 \]
-\end{focus}
+\end{defn}
 
 Pour une fonction qui va de $\RR$ dans $\RR$, il est plus fréquent de
 représenter le graphe de cette fonction par la courbe du plan
@@ -123,7 +123,7 @@ l'exemple~\ref{GRAPH_SET}.
 
 \section{Image et domaine d'une fonction}
 
-\begin{focus}{\dfn} \index{Fonction!image}
+\begin{defn} \index{Fonction!image}
 L'{\bfseries image} d'une fonction $f$ qui va
 d'un ensemble $X$ à un ensemble $Y$ est l'ensemble des éléments $y \in Y$
 pour lesquelles il existe au moins un élément $x \in X$ tel que
@@ -132,7 +132,7 @@ $f(x) = y$.  Nous écrivons
 \IM f \equiv \left\{ y \in Y : f(x) = y \quad
 \text{pour au moins un élément} \quad x \in X \right\} \; .
 \]
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Pour l'exemple~\ref{CAPITALS}, l'image de $f$ est l'ensemble
@@ -155,14 +155,14 @@ la figure~\ref{FUNCT2}.  Nous écrivons
 \]
 \end{egg}
 
-\begin{focus}{\dfn} \index{Fonction!domaine}
+\begin{defn} \index{Fonction!domaine}
 Le {\bfseries domaine} d'une fonction $f$ qui
 va d'un ensemble $X$ à un ensemble $Y$ est l'ensemble $X$ sur lequel
 la fonction $f$ est définie.  Nous écrivons
 \[
 \DO f = X \; .
 \]
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Pour l'exemple~\ref{CAPITALS}, la fonction $f$ est définie pour tous
@@ -194,7 +194,7 @@ figure~\ref{SQRT}.  Nous avons que
 
 \section{Composition de fonctions}
 
-\begin{focus}{\dfn} \index{Fonction!composition}
+\begin{defn} \index{Fonction!composition}
 Si $f$ est une fonction qui va de l'ensemble $X$ à l'ensemble $Y$ et
 $g$ est une fonction qui va de l'ensemble $Y$ à l'ensemble $Z$, nous
 pouvons définir une nouvelle fonction $g\circ f$ qui va aller de
@@ -205,7 +205,7 @@ l'ensemble $X$ à l'ensemble $Z$ en posant
 pour tous les éléments $x$ dans l'ensemble $X$.  La nouvelle
 fonction $g\circ f$ est appelée la {\bfseries composition}
 des fonctions $f$ et $g$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Deux fonctions sont définies par le diagramme à la figure~\ref{COMPO}.
@@ -409,14 +409,14 @@ d'addition et de multiplication des fonctions.
 Comme nous l'avons fait pour l'inverse additif et l'inverse multiplicatif,
 il faut définir l'élément neutre de la composition de fonctions.
 
-\begin{focus}{\dfn}
+\begin{defn}
 La fonction qui joue le rôle {\bfseries d'élément neutre}
 \index{Élément neutre} pour la composition de fonctions est la
 {\bfseries fonction identité} \index{Fonction identité}, dénotée
 $\Id$, qui est définie par $\Id(z) = z$ pour tout élément $z$ du
 domaine.  Pour chaque élément $z$ du domaine, la fonction identité
 redonne cet élément $z$.
-\end{focus}
+\end{defn}
 
 Si $f$ est une fonction d'un ensemble $X$ dans un ensemble $Y$, nous
 pouvons facilement voir que
@@ -454,7 +454,7 @@ En s'inspirant de la définition de l'inverse pour l'addition et de
 l'inverse pour la multiplication, nous définissons l'inverse pour la
 composition de fonctions.
 
-\begin{focus}{\dfn} \index{Fonction!inverse}
+\begin{defn} \index{Fonction!inverse}
 {\bfseries L'inverse d'une fonction} $f$ qui
 va d'un ensemble $X$ à un ensemble $Y$ est la fonction $g$ qui va de
 l'ensemble $Y$ à l'ensemble $X$ et qui satisfait
@@ -464,19 +464,19 @@ f\circ g = \Id \qquad \text{et}  \qquad  g \circ f = \Id \; ,
 C'est-à-dire, $g(f(x)) = x$ pour tout $x \in X$ et $f(g(y)) = y$
 pour tout $y\in Y$.  Nous dénotons par $f^{-1}$ la fonction $g$ qui est
 l'inverse de $f$.
-\end{focus}
+\end{defn}
 
 Cette définition est équivalente à l'énoncé suivant qui est
 souvent utilisé comme défini\-tion de l'inverse d'une fonction.
 
-\begin{focus}{\dfn}
+\begin{defn}
 L'inverse de la fonction $f$ qui va d'un ensemble $X$ à un ensemble
 $Y$ est la fonction $f^{-1}$ qui va de l'ensemble $Y$ à l'ensemble $X$
 et qui satisfait
 \[
 x = f^{-1}(y) \qquad \text{si et seulement si} \qquad y = f(x) \; .
 \]
-\end{focus}
+\end{defn}
 
 En effet, si $y=f(x)$ alors $f^{-1}(y) = f^{-1}(f(x)) = x$ et si
 $x = f^{-1}(y)$ alors $f(x) = f(f^{-1}(y)) = y$ par définition de l'inverse
@@ -537,11 +537,11 @@ domaine de $f$ tel que la fonction $f$ évaluée à $x$ donne $y$
 (i.e. $f(x)=y$).  Nous donnons un nom spéciale aux fonctions qui
 possèdent cette propriété.
 
-\begin{focus}{\dfn} \index{Fonction!injective}
+\begin{defn} \index{Fonction!injective}
 Une fonction $f$ qui va d'un ensemble $X$ à un ensemble $Y$ est
 {\bfseries injective} si $f(x_1) = f(x_2)$
 implique que $x_1 = x_2$.
-\end{focus}
+\end{defn}
 
 \PDFfig{2_fonctions/diagram}{Fonction qui n'a pas d'inverse}
 {Définition d'une fonction $f$ qui n'a pas d'inverse.  Cette fonction
@@ -559,11 +559,11 @@ serait alors la valeur assignée à la couleur noir?
 Une autre notion important dans le contexte générale de l'étude des
 fonctions est la notion suivante.
 
-\begin{focus}{\dfn} \index{Fonction!surjective}
+\begin{defn} \index{Fonction!surjective}
 Une fonction $f$ qui va d'un ensemble $X$ à un ensemble $Y$ est
 {\bfseries surjective} si, pour tout
 $y \in Y$, il existe au moins un $x \in X$ tel que $f(x) = y$.
-\end{focus}
+\end{defn}
 
 En d'autres mot, une fonction $f: X \to Y$ est surjective si
 $\IM f = Y$; tous les éléments de $Y$ sont dans l'image de la fonction.
@@ -691,11 +691,11 @@ $\RR \setminus \{-3/2\}$.
 
 \subsubsection{Méthode graphique}
 
-\begin{focus}{\mth}
+\begin{meth}
 Si $f$ est une fonction qui possède une fonction inverse $f^{-1}$,
 alors nous obtenons le graphe de $f^{-1}$ en faisant la réflexion du
 graphe de $f$ par rapport à la droite $y=x$.
-\end{focus}
+\end{meth}
 
 \PDFfig{2_fonctions/inverse}{Graphe de $f^{-1}$ obtenu par réflexion du
 graphe de $f$}{Graphe de $f^{-1}$ obtenu par réflexion du
@@ -805,14 +805,14 @@ Une autre façon de définir le
 {\bfseries cosinus et sinus d'un angle en radians} est avec le cercle
 unité.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $D$, l'intersection du cercle de rayon $1$ centré à l'origine
 avec la droite émanant de l'origine et qui forme un angle $\theta$
 avec l'axe des $x$ lorsque nous nous déplaçons dans le sens contraire aux
 aiguilles d'une montre (figure~\ref{TRIG0}).  L'abscisse du
 point $D$ est $\cos(\theta)$\index{Cosinus} et l'ordonnée du point $D$
 est $\sin(\theta)$\index{Sinus}.
-\end{focus}
+\end{defn}
 
 \PDFfig{2_fonctions/trig1}{Définition du sinus et cosinus d'un angle à
 partir d'un triangle}{Définition du sinus et cosinus de l'angle
@@ -982,22 +982,22 @@ Puisque $\cos(\theta)$ et $\sin(\theta)$ sont les coordonnés d'un
 point du cercle de rayon $1$ centré à l'origine, nous obtenons le
 résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \cos^2(\theta) + \sin^2(\theta) = 1 \quad \text{pour} \quad \theta \in
 \RR \ .
 \]
-\end{focus}
+\end{prop}
 
 Puisque $\theta$ et $\theta+2\pi$ représentent le même point du cercle
 de rayon $1$ centré à l'origine, nous obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \cos(\theta + 2\pi) = \cos(\theta) \quad \text{et} \quad
 \sin(\theta + 2\pi) = \sin(\theta) \quad \text{pour} \quad \theta \in \RR \; .
 \]
-\end{focus}
+\end{prop}
 
 Nous disons que le cosinus et le sinus sont des fonctions
 {\bfseries périodiques} de {\bfseries période} $2\pi$\index{Période}.
@@ -1011,7 +1011,7 @@ Puisque les triangles $\triangle 0BE$, $\triangle OCG$,
 $\triangle ODG$ et $\triangle OAE$ représentés à la figure~\ref{TRIG4} sont
 congruents, nous obtenons les identités suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \begin{array}{lcl}
 \cos(\theta) = \cos(-\theta) ,&& \sin(\theta) = -\sin(-\theta), \\
@@ -1021,13 +1021,13 @@ congruents, nous obtenons les identités suivantes.
 \end{array}
 \]
 pour $\theta \in \RR$. \label{fonct_ident_trigsA}
-\end{focus}
+\end{prop}
 
 Puisque les triangles $\triangle 0AB$ et $\triangle ODC$ représentés à la
 figure~\ref{TRIG5} sont congruents, nous obtenons les identités
 suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \cos(\theta) = \sin\left(\frac{\pi}{2} - \theta\right)
 \quad \text{et} \quad
@@ -1035,7 +1035,7 @@ suivantes.
 \quad \text{pour} \quad \theta \in \RR \ .
 \]
 \label{fonct_ident_trigsB}
-\end{focus}
+\end{prop}
 
 Ce sont seulement quelques unes des identités trigonométriques que
 nous pouvons déduire à partir du cercle unité.
@@ -1056,7 +1056,7 @@ utilisées pour simplifier les {\em intégrales}
 (chapitre~\ref{chapter_integr}) que nous retrouvons souvent dans les
 applications.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \cos(\theta_1 + \theta_2) = \cos(\theta_1)\cos(\theta_2)
 - \sin(\theta_1)\sin(\theta_2)
@@ -1067,7 +1067,7 @@ et
 \sin(\theta_1)\cos(\theta_2)
 \]
 pour $\theta_1, \theta_2 \in \RR$.
-\end{focus}
+\end{prop}
 
 \begin{rmk}[\theory]
 Nous entendons souvent dire qu'il n'y a qu'une et une seule façon de
@@ -1331,7 +1331,7 @@ Il existe une formule pour $\sin^2(\theta)$ qui est
 semblable à celle donnée en (\ref{db_angle}).  La proposition suivante
 inclus ces deux formules. 
 
-\begin{focus}{\prp}\index{Formules de l'angle double}
+\begin{prop}\index{Formules de l'angle double}
 \[
 \cos^2(\theta) = \frac{1}{2} \left( 1 + \cos(2\theta) \right)
 \quad \text{et} \quad 
@@ -1340,7 +1340,7 @@ inclus ces deux formules.
 La première formule est la {\bfseries formule de l'angle double pour
 le cosinus} alors que la deuxième formule est la {\bfseries formule de
 l'angle double pour le sinus}. \label{db_angle_prp}
-\end{focus}
+\end{prop}
 
 Nous laissons au lecteur la tâche de vérifier la formule de l'angle
 double pour le sinus comme nous l'avons fait pour la formule de l'angle
@@ -1358,7 +1358,7 @@ Si nous divisons l'identité $\cos^2(\theta) + \sin^2(\theta) = 1$ tour
 à tour par $\cos^2(\theta)$ et par $\sin^2(\theta)$, nous obtenons les
 deux identités suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \begin{array}{ll}
 1 + \tan^2(\theta) = \sec^2(\theta) &\quad \text{pour} \quad \theta \neq
@@ -1367,7 +1367,7 @@ deux identités suivantes.
 n \pi \ \text{pour} \ n \in \ZZ \; .
 \end{array}
 \]
-\end{focus}
+\end{prop}
 
 \subsection{Graphes des fonctions trigonométriques}
 
@@ -1436,7 +1436,7 @@ sécante et la cosécante sont des fonctions
 {Graphe de $y=\cot(\theta)$, $y=\sec(\theta)$, et $y=\csc(\theta)$}
 {TRIG7}
 
-\begin{focus}{\dfn} \index{Fonctions sinusoïdales}
+\begin{defn} \index{Fonctions sinusoïdales}
 Une {\bfseries fonctions sinusoïdales} est une fonctions de la forme
 \begin{equation} \label{sinuso}
 y = M + A\;\cos\left(\frac{2\pi}{P}\left(x-X\right)\right)
@@ -1452,7 +1452,7 @@ l'onde décrite par la fonction sinusoïdale, la constante $P$ est la
 constante $X$ est la
 {\bfseries phase}\index{Fonctions sinusoïdales!phase} de l'onde
 décrite par la fonction sinusoïdale.
-\end{focus}
+\end{defn}
 
 Dans certains livres, le sinus est utilisé pour définir les fonctions
 sinusoïdales.  C'est-à-dire que
@@ -1511,7 +1511,7 @@ domaine du sinus à l'intervalle $-\pi/2 \leq x \leq \pi/2$.  C'est la
 courbe tracée en vert que nous retrouvons sur le graphe
 à la figure~\ref{SIN}.
 
-\begin{focus}{\dfn} \index{Arcsinus}
+\begin{defn} \index{Arcsinus}
 Sur l'intervalle $-\pi/2 \leq x \leq \pi/2$, la fonction $\sin$ est
 bien injective et nous pouvons définir son inverse $\sin^{-1}$ par la
 formule standard
@@ -1521,7 +1521,7 @@ x = \sin^{-1}(y) \qquad \text{si et seulement si} \qquad y = \sin(x)
 pour $-\pi/2 \leq x \leq \pi/2$ et $-1 \leq y \leq 1$.  La fonction
 $\sin^{-1}$ est appelée l'{\bfseries arcsinus} et est
 aussi dénotée $\arcsin$; c'est-à-dire, $\sin^{-1}(x) \equiv \arcsin(x)$.
-\end{focus}
+\end{defn}
 
 En d'autres mots, $x = \sin^{-1}(y)$ est l'angle en radians entre
 $-\pi/2$ et $\pi/2$ qu'il faut pour que $\sin(x) = y$.
@@ -1540,7 +1540,7 @@ graphe de $\sin$.
 
 De même, nous pouvons définir l'inverse pour le cosinus.
 
-\begin{focus}{\dfn} \index{Arccosinus}
+\begin{defn} \index{Arccosinus}
 Sur l'intervalle $0 \leq x \leq \pi$, la fonction $\cos$ est bien
 injective et nous pouvons définir son inverse $\cos^{-1}$ par la formule
 standard
@@ -1551,11 +1551,11 @@ pour $0 \leq x \leq \pi$ et $-1 \leq y \leq 1$.  La fonction
 $\cos^{-1}$ est appelée {\bfseries arccosinus} et
 est aussi dénotée $\arccos$; c'est-à-dire,
 $\cos^{-1}(x) \equiv \arccos(x)$.
-\end{focus}
+\end{defn}
 
 Finalement, nous pouvons définir l'inverse pour la tangente.
 
-\begin{focus}{\dfn} \index{Arctangente}
+\begin{defn} \index{Arctangente}
 Sur l'intervalle $-\pi/2 < x < \pi/2$,  la fonction $\tan$ est bien
 injective et nous pouvons définir son inverse $\tan^{-1}$ par la formule
 standard
@@ -1565,7 +1565,7 @@ x = \tan^{-1}(y) \qquad \text{si et seulement si} \qquad y = \tan(x)
 pour $-\pi/2 < x < \pi/2$ et $y$ réels.  La fonction $tan^{-1}$ est
 appelée l'{\bfseries arctangente} et est aussi
 dénotée $\arctan$; c'est-à-dire, $\tan^{-1}(x) \equiv \arctan(x)$.
-\end{focus}
+\end{defn}
 
 Le graphe de $\cos^{-1}$ est donné à la figure~\ref{ACOS} et celui de
 $\tan^{-1}$ est donné à la figure~\ref{ATAN}.
@@ -1661,7 +1661,7 @@ c'est-à-dire, $y=2$ dans le cas présent.  Mais que devons-nous faire
 pour obtenir la valeur de $4^\pi$?  Nous pouvons utiliser
 la définition suivante.
 
-\begin{focus}{\dfn} \label{pr_def_of_exp}
+\begin{defn} \label{pr_def_of_exp}
 Pour $b >1$ et $p \in \RR$, nous définissons le {\bfseries nombre exponentiel}
 $b^p$ comme étant le plus petit nombre réel\footnotemark\ $M$ tel que
 $M \geq  b^r$ pour tout nombre rationnel $r\leq p$.
@@ -1671,7 +1671,7 @@ $b^p$ comme étant le plus grand nombre réel $M$ tel que $M \leq  b^r$
 pour tout nombre rationnel $r\leq p$.
 
 Naturellement, si $b=1$, nous obtenons $b^p = 1$ pour tout $p\in \RR$.
-\end{focus}
+\end{defn}
 
 \footnotetext{{\bfseries L'Axiome de complétude} des nombres réels dit
   que tout ensemble non vide et borné supé\-rieurement possède une
@@ -1713,15 +1713,15 @@ inférieures à $\pi$.  Quelle valeur de $r$, proche de $\pi$, doit-on
 utiliser pour obtenir une bonne approximation de $4^\pi$?  Cette
 question ne sera pas abordée.
 
-\begin{focus}{\dfn} \index{Fonction exponentielle}
+\begin{defn} \index{Fonction exponentielle}
 Si $b$ est un nombre réel positif, la fonction
 $f:\RR\rightarrow ]0,\infty[$ définie par $f(x) = b^x$ pour tout $x$
 réel est appelée une {\bfseries fonction exponentielle}.
-\end{focus}
+\end{defn}
 
 Les fonctions exponentielles satisfont les propriétés suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $a$ et $b$ sont des nombres réels positifs et $x$ et $y$ sont des
 nombres réels, alors
 \[
@@ -1729,7 +1729,7 @@ a^{-x} = \frac{1}{a^x} \; , \quad a^x a^y = a^{x+y} \; ,
 \quad a^x b^x = (ab)^x \quad \text{et} \quad
 \left(a^x\right)^y = \left(a^y\right)^x = a^{xy} \; .
 \]
-\end{focus}
+\end{prop}
 
 Nous retrouvons les graphes de quelques fonctions exponentielles à la
 figure~\ref{EXP1}.
@@ -1748,13 +1748,13 @@ de $f(x) = b^x$ où $b$, la {\bfseries base}, est un nombre réel
 positif.  Si nous appliquons la définition de l'inverse d'une fonction à
 la fonction $b^y$, nous obtenons:
 
-\begin{focus}{\dfn} \index{Fonction logarithmique}
+\begin{defn} \index{Fonction logarithmique}
 La {\bfseries fonction logarithmique} $\log_b$ est définie par
 \[
 y = \log_b(x)  \quad \text{si et seulement si} \quad  b^y = x
 \]
 pour $x>0$ et $y\in\RR$.
-\end{focus}
+\end{defn}
 
 Nous donnons à la figure~\ref{LOG1} le graphe des fonctions $f(x) = b^x$
 et $f^{-1}(x) = \log_b(x)$ pour $b=3$.  Puisque le domaine de
@@ -1770,7 +1770,7 @@ obtenir $x$ (i.e. pour que $b^y = x$), il est alors simple de vérifier
 à partir de cet énoncé que les fonctions logarithmiques satisfont les
 propriétés suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $a$, $b$, $x$ et $y$ sont des nombres positifs réels et $p$ est
 un nombre réel, alors
 \begin{align}
@@ -1779,7 +1779,7 @@ un nombre réel, alors
 \intertext{et}
 \frac{\log_a(x)}{\log_a(y)} &= \log_y(x) \label{log_id3} \; .
 \end{align}
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Si $b$, $x$ et $y$ sont des nombres positifs réels, alors
@@ -1826,10 +1826,10 @@ toutes les calculatrices scientifiques car il joue un rôle fondamental
 en mathématique.  En raison de son importance, nous donnons un nom spécial
 à la fonction logarithmique en base $e$.
 
-\begin{focus}{\dfn} \index{Logarithme naturel}\index{Logarithme népérien}
+\begin{defn} \index{Logarithme naturel}\index{Logarithme népérien}
 Le {\bfseries logarithme naturel} ou {\bfseries logarithme népérien}
 est défini par $\ln(x) = \log_e(x)$ pour $x>0$.
-\end{focus}
+\end{defn}
 
 La définition précédente est équivalente à
 \[

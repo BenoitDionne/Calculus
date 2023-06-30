@@ -42,7 +42,7 @@ pour $a\leq t \leq b$ de $\Gamma$ respecte cette orientation si
 $\sigma(a) = \VEC{a}$ et $\sigma(b) = \VEC{b}$ (figure~\ref{line}).
 Nous supposons que les fonctions $\sigma_i$ sont de classe $C^1$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $f:V \rightarrow \RR$ une fonction continue définie 
 sur un ensemble ouvert $V \subset \RR^3$ qui contient la courbe
 orientée $\Gamma$, et soit $\sigma:[a,b]\to \RR^3$ une représentation
@@ -59,7 +59,7 @@ où $\sigma\,'(t) = (\sigma_1'(t),\sigma_2'(t),\sigma_3'(t))$ et
 \]
 est la norme euclidienne de $\sigma\,'(t)$.
 Nous écrivons $\dx{s} = \|\sigma\,'(t)\| \dx{t}$.
-\end{focus}
+\end{defn}
 
 \PDFfig{17_vector_calculus/line}{Une courbe $\Gamma$ qui possède la
 représentation paramétrique $\sigma(t)$}
@@ -111,10 +111,10 @@ décrite en parcourant premièrement la courbe $\Gamma_1$ de $\VEC{a}$ à
 $\VEC{b}$ suivi de la courbe $\Gamma_2$ de $\VEC{b}$ à $\VEC{c}$.}
 {sumCurves}
 
-\begin{focus}{\dfn} \index{Champ de vecteurs}
+\begin{defn} \index{Champ de vecteurs}
 Soit $V$ un sous-ensemble ouvert de $\RR^n$.  Un {\bfseries champ de vecteurs}
 défini sur $V$ est une fonction continue $F:E \rightarrow \RR^n$.
-\end{focus}
+\end{defn}
 
 Pour dessiner un champ de vecteurs dans $\RR^2$, nous choisissons un
 ensemble de points du plan $x,y$ (uniformément distribués) et, à partir
@@ -154,7 +154,7 @@ petit, plus la vitesse angulaire est grande car la vitesse sur le
 cercle est le produit de la vitesse angulaire et du rayon du cercle.
 \end{egg}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $V$ un sous-ensemble ouvert de $\RR^3$ et $F$ un champ de
 vecteurs défini sur $V$.
 {\bfseries L'intégrale du champ de vecteurs $F$ le long de la
@@ -171,7 +171,7 @@ point $\sigma(t)$ de la courbe $\Gamma$.  Notons que
 \VEC{t}(\sigma(t)) = \frac{1}{\|\sigma\,'(t)\|}\;\sigma\,'(t) \ .
 \]
 Nous écrivons $\dx{\VEC{s}} = \sigma'(t) \dx{t}$.
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Comme dans le cas de l'intégrale d'un fonction le long d'une courbe, 
@@ -206,7 +206,7 @@ Nous retrouvons souvent dans les livres de mathématiques pour
 l'ingénierie, la formulation équivalent suivante pour l'intégrale du
 champ de vecteurs $F$ le long de la courbe $\Gamma$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Si nous exprimons le champ de vecteurs $F$ comme étant
 $F = F_1\,\ii + F_2\,\jj + F_3\,\kk$ où $F_1:V\rightarrow \RR$,
 $F_2:V\rightarrow \RR$ et $F_3:V\rightarrow \RR$. alors nous pouvons récrire
@@ -218,7 +218,7 @@ F_3\dx{z}
 où $x = \sigma_1(t)$, $y = \sigma_2(t)$ et $z=\sigma_3(t)$.  En
 particulier, nous avons  $\dx{x} = \sigma_1'(t) \dx{t}$,
 $\dx{y} = \sigma_2'(t) \dx{t}$ et $\dx{z} = \sigma_3'(t) \dx{t}$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Soit le champ de vecteur $F(x,y,z) = (4x^3y^3z^2,3x^4y^2z^2, 2x^4y^3z)$
@@ -268,7 +268,7 @@ $0 \leq t \leq 1$.  Donc
 car $\dx{x} = \dx{t}$ et $\dx{y} = -2 t \dx{t}$.
 \end{egg}
 
-\begin{focus}[][Théorème fondamental des intégrales le long de courbes]{\thm}
+\begin{theorem}[Théorème fondamental des intégrales le long de courbes]
 \index{Théorème fondamental du calcul vecto\-riel}
 Soit $V$ un sous ensemble ouvert de $\RR^3$.  Si $f:V \rightarrow \RR$ est
 une fonction de classe $C^1$, alors
@@ -281,7 +281,7 @@ $\Gamma$ qui respect son orientation.  En particulier,
 l'intégrale $\displaystyle \int_\Gamma \nabla f \cdot \dx{\VEC{s}}$
 est indépendante de la courbe $\Gamma \subset V$ utilisée pour joindre
 deux points de $V$.
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 Reprenons le champ de vecteur $F = F_1\,\ii + F_3\,\jj+F_3\,\kk$
@@ -331,12 +331,12 @@ le gradient d'une fonction $f:\RR^3 \to \RR$?  Nous donnons une méthode au
 théorème~\ref{Fnablaf1} ci-dessous.  Nous verrons à la prochaine section une
 méthode plus pratique.
 
-\begin{focus}{\dfn} \index{Courbe fermée}
+\begin{defn} \index{Courbe fermée}
 Une courbe $\Gamma$ avec la représentation paramétrique
 $\sigma:[a,b]\to \RR^3$ est {\bfseries fermée} si $\sigma(a) = \sigma(b)$.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $V$ un sous ensemble ouvert de $\RR^3$ et soit $F$ un champ de
 vecteurs défini sur $V$.  L'intégrale
 $\displaystyle \int_\Gamma F \cdot \dx{\VEC{s}}$ est indépendante
@@ -344,7 +344,7 @@ de la courbe orientée $\Gamma \subset V$ utilisée pour joindre deux
 points de $V$ si et seulement si
 $\displaystyle \int_\Gamma F \cdot \dx{\VEC{s}} = 0$ pour toutes
 courbes fermées $\Gamma$ dans $V$. 
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 La proposition précédente est intuitivement clair.  Soit $\Gamma_1$ et
@@ -386,7 +386,7 @@ dans le sens de la courbe $\Gamma_1$ et de la courbe $\Gamma_2$
 dans le sens opposé au sens de la courbe $\Gamma_2$.  Nous obtenons la
 courbe fermée $\Gamma_3 = \Gamma_1 - \Gamma_2$.}{CloseCurve}
 
-\begin{focus}[\theory]{\dfn} \index{Ensemble simplement connexe}
+\begin{defn}[+\theory] \index{Ensemble simplement connexe}
 Un sous ensemble $V$ de $\RR^n$ est {\bfseries simplement connexe} si toute
 courbe fermée $\Gamma$ dans $V$ peut être déformée de façon continue à
 l'intérieure de $V$ pour donner un point à l'intérieur de $V$.  En termes
@@ -401,7 +401,7 @@ telles que
 \end{enumerate}
 Si la représentation paramétrique $\gamma$ de la courbe $\Gamma$ est de
 classe $C^k$, alors nous assumons que $H$ est aussi de classe $C^k$.
-\end{focus}
+\end{defn}
 
 Nous illustrons à la figure~\ref{HOMOTOPY} une fonction $H$
 comme nous avons défini ci-dessus.  Une telle fonction est appelée une
@@ -421,7 +421,7 @@ tout les deux un \flqq trou\frqq\ à l'intérieure.}{HOMOTOPY1}
 
 Le théorème fondamental a une contre partie.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Soit $V$ un sous-ensemble ouvert et simplement connexe de $\RR^3$, et
 soit $F$ un champ de vecteurs défini sur $V$.  Si, pour tous $\VEC{a}$
 et $\VEC{b}$ dans $V$, l'intégrale
@@ -431,16 +431,16 @@ $\VEC{a}$ à $\VEC{b}$, alors il existe une fonction
 $f:V\rightarrow \RR$ de classe $C^1$ telle que
 $F = \nabla f$ sur $V$.
 \label{Fnablaf1}
-\end{focus}
+\end{theorem}
 
-\begin{focus}{\dfn} \index{Champ de vecteurs!conservateur}
+\begin{defn} \index{Champ de vecteurs!conservateur}
 Soit $V$ un sous-ensemble ouvert de $\RR^3$.  Un champ de vecteurs
 $F$ défini sur $V$ est {\bfseries  conservateur} si, pour tous
 $\VEC{a}$ et $\VEC{b}$ dans $V$, l'intégrale
 $\displaystyle \int_\Gamma F \cdot \dx{\VEC{s}}$ est
 indépendante de la courbe orientée $\Gamma$ dans $V$ qui va de
 $\VEC{a}$ à $\VEC{b}$.
-\end{focus}
+\end{defn}
 
 \section{Rotationnel et divergence}
 
@@ -450,7 +450,7 @@ $F = F_1\,\ii + F_2\,\jj + F_3\,\kk$ où $F_1:V\rightarrow \RR$,
 $F_2:V\rightarrow \RR$ et $F_3:V\rightarrow \RR$ sont des fonctions de
 classe $C^1$.
 
-\begin{focus}{\dfn} \index{Champ de vecteurs!rotationnel}
+\begin{defn} \index{Champ de vecteurs!rotationnel}
 Le {\bfseries rotationnel} de $F = F_1\,\ii + F_2\,\jj + F_3\,\kk$
 est défini par
 \begin{equation*}
@@ -460,7 +460,7 @@ est défini par
 \left( \pdydx{F_2}{x}- \pdydx{F_1}{y} \right) \kk \; ,
 \end{split}
 \end{equation*}
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Comme nous avons vu à la remarque~\ref{DetermVectProd}, il existe une formule
@@ -489,22 +489,22 @@ F_1 & F_2 & F_3
 \]
 \end{rmk}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $V$ un sous-ensemble ouvert de $\RR^3$ et $f:V\to \RR$ une
 fonction de classe $C^2$.  Alors
 $\curl(\nabla f) = \VEC{0}$.
-\end{focus}
+\end{prop}
 
 Nous laissons aux lecteurs le soin de démontrer ce résultat.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $V$ un sous-ensemble ouvert et convexe de $\RR^3$ et
 $F:V\to \RR^3$ un champ de vecteurs de classe $C^1$.  Si
 $\curl F = \VEC{0}$, alors $F$ est conservateur.  En particulier, il
 s'en suit du Théorème~\ref{Fnablaf1} qu'il existe une fonction
 $f:V\to \RR$ telle que $F = \nabla f$.
 \label{rotFzero}
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Montrons que le champ de vecteurs $F:\RR^2 \to \RR^2$ défini par
@@ -553,26 +553,26 @@ long de courbes que
 \label{rotFzeroD2}
 \end{egg}
 
-\begin{focus}{\dfn} \index{Champ de vecteurs!divergence}
+\begin{defn} \index{Champ de vecteurs!divergence}
 La {\bfseries divergence} d'un champ de vecteurs différentiable
 $F = F_1\,\ii + F_2\,\jj + F_3\,\kk$ est défini par
 \[
 \diV F =  \nabla \cdot F
 = \pdydx{F_1}{x} + \pdydx{F_2}{y} + \pdydx{F_3}{z} \; ,
 \]
-\end{focus}
+\end{defn}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $V$ un sous-ensemble ouvert de $\RR^3$ et $F:V\to \RR^3$ un
 champ de vecteurs de classe $C^2$.  Alors $\diV(\curl F) = 0$.
-\end{focus}
+\end{prop}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $V$ un sous-ensemble ouvert et convexe de $\RR^3$ et
 $F:V\to \RR^3$ un champ de vecteurs de classe $C^1$.  Si
 $\diV(F) = 0$, alors il existe un champ de vecteur $G:V \to \RR^3$ de
 classe $C^1$ tel que $F = \curl G$.
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Nous aimerions savoir si le champ de vecteurs
@@ -945,7 +945,7 @@ paramétrique $\rho$ sous la forme
 pour $ \VEC{u} = (u_1,u_2) \in D$, où les fonctions
 $\rho_i:U \rightarrow \RR$ sont de classe $C^1$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $V$ un sous-ensemble ouvert de $\RR^3$ qui contient une surface $S$ et
 $f:V\rightarrow \RR$ une fonction continue.
 
@@ -973,7 +973,7 @@ Nous écrivons
 $\displaystyle \dx{S} =
 \left\| \pdydx{\rho}{u_1} \times \pdydx{\rho}{u_2} \right\|
 \dx{A}$.
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Comme pour l'intégrale d'un fonction le long d'une courbe, nous
@@ -1000,12 +1000,12 @@ où le déterminant est développé selon la première ligne seulement.
 Si $f(\VEC{u}) = 1$ pour tout $\VEC{u} \in S$ dans la définition
 précédente, nous obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $S \subset \RR^3$ une surface possédant une représentation
 paramétrique $\rho:D\rightarrow S$ de classe $C^1$, où $D$ est un
 sous-ensemble ouvert $D \subset \RR^2$.  Alors
 $\displaystyle \iint_S \dx{S}$ est l'aire de la surface $S$.
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Dans les exemples et remarques qui suivrons, la
@@ -1163,19 +1163,19 @@ plus, $\sqrt{ 4x^2 + 4y^2 + 1} = \sqrt{4r^2 +1}$.  Ainsi,
 \end{align*}
 \end{egg}
 
-\begin{focus}{\dfn} \index{Surface!orientée}
+\begin{defn} \index{Surface!orientée}
 Nous disons qu'une surface $S$ est {\bfseries orientée} s'il existe
 $\VEC{n}:S\rightarrow \RR^3$ tel que $\VEC{n}(\VEC{x})$ est un
 vecteur unitaire perpendiculaire (au plan tangent) à la surface
 $S$ en tout point $\VEC{x} \in S$.  Nous assumons que
 $\VEC{n}$ est une fonction continue.
-\end{focus}
+\end{defn}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Un vecteur perpendiculaire à une surface $S$ en un point est aussi
 appelé un {\bfseries vecteur normal}\index{Vecteur normal} ou une
 {\bfseries normale}\index{Normale} à la surface $S$ en ce point. 
-\end{focus}
+\end{defn}
 
 Un sphère dans $\RR^3$ a deux orientations possibles.  Soit que le
 vecteur unitaire perpendiculaire à la sphère pointe vers l'extérieur
@@ -1184,7 +1184,7 @@ Ce ne sont pas toutes les surfaces dans $\RR^3$ qui ont deux
 orientations possibles.  Par exemple, la bande de Möbius que toute le
 monde connaît bien n'est pas une surface orientée.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $V$ un sous-ensemble ouvert de $\RR^3$ qui contient une surface
 orientée $S$ et $F$ un champ de vecteurs défini sur $V$.
 {\bfseries L'intégrale du champ de vecteurs $F$ sur la surface
@@ -1194,7 +1194,7 @@ orientée $S$} est définie par
 \]
 où $\VEC{n}$ donne l'orientation de la surface qui a été choisie.
 Nous écrivons $\dx{\VEC{S}} = \VEC{n} \dx{S}$.
-\end{focus}
+\end{defn}
 
 Si la représentation paramétrique $\rho:D\rightarrow \RR^3$
 de classe $C^1$ de la surface orientée $S$ satisfait
@@ -1229,7 +1229,7 @@ $\VEC{n}(\rho(\VEC{u}))$ ou soit $-\VEC{n}(\rho(\VEC{u}))$.
 La représentation paramétrique qui a été choisie en (\ref{ReprMNorm})
 fait en sorte que nous obtenons $\VEC{n}(\rho(\VEC{u}))$.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $\rho:D\rightarrow \RR^3$ est une représentation paramétrique de classe
 $C^1$ de la surface orientée $S$ et
 \[
@@ -1245,7 +1245,7 @@ la surface, alors
 = \iint_D F(\rho(\VEC{u})) \cdot \left(\pdydx{\rho}{u_1}(\VEC{u})
 \times \pdydx{\rho}{u_2}(\VEC{u})\right) \dx{A}
 \end{equation}
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 L'intégrale du champ de vecteurs $F$ sur la surface orientée $S$
@@ -1500,7 +1500,7 @@ définition de représentation paramétrique locale pour inclure les
 surfaces comme $S_f$ qui ont une frontière.  Nous obtenons la définition
 suivante.
 
-\begin{focus}{\dfn} \index{Surface!représentation paramétrique locale}
+\begin{defn} \index{Surface!représentation paramétrique locale}
 Soit $S$ un sous-ensemble de $\RR^3$ et $\VEC{x} \in S$.  Une
 {\bfseries représentation paramétrique locale} au point $\VEC{x}$ est
 composée de trois objets:
@@ -1520,7 +1520,7 @@ $(D,V_{\VEC{x}},\rho)$ ou simplement $(V_{\VEC{x}},\rho)$ s'il n'est
 pas nécessaire de spécifier $D$.  Les ensembles ouverts de $S$ sont donnés par
 la topologie induite de $\RR^3$ (figures~\ref{MANIFOLD1} et
 \ref{MANIFOLD3}).
-\end{focus}
+\end{defn}
 
 \PDFfig{17_vector_calculus/manifold3}{Représentation paramétrique locale en un
 point au bord d'une surface}{$(D,V_{\VEC{x}},\rho)$ est un représentation
@@ -1529,7 +1529,7 @@ paramétrique locale au point $\VEC{x}$ au bord de la surface $S$.}{MANIFOLD3}
 Nous pouvons maintenant définir mathématiquement ce qu'est une surface
 (avec bord) dans $\RR^3$.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une {\bfseries surface}\index{Surface} ou
 {\bfseries variété}\index{Variété} (avec bord)\footnotemark\ 
 $S \subset \RR^3$ (de classe $C^0$) est un sous-ensemble de $\RR^3$
@@ -1549,7 +1549,7 @@ est continue (figure~\ref{MANIFOLD2}).
 \end{enumerate}
 Si $\rho_2^{-1} \circ \rho_1$ en (\ref{manifold_comp}) est de classe
 $C^k$, nous disons que $S$ est une surface (avec bord) de classe $C^k$.
-\end{focus}
+\end{defn}
 
 \footnotetext{En géométrie différentielle, nous ne parlons pas d'une
 surface avec bord mais parlons seulement d'une variété avec bord.}
@@ -1599,7 +1599,7 @@ tête dans la direction du vecteur normal unitaire $\VEC{n}$ qui
 détermine l'orientation de la surface $S$, l'intérieure de la surface
 $S$ se trouve à gauche de la personne (figure~\ref{Stokes}).
 
-\begin{focus}[][Théorème de Stokes]{\thm}
+\begin{theorem}[Théorème de Stokes]
 Soit $V$ un sous-ensemble ouvert de $\RR^3$ et $F$ un champ de
 vecteurs de classe $C^1$ défini sur $V$.  Si $V$ contient la surface
 orientée $S$, alors
@@ -1609,7 +1609,7 @@ orientée $S$, alors
 \end{equation}
 où l'intégrale le long de la courbe $\partial S$ est dans la direction 
 donnée par l'orientation positive de $\partial S$.
-\end{focus}
+\end{theorem}
 
 \PDFfig{17_vector_calculus/Stokes}{Théorème de Stokes}{Théorème de
 Stokes}{Stokes} 
@@ -1737,7 +1737,7 @@ l'intégrale le long de $\partial S$ est dans la direction associée à
 l'orientation positive de $S$ donnée par le vecteur $\kk$,
 nous obtenons le résultat suivant.
 
-\begin{focus}[][Théorème de Green]{\thm}
+\begin{theorem}[Théorème de Green]
 Soit $V$ un sous-ensemble ouvert de $\RR^2$ et
 $F=F_1\,\ii + F_2\,\jj$ un champ de vecteurs de classe $C^1$
 défini sur $V$.  Si $V$ contient la région $S$, alors 
@@ -1747,7 +1747,7 @@ défini sur $V$.  Si $V$ contient la région $S$, alors
 \end{equation}
 où l'orientation de $\partial S$ est \lgm globalement\rgm\ dans le
 sens contraire aux aiguilles d'une montre (figure~\ref{Green}).
-\end{focus}
+\end{theorem}
 
 \PDFfig{17_vector_calculus/Green}{Théorème de Green}{Théorème de Green}{Green}
 
@@ -2154,7 +2154,7 @@ Soit $Q \subset \RR^3$ un solide bornée par une surface orientée $S$.
 vecteur normal unitaire $\VEC{n}(\VEC{x})$ qui pointe vers l'extérieure
 de $Q$ en tout point $\VEC{x} \in S$.
 
-\begin{focus}[][Théorème de la divergence]{\thm}
+\begin{theorem}[Théorème de la divergence]
 Soit $V$ un sous-ensemble ouvert de $\RR^3$ et $F$ un champ de
 vecteurs de classe $C^1$ défini sur $V$.  Si $Q$ est un solide bornée
 par la surface $S$ (i.e. $S = \partial Q$) et $Q \subset V$, alors
@@ -2165,7 +2165,7 @@ par la surface $S$ (i.e. $S = \partial Q$) et $Q \subset V$, alors
 où $\VEC{n}$ est le vecteur associé à l'orientation positive de la surface
 $S$; c'est-à-dire, qui pointe vers l'extérieur du solide $Q$
 (figure~\ref{div}).
-\end{focus}
+\end{theorem}
 
 \PDFfig{17_vector_calculus/Div}{Théorème de la divergence}
 {Théorème de la divergence}{div}

@@ -26,10 +26,10 @@ chapitre suivant.
 
 \section{Primitives et intégrales indéfinies}
 
-\begin{focus}{\dfn} \index{Primitive}
+\begin{defn} \index{Primitive}
 Une fonction $F:]a,b[\to \RR$ est une {\bfseries primitive} de la
 fonction $f:]a,b[\to \RR$ si $F'(x) = f(x)$ pour tout $x \in ]a,b[$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 La fonction $F(x) = \sin(x)$ est une primitive de $f(x) = \cos(x)$ car
@@ -77,7 +77,7 @@ $G(x) - G(c) = 0$.  Comme ceci est vrai pour tout $x\in ]a,b[$, alors
 $G(x) = G(c)$ pour tout $x\in ]a,b[$.
 \end{rmk}
 
-\begin{focus}{\dfn}\index{Intégrale indéfinie}\index{Intégrande}
+\begin{defn}\index{Intégrale indéfinie}\index{Intégrande}
 \index{Variable d'intégration}
 {\bfseries L'intégrale indéfinie} d'une fonction $f$ est la famille de
 primitives pour cette fonction.  Nous dénotons l'intégrale indéfinie par
@@ -89,7 +89,7 @@ $f$, alors
 où $C \in \RR$.  La fonction $f$ est appelée {\bfseries l'intégrande}
 et $x$ est la {\bfseries variable d'intégration}.  Le symbole $\dx{x}$
 indique que la variable d'intégration est $x$.
-\end{focus}
+\end{defn}
 
 Le symbole $\dx{x}$ {\em n'est pas une variable}, il indique
 seulement que la variable d'intégration est $x$.  Aucune
@@ -132,14 +132,14 @@ f(x) & \displaystyle \int f(x)\dx{x} & \text{contraintes} \\
 Le prochain résultat est une conséquence de la linéarité de la
 dérivée.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $F$ et $G$ sont des primitives de $f$ et $g$ respectivement, alors
 $a F + b G$ est une primitive de $a f + b g$.  Par conséquent,
 \[
 \int (a f(x) + b g(x)) \dx{x} = a \int f(x) \dx{x}
-+ b \int g(x) \dx{x} \; .
++ b \int g(x) \dx{x} \ .
 \]
-\end{focus}
+\end{theorem}
 
 La démonstration de ce théorème est très simple.  Par linéarité de la
 dérivée, nous avons
@@ -279,8 +279,7 @@ car
 x \sin(x^2) \; .
 \]
 
-\subQ{c} Que devons-nous
-faire?
+\subQ{c} Que devons-nous faire?
 \end{egg}
 
 Alors que les deux premières intégrales indéfinies étaient assez
@@ -323,7 +322,7 @@ la fonction composée $F\circ g$ est différentiable et
 Ainsi, $F(g(x))$ est une primitive de $f(g(x))g'(x)$.  Nous obtenons le
 résultat suivant.
 
-\begin{focus}{\thm} \index{Règle de substitution}
+\begin{theorem} \index{Règle de substitution}
 \index{Changement de variable}
 Supposons que
 \begin{enumerate}
@@ -338,7 +337,7 @@ Alors $F(g(x))$ est une primitive de $f(g(x))g'(x)$.  Nous en déduisons la
 \int f(g(x))g'(x)  \dx{x} = \int f(y) \dx{y} \bigg|_{y=g(x)} =
 F(g(x)) + C \; .
 \]
-\end{focus}
+\end{theorem}
 
 Pour appliquer la règle de substitution, nous procédons de la façon
 suivante.  Si nous posons $y=g(x)$, alors $\dx{y} = g'(x) \dx{x}$ et
@@ -835,14 +834,14 @@ $\displaystyle \dfdx{\left(f(x)g(x)\right)}{x}$.
 Nous obtenons donc une primitive de $f(x)g'(x)$ en soustrayant de
 $f(x)g(x)$ une primitive de $f'(x)\,g(x)$.  En d'autre mots,
 
-\begin{focus}{\thm} \index{Intégration par parties}
+\begin{theorem} \index{Intégration par parties}
 Si $f$ et $g$ sont deux fonctions différentiables, alors
 \[
 \int f(x)\,g'(x)\,\dx{x} = f(x)g(x) - \int g(x)\,f'(x) \dx{x} \; .
 \]
 Cette formule est connue sous le nom
 {\bfseries d'intégration par parties}.
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 Évaluons l'intégrale indéfinie $\displaystyle \int x e^x\dx{x}$.
@@ -1928,14 +1927,14 @@ Comme le symbole de sommation $\displaystyle \sum$ sera très utile, il
 est probablement important de revoir sa définition pour le bénéfice du
 lecteur.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $\{ a_i : i \in \ZZ \}$, un ensemble de nombres indexés par les
 entiers.  Si $n$ et $m$ sont deux entiers tels que $n\leq m$, alors la
 somme des nombres $a_n$, $a_{n+1}$, \ldots, $a_m$ est dénotée
 \[
 \sum_{i=n}^m a_i \equiv a_n + a_{n+1} + a_{n+2} + \ldots + a_{m-1} + a_m \; .
 \]
-\end{focus}
+\end{defn}
 
 Si nous partitionnons l'intervalle $[0,2]$ en $k$ sous-intervalles de
 longueur $2/k$, nous obtenons les intervalles de base $[x_i,x_{i+1}]$ où
@@ -1971,7 +1970,7 @@ ces restrictions sur les fonctions que nous allons intégrer deviendra
 plus clair lors de l'étude des intégrales impropres que nous ferons
 prochainement.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une fonction $f$ définie sur un intervalle $[a,b]$ est
 {\bfseries bornée}\index{Fonction!bornée} s'il existe une constante
 $M$ telle que $|f(x)|<M$ pour tout $x$ dans l'intervalle $[a,b]$.
@@ -1986,7 +1985,7 @@ n'est pas continue et, à ces points $c$, nous avons que
 \lim_{\substack{x\rightarrow c-\\ x\in[a,b]}} f(x)
 \]
 existent.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 La fonction $f(x) = \lfloor x \rfloor$, où $\lfloor x \rfloor$ est le
@@ -2002,7 +2001,7 @@ $f(x) = \lfloor x \rfloor$ pour $-3\leq x \leq 5$.}{STEP_FCN}
 Remarquons qu'une fonction continue par morceaux sur un intervalle
 fermé est une fonction bornée.
 
-\begin{focus}[][Somme de Riemann]{\dfn} \index{Somme de Riemann}
+\begin{defn}[Somme de Riemann] \index{Somme de Riemann}
 Soit $f:[a,b]\rightarrow \RR$ un fonction continue par morceaux.  Soit
 $a=x_0 < x_1 < x_2 < \ldots < x_k = b$ une partition ${\cal P}$
 quelconque de l'intervalle $[a,b]$.  La longueur d'un sous-intervalle
@@ -2017,13 +2016,13 @@ intervalle.  La somme
 S_{\cal P} = \sum_{i=0}^{k-1} f\left(x_i^\ast\right) \Delta x_i
 \]
 est une {\bfseries somme de Riemann} pour la partition ${\cal P}$.
-\end{focus}
+\end{defn}
 
 Une même partition supporte un nombre infini de sommes de Riemann
 selon le choix des points $x_i^\ast \in [x_i, x_{i+1}]$ pour
 $0\leq i <k$.
 
-\begin{focus}{\dfn} \label{def_non_rig}
+\begin{defn} \label{def_non_rig}
 Soit $f:[a,b]\rightarrow \RR$ un fonction continue par morceaux.
 L'{\bfseries intégrale définie}\index{Intégrale définie} de $f$ de $a$
 à $b$ est le nombre $I$ qui satisfait la condition suivante.
@@ -2041,7 +2040,7 @@ La fonction $f$ est appelée {\bfseries l'intégrande}\index{Intégrande}
 et $x$ est la
 {\bfseries variable d'intégration}.\index{Variable d'intégration}  Le
 symbole $\dx{x}$ indique que la variable d'intégration est $x$.
-\end{focus}
+\end{defn}
 
 \begin{rmk}[\theory]
 \[
@@ -2334,17 +2333,17 @@ domaine symétrique par rapport à l'origine}{Graphe d'une fonction
 paire sur un domaine $[-a,a]$ symétrique par rapport à
 l'origine.  Les régions $R_1$ et $R_2$ ont la même aire.}{PAIR_INT} 
 
-\begin{focus}{\dfn}
+\begin{defn}
 Si l'intégrale de $f$ de $a$ à $b$ existe, nous définissons
 l'intégrale de $f$ de $b$ à $a$ par
 \[
 \int_b^a f(x)  \dx{x} = - \int_a^b f(x)  \dx{x} \; .
 \]
-\end{focus}
+\end{defn}
 
 Les propriétés suivantes découlent de la définition de l'intégrale:
 
-\begin{focus}{\thm}
+\begin{theorem}
 Soit $a$, $b$ et $c$ trois nombres réels.  Si $f$ et $g$ sont deux
 fonctions intégrables sur un intervalle qui contient $a$, $b$ et $c$, et si
 $k$ est un nombre réel, alors 
@@ -2355,7 +2354,7 @@ $k$ est un nombre réel, alors
 \intertext{et}
 \int_a^b f(x)\dx{x} &= \int_a^c f(x)\dx{x} + \int_c^b f(x)\dx{x} \; .
 \end{align*}
-\end{focus}
+\end{theorem}
 
 Le graphe de la fonction $f$ donné à La figure~\ref{AREA8} fournit une
 interprétation graphique de la dernière règle du théorème précédent.
@@ -2638,8 +2637,7 @@ L'histoire ne dit pas si Antoine et Antoinette se sont rencontrés au
 Musée d'Arts Contemporain.
 \end{egg}
 
-\subsection{L'intégrale de Riemann (Stieljes)
-  \theory} \label{Riemann_int}
+\subsection{L'intégrale de Riemann (Stieljes) \theory} \label{Riemann_int}
 
 La définition~\ref{def_non_rig} de l'intégrale est valable pour les
 fonctions continues par morceaux.  Le fait que l'intégrande soit une
@@ -2735,7 +2733,7 @@ valeur $p(b)-p(a)$ où $p(t)$ est la primitive de la vitesse $v(t)$;
 c'est-à-dire, $p'(t) = v(t)$.  C'est essentiellement l'énoncé du
 théorème suivant.
 
-\begin{focus}[][Théorème fondamental du calcul]{\thm}
+\begin{theorem}[Théorème fondamental du calcul]
 \index{Théorème fondamental du calcul} 
 Si $f$ est une fonction continue sur l'intervalle fermé $[a,b]$ et si
 $F$ est une fonction différentiable sur $[a,b]$ telle que $F'=f$
@@ -2743,7 +2741,7 @@ sur $[a,b]$  (i.e. $F$ est une primitive de $f$), alors
 \[
 \int_a^b f(x)  \dx{x} = F(x)\bigg|_{x=a}^{b} \equiv F(b) - F(a) \; .
 \]
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 Nous pouvons motiver le théorème précédent de la façon suivante.
@@ -2917,7 +2915,7 @@ car $\arcsin(x)$ est une primitive de $1/\sqrt{1-x^2}$.
 La règle de substitution prend une forme particulière dans le contexte
 des intégrales définies.
 
-\begin{focus}{\thm}
+\begin{theorem}
 \index{Règle de substitution}\index{Changement de variable}
 Si
 \begin{enumerate}
@@ -2931,7 +2929,7 @@ alors
 = F(g(b)) - F(g(a)) \; .
 \]
 \label{OneDSubstRule}
-\end{focus}
+\end{theorem}
 
 Pour appliquer la règle de substitution, nous procédons de la façon
 suivante.  Si nous posons $y=g(x)$, alors $\dx{y} = g'(x) \dx{x}$ et
@@ -3026,14 +3024,14 @@ $a = g(\alpha)$ et $b = g(\beta)$ de l'intégrale de gauche.
 À l'instar de la règle de substitution, la règle d'intégration par
 parties prend la forme suivante.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $f:[a,b]\rightarrow \RR$ et $g:[a,b]\rightarrow \RR$ sont deux
 fonctions différentiables, alors
 \[
 \int_a^b f(x)\,g'(x) \dx{x} = f(x)g(x)\bigg|_{x=a}^b
 - \int_a^b g(x)\,f'(x) \dx{x} \; .
 \]
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 Évaluons les intégrales définies suivantes.
@@ -3083,7 +3081,7 @@ Finalement,
 
 \subsection{Deuxième version du théorème fondamental du calcul}
 
-\begin{focus}[][Deuxième version du théorème fondamental du calcul]{\thm}
+\begin{theorem}[Deuxième version du théorème fondamental du calcul]
 \index{Théorème fondamental du calcul, deuxième version}
 Si $f$ est une fonction continue par morceaux sur l'intervalle $[a,b]$
 alors
@@ -3095,7 +3093,7 @@ aux points $c$ où $f$ est continue.  En particulier, si $f$ est
 continue sur l'intervalle $[a,b]$ alors $F$ est une primitive de $f$;
 c'est-à-dire que $F'(x) = f(x)$ pour tout $x$ dans l'intervalle
 $[a,b]$.
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 Une des plus importantes fonctions en statistique est la fonction de
@@ -3207,7 +3205,7 @@ infinie}
 
 Jusqu'à présent nous avons évalué des intégrales de la forme
 \[
-\int_a^b \, f(x) \dx{x}
+\int_a^b f(x) \dx{x}
 \]
 où les bornes d'intégration $a$ et $b$ sont des nombres réels.
 
@@ -3237,7 +3235,7 @@ Nous pouvons tout de même utiliser l'existence des intégrales définies sur
 les intervalles bornés pour définir l'intégrale sur un intervalle de
 longueur infinie.
 
-\begin{focus}{\dfn}\index{Intégrale impropre!sur un domaine non borné}
+\begin{defn}\index{Intégrale impropre!sur un domaine non borné}
 \index{Intégrale impropre!convergence}\index{Intégrale impropre!divergence}
 Soit $f$, une fonction définie sur l'intervalle $[a,\infty[$. Nous
 définissons {\bfseries l'intégrale impropre de $\mathbf f$ de $\mathbf a$
@@ -3258,7 +3256,7 @@ existe.
 \]
 Si la limite existe, nous disons que l'intégrale impropre
 {\bfseries converge} autrement nous disons qu'elle {\bfseries diverge}.
-\end{focus}
+\end{defn}
 
 Si $f(x)\geq 0$ pour tout $x$, l'intégrale impropre
 $\displaystyle \int_a^\infty f(x) \dx{x}$ représente l'aire de la
@@ -3406,14 +3404,14 @@ Finalement, pour $p=1$,
 \]
 Nous obtenons le résultat suivant.
 
-\begin{focus}{\prp} \label{impr_comp1}
+\begin{prop} \label{impr_comp1}
 $\displaystyle \int_1^\infty \frac{1}{x^p} \dx{x}$ converge pour $p>1$
 et diverge pour $p\leq 1$.  De plus,
 \[
 \int_1^\infty \frac{1}{x^p} \dx{x} = \frac{1}{p-1} \quad \text{pour}
 \quad p>1 \ .
 \]
-\end{focus}
+\end{prop}
 
 La conclusion de la proposition précédente au sujet de la convergence
 ou divergence ne changera pas si nous remplaçons
@@ -3526,7 +3524,7 @@ fonction $f:]a,b]\to \RR$ qui n'est pas bornée en $x=a$, et
 l'intégrale d'une fonction $f:[a,b[\to \RR$ qui n'est pas bornée en
 $x=b$.
 
-\begin{focus}{\dfn} \index{Intégrale impropre!pour une fonction non bornée}
+\begin{defn} \index{Intégrale impropre!pour une fonction non bornée}
 \index{Intégrale impropre!convergence}\index{Intégrale impropre!divergence}
 Soit $f$, une fonction définie sur l'intervalle $]a, b]$. Nous définissons
 {\bfseries l'intégrale impropre de $\mathbf f$ de $\mathbf a$ à
@@ -3547,7 +3545,7 @@ $\mathbf b$} comme étant la limite suivante si cette limite existe.
 \]
 Si la limite existe, nous disons que l'intégrale impropre
 {\bfseries converge} autrement nous disons qu'elle {\bfseries diverge}.
-\end{focus}
+\end{defn}
 
 Si $f(x)\geq 0$ pour tout $x$, ces intégrales impropres représentent
 l'aire de la région bornée par la courbe $y=f(x)$, l'axe des $x$ et
@@ -3692,13 +3690,13 @@ Finalement, pour $p=1$,
 \]
 Nous obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 $\displaystyle \int_0^1 \frac{1}{x^p} \dx{x}$ converge pour
 $p<1$ et diverge pour $p\geq 1$.  De plus,
 $\displaystyle \int_0^1 \frac{1}{x^p} \dx{x} = \frac{1}{1-p}$
 pour $p<1$.
 \label{impr_comp2}
-\end{focus}
+\end{prop}
 
 La conclusion de la proposition précédente au sujet de la convergence
 ou divergence ne changera pas si nous remplaçons
@@ -3752,7 +3750,7 @@ Nous présentons un test pour déterminer si une intégrale impropre
 converge ou diverge.  Les propositions~\ref{impr_comp1} et
 \ref{impr_comp2} seront d'une très grande utilité.
 
-\begin{focus}[][Test de comparaison]{\thm}
+\begin{theorem}[Test de comparaison]
 Soit $f:]a,b[\rightarrow \RR$ et $g:]a,b[\rightarrow \RR$ deux
 fonctions continues telles que $0\leq f(x)\leq g(x)$ pour tout $x$
 dans l'intervalle $]a,b[$.  Les bornes d'intégration $a$ et $b$
@@ -3764,7 +3762,7 @@ $\displaystyle \int_a^b f(x) \dx{x}$ converge.
 \item Si $\displaystyle \int_a^b f(x) \dx{x}$ diverge alors
 $\displaystyle \int_a^b g(x) \dx{x}$ diverge.
 \end{enumerate}
-\end{focus}
+\end{theorem}
 
 Dans le cas où $f$ et $g$ sont continues sur l'intervalle
 $[a,+\infty[$ et $b=\infty$, le théorème précédent est une conséquence
@@ -3918,14 +3916,14 @@ Le test de comparaison peut aussi être utilisé pour déterminer la
 convergence d'intégrales impropres dont l'intégrande peut avoir des
 valeurs négatives.
 
-\begin{focus}{\thm} \label{compabsolu}
+\begin{theorem} \label{compabsolu}
 Soit $f:]a,b[\rightarrow \RR$ une fonction continue sur l'intervalle
 $]a,b[$.   Alors $\displaystyle \int_a^b f(x) \dx{x}$
 converge si $\displaystyle \int_a^b |f(x)| \dx{x}$ converge.
 Les bornes d'intégration $a$ et $b$ peuvent être $+\infty$
 ou $-\infty$, ou ils peuvent correspondent à des asymptotes verticales
 pour la fonction $f$. 
-\end{focus}
+\end{theorem}
 
 Par exemple, $\displaystyle \int_a^{\infty} f(x) \dx{x}$
 converge si $\displaystyle \int_a^{\infty} |f(x)| \dx{x}$ converge.
@@ -4147,7 +4145,7 @@ $\displaystyle 2h \sum_{i=0}^{n-1} f(x_{2i+1})$ tend vers
 $\displaystyle \int_a^b f(x) \dx{x}$ lorsque $h$ tend vers $0$.  Nous
 pourrions démontrer le théorème suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f:[a,b]\rightarrow \RR$ une fonction qui possède une dérivée
 continue d'ordre deux.  Soit $h=(b-a)/(2n)$ et $x_j = a+j\,h$ for
 $j=0$, $1$ \ldots, $2n$.  Alors
@@ -4156,12 +4154,12 @@ $j=0$, $1$ \ldots, $2n$.  Alors
 \frac{f''(\xi)\,(b-a)}{6}\,h^2
 \]
 pour une valeur $\xi \in [a,b]$.
-\end{focus}
+\end{prop}
 
 Cette proposition nous donne notre première méthode d'intégration
 numérique.
 
-\begin{focus}[][Méthode du point milieu]{\mth} 
+\begin{meth}[Méthode du point milieu]
 \index{Méthode du point milieu}
 Une approximation de la valeur de l'intégrale de $f$ sur l'intervalle
 $[a,b]$ est donnée par la formule suivante.
@@ -4174,7 +4172,7 @@ où $h=(b-a)/(2n)$ et $x_j = a+j\,h$ for $j=0$, $1$ \ldots, $2n$.
 méthode du point milieu est
 $\displaystyle \frac{f''(\xi)\,(b-a)}{6}\,h^2$.
 \label{CMR}
-\end{focus}
+\end{meth}
 
 Comme $\xi$ à la proposition précédente est inconnu, l'erreur de
 troncature a une utilité limitée.
@@ -4342,7 +4340,7 @@ Nous avons donc que
 
 Nous pourrions démontrer le théorème suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f:[a,b]\rightarrow \RR$ une fonction qui possède une dérivée
 continue d'ordre deux.  Soit $h=(b-a)/n$ et $x_j = a+j\,h$ pour $j=0$,
 $1$ \ldots, $n$.  Alors
@@ -4351,12 +4349,12 @@ $1$ \ldots, $n$.  Alors
 + f(x_n) \right) - \frac{f''(\xi)\,(b-a)}{12}\,h^2
 \]
 pour une valeur $\xi \in [a,b]$.
-\end{focus}
+\end{prop}
 
 Cette proposition nous donne notre deuxième méthode d'intégration
 numérique.
 
-\begin{focus}[][Méthode des trapèzes]{\mth}
+\begin{meth}[Méthode des trapèzes]
 \index{Méthode des trapèzes}
 Une approximation de la valeur de l'intégrale de $f$ sur l'intervalle
 $[a,b]$ est donnée par la formule suivante.
@@ -4370,7 +4368,7 @@ où $h=(b-a)/n$ et $x_j = a+j\,h$ for $j=0$, $1$ \ldots, $n$.
 pour la méthode des trapèzes est
 $\displaystyle - \frac{f''(\xi)\,(b-a)}{12}\,h^2$.
 \label{CTR}
-\end{focus}
+\end{meth}
 
 \begin{rmk}
 Nous pouvons exprimer la formule d'approximation pour la méthode du trapèze
@@ -4691,7 +4689,7 @@ Nous avons donc que
 
 Nous pourrions démontrer le théorème suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f:[a,b]\rightarrow \RR$ une fonction qui possède une dérivée
 continue d'ordre quatre.  Soit $h=(b-a)/(2n)$ et $x_j = a+j\,h$ pour
 $j=0$, $1$ \ldots, $2n$.  Alors
@@ -4702,12 +4700,12 @@ $j=0$, $1$ \ldots, $2n$.  Alors
 & \qquad \qquad - \frac{f^{(4)}(\xi)\,(b-a)}{180}\, h^4
 \end{align*}
 pour une valeur $\xi \in [a,b]$.
-\end{focus}
+\end{prop}
 
 Cette proposition nous donne notre troisième et dernière méthode
 d'intégration numérique.
 
-\begin{focus}[][Méthode de Simpson]{\mth} \index{Méthode de Simpson}
+\begin{meth}[Méthode de Simpson] \index{Méthode de Simpson}
 Une approximation de la valeur de l'intégrale de $f$ sur l'intervalle
 $[a,b]$ est donnée par la formule suivante.
 \[
@@ -4721,7 +4719,7 @@ où $h=(b-a)/(2n)$ et $x_j = a+j\,h$ for $j=0$, $1$ \ldots, $2n$.
 pour la méthode de Simpson est
 $\displaystyle  - \frac{f^{(4)}(\xi)\,(b-a)}{180}\, h^4 $.
 \label{CSR}
-\end{focus}
+\end{meth}
 
 \begin{rmk}
 Nous pouvons exprimer la formule d'approximation pour la méthode de Simpson

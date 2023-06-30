@@ -28,7 +28,7 @@ $(x_1,x_2,\ldots, x_n)$, les définitions et résultats sur les fonctions de
 deux variables que nous présentons demeurent valides pour les fonctions de
 plus de deux variables.
 
-\begin{focus}{\dfn} \index{Dérivée partielle en un point}
+\begin{defn} \index{Dérivée partielle en un point}
 Soit $D$ un voisinage d'un point $\VEC{c} = (c_1,c_2) \in \RR^2$ et
 $f:D\rightarrow \RR$ une fonction à valeurs réelles.
 
@@ -53,13 +53,13 @@ si cette limite existe.
 Dans les limites précédentes, nous assumons que $h$ est assez petit pour que
 $(c_1+h,c_2)$ et $(c_1,c_2+h)$ soient dans $V$ et donc que $f$ soit définie à
 ces points.
-\end{focus}
+\end{defn}
 
 Comme pour les fonctions d'une variable, si nous considérons tous les points où
 la dérivée partielle d'une fonction $f$ existe, nous pouvons définir
 une fonction que nous appellerons la dérivée partielle de la fonction $f$.
 
-\begin{focus}{\dfn} \index{Dérivée partielle}
+\begin{defn} \index{Dérivée partielle}
 Soit $V\subset \RR^2$ un ensemble ouvert et $f:\RR^2 \rightarrow \RR$.  Si
 la dérivée partielle de $f$ par rapport à $x_1$ existe en tout point de $V$,
 la {\bfseries dérivée partielle de $f$ par rapport à $x_1$ sur $V$} est la
@@ -82,7 +82,7 @@ f_{x_2}(\VEC{x}) = f_{x_2}(x_1,x_2)
 \]
 pour tout $\VEC{x}\in V$.  C'est une nouvelle fonction de deux variables
 définie sur $V$.
-\end{focus}
+\end{defn}
 
 Puisque $x_2$ est fixe dans la définition de la dérivée partielle
 $\displaystyle \pdydx{f}{x_1}(x_1,x_2)$, cette dérivée partielle est la
@@ -131,7 +131,7 @@ Si $f(x,y) = (3xy^2-x^4+1)^4$ alors
 
 Par induction, nous pouvons définir des dérivées partielles d'ordre deux.
 
-\begin{focus}{\dfn} \index{Dérivée partielle!d'ordre supérieure}
+\begin{defn} \index{Dérivée partielle!d'ordre supérieure}
 Soit $V\subset \RR^2$ un ensemble ouvert et $f:V\rightarrow \RR$ une
 fonction qui possède des dérivées partielles d'ordre un sur $V$.  Les
 {\bfseries dérivées partielles d'ordre deux de $f$ sur $V$} sont définies par
@@ -147,7 +147,7 @@ f_{x_2x_1}(x_1,x_2) &= \pdydxnm{f}{x_2}{x_1}{2}{}{}(x_1,x_2) =
 \pdfdx{\left(\pdydx{f}{x_1}\right)}{x_2}(x_1,x_2)
 \end{align*}
 si toutes ces dérivées partielles (d'ordre un) existent sur $V$.
-\end{focus}
+\end{defn}
 
 Nous pourrions aussi définir des dérivées partielles d'ordre supérieure à
 deux.  Par exemple, nous pouvons définir des dérivées partielles
@@ -160,11 +160,11 @@ f_{x_2x_2x_1}(x_1,x_2) = \pdydxnm{f}{x_2}{x_1}{3}{2}{}(x_1,x_2) =
 si toutes les dérivées d'ordre un et deux existent pour tout
 $(x_1,x_2) \in V$.
 
-\begin{focus}{\dfn} \index{Fonction de classe $C^k$}
+\begin{defn} \index{Fonction de classe $C^k$}
 Soit $V\subset \RR^n$ un ensemble ouvert et $f:V\rightarrow \RR$.  Nous
 disons que $f$ est de classe $C^k$ si les dérivées partielles d'ordre $k$ de
 $f$ existent et sont continues.  Nous écrivons $f \in C^k(V)$
-\end{focus}
+\end{defn}
 
 Si $f \in C^k(V)$, le fait que les dérivées partielles d'ordre $k$ de
 $f$ existent implique que toutes les dérivées partielles de $f$ d'ordre
@@ -191,10 +191,10 @@ Soit $f(x,y) = \cos(5x+3y)$.  Alors
 toujours le cas mais il y a une très grande classe de fonctions $f$ pour
 lesquelles $f_{xy}=f_{yx}$,
 
-\begin{focus}{\prp}
+\begin{prop}
 Si $f:\RR^2\rightarrow \RR$ possède des dérivées partielles d'ordre deux qui
 sont continues, alors $f_{x_1x_2} = f_{x_2x_1}$.
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Nous pourrions généraliser la proposition précédente.  Si
@@ -271,7 +271,7 @@ u_{tt}  = a^2\,f''(x+at)+ a^2\,g''(x-at) = a^2\,u_{xx} \; .
 La règle pour dériver la composition de fonctions d'une variable peut être
 utilisée pour dériver la composition de fonctions de plusieurs variables.
 
-\begin{focus}{\prp} \label{ChainRuleND}
+\begin{prop} \label{ChainRuleND}
 Soit $f:\RR^n\rightarrow \RR$ et $g:\RR^m \to \RR^n$.  Si $f$ et 
 $g_i:\RR^m\rightarrow \RR$ pour $i=1$, $2$, \ldots, $n$ possèdent des
 dérivées partielles, alors la fonction $h:\RR^m\rightarrow \RR$
@@ -285,7 +285,7 @@ partielles.  Plus précisément,
 + \pdydx{f}{x_n}(g(\VEC{t}))\,\pdydx{g_n}{t_i}(\VEC{t})
 \end{align*}
 pour $\VEC{t} \in \RR^m$ et $1\leq i \leq m$.
-\end{focus}
+\end{prop}
 
 \begin{rmkList}
 \begin{enumerate}
@@ -582,7 +582,7 @@ fonction $f:\RR^2 \to \RR$.  Il suffit de penser à la sphère ou au
 taure.  Ce genre de surface possède une représentation
 paramétrique.
 
-\begin{focus}{\dfn} \index{Représentation paramétrique d'une surface}
+\begin{defn} \index{Représentation paramétrique d'une surface}
 Une fonction $\rho :\RR^2 \to \RR^3$ est la représentation
 paramétrique d'une surface $S$ dans $\RR^3$ si:
 \begin{enumerate}
@@ -591,7 +591,7 @@ paramétrique d'une surface $S$ dans $\RR^3$ si:
 $\displaystyle \pdydx{\rho}{u_2}(u_1,u_2)$ sont deux vecteurs
 non colinéaires dans $\RR^3$ pour tout $(u_1,u_2)$. 
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 La deuxième condition est requise pour assurer qu'il y a un vecteur
 normal (perpendiculaire) à la surface $S$ en tout point $\rho(u_1,u_2)$
@@ -669,7 +669,7 @@ deux seules directions.
 En fait, il est très utile de définir des dérivées selon d'autres
 directions.
 
-\begin{focus}{\dfn} \index{Dérivée directionnelle}
+\begin{defn} \index{Dérivée directionnelle}
 Soit $V\subset \RR^n$ un ensemble ouvert et $f:V\rightarrow \RR$ une
 fonction a valeurs réelles.  Soit 
 $\VEC{u} \in \RR^n$ un vecteur de longueur euclidienne $1$.  La
@@ -683,7 +683,7 @@ $\displaystyle \pdydx{f}{\VEC{u}}(\VEC{a})$, est définie par
 si cette limite existe.  Dans la limite précédente, nous assumons que
 $h$ est assez petit pour que $\VEC{a}+h\VEC{u} \in V$ et ainsi que $f$
 soit définie à $\VEC{a}+h\VEC{u}$.
-\end{focus}
+\end{defn}
 
 Nous pouvons donner une interprétation graphique de la dérivée selon une
 direction semblable à celle que nous connaissons pour la dérivée d'une
@@ -784,7 +784,7 @@ Donc
 \]
 Nous obtenons donc le résultat suivant.
 
-\begin{focus}{\prp} \index{Gradient}
+\begin{prop} \index{Gradient}
 Soit $V\subset \RR^n$ un ensemble ouvert et $f:V\rightarrow \RR$ une
 fonction a valeurs réelles.  Posons
 \begin{equation}\label{gradient}
@@ -798,7 +798,7 @@ pour $\VEC{a} \in V$.  Nous avons que
 \end{equation}
 $\nabla f(\VEC{a})$ est appelé le {\bfseries gradient} de $f$ au point
 $\VEC{a}$.
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Pour être consistant avec la représentation algébrique des vecteurs (i.e. un
@@ -934,7 +934,7 @@ donnée implicitement est perpendiculaire au plan tangent à la surface}
 vecteur $\nabla F(\VEC{a})$ est perpendiculaire au plan tangent à la
 surface $S$ au point $\VEC{a} \in S$.}{XYPLAN2}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $F:\RR^3\rightarrow \RR$ une fonction différentiable et $C$ une
 constante.  Si $S$ est la surface définie par l'équation
 $F(\VEC{x})=F(x_1,x_2,x_3)=C$ et $\VEC{a}=(a_1,a_2,a_3)$ est une point
@@ -944,7 +944,7 @@ la surface $S$ au point $\VEC{a}$.  C'est-à-dire,
 \nabla F(\VEC{a})\cdot \VEC{v} = 0
 \]
 pour tous les vecteurs $\VEC{v}$ qui sont parallèles au plan tangent.
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Le résultat précédent est aussi vrai dans $\RR^n$ où $n$ est différent
@@ -959,7 +959,7 @@ reverrons le cas $n=2$ à la prochaine section.
 Ayant un vecteur perpendiculaire à un plan, il est maintenant facile de
 donner une équation représentant ce plan.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $F:\RR^3\rightarrow \RR$ une fonction différentiable et $C$ une
 constante.  Si $S$ est la surface définie par l'équation $F(\VEC{x})=C$ et
 $\VEC{a}$ est une point de $S$, alors l'équation du plan tangent à la
@@ -969,7 +969,7 @@ surface $S$ au point $\VEC{a}$ est
 \pdydx{F}{x_1}(\VEC{a})(x_1-a_1) + \pdydx{F}{x_2}(\VEC{a})(x_2-a_2)
 +\pdydx{F}{x_3}(\VEC{a})(x_3-a_3)=0 \ .
 \]
-\end{focus}
+\end{prop}
 
 \begin{rmk}
 Soit $S$ une surface donnée par $x_3=f(x_1,x_2)$ où
@@ -1036,7 +1036,7 @@ En plus d'être utile pour calculer des dérivées selon une direction donnée e
 pour trouver l'équation d'un plan tangent à une surface, le gradient d'une
 fonction a d'autres propriétés importantes que nous ne pouvons pas ignorer.
 
-\begin{focus}{\prp}
+\begin{prop}
 \begin{enumerate}
 \item Soit $f:\RR^n\rightarrow \RR$ une fonction différentiable et
 $\VEC{a} \in \RR^n$ un point quelconque.  La valeur maximale de la dérivée de
@@ -1054,7 +1054,7 @@ point $\VEC{a}$ est atteinte lorsque la direction est donnée par
 $-\nabla f(\VEC{a})$.  La valeur minimale est $-M$.
 \end{enumerate}
 \label{SteepestG}
-\end{focus}
+\end{prop}
 
 Pour démontrer cette proposition (dans $\RR^2$ ou $\RR^3$), il faut utiliser
 un résultat que nous avons vu lors de l'étude des vecteurs.  Si $\VEC{a}$ et
@@ -1092,13 +1092,13 @@ résultat est aussi vrai pour $\RR^2$ et dans ce cas il faut
 remplacer les surfaces par des courbes.  En d'autres mots, nous
 obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $\Gamma$ une courbe du plan définie par $f(\VEC{x})=C$ où
 $f:\RR^2\rightarrow \RR$ est une fonction différentiable et $C$ est une
 constante.  Si $\VEC{a} = (a_1,a_2)$ est une point de cette courbe,
 alors $\nabla f(\VEC{a})$ est perpendiculaire à la droite tangente à
 $\Gamma$ au point $\VEC{a}$.
-\end{focus}
+\end{prop}
 
 La démonstration de ce dernier résultat dans $\RR^2$ est identique à la
 démonstration que nous avons donné dans $\RR^3$ à la section précédente.
@@ -1138,7 +1138,7 @@ $\Gamma$ au point $\VEC{a}$.
 Si nous combinons le résultat énoncé ci-dessus et le résultat de la
 proposition~\ref{SteepestG}, nous obtenons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $\Gamma$ une courbe de niveau d'une fonction différentiable
 $f:\RR^2\rightarrow \RR$ définie par
 \[
@@ -1149,7 +1149,7 @@ $\Gamma$.  À partir de $\VEC{a}$, la direction dans laquelle la
 fonction $f$ croît le plus rapidement (i.e.\ la dérivée selon une
 direction au point $\VEC{a}$ est maximale) est perpendiculaire à la
 courbe de niveau $\Gamma$ (figure~\ref{LVLCURVE}.)
-\end{focus}
+\end{prop}
 
 \PDFfig{15_var_mult_der/level}{Les trajectoires le long desquelles une
 fonction croît le plus rapidement coupent les courbes de niveau
@@ -1182,7 +1182,7 @@ croissance dans la direction $\nabla f(2,1,0)$\ ) est
 le Théorème de la moyenne (\ref{MVT}) pour les fonctions d'une
 variable a une généralisation aux fonctions de plusieurs variables.
 
-\begin{focus}[][Théorème de la moyenne]{\thm}
+\begin{theorem}[Théorème de la moyenne]
 Soit $D$, un sous-ensemble de $\RR^n$, qui contient les points
 $\VEC{a}$ et $\VEC{b}$ ainsi que le segment de droite $L$ de $\VEC{a}$
 à $\VEC{b}$.  Soit $f:D \to \RR$ une fonction différentiable en tout
@@ -1190,17 +1190,17 @@ point de $L$.  Alors il existe un point $\VEC{c}$ de $L$ tel que
 \[
   f(\VEC{b}) - f(\VEC{a}) = \nabla f(\VEC{c})\cdot (\VEC{b}-\VEC{a}) \ .
 \]
-\end{focus}
+\end{theorem}
 
 Pour énoncer le prochain résultat, nous aurons besoin de la
 définition suivante.
 
-\begin{focus}{\dfn} \index{Ensemble convexe}
+\begin{defn} \index{Ensemble convexe}
 Soit $D$ un sous-ensemble de $\RR^n$.  Nous disons que $D$ est un
 {\bfseries ensemble convexe} si, quel que soit les points $\VEC{a}$
 et $\VEC{b}$ dans $D$, le segment de droite de $\VEC{a}$ à
 $\VEC{b}$ est aussi inclus dans $D$.
-\end{focus}
+\end{defn}
 
 Le concept d'ensembles convexes est illustré à la figure~\ref{ensConv}.
 
@@ -1208,24 +1208,24 @@ Le concept d'ensembles convexes est illustré à la figure~\ref{ensConv}.
 non convexes}{L'ensemble à gauche est convexe alors que celui à
 droite ne l'est pas.}{ensConv}
 
-\begin{focus}{\cor} \label{CorMVT}
+\begin{cor} \label{CorMVT}
 Soit $D$ un sous-ensemble ouvert et convexe de $\RR^n$.  S'il existe
 une constante $M$ telle que $||\nabla f(\VEC{x})\| \leq M$ pour tout
 $\VEC{x} \in D$, alors
 $|f(\VEC{b}) - f(\VEC{a}| \leq M \|\VEC{b} - \VEC{a}\|$ pour tout
 $\VEC{a}$ et $\VEC{b}$ dans $D$.
-\end{focus}
+\end{cor}
 
 Nous avons vu que pour une fonction d'une variable $f$, si $f'(x) = 0$ pour
 tout $x$ sur un intervalle, alors $f$ est une fonction constante sur
 l'intervalle.  Le corollaire précédent généralise ce concept aux
 fonctions de plusieurs variables.
 
-\begin{focus}{\cor}
+\begin{cor}
 Soit $D$ un sous-ensemble ouvert et convexe de $\RR^n$.  Si $f:D \to
 \RR$ satisfait $\nabla f(\VEC{x}) = 0$ pour tout $\VEC{x}$ dans $D$,
 alors $f$ est constante sur $D$.
-\end{focus}
+\end{cor}
 
 En effet, le Corrolaire~\ref{CorMVT} avec $M=0$ donne
 $f(\VEC{b}) = f(\VEC{a})$ pour tout $\VEC{a}$ et $\VEC{b}$ dans $D$.
@@ -1281,7 +1281,7 @@ $\alpha! = 2!\ 0!\ 1!\ 3!= 12$, $|\alpha| = 2 + 0 + 1 + 3 = 6$ et
 $\VEC{y}^{\alpha} = y_1^2\ y_2^0\ y_3^1\ y_4^3 = y_1^2 y_3^{} y_4^3$.
 \end{egg}
 
-\begin{focus}[][Théorème de Taylor]{\thm} \index{Théorème de Taylor}
+\begin{theorem}[Théorème de Taylor] \index{Théorème de Taylor}
 Soit $f:\RR^n\to \RR$ une fonction de classe $C^{k+1}$.  Quel que soit
 $\VEC{x}$ et $\VEC{a}$ dans $\RR^n$, il existe $\xi = \xi(k,\VEC{a},\VEC{x})$
 sur le segment de droite de $\VEC{x}$ à $\VEC{a}$ tel que
@@ -1301,7 +1301,7 @@ $\mathbf{k}$ de $\mathbf{f}$ pour $\VEC{x}$ près de
 $\VEC{c}$}\index{Polynôme de Taylor} et $r_k$
 est {\bfseries l'erreur de troncature}\index{Erreur de troncature}.
 \label{theoTaylorNdim}
-\end{focus}
+\end{theorem}
 
 Par la suite, nous aurons besoin de seulement deux cas particuliers du
 Théorème de Taylor.
@@ -1383,7 +1383,7 @@ aussi valable pour les fonctions de plusieurs variables après avoir
 défini ce qu'est un point critique pour une fonction de plusieurs
 variables.
 
-\begin{focus}{\dfn} \index{Point critique}
+\begin{defn} \index{Point critique}
 Une fonction continue $f : \RR^n \to \RR$ possède un
 {\bfseries point critique} $\VEC{p} \in \RR^n$ si une des deux
 conditions suivantes est satisfaite.
@@ -1392,7 +1392,7 @@ conditions suivantes est satisfaite.
 \item $\nabla f(\VEC{p}) = \VEC{0}$ (ou $\diff f(\VEC{p}) = 0$ si nous
 utilisons la notation algébrique).
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 Nous avons vu que si $p$ est un maximum (ou minimum) local d'une fonction
 différentiable $f:\RR \to \RR$ alors $f'(0) = 0$.  La droite tangente
@@ -1400,12 +1400,12 @@ différentiable $f:\RR \to \RR$ alors $f'(0) = 0$.  La droite tangente
 est nulle.  Le même raisonnement nous donne le résultat suivant
 pour les fonctions à valeurs réelles définies sur $\RR^n$.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $f : \RR^n \to \RR$ une fonction différentiable.  Si $f$ a une
 maximum (ou minimum) local au point $\VEC{p}$, alors
 $\nabla f(\VEC{p}) = \VEC{0}$; c'est-à-dire, $\VEC{p}$ est un point
 critique.
-\end{focus}
+\end{prop}
 
 \PDFfig{15_var_mult_der/localMax}{Exemple d'un maximum local}
 {La fonction $f$ a un maximum local au point $\VEC{p}$.  Le plan tangent à
@@ -1467,14 +1467,14 @@ $\VEC{x} \neq \VEC{p}$.
 
 Commençons par une définition.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $A$ une matrice de dimension \nm{n}{n}.  Nous disons que $A$ est 
 {\bfseries strictement définie positive} si
 $q(\VEC{x}) = \VEC{x}^\top A \VEC{x} > 0$ pour tout $\VEC{x} \neq \VEC{0}$, et
 $A$ est {\bfseries strictement définie négative} si
 $q(\VEC{x}) = \VEC{x}^\top A \VEC{x} < 0$ pour tout $\VEC{x} \neq \VEC{0}$,
 \index{Strictement définie positive}\index{Strictement définie négative}
-\end{focus}
+\end{defn}
 
 Nous pouvons résumer le contenu du paragraphe qui précédent cette définition
 en disant que $f$ possède le minimum local $f(\VEC{p})$ en
@@ -1505,24 +1505,24 @@ Le théorème suivant donne une condition nécessaire et suffisante pour
 déterminer si une matrice carré $A$ est strictement définie positive
 ou négative.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Soit $A$ une matrice de dimension \nm{n}{n}.  La matrice $A$ est 
 strictement définie positive si et seulement si toutes ses valeurs
 propres sont positives.  La matrice $A$ est strictement définie
 négative si et seulement si toutes ses valeurs propres sont négatives.
-\end{focus}
+\end{theorem}
 
 Il peut s'avérer difficile de trouver toutes les valeurs propres d'une
 matrice, en particulier si la dimension de la matrice est grande.
 Le critère suivante donne une condition suffisante pour déterminer si
 une matrice est définie positive.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $A$ une matrice de dimension \nm{n}{n}.   Soit $A_k$ la matrice
 formée des $k$ premières colonnes et rangés de $A$.  La matrice $A$
 est strictement définie positive si $\det(A_k) > 0$ pour $k=1$, $2$,
 \ldots, $n$.
-\end{focus}
+\end{prop}
 
 Nous laissons au lecteur le soin d'énoncer une proposition semblable à la
 proposition précédente pour le cas d'une matrice strictement définie
@@ -1555,7 +1555,7 @@ En raisonnant avec la matrice Hessian $H(\VEC{a})$, nous pouvons en fait
 obtenir plus d'information sur le comportement de $f:\RR^2 \to \RR$ au
 voisinage d'un point critique $\VEC{a}$ de $f$.
 
-\begin{focus}{\prp}\label{R2HessCases}
+\begin{prop}\label{R2HessCases}
 Soit $f:\RR^2 \to \RR$ une fonction qui est trois fois continûment
 différentiable et $\VEC{p}$ un point critique de $f$.
 \begin{enumerate}
@@ -1576,7 +1576,7 @@ alors $f$ à un maximum local au point $(x,y) = \VEC{p}$.
 $\displaystyle \det\left(H(\VEC{p})\right) = 0$,
 alors nous ne pouvons rien conclure (figure~\ref{f2col}).
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 \MATHfigD{15_var_mult_der/f2col}{7cm}{15_var_mult_der/f2Mcol}{7cm}
 {Deux exemples de col, un cas que nous pouvons prédire et un que nous
@@ -1687,7 +1687,7 @@ $\nabla f(\VEC{a})$ sont parallèles.  Nous obtenons donc
 pour un nombre réel $\lambda$.  Le paramètre $\lambda$ est appelé le
 {\bfseries multiplicateur de Lagrange}\index{Multiplicateur de Lagrange}.
 
-\begin{focus}[][Méthode de Lagrange]{\mth} \index{Méthode de Lagrange}
+\begin{meth}[Méthode de Lagrange] \index{Méthode de Lagrange}
 Pour trouver le maximum ou minimum absolu d'une fonction
 $f:\RR^n \to \RR$ sous la contrainte que $g(\VEC{x}) = 0$\footnotemark
 \ où $g:\RR^n \to \RR$, il suffit de résoudre pour $\VEC{x}$ et
@@ -1697,7 +1697,7 @@ $\lambda$ le système
 \end{equation}
 Nous trouvons ainsi les points possibles où $f$ aura son minimum ou
 maximum absolu.
-\end{focus}
+\end{meth}
 \footnotetext{Nous supposons que l'ensemble $\{\VEC{x} : g(\VEC{x}) = 0\}$
 est fermé et borné.}
 
@@ -1774,7 +1774,7 @@ $(0,3/\sqrt{2})$.
 En raisonnant comme nous venons de la faire, nous pouvons montrer que la méthode
 de Lagrange se généralise au cas où il y a plus d'une contrainte.
 
-\begin{focus}[][Méthode de Lagrange]{\mth} \index{Méthode de Lagrange}
+\begin{meth}[Méthode de Lagrange] \index{Méthode de Lagrange}
 Pour trouver le maximum ou minimum absolu d'une fonction
 $f:\RR^n \to \RR$ sous les contraintes que $g_i(\VEC{x}) = 0$ pour
 $1\leq i \leq m$ où $g_i:\RR^n \to \RR$, il suffit de résoudre pour
@@ -1784,7 +1784,7 @@ $\VEC{x}$ et $\lambda_i$ le système
 \]
 Nous trouvons ainsi les points possibles où $f$ aura son minimum ou
 maximum absolu.
-\end{focus}
+\end{meth}
 
 Pour la méthode précédente, nous supposons que le système d'équations
 algébriques $g_i(\VEC{x}) =0$ pour $1 \leq i \leq m$ a un ensemble de
@@ -1831,7 +1831,7 @@ et $\RR^m$.
 
 Nous obtenons donc la définition suivante.
 
-\begin{focus}{\dfn} \index{Dérivée d'une fonction}
+\begin{defn} \index{Dérivée d'une fonction}
 Soit $f:\RR^n\rightarrow \RR^m$ et $\VEC{c} \in \RR^n$.  S'il existe
 une matrice $A$ de dimension \nm{m}{n} telle que
 \begin{equation}\label{defderRNRM}
@@ -1840,7 +1840,7 @@ une matrice $A$ de dimension \nm{m}{n} telle que
 \end{equation}
 nous disons que $f$ est {\bfseries différentiable au point} $\VEC{c}$ et
 nous écrivons $\diff f(\VEC{c}) = A$.
-\end{focus}
+\end{defn}
 
 Si (\ref{defderRNRM}) est satisfait, alors
 $f(\VEC{c}+\VEC{y})-f(\VEC{c})- A\,\VEC{y}$ converge vers $\VEC{0}$
@@ -1863,7 +1863,7 @@ Il est très rare que nous ayons à calculer la dérivée d'une fonction
 $f:\RR^n\rightarrow \RR^m$ en un point $\VEC{c}\in \RR^n$ à partir de la
 définition.  Nous utilisons le résultat suivant pour calculer la dérivée.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Soit $V\subset \RR^n$ un voisinage de $\VEC{c}$ et $f:V\rightarrow \RR^m$.
 Si $f$ est différentiable au point $\VEC{c}$ alors les dérivées partielles
 $\displaystyle \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
@@ -1883,14 +1883,14 @@ $1\leq j \leq n$ existent.  De plus,
 \displaystyle \pdydx{f_m}{x_n}(\VEC{c})
 \end{pmatrix} \; .
 \]
-\end{focus}
+\end{theorem}
 
 Le résultat suivant est le plus près d'un énoncé dans le sens inverse
 du théorème précédent que nous puisons avoir.  C'est ce résultat qui
 est très utile pour calculer les dérivées de fonctions de $\RR^n$ dans
 $\RR^m$.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $V\subset \RR^n$ un voisinage de $\VEC{c}$ et $f:V\rightarrow \RR^m$.
 Si les dérivée partielles
 $\displaystyle \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
@@ -1911,7 +1911,7 @@ différentiable pour tout $\VEC{x} \in V$ et
 \displaystyle \pdydx{f_m}{x_n}(\VEC{x})
 \end{pmatrix} \; .
 \]
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Soit $f:\RR^2\rightarrow \RR^2$ une fonction définie par
@@ -1982,12 +1982,12 @@ paramétrique des courbes.
 \end{enumerate}
 \end{rmkList}
 
-\begin{focus}{\dfn} \index{Fonction de classe $C^k$}
+\begin{defn} \index{Fonction de classe $C^k$}
 Soit $U \subset \RR^n$ un ensemble ouvert et $f:U \rightarrow \RR^m$.
 Nous disons que $f$ est de classe $C^k$ si, pour tout $i$, les dérivées
 partielles d'ordre $k$ de $f_i$ existent et sont continues en tout
 point du domaine de $f$.  Nous écrivons $f \in C^k(U)$
-\end{focus}
+\end{defn}
 
 }  % End of theory
 

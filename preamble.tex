@@ -17,6 +17,11 @@
 
 \allowdisplaybreaks
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structure of the theorems, propositions, ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{xstring}
 \usepackage[breakable]{tcolorbox}
 \tcbuselibrary{skins}
 
@@ -24,43 +29,105 @@
 \renewcommand\thefocus{\thesection.\arabic{focus}}
 \newcommand{\focuscolor}{violet}
 
-\makeatletter
+\newcommand{\theory}{\faEye\ }
+\newcommand{\eng}{\faWrench\ }
+\newcommand{\eco}{\faLineChart\ }
+\newcommand{\life}{\faTree\ }
 
-\newcommand{\focus@one}[1][RRR]{\def\argfocus@one{#1}\focus@two}
-
-\newcommand{\focus@two}[2][TTT]%
-{\refstepcounter{focus}%
-  \ifthenelse{\equal{\dfn}{#2}}{\renewcommand{\focuscolor}{purple}}{}%
-  \begin{tcolorbox}[enhanced,breakable,colback=\focuscolor!5!white,colframe=\focuscolor!50!white,colbacktitle=\focuscolor!50!white,coltitle=black,drop fuzzy shadow=black!50!white,%
-    title={\bfseries #2 \thefocus}%
-    \ifthenelse{\equal{TTT}{#1}}{}{\ ({\bfseries #1})}%
-    \ifthenelse{\equal{RRR}{\argfocus@one}}{}{\ \argfocus@one}]%
+\newenvironment{focus}[2][TTT]{%
+  \refstepcounter{focus}%
+  \ifthenelse{\equal{\dfn}{#2}}{\renewcommand{\focuscolor}{purple}}{%
+    \ifthenelse{\equal{\mth}{#2}}{\renewcommand{\focuscolor}{red}}{%
+      \ifthenelse{\equal{\cod}{#2}}{\renewcommand{\focuscolor}{yellow}}{}}}%
+  \begin{tcolorbox}[enhanced,breakable,colback=\focuscolor!5!white,colframe=\focuscolor!50!white,colbacktitle=\focuscolor!50!white,coltitle=black,drop fuzzy shadow=black!50!white,title={\bfseries #2 \thefocus}%
+    \ifthenelse{\equal{TTT}{#1}}{}{%
+      \newcommand{\argA}{#1}%
+      \newcommand{\argB}{}%
+      \expandarg%
+      \IfSubStr{#1}{+}{%
+        \renewcommand{\argA}{\StrBefore{#1}{+}}%
+        \renewcommand{\argB}{\StrBehind{#1}{+}}%
+      }{}%
+      \IfBeginWith{#1}{+}{\ \argB}{\ ({\bfseries \argA}) \argB}}]%
     \renewcommand{\labelitemi}{\textbullet}%
-  }
+  }{\end{tcolorbox}}
 
-\newenvironment{focus}{\focus@one}{\end{tcolorbox}\renewcommand{\focuscolor}{purple}}
-
-\newcommand{\focusS@one}[1][RRR]{\def\argfocusS@one{#1}\focusS@two}
-
-\newcommand{\focusS@two}[2][TTT]%
-{\ifthenelse{\equal{\dfn}{#2}}{\renewcommand{\focuscolor}{purple}}{}%
-  \begin{tcolorbox}[enhanced,breakable,colback=\focuscolor!5!white,colframe=\focuscolor!50!white,colbacktitle=\focuscolor!50!white,coltitle=black,drop fuzzy shadow=black!50!white,%
-    title={\bfseries #2}%
-    \ifthenelse{\equal{TTT}{#1}}{}{\ ({\bfseries #1})}%
-    \ifthenelse{\equal{RRR}{\argfocusS@one}}{}{\ \argfocusS@one}]%
+\newenvironment{focus*}[2][TTT]{%
+  \ifthenelse{\equal{\dfn}{#2}}{\renewcommand{\focuscolor}{purple}}{%
+    \ifthenelse{\equal{\mth}{#2}}{\renewcommand{\focuscolor}{red}}{%
+      \ifthenelse{\equal{\cod}{#2}}{\renewcommand{\focuscolor}{yellow}}{
+        \ifthenelse{\equal{\qst}{#2}}{\renewcommand{\focuscolor}{black}}{}}}}%
+  \begin{tcolorbox}[enhanced,breakable,colback=\focuscolor!5!white,colframe=\focuscolor!50!white,colbacktitle=\focuscolor!50!white,coltitle=black,drop fuzzy shadow=black!50!white,title={\bfseries #2}%
+    \noexpandarg
+    \ifthenelse{\equal{TTT}{#1}}{}{%
+      \newcommand{\argA}{#1}%
+      \newcommand{\argB}{}%
+      \IfSubStr{#1}{+}{%
+        \renewcommand{\argA}{\StrBefore{#1}{+}}%
+        \renewcommand{\argB}{\StrBehind{#1}{+}}%
+      }{}%
+      \IfBeginWith{#1}{+}{\ \argB}{\ ({\bfseries \argA}) \argB}}]%
     \renewcommand{\labelitemi}{\textbullet}%
-  }
-
-\newenvironment{focus*}{\focusS@one}{\end{tcolorbox}\renewcommand{\focuscolor}{purple}}
-
-\makeatother
+  }{\end{tcolorbox}}
 
 \newcommand{\dfn}{D\'efinition}
 \newcommand{\prp}{Proposition}
 \newcommand{\thm}{Th\'eor\`eme}
-\newcommand{\cor}{Corollaire}
+\newcommand{\crl}{Corollaire}
 \newcommand{\lmm}{Lemme}
 \newcommand{\mth}{M\'ethode}
+\newcommand{\cod}{Code}
+\newcommand{\qst}{Question(s)}
+
+\newenvironment{defn}[1][TTT]{
+  \ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\dfn}}{\begin{focus}[#1]{\dfn}}%
+}{\end{focus}}
+\newenvironment{prop}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\prp}}{\begin{focus}[#1]{\prp}}%
+}{\end{focus}}
+\newenvironment{theorem}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\thm}}{\begin{focus}[#1]{\thm}}%
+}{\end{focus}}
+\newenvironment{cor}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\crl}}{\begin{focus}[#1]{\crl}}%
+}{\end{focus}}
+\newenvironment{lemma}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\lmm}}{\begin{focus}[#1]{\lmm}}%
+}{\end{focus}}
+\newenvironment{meth}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\mth}}{\begin{focus}[#1]{\mth}}%
+}{\end{focus}}
+\newenvironment{code}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\cod}}{\begin{focus}[#1]{\cod}}%
+}{\end{focus}}
+\newenvironment{Quest}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\qst}}{\begin{focus}[#1]{\qst}}%
+}{\end{focus}}
+
+\newenvironment{defn*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\dfn}}{\begin{focus*}[#1]{\dfn}}%
+}{\end{focus*}}
+\newenvironment{prop*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\prp}}{\begin{focus*}[#1]{\prp}}%
+}{\end{focus*}}
+\newenvironment{theorem*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\thm}}{\begin{focus*}[#1]{\thm}}%
+}{\end{focus*}}
+\newenvironment{cor*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\crl}}{\begin{focus*}[#1]{\crl}}%
+}{\end{focus*}}
+\newenvironment{lemma*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\lmm}}{\begin{focus*}[#1]{\lmm}}%
+}{\end{focus*}}
+\newenvironment{meth*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\mth}}{\begin{focus*}[#1]{\mth}}%
+}{\end{focus*}}
+\newenvironment{code*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\cod}}{\begin{focus*}[#1]{\cod}}%
+}{\end{focus*}}
+\newenvironment{Quest*}[1][TTT]{%
+\ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\qst}}{\begin{focus*}[#1]{\qst}}%
+}{\end{focus*}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % If something has to go in the margin
@@ -81,41 +148,9 @@
 % Page style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \raggedbottom
-\ifthenelse{\boolean{@twoside}}{
-  \usepackage[letterpaper,lmargin=1in,height=9in,width=6.5in,twoside,top=1in]{geometry}
-}{
-  \usepackage[letterpaper,lmargin=1in,height=9in,width=6.5in,top=1in]{geometry}
-}
+\usepackage[letterpaper,lmargin=1in,height=9in,width=6.5in,twoside,top=1in]{geometry}
 \setlength\parskip{1ex plus 0.3ex minus 0ex}
 \setlength\parindent{3ex}
-
-\pagenumbering{arabic}
-
-\newcommand{\OriginalBaselinestretch}{1}
-\renewcommand{\baselinestretch}{\OriginalBaselinestretch}
-
-% To switch from the interline spacing to another interline
-% spacing, use the following command
-\newcommand{\newbaselinestretch}[1]{
-  \renewcommand{\baselinestretch}{#1}
-  \normalsize
-}
-
-\newcommand{\defaultbaselinestrech}{
-  \renewcommand{\baselinestretch}{\OriginalBaselinestretch}
-  \normalsize
-}
-
-% The command \caption has been redefined to always use 
-% single line spacing
-\makeatletter
-\let\UOtmpCT=\caption
-\renewcommand{\caption}[2][TTT]{%
-  \newbaselinestretch{1}
-  \ifthenelse{\equal{TTT}{#1}}{\UOtmpCT{#2}}{\UOtmpCT[#1]{#2}}
-  \defaultbaselinestrech
-}
-\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % font for the fancy header
@@ -277,7 +312,7 @@
 %  your table, array, ...
 % \end{singleLS}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newenvironment{singleLS}{\newbaselinestretch{1}}{\defaultbaselinestrech}
+% \newenvironment{singleLS}{\newbaselinestretch{1}}{\defaultbaselinestrech}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Important variables supplied by the user
@@ -492,35 +527,6 @@
 
 \newcommand{\MATHgraphRow}[3]{\raisebox{#3}{\includegraphics[width=#2]{#1}}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Methods for eps Figures.
-\newcommand{\epsF}[5]{\begin{figure}\begin{center} %
-\includegraphics[width=#2]{#1}\end{center} %
-\caption[#3]{#4 \label{#5}}\end{figure}}
-
-\newcommand{\epsD}[7]{\begin{figure}\begin{center} %
-\includegraphics[width=#2]{#1}\includegraphics[width=#4]{#3}\end{center} %
-\caption[#5]{#6 \label{#7}}\end{figure}}
-
-\newcommand{\epsbox}[2]{\begin{center}%
-\includegraphics[width=#2]{#1}\end{center}}
-
-% Methods for pstex Figures.
-\newcommand{\pstexF}[4]{\begin{figure}\begin{center} %
-\input{#1.pstex_t}\end{center}\caption[#2]{#3 \label{#4}}\end{figure}}
-
-\newcommand{\figbox}[1]{\begin{center}\input{#1.pstex_t}\end{center}}
-
-\newcommand{\pstexD}[5]{\begin{figure}\begin{center} %
-\input{#1.pstex_t}\end{center} %
-\begin{center}\input{#2.pstex_t}\end{center} %
-\caption[#3]{#4 \label{#5}}\end{figure}}
-
-\newcommand{\pstexR}[5]{\begin{figure}\begin{center}
-\resizebox{#2}{!}{\input{#1.pstex_t}}\end{center}
-\caption[#3]{#4 \label{#5}}\end{figure}}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Formats for the remarks, examples, ...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -634,22 +640,20 @@
 %\end{tikzpicture}
 }
 
-\renewcommand{\qed}{\hfill \mbox{\raggedright \rule{0.4em}{0.8em}}\\[1em]}
+% The filled box corresponding to the empty box suggested by the AMS
+% \renewcommand{\qedsymbol}{$\blacksquare$}
+% I prefer this box
+\renewcommand{\qedsymbol}{\rule{0.4em}{0.7em}}
+
+% I prefer bold characters.
+\renewcommand*{\proofname}{{\normalfont\bfseries Proof}}
 
 \makeatletter
-
-\newcommand{\proof@one}[1][RRR]{\def\argproof@one{#1}\proof@two}
-
-\newcommand{\proof@two}[1][TTT]%
-{\noindent\textbf{\UOproof}\ %
-  \ifthenelse{\equal{TTT}{#1}}{}{\ ({\bfseries #1})} %
-  \ifthenelse{\equal{RRR}{\argproof@one}}{\\ \noindent}%
-  {\ \argproof@one \\ \noindent}%
-  \normalfont%
-}
-
-\renewenvironment{proof}{\proof@one}{\hspace*{\fill} \qed}
-
+\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}%
+\normalfont \topsep6\p@\@plus6\p@\relax
+\trivlist
+\item\relax {\normalfont\bfseries #1}\newline
+}{\popQED\endtrivlist\@endpefalse}
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -715,10 +719,6 @@
 \newcommand{\SOLUc}{hide}
 \newcommand{\setSOLUc}{\renewcommand{\SOLUc}{show}}
 
-% \newcommand{\compileSOL}[3]{
-% \ifthenelse{\equal{#1}{show}}{{\bfseries\noindent Question~#2}\\ #3}{\ \newline\newline}
-% }
-
 \newenvironment{SOLUTION}{}{}
 \newcommand{\compileSOL}[3]{
 \ifthenelse{\equal{#1}{show}}{
@@ -738,10 +738,3 @@
   \ifthenelse{\equal{#1}{hide}}{}{#2}
 }
 
-% Many solutions use  \compileText{solOUT}{}{}  because we
-% didn't want to print them.
-
-\newcommand{\theory}{\faEye\ }
-\newcommand{\eng}{\faWrench\ }
-\newcommand{\eco}{\faLineChart\ }
-\newcommand{\life}{\faTree\ }

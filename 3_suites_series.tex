@@ -23,7 +23,7 @@ présentons dans la deuxième partie du chapitre.
 
 \section{Suites}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une {\bfseries suite}\index{Suite} est un ensemble infini et ordonné
 de nombres.  Les nombres qui forment une suite sont appelés les
 {\bfseries termes}\index{Suite!terme} de la suite.  Par exemple,
@@ -34,7 +34,7 @@ est le {\bfseries premier terme} de la suite, $a_2$ est le
 Les termes de la suite sont généralement donnés par une fonction
 $f:\NN^+\rightarrow \RR$; c'est-à-dire, $a_n = f(n)$ pour $n \in \NN^+$.
 La suite est alors dénoté  $\{ f(n) \}_{n=1}^\infty$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 La suite $\displaystyle \left\{\frac{n}{n+2}\right\}_{n=1}^\infty$ est
@@ -68,7 +68,7 @@ obtenons la suite
 Nous sommes souvent intéressés par le comportement asymptotique des
 termes de la suite lorsque $n\rightarrow \infty$.
 
-\begin{focus}[\theory]{\dfn} \index{Suite!convergence}
+\begin{defn}[+\theory] \index{Suite!convergence}
 Nous disons que la suite $\{ a_n\}_{n=1}^\infty$ {\bfseries converge}
 (ou {\bfseries tend}) vers un nombre $L$
 lorsque $n$ tend vers l'infini si,
@@ -89,7 +89,7 @@ suite.
 
 S'il n'existe pas de valeur $L$ qui satisfait la définition ci-dessus,
 nous disons que la suite {\bfseries diverge}.
-\end{focus}
+\end{defn}
 
 \begin{egg}[\theory]
 Il est intuitivement claire que la suite
@@ -156,7 +156,7 @@ $N > 2(1-10^{-5})/10^{-5} = 199998$.
 La limite de suites possède les propriétés suivantes qui
 permettront d'évaluer facilement les limites de certaines suites.
 
-\begin{focus}{\thm} \label{suite3}
+\begin{theorem} \label{suite3}
 Si $\displaystyle \{ a_n\}_{n=1}^\infty$ est une suite qui tend vers
 $L_a$ et $\displaystyle \{ b_n\}_{n=1}^\infty$ est une suite qui tend
 vers $L_b$, alors:
@@ -183,7 +183,7 @@ tend vers $\displaystyle \frac{L_a}{L_b}$.  Nous écrivons
 {\displaystyle \lim_{n\rightarrow \infty} b_n} \; .
 \]
 \end{enumerate}
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 Soit $c$ une constante quelconque.  Il est facile de voir que la
@@ -200,7 +200,7 @@ effet, grâce au théorème précédent, nous avons
 \]
 \end{egg}
 
-\begin{focus}[][des gendarmes ou sandwich]{\thm} \label{gendarmeS}
+\begin{theorem}[des gendarmes ou sandwich] \label{gendarmeS}
 \index{Théorème des gendarmes} \index{Théorème sandwich}
 Soit
 $\displaystyle \{ a_n\}_{n=1}^\infty$ et $\displaystyle \{c_n\}_{n=1}^\infty$
@@ -208,9 +208,9 @@ deux suites qui tendent vers $L$.  Si
 $\displaystyle \{ b_n\}_{n=1}^\infty$ est une suite telle que 
 $a_n \leq b_n \leq c_n$ pour tout $n$, alors la
 suite $\displaystyle \{ b_n\}_{n=1}^\infty$ tend aussi vers $L$.
-\end{focus}
+\end{theorem}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 Soit $\epsilon>0$.  Puisque $\displaystyle \{ a_n\}_{n=1}^\infty$ et
 $\displaystyle \{c_n\}_{n=1}^\infty$ tendent vers $L$, il existe $N\geq 0$
 tel que $|a_n-L|<\epsilon$ et $|c_n - L|<\epsilon$ pour $n\geq N$.  Ainsi,
@@ -264,13 +264,13 @@ $\displaystyle \{ b_n\}_{n=1}^\infty$ tend vers $1$.
 
 Le résultat suivant est quelques fois utile.
 
-\begin{focus}{\thm}
+\begin{theorem}
 La suite $\displaystyle \{ a_n\}_{n=1}^\infty$ tend vers $0$ si et
 seulement si la suite $\displaystyle \{ |a_n| \}_{n=1}^\infty$ tend vers
 $0$. \label{suiteAbs}
-\end{focus}
+\end{theorem}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 \subQ{$\Rightarrow$} Soit $\epsilon>0$. Puisque que
 $\displaystyle \{ a_n\}_{n=1}^\infty$ 
 tend vers $0$, il existe $N>0$ tel que $|a_n- 0 | = |a_n| <\epsilon$
@@ -290,7 +290,7 @@ $\displaystyle \{a_n\}_{n=1}^\infty$ tend vers $0$.
 Il est très utile de pouvoir caractériser le comportement des suites
 lorsque $n$ tend vers l'infini.
 
-\begin{focus}{\dfn}
+\begin{defn}
 \begin{enumerate}
 \item Une suite $\{a_n\}_{n=1}^\infty$ est {\bfseries croissante}
 \index{Suite!croissante} si $a_n < a_{n+1}$ pour tout $n$.
@@ -308,11 +308,11 @@ nombre $m$ est appelé une {\bfseries borne inférieure} pour la suite.
 {\bfseries bornée}\index{Suite!bornée} si elle est bornée
 inférieurement et supérieurement.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 Le concept de convergence peut aussi être adapté aux suites non bornées.
 
-\begin{focus}[\theory]{\dfn}
+\begin{theorem}[+\theory]
 \index{Suite!convergence à l'infini} 
 Nous disons qu'une suite $\displaystyle \{ a_n\}_{n=1}^\infty$
 {\bfseries converge} (ou {\bfseries tend}) vers $+\infty$ (plus
@@ -329,7 +329,7 @@ tel que $a_n < M$ pour tout $n \geq N$.  Nous écrivons
 \lim_{n\rightarrow \infty} a_n = -\infty \; .
 \]
 \label{def_of_lim_at_inf}
-\end{focus}
+\end{theorem}
 
 \begin{egg}[\theory]
 La suite $\displaystyle \{ a_n\}_{n=1}^\infty$ où $a_n = n^2+1$ tend
@@ -362,7 +362,7 @@ petits que $1$.
 Les deux propositions suivantes nous donnent la limite de certaines suites
 que nous retrouvons fréquemment dans les applications.
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $r$ un nombre réel.  Alors
 \[
 \lim_{n\rightarrow \infty} r^n=
@@ -374,9 +374,9 @@ Soit $r$ un nombre réel.  Alors
 \]
 La suite $\{r^n\}_{n=1}^\infty$ ne converge pas pour $r\leq -1$.
 \label{suite1}
-\end{focus}
+\end{prop}
 
-\begin{focus}{\prp}
+\begin{prop}
 Soit $r$ un nombre réel.  Alors
 \[
 \lim_{n\rightarrow \infty} \frac{1}{n^r}=
@@ -387,7 +387,7 @@ Soit $r$ un nombre réel.  Alors
 \end{cases} \; .
 \]
 \label{suite2}
-\end{focus}
+\end{prop}
 
 \begin{egg}
 Évaluons les limites suivantes.
@@ -426,14 +426,14 @@ au théorème~\ref{suiteAbs}.  Nous déduisons donc que
 \]
 \end{egg}
 
-\begin{focus}[\theory]{\thm}
+\begin{theorem}[+\theory]
 Toute suite croissante et bornée supérieurement converge.  De même,
 toute suite décroissante et bornée inférieurement converge.  Dans le
 premier cas, la limite est la plus petite borne
 supérieure\footnotemark\ de la suite alors que dans le deuxième cas
 c'est la plus grande borne inférieure de la suite.
 \label{suiteBORN}
-\end{focus}
+\end{theorem}
 
 \footnotetext{{\bfseries L'Axiome de complétude} des nombres
 réels dit que tout ensemble non vide et borné supérieurement
@@ -444,7 +444,7 @@ $\{ x \in \RR : x^2 <4\}$ mais ne fait pas partie de cet ensemble.  Il
 en découle aussi que tout ensemble non vide et borné inférieurement
 possède une plus  grande borne inférieure.}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 Nous considérons le cas où $\displaystyle \{ a_n \}_{n=0}^\infty$ est une
 suite décroissante et bornée inférieurement.  La démonstration pour
 une suite croissante et bornée supérieurement est semblable.  Soit $m$
@@ -573,7 +573,7 @@ produit sur l'addition que
 où $c$, $a_n$ et $b_n$ pour $k_1\leq n \leq k_2$ sont des nombres
 réels.
 
-\begin{focus}[\theory]{\prp}
+\begin{prop}[+\theory]
 Certaines sommes sont fréquemment utilisées.
 \begin{align*}
 \sum_{k=1}^n 1 &= \underbrace{1+1+1+\ldots+1}_{n\text{ fois}} = n \ ,
@@ -583,7 +583,7 @@ Certaines sommes sont fréquemment utilisées.
 \intertext{et}
 \sum_{k=0}^n k^4 &= \frac{n(n+1)(2n+1)(3n^3+3n-1)}{30} \ .
 \end{align*}
-\end{focus}
+\end{prop}
 
 \begin{rmk}[\theory]
 \subI{i} Démontrons premièrement la deuxième identité.  Posons
@@ -676,7 +676,7 @@ et
 \end{align*}
 \end{egg}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Soit $\{ a_n\}_{n=1}^\infty$, \ldots une suite de nombres réels.  Posons
 \[
 S_k = \sum_{n=1}^k a_n = a_1 + a_2 + \ldots + a_k
@@ -707,7 +707,7 @@ et nous disons que la {\bfseries somme} de la série est $S$.  Par abus
 de langage, nous désignons souvent la somme de la série par
 $\displaystyle \sum_{n=1}^\infty a_n$.  C'est le contexte qui
 détermine le sens donné à $\displaystyle \sum_{n=1}^\infty a_n$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ représente la
@@ -775,13 +775,13 @@ partielles tend donc vers plus l'infini.
 
 En résumé, nous avons le résultat suivant.
 
-\begin{focus}{\prp}
+\begin{prop}
 \[
 \sum_{n=0}^\infty r^n = \frac{1}{1-r} \quad \text{pour} \quad  |r|<1 \; ,
 \]
 et la série $\displaystyle \sum_{n=0}^\infty r^n$ diverge si
 $|r|\geq 1$.
-\end{focus}
+\end{prop}
 
 Pour déterminer si une série $\displaystyle \sum_{j=0}^\infty a_j$ est
 une série géométrique, il faut vérifier que $a_{j+1}/a_j = r$, la
@@ -822,7 +822,7 @@ géométrique de raison $7/25$.  Comme la raison est plus petite que $1$
 en valeur absolue, la série converge.
 \end{egg}
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si $\displaystyle \sum_{n=1}^\infty a_n$ et
 $\displaystyle \sum_{n=1}^\infty b_n$ sont deux séries convergentes et
 $c$ est un nombre réel, alors
@@ -838,9 +838,9 @@ alors
 \quad \sum_{n=1}^\infty c\, a_n = cA \; .
 \]
 \label{series_linear}
-\end{focus}
+\end{theorem}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 Le théorème précédent est une conséquence du théorème~\ref{suite3}.
 En effet, considérons les sommes partielles suivantes.
 \[
@@ -1028,11 +1028,11 @@ $\{1+k/2\}_{k=1}^\infty$ tend vers plus l'infini, il en est de même
 pour la suite $\{S_{2^k}\}_{k=1}^\infty$.
 \end{egg}
 
-\begin{focus}{\prp}
+\begin{prop}
 La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$ converge si
 $p>1$ et diverge si $p\leq 1$.
 \label{Pseries}
-\end{focus}
+\end{prop}
 
 \begin{rmk}[\eng]
 Une démonstration élémentaire de ce théorème existe.  Cette
@@ -1042,13 +1042,13 @@ précédent sera démontré à l'aide du {\em test de l'intégrale} qui sera
 applications de l'intégrale.
 \end{rmk}
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si la série $\displaystyle \sum_{n=1}^\infty a_n$
 converge, alors $\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
 \label{condTC}
-\end{focus}
+\end{theorem}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 Pour démontrer le théorème précédent, posons
 $\displaystyle S = \sum_{n=1}^\infty a_n$.  Puisque les suites
 $\{S_n\}_{n=1}^\infty$ et $\{S_{n+1}\}_{n=1}^\infty$ de
@@ -1081,12 +1081,12 @@ valeur des séries convergentes.
 
 Le critère de convergence suivant découle du théorème~\ref{condTC}.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si la suite des termes $\displaystyle \{a_n\}_{n=1}^\infty$ ne tend
 pas vers $0$, alors la série $\displaystyle \sum_{n=1}^\infty a_n$
 diverge.
 \label{NCforCofS}
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 La série $\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^2+1}}{n+1}$
@@ -1124,7 +1124,7 @@ Puisque $\lim_{n\rightarrow \infty} a_n = \pi/2 \neq 0$, la série diverge.
 
 La théorème suivant est une conséquence du théorème~\ref{suiteBORN}.
 
-\begin{focus}[][Test de comparaison]{\thm} \label{comp_theo}
+\begin{theorem}[Test de comparaison] \label{comp_theo}
 Soit $\displaystyle \{a_n\}_{n=1}^\infty$ et
 $\displaystyle \{b_n\}_{n=1}^\infty$, deux suites de termes positifs
 ou nuls.
@@ -1136,7 +1136,7 @@ converge.
 $a_n\geq b_n$ pour tout $n$, alors $\displaystyle \sum_{n=1}^\infty a_n$
 diverge.
 \end{enumerate}
-\end{focus}
+\end{theorem}
 
 \begin{egg}
 La série $\displaystyle \sum_{n=1}^\infty \frac{n}{\sqrt{n^5+1}}$
@@ -1200,7 +1200,7 @@ $\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}$
 diverge.
 \end{egg}
 
-\begin{focus}[][Test de comparaison à la limite]{\thm}
+\begin{theorem}[Test de comparaison à la limite]
 Soit $\displaystyle \{a_n\}_{n=1}^\infty$ et
 $\displaystyle \{b_n\}_{n=1}^\infty$, deux suites de termes positifs.
 \begin{enumerate}
@@ -1214,7 +1214,7 @@ $\displaystyle \sum_{n=1}^\infty b_n$ converge implique que
 $\displaystyle \sum_{n=1}^\infty a_n$ converge.
 \end{enumerate}
 \label{comp_lim_theo}
-\end{focus}
+\end{theorem}
 
 \begin{rmkList}
 \begin{enumerate}
@@ -1250,7 +1250,7 @@ diverge (le cas $p=1/2$ de la proposition~\ref{Pseries}) et
 où nous supposons que $n>1$ pour ne pas avoir de division par zéro.
 \end{egg}
 
-\begin{focus}[][Test de d'Alembert ou du quotient]{\thm} \label{Alembert}
+\begin{theorem}[Test de d'Alembert ou du quotient] \label{Alembert}
 Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série de termes
 positifs.  Si la suite $\displaystyle \left\{ \frac{a_{n+1}}{a_n}
 \right\}_{n=1}^\infty$ converge et
@@ -1260,7 +1260,7 @@ $\displaystyle L = \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n}$
 \item la série $\displaystyle \sum_{n=1}^\infty a_n$ converge si $L<1$ et
 \item la série $\displaystyle \sum_{n=1}^\infty a_n$ diverge si $L>1$.
 \end{enumerate}
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 Si $L=1$ au théorème précédent, nous ne pouvons rien dire au sujet de la
@@ -1334,7 +1334,7 @@ $\displaystyle \lim_{n\to\infty} \left( 1 + \frac{1}{n}\right)^n = e$
 provient du théorème~\ref{limitDefe} que nous verrons prochainement.
 \end{egg}
 
-\begin{focus}[][Test de la racine]{\thm} \label{roottest}
+\begin{theorem}[Test de la racine] \label{roottest}
 Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série de termes
 positifs.  Si la suite
 $\displaystyle \left\{ \sqrt[n]{a_n} \right\}_{n=1}^\infty$ converge
@@ -1344,7 +1344,7 @@ et $\displaystyle L = \lim_{n\rightarrow \infty} \sqrt[n]{a_n}$
 \item la série $\displaystyle \sum_{n=1}^\infty a_n$ converge si $L<1$ et
 \item la série $\displaystyle \sum_{n=1}^\infty a_n$ diverge si $L>1$.
 \end{enumerate}
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 Comme pour le Test de d'Alembert, nous ne pouvons rien dire au sujet
@@ -1383,11 +1383,11 @@ ne possédaient que des termes positifs.  Nous allons maintenant
 étudier un type particulier de séries avec des termes positifs et
 négatifs.
 
-\begin{focus}{\dfn} \index{Série!alternée}
+\begin{defn} \index{Série!alternée}
 La série $\displaystyle \sum_{n=1}^\infty a_n$ est une
 {\bfseries série alternée} si $a_n a_{n+1} < 0$
 pour tout $n$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 La série $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ est une
@@ -1401,7 +1401,7 @@ $a_n >0$ pour $n$ pair et $a_n <0$ pour $n$ impair.  Nous avons
 \]
 \end{egg}
 
-\begin{focus}[][Test des séries alternées]{\thm}
+\begin{theorem}[Test des séries alternées]
 Si la série $\displaystyle \sum_{n=1}^\infty (-1)^n a_n$ satisfait les
 conditions suivantes alors elle converge.
 \begin{enumerate}
@@ -1417,9 +1417,9 @@ $\displaystyle S_n = \sum_{k=1}^n (-1)^k a_k$ satisfont la relation
 où $\displaystyle S = \lim_{n\rightarrow \infty} S_n
 = \sum_{n=1}^\infty (-1)^n a_n$.
 \label{altTest}
-\end{focus}
+\end{theorem}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 Nous démontrons ce théorème car la démonstration nous permet de mieux
 comprendre la relation (\ref{altError}).
 
@@ -1571,7 +1571,7 @@ D'autres applications du test des séries alternées sont données à
 l'exemple~\ref{deriveAlt} dans le chapitre sur les applications de la
 dérivée d'une fonction.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une série de termes réels $\displaystyle \sum_{n=1}^\infty a_n$
 {\bfseries converge absolument}\index{Série!convergence absolue}
 si la série de termes positifs $\displaystyle \sum_{n=1}^\infty |a_n|$
@@ -1581,7 +1581,7 @@ Si la série $\displaystyle \sum_{n=1}^\infty a_n$ converge mais la
 série $\displaystyle \sum_{n=1}^\infty |a_n|$ diverge, nous disons que la
 série $\displaystyle \sum_{n=1}^\infty a_n$
 {\bfseries converge conditionnellement}.\index{Série!convergence conditionnelle}
-\end{focus}
+\end{defn}
 
 \begin{rmk}
 Le Test de comparaison, théorème~\ref{comp_theo},
@@ -1607,11 +1607,11 @@ Comme nous venons de le voir à l'exemple précédent, nous pouvons avoir une
 série qui converge mais qui ne converge pas absolument.  L'inverse
 n'est pas possible.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si une série converge absolument alors elle converge.
-\end{focus}
+\end{theorem}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série qui converge
 absolument.  Posons $b_n = a_n + |a_n|$ pour $n\geq 1$.
 Remarquons que
@@ -1659,7 +1659,7 @@ Voici la première définition rigoureuse du nombre $e$.  Une autre
 définition équivalente à celle-ci sera donné au chapitre sur les
 séries entières.
 
-\begin{focus}{\thm}
+\begin{theorem}
 La suite
 $\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$ 
 converge.  Sa limite est définie comme étant le {\bfseries nombre
@@ -1668,9 +1668,9 @@ d'Euler}\index{Nombre d'Euler}
 e=2.718281828459\ldots
 \]
 \label{limitDefe}
-\end{focus}
+\end{theorem}
 
-\begin{proof}[\theory]
+\begin{proof}[\UOproof\ \theory]
 Pour démontrer que cette limite existe, nous utilisons la formule
 suivante, connue sous le nom de
 {\bfseries formule du binôme}\index{formule du binôme}, 

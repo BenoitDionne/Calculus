@@ -69,7 +69,7 @@ Riemann selon le choix des points
 $\left(x_i^\ast, y_j^\ast\right) \in A_{i,j}$ pour
 $0\leq i <p$ et $0\leq j < q$. 
 
-\begin{focus}[\theory]{\dfn} \label{defDI_rig}
+\begin{defn}[+\theory] \label{defDI_rig}
 Soit $f:D\rightarrow \RR$ un fonction continue presque
 partout\footnotemark\ et bornée sur le rectangle
 \[
@@ -87,7 +87,7 @@ et le choix de points $(x_i^\ast,y_j^\ast)$ utilisés pour la somme de
 Riemann $S_{\cal P}$.  Le rectangle $D$ est appelé le
 {\bfseries domaine d'intégration}\index{Domaine d'intégration}.  La
 fonction $f$ est appelée {\bfseries l'intégrande}\index{Intégrande}.
-\end{focus}
+\end{defn}
 
 \footnotetext{Dans les livres d'analyse, ils parlent d'un ensemble de
 mesure zéro.  Pour nous, ce sont des ensembles qui contiennent
@@ -127,7 +127,7 @@ la somme de Riemann dans la définition de l'intégrale double} {Illustration
 de ce que représente un terme de la somme de Riemann dans la définition de
 l'intégrale double.}{VOLUME1}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Si $f:R\rightarrow \RR$ est une fonction continue presque partout et
 bornée dont le domaine $R$ est un ensemble borné qui n'est pas un
 rectangle, nous choisissons un rectangle $D$ qui contient $R$ et nous
@@ -141,7 +141,7 @@ L'intégrale de $f$ sur $R$ est alors définie par
 \[
 \iint_R f(x,y) \dx{A} = \iint_D g(x,y) \dx{A} \; .
 \]
-\end{focus}
+\end{defn}
 
 Nous pourrions de la même façon définir l'intégrale triple d'une fonction
 $f:\RR^3 \to \RR$ où nous utiliserions des boites dans $\RR^3$ au lieu
@@ -156,7 +156,7 @@ l'intégrale d'une fonction d'une variable, il n'est pas surprenant que
 l'intégrale double possède des propriétés semblables à celle de l'intégrale
 d'une fonction d'une variable.
 
-\begin{focus}{\prp}
+\begin{prop}
 \begin{enumerate}
 \item Soit $D\subset \RR^2$ et $f,g:D \rightarrow \RR$ deux fonctions
 continues presque partout et bornées sur $D$.  Alors
@@ -172,7 +172,7 @@ est une fonction continue presque partout et bornée, alors
 \iint_D d \dx{A} = \iint_{D_1} f \dx{A} + \iint_{D_2} f \dx{A} \; .
 \]
 \end{enumerate}
-\end{focus}
+\end{prop}
 
 \footnotetext{Un ensemble négligeable est ce que nous avons caractérisé
 précédemment comme étant un ensemble de mesure zéro, soit un ensemble
@@ -186,19 +186,18 @@ permette de calculer les intégrales doubles sur des domaines $D$ \flqq
 simple\frqq\ à l'aide des techniques d'intégration de fonctions d'une
 variable que nous avons étudiées précédemment.
 
-\begin{focus}[][Théorème de Fubini]{\thm}
+\begin{theorem}[Théorème de Fubini]
 Soit $f:D\rightarrow \RR$ un fonction continue presque partout et
 bornée sur le rectangle
 \[
-D=\left\{(x,y): a\leq x \leq b \text{ et } c\leq y \leq d \right\}
-\; .
+D=\left\{(x,y): a\leq x \leq b \text{ et } c\leq y \leq d \right\} \; .
 \]
 Nous avons que
 \[
 \iint_D f(x,y) \dx{A} = \int_a^b \int_c^d f(x,y) \dx{y} \dx{x}
 = \int_c^d \int_a^b f(x,y) \dx{x} \dx{y} \; .
 \]
-\end{focus}
+\end{theorem}
 
 En d'autres mots, il y a des choix pour évaluer l'intégrale de $f$ sur
 un rectangle $D$,
@@ -383,7 +382,7 @@ généraliser.   Notons que
 \]
 est l'image de l'intervalle $[a,b]$ par la fonction $g$.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Supposons que $g:\RR^2 \to \RR^2$ soit une fonction de classe $C^1$ et
 $U$ est un ensemble ouvert de $\RR^2$ tel que $\diff g(\VEC{u})$ est
 une matrice inversible pour tout $\VEC{u} \in U$.  Si $V = g(U)$ et
@@ -395,7 +394,7 @@ $f:V \to \RR$ est une fonction intégrable, alors
 (figure~\ref{substND}).
 \index{Règle de substitution}\index{Changement de variables}
 \label{NDSubstRule}
-\end{focus}
+\end{theorem}
 
 \PDFfig{16_var_mult_int/substND}{Changement de variable pour
 intégrales multiples}{Représentation schématique du changement de

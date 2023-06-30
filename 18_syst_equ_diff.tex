@@ -587,7 +587,7 @@ $\phi_2:]a,b[ \rightarrow \RR$, telles que si nous remplaçons $x_1$ par
 $\phi_1$ et $x_2$ par $\phi_2$ dans (\ref{sediff2}) alors l'équation
 est satisfaite pour tout $t \in ]a,b[$.
 
-\begin{focus}{\dfn} \index{Système d'équations différentielles!solution}
+\begin{defn} \index{Système d'équations différentielles!solution}
 Une fonction
 \begin{align*}
 \phi:]a,b[ & \rightarrow \RR^2 \\
@@ -605,7 +605,7 @@ est une {\bfseries solution} du système d'équations différentielles
 \end{split}
 \]
 pour tout $t \in]a,b[$.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 Soit le système d'équations différentielles autonome d'ordre un
@@ -705,7 +705,7 @@ l'unicité d'une solution.
 \label{syst_egg1}
 \end{egg}
 
-\begin{focus}{\dfn} \index{Système d'équations différentielles!orbite}
+\begin{defn} \index{Système d'équations différentielles!orbite}
 {\bfseries L'orbite} d'une solution $\phi:]a,b[\rightarrow \RR^2$ de
 (\ref{sediff2}) est l'image
 \[
@@ -714,7 +714,7 @@ l'unicité d'une solution.
 de cette solution dans le plan.  L'orbite est une courbe dans le plan.
 Le {\bfseries portrait de phases} de (\ref{sediff2}) est l'ensemble
 des orbites.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 L'orbite de la solution 
@@ -739,13 +739,13 @@ différentielles de la forme (\ref{sediff2}) où $f_1$ et $f_2$ sont
 différentiable, le théorème suivant nous assure qu'il y aura toujours
 une et une seule solution associée à une condition initiale.
 
-\begin{focus}{\thm}
+\begin{theorem}
 Si les fonctions $f_1:\RR^2 \rightarrow \RR$ et $f_2:\RR^2\rightarrow \RR$
 qui décrivent le système d'équation différentielles
 (\ref{sediff2}) sont différentiables, alors il existe une et une seule 
 solution $\phi$ de (\ref{sediff2}) qui satisfait la condition initiale
 $\phi(0) = \VEC{x}_0 \in \RR^2$.
-\end{focus}
+\end{theorem}
 
 \begin{rmk}
 Puisqu'il y a une et une seule solution de (\ref{sediff2}) qui passe par un
@@ -759,7 +759,7 @@ solutions du système d'équations différentielles mais simplement à leur
 comportement lorsque nous progressons dans le temps. Qu'arrive-t-il aux
 solutions lorsque nous regardons très loin dans le temps?
 
-\section{Systèmes d'équations différentielles linéaires d'ordre un}
+\section{Systèmes d'équations différentielles linéaires d'or\-dre un}
 
 Nous débutons notre étude des systèmes d'équations différentielles
 d'ordre un par l'étude d'une classe de systèmes qui sont \lgm très
@@ -804,7 +804,7 @@ selon le signe des valeurs propres de $A$ et le nombre de vecteurs
 propres non colinéaires.  Nous résumons les résultats dans les trois
 propositions suivantes.
 
-\begin{focus}{\prp}
+\begin{prop}
 Si la matrice $A$ de l'équation (\ref{linclass}) possède deux valeurs
 propres réelles $\lambda_1$ et $\lambda_2$ distinctes, nous choisissons
 $\VEC{v}_1$ un vecteur propre associé à $\lambda_1$ et $\VEC{v}_2$ un
@@ -817,7 +817,7 @@ vecteur propre associé à $\lambda_2$.  Les solutions de
 où $a_1$ et $a_2$ sont des constantes.  Nous retrouvons à la
 figure~\ref{LINEARA3} les portraits de phases possibles dans cette
 situation.
-\end{focus}
+\end{prop}
 
 \PDFfig{18_syst_equ_diff/linearA3}{Des portraits de phases possibles
 pour un système d'équation différentielles linéaires d'ordre un dans $\RR^2$ si
@@ -825,7 +825,7 @@ les valeurs propres sont réelles et distinctes.}{Des portraits de
 phases possibles pour (\ref{linclass}) si les valeurs propres sont
 réelles et distinctes.}{LINEARA3}
 
-\begin{focus}{\prp}
+\begin{prop}
 Si la matrice $A$ de l'équation (\ref{linclass}) possède une seule
 valeur propre $\lambda$, il y a deux cas possibles.  S'ils existent deux
 vecteurs propres $\VEC{v}_1$ et $\VEC{v}_2$ associés à $\lambda$ qui
@@ -843,7 +843,7 @@ $(A-\lambda\,\Id)\VEC{u} = \VEC{v}$.
 Nous retrouvons à la figure~\ref{LINEARA5} un portrait de phases possible
 dans ce dernier cas.  Les solutions approchent de l'origine lorsque
 $\lambda<0$ et s'éloignent de l'origine lorsque $\lambda>0$.
-\end{focus}
+\end{prop}
 
 \PDFfig{18_syst_equ_diff/linearA5}{Un portrait de phases possible
 pour un système d'équation différentielles linéaires d'ordre un dans
@@ -852,7 +852,7 @@ propres sont colinéaires}{Un portrait de phases possible pour
 (\ref{linclass}) s'il n'y a qu'une valeur propre réelle et tous les
 vecteur propres sont colinéaires.}{LINEARA5}
 
-\begin{focus}{\prp}\label{COLsolution}
+\begin{prop} \label{COLsolution}
 Si la matrice $A$ de l'équation (\ref{linclass}) possède une paire de
 vecteurs propres complexes $\lambda_1$ et $\lambda_2$, alors
 $\lambda_1 = \overline{\lambda}_2$ puisque les composantes de la
@@ -867,7 +867,7 @@ $\lambda_1$.  Les solutions de (\ref{linclass}) sont de la forme
 \]
 où $a_1$ et $a_2$ sont des constantes.  Nous retrouvons à la
 figure~\ref{LINEARA6} un portrait de phases possible.
-\end{focus}
+\end{prop}
 
 \PDFfig{18_syst_equ_diff/linearA6}{Un portrait de phases possible pour
 un système d'équation différentielles linéaire d'ordre un dans $\RR^2$
@@ -1076,7 +1076,7 @@ $\displaystyle \begin{pmatrix}
 $3t$ radians dans le sens contraire aux aiguilles d'une montre.
 \end{rmk}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Considérons le système d'équations différentielles linéaires d'ordre un
 (\ref{linclass}).   Soit $\lambda_1$ et $\lambda_2$ les valeurs
 propres de la matrice $A$.
@@ -1100,7 +1100,7 @@ propres de la matrice $A$.
   appelé un {\bfseries centre}\index{Système d'équations
     différentielles!linéaire!centre}.
 \end{enumerate}
-\end{focus}
+\end{defn}
 
 Les différents portraits de phases pour (\ref{linclass}) peuvent être
 classifier par rapport au signe du déterminant et de la trace de
@@ -1241,7 +1241,7 @@ Les {\em points d'équilibre} du système d'équations différentielles
 (\ref{sediff3}) jouent un rôle fondamental lorsque nous dessinons le
 portrait de phases de ce système.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Un point $\VEC{p} \in \RR^2$ est un {\bfseries point
 d'équilibre}\index{Système d'équations différentielles!point
 d'équilibre} pour le système d'équation différentielles (\ref{sediff3}) si
@@ -1253,7 +1253,7 @@ f_1(\VEC{p}) \\ f_2(\VEC{p})
 0 \\ 0
 \end{pmatrix}
 $
-\end{focus}
+\end{defn}
 
 Si $\VEC{p}\in \RR^2$ est un point d'équilibre, alors
 $\phi(t) = \VEC{p} \in \RR^2$ pour tout $t$ est une solution constante
@@ -1284,16 +1284,16 @@ Si nous développons le système précédent, alors
 \pdydx{f_2}{x_2}(\VEC{p})\,x_2 \\
 \end{align*}
 
-\begin{focus}{\dfn}
+\begin{defn}
 Le système d'équations différentielles (\ref{sediff4}) est la
 {\bfseries linéarisation du système} (\ref{sediff3}) au point d'équilibre
 $\VEC{p}$
-\end{focus}
+\end{defn}
 
 L'importance de l'étude des systèmes d'équations différentielles linéaires
 d'ordre un est une conséquence du résultat suivant.
 
-\begin{focus}{\prp} \label{HartGrob}
+\begin{prop} \label{HartGrob}
 Soit (\ref{sediff4}) la linéarisation du système d'équations
 différentielles (\ref{sediff3}) au point d'équilibre $\VEC{p}$ de
 (\ref{sediff3}).  Si toutes les valeurs propres de la matrice
@@ -1301,7 +1301,7 @@ $\diff \VEC{f}(\VEC{p})$ ont des parties réelles non nulles, alors les
 orbites de (\ref{sediff3}) au voisinage du point d'équilibre
 $\VEC{p}$ se {\em comportent comme} les orbites de (\ref{sediff4})
 près de l'origine.
-\end{focus}
+\end{prop}
 
 Tracer le portrait de phase d'une système d'équations différentielles
 d'ordre un va demander beaucoup plus d'information que la seule
@@ -1313,13 +1313,13 @@ orbites lorsque $t$ augmente.
 
 \subsection{Nullclines}
 
-\begin{focus}{\dfn} \index{Système d'équations différentielles!nullcline}
+\begin{defn} \index{Système d'équations différentielles!nullcline}
 Pour $j=1$ ou $2$, les {\bfseries nullclines} associés à la variable $x_j$
 sont les courbes définies par
 \[
 \{ \VEC{x}\in \RR^2 : f_j(\VEC{x})=0 \} \; .
 \]
-\end{focus}
+\end{defn}
 
 Nous obtenons l'information suivante des nullclines.
 \begin{enumerate}
@@ -1669,7 +1669,7 @@ d'équilibre.  Mais d'autres solutions jouent un rôle fondamental.
 C'est le cas des solutions périodiques que nous verrons dans l'exemple
 qui suit.
 
-\begin{focus}{\dfn}
+\begin{defn}
 Une solution $\phi$ d'un système d'équations différentielles
 \[
 \dydx{\VEC{x}}{t} = \VEC{f}(\VEC{x})
@@ -1682,7 +1682,7 @@ telle que $\phi(t+T)=\phi(t)$ pour tout $t$ est appelée la
 de la solution.  L'orbite tracée par cette solution est
 une {\bfseries orbite fermée}\index{Système d'équations
   différentielles!orbite fermée}.
-\end{focus}
+\end{defn}
 
 \begin{egg}
 L'exemple suivant décrit un système d'équations différentielles qui possède
@@ -2223,7 +2223,7 @@ u \\ v
 \end{pmatrix} \\
 &\approx
 \begin{pmatrix}
-2.218547612 &  −4.858269428 \\
+2.218547612 &  -4.858269428 \\
 1 & -1
 \end{pmatrix}
 \begin{pmatrix}
@@ -2263,6 +2263,9 @@ pouvons observer, la convergence vers la solution périodique est très
 rapide.
 
 }  % End of theory
+
+
+
 
 \section{Exercices}
 
