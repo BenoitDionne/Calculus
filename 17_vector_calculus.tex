@@ -866,60 +866,45 @@ présente est associé à la rotation d'un objet dans l'espace.
 Pour mieux comprendre l'énoncé précédent, nous considérons un objet
 solide $S$ qui tourne autour d'un axe qui le traverse
 (figure~\ref{diff_geom_CURL}).  Nous pouvons supposer que
-l'axe de rotation est parallèle à l'axe des $z$.  Supposons que
+l'axe de rotation est l'axe des $z$.  Supposons que
 $\omega$ soit la vitesse angulaire et que $\VEC{w}$ soit un vecteur de
 longueur $\omega$ qui pointe dans la direction positive de l'axe des
-$z$.   Soit $\VEC{x}_0 + \VEC{r}$ un point de $S$.
+$z$.
 
 \PDFfig{17_vector_calculus/curl_interp1}{Interprétation physique du
 rotationnel pour un objet solide}{Interprétation physique du
-rotationnel pour une objet le long d'un flot.  Le vecteurs $\VEC{w}$
-et $\VEC{r}$ ont subit une translation de $\VEC{x}_0$ et le vecteur
-$\VEC{v}$ a subit une translation de $\VEC{x}_0+ \VEC{r}$
-pour permet une meilleure visualisation de la relation entre le
-rotationnel et la rotation de l'objet.  Normalement, tous ces vecteurs
-partent de l'origine.}{diff_geom_CURL}
+rotationnel pour une objet qui se déplace sous l'effet d'un
+flot.}{diff_geom_CURL}
 
-La distance entre le point $\VEC{x}_0 + \VEC{r}$ et l'axe de rotation est
-$\alpha = \|\VEC{r}\|\sin(\theta)$ où $\theta$ est l'angle aigu entre
-l'axe de rotation et le vecteur $\VEC{r}$.   Le vecteur
-$\VEC{v} = \VEC{w} \times \VEC{r}$ est perpendiculaire au
+Soit $\VEC{p}$ un point de $S$.
+Nous avons que $\VEC{p} = P(\VEC{p}) + \VEC{r}$ où $P(\VEC{p})$ est la
+projection orthogonal de $\VEC{p}$ sur l'axe des $z$ et $\VEC{r}$ est
+un vecteur perpendiculaire à l'axe de rotation (l'axe des $z$) qui
+va de l'axe de rotation à l'extrémité de $\VEC{p}$.
+
+Le vecteur $\VEC{v} = \VEC{w} \times \VEC{r}$ est perpendiculaire au
 plan qui contient les vecteurs $\VEC{r}$ et $\VEC{w}$, et pointe dans
 la direction de la rotation (le sens contraire aux aiguilles d'un montre
 pour le solide $S$ à la figure~\ref{diff_geom_CURL}).
 
-Puisque $\VEC{w} = (0,0,\omega)$, si $\VEC{r} = (x,y,z)$, nous avons
-\begin{align}
-\VEC{v} = (-\omega y, \omega x, 0) \label{diff_geom_curl2}
-\intertext{et}
-\curl \VEC{v}  = 2\, \omega\, \kk \label{diff_geom_curl3}
-\end{align}
-pour $\VEC{x}_0 + \VEC{r} \in S$ et $\VEC{r}$ qui n'est pas parallèle
-à $\VEC{w}$.
+Puisque $\VEC{w} = (0,0,\omega)$, si $\VEC{p} = (x,y,z)$, nous avons que
+\[
+\VEC{v} = \VEC{w} \times \VEC{r} = \VEC{w} \times (\VEC{p} - P(\VEC{p}))
+= \VEC{w} \times \VEC{p} = (-\omega y, \omega x, 0)
+\]
+puisque $P(\VEC{p})$ est parallèle à $\VEC{w}$.  Ainsi, on obtient que
+$\curl \VEC{v}  = 2\, \omega\, \kk$.
 
 En général, si un objet tourne sur lui même à une vitesse angulaire de
 $\omega$, alors $\curl \VEC{v}  = 2\, \omega\, \VEC{u}$ où
 $\VEC{u}$ est un vecteur unitaire dans la direction de l'axe de
 rotation.
 
-Si nous considérons que l'objet se déplace le long du flot, alors
-$\VEC{v}(\VEC{x}_0 + \VEC{r}) = F(\VEC{x}_0 + \VEC{r})$.  Ainsi,
-\[
-\diff_{\VEC{x}} F(\VEC{x}_0) = \diff_{\VEC{x}} \VEC{v}(\VEC{x}_0) =
-\begin{pmatrix}
-0 & -\omega & 0 \\
-\omega & 0 & 0 \\
-0 & 0 & 0
-\end{pmatrix}
-\]
-et la matrice de rotation est
-$\displaystyle W(\VEC{x}_0) = \diff_{\VEC{x}} F (\VEC{x}_0)$
-car $\diff_{\VEC{x}} F (\VEC{x}_0)$ est antisymétrique.
-
-Si $\curl F = \VEC{0}$, alors $\curl \VEC{v} = \VEC{0}$ et ainsi
-$\omega = 0$.  L'objet ne tourne pas sur lui même.
-Il n'y a pas de matrice de déformation puisque nous considérons un
-objet solide.
+En conclusion, si $\curl \VEC{v} = \VEC{0}$, alors $\omega =0$.
+L'objet ne tourne pas sur lui même.  Si on considère un objet qui se
+déplace le long d'un flot associé à un champ de vecteur $F$, alors
+$\VEC{v} = F(\VEC{p})$.  Donc, si $\curl F = \VEC{0}$, alors l'objet
+ne tourne pas sur lui même.
 
 \section{Intégrale sur une surface}
 

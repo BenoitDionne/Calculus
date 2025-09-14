@@ -34,6 +34,15 @@
 \newcommand{\eco}{\faLineChart\ }
 \newcommand{\life}{\faTree\ }
 
+\newcommand{\dfn}{D\'efinition}
+\newcommand{\prp}{Proposition}
+\newcommand{\thm}{Th\'eor\`eme}
+\newcommand{\crl}{Corollaire}
+\newcommand{\lmm}{Lemme}
+\newcommand{\mth}{M\'ethode}
+\newcommand{\cod}{Code}
+\newcommand{\qst}{Question(s)}
+
 \newenvironment{focus}[2][TTT]{%
   \refstepcounter{focus}%
   \ifthenelse{\equal{\dfn}{#2}}{\renewcommand{\focuscolor}{purple}}{%
@@ -69,15 +78,6 @@
       \IfBeginWith{#1}{+}{\ \argB}{\ ({\bfseries \argA}) \argB}}]%
     \renewcommand{\labelitemi}{\textbullet}%
   }{\end{tcolorbox}}
-
-\newcommand{\dfn}{D\'efinition}
-\newcommand{\prp}{Proposition}
-\newcommand{\thm}{Th\'eor\`eme}
-\newcommand{\crl}{Corollaire}
-\newcommand{\lmm}{Lemme}
-\newcommand{\mth}{M\'ethode}
-\newcommand{\cod}{Code}
-\newcommand{\qst}{Question(s)}
 
 \newenvironment{defn}[1][TTT]{
   \ifthenelse{\equal{TTT}{#1}}{\begin{focus}{\dfn}}{\begin{focus}[#1]{\dfn}}%
@@ -264,7 +264,6 @@
 
 % Stuff for the table of contents (requires titlesec because \filright, ...
 % are used)
-\newcommand{\chaptertitle}{}
 \titlecontents{chapter}[0pt]
 {\addvspace{2em}\bfseries\titlerule[1pt]\filright}
 {{\large\chaptername\ \thecontentslabel\quad}}
@@ -273,7 +272,7 @@
 \newcommand{\UOtableofcontents}{
   \tableofcontents
   \contentsfinish
-  \clearemptydoublepage
+  \cleardoublepage
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -298,11 +297,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{ulem}        % To properly underline words, sentences, ...
 \usepackage[margin=0.05\textwidth]{caption}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% To properly change page at the end of a chapter, ...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The tabular and array environment MUST use single line
@@ -334,9 +328,6 @@
 
 \newcommand{\UOyear}{2023}  % year
 \newcommand{\setUOyear}[1]{\renewcommand{\UOyear}{#1}}
-
-\newcommand{\UOproof}{D\'emonstration}
-\newcommand{\setUOproof}[1]{\renewcommand{\UOproof}{#1}}
 
 \newcommand{\LofT}{Liste des tableaux}
 \newcommand{\LofF}{Liste des figures}
@@ -399,7 +390,7 @@
     \end{inctext}
   \end{titlepage}
   \pagecolor{white}
-  \clearemptydoublepage
+  \cleardoublepage
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -426,7 +417,7 @@
   
   \noindent \includegraphics[width=\UOopenopt]{\UOopenloc}
 
-  \noindent Sauf indication contraire, ce livre est mis \`a disposition selon
+  \noindent Sauf indication contraire, ce manuel est mis \`a disposition selon
   les termes de la licence \href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr}{Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les M\^emes Conditions 4.0 International} (CC BY-NC-SA 4.0)
 
   \vfill
@@ -441,7 +432,7 @@
   originale du livre {\bfseries Alice's Adventures in Wonderland} par
   Lewis Carroll.
 
-  \clearemptydoublepage
+  \cleardoublepage
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -451,7 +442,7 @@
   \setcounter{chapter}{100}
   \addcontentsline{toc}{chapter}{Bibliographie}
   \include{bibliography}
-  \clearemptydoublepage
+  \cleardoublepage
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -460,11 +451,11 @@
 \newcommand{\UOtablesfigureslist}{
   \addcontentsline{toc}{chapter}{\LofT}
   \listoftables
-  \clearemptydoublepage
+  \cleardoublepage
 
   \addcontentsline{toc}{chapter}{\LofF}
   \listoffigures
-  \clearemptydoublepage
+  \cleardoublepage
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -646,7 +637,7 @@
 \renewcommand{\qedsymbol}{\rule{0.4em}{0.7em}}
 
 % I prefer bold characters.
-\renewcommand*{\proofname}{{\normalfont\bfseries Proof}}
+\renewcommand*{\proofname}{{\normalfont\bfseries D\'emonstration}}
 
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}%
