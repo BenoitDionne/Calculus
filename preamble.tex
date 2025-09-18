@@ -220,6 +220,27 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For sections and subsections without a number
+%
+% You will have to add after the title of the chapter the
+% following commands if you want your equations to be numbered
+% chapter_number.equation_number
+% 
+% \renewcommand{\theequation}{\thechapter.\arabic{equation}}
+%
+% Add similar commands for the number of the tables, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nonumsection}[1]{
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\nonumsubsection}[1]{
+  \subsection*{#1}
+  \addcontentsline{toc}{subsection}{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Stuff for the Chapter and section titles
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\UOlogoloc}{images/UOlogo_headCL}   % Location of the logo

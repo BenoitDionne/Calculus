@@ -37,7 +37,7 @@
 % \UOtablesfigureslist
 
 \include{1_avant-propos}
-\clearemptydoublepage
+\cleardoublepage
 
 \pagenumbering{arabic}
 
@@ -94,6 +94,8 @@
 
 \chapter[Solutions]{Solutions}
 
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
 \input{2_fonctions_sol}
 
 \input{3_suites_series_sol}
@@ -129,7 +131,6 @@
 \input{18_syst_equ_diff_sol}
 
 \cleardoublepage
-%\clearemptydoublepage
 
 \UObibliography
 \UOindex
