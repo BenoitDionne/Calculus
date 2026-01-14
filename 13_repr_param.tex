@@ -19,7 +19,7 @@ matériel optionnel pour les étudiants en génie.
 
 \begin{defn} \index{Représentation paramétrique d'une courbe}
 Soit $I \subset \RR$ un sous-intervalle de la droite réelle.  De plus,
-soit $\displaystyle \left\{ \phi_1, \phi_2, \ldots, \phi_n \right\}$
+soit $\DS \left\{ \phi_1, \phi_2, \ldots, \phi_n \right\}$
 un ensemble de $n$ fonctions continues à valeurs réelles définies sur
 $I$.
 
@@ -115,10 +115,10 @@ sont aux points $(1,0)$ et $(-1,0)$.
 Par contre, la représentation paramétrique ne représente pas toute
 l'hyperbole.  Nous avons $x = \sec(\theta) >0$ pour
 $-\pi/2<\theta<\pi/2$,
-$\displaystyle \lim_{\theta \to \pi/2} \sec(\theta) = 
+$\DS \lim_{\theta \to \pi/2} \sec(\theta) = 
 \lim_{\theta \to \pi/2} \sec(\theta) =  +\infty$, 
-$\displaystyle \lim_{\theta \to -\pi/2} \tan(\theta) = +\infty$,
-$\displaystyle \lim_{\theta \to -\pi/2} \tan(\theta) =  -\infty$
+$\DS \lim_{\theta \to -\pi/2} \tan(\theta) = +\infty$,
+$\DS \lim_{\theta \to -\pi/2} \tan(\theta) =  -\infty$
 et $(\sec(0), \tan(0)) = (1,0)$.  La courbe $\Gamma$ est donc la
 branche de l'hyperbole à droite de l'axe des $y$ que nous parcourons de
 bas en haut lorsque $\theta$ augmente.
@@ -179,9 +179,9 @@ où $h$ est petit. Le vecteur
 \VEC{v}_h &= \frac{1}{h} \big(\phi(t_0+h)-\phi(t_0)\big) \\
 &= \frac{1}{h}\big(\phi_1(t_0+h) - \phi_1(t_0),
 \phi_2(t_0+h) - \phi_2(t_0), \ldots , \phi_n(t_0+h)-\phi_n(t_0)\big) \\
-&= \left(\displaystyle \frac{\phi_1(t_0+h) - \phi_1(t_0)}{h},
-\displaystyle \frac{\phi_2(t_0+h) - \phi_2(t_0)}{h}, \ldots ,
-\displaystyle \frac{\phi_n(t_0+h) - \phi_n(t_0)}{h}\right)
+&= \left(\DS \frac{\phi_1(t_0+h) - \phi_1(t_0)}{h},
+\DS \frac{\phi_2(t_0+h) - \phi_2(t_0)}{h}, \ldots ,
+\DS \frac{\phi_n(t_0+h) - \phi_n(t_0)}{h}\right)
 \end{align*}
 est parallèle à la sécante qui passe par les points $\phi(t_0)$ et
 $\phi(t_0+h)$.
@@ -191,10 +191,10 @@ parallèle à la droite tangente à $\Gamma$ au point $\phi(t_0)$.  Or,
 cette limite est
 \begin{align*}
 \lim_{h\rightarrow 0}\VEC{v}_h &=
-\left(\displaystyle \lim_{h\rightarrow 0}\frac{\phi_1(t_0+h) - \phi_1(t_0)}{h},
-\displaystyle \lim_{h\rightarrow 0}\frac{\phi_2(t_0+h) - \phi_2(t_0)}{h},
+\left(\DS \lim_{h\rightarrow 0}\frac{\phi_1(t_0+h) - \phi_1(t_0)}{h},
+\DS \lim_{h\rightarrow 0}\frac{\phi_2(t_0+h) - \phi_2(t_0)}{h},
  \ldots ,
-\displaystyle \lim_{h\rightarrow 0}\frac{\phi_n(t_0+h)
+\DS \lim_{h\rightarrow 0}\frac{\phi_n(t_0+h)
 - \phi_n(t_0)}{h}\right) \\
 &= (\phi_1'(t_0), \phi_2'(t_0), \ldots, \phi_n'(t_0)) \; ,
 \end{align*}
@@ -369,16 +369,16 @@ $x'(t)\neq 0$.  De plus,
 \end{align*}
 pour tout $t$ appartenant à un des intervalles mentionnés
 précédemment.  Puisque $t^2-t+1 >0$ pour tout $t$, nous avons que
-$\displaystyle \dydxn{y}{x}{2}(x(t))$ peut changer de signe seulement
+$\DS \dydxn{y}{x}{2}(x(t))$ peut changer de signe seulement
 lorsque cette dérivée seconde n'est pas définie; c'est-à-dire, lorsque
-$t=0$ ou $2$.  Donc $\displaystyle \dydxn{y}{x}{2}(x(t))$ ne change
+$t=0$ ou $2$.  Donc $\DS \dydxn{y}{x}{2}(x(t))$ ne change
 pas de signe lorsque $t$ est dans un des intervalles considérés ci-dessus.
 
 Le tableau suivant donne le signe des dérivées dans les
 différents intervalles.
 \[
 \begin{array}{c|c|c|c}
-t & \displaystyle \dydx{y}{x} & \displaystyle \dydxn{y}{x}{2} &
+t & \DS \dydx{y}{x} & \DS \dydxn{y}{x}{2} &
 \text{description de } y=f(x) \\[0.7em]
 \hline
 ]-\infty,-1[ & + & - & \text{croissante et concave} \\
@@ -462,17 +462,17 @@ pour $t$ dans un des intervalles mentionnés précédemment.  De plus,
 pour tout $t$ appartenant à un des intervalles mentionnés
 précédemment.  Pour simplifier le numérateur, nous avons utilisé les
 identités $\cos(2t) = \cos^2(t)-\sin^2(t)$ et $\sin(2t) = 2\cos(t)\sin(t)$.
-Notons que $\displaystyle \dydxn{y}{x}{2}(x(t))$ ne change pas de
+Notons que $\DS \dydxn{y}{x}{2}(x(t))$ ne change pas de
 signe lorsque $t$ est dans un des intervalles considérés ci-dessus
-car $\displaystyle \dydxn{y}{x}{2}(x(t)) =0$ seulement pour $t=0$,
-$\pi$ ou $2\pi$; et $\displaystyle \dydxn{y}{x}{2}(x(t))$ n'est pas
+car $\DS \dydxn{y}{x}{2}(x(t)) =0$ seulement pour $t=0$,
+$\pi$ ou $2\pi$; et $\DS \dydxn{y}{x}{2}(x(t))$ n'est pas
 définie seulement pour $t= pi/4$, $3\pi/4$, $5\pi/4$ ou $7\pi/4$.
 
 Le tableau suivant donne le signe des dérivées dans les différents
 intervalles.
 \[
 \begin{array}{c|c|c|c}
-t & \displaystyle \dydx{y}{x} & \displaystyle \dydxn{y}{x}{2} &
+t & \DS \dydx{y}{x} & \DS \dydxn{y}{x}{2} &
 \text{description de } y = f(x) \\[0.7em]
 \hline
 ]0,\pi/4[ & + & + & \text{croissante et convexe} \\
@@ -691,13 +691,13 @@ Pour évaluer l'intégrale indéfinie
 \[
 \int \sqrt{1+4(x-1)^2} \dx{x} \; ,
 \]
-nous posons $\displaystyle x = 1 + \frac{1}{2}\, \tan(\theta)$ pour
+nous posons $\DS x = 1 + \frac{1}{2}\, \tan(\theta)$ pour
 $-\pi/2<\theta<\pi/2$.  Nous avons que
 \[
 \sqrt{1+4(x-1)^2} = \sqrt{1+\tan^2(\theta)} = \sec(\theta)
 \]
 car $\sec(\theta)>0$ pour $-\pi/2<\theta<\pi/2$.  De plus,
-$\displaystyle \dx{x} = \frac{1}{2} \,\sec^2(\theta) \dx{\theta}$.
+$\DS \dx{x} = \frac{1}{2} \,\sec^2(\theta) \dx{\theta}$.
 Ainsi,
 \begin{align*}
 \int \sqrt{1+4(x-1)^2} \dx{x} &= \int \sec(\theta)
@@ -716,8 +716,8 @@ Ainsi,
 &= \frac{1}{4}\,\tan(\theta)\sec(\theta)
 + \frac{1}{4}\, \ln \big| \sec(\theta) + \tan(\theta) \big| + C \; .
 \end{align*}
-Puisque $\displaystyle \tan(\theta) = 2(x-1)$ et
-$\displaystyle \sec(\theta) = \sqrt{ 1 + 4(x-1)^2}$ pour
+Puisque $\DS \tan(\theta) = 2(x-1)$ et
+$\DS \sec(\theta) = \sqrt{ 1 + 4(x-1)^2}$ pour
 $-\pi/2<\theta<\pi/2$, nous obtenons
 \begin{align*}
 \int \sqrt{1+4(x-1)^2} \dx{x} & = \frac{1}{2}\,(x - 1)\sqrt{ 1 + 4(x-1)^2} \\
@@ -735,7 +735,7 @@ Calculons la longueur de la courbe définie par
 $y = \ln(1-x^2)$ pour $0\leq x \leq 1/2$.
 
 Si nous posons $f(x) = \ln(1-x^2)$, alors
-$\displaystyle f'(x) = \frac{-2x}{1-x^2}$.  La longueur de la courbe
+$\DS f'(x) = \frac{-2x}{1-x^2}$.  La longueur de la courbe
 est
 \begin{align*}
 L &= \int_0^{1/2} \sqrt{1+(f'(x))^2} \dx{x}
@@ -772,7 +772,7 @@ Avant de développer la formule pour calculer l'aire de la surface $S$
 que nous retrouvons à la figure~\ref{surfArea}, considérons 
 la section horizontal d'un cône qui est donnée à la
 figure~\ref{surfCone}.  L'aire de cette section horizontal
-est $\displaystyle 2\pi\,\left(\frac{R_1+R_2}{2}\right)\,L$.
+est $\DS 2\pi\,\left(\frac{R_1+R_2}{2}\right)\,L$.
 
 \PDFfig{13_repr_param/param11}{Une section horizontal d'un cône dont
 l'axe est vertical}{Une section horizontal d'un cône dont l'axe est
@@ -920,7 +920,7 @@ A = 2\pi \,\int_0^1 t^2 \, \sqrt{(3t^2)^2 + (2t)^2} \dx{t}
 = 2\pi \,\int_0^1 t^3 \, \sqrt{9t^2 + 4} \dx{t} \; .
 \]
 Si $u=9 t^2 +4$, alors $u=4$ pour $t=0$, $u=13$ pour $t=1$ et
-$\displaystyle \dx{u} = 18 t \dx{t}$.  Ainsi,
+$\DS \dx{u} = 18 t \dx{t}$.  Ainsi,
 \begin{align*}
 A &= 2\pi \,\int_0^1 t^3 \, \sqrt{9t^2 + 4} \dx{t}
 = \frac{\pi}{9} \, \int_0^1 t^2 \, \left(9t^2 + 4\right)^{1/2} \;
@@ -978,10 +978,10 @@ r &= \sqrt{x^2+y^2} \quad ,\\
 \end{cases}\; .
 \end{align*}
 Puisque
-$\displaystyle -\frac{\pi}{2} < \arctan\left(\frac{y}{x}\right) <
+$\DS -\frac{\pi}{2} < \arctan\left(\frac{y}{x}\right) <
 \frac{\pi}{2}$ pour tout $x\neq 0$ et $y$, nous avons que $\theta$ donnée
 par la formule précédente satisfait
-$\displaystyle -\frac{\pi}{2} \leq \theta < \frac{3\pi}{2}$.
+$\DS -\frac{\pi}{2} \leq \theta < \frac{3\pi}{2}$.
 
 \begin{rmk}
 Il est permit d'avoir des coordonnées polaires de la forme
@@ -1003,7 +1003,7 @@ Les coordonnées cartésiennes de $P$ sont donc $(3/2, -3\sqrt{3}/2)$.
 Quelles sont les coordonnées polaires du point $P$ dont les
 coordonnées cartésiennes sont\\ $(-1, -\sqrt{3})$?
 
-Nous avons $\displaystyle r = \sqrt{ (-1)^2 + (-\sqrt{3})^2} = 2$. Puisque
+Nous avons $\DS r = \sqrt{ (-1)^2 + (-\sqrt{3})^2} = 2$. Puisque
 $x<0$, nous avons
 \[
 \theta = \arctan\left(\frac{-\sqrt{3}}{-1}\right) + \pi
@@ -1094,10 +1094,10 @@ appartiennent à la courbe $\Gamma$.
 2\pi \\
 \hline
 \rule{0pt}{1.8em} r & 3 &
-\displaystyle \frac{4+\sqrt{2}}{2} \approx 2.7071 & 2 &
-\displaystyle \frac{4-\sqrt{2}}{2} \approx 1.29289
-& 1 & \displaystyle \frac{4-\sqrt{2}}{2} & 2 &
-\displaystyle \frac{4+\sqrt{2}}{2} & 0
+\DS \frac{4+\sqrt{2}}{2} \approx 2.7071 & 2 &
+\DS \frac{4-\sqrt{2}}{2} \approx 1.29289
+& 1 & \DS \frac{4-\sqrt{2}}{2} & 2 &
+\DS \frac{4+\sqrt{2}}{2} & 0
 \end{array}
 \]
 Ces points apparaissent sur la courbe $\Gamma$ dans le dessin
@@ -1161,19 +1161,19 @@ l'origine (cela correspond aussi à une rotation par $\pi$) si
 $f(r,\theta) = f(-r,\theta) = 0$ (ou $f(r,\theta) = f(r,\pi+\theta) = 0$).
 \item La courbe $\Gamma$ est inchangée par une réflexion par rapport à
 la droite $\theta = \pi/4$ (i.e. $y=x$) si
-$\displaystyle f(r,\theta) = f\left(r,\frac{\pi}{2} -\theta\right) = 0$ (ou
-$\displaystyle f(r,\theta) = f\left(-r,-\frac{\pi}{2}-\theta\right)$).
+$\DS f(r,\theta) = f\left(r,\frac{\pi}{2} -\theta\right) = 0$ (ou
+$\DS f(r,\theta) = f\left(-r,-\frac{\pi}{2}-\theta\right)$).
 \item La courbe $\Gamma$ est inchangée par une réflexion par rapport à
 la droite $\theta = -\pi/4$ (i.e. $y=-x$) si 
-$\displaystyle f(r,\theta) = f\left(r,-\frac{\pi}{2} -\theta\right) = 0$
+$\DS f(r,\theta) = f\left(r,-\frac{\pi}{2} -\theta\right) = 0$
 (ou
-$\displaystyle f(r,\theta) = f\left(-r,\frac{\pi}{2}-\theta\right)$).
+$\DS f(r,\theta) = f\left(-r,\frac{\pi}{2}-\theta\right)$).
 \item La courbe $\Gamma$ est inchangée par une rotation centrée à
 l'origine de $\pi/2$ dans le sens contraire aux aiguilles d'une montre
 si
-$\displaystyle f(r,\theta) = f\left(r,\frac{\pi}{2}+\theta\right) = 0$
+$\DS f(r,\theta) = f\left(r,\frac{\pi}{2}+\theta\right) = 0$
 (ou
-$\displaystyle f(r,\theta) = f\left(-r,-\frac{\pi}{2}+\theta\right)$).
+$\DS f(r,\theta) = f\left(-r,-\frac{\pi}{2}+\theta\right)$).
 \end{itemize}
 
 Les conditions entre parenthèses dans la liste précédente sont données
@@ -1287,7 +1287,7 @@ La région $R_j$ est une pointe de tarte dont l'aire est
 A_j = \frac{1}{2}\,r^2(\theta_j^\ast) \Delta \theta_j^\ast
 \]
 car $R_j$ représente $\Delta \theta_j^\ast/2\pi$ du disque de rayon
-$r(\theta_j^\ast)$ dont l'aire est $\displaystyle \pi r^2(\theta_j^\ast)$.
+$r(\theta_j^\ast)$ dont l'aire est $\DS \pi r^2(\theta_j^\ast)$.
 
 Ainsi, l'aire $A$ de la région $R$ est approximativement la somme de
 l'aire de chacune des régions $R_j$.

@@ -9,9 +9,9 @@ différentielles}
 \begin{tabular}{l|l}
 valeur propre & un vecteur propre \\
 \hline
-\rule{0em}{1.4em} $\lambda_1 = -5$ & $\displaystyle \VEC{v}_1 =
+\rule{0em}{1.4em} $\lambda_1 = -5$ & $\DS \VEC{v}_1 =
 \begin{pmatrix} -2 & 1 \end{pmatrix}^\top$ \\[0.5em]
-$\lambda_2 = 7$ & $\displaystyle \VEC{v}_2 =
+$\lambda_2 = 7$ & $\DS \VEC{v}_2 =
 \begin{pmatrix} 2 & 1 \end{pmatrix}^\top$
 \end{tabular}
 \end{center}
@@ -27,7 +27,7 @@ La solution générale est donc de la forme
 \end{pmatrix} \ .
 \]
 Pour satisfaire la condition initiale
-$\displaystyle \begin{pmatrix} 0 & 1 \end{pmatrix}^\top$ à $t=0$, il
+$\DS \begin{pmatrix} 0 & 1 \end{pmatrix}^\top$ à $t=0$, il
 faut choisir $\alpha$ et $\beta$ de telle sorte que
 \[
 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix}
@@ -36,12 +36,12 @@ faut choisir $\alpha$ et $\beta$ de telle sorte que
 C'est-à-dire, $-2\alpha + 2\beta = 0$ et $\alpha + \beta =1$.  La première
 équation donne $\beta = \alpha$.  Si nous substituons $\beta=\alpha$ dans
 l'équation $\alpha + \beta =1$, nous obtenons
-$\displaystyle \alpha = \beta = 1/2$.  La solution qui satisfait la
+$\DS \alpha = \beta = 1/2$.  La solution qui satisfait la
 condition initiale est
 \[
 \VEC{x} = \begin{pmatrix}
 - e^{-5 t} + e^{7t} \\
-\displaystyle \frac{1}{2} e^{-5 t} + \frac{1}{2} e^{7t}
+\DS \frac{1}{2} e^{-5 t} + \frac{1}{2} e^{7t}
 \end{pmatrix} \ .
 \]
 Puisque $\lambda_1 < 0 < \lambda_2$, les deux valeurs propres sont de
@@ -60,12 +60,12 @@ valeur propre & un vecteur propre \\
 \hline
 \rule{0em}{1.4em}
 $\lambda = -1$ &
-$\displaystyle \VEC{v} =\begin{pmatrix} 1 & -1 \end{pmatrix}^\top$
+$\DS \VEC{v} =\begin{pmatrix} 1 & -1 \end{pmatrix}^\top$
 \end{tabular}
 \end{center}
 Il faut donc trouver un vecteur $\VEC{u}$ tel que $(A+\Id)\VEC{u} = \VEC{v}$.
 Si nous posons
-$\displaystyle \VEC{u} = \begin{pmatrix} a & b \end{pmatrix}^\top$, il
+$\DS \VEC{u} = \begin{pmatrix} a & b \end{pmatrix}^\top$, il
 faut résoudre le système d'équations linéaires
 \[
 \begin{pmatrix} 1 & 1 \\ -1 & -1 \end{pmatrix}
@@ -89,7 +89,7 @@ $R_2+R_1 \rightarrow R_1$ donne
 \end{array}\right) \ .
 \]
 Ainsi $a + b = 1$.  Si $a=1$, alors $b=0$.  Nous obtenons le vecteur
-$\displaystyle \VEC{u} = \begin{pmatrix} 1 & 0 \end{pmatrix}^\top$.
+$\DS \VEC{u} = \begin{pmatrix} 1 & 0 \end{pmatrix}^\top$.
 
 La solution générale est donc de la forme
 \begin{align*}
@@ -104,7 +104,7 @@ La solution générale est donc de la forme
 \end{pmatrix} \ .
 \end{align*}
 Pour satisfaire la condition initiale
-$\displaystyle \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ à $t=0$, il faut
+$\DS \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ à $t=0$, il faut
 choisir $\alpha$ et $\beta$ de telle sorte que
 \[
 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix}
@@ -192,8 +192,8 @@ d'intersection des deux nullclines.
 \[
 \diff \VEC{f}(x,y) =
 \begin{pmatrix}
-\displaystyle \pdydx{f_1}{x}(x,y) & \displaystyle \pdydx{f_1}{y}(x,y) \\[0.8em]
-\displaystyle \pdydx{f_2}{x}(x,y) & \displaystyle \pdydx{f_2}{y}(x,y)
+\DS \pdydx{f_1}{x}(x,y) & \DS \pdydx{f_1}{y}(x,y) \\[0.8em]
+\DS \pdydx{f_2}{x}(x,y) & \DS \pdydx{f_2}{y}(x,y)
 \end{pmatrix}
 = \begin{pmatrix} 4 & 1 \\ 3 & 2 \end{pmatrix} \ .
 \]
@@ -210,13 +210,13 @@ $\VEC{p}$ est donc
 \begin{pmatrix} x \\ y \end{pmatrix} \ .
 \]
 Les valeurs propres de la matrice 
-$\displaystyle \begin{pmatrix} 4 & 1 \\ 3 & 2 \end{pmatrix}$
+$\DS \begin{pmatrix} 4 & 1 \\ 3 & 2 \end{pmatrix}$
 sont $1$ et $5$.  L'origine est donc un noeud instable pour le système
 linéarisé car les deux valeurs propres sont positives.
 
-Le vecteur $\displaystyle \VEC{u} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+Le vecteur $\DS \VEC{u} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$
 est un vecteur propre associé à la valeur propre $5$ alors que le
-vecteur $\displaystyle \VEC{v} = \begin{pmatrix} 1 \\ -3 \end{pmatrix}$ est un
+vecteur $\DS \VEC{v} = \begin{pmatrix} 1 \\ -3 \end{pmatrix}$ est un
 vecteur propre associé à la valeur propre $1$.
 
 \subI{IV} Le portrait de phase est donné ci-dessous.
@@ -277,17 +277,17 @@ Le système (\ref{NLSquestion}) est de la forme
    x ' \\ y'
   \end{pmatrix} = \VEC{f}(x,y)
 \]
-où $\displaystyle f_1(x,y) = x(1-x)\left(x-\frac{1}{2}\right) - \frac{xy}{8}$
+où $\DS f_1(x,y) = x(1-x)\left(x-\frac{1}{2}\right) - \frac{xy}{8}$
 et $f_2(x,y) = -d\,y + xy$.  Ainsi, la dérivée de $f$ est
 \[
 \diff \VEC{f}(x,y) =
 \begin{pmatrix}
-\displaystyle \pdydx{f_1}{x}(x,y) & \displaystyle \pdydx{f_1}{y}(x,y) \\[1em]
-\displaystyle \pdydx{f_2}{x}(x,y) & \displaystyle \pdydx{f_2}{y}(x,y)
+\DS \pdydx{f_1}{x}(x,y) & \DS \pdydx{f_1}{y}(x,y) \\[1em]
+\DS \pdydx{f_2}{x}(x,y) & \DS \pdydx{f_2}{y}(x,y)
 \end{pmatrix}
 = \begin{pmatrix}
-\displaystyle -3x^2 + 3x - \frac{1}{2} - \frac{1}{8}\,y &
-\displaystyle  -\frac{1}{8}\,x \\
+\DS -3x^2 + 3x - \frac{1}{2} - \frac{1}{8}\,y &
+\DS  -\frac{1}{8}\,x \\
 y & -d+ x
 \end{pmatrix} \ .
 \]
@@ -295,12 +295,12 @@ Lorsqu'évalué au point $\VEC{p}$, nous trouvons
 \[
 \diff \VEC{f}(\VEC{p}) =
 \begin{pmatrix}
-\displaystyle -3d^2 + 3d - \frac{1}{2} - (1-d)\left(d-\frac{1}{2}\right) &
-\displaystyle  -\frac{1}{8}\,d \\
-\displaystyle 8(1-d)\left(d-\frac{1}{2}\right) & 0
+\DS -3d^2 + 3d - \frac{1}{2} - (1-d)\left(d-\frac{1}{2}\right) &
+\DS  -\frac{1}{8}\,d \\
+\DS 8(1-d)\left(d-\frac{1}{2}\right) & 0
 \end{pmatrix}
 = \begin{pmatrix}
-\displaystyle -2d^2 + \frac{3d}{2}& \displaystyle -\frac{1}{8}\,d \\
+\DS -2d^2 + \frac{3d}{2}& \DS -\frac{1}{8}\,d \\
 -8d^2 +12d -4 & 0
 \end{pmatrix} \ .
 \]
@@ -308,7 +308,7 @@ La linéarisation du système (\ref{NLSquestion}) au point $\VEC{p}$ est donc
 \[
   \begin{pmatrix} x' \\ y' \end{pmatrix} =
   \begin{pmatrix}
-\displaystyle -2d^2 +\frac{3 d}{2} & \displaystyle -\frac{d}{8} \\
+\DS -2d^2 +\frac{3 d}{2} & \DS -\frac{d}{8} \\
 -8d^2 +12d -4 & 0 \end{pmatrix}
 \begin{pmatrix}
 x \\ y

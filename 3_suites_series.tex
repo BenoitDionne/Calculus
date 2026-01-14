@@ -37,13 +37,13 @@ La suite est alors dénoté  $\{ f(n) \}_{n=1}^\infty$.
 \end{defn}
 
 \begin{egg}
-La suite $\displaystyle \left\{\frac{n}{n+2}\right\}_{n=1}^\infty$ est
+La suite $\DS \left\{\frac{n}{n+2}\right\}_{n=1}^\infty$ est
 la suite formée des termes
 \[
 \left\{\frac{1}{3}, \frac{2}{4}, \frac{3}{5}, \ldots \right\}
 \]
 alors que la suite
-$\displaystyle \left\{\frac{(-1)^n}{n^2}\right\}_{n=1}^\infty$ est
+$\DS \left\{\frac{(-1)^n}{n^2}\right\}_{n=1}^\infty$ est
 la suite formée des termes
 \[
 \left\{-1, \frac{1}{4}, -\frac{1}{9}, \frac{1}{16}, \ldots \right\} \; .
@@ -131,7 +131,7 @@ $N > 2(1-10^{-5})/10^{-5} = 199998$.
 \begin{itemize}
 \item Nous utilisons aussi l'expression \flqq\ $a_n \rightarrow L$ lorsque
   $n\rightarrow \infty$\ \frqq\ pour dire que
-  $\displaystyle \lim_{n\rightarrow \infty} a_n = L$. 
+  $\DS \lim_{n\rightarrow \infty} a_n = L$. 
 \item Il est souvent très utile d'explorer numériquement le
   comportement des suites $\{ a_n\}_{n=1}^\infty$; c'est-à-dire,
   d'évaluer $a_n$ pour de très grandes valeurs de $n$ dans l'espoir
@@ -157,17 +157,17 @@ La limite de suites possède les propriétés suivantes qui
 permettront d'évaluer facilement les limites de certaines suites.
 
 \begin{theorem} \label{suite3}
-Si $\displaystyle \{ a_n\}_{n=1}^\infty$ est une suite qui tend vers
-$L_a$ et $\displaystyle \{ b_n\}_{n=1}^\infty$ est une suite qui tend
+Si $\DS \{ a_n\}_{n=1}^\infty$ est une suite qui tend vers
+$L_a$ et $\DS \{ b_n\}_{n=1}^\infty$ est une suite qui tend
 vers $L_b$, alors:
 \begin{enumerate}
-\item La suite $\displaystyle \{ a_n + b_n \}_{n=1}^\infty$ tend vers
+\item La suite $\DS \{ a_n + b_n \}_{n=1}^\infty$ tend vers
 $L_a + L_b$.  Nous écrivons
 \[
 \lim_{n\rightarrow \infty} (a_n + b_n) =
 \lim_{n\rightarrow \infty} a_n + \lim_{n\rightarrow \infty} b_n \; .
 \]
-\item La suite $\displaystyle \{ a_n b_n \}_{n=1}^\infty$ tend vers
+\item La suite $\DS \{ a_n b_n \}_{n=1}^\infty$ tend vers
 $L_a L_b$.  Nous écrivons
 \[
 \lim_{n\rightarrow \infty} (a_n b_n) =
@@ -175,22 +175,22 @@ $L_a L_b$.  Nous écrivons
 \left(\lim_{n\rightarrow \infty} b_n \right) .
 \]
 \item Si $b_n \neq 0$ pour tout $n$ et $L_b\neq 0$, alors la suite
-$\displaystyle \left\{ \frac{a_n}{b_n} \right\}_{n=1}^\infty$
-tend vers $\displaystyle \frac{L_a}{L_b}$.  Nous écrivons
+$\DS \left\{ \frac{a_n}{b_n} \right\}_{n=1}^\infty$
+tend vers $\DS \frac{L_a}{L_b}$.  Nous écrivons
 \[
 \lim_{n\rightarrow \infty} \frac{a_n}{b_n} =
-\frac{\displaystyle \lim_{n\rightarrow \infty} a_n}
-{\displaystyle \lim_{n\rightarrow \infty} b_n} \; .
+\frac{\DS \lim_{n\rightarrow \infty} a_n}
+{\DS \lim_{n\rightarrow \infty} b_n} \; .
 \]
 \end{enumerate}
 \end{theorem}
 
 \begin{egg}
 Soit $c$ une constante quelconque.  Il est facile de voir que la
-limite de la suite $\displaystyle \{ a_n\}_{n=1}^\infty$ où $a_n = c$
+limite de la suite $\DS \{ a_n\}_{n=1}^\infty$ où $a_n = c$
 pour tout $n$ est $c$.  Nous pouvons utiliser cette information pour
 trouver la limite de la suite
-$\displaystyle \left\{ \frac{5n+2}{n} \right\}_{n=1}^\infty$.  En
+$\DS \left\{ \frac{5n+2}{n} \right\}_{n=1}^\infty$.  En
 effet, grâce au théorème précédent, nous avons
 \[
 \lim_{n\rightarrow \infty} \frac{5n+2}{n}
@@ -203,16 +203,16 @@ effet, grâce au théorème précédent, nous avons
 \begin{theorem}[des gendarmes ou sandwich] \label{gendarmeS}
 \index{Théorème des gendarmes} \index{Théorème sandwich}
 Soit
-$\displaystyle \{ a_n\}_{n=1}^\infty$ et $\displaystyle \{c_n\}_{n=1}^\infty$
+$\DS \{ a_n\}_{n=1}^\infty$ et $\DS \{c_n\}_{n=1}^\infty$
 deux suites qui tendent vers $L$.  Si
-$\displaystyle \{ b_n\}_{n=1}^\infty$ est une suite telle que 
+$\DS \{ b_n\}_{n=1}^\infty$ est une suite telle que 
 $a_n \leq b_n \leq c_n$ pour tout $n$, alors la
-suite $\displaystyle \{ b_n\}_{n=1}^\infty$ tend aussi vers $L$.
+suite $\DS \{ b_n\}_{n=1}^\infty$ tend aussi vers $L$.
 \end{theorem}
 
 \begin{proof}[Démonstration\ \theory]
-Soit $\epsilon>0$.  Puisque $\displaystyle \{ a_n\}_{n=1}^\infty$ et
-$\displaystyle \{c_n\}_{n=1}^\infty$ tendent vers $L$, il existe $N\geq 0$
+Soit $\epsilon>0$.  Puisque $\DS \{ a_n\}_{n=1}^\infty$ et
+$\DS \{c_n\}_{n=1}^\infty$ tendent vers $L$, il existe $N\geq 0$
 tel que $|a_n-L|<\epsilon$ et $|c_n - L|<\epsilon$ pour $n\geq N$.  Ainsi,
 \[
 L-\epsilon < a_n \leq b_n \leq c_n < L+\epsilon
@@ -222,12 +222,12 @@ pour $n\geq N$.  C'est-à-dire, $|b_n-L|<\epsilon$ pour $n\geq N$.
 
 \begin{egg}[\theory\ \eng]
 Montrons que la limite de la suite
-$\displaystyle \{ b_n\}_{n=1}^\infty$ où $b_n = n^{1/n}$ est $1$.
+$\DS \{ b_n\}_{n=1}^\infty$ où $b_n = n^{1/n}$ est $1$.
 
 Il est clair que la suite
-$\displaystyle \{ a_n\}_{n=1}^\infty$ où $a_n = 1$ pour tout
+$\DS \{ a_n\}_{n=1}^\infty$ où $a_n = 1$ pour tout
 $n$ satisfait $a_n \leq b_n$ pour tout $n$.  De plus, la suite
-$\displaystyle \{ c_n\}_{n=1}^\infty$ où $c_n = 1+\sqrt{2/n}$ pour
+$\DS \{ c_n\}_{n=1}^\infty$ où $c_n = 1+\sqrt{2/n}$ pour
 tout $n$ satisfait $b_n \leq  c_n$ pour tout $n$.
 
 Pour démontrer ce dernier énoncé, posons $x_n = b_n-1$ et
@@ -250,41 +250,41 @@ b_n = 1 + x_n \leq 1 + \sqrt{2/n} = c_n
 \]
 pour tout $n$.
 
-Nous avons $\displaystyle \lim_{n\rightarrow \infty} a_n = 1$ et
+Nous avons $\DS \lim_{n\rightarrow \infty} a_n = 1$ et
 \[
 \lim_{n\rightarrow \infty} c_n = \lim_{n\rightarrow \infty}
 \left(1+ \sqrt{2/n} \right) = 1 + \lim_{n\rightarrow \infty} \sqrt{2/n} = 1
 \]
 car nous pouvons facilement montrer à partir de la définition de limite que
-la suite $\displaystyle \left\{ \sqrt{2/n} \right\}_{n=0}^\infty$ tend
+la suite $\DS \left\{ \sqrt{2/n} \right\}_{n=0}^\infty$ tend
 vers $0$.  Puisque $a_n \leq b_n \leq c_n$ pour tout $n \geq 1$, nous
 obtenons du Théorème des gendarmes que
-$\displaystyle \{ b_n\}_{n=1}^\infty$ tend vers $1$.
+$\DS \{ b_n\}_{n=1}^\infty$ tend vers $1$.
 \end{egg}
 
 Le résultat suivant est quelques fois utile.
 
 \begin{theorem}
-La suite $\displaystyle \{ a_n\}_{n=1}^\infty$ tend vers $0$ si et
-seulement si la suite $\displaystyle \{ |a_n| \}_{n=1}^\infty$ tend vers
+La suite $\DS \{ a_n\}_{n=1}^\infty$ tend vers $0$ si et
+seulement si la suite $\DS \{ |a_n| \}_{n=1}^\infty$ tend vers
 $0$. \label{suiteAbs}
 \end{theorem}
 
 \begin{proof}[Démonstration\ \theory]
 \subQ{$\Rightarrow$} Soit $\epsilon>0$. Puisque que
-$\displaystyle \{ a_n\}_{n=1}^\infty$ 
+$\DS \{ a_n\}_{n=1}^\infty$ 
 tend vers $0$, il existe $N>0$ tel que $|a_n- 0 | = |a_n| <\epsilon$
 pour $n\geq N$.  Ainsi, il existe $N>0$ tel que
 $\big| |a_n|- 0 \big| = |a_n| <\epsilon$ pour $n\geq N$.  Comme
 $\epsilon$ est arbitraire, cela implique que
-$\displaystyle \{|a_n|\}_{n=1}^\infty$ tend vers $0$.
+$\DS \{|a_n|\}_{n=1}^\infty$ tend vers $0$.
 
 \subQ{$\Leftarrow$} Soit $\epsilon>0$. Puisque que
-$\displaystyle \{ |a_n|\}_{n=1}^\infty$ tend vers $0$, il existe $N>0$
+$\DS \{ |a_n|\}_{n=1}^\infty$ tend vers $0$, il existe $N>0$
 tel que $\big| |a_n|- 0 \big| = |a_n| <\epsilon$ pour $n\geq N$.
 Ainsi, il existe $N>0$ tel que $|a_n- 0| = |a_n| <\epsilon$ pour
 $n\geq N$.  Comme $\epsilon$ est arbitraire, cela implique que
-$\displaystyle \{a_n\}_{n=1}^\infty$ tend vers $0$.
+$\DS \{a_n\}_{n=1}^\infty$ tend vers $0$.
 \end{proof}
 
 Il est très utile de pouvoir caractériser le comportement des suites
@@ -314,14 +314,14 @@ Le concept de convergence peut aussi être adapté aux suites non bornées.
 
 \begin{theorem}[+\theory]
 \index{Suite!convergence à l'infini} 
-Nous disons qu'une suite $\displaystyle \{ a_n\}_{n=1}^\infty$
+Nous disons qu'une suite $\DS \{ a_n\}_{n=1}^\infty$
 {\bfseries converge} (ou {\bfseries tend}) vers $+\infty$ (plus
 l'infini) si, pour chaque $M>0$, il existe $N$ (qui dépend du $M$ donné)
 tel que $a_n > M$ pour tout $n \geq N$.  Nous écrivons
 \[
 \lim_{n\rightarrow \infty} a_n = +\infty \; .
 \]
-Nous disons qu'une suite $\displaystyle \{ a_n\}_{n=1}^\infty$
+Nous disons qu'une suite $\DS \{ a_n\}_{n=1}^\infty$
 {\bfseries converge} (ou {\bfseries tend}) vers $-\infty$ (moins
 l'infini) si, pour chaque $M<0$, il existe $N$ (qui dépend du $M$ donné)
 tel que $a_n < M$ pour tout $n \geq N$.  Nous écrivons
@@ -332,7 +332,7 @@ tel que $a_n < M$ pour tout $n \geq N$.  Nous écrivons
 \end{theorem}
 
 \begin{egg}[\theory]
-La suite $\displaystyle \{ a_n\}_{n=1}^\infty$ où $a_n = n^2+1$ tend
+La suite $\DS \{ a_n\}_{n=1}^\infty$ où $a_n = n^2+1$ tend
 vers plus l'infini.  En effet, si $M\geq 1$ est un nombre quelconque,
 il suffit de prendre $N > \sqrt{M-1}$ pour obtenir
 \[
@@ -393,8 +393,8 @@ Soit $r$ un nombre réel.  Alors
 Évaluons les limites suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{5em}}}l@{\hspace{1em}}l}
-\subQ{a} & $\displaystyle \lim_{n\rightarrow \infty} \frac{n}{n^2+2n+4}$ &
-\subQ{b} & $\displaystyle \lim_{n\rightarrow \infty} \frac{\cos(n)}{n^2}$
+\subQ{a} & $\DS \lim_{n\rightarrow \infty} \frac{n}{n^2+2n+4}$ &
+\subQ{b} & $\DS \lim_{n\rightarrow \infty} \frac{\cos(n)}{n^2}$
 \end{tabular}
 \end{center}
 
@@ -403,8 +403,8 @@ théorèmes~\ref{suite3} et \ref{suite2} pour obtenir
 \begin{align*}
 \lim_{n\rightarrow \infty} \frac{n}{n^2+2n+4}
 &= \lim_{n\rightarrow \infty} \frac{1/n}{1+2/n+4/n^2} \\
-&= \frac{\displaystyle \lim_{n\rightarrow \infty} 1/n}
-{\displaystyle 1 + \lim_{n\rightarrow \infty} 2/n
+&= \frac{\DS \lim_{n\rightarrow \infty} 1/n}
+{\DS 1 + \lim_{n\rightarrow \infty} 2/n
 + 4 \lim_{n\rightarrow \infty} 1/n^2} = \frac{0}{1+0+0} = 0 \; .
 \end{align*}
 
@@ -417,9 +417,9 @@ pour tout $n$, la suite $\{b_n\}_{n=1}^\infty$ avec $b_n = |\cos(n)/n^2|$
 tend vers $0$ car les suites $\{a_n\}_{n=1}^\infty$ avec $a_n = 0$ et
 $\{c_n\}_{n=1}^\infty$ avec $c_n = 1/n^2$ tendent vers $0$.  Puisque la
 suite
-$\displaystyle \left\{ \left| \frac{\cos(n)}{n^2} \right|\right\}_{n=1}^\infty$
+$\DS \left\{ \left| \frac{\cos(n)}{n^2} \right|\right\}_{n=1}^\infty$
 tend vers $0$, il en est de même de la suite 
-$\displaystyle \left\{\frac{\cos(n)}{n^2}\right\}_{n=1}^\infty$ grâce
+$\DS \left\{\frac{\cos(n)}{n^2}\right\}_{n=1}^\infty$ grâce
 au théorème~\ref{suiteAbs}.  Nous déduisons donc que
 \[
 \lim_{n\rightarrow \infty} \frac{\cos(n)}{n^2} = 0 \; .
@@ -445,20 +445,20 @@ en découle aussi que tout ensemble non vide et borné inférieurement
 possède une plus  grande borne inférieure.}
 
 \begin{proof}[Démonstration\ \theory]
-Nous considérons le cas où $\displaystyle \{ a_n \}_{n=0}^\infty$ est une
+Nous considérons le cas où $\DS \{ a_n \}_{n=0}^\infty$ est une
 suite décroissante et bornée inférieurement.  La démonstration pour
 une suite croissante et bornée supérieurement est semblable.  Soit $m$
 la plus grande borne inférieure de
-$\displaystyle \{ a_n \}_{n=0}^\infty$.  Montrons que
-$\displaystyle \lim_{n\to \infty} a_n = m$.
+$\DS \{ a_n \}_{n=0}^\infty$.  Montrons que
+$\DS \lim_{n\to \infty} a_n = m$.
 
 Soit $\epsilon >0$.  Puisque $m+\epsilon > m$ n'est pas une borne
-inférieure de la suite $\displaystyle \{ a_n \}_{n=0}^\infty$, il
+inférieure de la suite $\DS \{ a_n \}_{n=0}^\infty$, il
 existe $N>0$ tel que $m \leq a_N < m+\epsilon$.  Puisque la suite
-$\displaystyle \{ a_n \}_{n=0}^\infty$ est décroissante, nous avons
+$\DS \{ a_n \}_{n=0}^\infty$ est décroissante, nous avons
 $m \leq a_n < m+\epsilon$ pour $n\geq N$.  C'est-à-dire,
 $|a_n-m|<\epsilon$ pour $n\geq N$.  Comme $\epsilon$ est arbitraire,
-$\displaystyle \lim_{n\to \infty} a_n = m$.
+$\DS \lim_{n\to \infty} a_n = m$.
 \end{proof}
 
 \begin{egg}[\theory]
@@ -524,7 +524,7 @@ positifs, nous devons avoir $L=2$.
 \section{Séries}
 
 Si $a_1$, $a_2$, \ldots, $a_n$ sont $n$ nombres réels, le symbole
-$\displaystyle \sum_{k=1}^n a_k$ dénote la somme de ces nombres.  En
+$\DS \sum_{k=1}^n a_k$ dénote la somme de ces nombres.  En
 d'autres mots,
 \[
 \sum_{k=1}^n a_k = a_1 + a_2 + \ldots + a_n \; .
@@ -587,7 +587,7 @@ Certaines sommes sont fréquemment utilisées.
 
 \begin{rmk}[\theory]
 \subI{i} Démontrons premièrement la deuxième identité.  Posons
-$\displaystyle S = \sum_{k=1}^n k$.  Nous avons
+$\DS S = \sum_{k=1}^n k$.  Nous avons
 \[
 \begin{array}{ll|c|c|c|c|c|c|c|c|c|r}
 \cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}\cline{11-11}
@@ -608,7 +608,7 @@ La somme de ces deux équations donne $2S = n(n+1)$.  Donc
 
 \subI{ii-1} La première démonstration ne fait pas appel au principe
 d'induction.  Considérons la séries {\em télescopique}\quad
-$\displaystyle \sum_{k=1}^n ((k+1)^3 -k^3)$.  Puisque
+$\DS \sum_{k=1}^n ((k+1)^3 -k^3)$.  Puisque
 \begin{align*}
 \sum_{k=1}^n ((k+1)^3 -k^3) &= (2^3 -1)+(3^3-2^3)+(4^3-3^3) + \ldots \\
 &\qquad + (n^3-(n-1)^3) + ((n+1)^3-n^3) \\
@@ -625,7 +625,7 @@ nous obtenons que
 \[
 3 \sum_{k=1}^n k^2 + \frac{3n(n+1)}{2} + n = (n+1)^3 - 1 \ .
 \]
-Si nous résolvons pour $\displaystyle \sum_{k=1}^n k^2$, nous trouvons
+Si nous résolvons pour $\DS \sum_{k=1}^n k^2$, nous trouvons
 \begin{align*}
 \sum_{k=1}^n k^2 &= \frac{1}{3}
 \left( (n+1)^3 - 1 - \frac{3n(n+1)}{2}- n \right) \\
@@ -683,18 +683,18 @@ S_k = \sum_{n=1}^k a_n = a_1 + a_2 + \ldots + a_k
 \]
 pour $k=1$, $2$, $3$, \ldots
 
-L'expression $\displaystyle \sum_{n=1}^\infty a_n$ est définie comme
+L'expression $\DS \sum_{n=1}^\infty a_n$ est définie comme
 étant la suite $\{S_k\}_{k=1}^\infty$.
 
-L'expression $\displaystyle \sum_{n=1}^\infty a_n$ est appelée une
+L'expression $\DS \sum_{n=1}^\infty a_n$ est appelée une
 {\bfseries série}\index{Série}, les $a_n$ sont les
 {\bfseries termes}\index{Série!termes} de la série, et les termes
-$S_k$ de la suite $\displaystyle \{S_k\}_{k=1}^\infty$ sont appelés
+$S_k$ de la suite $\DS \{S_k\}_{k=1}^\infty$ sont appelés
 les {\bfseries sommes partielles}\index{Série!Somme partielle} de la
 série.
 
 Nous disons que la série {\bfseries converge}\index{Série!convergence}
-si la suite $\displaystyle \{S_k\}_{k=1}^\infty$ des sommes partielles
+si la suite $\DS \{S_k\}_{k=1}^\infty$ des sommes partielles
 converge.  Si la suite $\{S_k\}_{k=1}^\infty$ des sommes partielles
 diverge, nous disons que la série {\bfseries diverge}\index{Série!divergence}.
 
@@ -705,22 +705,22 @@ $S \in \RR$, nous écrivons
 \]
 et nous disons que la {\bfseries somme} de la série est $S$.  Par abus
 de langage, nous désignons souvent la somme de la série par
-$\displaystyle \sum_{n=1}^\infty a_n$.  C'est le contexte qui
-détermine le sens donné à $\displaystyle \sum_{n=1}^\infty a_n$.
+$\DS \sum_{n=1}^\infty a_n$.  C'est le contexte qui
+détermine le sens donné à $\DS \sum_{n=1}^\infty a_n$.
 \end{defn}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ représente la
+La série $\DS \sum_{n=1}^\infty \frac{1}{n}$ représente la
 suite $\{S_k\}_{k=1}^\infty$ des sommes partielles
 \[
 S_k = \sum_{n=1}^k \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \ldots
   + \frac{1}{k} \; .
 \]
-La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ est appelée la
+La série $\DS \sum_{n=1}^\infty \frac{1}{n}$ est appelée la
 {\bfseries série harmonique}.\index{Série!harmonique}
 Nous démontrerons plus loin que cette série ne converge pas.
 
-La série $\displaystyle \sum_{n=1}^\infty \frac{\sin(n)}{n^2+n}$
+La série $\DS \sum_{n=1}^\infty \frac{\sin(n)}{n^2+n}$
 représente la suite $\{S_k\}_{k=1}^\infty$ des sommes partielles
 \[
 S_k = \sum_{n=1}^k \frac{\sin(n)}{n^2+n}
@@ -732,10 +732,10 @@ Nous démontrerons plus loin que cette série converge.
 
 \begin{egg}[][Série géométrique]
 Soit $r$ un nombre réel.  Montrons que la série
-$\displaystyle \sum_{n=0}^\infty r^n$ converge si $|r|<1$ et diverge
+$\DS \sum_{n=0}^\infty r^n$ converge si $|r|<1$ et diverge
 si $|r|\geq 1$.
 
-La série $\displaystyle \sum_{n=0}^\infty r^n$ est
+La série $\DS \sum_{n=0}^\infty r^n$ est
 très importante en mathématiques et, pour cette raison, nous lui donnons
 un nom.  Nous appellons cette série la {\bfseries série géométrique}.
 \index{Série!géométrique} La valeur $r$ est appelée la
@@ -760,7 +760,7 @@ que
 \[
 \lim_{k\rightarrow \infty} S_k
 = \lim_{k\rightarrow \infty} \frac{1-r^{k+1}}{1-r}
-= \frac{\displaystyle 1- \lim_{k\rightarrow \infty}r^{k+1}}{1-r}
+= \frac{\DS 1- \lim_{k\rightarrow \infty}r^{k+1}}{1-r}
 = \frac{1}{1-r} \; .
 \]
 Si $r \leq -1$, la suite $\{r^{k+1}\}_{k=1}^\infty$ ne converge pas.
@@ -779,15 +779,15 @@ En résumé, nous avons le résultat suivant.
 \[
 \sum_{n=0}^\infty r^n = \frac{1}{1-r} \quad \text{pour} \quad  |r|<1 \; ,
 \]
-et la série $\displaystyle \sum_{n=0}^\infty r^n$ diverge si
+et la série $\DS \sum_{n=0}^\infty r^n$ diverge si
 $|r|\geq 1$.
 \end{prop}
 
-Pour déterminer si une série $\displaystyle \sum_{j=0}^\infty a_j$ est
+Pour déterminer si une série $\DS \sum_{j=0}^\infty a_j$ est
 une série géométrique, il faut vérifier que $a_{j+1}/a_j = r$, la
 raison de la série, pour tout $j$.  Si c'est le cas, alors
 $a_j = a_0 r^j$ pour tout $j$ et
-$\displaystyle \sum_{j=0}^\infty a_j = a_0\sum_{j=0}^\infty r^j$.
+$\DS \sum_{j=0}^\infty a_j = a_0\sum_{j=0}^\infty r^j$.
 
 \begin{egg}
 Déterminons si la série
@@ -812,22 +812,22 @@ $|r|<1$.  En fait,
 
 \begin{egg}
 Déterminons si la série
-  $\displaystyle \sum_{n=1}^\infty \frac{7^{n+2}}{5^{2n-1}}$
+  $\DS \sum_{n=1}^\infty \frac{7^{n+2}}{5^{2n-1}}$
 converge ou diverge.
 
 Les termes de la série sont
-$\displaystyle \frac{7^{n+2}}{5^{2n-1}} = 5\times 7^2 \times
+$\DS \frac{7^{n+2}}{5^{2n-1}} = 5\times 7^2 \times
 \left(\frac{7}{25}\right)^n$.  Ainsi, la série est une série
 géométrique de raison $7/25$.  Comme la raison est plus petite que $1$
 en valeur absolue, la série converge.
 \end{egg}
 
 \begin{theorem}
-Si $\displaystyle \sum_{n=1}^\infty a_n$ et
-$\displaystyle \sum_{n=1}^\infty b_n$ sont deux séries convergentes et
+Si $\DS \sum_{n=1}^\infty a_n$ et
+$\DS \sum_{n=1}^\infty b_n$ sont deux séries convergentes et
 $c$ est un nombre réel, alors
-$\displaystyle \sum_{n=1}^\infty (a_n+b_n)$ et
-$\displaystyle \sum_{n=1}^\infty c\, a_n$ sont des séries convergentes.
+$\DS \sum_{n=1}^\infty (a_n+b_n)$ et
+$\DS \sum_{n=1}^\infty c\, a_n$ sont des séries convergentes.
 De plus, si
 \[
 \sum_{n=1}^\infty a_n = A \quad \text{et} \quad \sum_{n=1}^\infty b_n = B
@@ -912,7 +912,7 @@ dire au sujet de la série
 \sum_{n=3}^\infty (-3)\left(\frac{-2}{5}\right)^n \ ?
 \end{equation}
 
-La série $\displaystyle \sum_{n=0}^\infty \left(\frac{-2}{5}\right)^n$ est une
+La série $\DS \sum_{n=0}^\infty \left(\frac{-2}{5}\right)^n$ est une
 série géométrique de raison $r = -2/5$.  Cette série converge car
 $|r|<1$.  Puisque 
 \[
@@ -990,10 +990,10 @@ télescopes rétractiles) sont appelées des {\bfseries séries télescopiques}.
 
 \begin{egg}[\theory\ \eng]
 Montrons que la série harmonique
-$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ diverge.
+$\DS \sum_{n=1}^\infty \frac{1}{n}$ diverge.
 
 Les sommes partielles sont
-$\displaystyle S_n = \sum_{j=1}^n \frac{1}{j}$.
+$\DS S_n = \sum_{j=1}^n \frac{1}{j}$.
 Montrons par induction que
 \[
 \lim_{k\rightarrow \infty} S_{2^k} = +\infty \; .
@@ -1029,7 +1029,7 @@ pour la suite $\{S_{2^k}\}_{k=1}^\infty$.
 \end{egg}
 
 \begin{prop}
-La série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$ converge si
+La série $\DS \sum_{n=1}^\infty \frac{1}{n^p}$ converge si
 $p>1$ et diverge si $p\leq 1$.
 \label{Pseries}
 \end{prop}
@@ -1043,29 +1043,29 @@ applications de l'intégrale.
 \end{rmk}
 
 \begin{theorem}
-Si la série $\displaystyle \sum_{n=1}^\infty a_n$
-converge, alors $\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
+Si la série $\DS \sum_{n=1}^\infty a_n$
+converge, alors $\DS \lim_{n\rightarrow \infty} a_n = 0$.
 \label{condTC}
 \end{theorem}
 
 \begin{proof}[Démonstration\ \theory]
 Pour démontrer le théorème précédent, posons
-$\displaystyle S = \sum_{n=1}^\infty a_n$.  Puisque les suites
+$\DS S = \sum_{n=1}^\infty a_n$.  Puisque les suites
 $\{S_n\}_{n=1}^\infty$ et $\{S_{n+1}\}_{n=1}^\infty$ de
 sommes partielles tendent vers $S$, il découle du
 théorème~\ref{suite3} que la suite
-$\displaystyle \{S_{n+1}-S_n\}_{n=1}^\infty = \{ a_{n+1} \}_{n=1}^\infty
+$\DS \{S_{n+1}-S_n\}_{n=1}^\infty = \{ a_{n+1} \}_{n=1}^\infty
 = \{ a_n \}_{n=2}^\infty$
 tend vers $S-S=0$.
 \end{proof}
 
 \begin{rmk}
 Il est {\bfseries faux} de dire que
-$\displaystyle \lim_{n\rightarrow \infty} a_n = 0$ implique que la
-série $\displaystyle \sum_{n=1}^\infty a_n$ converge.  La série
-harmonique est la série $\displaystyle \sum_{n=1}^\infty a_n$ où
+$\DS \lim_{n\rightarrow \infty} a_n = 0$ implique que la
+série $\DS \sum_{n=1}^\infty a_n$ converge.  La série
+harmonique est la série $\DS \sum_{n=1}^\infty a_n$ où
 $a_n = 1/n$.  Il est vrai que
-$\displaystyle \lim_{n\rightarrow \infty} a_n = 0$ mais la série
+$\DS \lim_{n\rightarrow \infty} a_n = 0$ mais la série
 harmonique diverge.
 \end{rmk}
 
@@ -1082,30 +1082,30 @@ valeur des séries convergentes.
 Le critère de convergence suivant découle du théorème~\ref{condTC}.
 
 \begin{theorem}
-Si la suite des termes $\displaystyle \{a_n\}_{n=1}^\infty$ ne tend
-pas vers $0$, alors la série $\displaystyle \sum_{n=1}^\infty a_n$
+Si la suite des termes $\DS \{a_n\}_{n=1}^\infty$ ne tend
+pas vers $0$, alors la série $\DS \sum_{n=1}^\infty a_n$
 diverge.
 \label{NCforCofS}
 \end{theorem}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^2+1}}{n+1}$
+La série $\DS \sum_{n=1}^\infty \frac{\sqrt{n^2+1}}{n+1}$
 diverge car
 \[
 \lim_{n\rightarrow \infty} \frac{\sqrt{n^2+1}}{n+1}
 = \lim_{n\rightarrow \infty} \frac{\sqrt{1+1/n^2}}{1+1/n}
-= \frac{\sqrt{\displaystyle 1+ \lim_{n\rightarrow \infty}1/n^2}}
-{\displaystyle 1+ \lim_{n\rightarrow \infty}1/n} = 1 \neq 0 \; .
+= \frac{\sqrt{\DS 1+ \lim_{n\rightarrow \infty}1/n^2}}
+{\DS 1+ \lim_{n\rightarrow \infty}1/n} = 1 \neq 0 \; .
 \]
 \end{egg}
 
 \begin{egg}
 Démontrons que la série
-$\displaystyle \sum_{n=1}^\infty \frac{7^{2n+2}}{5^{2n-1}}$
+$\DS \sum_{n=1}^\infty \frac{7^{2n+2}}{5^{2n-1}}$
 diverge.
 
 Les termes de la série sont
-$\displaystyle a_n = \frac{7^{2n+2}}{5^{2n-1}} = 5\times 7^2 \times
+$\DS a_n = \frac{7^{2n+2}}{5^{2n-1}} = 5\times 7^2 \times
 \left(\frac{49}{25}\right)^n$.   Ainsi,
 $\lim_{n\rightarrow \infty} a_n \neq 0$ et la série diverge.
 
@@ -1116,71 +1116,71 @@ absolue, la série diverge.
 
 \begin{egg}
 Démontrons que la série
-$\displaystyle \sum_{n=1}^\infty \arctan(n)$ diverge.
+$\DS \sum_{n=1}^\infty \arctan(n)$ diverge.
 
-Les termes de la série sont $\displaystyle a_n = \arctan(n)$.
+Les termes de la série sont $\DS a_n = \arctan(n)$.
 Puisque $\lim_{n\rightarrow \infty} a_n = \pi/2 \neq 0$, la série diverge.
 \end{egg}
 
 La théorème suivant est une conséquence du théorème~\ref{suiteBORN}.
 
 \begin{theorem}[Test de comparaison] \label{comp_theo}
-Soit $\displaystyle \{a_n\}_{n=1}^\infty$ et
-$\displaystyle \{b_n\}_{n=1}^\infty$, deux suites de termes positifs
+Soit $\DS \{a_n\}_{n=1}^\infty$ et
+$\DS \{b_n\}_{n=1}^\infty$, deux suites de termes positifs
 ou nuls.
 \begin{enumerate}
-\item Si la série $\displaystyle \sum_{n=1}^\infty b_n$ converge et
-$a_n\leq b_n$ pour tout $n$, alors $\displaystyle \sum_{n=1}^\infty a_n$
+\item Si la série $\DS \sum_{n=1}^\infty b_n$ converge et
+$a_n\leq b_n$ pour tout $n$, alors $\DS \sum_{n=1}^\infty a_n$
 converge.
-\item Si la série $\displaystyle \sum_{n=1}^\infty b_n$ diverge et
-$a_n\geq b_n$ pour tout $n$, alors $\displaystyle \sum_{n=1}^\infty a_n$
+\item Si la série $\DS \sum_{n=1}^\infty b_n$ diverge et
+$a_n\geq b_n$ pour tout $n$, alors $\DS \sum_{n=1}^\infty a_n$
 diverge.
 \end{enumerate}
 \end{theorem}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{n}{\sqrt{n^5+1}}$
+La série $\DS \sum_{n=1}^\infty \frac{n}{\sqrt{n^5+1}}$
 converge car
 \[
 \frac{n}{\sqrt{n^5+1}} < \frac{1}{n^{3/2}} \quad , \quad n=1,2,3,\ldots
 \]
-et la série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^{3/2}}$
+et la série $\DS \sum_{n=1}^\infty \frac{1}{n^{3/2}}$
 converge grâce à la proposition~\ref{Pseries} avec $p = 3/2 > 1$.
 
-La série $\displaystyle \sum_{n=1}^\infty \frac{2}{1+n^{1/3}}$ diverge car
+La série $\DS \sum_{n=1}^\infty \frac{2}{1+n^{1/3}}$ diverge car
 \[
 \frac{2}{1+n^{1/3}} \geq \frac{2}{n^{1/3}+n^{1/3}} =\frac{1}{n^{1/3}}
 \quad , \quad n=1, 2, 3,\ldots
 \]
-et la série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^{1/3}}$ diverge grâce
+et la série $\DS \sum_{n=1}^\infty \frac{1}{n^{1/3}}$ diverge grâce
 à la proposition~\ref{Pseries} avec $p =1/3 < 1$.
 \end{egg}
 
 \begin{egg}
-Déterminons si la séries $\displaystyle \sum_{n=1}^\infty \frac{1}{n 3^n}$
+Déterminons si la séries $\DS \sum_{n=1}^\infty \frac{1}{n 3^n}$
 converge ou diverge.
 
-Puisque $\displaystyle 0 < \frac{1}{n 3^n} \leq \frac{1}{3^n}$
-pour tout $n>0$ et $\displaystyle \sum_{n=1}^\infty \frac{1}{3^n}$
+Puisque $\DS 0 < \frac{1}{n 3^n} \leq \frac{1}{3^n}$
+pour tout $n>0$ et $\DS \sum_{n=1}^\infty \frac{1}{3^n}$
 converge (série géométrique de raison $1/3$), nous en déduisons à partir du
-test de comparaison que $\displaystyle \sum_{n=1}^\infty \frac{1}{n 3^n}$
+test de comparaison que $\DS \sum_{n=1}^\infty \frac{1}{n 3^n}$
 converge.
 \end{egg}
 
 \begin{egg}
-Déterminons si la série $\displaystyle \sum_{n=1}^\infty \frac{1}{5n^4 + 4}$
+Déterminons si la série $\DS \sum_{n=1}^\infty \frac{1}{5n^4 + 4}$
 converge ou diverge.
 
-Puisque $\displaystyle 0 < \frac{1}{5n^4 + 4} \leq \frac{1}{5n^4}$ pour
-tout $n>0$ et $\displaystyle \sum_{n=1}^\infty \frac{1}{5n^4}$
+Puisque $\DS 0 < \frac{1}{5n^4 + 4} \leq \frac{1}{5n^4}$ pour
+tout $n>0$ et $\DS \sum_{n=1}^\infty \frac{1}{5n^4}$
 est une série convergente (proposition~\ref{Pseries} avec $p = 4>1$), nous
 obtenons du test de comparaison que
-$\displaystyle \sum_{n=1}^\infty \frac{1}{5n^4 + 4}$ converge.
+$\DS \sum_{n=1}^\infty \frac{1}{5n^4 + 4}$ converge.
 \end{egg}
 
 \begin{egg}
 Déterminons si la série
-$\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}$
+$\DS \sum_{n=1}^\infty \frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}$
 converge ou diverge.
 
 Nous avons que
@@ -1191,27 +1191,27 @@ Nous avons que
 \geq \frac{1}{6^{1/3} n^{1/6}} \ .
 \]
 pour tout $n>0$ car $1 + 2/n^3 > 1$ et $5+1/n < 6$ pour tout $n>0$.
-De plus, $\displaystyle \sum_{n=1}^\infty \frac{1}{6^{1/3} n^{1/6}}
+De plus, $\DS \sum_{n=1}^\infty \frac{1}{6^{1/3} n^{1/6}}
 = \frac{1}{6^{1/3}} \sum_{n=1}^\infty \frac{1}{n^{1/6}}$
 est une série qui diverge grâce à la proposition~\ref{Pseries} avec
 $p=1/6 <1$, nous en
 déduisons à partir du test de comparaison que
-$\displaystyle \sum_{n=1}^\infty \frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}$
+$\DS \sum_{n=1}^\infty \frac{\sqrt{n^3+2}}{(5n^5+n^4)^{1/3}}$
 diverge.
 \end{egg}
 
 \begin{theorem}[Test de comparaison à la limite]
-Soit $\displaystyle \{a_n\}_{n=1}^\infty$ et
-$\displaystyle \{b_n\}_{n=1}^\infty$, deux suites de termes positifs.
+Soit $\DS \{a_n\}_{n=1}^\infty$ et
+$\DS \{b_n\}_{n=1}^\infty$, deux suites de termes positifs.
 \begin{enumerate}
-\item Si $\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = c
-\in ]0,\infty[$, alors la série $\displaystyle \sum_{n=1}^\infty a_n$
+\item Si $\DS \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = c
+\in ]0,\infty[$, alors la série $\DS \sum_{n=1}^\infty a_n$
 converge si et seulement si la séries 
-$\displaystyle \sum_{n=1}^\infty b_n$ converge.
+$\DS \sum_{n=1}^\infty b_n$ converge.
 \item \label{compLT_lbl1}
-Si $\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = 0$, alors
-$\displaystyle \sum_{n=1}^\infty b_n$ converge implique que
-$\displaystyle \sum_{n=1}^\infty a_n$ converge.
+Si $\DS \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = 0$, alors
+$\DS \sum_{n=1}^\infty b_n$ converge implique que
+$\DS \sum_{n=1}^\infty a_n$ converge.
 \end{enumerate}
 \label{comp_lim_theo}
 \end{theorem}
@@ -1221,18 +1221,18 @@ $\displaystyle \sum_{n=1}^\infty a_n$ converge.
 \item L'énoncer de l'item~\ref{compLT_lbl1} du
 théorème~\ref{comp_lim_theo} peut être reformulé de la façon
 suivante.  Si
-$\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = 0$, alors 
-$\displaystyle \sum_{n=1}^\infty a_n$ diverge implique que
-$\displaystyle \sum_{n=1}^\infty b_n$ diverge.
-\item Si $\displaystyle \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = \infty$,
+$\DS \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = 0$, alors 
+$\DS \sum_{n=1}^\infty a_n$ diverge implique que
+$\DS \sum_{n=1}^\infty b_n$ diverge.
+\item Si $\DS \lim_{n\rightarrow \infty} \frac{a_n}{b_n} = \infty$,
 il suffit d'inverser les rôles de $a_n$ et $b_n$ pour pouvoir utiliser
 l'item~\ref{compLT_lbl1} du théorème~\ref{comp_lim_theo}.
 \end{enumerate}
 \end{rmkList}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{1}{1+3^n}$ converge
-car la série $\displaystyle \sum_{n=1}^\infty \frac{1}{3^n}$ converge
+La série $\DS \sum_{n=1}^\infty \frac{1}{1+3^n}$ converge
+car la série $\DS \sum_{n=1}^\infty \frac{1}{3^n}$ converge
 (c'est une série géométrique de raison $1/3$) et
 \[
 \lim_{n\rightarrow \infty} \frac{1/3^n}{1/(1+3^n)} 
@@ -1240,8 +1240,8 @@ car la série $\displaystyle \sum_{n=1}^\infty \frac{1}{3^n}$ converge
 = 1 + \lim_{n\rightarrow \infty}\frac{1}{3^n} = 1 \in ]0,\infty[ \; .
 \]
 
-Par contre, la série $\displaystyle \sum_{n=1}^\infty \frac{\ln(n)}{\sqrt{n}}$
-diverge car la série $\displaystyle \sum_{n=1}^\infty \frac{1}{\sqrt{n}}$
+Par contre, la série $\DS \sum_{n=1}^\infty \frac{\ln(n)}{\sqrt{n}}$
+diverge car la série $\DS \sum_{n=1}^\infty \frac{1}{\sqrt{n}}$
 diverge (le cas $p=1/2$ de la proposition~\ref{Pseries}) et
 \[
 \lim_{n\rightarrow \infty} \frac{1/\sqrt{n}}{\ln(n)/\sqrt{n}} 
@@ -1251,24 +1251,24 @@ où nous supposons que $n>1$ pour ne pas avoir de division par zéro.
 \end{egg}
 
 \begin{theorem}[Test de d'Alembert ou du quotient] \label{Alembert}
-Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série de termes
-positifs.  Si la suite $\displaystyle \left\{ \frac{a_{n+1}}{a_n}
+Soit $\DS \sum_{n=1}^\infty a_n$ une série de termes
+positifs.  Si la suite $\DS \left\{ \frac{a_{n+1}}{a_n}
 \right\}_{n=1}^\infty$ converge et
-$\displaystyle L = \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n}$
+$\DS L = \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n}$
 ($L$ peut être $+\infty$), alors
 \begin{enumerate}
-\item la série $\displaystyle \sum_{n=1}^\infty a_n$ converge si $L<1$ et
-\item la série $\displaystyle \sum_{n=1}^\infty a_n$ diverge si $L>1$.
+\item la série $\DS \sum_{n=1}^\infty a_n$ converge si $L<1$ et
+\item la série $\DS \sum_{n=1}^\infty a_n$ diverge si $L>1$.
 \end{enumerate}
 \end{theorem}
 
 \begin{rmk}
 Si $L=1$ au théorème précédent, nous ne pouvons rien dire au sujet de la
-série $\displaystyle \sum_{n=1}^\infty a_n$.
+série $\DS \sum_{n=1}^\infty a_n$.
 
-Par exemple, les séries $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$
-et $\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ satisfont
-$\displaystyle \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n} = 1$.
+Par exemple, les séries $\DS \sum_{n=1}^\infty \frac{1}{n}$
+et $\DS \sum_{n=1}^\infty \frac{1}{n^2}$ satisfont
+$\DS \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n} = 1$.
 La première série diverge (c'est la série harmonique) alors que la
 deuxième série converge (c'est le cas $p=2$ de la
 proposition~\ref{Pseries}).
@@ -1276,8 +1276,8 @@ proposition~\ref{Pseries}).
 \end{rmk}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty a_n$ avec
-$\displaystyle a_n = \frac{(n+2)5^n}{n 4^{3n}}$ converge car
+La série $\DS \sum_{n=1}^\infty a_n$ avec
+$\DS a_n = \frac{(n+2)5^n}{n 4^{3n}}$ converge car
 \begin{align*}
 \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n} &=
 \lim_{n\rightarrow \infty} \left( \frac{(n+3)5^{n+1}}{(n+1) 4^{3(n+1)}}
@@ -1290,7 +1290,7 @@ $\displaystyle a_n = \frac{(n+2)5^n}{n 4^{3n}}$ converge car
 
 \begin{egg}
 Montrons que la série
-$\displaystyle \sum_{n=1}^\infty \frac{n!}{(2n+1)!}$ converge.
+$\DS \sum_{n=1}^\infty \frac{n!}{(2n+1)!}$ converge.
 
 Le nombre $n!$,
 {\bfseries prononcé $\mathbf n$ factoriel}\index{Factoriel},
@@ -1298,8 +1298,8 @@ est le nombre défini par $n! = n(n-1)(n-2)\ldots 1$
 si $n$ est un entier positif et $n! = 1$ si $n=0$.
 
 Utilisons le test de d'Alembert pour démontrer que cette
-série converge.   Nous avons la série $\displaystyle \sum_{n=1}^\infty a_n$ où
-$\displaystyle a_n = \frac{n!}{(2n+1)!}$.  Puisque
+série converge.   Nous avons la série $\DS \sum_{n=1}^\infty a_n$ où
+$\DS a_n = \frac{n!}{(2n+1)!}$.  Puisque
 \begin{align*}
 \lim_{n\rightarrow \infty} \frac{a_{n+1}}{a_n}
 &= \lim_{n\rightarrow \infty} \frac{(n+1)!}{(2(n+1)+1)!}
@@ -1315,7 +1315,7 @@ la série converge.
 
 \begin{egg}
 Déterminons si la série
-$\displaystyle \sum_{n=1}^\infty \frac{n^n}{(2n)!}$ converge ou diverge.
+$\DS \sum_{n=1}^\infty \frac{n^n}{(2n)!}$ converge ou diverge.
 
 Utilisons le test du quotient.  Puisque
 \begin{align*}
@@ -1327,43 +1327,43 @@ Utilisons le test du quotient.  Puisque
 \frac{1/n + 1/n^2}{(4 + 6/n + 2/n^2}  \\
 & = e \times 0 = 0 < 1 \ ,
 \end{align*}
-la série $\displaystyle \sum_{n=1}^\infty \frac{n^n}{(2n)!}$ converge.
+la série $\DS \sum_{n=1}^\infty \frac{n^n}{(2n)!}$ converge.
 
 Le fait que
-$\displaystyle \lim_{n\to\infty} \left( 1 + \frac{1}{n}\right)^n = e$
+$\DS \lim_{n\to\infty} \left( 1 + \frac{1}{n}\right)^n = e$
 provient du théorème~\ref{limitDefe} que nous verrons prochainement.
 \end{egg}
 
 \begin{theorem}[Test de la racine] \label{roottest}
-Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série de termes
+Soit $\DS \sum_{n=1}^\infty a_n$ une série de termes
 positifs.  Si la suite
-$\displaystyle \left\{ \sqrt[n]{a_n} \right\}_{n=1}^\infty$ converge
-et $\displaystyle L = \lim_{n\rightarrow \infty} \sqrt[n]{a_n}$
+$\DS \left\{ \sqrt[n]{a_n} \right\}_{n=1}^\infty$ converge
+et $\DS L = \lim_{n\rightarrow \infty} \sqrt[n]{a_n}$
 ($L$ peut être $+\infty$), alors
 \begin{enumerate}
-\item la série $\displaystyle \sum_{n=1}^\infty a_n$ converge si $L<1$ et
-\item la série $\displaystyle \sum_{n=1}^\infty a_n$ diverge si $L>1$.
+\item la série $\DS \sum_{n=1}^\infty a_n$ converge si $L<1$ et
+\item la série $\DS \sum_{n=1}^\infty a_n$ diverge si $L>1$.
 \end{enumerate}
 \end{theorem}
 
 \begin{rmk}
 Comme pour le Test de d'Alembert, nous ne pouvons rien dire au sujet
 de la série
-$\displaystyle \sum_{n=1}^\infty a_n$ si $L=1$ dans le théorème précédent. 
+$\DS \sum_{n=1}^\infty a_n$ si $L=1$ dans le théorème précédent. 
 
 Par exemple, si nous utilisons le fait que la suite
 $\{ \sqrt[n]{n} \}_{n=1}^\infty$ tend vers $1$, nous pouvons
 facilement montrer que les séries
-$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$ et
-$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ satisfont
-$\displaystyle \lim_{n\rightarrow \infty} \sqrt[n]{a_n} = 1$.
+$\DS \sum_{n=1}^\infty \frac{1}{n}$ et
+$\DS \sum_{n=1}^\infty \frac{1}{n^2}$ satisfont
+$\DS \lim_{n\rightarrow \infty} \sqrt[n]{a_n} = 1$.
 Comme à la remarque~\ref{dAlembert1}, la première série diverge alors
 que la deuxième série converge.
 \end{rmk}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=2}^\infty a_n$ avec
-$\displaystyle a_n = \frac{1}{(\ln(n))^n}$ converge car
+La série $\DS \sum_{n=2}^\infty a_n$ avec
+$\DS a_n = \frac{1}{(\ln(n))^n}$ converge car
 \[
 \lim_{n\rightarrow \infty} \sqrt[n]{\frac{1}{(\ln(n))^n}} =
 \lim_{n\rightarrow \infty} \sqrt[n]{\left(\frac{1}{\ln(n)}\right)^n} =
@@ -1384,16 +1384,16 @@ ne possédaient que des termes positifs.  Nous allons maintenant
 négatifs.
 
 \begin{defn} \index{Série!alternée}
-La série $\displaystyle \sum_{n=1}^\infty a_n$ est une
+La série $\DS \sum_{n=1}^\infty a_n$ est une
 {\bfseries série alternée} si $a_n a_{n+1} < 0$
 pour tout $n$.
 \end{defn}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ est une
+La série $\DS \sum_{n=1}^\infty \frac{(-1)^n}{n}$ est une
 série alternée.  C'est une série de la forme
-$\displaystyle \sum_{n=1}^\infty a_n$ où
-$\displaystyle a_n = \frac{(-1)^n}{n}$.  Ainsi,
+$\DS \sum_{n=1}^\infty a_n$ où
+$\DS a_n = \frac{(-1)^n}{n}$.  Ainsi,
 $a_n >0$ pour $n$ pair et $a_n <0$ pour $n$ impair.  Nous avons
 \[
 \sum_{n=1}^\infty \frac{(-1)^n}{n} = -1 + \frac{1}{2} - \frac{1}{3} +
@@ -1402,19 +1402,19 @@ $a_n >0$ pour $n$ pair et $a_n <0$ pour $n$ impair.  Nous avons
 \end{egg}
 
 \begin{theorem}[Test des séries alternées]
-Si la série $\displaystyle \sum_{n=1}^\infty (-1)^n a_n$ satisfait les
+Si la série $\DS \sum_{n=1}^\infty (-1)^n a_n$ satisfait les
 conditions suivantes alors elle converge.
 \begin{enumerate}
 \item $a_n >0$ pour tout $n$,
 \item $a_{n+1} \leq a_n$ pour tout $n$ et
-\item $\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
+\item $\DS \lim_{n\rightarrow \infty} a_n = 0$.
 \end{enumerate}
 De plus, les sommes partielles
-$\displaystyle S_n = \sum_{k=1}^n (-1)^k a_k$ satisfont la relation
+$\DS S_n = \sum_{k=1}^n (-1)^k a_k$ satisfont la relation
 \begin{equation}\label{altError}
  | S - S_n | \leq a_{n+1}
 \end{equation}
-où $\displaystyle S = \lim_{n\rightarrow \infty} S_n
+où $\DS S = \lim_{n\rightarrow \infty} S_n
 = \sum_{n=1}^\infty (-1)^n a_n$.
 \label{altTest}
 \end{theorem}
@@ -1519,14 +1519,14 @@ $S$, l'erreur $|S_n - S|$ commisse est plus petite ou égale à
 $a_{n+1}$}{ALTERN}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge
+La série $\DS \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge
 car c'est une série alternée avec $a_n = 1/n$ qui satisfait les trois
 hypothèses du test des séries alternées.
 \end{egg}
 
 \begin{egg}
 Montrons que la série
-$\displaystyle \sum_{n=1}^\infty (-1)^{n-1}\frac{n}{n^2+1}$ converge,
+$\DS \sum_{n=1}^\infty (-1)^{n-1}\frac{n}{n^2+1}$ converge,
 puis cherchons une petite valeur $N$ telle que
 $|S_n - S|< 10^{-3}$ si $n\geq N$ où $S_n$ est la $n^e$ somme
 partielle de la série et $S$ est la somme de la série.
@@ -1548,9 +1548,9 @@ et
 a_{n+1} < a_n
 \end{equation}
 pour tout $n$, la série
-$\displaystyle \sum_{n=1}^\infty (-1)^n\frac{n}{n^2+1}$ et
+$\DS \sum_{n=1}^\infty (-1)^n\frac{n}{n^2+1}$ et
 donc la série
-$\displaystyle \sum_{n=1}^\infty (-1)^{n-1}\frac{n}{n^2+1}$ converge.
+$\DS \sum_{n=1}^\infty (-1)^{n-1}\frac{n}{n^2+1}$ converge.
 Notons que (\ref{inequAlt}) provient de la relation
 \[
 (n+1)(n^2+1) = n^3 + n^2 + n + 1 < n^3 +2n^2 + n + n = n( (n+1)^2+1)
@@ -1572,14 +1572,14 @@ l'exemple~\ref{deriveAlt} dans le chapitre sur les applications de la
 dérivée d'une fonction.
 
 \begin{defn}
-Une série de termes réels $\displaystyle \sum_{n=1}^\infty a_n$
+Une série de termes réels $\DS \sum_{n=1}^\infty a_n$
 {\bfseries converge absolument}\index{Série!convergence absolue}
-si la série de termes positifs $\displaystyle \sum_{n=1}^\infty |a_n|$
+si la série de termes positifs $\DS \sum_{n=1}^\infty |a_n|$
 converge.
 
-Si la série $\displaystyle \sum_{n=1}^\infty a_n$ converge mais la
-série $\displaystyle \sum_{n=1}^\infty |a_n|$ diverge, nous disons que la
-série $\displaystyle \sum_{n=1}^\infty a_n$
+Si la série $\DS \sum_{n=1}^\infty a_n$ converge mais la
+série $\DS \sum_{n=1}^\infty |a_n|$ diverge, nous disons que la
+série $\DS \sum_{n=1}^\infty a_n$
 {\bfseries converge conditionnellement}.\index{Série!convergence conditionnelle}
 \end{defn}
 
@@ -1592,14 +1592,14 @@ déterminer la convergence absolue d'une série.
 \end{rmk}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge
+La série $\DS \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge
 car elle satisfait le test des séries alternées.  Par contre, la série
 \[
 \sum_{n=1}^\infty \left|\frac{(-1)^n}{n}\right| =
 \sum_{n=1}^\infty \frac{1}{n}
 \]
 est la série harmonique qui diverge.  La série
-$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge donc
+$\DS \sum_{n=1}^\infty \frac{(-1)^n}{n}$ converge donc
 conditionnellement.
 \end{egg}
 
@@ -1612,7 +1612,7 @@ Si une série converge absolument alors elle converge.
 \end{theorem}
 
 \begin{proof}[Démonstration\ \theory]
-Soit $\displaystyle \sum_{n=1}^\infty a_n$ une série qui converge
+Soit $\DS \sum_{n=1}^\infty a_n$ une série qui converge
 absolument.  Posons $b_n = a_n + |a_n|$ pour $n\geq 1$.
 Remarquons que
 \[
@@ -1623,31 +1623,31 @@ b_n = \begin{cases}
 \]
 et $b_n - |a_n| = a_n$ pour tout $n\geq 1$.
 
-Puisque la série $\displaystyle \sum_{n=1}^\infty |a_n|$ converge, il
+Puisque la série $\DS \sum_{n=1}^\infty |a_n|$ converge, il
 en est de même pour la
-série $\displaystyle \sum_{n=1}^\infty 2 |a_n|$.  De 
+série $\DS \sum_{n=1}^\infty 2 |a_n|$.  De 
 plus, puisque $0 \leq b_n \leq 2 |a_n|$ pour tout $n\geq 1$ et la
-série $\displaystyle \sum_{n=1}^\infty 2 |a_n|$ converge, nous avons par le
-test de comparaison que la série $\displaystyle \sum_{n=1}^\infty b_n$
+série $\DS \sum_{n=1}^\infty 2 |a_n|$ converge, nous avons par le
+test de comparaison que la série $\DS \sum_{n=1}^\infty b_n$
 converge.
 
-Finalement, puisque les séries $\displaystyle \sum_{n=1}^\infty |a_n|$
-et $\displaystyle \sum_{n=1}^\infty b_n$ convergent, la série
-$\displaystyle \sum_{n=1}^\infty (b_n - |a_n|) = \sum_{n=1}^\infty a_n$
+Finalement, puisque les séries $\DS \sum_{n=1}^\infty |a_n|$
+et $\DS \sum_{n=1}^\infty b_n$ convergent, la série
+$\DS \sum_{n=1}^\infty (b_n - |a_n|) = \sum_{n=1}^\infty a_n$
 converge.
 \end{proof}
 
 \begin{egg}
-La série $\displaystyle \sum_{n=1}^\infty \frac{\sin(n)}{n^3}$
+La série $\DS \sum_{n=1}^\infty \frac{\sin(n)}{n^3}$
 converge car elle converge absolument.  En effet,
 \[
 0 \leq \left| \frac{\sin(n)}{n^3} \right|
 = \frac{|\sin(n)|}{n^3} \leq \frac{1}{n^3}
 \]
-et la série $\displaystyle \sum_{n=1}^\infty \frac{1}{n^3}$ converge
+et la série $\DS \sum_{n=1}^\infty \frac{1}{n^3}$ converge
 grâce à la proposition~\ref{Pseries}.  Il découle du test de comparaison
 que la série
-$\displaystyle \sum_{n=1}^\infty \left| \frac{\sin(n)}{n^3} \right|$
+$\DS \sum_{n=1}^\infty \left| \frac{\sin(n)}{n^3} \right|$
 converge.
 \end{egg}
 
@@ -1661,7 +1661,7 @@ séries entières.
 
 \begin{theorem}
 La suite
-$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$ 
+$\DS \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$ 
 converge.  Sa limite est définie comme étant le {\bfseries nombre
 d'Euler}\index{Nombre d'Euler}
 \[
@@ -1681,13 +1681,13 @@ est un entier positif.
 + n a b^{n-1} + b^n \\
 = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
 \]
-où $\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+où $\DS \binom{n}{k} = \frac{n!}{k!(n-k)!}$.
 
-Par exemple, $\displaystyle (a+b)^2 = a^2 + 2ab + b^2$
-et $\displaystyle (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+Par exemple, $\DS (a+b)^2 = a^2 + 2ab + b^2$
+et $\DS (a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
 
 Montrons que la suite
-$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$ 
+$\DS \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$ 
 converge.
 
 Premièrement, nous montrons que la suite est bornée supérieurement.  Grâce
@@ -1720,7 +1720,7 @@ pour $1\leq k \leq n$, nous avons que
 \]
 
 Deuxièmement, montrons que la suite
-$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$
+$\DS \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$
 est croissante.  Nous avons que
 \begin{align*}
 \left(1+\frac{1}{n+1}\right)^{n+1}\bigg/
@@ -1756,7 +1756,7 @@ si $n$ est pair.  Ainsi,
 &= \frac{n^3+3n^3+3n+2}{n^3+3n^2+3n+1}>1 \; .
 \end{align*}
 La convergence de la série
-$\displaystyle \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$
+$\DS \left\{\left(1+\frac{1}{n}\right)^n\right\}_{n=1}^\infty$
 est donc une conséquence du théorème~\ref{suiteBORN}
 \end{proof}
 
@@ -1774,25 +1774,25 @@ Cette définition fera appel aux séries.
 
 \begin{egg}
 Évaluons la limite de la suite
-$\displaystyle \left\{\frac{n\,e^{-n}}{n+1}\right\}_{n=1}^\infty$.
+$\DS \left\{\frac{n\,e^{-n}}{n+1}\right\}_{n=1}^\infty$.
 
 Pour ce faire, nous remarquons que la suite
-$\displaystyle \{ e^{-n} \}_{n=1}^\infty$ tend vers $0$ car c'est le
+$\DS \{ e^{-n} \}_{n=1}^\infty$ tend vers $0$ car c'est le
 cas $0< r = e^{-1}<1$ du théorème~\ref{suite1}.  Il est aussi facile
 de voir à partir du graphe de la fonction exponentielle $f(x)=e^x$
 à la figure~\ref{exp_N} que la limite de la suite
-$\displaystyle \{ e^{-n}\}_{n=1}^\infty$ est $0$. 
+$\DS \{ e^{-n}\}_{n=1}^\infty$ est $0$. 
 
 Nous pouvons alors conclure que la limite de la suite
-$\displaystyle \left\{\frac{n\,e^{-n}}{n+1}\right\}_{n=1}^\infty$ est
+$\DS \left\{\frac{n\,e^{-n}}{n+1}\right\}_{n=1}^\infty$ est
 aussi $0$ car
 \[
 \lim_{n\rightarrow \infty} \frac{n\, e^{-n}}{n+1}
 = \lim_{n\rightarrow \infty} \left( \frac{e^{-n}}{1+1/n} \right)
-= \frac{\displaystyle \lim_{n\rightarrow \infty} e^{-n}}
-{\displaystyle \lim_{n\rightarrow \infty} \left(1 + 1/n\right)}
-= \frac{\displaystyle \lim_{n\rightarrow \infty} e^{-n}}
-{\displaystyle 1 + \lim_{n\rightarrow \infty} (1/n)}
+= \frac{\DS \lim_{n\rightarrow \infty} e^{-n}}
+{\DS \lim_{n\rightarrow \infty} \left(1 + 1/n\right)}
+= \frac{\DS \lim_{n\rightarrow \infty} e^{-n}}
+{\DS 1 + \lim_{n\rightarrow \infty} (1/n)}
 = \frac{0}{1+0} = 0 \; .
 \]
 \end{egg}
@@ -1802,11 +1802,11 @@ aussi $0$ car
 
 \begin{egg}
 Évaluons la limite
-$\displaystyle \lim_{n\rightarrow \infty} \frac{e^{-n}}{n^2}$.
+$\DS \lim_{n\rightarrow \infty} \frac{e^{-n}}{n^2}$.
 
 Comme à l'exemple précédent, nous avons que la suite
-$\displaystyle \{ e^{-n} \}_{n=1}^\infty$ tend vers $0$.  De plus, la
-suite $\displaystyle \{ 1/n^2 \}_{n=1}^\infty$ tend aussi vers $0$
+$\DS \{ e^{-n} \}_{n=1}^\infty$ tend vers $0$.  De plus, la
+suite $\DS \{ 1/n^2 \}_{n=1}^\infty$ tend aussi vers $0$
 (le cas $r=2>0$ du théorème~\ref{suite2}).  Ainsi, grâce au
 théorème~\ref{suite3},
 \[
@@ -1836,19 +1836,19 @@ joueront aucun rôle dans le reste de ce manuel.
 Les {\bfseries fonctions hyperboliques} \index{Fonctions hyperboliques}
 sont:
 \begin{enumerate}
-\item le sinus hyperbolique $\displaystyle \sinh(x) = \frac{e^x - e^{-x}}{2}$
+\item le sinus hyperbolique $\DS \sinh(x) = \frac{e^x - e^{-x}}{2}$
 pour $x\in \RR$,
-\item le cosinus hyperbolique $\displaystyle \cosh(x) = \frac{e^x + e^{-x}}{2}$
+\item le cosinus hyperbolique $\DS \cosh(x) = \frac{e^x + e^{-x}}{2}$
 pour $x\in \RR$,
-\item la tangente hyperbolique $\displaystyle
+\item la tangente hyperbolique $\DS
 \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} = \frac{\sinh(x)}{\cosh(x)}$
 pour $x\in \RR$,
-\item la cotangente hyperbolique $\displaystyle
+\item la cotangente hyperbolique $\DS
 \coth(x) = \frac{e^x + e^{-x}}{e^x - e^{-x}} = \frac{\cosh(x)}{\sinh(x)}$
 pour $x\in \RR\setminus \{0\}$,
-\item la sécante hyperbolique $\displaystyle
+\item la sécante hyperbolique $\DS
 \sech(x) = \frac{2}{e^x + e^{-x}} = \frac{1}{\cosh(x)}$ pour $x\in \RR$, et
-\item la cosécante hyperbolique $\displaystyle
+\item la cosécante hyperbolique $\DS
 \csch(x) = \frac{2}{e^x - e^{-x}} = \frac{1}{\sinh(x)}$ pour
 pour $x\in \RR\setminus\{0\}$.
 \end{enumerate}
@@ -1867,16 +1867,16 @@ reste pas moins qu'elle permettent de présenter plusieurs résultats de
 façon élégante.
 
 Les fonctions hyperboliques satisfont les identités suivantes:
-$\displaystyle \sinh(-x) = -\sinh(x)$ (fonction impaire),
-$\displaystyle \cosh(-x) = \cosh(x)$ (fonction paire),
-$\displaystyle \cosh^2(x) - \sinh^2(x) = 1$,
-$\displaystyle \sinh(x+y) = \sinh(x) \cosh(y) + \cosh(x)\sinh(y)$ et
+$\DS \sinh(-x) = -\sinh(x)$ (fonction impaire),
+$\DS \cosh(-x) = \cosh(x)$ (fonction paire),
+$\DS \cosh^2(x) - \sinh^2(x) = 1$,
+$\DS \sinh(x+y) = \sinh(x) \cosh(y) + \cosh(x)\sinh(y)$ et
 biens d'autres.  Elles satisfont donc des identités semblables à
 celles satisfaites par les fonctions trigonométriques.
 
 Finalement, pour chaque fonction hyperbolique, nous pouvons définir une
 fonction inverse.  Par exemple, la fonction $\sinh^{-1}$ est définie
-par $\displaystyle \sinh^{-1}(x) = \ln(x+\sqrt{x^2+1})$ pour
+par $\DS \sinh^{-1}(x) = \ln(x+\sqrt{x^2+1})$ pour
 $x\in \RR$.  En effet,
 \[
 y = \sinh^{-1}(x)  \Leftrightarrow y = \frac{e^x - e^{-x}}{2} 
@@ -1890,7 +1890,7 @@ obtenons
 e^x = \frac{2y + \sqrt{4y^2 +4}}{2} = y +\sqrt{y^2+1} \ .
 \]
 Nous ne pouvons pas utiliser la formule
-$\displaystyle \frac{2y - \sqrt{4y^2 +4}}{2} = y -\sqrt{y^2+1}$ car elle
+$\DS \frac{2y - \sqrt{4y^2 +4}}{2} = y -\sqrt{y^2+1}$ car elle
 donne une valeurs négatives alors que $e^x >0$.  Nous avons donc
 que $x = \ln(y+\sqrt{y^2+1})$ pour $y\in \RR$.  Pour respecter la
 tradition qui veut que $y$ soit une fonction de $x$, nous échangeons
@@ -1905,7 +1905,7 @@ $\cosh^{-1}(x) = \ln(x+\sqrt{x^2-1})$ pour $x\geq 1$.
 
 Finalement, La fonction $\tanh$ a un inverse si nous considérons.
 La fonction $\tanh^{-1}$ est définie par
-$\displaystyle \tanh^{-1}(x) = \frac{1}{2}\,\ln\left(\frac{1+x}{1-x}\right)$
+$\DS \tanh^{-1}(x) = \frac{1}{2}\,\ln\left(\frac{1+x}{1-x}\right)$
 pour $-1 < x < 1$.  Le domaine de $\tanh^{-1}$ est $]-1,1[$, l'image
 de $\tanh$.
 
@@ -1920,21 +1920,21 @@ Déterminez si les suites suivantes convergent ou divergent.
 Si elles convergent, calculez leurs limites.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \left\{\frac{2^n}{3^{n+1}} \right\}_{n=1}^\infty$ &
-\subQ{b} & $\displaystyle \left\{ \ln(n+3) - \ln(n) \right\}_{n=1}^\infty$ &
-\subQ{c} & $\displaystyle \left\{\frac{2^{n+1}}{5^{n-1}} \right\}_{n=1}^\infty$
+\subQ{a} & $\DS \left\{\frac{2^n}{3^{n+1}} \right\}_{n=1}^\infty$ &
+\subQ{b} & $\DS \left\{ \ln(n+3) - \ln(n) \right\}_{n=1}^\infty$ &
+\subQ{c} & $\DS \left\{\frac{2^{n+1}}{5^{n-1}} \right\}_{n=1}^\infty$
 \\[1em]
-\subQ{d} & $\displaystyle \left\{ 3 + \sin\left(n\frac{\pi}{2}\right)
+\subQ{d} & $\DS \left\{ 3 + \sin\left(n\frac{\pi}{2}\right)
 \right\}_{n=1}^\infty$ &
-\subQ{e} & $\displaystyle \left\{ 2 + \cos(n\pi) \right\}_{n=1}^\infty$ &
-\subQ{f} & $\displaystyle \left\{\frac{n^2 - n + 1}{2n^2 + 1}
+\subQ{e} & $\DS \left\{ 2 + \cos(n\pi) \right\}_{n=1}^\infty$ &
+\subQ{f} & $\DS \left\{\frac{n^2 - n + 1}{2n^2 + 1}
 \right\}_{n=0}^\infty$
 \end{tabular}
 \end{center}
 \label{3Q1}
 \end{question}
 
-% $\displaystyle \left\{\frac{e^n}{n^2 + 1} \right\}_{n=1}^\infty$
+% $\DS \left\{\frac{e^n}{n^2 + 1} \right\}_{n=1}^\infty$
 
 \subsection{Séries}
 
@@ -1973,7 +1973,7 @@ production sont brisés par leur propriétaire.
 \subQ{b} Quel est le niveau de stabilisation du marché pour ce type de
 cerfs-volants?  C'est-à-dire, si $P_n$ est le nombre de cerfs-volants
 après $n$ années, quelle est la limite
-$\displaystyle \lim_{n\rightarrow \infty} P_n$ si cette limite existe.?
+$\DS \lim_{n\rightarrow \infty} P_n$ si cette limite existe.?
 \label{3Q4}
 \end{question}
 
@@ -1982,14 +1982,14 @@ Déterminez si les séries suivantes convergent ou divergent.  Si elles
 convergent, calculez leurs sommes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{5^{n+2}}{7^{n-2}}$ &
-\subQ{b} & $\displaystyle \sum_{n=0}^\infty \frac{2^n+1}{6^n}$ &
-\subQ{c} & $\displaystyle \sum_{n=0}^\infty
+\subQ{a} & $\DS \sum_{n=1}^\infty \frac{5^{n+2}}{7^{n-2}}$ &
+\subQ{b} & $\DS \sum_{n=0}^\infty \frac{2^n+1}{6^n}$ &
+\subQ{c} & $\DS \sum_{n=0}^\infty
   \frac{2^n- 3^{n+2}}{5^{n+1}}$ \\[1em]
-\subQ{d} & $\displaystyle\sum_{n=1}^\infty\frac{2}{n(n+1)}$ &
-\subQ{e} & $\displaystyle \sum_{n=1}^\infty 5^n 2^{-2n}$ &
-\subQ{f} & $\displaystyle \sum_{n=1}^\infty \frac{30}{n^2+3n+2}$ \\[1em]
-\subQ{g} & $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+5)}$ &
+\subQ{d} & $\DS\sum_{n=1}^\infty\frac{2}{n(n+1)}$ &
+\subQ{e} & $\DS \sum_{n=1}^\infty 5^n 2^{-2n}$ &
+\subQ{f} & $\DS \sum_{n=1}^\infty \frac{30}{n^2+3n+2}$ \\[1em]
+\subQ{g} & $\DS \sum_{n=1}^\infty \frac{1}{n(n+5)}$ &
 & & &
 \end{tabular}
 \end{center}
@@ -2002,23 +2002,23 @@ convergent, calculez leurs sommes.
 Déterminez si les séries suivantes sont convergentes ou divergentes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{5^n}{(n+1)!}$ &
-\subQ{b} & $\displaystyle \sum_{n=1}^\infty\left(1+\frac{2}{n}\right)^n$ &
-\subQ{c} & $\displaystyle \sum_{n=0}^\infty
+\subQ{a} & $\DS \sum_{n=1}^\infty \frac{5^n}{(n+1)!}$ &
+\subQ{b} & $\DS \sum_{n=1}^\infty\left(1+\frac{2}{n}\right)^n$ &
+\subQ{c} & $\DS \sum_{n=0}^\infty
            \frac{n^2-1}{\sqrt[3]{n^7+1}}$ \\[1em] 
-\subQ{d} & $\displaystyle \sum_{n=0}^\infty\;\frac{n^{1/3}}{n+4}$ &
-\subQ{e} & $\displaystyle \sum_{n=1}^\infty \frac{2}{\sqrt[3]{n}}$ &
-\subQ{f} & $\displaystyle \sum_{n=0}^\infty \frac{(n+1)^2}{n!}$ \\[1em]
-\subQ{g} & $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n^3+5)^{1/3}}$ &
-\subQ{h} & $\displaystyle \sum_{n=1}^\infty
+\subQ{d} & $\DS \sum_{n=0}^\infty\;\frac{n^{1/3}}{n+4}$ &
+\subQ{e} & $\DS \sum_{n=1}^\infty \frac{2}{\sqrt[3]{n}}$ &
+\subQ{f} & $\DS \sum_{n=0}^\infty \frac{(n+1)^2}{n!}$ \\[1em]
+\subQ{g} & $\DS \sum_{n=1}^\infty \frac{1}{n(n^3+5)^{1/3}}$ &
+\subQ{h} & $\DS \sum_{n=1}^\infty
            \frac{\cos^2(n)}{n\sqrt{n}}$ &
-\subQ{i} & $\displaystyle \sum_{n=1}^\infty\frac{n}{5^n}$ \\[1em]
-\subQ{j} & $\displaystyle \sum_{n=0}^\infty\;\frac{\cos^2(n)}{3^n}$ &
-\subQ{k} & $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^5+1}$ &
-\subQ{l} & $\displaystyle \sum_{n=1}^{\infty}
+\subQ{i} & $\DS \sum_{n=1}^\infty\frac{n}{5^n}$ \\[1em]
+\subQ{j} & $\DS \sum_{n=0}^\infty\;\frac{\cos^2(n)}{3^n}$ &
+\subQ{k} & $\DS \sum_{n=1}^\infty \frac{n^2+1}{n^5+1}$ &
+\subQ{l} & $\DS \sum_{n=1}^{\infty}
 \frac{(3n+1)^{1/2}}{(n^3+n)^{1/4}}$ \\[1em]
-\subQ{m} & $\displaystyle \sum_{n=1}^\infty \frac{5+3\sin(n)}{3n^3+n+4}$ &
-\subQ{n} & $\displaystyle \sum_{n=1}^\infty \frac{n^3+2}{\sqrt{n^7+8}}$ &
+\subQ{m} & $\DS \sum_{n=1}^\infty \frac{5+3\sin(n)}{3n^3+n+4}$ &
+\subQ{n} & $\DS \sum_{n=1}^\infty \frac{n^3+2}{\sqrt{n^7+8}}$ &
 &
 \end{tabular}
 \end{center}
@@ -2032,16 +2032,16 @@ Déterminez si les séries suivantes convergent absolument,
 convergent conditionnellement ou divergent.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \sum_{n=1}^\infty (-1)^n\frac{1}{\sqrt{n^2+3}}$ &
-\subQ{b} & $\displaystyle \sum_{n=2}^\infty \frac{(-1)^n}{\ln(n)}$ &
-\subQ{c} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n n!}{(2n+1)!}$
+\subQ{a} & $\DS \sum_{n=1}^\infty (-1)^n\frac{1}{\sqrt{n^2+3}}$ &
+\subQ{b} & $\DS \sum_{n=2}^\infty \frac{(-1)^n}{\ln(n)}$ &
+\subQ{c} & $\DS \sum_{n=1}^\infty \frac{(-1)^n n!}{(2n+1)!}$
 \\[1em]
-\subQ{d} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{\sqrt{n(n+2)}}$ &
-\subQ{e} & $\displaystyle \sum_{n=1}^\infty (-1)^n\left(\frac{1}{n^{3/2}}
+\subQ{d} & $\DS \sum_{n=1}^\infty \frac{(-1)^n}{\sqrt{n(n+2)}}$ &
+\subQ{e} & $\DS \sum_{n=1}^\infty (-1)^n\left(\frac{1}{n^{3/2}}
 + \frac{1}{n^2}\right)$ &
-\subQ{f} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n n^2}{(2n+1)(2n+3)}$
+\subQ{f} & $\DS \sum_{n=1}^\infty \frac{(-1)^n n^2}{(2n+1)(2n+3)}$
 \\[1em]
-\subQ{g} & $\displaystyle \sum_{n=1}^{\infty} \frac{\sin(n)}{n^2 +n-1}$ &
+\subQ{g} & $\DS \sum_{n=1}^{\infty} \frac{\sin(n)}{n^2 +n-1}$ &
 & & &
 \end{tabular}
 \end{center}
@@ -2050,7 +2050,7 @@ convergent conditionnellement ou divergent.
 
 \begin{question}[\eng]
 Montrez que la série
-$\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}}{3^n}$ converge et
+$\DS \sum_{n=1}^\infty \frac{(-1)^{n+1}}{3^n}$ converge et
 trouvez un entier $N$ tel que la somme partielle $S_n$ de cette série
 satisfasse $|S - S_n | < 10^{-3}$ pour $n \geq N$ où $S$ est la somme
 de la série.
@@ -2059,7 +2059,7 @@ de la série.
 
 \begin{question}[\eng]
 Montrez que la série
-$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n \, n}{4^n}$ converge et
+$\DS \sum_{n=1}^\infty \frac{(-1)^n \, n}{4^n}$ converge et
 trouvez un entier $N$ tel que la somme partielle $S_n$ de cette série
 satisfasse $|S - S_n | < 10^{-3}$ pour $n \geq N$ où $S$ est la somme
 de la série.  Donnez une approximation de la somme $S$ de la série
@@ -2069,7 +2069,7 @@ avec une erreur inférieure à $10^{-3}$.
 
 \begin{question}[\eng]
 Soit la série
-$\displaystyle \sum_{n=1}^\infty\;\frac{(-1)^n}{(2n+1)!}$.
+$\DS \sum_{n=1}^\infty\;\frac{(-1)^n}{(2n+1)!}$.
 
 \subQ{a} Montrez que cette série converge.\\
 \subQ{b} Trouvez un petit entier $N$ tel que $|S - S_N | < 10^{-4}$ où

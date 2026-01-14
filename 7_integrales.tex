@@ -81,7 +81,7 @@ $G(x) = G(c)$ pour tout $x\in ]a,b[$.
 \index{Variable d'intégration}
 {\bfseries L'intégrale indéfinie} d'une fonction $f$ est la famille de
 primitives pour cette fonction.  Nous dénotons l'intégrale indéfinie par
-$\displaystyle \int f(x) \dx{x}$.  Si $F$ est une primitive de
+$\DS \int f(x) \dx{x}$.  Si $F$ est une primitive de
 $f$, alors
 \[ 
 \int f(x)  \dx{x} = F(x) + C
@@ -112,7 +112,7 @@ que nous retrouvons dans le tableau~\ref{TABII}.
 \begin{table}
 \[
 \begin{array}{c|c|cl}
-f(x) & \displaystyle \int f(x)\dx{x} & \text{contraintes} \\
+f(x) & \DS \int f(x)\dx{x} & \text{contraintes} \\
 \hline
 \rule{0em}{1.5em} x^\alpha & x^{\alpha+1}/(\alpha+1) + C &
 \alpha \neq -1 \ \text{et}\ x^\alpha\ \text{est définie} \\ 
@@ -253,9 +253,9 @@ $\sin(4x)$, $\sqrt{x+7}$, etc.
 Calculons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{2.5em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int e^{5x} \dx{x}$  &
-\subQ{b} & $\displaystyle \int x\sin(x^2) \dx{x}$ &
-\subQ{c} & $\displaystyle \int \frac{x^3}{\sqrt{x^2+5}} \dx{x}$
+\subQ{a} & $\DS \int e^{5x} \dx{x}$  &
+\subQ{b} & $\DS \int x\sin(x^2) \dx{x}$ &
+\subQ{c} & $\DS \int \frac{x^3}{\sqrt{x^2+5}} \dx{x}$
 \end{tabular}
 \end{center}
 
@@ -358,9 +358,9 @@ main.
 Évaluons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{2.5em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int e^{5x} \dx{x}$ &
-\subQ{b} & $\displaystyle \int x\sin(x^2) \dx{x}$ &
-\subQ{c} & $\displaystyle \int \frac{x^3}{\sqrt{x^2+5}} \dx{x}$
+\subQ{a} & $\DS \int e^{5x} \dx{x}$ &
+\subQ{b} & $\DS \int x\sin(x^2) \dx{x}$ &
+\subQ{c} & $\DS \int \frac{x^3}{\sqrt{x^2+5}} \dx{x}$
 \end{tabular}
 \end{center}
 
@@ -408,10 +408,10 @@ ce que nous allons faire à partir de maintenant.
 Évaluons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{2.5em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \frac{\cos^3(x)}{\sqrt{\sin(x)}} \dx{x}$ &
-\subQ{b} & $\displaystyle \int \frac{1}{1+x^{1/3}} \dx{x}$ \\[1em]
-\subQ{c} & $\displaystyle \int \frac{x}{\sqrt{16 - 9x^4}} \dx{x}$ &
-\subQ{d} & $\displaystyle \int \frac{1}{x^2+2x+10} \dx{x}$
+\subQ{a} & $\DS \int \frac{\cos^3(x)}{\sqrt{\sin(x)}} \dx{x}$ &
+\subQ{b} & $\DS \int \frac{1}{1+x^{1/3}} \dx{x}$ \\[1em]
+\subQ{c} & $\DS \int \frac{x}{\sqrt{16 - 9x^4}} \dx{x}$ &
+\subQ{d} & $\DS \int \frac{1}{x^2+2x+10} \dx{x}$
 \end{tabular}
 \end{center}
 
@@ -461,8 +461,8 @@ intégrale en une intégrale de la forme
 \[
 \int \frac{1}{\sqrt{1-y^2}} \dx{y} = \arcsin(y)+C \; .
 \]
-Si $\displaystyle y = \frac{3x^2}{4}$, alors
-$\displaystyle \dx{y} = \frac{3x}{2} \dx{x}$ et
+Si $\DS y = \frac{3x^2}{4}$, alors
+$\DS \dx{y} = \frac{3x}{2} \dx{x}$ et
 \begin{align*}
 \int \frac{x}{\sqrt{16 - 9x^4}} \dx{x} &= 
 \frac{1}{4} \int \frac{x}{\sqrt{1 - \left(\frac{3x^2}{4}\right)^2}} \dx{x}
@@ -490,8 +490,8 @@ intégrale en une intégrale de la forme
 \[
 \int \frac{1}{1+y^2} \dx{y} = \arctan(y)+C \; .
 \]
-Pour ce faire, posons $\displaystyle y = \frac{x+1}{3}$.  Ainsi,
-$\displaystyle \dx{y} = \frac{1}{3} \dx{x}$ et
+Pour ce faire, posons $\DS y = \frac{x+1}{3}$.  Ainsi,
+$\DS \dx{y} = \frac{1}{3} \dx{x}$ et
 \begin{align*}
 \int \frac{1}{(x+1)^2+3^2} \dx{x} &= \frac{1}{3}
 \int \frac{1}{\left(\frac{x+1}{3}\right)^2 + 1} \times \frac{1}{3} \dx{x}
@@ -514,7 +514,7 @@ contraire.
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{\sqrt{x}}{\sqrt{x} - \sqrt[3]{x}} \dx{x}$.
+$\DS \int \frac{\sqrt{x}}{\sqrt{x} - \sqrt[3]{x}} \dx{x}$.
 
 Si les exposants de $x$ était des entiers, l'intégrale serait
 probablement plus simple.  Nous aurions seulement le quotient de deux
@@ -526,7 +526,7 @@ l'intégrande par $\sqrt{x}$, nous obtenons
 = \int \frac{x}{x - x^{5/6}} \dx{x} \ .
 \]
 Posons $x= u^6$ dans le but d'éliminer les racines sixièmes.  Nous avons
-$\displaystyle \dx{x} = 6u^5 \dx{u}$ et
+$\DS \dx{x} = 6u^5 \dx{u}$ et
 \[
 \int \frac{x}{x - x^{5/6}} \dx{x}
 = \int \left(\frac{u^6}{u^6 - u^5}\right) 6u^5 \dx{u}
@@ -599,12 +599,12 @@ suivantes peuvent être utiles.
 Évaluons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{2em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \tan(x) \dx{x}$ &
-\subQ{b} & $\displaystyle \int \sin^2(x)\dx{x}$ &
-\subQ{c} & $\displaystyle \int \sin^3(x)\dx{x}$ \\[1em]
-\subQ{d} & $\displaystyle \int \sin^3(x)\cos^2(x) \dx{x}$ &
-\subQ{e} & $\displaystyle \int \sec(x) \dx{x}$ &
-\subQ{f} & $\displaystyle \int \csc(x) \dx{x}$
+\subQ{a} & $\DS \int \tan(x) \dx{x}$ &
+\subQ{b} & $\DS \int \sin^2(x)\dx{x}$ &
+\subQ{c} & $\DS \int \sin^3(x)\dx{x}$ \\[1em]
+\subQ{d} & $\DS \int \sin^3(x)\cos^2(x) \dx{x}$ &
+\subQ{e} & $\DS \int \sec(x) \dx{x}$ &
+\subQ{f} & $\DS \int \csc(x) \dx{x}$
 \end{tabular}
 \end{center}
 
@@ -711,9 +711,9 @@ Ainsi,
 Évaluons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{7em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \sin(4x)\cos(3x) \dx{x}$ &
+\subQ{a} & $\DS \int \sin(4x)\cos(3x) \dx{x}$ &
 \subQ{b} &
-$\displaystyle \int \sin\left(x+\frac{\pi}{6}\right)\cos(x) \dx{x}$ 
+$\DS \int \sin\left(x+\frac{\pi}{6}\right)\cos(x) \dx{x}$ 
 \end{tabular}
 \end{center}
 
@@ -792,7 +792,7 @@ Donc $\dx{y} = 2\dx{x}$ et
 \end{align*}
 
 Nous aurions pu utiliser la substitution $y=\sin(x)$ pour
-évaluer l'intégrale\\ $\displaystyle \int \sin(x) \cos(x) \dx{x}$
+évaluer l'intégrale\\ $\DS \int \sin(x) \cos(x) \dx{x}$
 ci-dessus.  En effet, avec cette substitution, nous obtenons
 $\dx{y} = \cos(x) \dx{x}$ 
 et
@@ -829,7 +829,7 @@ Si nous utilisons la linéarité de l'intégrale indéfinie, nous obtenons
 & = f(x)g(x) - \int f'(x)\,g(x) \dx{x}
 \end{align*}
 où nous avons utilisé le fait que $f(x)g(x)$ est une primitive de
-$\displaystyle \dfdx{\left(f(x)g(x)\right)}{x}$.
+$\DS \dfdx{\left(f(x)g(x)\right)}{x}$.
 
 Nous obtenons donc une primitive de $f(x)g'(x)$ en soustrayant de
 $f(x)g(x)$ une primitive de $f'(x)\,g(x)$.  En d'autre mots,
@@ -844,7 +844,7 @@ Cette formule est connue sous le nom
 \end{theorem}
 
 \begin{egg}
-Évaluons l'intégrale indéfinie $\displaystyle \int x e^x\dx{x}$.
+Évaluons l'intégrale indéfinie $\DS \int x e^x\dx{x}$.
 
 Nous avons $x e^x = f(x) g'(x)$ pour $f(x)=x$ et $g'(x) = e^x$.  Donc
 $g(x) = e^x$, $f'(x) = 1$ et
@@ -861,10 +861,10 @@ car $\int e^x \dx{x} = e^x + C$.
 Évaluons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{5em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int x^2 \cos(2x)\dx{x}$ &
-\subQ{b} & $\displaystyle \int \sqrt{t} \ln(t) \dx{t}$ \\[1em]
-\subQ{c} & $\displaystyle \int x^3 \ln(2x)\dx{x}$ &
-\subQ{d} & $\displaystyle \int \ln(x)\dx{x}$
+\subQ{a} & $\DS \int x^2 \cos(2x)\dx{x}$ &
+\subQ{b} & $\DS \int \sqrt{t} \ln(t) \dx{t}$ \\[1em]
+\subQ{c} & $\DS \int x^3 \ln(2x)\dx{x}$ &
+\subQ{d} & $\DS \int \ln(x)\dx{x}$
 \end{tabular}
 \end{center}
 
@@ -897,8 +897,8 @@ utilisée à deux reprises pour éliminer le polynôme de degré deux $x^2$ de
 l'intégrande.
 
 \subQ{b} Nous avons $t^{1/2} \ln(t) = f(t)\,g'(t)$ pour $f(t)=\ln(t)$ et
-$g'(t)= t^{1/2}$.  Donc $\displaystyle f'(t) = \frac{1}{t}$,
-$\displaystyle g(t) = \frac{2}{3} t^{3/2}$ et
+$g'(t)= t^{1/2}$.  Donc $\DS f'(t) = \frac{1}{t}$,
+$\DS g(t) = \frac{2}{3} t^{3/2}$ et
 \begin{align*}
 \int t^{1/2} \ln(t)  \dx{t} &= \int f(t)\,g'(t)\,\dx{t}
 = f(t)g(t) - \int g(t)\,f'(t) \dx{t} \\
@@ -943,9 +943,9 @@ rationnel, il faut choisir $f(x) = \ln(x)$ et $g'(x) = p(x)$.
 Évaluons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{2.5em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int x\,5^x \dx{x}$ &
-\subQ{b} & $\displaystyle \int \arcsin(x) \dx{x}$ &
-\subQ{c} & $\displaystyle \int \arctan(x) \dx{x}$
+\subQ{a} & $\DS \int x\,5^x \dx{x}$ &
+\subQ{b} & $\DS \int \arcsin(x) \dx{x}$ &
+\subQ{c} & $\DS \int \arctan(x) \dx{x}$
 \end{tabular}
 \end{center}
 
@@ -957,11 +957,11 @@ $g'(x)= 5^x$.  Donc $f'(x) = 1$, $g(x) = 5^x/\ln(5)$ et
 &= \frac{x 5^x}{\ln(5)} - \frac{1}{\ln(5)} \int 5^x \dx{x}
 = \frac{x 5^x}{\ln(5)} - \frac{1}{(\ln(5))^2} 5^x + C
 \end{align*}
-Il ne faut pas oublier que $\displaystyle \dfdx{5^x}{x} = 5^x \ln(5)$.
+Il ne faut pas oublier que $\DS \dfdx{5^x}{x} = 5^x \ln(5)$.
 
 \subQ{b} Nous avons $\arcsin(x) = f(x) g'(x)$ pour $f(x)=\arcsin(x)$ et
 $g'(x) = 1$. Donc $g(x) = x$,
-$\displaystyle f'(x) = \frac{1}{\sqrt{1-x^2}}$ et
+$\DS f'(x) = \frac{1}{\sqrt{1-x^2}}$ et
 \begin{align*}
 \int \arcsin(x)\dx{x} &= \int f(x)\,g'(x)\,\dx{x}
 = f(x)g(x) - \int g(x)\,f'(x) \dx{x} \\
@@ -982,7 +982,7 @@ Donc
 \]
 
 \subQ{c} Nous avons $\arctan(x) = f(x) g'(x)$ pour $f(x)=\arctan(x)$ et
-$g'(x) = 1$. Donc $g(x) = x$, $\displaystyle f'(x) = \frac{1}{1+x^2}$
+$g'(x) = 1$. Donc $g(x) = x$, $\DS f'(x) = \frac{1}{1+x^2}$
 et
 \begin{align*}
 \int \arctan(x)\dx{x} &= \int f(x)\,g'(x)\,\dx{x}
@@ -1005,7 +1005,7 @@ Donc
 \end{egg}
 
 \begin{egg}
-Évaluons l'intégrale indéfinie $\displaystyle \int e^{\sqrt{x}} \dx{x}$.
+Évaluons l'intégrale indéfinie $\DS \int e^{\sqrt{x}} \dx{x}$.
 
 C'est un autre exemple où nous devons utiliser la règle de
 substitution dans le sens inverse comme nous l'avons expliqué à la
@@ -1029,8 +1029,8 @@ $\cos(\beta x)$, ou $e^{\alpha x}$ et $\sin(\beta x)$.
 Évaluons les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{5em}}}l@{\hspace{1em}}l}
-\subQ{a} & $\displaystyle \int e^x\cos(x) \dx{x}$ &
-\subQ{b} & $\displaystyle \int \sin(\ln(x)) \dx{x}$ \quad , \quad $x>0$
+\subQ{a} & $\DS \int e^x\cos(x) \dx{x}$ &
+\subQ{b} & $\DS \int \sin(\ln(x)) \dx{x}$ \quad , \quad $x>0$
 \end{tabular}
 \end{center}
 
@@ -1135,7 +1135,7 @@ Donc
 \subsubsection{Méthode de Weiestrass \eng}
 
 Il existe une autre façon d'évaluer des intégrales de la forme
-$\displaystyle \int F(\cos(x), \sin(x)) \dx{x}$ où
+$\DS \int F(\cos(x), \sin(x)) \dx{x}$ où
 $F(\cos(x), \sin(x))$ est 
 une fonction (rationnelle) de $\sin(x)$ et $\cos(x)$.  Nous pouvons
 utiliser la substitution
@@ -1155,7 +1155,7 @@ De plus, grâce à la
 {1-\tan^2(x/2)}\right)^2 + 1
 = \left(\frac{2t}{1-t^2}\right)^2 + 1 = \left(\frac{1+t^2}{1-t^2}\right)^2
 \]
-si $t\neq \pm 1$.  Donc $\displaystyle \sec(x) = \frac{1+t^2}{1-t^2}$
+si $t\neq \pm 1$.  Donc $\DS \sec(x) = \frac{1+t^2}{1-t^2}$
 donne
 \begin{equation} \label{weies3}
 \cos(x) = \frac{1-t^2}{1+t^2}  \; .
@@ -1176,7 +1176,7 @@ donne
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{1}{2+\sin(x)} \dx{x}$.
+$\DS \int \frac{1}{2+\sin(x)} \dx{x}$.
 
 Nous utilisons la substitution (\ref{weies1}) avec (\ref{weies2}) et
 (\ref{weies4}) pour obtenir
@@ -1191,9 +1191,9 @@ Nous utilisons la substitution (\ref{weies1}) avec (\ref{weies2}) et
 \dx{t} \; .
 \end{align*}
 Avec la substitution
-$\displaystyle y= \frac{2}{\sqrt{3}}\left(t+\frac{1}{2}\right)$, nous
+$\DS y= \frac{2}{\sqrt{3}}\left(t+\frac{1}{2}\right)$, nous
 obtenons
-$\displaystyle \dx{y}= \frac{2}{\sqrt{3}} \dx{t}$ et
+$\DS \dx{y}= \frac{2}{\sqrt{3}} \dx{t}$ et
 \begin{align*}
 \int \frac{1}{2+\sin(x)} \dx{x} &=
 \frac{2}{\sqrt{3}}
@@ -1206,7 +1206,7 @@ $\displaystyle \dx{y}= \frac{2}{\sqrt{3}} \dx{t}$ et
 \arctan\left(\frac{2}{\sqrt{3}}\left(t+\frac{1}{2}\right)\right) +C
 \; .
 \end{align*}
-Finalement, puisque $\displaystyle t = \tan\left(\frac{x}{2}\right)$, nous
+Finalement, puisque $\DS t = \tan\left(\frac{x}{2}\right)$, nous
 trouvons
 \[
 \int \frac{1}{2+\sin(x)} \dx{x}
@@ -1272,7 +1272,7 @@ constantes.
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{x^3}{x^2-5x+6}  \dx{x}$.
+$\DS \int \frac{x^3}{x^2-5x+6}  \dx{x}$.
 
 Étape 1: Comme le numérateur est un polynôme de degré plus grand que
 le dénominateur, nous divisons pour obtenir 
@@ -1333,7 +1333,7 @@ Ainsi, $27=B$ pour $x=3$ et $8=-A$ pour $x=2$.
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{x^4+x^3-x^2-x+1}{x^3-x} \dx{x}$.
+$\DS \int \frac{x^4+x^3-x^2-x+1}{x^3-x} \dx{x}$.
 
 Étape 1: Comme le numérateur est un polynôme de degré plus grand que
 le dénominateur, nous divisons pour obtenir
@@ -1378,7 +1378,7 @@ calculer de telles intégrales.
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{1}{x^2+6x+12}  \dx{x}$.
+$\DS \int \frac{1}{x^2+6x+12}  \dx{x}$.
 
 Étape 1: Nous n'avons pas à diviser les polynômes car le degré du
 dénominateur est plus grand que celui du numérateur.
@@ -1393,8 +1393,8 @@ Ainsi,
 \int \frac{1}{x^2+6x+12} \dx{x} = \int \frac{1}{(x+3)^2 + 3} \dx{x}
 = \frac{1}{3} \int \frac{1}{ \left((x+3)/\sqrt{3}\right)^2 + 1} \dx{x} \; .
 \]
-Si $\displaystyle y=\frac{x+3}{\sqrt{3}}$, alors
-$\displaystyle \dx{y} = \frac{1}{\sqrt{3}} \, \dx{x}$ et
+Si $\DS y=\frac{x+3}{\sqrt{3}}$, alors
+$\DS \dx{y} = \frac{1}{\sqrt{3}} \, \dx{x}$ et
 \begin{align*}
 \frac{1}{3} \int \frac{1}{ \left((x+3)/\sqrt{3}\right)^2 + 1} \dx{x}
 &= \frac{\sqrt{3}}{3} \int \frac{1}{\left((x+3)/\sqrt{3}\right)^2 + 1}
@@ -1408,7 +1408,7 @@ $\displaystyle \dx{y} = \frac{1}{\sqrt{3}} \, \dx{x}$ et
 
 \begin{egg}[\eng]
 Évaluons l'intégrale indéfinie 
-$\displaystyle \int \frac{4x+1}{(x-3)(x^2+6x+12)}  \dx{x}$.
+$\DS \int \frac{4x+1}{(x-3)(x^2+6x+12)}  \dx{x}$.
 
 Étape 1: Nous n'avons pas a diviser les polynômes car le degré du
 dénominateur est plus grand que celui du numérateur.
@@ -1472,7 +1472,7 @@ où $C = -(C_1+C_2)/3$.
 
 \begin{egg}[\eng]
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{1}{3\sin(x)+\cos(x)} \dx{x}$.
+$\DS \int \frac{1}{3\sin(x)+\cos(x)} \dx{x}$.
 
 Nous utilisons la substitution (\ref{weies1}) avec (\ref{weies2}),
 (\ref{weies3}) et (\ref{weies4}) pour obtenir
@@ -1520,7 +1520,7 @@ La substitution $x=g(t)$ donne le côté droit.
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{1}{x^2\sqrt{1-x^2}} \dx{x}$ pour
+$\DS \int \frac{1}{x^2\sqrt{1-x^2}} \dx{x}$ pour
 $-1 < x < 1$.
 
 Posons $x=\sin(t)$ avec $-\pi/2 < t < \pi/2$.  Donc
@@ -1554,7 +1554,7 @@ et
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \sqrt{x^2+1} \dx{x}$ pour $x \in \RR$.
+$\DS \int \sqrt{x^2+1} \dx{x}$ pour $x \in \RR$.
 
 Posons $x=\tan(t)$ pour $-\pi/2 < t < \pi/2$.  Donc
 $\dx{x} = \sec^2(t) \dx{t}$ et 
@@ -1593,7 +1593,7 @@ I = \int \sqrt{x^2+1} \dx{x} = \int \sec^3(t) \dx{t} =
 \frac{1}{2} \sec(t) \tan(t) + \frac{1}{2} \ln|\sec(t)+\tan(t)| + C
 \]
 où $C=C_1/2$.  Finalement, puisque $x=\tan(t)$ pour $-\pi/2 < t < \pi/2$,
-nous avons $\displaystyle \sec(t) = \sqrt{1+\tan^2(t)} = \sqrt{1+x^2}$.
+nous avons $\DS \sec(t) = \sqrt{1+\tan^2(t)} = \sqrt{1+x^2}$.
 Ainsi,
 \[
 I = \int \sqrt{x^2+1} \dx{x} = \frac{1}{2}\, x\sqrt{1+x^2}
@@ -1604,7 +1604,7 @@ I = \int \sqrt{x^2+1} \dx{x} = \frac{1}{2}\, x\sqrt{1+x^2}
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \left(\frac{x-1}{x}\right)^{1/2} \dx{x}$
+$\DS \int \left(\frac{x-1}{x}\right)^{1/2} \dx{x}$
 pour $x>1$.
 
 Nous avons
@@ -1622,7 +1622,7 @@ $\sqrt{x} = y$ et
 Pour évaluer cette dernière intégrale, nous utilisons la substitution
 $y=\sec(\theta)$ pour $0<\theta<\pi/2$.  Donc
 $\dx{y} = \sec(\theta)\tan(\theta)\dx{\theta}$ et
-$\displaystyle \sqrt{y^2-1} = \sqrt{\sec^2(\theta)-1} = \tan(\theta)$ 
+$\DS \sqrt{y^2-1} = \sqrt{\sec^2(\theta)-1} = \tan(\theta)$ 
 car $\tan(\theta)>0$ pour $0<\theta<\pi/2$.  Ainsi,
 \begin{align*}
 \int \sqrt{y^2-1} \dx{y} &= \int \tan^2(\theta)\sec(\theta)\dx{\theta} \\
@@ -1663,7 +1663,7 @@ où $C= 2C_3$.
 
 \begin{egg}
 Évaluons l'intégrale indéfinie 
-$\displaystyle \int \frac{\sqrt{x^2-1}}{x^3}  \dx{x}$ pour
+$\DS \int \frac{\sqrt{x^2-1}}{x^3}  \dx{x}$ pour
 $x>1$.
 
 Si $x = \sec(t)$ pour $0 < t < \pi/2$, alors
@@ -1706,7 +1706,7 @@ a été utilisé pour la deuxième égalité ci-dessus.
 
 \begin{egg}
 Évaluons l'intégrale indéfinie
-$\displaystyle \int \frac{1}{(4x^2-25)^{3/2}} \dx{x}$
+$\DS \int \frac{1}{(4x^2-25)^{3/2}} \dx{x}$
 pour $x>5/2$.
 
 Nous pouvons récrire cette intégrale de la façon suivante.
@@ -1715,9 +1715,9 @@ Nous pouvons récrire cette intégrale de la façon suivante.
 = \frac{1}{8} \, \int \frac{1}
 {\left(x^2 - \left(\frac{5}{2}\right)^2\right)^{3/2}} \dx{x}\; .
 \]
-Si $\displaystyle x = \frac{5}{2} \sec(t)$ pour
+Si $\DS x = \frac{5}{2} \sec(t)$ pour
 $0 < t < \pi/2$, alors
-$\displaystyle \dx{x} = \frac{5}{2} \tan(t)\sec(t) \dx{t}$ et
+$\DS \dx{x} = \frac{5}{2} \tan(t)\sec(t) \dx{t}$ et
 \begin{align*}
 \frac{1}{8} \, \int \frac{1}
 {\left(x^2 - \left(\frac{5}{2}\right)^2\right)^{3/2}} \dx{x}
@@ -1738,13 +1738,13 @@ où nous avons utilisé l'identité
 \sec^2(t) -1 = \tan^2(t) \quad \text{et} \quad
 \sqrt{\tan^2{x}} = \tan{x} > 0
 \]
-pour $0< t < \pi/2$.  Puisque $\displaystyle \sec(t) = \frac{2}{5}\, x$ donne
-$\displaystyle \cos(t) = \frac{5}{2x}$, nous obtenons
+pour $0< t < \pi/2$.  Puisque $\DS \sec(t) = \frac{2}{5}\, x$ donne
+$\DS \cos(t) = \frac{5}{2x}$, nous obtenons
 \[
 \sin(t) = \sqrt{1-\cos^2(t)} = \sqrt{1 -\left(\frac{5}{2x}\right)^2}
 = \frac{\sqrt{4x^2-25}}{2x}
 \]
-car $\displaystyle x = \frac{5}{2}\sec(t) > \frac{5}{2} $ et
+car $\DS x = \frac{5}{2}\sec(t) > \frac{5}{2} $ et
 $\sin(t) \geq 0$ pour $0\leq t < \pi/2$.
 
 Ainsi,
@@ -1923,7 +1923,7 @@ G_{10} > G_{20} > G_{1000} > A > D_{1000} > D_{20} > D_{10} \; .
 La valeur exacte de l'aire $A$ de la région $R$ est
 $A = 0.8646647167\ldots$.
 
-Comme le symbole de sommation $\displaystyle \sum$ sera très utile, il
+Comme le symbole de sommation $\DS \sum$ sera très utile, il
 est probablement important de revoir sa définition pour le bénéfice du
 lecteur.
 
@@ -2030,7 +2030,7 @@ L'{\bfseries intégrale définie}\index{Intégrale définie} de $f$ de $a$
 S_{\cal P} \rightarrow I \quad \text{lorsque}
 \quad \|{\cal P}\|\rightarrow 0 \ .
 \]
-Nous écrivons $\displaystyle \displaystyle \int_a^b f(x) \dx{x} = I$.
+Nous écrivons $\DS \DS \int_a^b f(x) \dx{x} = I$.
 
 Les nombres $a$ et $b$ sont appelés les
 {\bfseries bornes d'intégration}.\index{Borne d'intégration}
@@ -2065,7 +2065,7 @@ d'intégration est $x$.  Aucune manipulation algébrique avec $\dx{x}$
 n'est permise.
 
 Il découle de la définition de l'intégrale définie que nous pouvons
-estimer la valeur de l'intégrale $\displaystyle \int_a^b f(x) \dx{x}$
+estimer la valeur de l'intégrale $\DS \int_a^b f(x) \dx{x}$
 en choisissant un partition très fine (i.e. $\|{\cal P}\|$ très petit)
 avec une somme de Riemann subordonnée à cette partition.
 
@@ -2078,7 +2078,7 @@ $x_i = a + i \, \Delta x$ pour $i=0$, $1$, $2$, \ldots, $k$.
 Les points $a=x_0 < x_1 < x_2 < \ldots < x_k = b$ forment une
 partition ${\cal P}$ de l'intervalle $[a,b]$ en sous-intervalles
 $[x_i, x_{i+1}]$ de même longueur $\Delta x$.  Nous avons que
-$\displaystyle \|{\cal P}\| = \Delta x = (b-a)/k$
+$\DS \|{\cal P}\| = \Delta x = (b-a)/k$
 tend vers $0$ lorsque $k$ tend vers plus l'infini.
 
 Pour chaque intervalle $[x_i,x_{i+1}]$, choisissons $x_i^\ast$ dans cet
@@ -2128,7 +2128,7 @@ définir l'intégrale définie}{Forme générale des rectangles utilisés
 pour définir l'intégrale définie}{AREA6}
 
 \begin{egg}
-Estimons $\displaystyle \int_{-1}^2  (1 + x^2) \dx{x}$.  Pour ce faire, nous
+Estimons $\DS \int_{-1}^2  (1 + x^2) \dx{x}$.  Pour ce faire, nous
 allons utiliser les sommes à gauche, les sommes à droites et les sommes
 pour le point milieu avec $n=3$ et $n=6$ sous-intervalles.
 
@@ -2150,38 +2150,38 @@ La somme à droite avec $n=3$ est
 \[
 D_3 = ( f(0) + f(1) + f(2) ) (1) = 8 \ .
 \]
-Donc $\displaystyle \int_{-1}^2 (1+x^2) \dx{x} \approx D_3 = 8$.
+Donc $\DS \int_{-1}^2 (1+x^2) \dx{x} \approx D_3 = 8$.
 
 La somme à droite avec $n=6$ est
 \[
 D_6 = ( f(-0.5) + f(0) + f(0.5) + f(1) + f(1.5) + f(2) ) (0.5) = 6.875 \ .
 \]
-Donc $\displaystyle \int_{-1}^2 (1+x^2) \dx{x} \approx D_6 = 6.875$.
+Donc $\DS \int_{-1}^2 (1+x^2) \dx{x} \approx D_6 = 6.875$.
 
 La somme à gauche avec $n=3$ est
 \[
 G_3 = ( f(-1) + f(0) + f(1) ) (1) = 5 \ .
 \]
-Donc $\displaystyle \int_{-1}^2 (1+x^2) \dx{x} \approx G_3 = 5$.
+Donc $\DS \int_{-1}^2 (1+x^2) \dx{x} \approx G_3 = 5$.
 
 La somme à gauche avec $n=6$ est
 \[
 G_6 = ( f(-1) + f(-0.5) + f(0) + f(0.5) + f(1) + f(1.5) )(0.5) = 5.375 \ .
 \]
-Donc $\displaystyle \int_{-1}^2 (1+x^2) \dx{x} \approx G_6 = 5.375$.
+Donc $\DS \int_{-1}^2 (1+x^2) \dx{x} \approx G_6 = 5.375$.
 
 La somme pour le point milieu avec $n=3$ est
 \[
 M_3 = ( f(-0.5) + f(0.5) + f(1.5) ) (1)= 5.75 \ .
 \]
-Donc $\displaystyle \int_{-1}^2 (1+x^2) \dx{x} \approx S_3 = 5.75$.
+Donc $\DS \int_{-1}^2 (1+x^2) \dx{x} \approx S_3 = 5.75$.
 
 La somme pour le point milieu avec $n=6$ est
 \[
 M_6 = ( f(-0.75) + f(-0.25) + f(0.25) + f(0.75) + f(1.25) + f(1.75) )(0.5)
 = 5.9375 \ .
 \]
-Donc $\displaystyle \int_{-1}^2 (1+x^2) \dx{x} \approx S_6 = 5.9375$.
+Donc $\DS \int_{-1}^2 (1+x^2) \dx{x} \approx S_6 = 5.9375$.
 
 La meilleure approximation est donnée par la somme $M_6$.
 
@@ -2193,20 +2193,20 @@ milieu à l'exemple~\ref{EGNumComp1}}{FigNumComp1}
 Considérons le dessin à gauche qui est donné à la
 figure~\ref{FigNumComp1}.  Il représente le graphe de $f$ entre $x_i$
 et $x_{i+1}$.  L'aire de la région $E_D$ (en rose) représente l'erreur
-entre la valeur de $\displaystyle \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ et
+entre la valeur de $\DS \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ et
 l'aire du rectangle donné par la somme à droite.  L'aire de la région
 $E_G$ (en bleu) représente l'erreur entre la valeur de
-$\displaystyle \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ et l'aire du
+$\DS \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ et l'aire du
 rectangle donné par la somme à gauche.  Comme $f$ est positive,
 croissante et convexe, nous avons que l'aire de la région $E_D$ est plus
 grande que l'aire de la région $E_G$.  La somme à gauche donne donc
 une meilleure estimation de la valeur de
-$\displaystyle \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ que la somme à droite.
+$\DS \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ que la somme à droite.
 
 Considérons maintenant le dessin à droite qui est donné à la
 figure~\ref{FigNumComp1}.  Il représente le graphe de $f$ entre $x_i$
 et $x_{i+1}$.  L'aire de la région $E_M$ (en vert) représente l'erreur
-entre la valeur de $\displaystyle \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ et
+entre la valeur de $\DS \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ et
 l'aire du rectangle \mbox{\rectangle$x_iAGx_{i+1}$} donné par la somme
 pour le point milieu.  Remarquons que l'aire du rectangle
 \mbox{\rectangle$x_iAGx_{i+1}$} est égale à l'aire du trapèze
@@ -2221,7 +2221,7 @@ donné par la somme à gauche est plus petite que l'aire du rectangle
 milieu qui elle est plus petite que l'aire sous la courbe
 $y=f(x)$ pour $x_i \leq x \leq x_{i+1}$, nous en concluons que la somme
 pour le point milieu donne une meilleure estimation de la valeur de
-$\displaystyle \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ que la somme à gauche.
+$\DS \int_{x_i}^{x_{i+1}} f(x) \dx{x}$ que la somme à gauche.
 
 En conclusion, quand $f$ est positive, croissante et convexe, la somme
 pour le point milieu donne la meilleure approximation de l'intégrale
@@ -2237,7 +2237,7 @@ vérifier cette conclusion.
 De plus, nous déduisons du graphe de $f$ à la figure~\ref{FigNumComp1}
 que, dans le cas d'une fonction convexe, l'aire du rectangle donné par
 la somme pour le point milieu est toujours inférieure à
-$\displaystyle \int_{x_i}^{x_{i+1}} f(x) \dx{x}$.  La somme pour
+$\DS \int_{x_i}^{x_{i+1}} f(x) \dx{x}$.  La somme pour
 le point milieu est donc une sous-estimation de la valeur de l'intégrale.
 
 En conséquence, puisque $M_3 < M_6$, nous avons que $M_6$ est la meilleure
@@ -2256,13 +2256,13 @@ $[x_i,x_{i+1}]$.
 Nous déduisons du deuxième item de la remarque~\ref{IDadgm} ci-dessus que
 si $f(x)\geq 0$ pour tout $x$ dans l'intervalle $[a,b]$, alors
 \[
-\displaystyle \int_a^b f(x)\dx{x} = A
+\DS \int_a^b f(x)\dx{x} = A
 \]
 où $A$ est l'aire de la région $R$ en dessous de la courbe $y=f(x)$,
 au-dessus de l'axe des $x$, et entre $x=a$ et $x=b$.  Par contre, si
 $f(x)\leq 0$ pour tout $x$ dans l'intervalle $[a,b]$, alors 
 \[
-\displaystyle \int_a^b f(x)\dx{x} = -A
+\DS \int_a^b f(x)\dx{x} = -A
 \]
 où $A$ est l'aire de la région $R$ au-dessus de la courbe $y=f(x)$,
 en dessous de l'axe des $x$, et entre $x=a$ et $x=b$.  Si $f$ change
@@ -2270,7 +2270,7 @@ de signe à un seul point $c$ de l'intervalle $[a,b]$ comme c'est le
 cas pour la fonction $f$ dont le graphe est donné à la
 figure~\ref{AREA8}, alors
 \[
-\displaystyle \int_a^b f(x)\dx{x} = A_1 - A_2 \; ,
+\DS \int_a^b f(x)\dx{x} = A_1 - A_2 \; ,
 \]
 où $A_1$ est l'aire de la région $R_1$ et $A_2$ est l'aire de la
 région $R_2$.  La région $R_1$ est la région en dessous de la courbe
@@ -2410,7 +2410,7 @@ $f(x)=x^2$ pour $1 \leq x \leq 3$}{AREA7}
 
 \begin{egg}
 Utilisons la définition de l'intégrale définie pour calculer
-$\displaystyle \int_{-2}^2 (4-x^2) \dx{x}$.
+$\DS \int_{-2}^2 (4-x^2) \dx{x}$.
 
 Soit $k$ une entier positif.  Nous avons $\Delta x = 4/k$ et
 $x_i = -2 + 4i/k$ pour $i=0$, $1$, $2$, \ldots, $k$.  Les intervalles
@@ -2459,11 +2459,11 @@ Remarquons que la somme
 \, \frac{1}{n}
 \]
 est une somme de Riemann à droite pour l'intégrale
-$\displaystyle \int_0^1 x^3 \dx{x}$.
-En effet, soit $\displaystyle \Delta x = \frac{1}{n}$ et
-$\displaystyle x_i = i \Delta x = \frac{i}{n}$ pour $i=0$, $1$, $2$,
+$\DS \int_0^1 x^3 \dx{x}$.
+En effet, soit $\DS \Delta x = \frac{1}{n}$ et
+$\DS x_i = i \Delta x = \frac{i}{n}$ pour $i=0$, $1$, $2$,
 \ldots, $n$.  Nous obtenons la somme à droite suivante pour
-$\displaystyle \int_0^1 x^3 \dx{x}$.
+$\DS \int_0^1 x^3 \dx{x}$.
 \[
 \sum_{i=1}^n x_i^3 \, \Delta x
 = \sum_{i=1}^n \left(\frac{i}{n}\right)^3 \, \frac{1}{n} \; .
@@ -2490,11 +2490,11 @@ Remarquons que la somme
 = \sum_{i=1}^n \frac{1}{2} \left( 2 + \frac{2i}{n}\right)^2 \, \frac{2}{n} \;,
 \]
 est une somme de Riemann à droite pour l'intégrale
-$\displaystyle \int_2^4 \frac{x^2}{2} \dx{x}$.
-En effet, soit $\displaystyle \Delta x = \frac{2}{n}$ et
-$\displaystyle x_i = 2 + i \Delta x = 2 + \frac{2i}{n}$ pour
+$\DS \int_2^4 \frac{x^2}{2} \dx{x}$.
+En effet, soit $\DS \Delta x = \frac{2}{n}$ et
+$\DS x_i = 2 + i \Delta x = 2 + \frac{2i}{n}$ pour
 $i=0$, $1$, $2$, \ldots, $n$.  Nous obtenons la somme à droite suivante
-pour $\displaystyle \int_2^4 \frac{x^2}{2} \dx{x}$.
+pour $\DS \int_2^4 \frac{x^2}{2} \dx{x}$.
 \[
 \sum_{i=1}^n \frac{x_i^2}{2} \, \Delta x
 = \sum_{i=1}^n \frac{1}{2} \left( 2 + \frac{2i}{n}\right)^2 \, \frac{2}{n}
@@ -2855,7 +2855,7 @@ $0\leq x \leq 5$.  Or
 \[
 \int_0^5 f'(x) \dx{x} = \int_0^4 f'(x) \dx{x} + \int_4^5 f'(x) \dx{x} \ .
 \]
-Puisque $\displaystyle \int_0^4 f'(x) \dx{x}$ représente la moitié de
+Puisque $\DS \int_0^4 f'(x) \dx{x}$ représente la moitié de
 l'aire du disque de rayon $2$, nous avons que
 \[
 \int_0^4 f'(x) \dx{x} = \frac{1}{2}\; (2^2 \pi) = 2\pi \ .
@@ -2882,8 +2882,8 @@ f(5) = 3 + 2\pi + \frac{2\pi}{3} - \frac{\sqrt{3}}{2}
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{5em}}}l@{\hspace{1em}}l}
 \subQ{a} &
-$\displaystyle \int_4^9 \left(\sqrt{t} + \frac{1}{\sqrt{t}}\right)^2 \dx{t}$ &
-\subQ{b} & $\displaystyle \int_0^{1/2} \frac{1}{\sqrt{1-x^2}} \dx{x}$
+$\DS \int_4^9 \left(\sqrt{t} + \frac{1}{\sqrt{t}}\right)^2 \dx{t}$ &
+\subQ{b} & $\DS \int_0^{1/2} \frac{1}{\sqrt{1-x^2}} \dx{x}$
 \end{tabular}
 \end{center}
 
@@ -2946,14 +2946,14 @@ d'intégration $y$.
 Évaluons les intégrales définies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{2.5em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_1^3 \frac{x^2}{\sqrt{x^3+5}} \dx{x}$  &
-\subQ{b} & $\displaystyle \int_0^{\pi/2} e^{-\cos(\theta)} \sin(\theta)
+\subQ{a} & $\DS \int_1^3 \frac{x^2}{\sqrt{x^3+5}} \dx{x}$  &
+\subQ{b} & $\DS \int_0^{\pi/2} e^{-\cos(\theta)} \sin(\theta)
 \dx{\theta}$ &
-\subQ{c} & $\displaystyle \int_0^{1/\sqrt{2}} \frac{x}{\sqrt{1-x^4}} \dx{x}$
+\subQ{c} & $\DS \int_0^{1/\sqrt{2}} \frac{x}{\sqrt{1-x^4}} \dx{x}$
 \\[1em]
-\subQ{d} & $\displaystyle \int_0^{\pi^2} \frac{\cos(\sqrt{x})}{\sqrt{x}}
+\subQ{d} & $\DS \int_0^{\pi^2} \frac{\cos(\sqrt{x})}{\sqrt{x}}
 \dx{x}$ &
-\subQ{e} & $\displaystyle \int_0^4 \frac{t+7}{\sqrt{5-t}} \dx{t}$
+\subQ{e} & $\DS \int_0^4 \frac{t+7}{\sqrt{5-t}} \dx{t}$
 \end{tabular}
 \end{center}
 
@@ -2987,7 +2987,7 @@ $y=0$ pour $x=0$ et $y=1/2$ pour $x=1/\sqrt{2}$.  Donc
 \end{align*}
 
 \subQ{d} Si $y = \sqrt{x}$, alors
-$\displaystyle \dx{y} = \frac{1}{2\sqrt{x}}\,\dx{x}$,
+$\DS \dx{y} = \frac{1}{2\sqrt{x}}\,\dx{x}$,
 $y=0$ pour $x=0$ et $y=\pi$ pour $x=\pi^2$.  Donc
 \[
 \int_0^{\pi^2} \frac{\cos(\sqrt{x})}{\sqrt{x}} \dx{x}
@@ -3037,8 +3037,8 @@ fonctions différentiables, alors
 Évaluons les intégrales définies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{5em}}}l@{\hspace{1em}}l}
-\subQ{a} & $\displaystyle \int_1^3 (5x+2)e^{3x} \dx{x}$ &
-\subQ{b} & $\displaystyle \int_0^1 \arctan(t) \dx{t}$
+\subQ{a} & $\DS \int_1^3 (5x+2)e^{3x} \dx{x}$ &
+\subQ{b} & $\DS \int_0^1 \arctan(t) \dx{t}$
 \end{tabular}
 \end{center}
 
@@ -3151,7 +3151,7 @@ entre $390$ et $430$.}{NORMAL_DISTR}
 
 \begin{egg}
 Calculons la dérivée de
-$\displaystyle F(x) = \int_1^{x^2} (1+s^2)^{3/2} \dx{s}$.
+$\DS F(x) = \int_1^{x^2} (1+s^2)^{3/2} \dx{s}$.
 
 Posons,
 \[
@@ -3170,7 +3170,7 @@ F'(x) = G'(H(x))\,H'(x) = \left(1+\left(x^2\right)^2\right)^{3/2}
 \begin{rmk}
 Si $f$ est continue au point $c$, la deuxième version du théorème
 fondamental du calcul nous assure que
-$\displaystyle F(x) = \int_a^x f(s) \dx{s}$
+$\DS F(x) = \int_a^x f(s) \dx{s}$
 est différentiable au point $c$ et que $F'(c) = f(c)$.  Si $f$ n'est
 pas continue au point $c$, nous ne pouvons rien affirmer.
 
@@ -3196,7 +3196,7 @@ différentiable au point $x=1$ où $f$ n'est pas continue.
 
 \PDFfig{7_integrales/second_FTC}{Graphes de $f$ et de $F$ où
 $F(x) = \int_0^x f(s)\dx{s}$}{Graphes de $f$ et de $F$ où
-$\displaystyle F(x) = \int_0^x f(s)\dx{s}$}{sndFTC}
+$\DS F(x) = \int_0^x f(s)\dx{s}$}{sndFTC}
 
 \section{Intégrales impropres}
 
@@ -3259,10 +3259,10 @@ Si la limite existe, nous disons que l'intégrale impropre
 \end{defn}
 
 Si $f(x)\geq 0$ pour tout $x$, l'intégrale impropre
-$\displaystyle \int_a^\infty f(x) \dx{x}$ représente l'aire de la
+$\DS \int_a^\infty f(x) \dx{x}$ représente l'aire de la
 région bornée par la courbe $y=f(x)$, l'axe des $x$ et la droite $x=a$
 (figure~\ref{IMPR1}).  Nous pouvons énoncer un
-résultat semblable pour $\displaystyle \int_{-\infty}^b f(x) \dx{x}$.
+résultat semblable pour $\DS \int_{-\infty}^b f(x) \dx{x}$.
 
 \PDFfig{7_integrales/improper1}{L'intégrale impropre comme la limite
 d'intégrales définies}{L'intégrale de $f$ de $a$ à plus l'infini est
@@ -3272,7 +3272,7 @@ la courbe $y=f(x)$, l'axe des $x$ et la droite $x=a$.}{IMPR1}
 
 \begin{egg}
 Évaluons l'intégrale
-$\displaystyle \int_{-\infty}^{-1} \frac{1}{(x-1)^{4/3}} \dx{x}$.
+$\DS \int_{-\infty}^{-1} \frac{1}{(x-1)^{4/3}} \dx{x}$.
 
 Par définition,
 \[
@@ -3297,7 +3297,7 @@ Ainsi,
 
 \begin{egg}
 Évaluons l'intégrale
-$\displaystyle \int_1^\infty \frac{\ln(x)}{x^3} \dx{x}$.
+$\DS \int_1^\infty \frac{\ln(x)}{x^3} \dx{x}$.
 
 Par définition,
 \[
@@ -3357,7 +3357,7 @@ car, par la règle de l'Hospital,
 \end{egg}
 
 Déterminons pour quelles valeurs de $p$ l'intégrale impropre
-$\displaystyle \int_1^\infty \frac{1}{x^p} \dx{x}$ converge.  Pour les
+$\DS \int_1^\infty \frac{1}{x^p} \dx{x}$ converge.  Pour les
 valeurs de $p$ où l'intégrale impropre converge, nous donnerons la
 valeur de l'intégrale.
 
@@ -3405,7 +3405,7 @@ Finalement, pour $p=1$,
 Nous obtenons le résultat suivant.
 
 \begin{prop} \label{impr_comp1}
-$\displaystyle \int_1^\infty \frac{1}{x^p} \dx{x}$ converge pour $p>1$
+$\DS \int_1^\infty \frac{1}{x^p} \dx{x}$ converge pour $p>1$
 et diverge pour $p\leq 1$.  De plus,
 \[
 \int_1^\infty \frac{1}{x^p} \dx{x} = \frac{1}{p-1} \quad \text{pour}
@@ -3415,18 +3415,18 @@ et diverge pour $p\leq 1$.  De plus,
 
 La conclusion de la proposition précédente au sujet de la convergence
 ou divergence ne changera pas si nous remplaçons
-$\displaystyle \int_1^\infty \frac{1}{x^p} \dx{x}$
-par $\displaystyle \int_a^\infty \frac{1}{x^p} \dx{x}$
+$\DS \int_1^\infty \frac{1}{x^p} \dx{x}$
+par $\DS \int_a^\infty \frac{1}{x^p} \dx{x}$
 où $a$ est un nombre réel quelconque.
 
 \begin{egg}
 Évaluons si possible l'intégrale impropre
-$\displaystyle \int_{-\infty}^\infty \frac{1}{x^2+2x+2} \dx{x}$.
+$\DS \int_{-\infty}^\infty \frac{1}{x^2+2x+2} \dx{x}$.
 
 Pour évaluer cette intégrale, il faut diviser le domaine d'intégration
 en deux.\footnote{Nous aurions pu aussi définir cette intégrale de la
 façon suivante.
-$\displaystyle \int_{-\infty}^\infty \frac{1}{x^2+2x+2} \dx{x}
+$\DS \int_{-\infty}^\infty \frac{1}{x^2+2x+2} \dx{x}
 = \lim_{q\to \infty} \int_{-q}^q \frac{1}{x^2+2x+2} \dx{x}$.  Nous parlons
 alors de l'intégrale de Cauchy de la fonction.  Ce n'est pas la
 tradition pour les fonctions à valeurs réelles.  Nous m'adopterons pas
@@ -3471,10 +3471,10 @@ Donc
  
 \begin{egg}
 Évaluons si possible l'intégrale impropre
-$\displaystyle \int_0^{\infty} x e^{-x} \dx{x}$
+$\DS \int_0^{\infty} x e^{-x} \dx{x}$
 
 Nous utilisons la règle d'intégration par parties pour évaluer
-$\displaystyle \int x e^{-x} \dx{x}$.
+$\DS \int x e^{-x} \dx{x}$.
 
 Nous avons $x e^{-x} = f(x) g'(x)$ où $f(x) = x$ et $g'(x) = e^{-x}$.
 Donc $f'(x) = 1$, $g(x) = - e^{-x}$ et 
@@ -3502,8 +3502,8 @@ et
 \]
 Pour le calcul de cette dernière limite, nous avons utilisé la règle
 de l'Hospital pour obtenir la deuxième égalité car
-$\displaystyle \lim_{q\rightarrow \infty} q = +\infty$ et
-$\displaystyle \lim_{q\rightarrow \infty} e^q = +\infty$.
+$\DS \lim_{q\rightarrow \infty} q = +\infty$ et
+$\DS \lim_{q\rightarrow \infty} e^q = +\infty$.
 \end{egg}
 
 \subsection{Intégrales avec un intégrande non bornée}
@@ -3559,7 +3559,7 @@ courbe $y=f(x)$, l'axe des $x$ et les droites $x=a$ et $x=b$.}{IMPR3}
 
 \begin{egg}
 Évaluons l'intégrale
-$\displaystyle \int_0^1 \frac{1}{\sqrt{x}} \dx{x}$.
+$\DS \int_0^1 \frac{1}{\sqrt{x}} \dx{x}$.
 
 Puisque $x=0$ est une asymptote verticale pour $f(x)=1/\sqrt{x}$, nous
 avons que
@@ -3580,12 +3580,12 @@ Ainsi,
 \]
 \end{egg}
 
-\PDFfig{7_integrales/improper4}{Graphe de $\displaystyle y=\frac{1}{x^2+x-6}$}
-{Graphe de $\displaystyle y=\frac{1}{x^2+x-6}$ pour $0\leq x < 2$.}{IMPR4} 
+\PDFfig{7_integrales/improper4}{Graphe de $\DS y=\frac{1}{x^2+x-6}$}
+{Graphe de $\DS y=\frac{1}{x^2+x-6}$ pour $0\leq x < 2$.}{IMPR4} 
 
 \begin{egg}
 Déterminons si l'intégrale impropre
-$\displaystyle \int_0^2 \frac{1}{x^2+x-6} \dx{x}$ converge ou diverge.
+$\DS \int_0^2 \frac{1}{x^2+x-6} \dx{x}$ converge ou diverge.
 Si elle converge, nous allons donner la valeur de l'intégrale.
 
 Notons que $x^2+x-6 = (x+3)(x-2)$.  Ainsi,
@@ -3630,8 +3630,8 @@ Ainsi,
 &= -\frac{1}{5} \left( \ln(q+3) - \ln(3) - \ln|q-2| + \ln(2) \right) \\
 &= -\frac{1}{5} \left( \ln(q+3) -\ln|q-2| + \ln(2/3) \right) \; .
 \end{align*}
-Puisque $\displaystyle \lim_{q\rightarrow 2^-} \ln|q-2| = -\infty$ et
-$\displaystyle \lim_{q\rightarrow 2^-} \ln(q+3) = \ln(5)$, nous obtenons
+Puisque $\DS \lim_{q\rightarrow 2^-} \ln|q-2| = -\infty$ et
+$\DS \lim_{q\rightarrow 2^-} \ln(q+3) = \ln(5)$, nous obtenons
 \begin{align*}
 \int_0^2 \frac{1}{x^2+x-6} \dx{x}
 &= \lim_{q\rightarrow 2^-} \int_0^q \frac{1}{x^2+x-6} \dx{x} \\
@@ -3643,7 +3643,7 @@ L'intégrale diverge.
 \end{egg}
 
 Déterminons pour quelles valeurs de $p$ l'intégrale
-$\displaystyle \int_0^1 \frac{1}{x^p} \dx{x}$ converge.  Pour les
+$\DS \int_0^1 \frac{1}{x^p} \dx{x}$ converge.  Pour les
 valeurs de $p$ où l'intégrale converge, nous donnerons la valeur de
 l'intégrale.
 
@@ -3691,23 +3691,23 @@ Finalement, pour $p=1$,
 Nous obtenons le résultat suivant.
 
 \begin{prop}
-$\displaystyle \int_0^1 \frac{1}{x^p} \dx{x}$ converge pour
+$\DS \int_0^1 \frac{1}{x^p} \dx{x}$ converge pour
 $p<1$ et diverge pour $p\geq 1$.  De plus,
-$\displaystyle \int_0^1 \frac{1}{x^p} \dx{x} = \frac{1}{1-p}$
+$\DS \int_0^1 \frac{1}{x^p} \dx{x} = \frac{1}{1-p}$
 pour $p<1$.
 \label{impr_comp2}
 \end{prop}
 
 La conclusion de la proposition précédente au sujet de la convergence
 ou divergence ne changera pas si nous remplaçons
-$\displaystyle \int_0^1 \frac{1}{x^p} \dx{x}$ par
-$\displaystyle \int_0^a \frac{1}{x^p} \dx{x}$
+$\DS \int_0^1 \frac{1}{x^p} \dx{x}$ par
+$\DS \int_0^a \frac{1}{x^p} \dx{x}$
 où $a>0$ est un nombre réel quelconque.
 
 \begin{rmk}[\theory]
 La proposition~\ref{impr_comp2} peut être déduite de la
 proposition~\ref{impr_comp1} et vice-versa.  Si nous posons $t=1/x$,
-nous avons $\displaystyle \dx{t} = \frac{-1}{x^2} \dx{x}$ et
+nous avons $\DS \dx{t} = \frac{-1}{x^2} \dx{x}$ et
 \[
 \int_1^q \frac{1}{x^p} \dx{x}
 = \int_1^q \frac{-1}{x^{p-2}}\left(\frac{-1}{x^2}\right) \dx{x} \\
@@ -3719,13 +3719,13 @@ Les énoncés suivants sont équivalents.
 {
 \renewcommand{\labelitemi}{$\Leftrightarrow$}
 \begin{itemize}
-\item[] $\displaystyle \lim_{q\to \infty} \int_1^q \frac{1}{x^p} \dx{x}$
+\item[] $\DS \lim_{q\to \infty} \int_1^q \frac{1}{x^p} \dx{x}$
 existe si et seulement si $p>1$ (énoncé de la proposition~\ref{impr_comp1}).
-\item $\displaystyle \lim_{q\to \infty} \int_{1/q}^1 \frac{1}{t^{2-p}} \dx{t}$
+\item $\DS \lim_{q\to \infty} \int_{1/q}^1 \frac{1}{t^{2-p}} \dx{t}$
 existe si et seulement si $p>1$ (après la substitution $t = 1/x$).
-\item $\displaystyle \lim_{q\to \infty} \int_{1/q}^1 \frac{1}{t^{2-p}} \dx{t}$
+\item $\DS \lim_{q\to \infty} \int_{1/q}^1 \frac{1}{t^{2-p}} \dx{t}$
 existe si et seulement si $2-p < 1$ (car $p>1 \Leftrightarrow 2-p <1$).
-\item $\displaystyle \lim_{q\to 0} \int_q^1 \frac{1}{t^r} \dx{t}$
+\item $\DS \lim_{q\to 0} \int_q^1 \frac{1}{t^r} \dx{t}$
 existe si et seulement si $r<1$ (énoncé de la
 proposition~\ref{impr_comp2} si nous remplaçons $2-p$ par $r$).
 \end{itemize}
@@ -3757,10 +3757,10 @@ dans l'intervalle $]a,b[$.  Les bornes d'intégration $a$ et $b$
 peuvent être $+\infty$ ou $-\infty$, ou ils peuvent correspondent à
 des asymptotes verticales pour les fonctions $f$ et $g$.
 \begin{enumerate}
-\item Si $\displaystyle \int_a^b g(x) \dx{x}$ converge alors
-$\displaystyle \int_a^b f(x) \dx{x}$ converge.
-\item Si $\displaystyle \int_a^b f(x) \dx{x}$ diverge alors
-$\displaystyle \int_a^b g(x) \dx{x}$ diverge.
+\item Si $\DS \int_a^b g(x) \dx{x}$ converge alors
+$\DS \int_a^b f(x) \dx{x}$ converge.
+\item Si $\DS \int_a^b f(x) \dx{x}$ diverge alors
+$\DS \int_a^b g(x) \dx{x}$ diverge.
 \end{enumerate}
 \end{theorem}
 
@@ -3787,7 +3787,7 @@ Si nous supposons que
 \int_a^{+\infty} g(x) \dx{x} = \lim_{q\rightarrow +\infty} G(q)
 \]
 converge, alors $F$ est une fonction croissante bornée supérieurement par
-$\displaystyle \int_a^{+\infty} g(x) \dx{x}$.  Il s'en suit que
+$\DS \int_a^{+\infty} g(x) \dx{x}$.  Il s'en suit que
 \[
 \int_a^{+\infty} f(x) \dx{x} = \lim_{q\rightarrow +\infty} F(q)
 \]
@@ -3795,11 +3795,11 @@ converge grâce au théorème~\ref{suiteBORN}.  Nous retrouvons à la
 figure~\ref{IMPR5} deux graphes qui peuvent représenter
 qualitativement les graphes de $F$ et $G$.
 
-Par contre si $\displaystyle \int_a^{+\infty} f(x) \dx{x}$ diverge
+Par contre si $\DS \int_a^{+\infty} f(x) \dx{x}$ diverge
 alors $F$ est une fonction qui croit sans limite supérieure.  Il en
 est donc de même pour $G$ car $F(q) \leq G(q)$ pour tout $q$.  Ainsi,
-$\displaystyle \lim_{q\rightarrow +\infty} G(q) = +\infty$ et
-$\displaystyle \int_a^{+\infty} g(x) \dx{x}$ diverge.
+$\DS \lim_{q\rightarrow +\infty} G(q) = +\infty$ et
+$\DS \int_a^{+\infty} g(x) \dx{x}$ diverge.
 
 \PDFfig{7_integrales/improper5}{Représentation qualitative du graphe de
 fonctions définies par des intégrales}{Représentation qualitative du
@@ -3813,8 +3813,8 @@ d'intégrales impropres est semblable.
 Déterminons si les intégrales suivantes convergent ou divergent.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{5em}}}l@{\hspace{1em}}l}
-\subQ{a} & $\displaystyle \int_1^\infty \frac{|\sin(x)|}{x^2} \dx{x}$  &
-\subQ{b} & $\displaystyle \int_1^\infty \frac{x^2}{x^3-x+1}\dx{x}$
+\subQ{a} & $\DS \int_1^\infty \frac{|\sin(x)|}{x^2} \dx{x}$  &
+\subQ{b} & $\DS \int_1^\infty \frac{x^2}{x^3-x+1}\dx{x}$
 \end{tabular}
 \end{center}
 
@@ -3829,12 +3829,12 @@ pour tout $x\geq 1$ et
 converge car c'est le cas $p>1$ de la proposition~\ref{impr_comp1},
 nous avons que
 \[
-\displaystyle \int_1^\infty \frac{|\sin(x)|}{x^2} \dx{x}
+\DS \int_1^\infty \frac{|\sin(x)|}{x^2} \dx{x}
 \]
 converge grâce au test de comparaison.
 
 \subQ{b} Remarquons que
-$\displaystyle \frac{x^2}{x^3-x+1} > \frac{1}{x}$ pour $x\geq 1$.  En effet,
+$\DS \frac{x^2}{x^3-x+1} > \frac{1}{x}$ pour $x\geq 1$.  En effet,
 pour $x\geq 1$, nous avons $0\geq 1-x$ et ainsi
 \begin{equation}\label{impr_ineq}
 x^3 \geq x^3 -x + 1 \; .
@@ -3857,7 +3857,7 @@ Puisque
 diverge car c'est le cas $p \leq 1$ de la proposition~\ref{impr_comp1},
 nous avons que
 \[
-\displaystyle \int_1^\infty \frac{x^2}{x^3-x+1}\dx{x}
+\DS \int_1^\infty \frac{x^2}{x^3-x+1}\dx{x}
 \]
 diverge grâce au test de comparaison.
 \label{testCompSin}
@@ -3865,7 +3865,7 @@ diverge grâce au test de comparaison.
 
 \begin{egg}
 Déterminons si l'intégrale
-$\displaystyle \int_1^5 \frac{1}{(x^2-1)^{1/3}} \dx{x}$
+$\DS \int_1^5 \frac{1}{(x^2-1)^{1/3}} \dx{x}$
 converge ou diverge.
 
 C'est une intégrale impropre car $x=1$ est une asymptote verticale de
@@ -3885,8 +3885,8 @@ $u=q-1$ lorsque $x=q$ et $u=4$ lorsque $x=5$.  Donc
 = \int_{q-1}^{4} \frac{1}{(u^2+2u)^{1/3}} \dx{u} \ .
 \]
 Ainsi, lorsque $q$ tend vers $1$, nous obtenons que
-$\displaystyle \int_1^5 \frac{1}{(x^2-1)^{1/3}} \dx{x}$ converge si et
-seulement si $\displaystyle \int_0^{4} \frac{1}{(u^2+2u)^{1/3}} \dx{u}$
+$\DS \int_1^5 \frac{1}{(x^2-1)^{1/3}} \dx{x}$ converge si et
+seulement si $\DS \int_0^{4} \frac{1}{(u^2+2u)^{1/3}} \dx{u}$
 converge.  La substitution $u=x-1$ est simplement une translation de
 l'intervalle d'intégration de $1$ vers la gauche.  Il suffit de
 terminer si cette dernière intégrale impropre converge ou diverge pour
@@ -3918,15 +3918,15 @@ valeurs négatives.
 
 \begin{theorem} \label{compabsolu}
 Soit $f:]a,b[\rightarrow \RR$ une fonction continue sur l'intervalle
-$]a,b[$.   Alors $\displaystyle \int_a^b f(x) \dx{x}$
-converge si $\displaystyle \int_a^b |f(x)| \dx{x}$ converge.
+$]a,b[$.   Alors $\DS \int_a^b f(x) \dx{x}$
+converge si $\DS \int_a^b |f(x)| \dx{x}$ converge.
 Les bornes d'intégration $a$ et $b$ peuvent être $+\infty$
 ou $-\infty$, ou ils peuvent correspondent à des asymptotes verticales
 pour la fonction $f$. 
 \end{theorem}
 
-Par exemple, $\displaystyle \int_a^{\infty} f(x) \dx{x}$
-converge si $\displaystyle \int_a^{\infty} |f(x)| \dx{x}$ converge.
+Par exemple, $\DS \int_a^{\infty} f(x) \dx{x}$
+converge si $\DS \int_a^{\infty} |f(x)| \dx{x}$ converge.
 
 Il est possible de justifier intuitivement ce résultat en considérant
 le graphe de $f$.  Supposons que le graphe de $f$ soit celui donné
@@ -3935,26 +3935,26 @@ ci-dessous.
 
 L'aire de la région $A$ plus l'aire de la région $B$ dans la figure
 suivante donnent l'aire sous la courbe $y=|f(x)|$ pour $a\leq x < \infty$;
-c'est-à-dire, $\displaystyle \int_a^{\infty} |f(x)| \dx{x}$.
+c'est-à-dire, $\DS \int_a^{\infty} |f(x)| \dx{x}$.
 \PDFgraph{7_integrales/absoluB}
 
 Si nous supposons que la valeur de l'intégrale de $|f(x)|$ est finie,
 alors l'aire de la région $A$ et l'aire de la région $B$ sont
 aussi des valeurs finies.  Il s'en suit que la valeur de
-$\displaystyle \int_a^{\infty} f(x) \dx{x}$ est finie
+$\DS \int_a^{\infty} f(x) \dx{x}$ est finie
 car c'est l'aire de la région $A$ moins l'aire de la région $B$, deux
 nombres réels, comme il est illustré dans la figure suivante.
 \PDFgraph{7_integrales/absoluC}
 
 \begin{rmk}[\theory]
 Nous présentons ci-dessous une démonstration que
-$\displaystyle \int_a^{\infty} f(x) \dx{x}$ 
-converge si $\displaystyle \int_a^{\infty} |f(x)| \dx{x}$ converge.
+$\DS \int_a^{\infty} f(x) \dx{x}$ 
+converge si $\DS \int_a^{\infty} |f(x)| \dx{x}$ converge.
 Cette démonstration formalise la justification graphique que nous
 venons de donner ci-dessus.
 
-Si $\displaystyle \int_a^\infty |f(x)| \dx{x}$ converge alors
-$\displaystyle \int_a^\infty 2|f(x)| \dx{x}$ converge
+Si $\DS \int_a^\infty |f(x)| \dx{x}$ converge alors
+$\DS \int_a^\infty 2|f(x)| \dx{x}$ converge
 car
 \[
 \lim_{q\rightarrow \infty} \int_a^q 2|f(x)| \dx{x} =
@@ -3965,10 +3965,10 @@ Puisque
 0 \leq |f(x)| - f(x) \leq 2 |f(x)|
 \]
 pour tout $x$ dans l'intervalle $]a,\infty[$, nous obtenons que
-$\displaystyle \int_a^\infty \left( |f(x)| - f(x) \right) \dx{x}$
+$\DS \int_a^\infty \left( |f(x)| - f(x) \right) \dx{x}$
 converge grâce au test de comparaison.
 
-Finalement, $\displaystyle \int_a^\infty f(x) \dx{x}$ converge car
+Finalement, $\DS \int_a^\infty f(x) \dx{x}$ converge car
 \begin{align*}
 \lim_{q\rightarrow \infty} \int_a^q f(x) \dx{x}
 &= \lim_{q\rightarrow \infty} \left( \int_a^q |f(x)| \dx{x}
@@ -3985,22 +3985,22 @@ formes pour l'intégrale impropre.
 
 \begin{egg}
 Nous avons vu à l'exemple~\ref{testCompSin} que l'intégrale
-$\displaystyle \int_1^\infty \frac{|\sin(x)|}{x^2} \dx{x}$ convergeait.
+$\DS \int_1^\infty \frac{|\sin(x)|}{x^2} \dx{x}$ convergeait.
 Il s'en suit que l'intégrale
-$\displaystyle \int_1^\infty \frac{\sin(x)}{x^2} \dx{x}$ converge.
+$\DS \int_1^\infty \frac{\sin(x)}{x^2} \dx{x}$ converge.
 \end{egg}
 
 \begin{rmk}[\theory]
-Si $\displaystyle \int_a^b |f(x)| \dx{x}$ diverge, nous ne pouvons rien dire au
-sujet de $\displaystyle \int_a^b f(x) \dx{x}$.
+Si $\DS \int_a^b |f(x)| \dx{x}$ diverge, nous ne pouvons rien dire au
+sujet de $\DS \int_a^b f(x) \dx{x}$.
 
-Par exemple, $\displaystyle \int_1^\infty \frac{\sin(x)}{x} \dx{x}$
+Par exemple, $\DS \int_1^\infty \frac{\sin(x)}{x} \dx{x}$
 converge mais
-$\displaystyle \int_1^\infty \left| \frac{\sin(x)}{x} \right| \dx{x}$
+$\DS \int_1^\infty \left| \frac{\sin(x)}{x} \right| \dx{x}$
 diverge.
 
 \subQ{i} Commençons par montrer que
-$\displaystyle \int_1^\infty \frac{\sin(x)}{x} \dx{x}$ converge.
+$\DS \int_1^\infty \frac{\sin(x)}{x} \dx{x}$ converge.
 
 Puisque $\sin(x)/x = f(x)g'(x)$ où $f(x) = 1/x$ et $g'(x) = \sin(x)$, nous
 obtenons $f'(x) = -1/x^2$, $g(x) = -\cos(x)$ et
@@ -4012,13 +4012,13 @@ par la règle d'intégration par parties.  Puisque
 \[
 0 \leq \left| \frac{\cos(x)}{x^2} \right| \leq \frac{1}{x^2}
 \]
-et $\displaystyle \int_1^\infty \frac{1}{x^2} \dx{x}$ converge grâce
+et $\DS \int_1^\infty \frac{1}{x^2} \dx{x}$ converge grâce
 à la proposition~\ref{impr_comp1}, nous avons que
 \[
 \int_1^\infty \left| \frac{\cos(x)}{x^2} \right| \dx{x}
 \]
 converge.  Donc
-$\displaystyle \int_1^\infty \frac{\cos(x)}{x^2} \dx{x}$ converge.  De
+$\DS \int_1^\infty \frac{\cos(x)}{x^2} \dx{x}$ converge.  De
 plus
 \[
 \lim_{q\rightarrow \infty} \left( -\frac{\cos(x)}{x} \bigg|_{x=1}^q \right)
@@ -4036,7 +4036,7 @@ Ainsi,
 est une nombre réel.
 
 \subQ{ii} Pour montrer que
-$\displaystyle \int_1^\infty \left| \frac{\sin(x)}{x} \right| \dx{x}$
+$\DS \int_1^\infty \left| \frac{\sin(x)}{x} \right| \dx{x}$
 diverge, nous montrons que
 \[
 \lim_{n\rightarrow \infty} 
@@ -4052,9 +4052,9 @@ car
 \[
 \int_{k\pi}^{(k+1)\pi} \left| \sin(x) \right| \dx{x} =
 \begin{cases}
-\displaystyle \int_0^{\pi} \sin(x) \dx{x} = -\cos(x)\bigg|_0^\pi = 2 & \quad
+\DS \int_0^{\pi} \sin(x) \dx{x} = -\cos(x)\bigg|_0^\pi = 2 & \quad
 \text{pour $k$ pair.} \\[1em]
-\displaystyle \int_\pi^{2\pi} -\sin(x) \dx{x} = \cos(x)\bigg|_\pi^{2\pi}
+\DS \int_\pi^{2\pi} -\sin(x) \dx{x} = \cos(x)\bigg|_\pi^{2\pi}
  = 2 & \quad \text{pour $k$ impair.}
 \end{cases}
 \]
@@ -4089,7 +4089,7 @@ algébriques qui sont longs et complexes.
 L'idée principale qui supporte les méthodes numériques que nous
 présentons est la suivante.  Nous cherchons une fonction
 $p:[a,b] \rightarrow \RR$ telle que $|p(x)-f(x)|$ est très petit pour
-tout $x$ et telle que $\displaystyle \int_a^b\,p(x) \dx{x}$ est simple
+tout $x$ et telle que $\DS \int_a^b\,p(x) \dx{x}$ est simple
 à évaluer.  Si $|p(x)-f(x)|$ est très petit pour tout $x$, nous pouvons
 espérer que
 \[
@@ -4138,11 +4138,11 @@ numériquement une intégrale}{Méthode du point milieu pour évaluer
 numériquement une intégrale}{MIDPOINT}
 
 La somme
-$\displaystyle 2h \sum_{i=0}^{n-1} f(x_{2i+1})$ est une somme de
+$\DS 2h \sum_{i=0}^{n-1} f(x_{2i+1})$ est une somme de
 Riemann avec $\Delta x = 2h$ pour l'intégrale
-$\displaystyle \int_a^b f(x) \dx{x}$.  Donc, en théorie,
-$\displaystyle 2h \sum_{i=0}^{n-1} f(x_{2i+1})$ tend vers
-$\displaystyle \int_a^b f(x) \dx{x}$ lorsque $h$ tend vers $0$.  Nous
+$\DS \int_a^b f(x) \dx{x}$.  Donc, en théorie,
+$\DS 2h \sum_{i=0}^{n-1} f(x_{2i+1})$ tend vers
+$\DS \int_a^b f(x) \dx{x}$ lorsque $h$ tend vers $0$.  Nous
 pourrions démontrer le théorème suivant.
 
 \begin{prop}
@@ -4170,7 +4170,7 @@ où $h=(b-a)/(2n)$ et $x_j = a+j\,h$ for $j=0$, $1$ \ldots, $2n$.
 
 {\bfseries l'erreur de troncature}\index{Erreur de troncature} pour la
 méthode du point milieu est
-$\displaystyle \frac{f''(\xi)\,(b-a)}{6}\,h^2$.
+$\DS \frac{f''(\xi)\,(b-a)}{6}\,h^2$.
 \label{CMR}
 \end{meth}
 
@@ -4179,7 +4179,7 @@ troncature a une utilité limitée.
 
 \begin{egg}
 Utilisons la méthode du point milieu pour estimer la valeur de
-l'intégrale $\displaystyle \int_0^1 e^{x^2}\dx{x}$.  Nous allons
+l'intégrale $\DS \int_0^1 e^{x^2}\dx{x}$.  Nous allons
 choisir le nombre de sous-intervalles de $[0,1]$ (i.e. la longueur de
 $h$) pour obtenir une erreur de troncature inférieur à $10^{-4}$.
 
@@ -4210,8 +4210,8 @@ c'est-à-dire,
 n > \sqrt{ \frac{e}{4} 10^4} = \frac{10^2}{2} \sqrt{e} \approx 82.436 \; .
 \]
 Un bon choix est $n=83$.  Avec cette valeur de $n$,
-$\displaystyle h = \frac{1}{2n} = \frac{1}{166}$ et
-$\displaystyle x_{2i+1} = \frac{2i+1}{166}$ pour $i=0$, $1$, $2$, \ldots, $82$,
+$\DS h = \frac{1}{2n} = \frac{1}{166}$ et
+$\DS x_{2i+1} = \frac{2i+1}{166}$ pour $i=0$, $1$, $2$, \ldots, $82$,
 Nous obtenons
 \begin{align*}
 \int_0^1 e^{-x^2}\dx{x} & \approx \frac{2}{166} \sum_{j=0}^{82}\,
@@ -4231,10 +4231,10 @@ façons.
 
 Si $f$ est convexe, nous avons que $f''(x) >0$ pour tout $x$.  Ainsi,
 l'erreur de troncature\\
-$\displaystyle \frac{f''(\xi)\,(b-a)}{6}\,h^2$ est positif.
+$\DS \frac{f''(\xi)\,(b-a)}{6}\,h^2$ est positif.
 Par contre si, $f$ est concave, nous avons que $f''(x) <0$ pour tout
 $x$.  Ainsi, l'erreur de troncature
-$\displaystyle \frac{f''(\xi)\,(b-a)}{6}\,h^2$ est négatif.
+$\DS \frac{f''(\xi)\,(b-a)}{6}\,h^2$ est négatif.
 
 Nous pouvons aussi justifier notre remarque à l'aide des graphes qui
 sont donnés aux figures~\ref{MIDPOINTF} et \ref{MIDPOINTFF}.
@@ -4366,7 +4366,7 @@ où $h=(b-a)/n$ et $x_j = a+j\,h$ for $j=0$, $1$ \ldots, $n$.
 
 {\bfseries L'erreur de troncature}\index{Erreur de troncature}
 pour la méthode des trapèzes est
-$\displaystyle - \frac{f''(\xi)\,(b-a)}{12}\,h^2$.
+$\DS - \frac{f''(\xi)\,(b-a)}{12}\,h^2$.
 \label{CTR}
 \end{meth}
 
@@ -4377,7 +4377,7 @@ Nous pouvons exprimer la formule d'approximation pour la méthode du trapèze
 
 \begin{egg}
 Utilisons la méthode des trapèzes pour estimer l'intégrale
-$\displaystyle \int_0^1 e^{x^2}\dx{x}$.  Nous allons choisir le nombre de
+$\DS \int_0^1 e^{x^2}\dx{x}$.  Nous allons choisir le nombre de
 sous-intervalles de $[0,1]$ pour que l'erreur de troncature soit
 inférieur à $10^{-4}$.
 
@@ -4410,7 +4410,7 @@ n > \sqrt{ \frac{e}{2} 10^4} = 10^2 \sqrt{\frac{e}{2}} \approx
 116.5821 \ .
 \]
 Un bon choix est $n=117$.  Avec cette valeur de $n$, 
-$\displaystyle h = \frac{1}{n} = \frac{1}{117}$ et
+$\DS h = \frac{1}{n} = \frac{1}{117}$ et
 $x_i = \frac{i}{117}$ pour $i=0$, $1$, $2$, \ldots, $117$.  Nous obtenons
 \begin{align*}
 \int_0^1 e^{-x^2}\dx{x} & \approx \frac{1}{234} \left(
@@ -4435,10 +4435,10 @@ façons.
 
 Si $f$ est convexe, nous avons que $f''(x) >0$ pour tout $x$.  Ainsi,
 l'erreur de troncature\\
-$\displaystyle -\frac{f''(\xi)\,(b-a)}{12}\,h^2$ est
+$\DS -\frac{f''(\xi)\,(b-a)}{12}\,h^2$ est
 négatif.  Par contre si, $f$ est concave, nous avons que $f''(x) <0$
 pour tout $x$.  Ainsi, l'erreur de troncature
-$\displaystyle -\frac{f''(\xi)\,(b-a)}{12}\,h^2$ est positif.
+$\DS -\frac{f''(\xi)\,(b-a)}{12}\,h^2$ est positif.
 
 Nous pouvons aussi justifier notre remarque à l'aide des graphes que
 nous retrouvons à la figure~\ref{TRAPEZEF}.
@@ -4493,7 +4493,7 @@ peut être utilisée pour estimer la valeur d'intégrales impropres.
 
 \begin{egg}
 Estimons la valeur de l'intégrale
-$\displaystyle \int_1^\infty e^{-x^2/2} \dx{x}$ avec une précision de
+$\DS \int_1^\infty e^{-x^2/2} \dx{x}$ avec une précision de
 $10^{-4}$.
 
 Il y a deux étapes pour trouver cette approximation.
@@ -4510,7 +4510,7 @@ nous cherchons une valeur $c$ telle que
 
 \subQ{ii} Lorsque nous aurons $c$, nous utiliserons une méthode numérique
 pour trouver une approximation $I$ de
-$\displaystyle \int_1^c e^{-x^2/2} \dx{x}$ telle que
+$\DS \int_1^c e^{-x^2/2} \dx{x}$ telle que
 \[
 \bigg| \int_1^c e^{-x^2/2} \dx{x} - I \bigg| < \frac{1}{2} \, 10^{-4} \; .
 \]
@@ -4556,7 +4556,7 @@ Donc $c=10$ est un bon choix.
 
 \subQ{ii} Nous utilisons la méthode des trapèzes pour trouver une première
 approximation de l'intégrale
-$\displaystyle \int_1^{10} e^{-x^2/2} \dx{x}$.
+$\DS \int_1^{10} e^{-x^2/2} \dx{x}$.
 
 Si nous prenons $n = 600$ dans la formule pour la méthode des trapèzes,
 puisque $a=1$ et $b=10$, nous obtenons $h = 9/600 = 3/200$,
@@ -4571,7 +4571,7 @@ la valeur exacte de l'intégrale.
 
 Nous utilisons la méthode du point milieu pour trouver une deuxième
 approximation de l'intégrale
-$\displaystyle \int_1^{10} e^{-x^2/2} \dx{x}$.
+$\DS \int_1^{10} e^{-x^2/2} \dx{x}$.
 
 Si nous prenons $n = 600$ dans la formule pour la méthode du point milieu,
 puisque $a=1$ et $b=10$, nous obtenons $h = 9/1200 = 3/400$,
@@ -4593,7 +4593,7 @@ Puisque
 0.3977012 - 0.3976840 = 0.172 \times 10^{-4} < \frac{1}{2} \, 10^{-4} \; ,
 \]
 nous pouvons prendre $I= (0.3977012 + 0.3976840)/2 = 0.3976926$ comme
-approximation de $\displaystyle \int_1^\infty e^{-x^2/2} \dx{x}$.
+approximation de $\DS \int_1^\infty e^{-x^2/2} \dx{x}$.
 
 Nous avons assumé que les calculs numériques étaient exactes.
 Ce n'est généralement pas le cas.  Il faudrait considéré les
@@ -4717,7 +4717,7 @@ où $h=(b-a)/(2n)$ et $x_j = a+j\,h$ for $j=0$, $1$ \ldots, $2n$.
 
 {\bfseries L'erreur de troncature}\index{Erreur de troncature}
 pour la méthode de Simpson est
-$\displaystyle  - \frac{f^{(4)}(\xi)\,(b-a)}{180}\, h^4 $.
+$\DS  - \frac{f^{(4)}(\xi)\,(b-a)}{180}\, h^4 $.
 \label{CSR}
 \end{meth}
 
@@ -4731,7 +4731,7 @@ seulement les intervalles de la forme $[x_{2j},x_{2j+2}]$.
 
 \begin{egg}
 Utilisons la méthode de Simpson pour estimer l'intégrale
-$\displaystyle \int_0^1 e^{x^2}\dx{x}$.  Nous allons choisir le nombre de
+$\DS \int_0^1 e^{x^2}\dx{x}$.  Nous allons choisir le nombre de
 sous-intervalles de $[0,1]$ pour que l'erreur de troncature soit
 inférieur à $10^{-4}$.
 
@@ -4764,8 +4764,8 @@ n > \left( \frac{19 e}{720} 10^4\right)^{1/4}
 = 5 \left(\frac{19 e}{45}\right)^{1/4} \approx 5.175220 \; .
 \]
 Un bon choix est $n=6$.  Avec cette valeur de $n$,
-$\displaystyle h = \frac{1}{2n} = \frac{1}{12}$ et
-$\displaystyle x_i = \frac{i}{12}$ pour $i=0$, $1$, $2$, \ldots, $12$.
+$\DS h = \frac{1}{2n} = \frac{1}{12}$ et
+$\DS x_i = \frac{i}{12}$ pour $i=0$, $1$, $2$, \ldots, $12$.
 Nous obtenons
 \begin{align*}
 \int_0^1 e^{-x^2}\dx{x} & \approx 
@@ -4840,15 +4840,15 @@ demande moins d'opérations arithmétiques pour minimiser ce type d'erreurs.
 Évaluez les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int -x^{-2} \dx{x}$ &
-\subQ{b} & $\displaystyle \int \frac{10}{x^9} \dx{x}$ &
-\subQ{c} & $\displaystyle \int \left(5z^{-1.2} -1.2\right) \dx{z}$ \\
-\subQ{d} & $\displaystyle \int \left( \frac{1}{\sqrt[5]{t}}
+\subQ{a} & $\DS \int -x^{-2} \dx{x}$ &
+\subQ{b} & $\DS \int \frac{10}{x^9} \dx{x}$ &
+\subQ{c} & $\DS \int \left(5z^{-1.2} -1.2\right) \dx{z}$ \\
+\subQ{d} & $\DS \int \left( \frac{1}{\sqrt[5]{t}}
 + 3t \right) \dx{t}$ &
-\subQ{e} & $\displaystyle \int 2^x \dx{x}$ &
-\subQ{f} & $\displaystyle \int \left( e^x + \frac{1}{x}\right) \dx{x}$ \\[1em]
-\subQ{g} & $\displaystyle \int \frac{(3t+2)^2}{4t^2}\dx{t}$ &
-\subQ{h} & $\displaystyle \int \frac{(x^{1/3} + 1)^2}{x^{2/3}} \dx{x}$ & &
+\subQ{e} & $\DS \int 2^x \dx{x}$ &
+\subQ{f} & $\DS \int \left( e^x + \frac{1}{x}\right) \dx{x}$ \\[1em]
+\subQ{g} & $\DS \int \frac{(3t+2)^2}{4t^2}\dx{t}$ &
+\subQ{h} & $\DS \int \frac{(x^{1/3} + 1)^2}{x^{2/3}} \dx{x}$ & &
 \end{tabular}
 \end{center}
 \label{7Q1}
@@ -4858,25 +4858,25 @@ demande moins d'opérations arithmétiques pour minimiser ce type d'erreurs.
 Évaluez les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \frac{1}{1+4t} \dx{t}$ &
-\subQ{b} & $\displaystyle \int \frac{1}{5-3x} \dx{x}$ &
-\subQ{c} & $\displaystyle \int 3 e^{3x/7} \dx{x}$ \\[0.8em]
-\subQ{d} & $\displaystyle \int \left( 1 + \frac{t}{3}\right)^7 \dx{t}$ &
-\subQ{e} & $\displaystyle \int \frac{e^z}{1+ e^z} \dx{z}$ &
-\subQ{f} & $\displaystyle \int 3y \sqrt{1+y^2} \dx{y}$ \\[0.8em]
-\subQ{g} & $\displaystyle \int \frac{1}{x\ln(x)} \dx{x}$ &
-\subQ{h} & $\displaystyle \int \frac{1+4x}{\sqrt{1+x+2x^2}} \dx{x}$ &
-\subQ{i} & $\displaystyle \int x^2 \sqrt{x^3+1} \dx{x}$ \\[0.8em]
-\subQ{j} & $\displaystyle \int e^t\left( 1 + e^t\right)^4 \dx{t}$ &
-\subQ{k} & $\displaystyle \int \frac{1}{\sqrt{x}(1+\sqrt{x})^{11}}
+\subQ{a} & $\DS \int \frac{1}{1+4t} \dx{t}$ &
+\subQ{b} & $\DS \int \frac{1}{5-3x} \dx{x}$ &
+\subQ{c} & $\DS \int 3 e^{3x/7} \dx{x}$ \\[0.8em]
+\subQ{d} & $\DS \int \left( 1 + \frac{t}{3}\right)^7 \dx{t}$ &
+\subQ{e} & $\DS \int \frac{e^z}{1+ e^z} \dx{z}$ &
+\subQ{f} & $\DS \int 3y \sqrt{1+y^2} \dx{y}$ \\[0.8em]
+\subQ{g} & $\DS \int \frac{1}{x\ln(x)} \dx{x}$ &
+\subQ{h} & $\DS \int \frac{1+4x}{\sqrt{1+x+2x^2}} \dx{x}$ &
+\subQ{i} & $\DS \int x^2 \sqrt{x^3+1} \dx{x}$ \\[0.8em]
+\subQ{j} & $\DS \int e^t\left( 1 + e^t\right)^4 \dx{t}$ &
+\subQ{k} & $\DS \int \frac{1}{\sqrt{x}(1+\sqrt{x})^{11}}
 \dx{x}$ &
-\subQ{l} & $\displaystyle \int \frac{e^{1/t}}{t^2} \dx{t}$ \\[0.8em]
-\subQ{m} & $\displaystyle \int \frac{\ln(x)}{x} \dx{x}$ &
-\subQ{n} & $\displaystyle \int \frac{x+3}{x^2-9} \dx{x}$ &
-\subQ{o} & $\displaystyle \int e^{t}\left( 2 + e^{2t}\right) \dx{t}$ \\[0.8em]
-\subQ{p} & $\displaystyle \int \frac{t^{3/5}}{1+t^{2/5}} \dx{t}$ &
-\subQ{q} & $\displaystyle \int \frac{x}{(1+x^2)^9}\dx{x}$ &
-\subQ{r} & $\displaystyle \int \frac{x^3}{(1+x^2)^9}\dx{x}$
+\subQ{l} & $\DS \int \frac{e^{1/t}}{t^2} \dx{t}$ \\[0.8em]
+\subQ{m} & $\DS \int \frac{\ln(x)}{x} \dx{x}$ &
+\subQ{n} & $\DS \int \frac{x+3}{x^2-9} \dx{x}$ &
+\subQ{o} & $\DS \int e^{t}\left( 2 + e^{2t}\right) \dx{t}$ \\[0.8em]
+\subQ{p} & $\DS \int \frac{t^{3/5}}{1+t^{2/5}} \dx{t}$ &
+\subQ{q} & $\DS \int \frac{x}{(1+x^2)^9}\dx{x}$ &
+\subQ{r} & $\DS \int \frac{x^3}{(1+x^2)^9}\dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q2}
@@ -4886,22 +4886,22 @@ demande moins d'opérations arithmétiques pour minimiser ce type d'erreurs.
 Évaluez les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \cos(2\pi(x-2)) \dx{x}$ &
-\subQ{b} & $\displaystyle \int \frac{\cos(\theta)}{1-\cos^2(\theta)}
+\subQ{a} & $\DS \int \cos(2\pi(x-2)) \dx{x}$ &
+\subQ{b} & $\DS \int \frac{\cos(\theta)}{1-\cos^2(\theta)}
 \dx{\theta}$ &
-\subQ{c} & $\displaystyle \int \frac{\sin(x)}{1-\sin^2{x}} \dx{x}$ \\[0.8em]
-\subQ{d} & $\displaystyle \int \sqrt{x}\, \sin(x^{3/2}+1) \dx{x}$ &
-\subQ{e} & $\displaystyle \int \frac{\cos(1/t)}{t^2} \dx{t}$ &
-\subQ{f} & $\displaystyle \int \frac{1}{x^2+9} \dx{x}$ \\[0.8em]
-\subQ{g} & $\displaystyle \int \frac{x^3+1}{x^2+3} \dx{x}$ &
-\subQ{h} & $\displaystyle \int \frac{x}{\sqrt{4-x^4}} \dx{x}$ &
-\subQ{i} & $\displaystyle \int \tan(x) \sec^4(x) \dx{x}$ \\[0.8em]
-\subQ{j} & $\displaystyle \int \frac{1}{2 - \cos(x)} \dx{x}$ &
-\subQ{k} & $\displaystyle \int x^2 \sin(x^3+1) \dx{x}$ &
-\subQ{l} & $\displaystyle \int \frac{(2t+1)^2}{1+t^2}\dx{t}$ \\[0.8em]
-\subQ{m} & $\displaystyle \int \sin^5(x) \cos^4(x) \dx{x}$ &
-\subQ{n} & $\displaystyle \int \frac{\sin^5(x)}{\cos^4(x)} \dx{x}$ &
-\subQ{o} & $\displaystyle \int \cos^3(x) \sin^2(x) \dx{x}$
+\subQ{c} & $\DS \int \frac{\sin(x)}{1-\sin^2{x}} \dx{x}$ \\[0.8em]
+\subQ{d} & $\DS \int \sqrt{x}\, \sin(x^{3/2}+1) \dx{x}$ &
+\subQ{e} & $\DS \int \frac{\cos(1/t)}{t^2} \dx{t}$ &
+\subQ{f} & $\DS \int \frac{1}{x^2+9} \dx{x}$ \\[0.8em]
+\subQ{g} & $\DS \int \frac{x^3+1}{x^2+3} \dx{x}$ &
+\subQ{h} & $\DS \int \frac{x}{\sqrt{4-x^4}} \dx{x}$ &
+\subQ{i} & $\DS \int \tan(x) \sec^4(x) \dx{x}$ \\[0.8em]
+\subQ{j} & $\DS \int \frac{1}{2 - \cos(x)} \dx{x}$ &
+\subQ{k} & $\DS \int x^2 \sin(x^3+1) \dx{x}$ &
+\subQ{l} & $\DS \int \frac{(2t+1)^2}{1+t^2}\dx{t}$ \\[0.8em]
+\subQ{m} & $\DS \int \sin^5(x) \cos^4(x) \dx{x}$ &
+\subQ{n} & $\DS \int \frac{\sin^5(x)}{\cos^4(x)} \dx{x}$ &
+\subQ{o} & $\DS \int \cos^3(x) \sin^2(x) \dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q3}
@@ -4911,13 +4911,13 @@ demande moins d'opérations arithmétiques pour minimiser ce type d'erreurs.
 Évaluez les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \ln\left(\sqrt{x}\right) \dx{x}$ &
-\subQ{b} & $\displaystyle \int x^2 e^x \dx{x}$ &
-\subQ{c} & $\displaystyle \int \frac{x}{e^{3x}} \dx{x}$ \\[0.8em]
-\subQ{d} & $\displaystyle \int x^2 \, e^{-x} \dx{x}$ &
-\subQ{e} & $\displaystyle \int x^3 \, e^{x^2} \dx{x}$ &
-\subQ{f} & $\displaystyle \int (x^2+x^6)\ln(x) \dx{x}$  \\[0.8em]
-\subQ{g} & $\displaystyle \int x^3\ln\left(x^2+2\right) \dx{x}$ &
+\subQ{a} & $\DS \int \ln\left(\sqrt{x}\right) \dx{x}$ &
+\subQ{b} & $\DS \int x^2 e^x \dx{x}$ &
+\subQ{c} & $\DS \int \frac{x}{e^{3x}} \dx{x}$ \\[0.8em]
+\subQ{d} & $\DS \int x^2 \, e^{-x} \dx{x}$ &
+\subQ{e} & $\DS \int x^3 \, e^{x^2} \dx{x}$ &
+\subQ{f} & $\DS \int (x^2+x^6)\ln(x) \dx{x}$  \\[0.8em]
+\subQ{g} & $\DS \int x^3\ln\left(x^2+2\right) \dx{x}$ &
 & & &
 \end{tabular}
 \end{center}
@@ -4928,9 +4928,9 @@ demande moins d'opérations arithmétiques pour minimiser ce type d'erreurs.
 Évaluez les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \theta \cos(\pi\theta) \dx{\theta}$ &
-\subQ{b} & $\displaystyle \int e^x \sin(x) \dx{x}$ &
-\subQ{c} & $\displaystyle \int \theta^3 \sin(\theta^2) \dx{\theta}$
+\subQ{a} & $\DS \int \theta \cos(\pi\theta) \dx{\theta}$ &
+\subQ{b} & $\DS \int e^x \sin(x) \dx{x}$ &
+\subQ{c} & $\DS \int \theta^3 \sin(\theta^2) \dx{\theta}$
 \end{tabular}
 \end{center}
 \label{7Q5}
@@ -4940,16 +4940,16 @@ demande moins d'opérations arithmétiques pour minimiser ce type d'erreurs.
 Évaluez les intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \frac{x^4+3}{x^2-4x+3} \dx{x}$ &
-\subQ{b} & $\displaystyle \int \frac{x-9}{(x+5)(x-2)} \dx{x}$ &
-\subQ{c} & $\displaystyle \int \frac{1}{x^2+x+1} \dx{x}$ \\[0.8em]
-\subQ{d} & $\displaystyle \int \frac{1}{t^2+6t+8} \dx{t}$ &
-\subQ{e} & $\displaystyle \int \frac{1}{x^2-4x+13} \dx{x}$ &
-\subQ{f} & $\displaystyle \int \frac{1}{x^2-9}\dx{x}$ \\[0.8em]
-\subQ{g} & $\displaystyle \int \frac{1}{x^2 -x -2} \dx{x}$ &
-\subQ{h} & $\displaystyle \int \frac{t^2+1}{t^2+3t+2} \dx{t}$ &
-\subQ{i} & $\displaystyle \int \frac{x^3-x-2}{x^2-4} \dx{x}$ \\[0.8em]
-\subQ{j} & $\displaystyle \int \frac{9x+29}{x^2+2x-15}\dx{x}$ &
+\subQ{a} & $\DS \int \frac{x^4+3}{x^2-4x+3} \dx{x}$ &
+\subQ{b} & $\DS \int \frac{x-9}{(x+5)(x-2)} \dx{x}$ &
+\subQ{c} & $\DS \int \frac{1}{x^2+x+1} \dx{x}$ \\[0.8em]
+\subQ{d} & $\DS \int \frac{1}{t^2+6t+8} \dx{t}$ &
+\subQ{e} & $\DS \int \frac{1}{x^2-4x+13} \dx{x}$ &
+\subQ{f} & $\DS \int \frac{1}{x^2-9}\dx{x}$ \\[0.8em]
+\subQ{g} & $\DS \int \frac{1}{x^2 -x -2} \dx{x}$ &
+\subQ{h} & $\DS \int \frac{t^2+1}{t^2+3t+2} \dx{t}$ &
+\subQ{i} & $\DS \int \frac{x^3-x-2}{x^2-4} \dx{x}$ \\[0.8em]
+\subQ{j} & $\DS \int \frac{9x+29}{x^2+2x-15}\dx{x}$ &
 & & &
 \end{tabular}
 \end{center}
@@ -4962,8 +4962,8 @@ compléter le carré du dénominateur et à utiliser une substitution.
 Évaluez chacune des intégrales indéfinies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int \frac{x^2-x+6}{x^3+3x} \dx{x}$ &
-\subQ{b} & $\displaystyle \int \frac{x^2 -3x -23}{(x-2)(x+3)^2} \dx{x}$
+\subQ{a} & $\DS \int \frac{x^2-x+6}{x^3+3x} \dx{x}$ &
+\subQ{b} & $\DS \int \frac{x^2 -3x -23}{(x-2)(x+3)^2} \dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q7}
@@ -4971,7 +4971,7 @@ compléter le carré du dénominateur et à utiliser une substitution.
 
 \begin{question}
 Trouvez toutes les fonctions $f$ telles que
-$\displaystyle f''(x) = 1 + x^{4/5}$.
+$\DS f''(x) = 1 + x^{4/5}$.
 \label{7Q8}
 \end{question}
 
@@ -4979,7 +4979,7 @@ $\displaystyle f''(x) = 1 + x^{4/5}$.
 
 \begin{question}
 Donnez la somme de Riemann à droite et la somme de Riemann à gauche
-pour l'intégrale $\displaystyle \int_0^1 (1+t^3)\dx{t}$ où
+pour l'intégrale $\DS \int_0^1 (1+t^3)\dx{t}$ où
 l'intervalle $[0,1]$ est subdivisée en $5$ sous-intervalles égaux.
 \label{7Q9}
 \end{question}
@@ -5003,7 +5003,7 @@ somme de Riemann à gauche pour estimer la distance parcourue par l'abeille.
 
 \begin{question}
 Donnez la somme de Riemann à droite et celle à gauche pour l'intégrale
-$\displaystyle \int_0^2 t^2 \dx{t}$ lorsque la partition de l'intervalle
+$\DS \int_0^2 t^2 \dx{t}$ lorsque la partition de l'intervalle
 $[0,2]$ comprend cinq sous-intervalles égaux.
 \label{7Q11}
 \end{question}
@@ -5011,7 +5011,7 @@ $[0,2]$ comprend cinq sous-intervalles égaux.
 \begin{question}
 Si $f(x) = \sqrt{x}-2$, calculez la somme de Riemann
 pour le point milieu de l'intégrale
-$\displaystyle \int_1^6 f(x)\dx{x}$ lorsque l'intervalle $[1,6]$ est
+$\DS \int_1^6 f(x)\dx{x}$ lorsque l'intervalle $[1,6]$ est
 subdivisé en $n=5$ sous-intervalles égaux.  Tracez le graphe de $f$ et
 les rectangles de la somme de Riemann.
 \label{7Q12}
@@ -5075,7 +5075,7 @@ mètre de la distance parcourue pendant les 8 secondes?
 \end{question}
 
 \begin{question}
-La somme $\displaystyle 0.4 ( 0.4^3 + 0.8^3 + 1.2^3 + 1.6^3 + 2^3)$
+La somme $\DS 0.4 ( 0.4^3 + 0.8^3 + 1.2^3 + 1.6^3 + 2^3)$
 est une somme de Riemann à droite pour une intégrale.  Quelle est
 cette intégrale?
 \label{7Q16}
@@ -5105,8 +5105,8 @@ Utilisez le graphe de la fonction $f$ donné ci-dessous pour évaluer
 les intégrales suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_{4}^{9} f(x) \dx{x}$ &
-\subQ{b} & $\displaystyle \int_{-2}^{2} f(x) \dx{x}$
+\subQ{a} & $\DS \int_{4}^{9} f(x) \dx{x}$ &
+\subQ{b} & $\DS \int_{-2}^{2} f(x) \dx{x}$
 \end{tabular}
 \end{center}
 \PDFgraph{7_integrales/area10}
@@ -5118,8 +5118,8 @@ Utilisez le graphe de la fonction $f$ donné ci-dessous pour évaluer
 les intégrales suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_{-2}^{5} f(x) \dx{x}$ &
-\subQ{b} & $\displaystyle \int_{0}^{10} f(x) \dx{x}$
+\subQ{a} & $\DS \int_{-2}^{5} f(x) \dx{x}$ &
+\subQ{b} & $\DS \int_{0}^{10} f(x) \dx{x}$
 \end{tabular}
 \end{center}
 \PDFgraph{7_integrales/integral5}
@@ -5191,14 +5191,14 @@ vous connaissez la valeur de la troisième intégrale.
 \end{question}
 
 \begin{question}
-Si $\displaystyle \int_2^8 f(x) \dx{x} = 5$ et
-$\displaystyle \int_5^8 f(x) \dx{x} = 7$, calculez les intégrales
+Si $\DS \int_2^8 f(x) \dx{x} = 5$ et
+$\DS \int_5^8 f(x) \dx{x} = 7$, calculez les intégrales
 définies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_2^5 f(x) \dx{x}$ &
-\subQ{b} & $\displaystyle \int_5^8 (2f(x)+3x)\dx{x}$ &
-\subQ{c} & $\displaystyle \int_{-2/3}^{2/3} f(2-3t) \dx{t}$
+\subQ{a} & $\DS \int_2^5 f(x) \dx{x}$ &
+\subQ{b} & $\DS \int_5^8 (2f(x)+3x)\dx{x}$ &
+\subQ{c} & $\DS \int_{-2/3}^{2/3} f(2-3t) \dx{t}$
 \end{tabular}
 \end{center}
 \label{7Q28}
@@ -5208,11 +5208,11 @@ définies suivantes.
 Évaluez les intégrales suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_1^5 \frac{5}{x^3} \dx{x}$ &
+\subQ{a} & $\DS \int_1^5 \frac{5}{x^3} \dx{x}$ &
 \subQ{b} &
-$\displaystyle \int_1^8 \left( \frac{2}{\sqrt[3]{x}} +3\right)\dx{x}$ \\[0.8em]
-\subQ{c} & $\displaystyle \int_1^4 \left(e^x + \frac{1}{x}\right)\dx{x}$ &
-\subQ{d} & $\displaystyle \int_1^2 \frac{3}{t^4} \dx{t}$
+$\DS \int_1^8 \left( \frac{2}{\sqrt[3]{x}} +3\right)\dx{x}$ \\[0.8em]
+\subQ{c} & $\DS \int_1^4 \left(e^x + \frac{1}{x}\right)\dx{x}$ &
+\subQ{d} & $\DS \int_1^2 \frac{3}{t^4} \dx{t}$
 \end{tabular}
 \end{center}
 \label{7Q29}
@@ -5222,16 +5222,16 @@ $\displaystyle \int_1^8 \left( \frac{2}{\sqrt[3]{x}} +3\right)\dx{x}$ \\[0.8em]
 Évaluez les intégrales définies suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_0^5 3 e^{x/5} \dx{x}$ &
-\subQ{b} & $\displaystyle \int_0^4 \left(1+\frac{t}{2}\right)^4 \dx{t}$ &
-\subQ{c} & $\displaystyle \int_{1}^{10} (1+2t)^{-4} \dx{t}$ \\[0.8em]
-\subQ{d} & $\displaystyle \int_{0}^{2} \frac{1}{1+4t} \dx{t}$ &
-\subQ{e} & $\displaystyle \int_0^1 x^2(1+2x^3)^5 \dx{x}$ &
-\subQ{f} & $\displaystyle \int_1^4 \frac{e^{\sqrt{x}}}{\sqrt{x}} \dx{x}$
+\subQ{a} & $\DS \int_0^5 3 e^{x/5} \dx{x}$ &
+\subQ{b} & $\DS \int_0^4 \left(1+\frac{t}{2}\right)^4 \dx{t}$ &
+\subQ{c} & $\DS \int_{1}^{10} (1+2t)^{-4} \dx{t}$ \\[0.8em]
+\subQ{d} & $\DS \int_{0}^{2} \frac{1}{1+4t} \dx{t}$ &
+\subQ{e} & $\DS \int_0^1 x^2(1+2x^3)^5 \dx{x}$ &
+\subQ{f} & $\DS \int_1^4 \frac{e^{\sqrt{x}}}{\sqrt{x}} \dx{x}$
   \\[0.8em]
-\subQ{g} & $\displaystyle \int_1^e \frac{1}{x(1+(\ln(x))^2)} \dx{x}$ &
-\subQ{h} & $\displaystyle \int_1^e x^2 \ln(x) \dx{x}$  &
-\subQ{i} & $\displaystyle \int_1^2 \frac{4x^2 -14x+10}{2x^2-7x+3} \dx{x}$
+\subQ{g} & $\DS \int_1^e \frac{1}{x(1+(\ln(x))^2)} \dx{x}$ &
+\subQ{h} & $\DS \int_1^e x^2 \ln(x) \dx{x}$  &
+\subQ{i} & $\DS \int_1^2 \frac{4x^2 -14x+10}{2x^2-7x+3} \dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q30}
@@ -5240,7 +5240,7 @@ $\displaystyle \int_1^8 \left( \frac{2}{\sqrt[3]{x}} +3\right)\dx{x}$ \\[0.8em]
 \begin{question}[\theory]
 Utilisez la méthode d'intégration par parties pour obtenir une
 relation entre $F_n$ et $F_{n-1}$ où
-$\displaystyle F_n = \int_0^1 \frac{x^n}{(1+x)^n} \dx{x}$.
+$\DS F_n = \int_0^1 \frac{x^n}{(1+x)^n} \dx{x}$.
 \label{7Q31}
 \end{question}
 
@@ -5248,13 +5248,13 @@ $\displaystyle F_n = \int_0^1 \frac{x^n}{(1+x)^n} \dx{x}$.
 Évaluez les intégrales définies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_0^\pi\left(2\sin(\theta)+3\cos(\theta)\right)$ &
-\subQ{b} & $\displaystyle \int_{\pi/2}^{3\pi/4} \sin^5(x) \cos^3(x)
+\subQ{a} & $\DS \int_0^\pi\left(2\sin(\theta)+3\cos(\theta)\right)$ &
+\subQ{b} & $\DS \int_{\pi/2}^{3\pi/4} \sin^5(x) \cos^3(x)
 \dx{x}$ \\[0.9em]
-\subQ{c} & $\displaystyle \int_0^{\pi/2} \sin^2(x)\cos^2(x)\dx{x}$ &
-\subQ{d} & $\displaystyle \int_0^{\pi/4} \tan^2(x)\sec^4(x)\dx{x}$ \\[0.9em]
-\subQ{e} & $\displaystyle \int_0^2 \frac{x^3+x+1}{x^2+4} \dx{x}$ &
-\subQ{f} & $\displaystyle \int_0^1 \frac{1}{(1 + 2x -x^2)^{1/2}} \dx{x}$
+\subQ{c} & $\DS \int_0^{\pi/2} \sin^2(x)\cos^2(x)\dx{x}$ &
+\subQ{d} & $\DS \int_0^{\pi/4} \tan^2(x)\sec^4(x)\dx{x}$ \\[0.9em]
+\subQ{e} & $\DS \int_0^2 \frac{x^3+x+1}{x^2+4} \dx{x}$ &
+\subQ{f} & $\DS \int_0^1 \frac{1}{(1 + 2x -x^2)^{1/2}} \dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q32}
@@ -5264,8 +5264,8 @@ $\displaystyle F_n = \int_0^1 \frac{x^n}{(1+x)^n} \dx{x}$.
 Évaluez les intégrales définies suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_{\sqrt{2}}^{2} \frac{1}{t^3\sqrt{t^2-1}} \dx{x}$ &
-\subQ{b} & $\displaystyle \int_0^{2\sqrt{3}} \frac{t^3}{\sqrt{16-t^2}} \dx{t}$
+\subQ{a} & $\DS \int_{\sqrt{2}}^{2} \frac{1}{t^3\sqrt{t^2-1}} \dx{x}$ &
+\subQ{b} & $\DS \int_0^{2\sqrt{3}} \frac{t^3}{\sqrt{16-t^2}} \dx{t}$
 \end{tabular}
 \end{center}
 \label{7Q33}
@@ -5277,8 +5277,8 @@ calculs possible.  En fait, dans certains cas, aucun calcul n'est
 nécessaire.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_{-2}^{2}\left(y^4+5y^3\right) \dx{y}$ &
-\subQ{b} & $\displaystyle \int_{-a}^{a} x \sqrt{x^2+a^2} \dx{x}$
+\subQ{a} & $\DS \int_{-2}^{2}\left(y^4+5y^3\right) \dx{y}$ &
+\subQ{b} & $\DS \int_{-a}^{a} x \sqrt{x^2+a^2} \dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q34}
@@ -5290,17 +5290,17 @@ calculs possible.  En fait, dans certains cas, aucun calcul n'est
 nécessaire.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_{-\pi/2}^{\pi/2}\left(x^2 -20
+\subQ{a} & $\DS \int_{-\pi/2}^{\pi/2}\left(x^2 -20
 \sin(x)\right) \dx{x}$ &
-\subQ{b} & $\displaystyle \int_{2}^{5}\cos(2\pi(x-2)) \dx{x}$ &
-\subQ{c} & $\displaystyle \int_{-\pi}^{\pi} x^{16} \sin(2x) \dx{x}$
+\subQ{b} & $\DS \int_{2}^{5}\cos(2\pi(x-2)) \dx{x}$ &
+\subQ{c} & $\DS \int_{-\pi}^{\pi} x^{16} \sin(2x) \dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q35}
 \end{question}
 
 \begin{question}[\eng \life]
-Vérifiez que $\displaystyle \dfdx{ \int_a^x f(s) \dx{s} }{x} = f(x)$ pour
+Vérifiez que $\DS \dfdx{ \int_a^x f(s) \dx{s} }{x} = f(x)$ pour
 $f(s) = (5s+1)^7$ et $a$ une constante.
 \label{7Q36}
 \end{question}
@@ -5309,8 +5309,8 @@ $f(s) = (5s+1)^7$ et $a$ une constante.
 Calculez les dérivées des fonctions suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle g(y) = \int_2^y t^2\sin(t) \dx{t}$ &
-\subQ{b} & $\displaystyle h(x) = \int_2^{1/x} \arctan(t) \dx{t}$
+\subQ{a} & $\DS g(y) = \int_2^y t^2\sin(t) \dx{t}$ &
+\subQ{b} & $\DS h(x) = \int_2^{1/x} \arctan(t) \dx{t}$
 \end{tabular}
 \end{center}
 \noindent Suggestion: Utilisez le Théorème fondamental du calcul différentiel.
@@ -5324,24 +5324,24 @@ Déterminez si les intégrales impropres suivantes convergent ou divergent.
 Évaluez les intégrales impropres qui convergent.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_0^\infty e^{-3x} \dx{x}$ &
-\subQ{b} & $\displaystyle \int_0^\infty \frac{1}{(2+5x)^4} \dx{x}$ &
-\subQ{c} & $\displaystyle \int_0^\infty \frac{1}{\sqrt[3]{x}} \dx{x}$ \\[0.8em]
-\subQ{d} & $\displaystyle \int_2^\infty \frac{1}{x\sqrt{x}}\,\dx{x}$ &
-\subQ{e} & $\displaystyle \int_1^e \frac{2}{x\sqrt{\ln(x)}} \dx{x}$ &
-\subQ{f} & $\displaystyle \int_{-\infty}^0 3x^2 e^{-x^3} \dx{x}$ \\[0.8em]
-\subQ{g} & $\displaystyle \int_{-1}^1 \frac{x+1}{\sqrt[3]{x^4}} \dx{x}$ &
-\subQ{h} & $\displaystyle \int_0^\infty x\,e^{-x} \dx{x}$ &
-\subQ{i} & $\displaystyle\int_0^3\frac{2}{(x-2)^{4/3}}\dx{x}$ \\[0.8 em]
-\subQ{j} & $\displaystyle \int_0^\infty \frac{x}{1+x^4} \dx{x}$ &
-\subQ{k} & $\displaystyle \int_0^\infty \frac{1}{(1+3x)^{3/2}} \dx{x}$ &
-\subQ{l} & $\displaystyle \int_0^4 \frac{1}{x^2+x-6} \dx{x}$ \\[0.8em]
-\subQ{m} & $\displaystyle \int_0^2 \,\frac{1}{4-x^2} \, \dx{x}$ &
-\subQ{n} & $\displaystyle \int_1^2\frac{3}{\sqrt[3]{x-1}} \dx{x}$ &
-\subQ{o} & $\displaystyle \int_0^{\pi/2}
+\subQ{a} & $\DS \int_0^\infty e^{-3x} \dx{x}$ &
+\subQ{b} & $\DS \int_0^\infty \frac{1}{(2+5x)^4} \dx{x}$ &
+\subQ{c} & $\DS \int_0^\infty \frac{1}{\sqrt[3]{x}} \dx{x}$ \\[0.8em]
+\subQ{d} & $\DS \int_2^\infty \frac{1}{x\sqrt{x}}\,\dx{x}$ &
+\subQ{e} & $\DS \int_1^e \frac{2}{x\sqrt{\ln(x)}} \dx{x}$ &
+\subQ{f} & $\DS \int_{-\infty}^0 3x^2 e^{-x^3} \dx{x}$ \\[0.8em]
+\subQ{g} & $\DS \int_{-1}^1 \frac{x+1}{\sqrt[3]{x^4}} \dx{x}$ &
+\subQ{h} & $\DS \int_0^\infty x\,e^{-x} \dx{x}$ &
+\subQ{i} & $\DS\int_0^3\frac{2}{(x-2)^{4/3}}\dx{x}$ \\[0.8 em]
+\subQ{j} & $\DS \int_0^\infty \frac{x}{1+x^4} \dx{x}$ &
+\subQ{k} & $\DS \int_0^\infty \frac{1}{(1+3x)^{3/2}} \dx{x}$ &
+\subQ{l} & $\DS \int_0^4 \frac{1}{x^2+x-6} \dx{x}$ \\[0.8em]
+\subQ{m} & $\DS \int_0^2 \,\frac{1}{4-x^2} \, \dx{x}$ &
+\subQ{n} & $\DS \int_1^2\frac{3}{\sqrt[3]{x-1}} \dx{x}$ &
+\subQ{o} & $\DS \int_0^{\pi/2}
 \frac{\sin(x)}{\sqrt{\cos(x)}} \dx{x}$ \\[0.8em]
-\subQ{p} & $\displaystyle \int_1^2 \frac{x}{\sqrt{2-x}} \dx{x}$ &
-\subQ{q} & $\displaystyle \int_0^8 \frac{x}{(8-x)^{2/3}} \dx{x}$ & &
+\subQ{p} & $\DS \int_1^2 \frac{x}{\sqrt{2-x}} \dx{x}$ &
+\subQ{q} & $\DS \int_0^8 \frac{x}{(8-x)^{2/3}} \dx{x}$ & &
 \end{tabular}
 \end{center}
 \label{7Q38}
@@ -5352,9 +5352,9 @@ Utilisez le test de comparaison des intégrales pour déterminer si les
 intégrales suivantes converge.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_0^1 \frac{1}{x^{1/3} + x^3} \dx{x}$ &
-\subQ{b} & $\displaystyle \int_1^\infty \frac{1}{x^{1/3}+x^3} \dx{x}$ &
-\subQ{c} & $\displaystyle \int_1^\infty \frac{x}{x^2+x^{4/3}} \dx{x}$
+\subQ{a} & $\DS \int_0^1 \frac{1}{x^{1/3} + x^3} \dx{x}$ &
+\subQ{b} & $\DS \int_1^\infty \frac{1}{x^{1/3}+x^3} \dx{x}$ &
+\subQ{c} & $\DS \int_1^\infty \frac{x}{x^2+x^{4/3}} \dx{x}$
 \end{tabular}
 \end{center}
 \label{7Q39}
@@ -5366,15 +5366,15 @@ suivantes conver\-gent ou divergent.  Donnez une borne supérieure pour la
 valeur des intégrales impropres qui convergent.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_0^1 \frac{1}{x^2\, e^x} \dx{x}$ &
-\subQ{b} & $\displaystyle \int_1^\infty \frac{1}{\sqrt{x}+ e^x} \dx{x}$ &
-\subQ{c} & $\displaystyle \int_1^\infty \frac{\sin^2(x)}{x^3 + 2} \dx{x}$
+\subQ{a} & $\DS \int_0^1 \frac{1}{x^2\, e^x} \dx{x}$ &
+\subQ{b} & $\DS \int_1^\infty \frac{1}{\sqrt{x}+ e^x} \dx{x}$ &
+\subQ{c} & $\DS \int_1^\infty \frac{\sin^2(x)}{x^3 + 2} \dx{x}$
 \\[1em]
-\subQ{d} & $\displaystyle \int_1^\infty\frac{1+\cos^2x}{x^2} \dx{x}$ &
-\subQ{e} & $\displaystyle \int_0^1 \frac{2\sqrt{x}+1}{x^4+3x} \dx{x}$ &
-\subQ{f} & $\displaystyle \int_1^\infty
+\subQ{d} & $\DS \int_1^\infty\frac{1+\cos^2x}{x^2} \dx{x}$ &
+\subQ{e} & $\DS \int_0^1 \frac{2\sqrt{x}+1}{x^4+3x} \dx{x}$ &
+\subQ{f} & $\DS \int_1^\infty
 \frac{x^2 \cos^2 x + 1}{x^4 + x^2 + 1} \dx{x}$ \\[1em]
-\subQ{g} & $\displaystyle \int_1^\infty \frac{2\sqrt{x}+3}{x^2+2x} \dx{x}$ &
+\subQ{g} & $\DS \int_1^\infty \frac{2\sqrt{x}+3}{x^2+2x} \dx{x}$ &
 & & &
 \end{tabular}
 \end{center}

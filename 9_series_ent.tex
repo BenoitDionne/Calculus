@@ -21,7 +21,7 @@ Une {\bfseries série entière au voisinage de $c \in \RR$} (ou
 \[
 \sum_{n=0}^\infty a_n (x-c)^n \; .\,
 \]
-où $\displaystyle \left\{a_n\right\}_{n=0}^\infty$ est une suite de
+où $\DS \left\{a_n\right\}_{n=0}^\infty$ est une suite de
 nombres réels.  Les nombres $a_n$ pour $n=0$, $1$, $2$, \ldots sont
 appelés les {\bfseries coefficients} \index{Série entière!coefficient}
 de la série et $a_n (x-c)^n$ pour $n=0$, $1$, $2$, \ldots\ sont les
@@ -42,12 +42,12 @@ une série entière au voisinage de $c$.  Nous disons que la série entière
 \lim_{k\rightarrow \infty} \sum_{n=0}^k a_n (x-c)^n
 \]
 existe pour cette valeur de $x$.  Nous dénotons cette limite par
-$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$.
+$\DS \sum_{n=0}^\infty a_n (x-c)^n$.
 \index{Série entière!convergence}  La somme
-$\displaystyle \sum_{n=0}^k a_n (x-c)^n$ est une {\bfseries somme partielle}
+$\DS \sum_{n=0}^k a_n (x-c)^n$ est une {\bfseries somme partielle}
 de la série. \index{Série entière!somme partielle}
 
-le contexte détermine si $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ fait
+le contexte détermine si $\DS \sum_{n=0}^\infty a_n (x-c)^n$ fait
 référence à la série entière où la limite de la série entière pour une valeur
 de $x$.
 \end{defn}
@@ -56,10 +56,10 @@ Selon la valeur de $x$, la série peut converger (absolument ou
 conditionnellement) ou diverger.
 
 \begin{egg}
-La série entière $\displaystyle \sum_{n=0}^\infty \frac{x^n}{n!}$ converge
+La série entière $\DS \sum_{n=0}^\infty \frac{x^n}{n!}$ converge
 absolument pour tout $x$.
 
-Les termes de cette série sont $\displaystyle a_n = \frac{x^n}{n!}$.
+Les termes de cette série sont $\DS a_n = \frac{x^n}{n!}$.
 Ainsi,
 \[
 \lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}
@@ -73,11 +73,11 @@ pour tout $x$.
 
 \begin{egg}
 Montrons que la série
-$\displaystyle \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ converge
+$\DS \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ converge
 absolument pour $9/5 < x < 11/5$.
 
 Les termes de la série sont de la forme
-$\displaystyle a_n = \frac{(-5)^n(x-2)^n}{n^2+1}$.
+$\DS a_n = \frac{(-5)^n(x-2)^n}{n^2+1}$.
 Ainsi,
 \begin{align*}
 \lim_{n\rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}
@@ -102,25 +102,25 @@ pour $|x-2|<1/5$ et divergeait pour $|x-2|>1/5$.  Le théorème suivant
 confirme que c'est typique des séries entières.
 
 \begin{theorem}
-Soit $\displaystyle \left\{a_n\right\}_{n=0}^\infty$ une suite de nombres
+Soit $\DS \left\{a_n\right\}_{n=0}^\infty$ une suite de nombres
 réels et $c$ un nombre réelle.  Soit que la séries entière
-$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ diverge pour toute valeur
+$\DS \sum_{n=0}^\infty a_n (x-c)^n$ diverge pour toute valeur
 de $x \neq c$ ou il existe un nombre $R>0$ ($R=\infty$ est admissible)
-tel que la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
+tel que la série entière $\DS \sum_{n=0}^\infty a_n (x-c)^n$
 converge absolument pour $|x-c|<R$ et diverge pour $|x-c|>R$.
 \end{theorem}
 
 \begin{rmk}
 Le théorème précédent ne dit rien au sujet de la convergence de la série
-$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ pour $|x-c|=R$.  Il
+$\DS \sum_{n=0}^\infty a_n (x-c)^n$ pour $|x-c|=R$.  Il
 faut utiliser les tests de convergence qui ont été présentés aux
 sections~\ref{conv_tests} et \ref{serie_alt} pour déterminer la convergence
-de $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ pour ces valeurs de $x$.
+de $\DS \sum_{n=0}^\infty a_n (x-c)^n$ pour ces valeurs de $x$.
 \end{rmk}
 
 \begin{egg}[][Suite de l'exemple~\ref{entiere_egg}] \label{entiere_eggS}
 Nous avons montré que la série
-$\displaystyle \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ convergeait
+$\DS \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ convergeait
 pour $|x-2|<1/5$ et divergeait pour $|x-2|>1/5$.  Avons-nous convergence
 pour $x=9/5$ et $x=11/5$?
 
@@ -129,8 +129,8 @@ Si $x=9/5$, nous obtenons la série de termes positifs
 \sum_{i=0}^\infty \frac{1}{n^2+1} = 1 + \sum_{i=1}^\infty \frac{1}{n^2+1} \; .
 \]
 Cette dernière série converge car
-$\displaystyle \frac{1}{n^2+1} < \frac{1}{n^2}$ et la série
-$\displaystyle \sum_{i=1}^\infty \frac{1}{n^2}$ converge d'après la
+$\DS \frac{1}{n^2+1} < \frac{1}{n^2}$ et la série
+$\DS \sum_{i=1}^\infty \frac{1}{n^2}$ converge d'après la
 proposition~\ref{Pseries}.
 
 Si $x=11/5$, nous obtenons la série alternée
@@ -139,28 +139,28 @@ Si $x=11/5$, nous obtenons la série alternée
 \]
 Cette série satisfait le test des séries alternées et donc converge.  En
 effet, c'est une série de la forme
-$\displaystyle \sum_{i=0}^\infty (-1)^n a_n$ avec $a_n = 1/(n^2+1)$.  Nous avons
+$\DS \sum_{i=0}^\infty (-1)^n a_n$ avec $a_n = 1/(n^2+1)$.  Nous avons
 $a_n>0$ et $a_{n+1} < a_n$ pour tout $n$.  De plus
-$\displaystyle \lim_{n\rightarrow \infty} a_n = 0$.
+$\DS \lim_{n\rightarrow \infty} a_n = 0$.
 \end{egg}
 
 \begin{defn}
 Le {\bfseries rayon de convergence} d'une série entière
-$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ est le nombre $R$ tel que la
+$\DS \sum_{n=0}^\infty a_n (x-c)^n$ est le nombre $R$ tel que la
 série converge pour $|x-c|<R$ et diverge pour $|x-c|>R$.
 \index{Série entière!rayon de convergence}
 
 L'{\bfseries intervalle de convergence} est
-$\displaystyle \left\{x : \sum_{n=0}^\infty a_n (x-c)^n
+$\DS \left\{x : \sum_{n=0}^\infty a_n (x-c)^n
 \text{ converge} \right\}$.
 \index{Série entière!intervalle de convergence}
 \end{defn}
 
 \begin{egg}[][Suite de l'exemple~\ref{entiere_eggS}]
 Le rayon de convergence de la série
-$\displaystyle \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ est
+$\DS \sum_{i=0}^\infty \frac{(-5)^n(x-2)^n}{n^2+1}$ est
 $1/5$ et l'intervalle de convergence est
-$\displaystyle \left[\frac{9}{5} , \frac{11}{5}\right]$.
+$\DS \left[\frac{9}{5} , \frac{11}{5}\right]$.
 \end{egg}
 
 Le théorème suivant est une conséquence du test du quotient pour les séries
@@ -168,7 +168,7 @@ de nombres.
 
 \begin{theorem} \label{RadiusConvComp}
 Le rayon de convergence $R$ de la série entière
-$\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$ est donnée par
+$\DS \sum_{n=0}^\infty a_n (x-c)^n$ est donnée par
 \[
 \frac{1}{R} = \lim_{n\rightarrow \infty} \left|\frac{a_{n+1}}{a_n}\right|
 \]
@@ -182,7 +182,7 @@ Trouvons le rayon de convergence et l'intervalle de convergence de la série
 {1 \times 3 \times \ldots \times (2n-1)} \, x^n \; .
 \end{equation}
 
-C'est une série de la forme $\displaystyle \sum_{n=1}^\infty a_n x^n$ où
+C'est une série de la forme $\DS \sum_{n=1}^\infty a_n x^n$ où
 \[
 a_n = \frac{2 \times 4 \times \ldots \times (2n)}
 {1 \times 3 \times \ldots \times (2n-1)} \; .
@@ -191,10 +191,10 @@ Puisque
 \[
 \lim_{n\rightarrow \infty} \left| \frac{a_{n+1}}{a_n}\right|
 = \lim_{n\rightarrow \infty} \left|
-\frac{\displaystyle \frac{2 \times 4 \times \ldots \times (2n+2)}
-{\displaystyle 1 \times 3 \times \ldots \times (2n+1)}}
-{\displaystyle \frac{2 \times 4 \times \ldots \times (2n)}
-{\displaystyle 1 \times 3 \times \ldots \times (2n-1)}} \right|
+\frac{\DS \frac{2 \times 4 \times \ldots \times (2n+2)}
+{\DS 1 \times 3 \times \ldots \times (2n+1)}}
+{\DS \frac{2 \times 4 \times \ldots \times (2n)}
+{\DS 1 \times 3 \times \ldots \times (2n-1)}} \right|
 = \lim_{n\rightarrow \infty} \left| \frac{2n-2}{2n+1} \right| = 1 \ ,
 \]
 le rayon de convergence de (\ref{exSRSone}) est $R=1$.
@@ -204,7 +204,7 @@ Pour $x=1$, nous obtenons la série
 \sum_{n=1}^\infty \frac{2\times 4 \times \ldots \times (2n)}
 {1 \times 3 \times \ldots \times (2n-1)} \; .
 \end{equation}
-C'est une série de la forme $\displaystyle \sum_{n=1}^\infty a_n$ où
+C'est une série de la forme $\DS \sum_{n=1}^\infty a_n$ où
 \[
 a_n = \frac{2\times 4 \times \ldots \times (2n)}
 {1 \times 3 \times \ldots \times (2n-1)}
@@ -212,7 +212,7 @@ a_n = \frac{2\times 4 \times \ldots \times (2n)}
 >1
 \]
 pour tout $n$.  Puisque la suite
-$\displaystyle \left\{ a_n \right\}_{n=1}^\infty$ des termes de la
+$\DS \left\{ a_n \right\}_{n=1}^\infty$ des termes de la
 série ne tend pas vers $0$, la série (\ref{exSRSoneA}) ne converge
 pas.
 
@@ -222,7 +222,7 @@ Pour $x=-1$, nous obtenons la série
 {1 \times 3 \times \ldots \times (2n-1)} \; .
 \end{equation}
 C'est une série de la forme
-$\displaystyle \sum_{n=1}^\infty a_n$ où
+$\DS \sum_{n=1}^\infty a_n$ où
 \[
 a_n = (-1)^n \, \frac{2\times 4 \times \ldots \times (2n)}
 {1 \times 3 \times \ldots \times (2n-1)}
@@ -231,7 +231,7 @@ a_n = (-1)^n \, \frac{2\times 4 \times \ldots \times (2n)}
 \]
 Donc $a_n > 1$ pour $n$ pair et $a_n<-1$ pour $n$ impair.  Comme pour la
 série précédente, la suite
-$\displaystyle \left\{ a_n \right\}_{n=1}^\infty$ des termes de la
+$\DS \left\{ a_n \right\}_{n=1}^\infty$ des termes de la
 série ne converge pas vers $0$.  La série (\ref{exSRSoneB}) ne
 converge donc pas.
 
@@ -241,7 +241,7 @@ L'intervalle de convergence est $]-1,1[$.
 \section{Fonctions définies par des séries}
 
 \begin{theorem} \label{der_int_series}
-Considérons la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
+Considérons la série entière $\DS \sum_{n=0}^\infty a_n (x-c)^n$
 dont le rayon de convergence est $R>0$, et la fonction
 $f:]c-R,c+R[\rightarrow \RR$ définie par
 \[
@@ -285,11 +285,11 @@ Si nous remplaçons $x$ par $t$, $a$ par $c$ et $b$ par $x$ dans l'équation
 \sum_{n=1}^\infty \frac{a_n}{n+1} (t-c)^{n+1} \bigg|_{t=c}^x
 = \sum_{n=1}^\infty \frac{a_n}{n+1} (x-c)^{n+1} \;.
 \]
-Puisque $\displaystyle F(x) = \int_c^x f(t) \dx{t}$ est une primitive
+Puisque $\DS F(x) = \int_c^x f(t) \dx{t}$ est une primitive
 de $f$, nous pouvons énoncer le corollaire suivant.
 
 \begin{cor}
-Considérons la série entière $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n$
+Considérons la série entière $\DS \sum_{n=0}^\infty a_n (x-c)^n$
 dont le rayon de convergence est $R>0$, et la fonction
 $f:]c-R,c+R[\rightarrow \RR$ définie par
 \[
@@ -370,7 +370,7 @@ e^{-1/x^2} & \quad \text{pour} \quad x\neq 0 \\
 \end{cases}
 \]
 A partir de la définition de la dérivée d'une fonction, nous pouvons montrer que
-$\displaystyle \dydxn{f}{x}{n}(0) = 0$ pour tout $n>0$.
+$\DS \dydxn{f}{x}{n}(0) = 0$ pour tout $n>0$.
 Donc
 \[
 \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)x^n = 0 \quad , \quad
@@ -394,12 +394,12 @@ fraction du domaine de la fonction.  Considérons la série
 \[
 \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)x^n
 \]
-pour $\displaystyle f(x) = \frac{1}{1-x}$.  Puisque
+pour $\DS f(x) = \frac{1}{1-x}$.  Puisque
 \[
 f^{(n)}(x) = \frac{n!}{(1-x)^{n+1}} \quad \text{pour} \quad n=0, 1, 2,
 \ldots
 \]
-nous avons que $\displaystyle f^{(n)}(0) = n!$ pour $n=0$, $1$, $2$,
+nous avons que $\DS f^{(n)}(0) = n!$ pour $n=0$, $1$, $2$,
 \ldots\quad  Donc
 \[
 \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)x^n = \sum_{n=0}^\infty x^n
@@ -456,8 +456,8 @@ parties.  Si $f$ est suffisamment différentiable, alors
 r_k(x) = \frac{1}{k!} \int_c^x (x-t)^k f^{(k+1)}(t) \dx{t} 
 = \int_c^x g(t)h'(t) \dx{t}
 \]
-où $\displaystyle g(t) = \frac{(x-t)^k}{k!}$ et $h'(t) = f^{(k+1)}(t)$.
-Donc $\displaystyle g'(t) = -\frac{(x-t)^{k-1}}{(k-1)!}$, 
+où $\DS g(t) = \frac{(x-t)^k}{k!}$ et $h'(t) = f^{(k+1)}(t)$.
+Donc $\DS g'(t) = -\frac{(x-t)^{k-1}}{(k-1)!}$, 
 $h(t) = f^{(k)}(t)$ et
 \begin{align}
 r_k(x) &= g(t)h(t)\bigg|_c^x - \int_c^x g'(t)h(t)\dx{t} =
@@ -472,9 +472,9 @@ Nous avons
 \int_c^x \frac{(x-t)^{k-1}}{(k-1)!} f^{(k)}(t) \dx{t}
 = \int_c^x g(t)h'(t) \dx{t}
 \]
-où $\displaystyle g(t) = \frac{(x-t)^{k-1}}{(k-1)!}$ et
+où $\DS g(t) = \frac{(x-t)^{k-1}}{(k-1)!}$ et
 $h'(t) = f^{(k)}(t)$.  Donc
-$\displaystyle g'(t) = -\frac{(x-t)^{k-2}}{(k-2)!}$, 
+$\DS g'(t) = -\frac{(x-t)^{k-2}}{(k-2)!}$, 
 $h(t) = f^{(k-1)}(t)$ et
 \begin{align*}
 \int_c^x \frac{(x-t)^{k-1}}{(k-1)!} f^{(k)}(t) \dx{t}
@@ -496,7 +496,7 @@ r_k(x) = -\frac{(x-c)^k}{k!} f^{(k)}(c)
 -\frac{(x-c)^{k-1}}{(k-1)!} f^{(k-1)}(c) -
 \ldots - (x-c) f'(c) +\int_c^x f'(t) \dx{t} \ .
 \]
-Puisque $\displaystyle \int_c^x f'(t)\dx{t} = f(x)-f(c)$, nous obtenons
+Puisque $\DS \int_c^x f'(t)\dx{t} = f(x)-f(c)$, nous obtenons
 finalement
 \begin{align*}
 f(x) &= f(c) +  f'(c) (x-c) + \frac{f''(c)}{2!}(x-c)^2
@@ -546,8 +546,8 @@ r_k(x) = \frac{f^{(k+1)}(\xi)}{(k+1)!}\; (x-c)^{k+1}  \ .
 
 \begin{egg}
 À l'exemple~\ref{eggtaylorgeom}, nous avons vu que la série de MacLaurin de
-$\displaystyle f(x) = \frac{1}{1-x}$ est la série géométrique
-$\displaystyle \sum_{n=0}^\infty x^n$.  À l'exemple~\ref{geoseries}, 
+$\DS f(x) = \frac{1}{1-x}$ est la série géométrique
+$\DS \sum_{n=0}^\infty x^n$.  À l'exemple~\ref{geoseries}, 
 nous avons aussi vu que cette série tend vers $f(x)$ pour $-1< x < 1$.
 
 Utilisons la formule du reste $r_k$ donnée en (\ref{TPfourTS2}) pour
@@ -632,9 +632,9 @@ montrant que
 \frac{1}{(k+1)!} f^{(k+1)}(\xi) x^{k+1} = 0
 \]
 pour tout $x$.  Puisque
-$\displaystyle \left| f^{(k+1)}(\xi) \right|
+$\DS \left| f^{(k+1)}(\xi) \right|
 = \left| (-1)^{(k+1)/2} \cos(\xi) \right| \leq 1$ pour $k$ impaire et
-$\displaystyle \left| f^{(k+1)}(\xi) \right|
+$\DS \left| f^{(k+1)}(\xi) \right|
 = \left| (-1)^{k/2+1} \sin(\xi) \right| \leq 1$ pour $k$ pair, nous avons
 \[
 0 \leq \left| r_k(x) \right| \leq \left| \frac{x^{k+1}}{(k+1)!} \right|
@@ -642,7 +642,7 @@ $\displaystyle \left| f^{(k+1)}(\xi) \right|
 \]
 quel que soit $x$ (remarque~\ref{r_sin_cos} ci-dessous).  Il
 découle du théorème des gendarmes que
-$\displaystyle \lim_{k\rightarrow \infty} r_k(x) = 0$ pour tout $x$.
+$\DS \lim_{k\rightarrow \infty} r_k(x) = 0$ pour tout $x$.
 
 \subQ{ii} Soit $g(x) = \sin(x)$.  Puisque
 \[
@@ -677,9 +677,9 @@ montrant que
 \lim_{k\rightarrow \infty}
 \frac{1}{(k+1)!} g^{(k+1)}(\xi) x^{k+1} = 0
 \]
-pour tout $x$.  Puisque $\displaystyle \left| g^{(k+1)}(\xi) \right|
+pour tout $x$.  Puisque $\DS \left| g^{(k+1)}(\xi) \right|
 = \left| (-1)^{(k+1)/2} \sin(\xi) \right| \leq 1$ pour $k$ impaire et
-$\displaystyle \left| g^{(k+1)}(\xi) \right|
+$\DS \left| g^{(k+1)}(\xi) \right|
 = \left| (-1)^{k/2} \cos(\xi) \right| \leq 1$ pour $k$ pair, nous avons
 \[
 0 \leq \left| r_k(x) \right| \leq \left| \frac{x^{k+1}}{(k+1)!} \right|
@@ -687,7 +687,7 @@ $\displaystyle \left| g^{(k+1)}(\xi) \right|
 \]
 quel que soit $x$ (remarque~\ref{r_sin_cos} ci-dessous).  Il
 découle du théorème des gendarmes que
-$\displaystyle \lim_{k\rightarrow \infty} r_k(x) = 0$ pour tout $x$.
+$\DS \lim_{k\rightarrow \infty} r_k(x) = 0$ pour tout $x$.
 \label{sin_cos_series}
 \end{egg}
 
@@ -699,9 +699,9 @@ Dans l'exemple précédent, nous avons utilisé le fait que
 \]
 pour tout $x$.  Pour démontrer ce résultat, il faut faire référence
 à l'exemple~\ref{exp_serie_egg} où il a été démontré que la série
-$\displaystyle \sum_{n=0}^\infty \frac{x^n}{n!}$ convergeait pour
+$\DS \sum_{n=0}^\infty \frac{x^n}{n!}$ convergeait pour
 tout $x$.  Il découle du théorème~\ref{NCforCofS} que le terme général
-$\displaystyle \frac{x^n}{n!}$ de la série tend vers $0$ pour tout $x$
+$\DS \frac{x^n}{n!}$ de la série tend vers $0$ pour tout $x$
 lorsque $n$ tend vers plus l'infini; c'est-à-dire,
 \[
 \lim_{k\rightarrow \infty} \frac{x^n}{n!} = 0 \quad \text{pour} \quad x\in\RR \; .
@@ -756,9 +756,9 @@ quel que soit le choix de $x$; c'est-à-dire,
 \frac{1}{(k+1)!} f^{(k+1)}(\xi) x^{k+1} = 0
 \]
 pour tout $x$.  Puisque
-$\displaystyle \left| f^{(k+1)}(\xi) \right|
+$\DS \left| f^{(k+1)}(\xi) \right|
 = \left| (-1)^{(k+1)/2} \sin(\xi) \right| \leq 1$ pour $k$ impaire et
-$\displaystyle \left| f^{(k+1)}(\xi) \right|
+$\DS \left| f^{(k+1)}(\xi) \right|
 = \left| (-1)^{k/2} \cos(\xi) \right| \leq 1$ pour $k$ pair, nous avons
 \[
 0 \leq \left| r_k(x) \right| \leq \left| \frac{1}{(k+1)!}\,
@@ -893,7 +893,7 @@ certaines fonction sans avoir à calculer une dérivée.
 
 \begin{egg}
 Trouvons la série de MacLaurin de la fonction
-$\displaystyle f(x) = \frac{1}{1+x^3}$.
+$\DS f(x) = \frac{1}{1+x^3}$.
 
 La série géométrique est
 \[
@@ -910,7 +910,7 @@ C'est la série cherchée.
 
 \begin{egg}
 Trouvons la série de MacLaurin de la fonction
-$\displaystyle f(x) = \frac{1}{7+2x}$.
+$\DS f(x) = \frac{1}{7+2x}$.
 
 Remarquons que
 \[
@@ -952,7 +952,7 @@ f(x) = \sin\left(\frac{x}{3}\right)
 
 \begin{egg}
 Trouvons la série de MacLaurin de la fonction
-$\displaystyle f(x) = \frac{1}{(x-1)(1-2x)}$.
+$\DS f(x) = \frac{1}{(x-1)(1-2x)}$.
 
 La méthode des fractions partielles nous permet d'exprimer $f$ de la façon
 suivante.
@@ -1003,7 +1003,7 @@ $x^n$ pour $n=0$, $1$, $2$, \ldots.
 \end{egg}
 
 \begin{egg}
-Si $\displaystyle f(x) = \frac{1}{(x-1)(1-2x)}$, quelle est la valeur
+Si $\DS f(x) = \frac{1}{(x-1)(1-2x)}$, quelle est la valeur
 de $f^{(100)}(0)$?
 
 Nous avons vu à l'exemple précédent que
@@ -1025,7 +1025,7 @@ Il est aussi possible d'utiliser les séries entières pour évaluer des
 intégrales.
 
 \begin{egg}
-Évaluons l'intégrale $\displaystyle \int_0^{0.5} \cos(x^2) \dx{x}$ avec une
+Évaluons l'intégrale $\DS \int_0^{0.5} \cos(x^2) \dx{x}$ avec une
 précision de $10^{-8}$.
 
 La série de MacLaurin de $\cos(u)$ est
@@ -1049,19 +1049,19 @@ Ainsi,
 &= \sum_{n=0}^\infty (-1)^n \frac{1}{2^{4n+1}\,(4n+1)\,(2n)!} \; .
 \end{align*}
 C'est une série alternée de la forme
-$\displaystyle \sum_{n=0}^\infty (-1)^n a_n$ où
-$\displaystyle a_n = \frac{1}{2^{4n+1}\,(4n+1)\,(2n)!}$.  Notez que cette
+$\DS \sum_{n=0}^\infty (-1)^n a_n$ où
+$\DS a_n = \frac{1}{2^{4n+1}\,(4n+1)\,(2n)!}$.  Notez que cette
 série satisfait le Test des séries alternées (i.e. le théorème~\ref{altTest}),
 ce qui prouve qu'elle converge en accord avec la conclusion du
 théorème~\ref{der_int_series}.  De plus, si
-$\displaystyle S = \sum_{n=0}^\infty (-1)^n a_n$ et
-$\displaystyle S_N = \sum_{n=0}^N (-1)^n a_n$ est la $N^{e}$ somme
-partiel, alors $\displaystyle |S-S_N| \leq a_{N+1}$.
+$\DS S = \sum_{n=0}^\infty (-1)^n a_n$ et
+$\DS S_N = \sum_{n=0}^N (-1)^n a_n$ est la $N^{e}$ somme
+partiel, alors $\DS |S-S_N| \leq a_{N+1}$.
 
 La somme partiel $S_N$ donnera une approximation de
-$\displaystyle \int_0^{0.5} \cos(x^2) \dx{x}$ avec
+$\DS \int_0^{0.5} \cos(x^2) \dx{x}$ avec
 une précision de $10^{-8}$ si nous choisissons $N$ tel que
-$\displaystyle |S-S_N| \leq a_{N+1} < 10^{-8}$.
+$\DS |S-S_N| \leq a_{N+1} < 10^{-8}$.
 Nous avons
 \[
 a_{N+1} = a_3 = \frac{1}{13\times 2^{13}\times 6!} \approx 1.3042
@@ -1098,7 +1098,7 @@ Si $k$ est un entier non négatif, la {\bfseries formule du binôme}
 (1+x)^k = 1 + k\,x + \frac{k(k-1)}{2}\,x^2 + \ldots + k\,x^{k-1} + x^k
 = \sum_{n=0}^k \binom{k}{n} x^n \; .
 \end{equation}
-Pour cette raison, $\displaystyle \binom{k}{n}$ est appelé un
+Pour cette raison, $\DS \binom{k}{n}$ est appelé un
 {\bfseries coefficient du binôme}\index{Binôme!Coefficient du binôme}.
 Ceux qui auraient déjà étudié la combinatoire reconnaissent
 certainement le coefficient du binôme puisqu'il représente le nombre
@@ -1165,13 +1165,13 @@ f(x) \sim \sum_{n=0}^\infty \frac{1}{n!}\,f^{(n)}(0)\, x^n
 
 Montrons que cette série converge pour $|x|<1$.  Pour ce faire, nous
 calculons le rayon de convergence $R$.  Nous avons une série de la forme
-$\displaystyle \sum_{n=0}^\infty a_n x^n$ où
-$\displaystyle a_n = \binom{k}{n}$.  Donc 
+$\DS \sum_{n=0}^\infty a_n x^n$ où
+$\DS a_n = \binom{k}{n}$.  Donc 
 \[
 \frac{1}{R} = \lim_{n\rightarrow \infty} \left|\frac{a_{n+1}}{a_n}\right|
 = \lim_{n\rightarrow \infty} \left|
-\frac{\displaystyle \frac{k(k-1)(k-2)\ldots(k-n)}{(n+1)!}}
-{\displaystyle \frac{k(k-1)(k-2)\ldots(k-n+1)}{n!}} \right|
+\frac{\DS \frac{k(k-1)(k-2)\ldots(k-n)}{(n+1)!}}
+{\DS \frac{k(k-1)(k-2)\ldots(k-n+1)}{n!}} \right|
 = \lim_{n\rightarrow \infty} \left| \frac{k-n}{n+1} \right| = 1
 \]
 et ainsi $R=1$.
@@ -1246,7 +1246,7 @@ $|x|<1$.  Par unicité des solutions $f(x)=g(x)$ pour $|x|<1$; c'est-à-dire,
 
 \begin{egg}
 Trouvons la série de MacLaurin de la fonction
-$\displaystyle \frac{x^2}{(1-x^3)^{1/2}}$.
+$\DS \frac{x^2}{(1-x^3)^{1/2}}$.
 
 Si nous substituons $u=-x^3$ et $k=-1/2$ dans la série du binôme
 \[
@@ -1307,7 +1307,7 @@ La fonction $E$ possède les propriétés suivantes.
 \begin{enumerate}
 \item $E(0)=1$.
 \item $E(a+b) = E(a)\, E(b)$ pour tous nombres réels $a$ et $b$.
-\item $\displaystyle \dydx{E}{x}(x) = E(x)$ pour tout $x$.
+\item $\DS \dydx{E}{x}(x) = E(x)$ pour tout $x$.
 \end{enumerate}
 \end{prop}
 
@@ -1374,7 +1374,7 @@ e^{x\ln(b)} = \underbrace{e^{\ln(b)} \times e^{\ln(b)} \times
 = b^x \; .
 \]
 
-De plus, puisque $\displaystyle b^{1/\ln(b)} = e$ car
+De plus, puisque $\DS b^{1/\ln(b)} = e$ car
 \[
 \ln( b^{1/\ln(b)} ) = \frac{1}{\ln(b)} \, \ln(b) = 1 = \ln(e) \;,
 \]
@@ -1442,20 +1442,20 @@ pour $x \in \RR$.
 Déterminez le rayon et l'intervalle de convergence des séries suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{x^n}{n^2}$ &
-\subQ{b} & $\displaystyle \sum_{n=0}^\infty \frac{n^2 x^n}{10^n}$ &
-\subQ{c} & $\displaystyle \sum_{n=0}^\infty \frac{x^n}{n!}$ \\[1em]
-\subQ{d} & $\displaystyle \sum_{n=0}^\infty \sqrt{n}(x+2)^n$ &
-\subQ{e} & $\displaystyle \sum_{n=1}^\infty (-1)^n \,\frac{(x-1)^n}{n\,4^n}$ &
-\subQ{f} & $\displaystyle \sum_{n=1}^\infty
+\subQ{a} & $\DS \sum_{n=1}^\infty \frac{x^n}{n^2}$ &
+\subQ{b} & $\DS \sum_{n=0}^\infty \frac{n^2 x^n}{10^n}$ &
+\subQ{c} & $\DS \sum_{n=0}^\infty \frac{x^n}{n!}$ \\[1em]
+\subQ{d} & $\DS \sum_{n=0}^\infty \sqrt{n}(x+2)^n$ &
+\subQ{e} & $\DS \sum_{n=1}^\infty (-1)^n \,\frac{(x-1)^n}{n\,4^n}$ &
+\subQ{f} & $\DS \sum_{n=1}^\infty
 \frac{n x^n}{ 1 \cdot 3 \cdot 5 \cdot \ldots \cdot (2n-1)}$  \\[1em]
-\subQ{g} & $\displaystyle \sum_{n=0}^\infty (-1)^n \frac{(5x-1)^n}{\sqrt{n+1}}$
+\subQ{g} & $\DS \sum_{n=0}^\infty (-1)^n \frac{(5x-1)^n}{\sqrt{n+1}}$
 &
-\subQ{h} & $\displaystyle   \sum_{n=1}^\infty\;(-1)^n\frac{(5x-1)^n}{3^n\,n^2}$
+\subQ{h} & $\DS   \sum_{n=1}^\infty\;(-1)^n\frac{(5x-1)^n}{3^n\,n^2}$
 &
-\subQ{i} & $\displaystyle \sum_{n=1}^\infty \frac{(-5)^n (x+3)^n}{n}$  \\[1em]
-\subQ{j} & $\displaystyle \sum_{n=1}^\infty \frac{3^n(x-2)^n}{n^2}$ &
-\subQ{k} & $\displaystyle \sum_{n=1}^\infty \frac{(x-2)^n}{3^n\sqrt{n}}$ &
+\subQ{i} & $\DS \sum_{n=1}^\infty \frac{(-5)^n (x+3)^n}{n}$  \\[1em]
+\subQ{j} & $\DS \sum_{n=1}^\infty \frac{3^n(x-2)^n}{n^2}$ &
+\subQ{k} & $\DS \sum_{n=1}^\infty \frac{(x-2)^n}{3^n\sqrt{n}}$ &
 &
 \end{tabular}
 \end{center}
@@ -1466,9 +1466,9 @@ Déterminez le rayon et l'intervalle de convergence des séries suivantes.
 Déterminez le rayon et l'intervalle de convergence des séries suivantes:
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}$ &
-\subQ{b} & $\displaystyle \sum_{n=0}^\infty (-1)^n \,\frac{x^{2n+1}}{2n+1}$ &
-\subQ{c} & $\displaystyle \sum_{n=1}^\infty\frac{4^nx^{2n}}{n^2}$
+\subQ{a} & $\DS \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}$ &
+\subQ{b} & $\DS \sum_{n=0}^\infty (-1)^n \,\frac{x^{2n+1}}{2n+1}$ &
+\subQ{c} & $\DS \sum_{n=1}^\infty\frac{4^nx^{2n}}{n^2}$
 \end{tabular}
 \end{center}
 \noindent Note: Nous ne pouvons pas utiliser directement le
@@ -1484,8 +1484,8 @@ l'intervalle de convergence, et la somme de chacune des séries
 suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \sum_{n=0}^\infty x^{n+1}$ &
-\subQ{b} & $\displaystyle \sum_{n=1}^\infty x^{2n}$
+\subQ{a} & $\DS \sum_{n=0}^\infty x^{n+1}$ &
+\subQ{b} & $\DS \sum_{n=1}^\infty x^{2n}$
 \end{tabular}
 \end{center}
 \label{9Q3}
@@ -1493,7 +1493,7 @@ suivantes.
 
 \begin{question}
 Utilisez la série géométrique pour déterminer la somme de la série
-$\displaystyle \sum_{n=1}^\infty n 2^{n-1} x^{n+1}$ sur son intervalle de
+$\DS \sum_{n=1}^\infty n 2^{n-1} x^{n+1}$ sur son intervalle de
 convergence?  Expliquez pourquoi nous ne pouvons pas utiliser la série
 géométrique pour déterminer le rayon de convergence et l'intervalle de
 convergence de cette série?  Déterminez le rayon de convergence et
@@ -1512,13 +1512,13 @@ qu'elle est l'intervalle de convergence de la série?\\
 \subQ{b} Pouvons-nous calculer $g'(2)$?  Si oui, calculez la valeur de
 $g'(2)$.\\
 \subQ{c} Trouvez la série qui représente
-$\displaystyle \int_0^2 g(x) \dx{x}$ si cela est possible.  Justifiez
+$\DS \int_0^2 g(x) \dx{x}$ si cela est possible.  Justifiez
 si c'est possible.
 \label{9Q5}
 \end{question}
 
 \begin{question}
-Donnez la série entière de la fonction $\displaystyle f(x) = \ln (1 + x^2)$
+Donnez la série entière de la fonction $\DS f(x) = \ln (1 + x^2)$
 pour $x$ près de l'origine.  Quel est le rayon de convergence de cette
 série?  Combien de termes de la série entière doivent être utilisés
 pour obtenir une approximation de $\ln(5/4)$ avec une précision d'au
@@ -1531,12 +1531,12 @@ calculatrice pour comparer avec les sommes partielles.
 
 \begin{question}
 Utilisez la série de MacLaurin de chacune des fonctions suivantes pour
-calculer $\displaystyle \dydxn{f}{x}{9}(0)$.
+calculer $\DS \dydxn{f}{x}{9}(0)$.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{4em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle f(x) = e^{x^3}$ &
-\subQ{b} & $\displaystyle f(x) = x^3\,e^{x^2}$ &
-\subQ{c} & $\displaystyle f(x) = \frac{x}{4+x^2}$
+\subQ{a} & $\DS f(x) = e^{x^3}$ &
+\subQ{b} & $\DS f(x) = x^3\,e^{x^2}$ &
+\subQ{c} & $\DS f(x) = \frac{x}{4+x^2}$
 \end{tabular}
 \end{center}
 \label{9Q7}
@@ -1563,8 +1563,8 @@ la série de Maclaurin de la fonction $f(x)$.
 
 \begin{question}
 Trouvez les séries de MacLauren de
-$\displaystyle f(x) = \frac{x^2}{1+x^2}$ et
-$\displaystyle \int f(x)\dx{x}$.  Pour chaque série, donnez
+$\DS f(x) = \frac{x^2}{1+x^2}$ et
+$\DS \int f(x)\dx{x}$.  Pour chaque série, donnez
 l'intervalle de convergence.
 \label{9Q10}
 \end{question}
@@ -1574,7 +1574,7 @@ Utilisez la série de MacLaurin de la fonction $\arctan(x)$ pour
 trouver la série de MacLaurin de la fonction $x^2 \arctan(x^2)$.
 Utilisez cette série pour obtenir une approximation de
 \[
-\displaystyle \int_0^{0.5} x^2 \arctan(x^2) \dx{x}
+\DS \int_0^{0.5} x^2 \arctan(x^2) \dx{x}
 \]
 avec une erreur inférieure à $10^{-6}$.
 \label{9Q11}
@@ -1582,7 +1582,7 @@ avec une erreur inférieure à $10^{-6}$.
 
 \begin{question}
 Exprimez sous la forme d'une série de MacLauren la function
-$\displaystyle f(x) = \frac{x}{(x^2-4)^2}$ pour $|x| <2$..
+$\DS f(x) = \frac{x}{(x^2-4)^2}$ pour $|x| <2$..
 \label{9Q12}
 \end{question}
 
@@ -1603,10 +1603,10 @@ Suggestion: Il est possible de répondre à cette question avec
 l'approximation linéaire.\\
 \begin{center}
 \begin{tabular}{*{3}{l@{\hspace{0.5em}}l@{\hspace{4em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \frac{1}{1+x}$ &
-\subQ{b} & $\displaystyle (1+x)^{1/8}$ &
-\subQ{c} & $\displaystyle \sqrt{1+\frac{x}{2}}$ &
-\subQ{d} & $\displaystyle \frac{1}{\sqrt{1+x}}$
+\subQ{a} & $\DS \frac{1}{1+x}$ &
+\subQ{b} & $\DS (1+x)^{1/8}$ &
+\subQ{c} & $\DS \sqrt{1+\frac{x}{2}}$ &
+\subQ{d} & $\DS \frac{1}{\sqrt{1+x}}$
 \end{tabular}
 \end{center}
 \MATHgraph{9_series_ent/ordering}{8cm}
@@ -1616,14 +1616,14 @@ l'approximation linéaire.\\
 \subsection{Série du binôme}
 
 \begin{question}
-Si $\displaystyle (1+x^3)^{3/5} = \sum_{n=0}^\infty b_n x^n$, quelle
+Si $\DS (1+x^3)^{3/5} = \sum_{n=0}^\infty b_n x^n$, quelle
 est la valeur de $b_6$?
 \label{9Q15}
 \end{question}
 
 \begin{question}
 Utilisez la série du binôme pour obtenir la série de MacLaurin de
-$\displaystyle f(x) = \sqrt{8+x^3}$.
+$\DS f(x) = \sqrt{8+x^3}$.
 \label{9Q16}
 \end{question}
 
@@ -1634,13 +1634,13 @@ Maclaurin de $f(x) = \left(1+x^2\right)^{1/3}$.
 \end{question}
 
 \begin{question}
-Soit la fonction $\displaystyle f(x) = \frac{1}{\sqrt{1+x^3}}$.
+Soit la fonction $\DS f(x) = \frac{1}{\sqrt{1+x^3}}$.
 
 \subQ{a} Utilisez la série du binôme pour obtenir la série de
 MacLaurin de $f$.
 
 \subQ{b} Utilisez la série que vous avez trouvée en (a) pour
-estimer $\displaystyle \int_0^{0.1} f(x) \dx{x}$ avec une précision de
+estimer $\DS \int_0^{0.1} f(x) \dx{x}$ avec une précision de
 $10^{-8}$ (i.e.\ l'erreur est plus petite que $10^{-8}$).
 \label{9Q18}
 \end{question}

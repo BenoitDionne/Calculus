@@ -6,14 +6,14 @@
 \usepackage{ifthen}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Structure of the theorems, propositions, ...
+% AMS packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{bm}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amscd}
 \usepackage{amsthm}
-\usepackage{stmaryrd}
+%\usepackage{stmaryrd}
 
 \allowdisplaybreaks
 
@@ -25,15 +25,6 @@
 \usepackage[breakable]{tcolorbox}
 \tcbuselibrary{skins}
 
-\newcounter{focus}[section]
-\renewcommand\thefocus{\thesection.\arabic{focus}}
-\newcommand{\focuscolor}{violet}
-
-\newcommand{\theory}{\faEye\ }
-\newcommand{\eng}{\faWrench\ }
-\newcommand{\eco}{\faLineChart\ }
-\newcommand{\life}{\faTree\ }
-
 \newcommand{\dfn}{D\'efinition}
 \newcommand{\prp}{Proposition}
 \newcommand{\thm}{Th\'eor\`eme}
@@ -42,6 +33,15 @@
 \newcommand{\mth}{M\'ethode}
 \newcommand{\cod}{Code}
 \newcommand{\qst}{Question(s)}
+
+\newcommand{\theory}{\faEye\ }
+\newcommand{\eng}{\faWrench\ }
+\newcommand{\eco}{\faLineChart\ }
+\newcommand{\life}{\faTree\ }
+
+\newcounter{focus}[section]
+\renewcommand\thefocus{\thesection.\arabic{focus}}
+\newcommand{\focuscolor}{violet}
 
 \newenvironment{focus}[2][TTT]{%
   \refstepcounter{focus}%
@@ -129,28 +129,26 @@
 \ifthenelse{\equal{TTT}{#1}}{\begin{focus*}{\qst}}{\begin{focus*}[#1]{\qst}}%
 }{\end{focus*}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% If something has to go in the margin
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\oddsidemargin}{0cm}
-\setlength{\evensidemargin}{0cm}
-\setlength{\marginparwidth}{1.1cm}
-\setlength{\marginparsep}{0.5cm}
-\reversemarginpar
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Counter for the equation number
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{secnumdepth}{2}
 \numberwithin{equation}{section}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Page style
+% Structure of the chapters, sections, ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format of the page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \raggedbottom
 \usepackage[letterpaper,lmargin=1in,height=9in,width=6.5in,twoside,top=1in]{geometry}
 \setlength\parskip{1ex plus 0.3ex minus 0ex}
 \setlength\parindent{3ex}
+
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\marginparwidth}{1.1cm}
+\setlength{\marginparsep}{0.5cm}
+\reversemarginpar
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % font for the fancy header
@@ -180,6 +178,12 @@
 \fancyhead[RE]{\helv \leftmark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyper references
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[pdfa=true]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % French option
 %
 % Il est possible de compiler un texte qui possède des accents, ...
@@ -197,22 +201,24 @@
 \usepackage{textcomp}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Hyper references
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[pdfa=true]{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pour le texte en français
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[french]{babel}
-
 \newcommand{\lgm}{\guillemotleft\;}
 \newcommand{\rgm}{\;\guillemotright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % For chapters without a chapter number
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% You will have to add after the title of the chapter the
+% following commands if you want your tables to be numbered  A.1, ...
+%
+% \setcounter{table}{0}
+% \renewcommand{\thetable}{A.\arabic{table}}
+%
+% Add similar commands for the number of the equations, the sections,
+% etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newcommand{\nonumchapter}[1]{
   \chapter*{#1}
   \markboth{#1}{#1}
@@ -279,24 +285,6 @@
 \titlespacing*{\chapter}{0pt}{*1}{*4}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Table of contents
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[dotinlabels]{titletoc}
-
-% Stuff for the table of contents (requires titlesec because \filright, ...
-% are used)
-\titlecontents{chapter}[0pt]
-{\addvspace{2em}\bfseries\titlerule[1pt]\filright}
-{{\large\chaptername\ \thecontentslabel\quad}}
-{}{\hfill\contentspage}[\addvspace{1ex}]
-
-\newcommand{\UOtableofcontents}{
-  \tableofcontents
-  \contentsfinish
-  \cleardoublepage
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Table of contents, list of figures, list of tables, ...
 % If your manuscript has section numbers larger than 9, many tables or
 % many figures, the numbers in the table of contents, the list of tables
@@ -308,9 +296,75 @@
 \renewcommand\l@subsection{\@dottedtocline{2}{2em}{4em}}
 \renewcommand{\@pnumwidth}{1.5cm}
 \renewcommand{\@tocrmarg}{2cm}
-
 \renewcommand\l@figure[2]{\@dottedtocline{1}{1em}{4em}{#1}{#2}}
 \renewcommand\l@table[2]{\@dottedtocline{1}{1em}{4em}{#1}{#2}}
+\makeatother
+
+% Stuff for the table of contents (requires titlesec because \filright, ...
+% are used)
+\usepackage{titlesec}
+\usepackage[dotinlabels]{titletoc}
+
+\titlecontents{chapter}[0pt]
+{\addvspace{2em}\bfseries\titlerule[1pt]\filright}
+{{\large\chaptername\ \thecontentslabel\quad}}
+{}{\hfill\contentspage}[\addvspace{1ex}]
+
+\newcommand{\UOtableofcontents}{
+  \tableofcontents
+  \contentsfinish
+  \cleardoublepage
+}
+
+\newcommand{\UOtablesfigureslist}{
+  \addcontentsline{toc}{chapter}{\LofT}
+  \listoftables
+  \cleardoublepage
+
+  \addcontentsline{toc}{chapter}{\LofF}
+  \listoffigures
+  \cleardoublepage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To produce the questions at the end of the chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{questNBR}[chapter]
+\renewcommand\thequestNBR{\thechapter.\arabic{questNBR}}
+
+\makeatletter
+
+\newcommand{\quest@one}[1][RRR]{\def\argquest@one{#1}\quest@two}
+
+\newcommand{\quest@two}[1][TTT]%
+{\refstepcounter{questNBR}\noindent%
+  {\bfseries Question \arabic{chapter}.\arabic{questNBR}}%
+  \ifthenelse{\equal{TTT}{#1}}{}{\ ({\bfseries #1})}%
+  \ifthenelse{\equal{RRR}{\argquest@one}}{\\ \noindent}{\ \argquest@one \\ \noindent}%
+}
+
+\newenvironment{question}{\quest@one}{}
+
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Proof environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The filled box corresponding to the empty box suggested by the AMS
+% \renewcommand{\qedsymbol}{$\blacksquare$}
+% I prefer this box
+\renewcommand{\qedsymbol}{\rule{0.4em}{0.7em}}
+
+% I prefer bold characters.
+\renewcommand*{\proofname}{{\normalfont\bfseries D\'emonstration}}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}%
+\normalfont \topsep6\p@\@plus6\p@\relax
+\trivlist
+\item\relax {\normalfont\bfseries #1}\newline
+}{\popQED\endtrivlist\@endpefalse}
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -445,7 +499,7 @@
 
   \noindent Page couverture:\\
   Statue de Hans Lipperhey, Pays-Bas, 1570-1619, photo par Louise Oegema.\\
-  Un \'etang, photo par Patrice Dionne.
+  Un \'etang sur l'\^Ile de Montr\'eal, photo par Patrice Dionne.
 
   \noindent Entêtes des chapitres:\\
   Les images utilis\'ees pour les ent\^ees des chapitres sont quelques
@@ -467,16 +521,14 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% List of tables and figures
+% The index
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\UOtablesfigureslist}{
-  \addcontentsline{toc}{chapter}{\LofT}
-  \listoftables
-  \cleardoublepage
-
-  \addcontentsline{toc}{chapter}{\LofF}
-  \listoffigures
-  \cleardoublepage
+\usepackage{makeidx}
+\makeindex
+\newcommand{\UOindex}{
+  \setcounter{chapter}{100}
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -652,64 +704,15 @@
 %\end{tikzpicture}
 }
 
-% The filled box corresponding to the empty box suggested by the AMS
-% \renewcommand{\qedsymbol}{$\blacksquare$}
-% I prefer this box
-\renewcommand{\qedsymbol}{\rule{0.4em}{0.7em}}
-
-% I prefer bold characters.
-\renewcommand*{\proofname}{{\normalfont\bfseries D\'emonstration}}
-
-\makeatletter
-\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}%
-\normalfont \topsep6\p@\@plus6\p@\relax
-\trivlist
-\item\relax {\normalfont\bfseries #1}\newline
-}{\popQED\endtrivlist\@endpefalse}
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% To produce assignments and the solutions for the problems of a
-% chapter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcounter{questNBR}[chapter]
-\renewcommand\thequestNBR{\thechapter.\arabic{questNBR}}
-
-\makeatletter
-
-\newcommand{\quest@one}[1][RRR]{\def\argquest@one{#1}\quest@two}
-
-\newcommand{\quest@two}[1][TTT]%
-{\refstepcounter{questNBR}\noindent%
-  {\bfseries Question \arabic{chapter}.\arabic{questNBR}}%
-  \ifthenelse{\equal{TTT}{#1}}{}{\ ({\bfseries #1})}%
-  \ifthenelse{\equal{RRR}{\argquest@one}}{\\ \noindent}{\ \argquest@one \\ \noindent}%
-}
-
-\newenvironment{question}{\quest@one}{}
-
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The index
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{makeidx}
-\makeindex
-\newcommand{\UOindex}{
-  \setcounter{chapter}{100}
-  \addcontentsline{toc}{chapter}{\indexname}
-  \printindex
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% Sometime useful
+% Extra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{multicol}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extra fonts of the form  \fa...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontawesome}
+
+\newcommand{\DS}{\displaystyle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Formatting of the notes
@@ -739,14 +742,23 @@
 \end{SOLUTION}
 }{}}
 
-\newcommand{\compileSOLU}[2]{
-  \ifthenelse{\equal{#1}{show}}{\solTitle #2}{}
-}
+% \newcommand{\compileSOLU}[2]{
+%   \ifthenelse{\equal{#1}{show}}{\solTitle #2}{}
+% }
 
-\newcommand{\HIDE}{show}
-\newcommand{\setHIDE}{\renewcommand{\HIDE}{hide}}
+% \newcommand{\HIDE}{show}
+% \newcommand{\setHIDE}{\renewcommand{\HIDE}{hide}}
 
-\newcommand{\compileText}[2]{
-  \ifthenelse{\equal{#1}{hide}}{}{#2}
-}
+% \newcommand{\compileText}[2]{
+%   \ifthenelse{\equal{#1}{hide}}{}{#2}
+% }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Trouble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\MORE}[1][TTT]{\begin{center}%
+\ifthenelse{\equal{TTT}{#1}}{\fbox{\color{red}\bfseries TO BE COMPLETED}}{%
+\fbox{\begin{minipage}{0.8\textwidth}%
+\color{red}{\bfseries TO BE COMPLETED} \\ #1 \end{minipage}}}%
+\end{center}}
+\newcommand{\BUG}{\begin{center}\fbox{\color{red}\bfseries TO BE FIXED}\end{center}}

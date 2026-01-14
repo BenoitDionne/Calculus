@@ -77,7 +77,7 @@ D=\left\{(x,y): a\leq x \leq b \text{ et } c\leq y \leq d \right\}
 \; .
 \]
 L'{\bfseries intégrale double}\index{Intégrale double} de $f$ sur $D$,
-dénotés $\displaystyle \iint_D f(x,y) \dx{A}$, est le nombre $I$ tel
+dénotés $\DS \iint_D f(x,y) \dx{A}$, est le nombre $I$ tel
 que, pour tout $\epsilon > 0$, il existe $\delta >0$ pour lequel
 \[
 \left| I - S_{\cal P} \right| < \epsilon
@@ -98,7 +98,7 @@ définition plus générale de l'intégrale double.
 
 Il découle de la définition de l'intégrale double que nous pouvons
 estimer la valeur de l'intégrale
-$\displaystyle \iint_D f(x,y) \dx{A}$ en choisissant
+$\DS \iint_D f(x,y) \dx{A}$ en choisissant
 des sommes de Riemann pour des partitions ${\cal P}_n$ telles que
 $\|{\cal P}_n\|$ approche $0$ lorsque $n$ augmente.  Nous avons
 \begin{equation}\label{defDI_int_cpm}
@@ -112,7 +112,7 @@ T_{i,j} = \left\{ (x,y,z) : (x,y) \in A_{i,j} \text{ et }
 0 \leq z \leq f(x^\ast,y^\ast) \right\}
 \]
 (figure~\ref{VOLUME1}).
-Nous avons alors que $\displaystyle \int_D f(x,y) \dx{A}$ est le volume du
+Nous avons alors que $\DS \int_D f(x,y) \dx{A}$ est le volume du
 solide définie par
 \[
 T = \left\{ (x,y,z) : (x,y) \in D \text{ et } 0 \leq z \leq f(x,y)
@@ -146,7 +146,7 @@ L'intégrale de $f$ sur $R$ est alors définie par
 Nous pourrions de la même façon définir l'intégrale triple d'une fonction
 $f:\RR^3 \to \RR$ où nous utiliserions des boites dans $\RR^3$ au lieu
 des rectangles de $\RR^2$ pour définir l'intégrale.  Nous utilisons la
-notation $\displaystyle \iiint_D f(\VEC{x}) \dx{V}$ pour
+notation $\DS \iiint_D f(\VEC{x}) \dx{V}$ pour
 désigner l'{\bfseries intégrale triple}\index{Intégrale triple}.
 Toutes les propriétés que nous allons énoncer pour l'intégrale double
 sont aussi vrais pour l'intégrale triple.
@@ -202,12 +202,12 @@ Nous avons que
 En d'autres mots, il y a des choix pour évaluer l'intégrale de $f$ sur
 un rectangle $D$,
 \begin{enumerate}
-\item Nous évaluons l'intégrale $\displaystyle \int_c^d f(x,y) \dx{y}$ en
+\item Nous évaluons l'intégrale $\DS \int_c^d f(x,y) \dx{y}$ en
 assumant que $x$ est constant pour obtenir une fonction $g(x)$ et par la
-suite nous évaluons l'intégrale $\displaystyle \int_a^b g(x) \dx{x}$.
-\item Nous évaluons l'intégrale $\displaystyle \int_a^b f(x,y) \dx{x}$ en
+suite nous évaluons l'intégrale $\DS \int_a^b g(x) \dx{x}$.
+\item Nous évaluons l'intégrale $\DS \int_a^b f(x,y) \dx{x}$ en
 assumant que $y$ est constant pour obtenir une fonction de $h(y)$ et par la
-suite nous évaluons l'intégrale $\displaystyle \int_c^d h(y) \dx{y}$.
+suite nous évaluons l'intégrale $\DS \int_c^d h(y) \dx{y}$.
 \end{enumerate}
 
 Soit
@@ -239,7 +239,7 @@ Fubini}{Intégrale double pour des domaines qui se prête bien au théorème de
 Fubini.}{VOLUME3}
 
 \begin{egg}
-Évaluons l'intégrale double $\displaystyle \iint_R (x-2y) \dx{A}$
+Évaluons l'intégrale double $\DS \iint_R (x-2y) \dx{A}$
 où $R$ est le domaine définie par
 \[
 R = \left\{ (x,y) : 1 \leq x \leq 3 \text{ et }
@@ -259,7 +259,7 @@ Nous avons
 \end{egg}
 
 \begin{egg}
-Évaluons l'intégrale double $\displaystyle \iint_R 3x \dx{A}$
+Évaluons l'intégrale double $\DS \iint_R 3x \dx{A}$
 où $R$ est le domaine bornée par $y=x$ et $y=x^2-4x+4$.
 
 La valeur de $x$ pour les points d'intersection de ces deux courbes
@@ -285,7 +285,7 @@ rapport à $y$ en premier et par rapport à $x$ par la suite.  Ainsi,
 \end{egg}
 
 \begin{egg}
-Évaluons l'intégrale double $\displaystyle \iint_R (y^2+ x) \dx{A}$ où
+Évaluons l'intégrale double $\DS \iint_R (y^2+ x) \dx{A}$ où
 $R$ est le domaine bornée par les paraboles $x=y^2$ et $x=3-2y^2$.
 
 La valeur de $x$ pour les points d'intersection de ces deux paraboles
@@ -358,7 +358,7 @@ n'est pas le cas si nous nous trouvons dans le plan ou dans l'espace.
 l'intégrale de Riemann que nous avons introduite au
 Chapitre~\ref{chapter_integr} et que nous utilisons dans la formule
 (\ref{SubtOriented}) est orientée
-(e.g. $\displaystyle \int_a^b = - \int_b^a$) alors que l'intégrale de
+(e.g. $\DS \int_a^b = - \int_b^a$) alors que l'intégrale de
 Riemann que nous avons introduite dans ce chapitre ne l'est pas.
 
 Dans la formule ci-dessus, si $g'(x) < 0$ sur l'intervalle $[a,b]$,
@@ -405,12 +405,12 @@ $i=1$ et $2$, et
 \[
 \diff g(\VEC{x}) =
 \begin{pmatrix}
-  \displaystyle \pdydx{y_1}{x_1} & \displaystyle \pdydx{y_1}{x_2} \\[0.8em]
-  \displaystyle \pdydx{y_2}{x_1} & \displaystyle \pdydx{y_2}{x_2}
+  \DS \pdydx{y_1}{x_1} & \DS \pdydx{y_1}{x_2} \\[0.8em]
+  \DS \pdydx{y_2}{x_1} & \DS \pdydx{y_2}{x_2}
 \end{pmatrix}
 \]
 Le {\bfseries Jacobian}\index{Jacobian} de la fonction $g$, dénoté
-$\displaystyle \frac{\partial(y_1,y_2)}{\partial(x_1,x_2)}$, est
+$\DS \frac{\partial(y_1,y_2)}{\partial(x_1,x_2)}$, est
 définie par
 \[
     \frac{\partial(y_1,y_2)}{\partial(x_1,x_2)} = \det \diff g(\VEC{x}) \ .
@@ -435,12 +435,12 @@ avec
 \[
 \diff g(\VEC{x}) =
 \begin{pmatrix}
-  \displaystyle \pdydx{y_1}{x_1} & \displaystyle \pdydx{y_1}{x_2}
-  & \displaystyle \pdydx{y_1}{x_3} \\[0.8em]
-  \displaystyle \pdydx{y_2}{x_1} & \displaystyle \pdydx{y_2}{x_2}
-  & \displaystyle \pdydx{y_2}{x_3} \\[0.8em]
-  \displaystyle \pdydx{y_3}{x_1} & \displaystyle \pdydx{y_3}{x_2}
-  & \displaystyle \pdydx{y_3}{x_3}
+  \DS \pdydx{y_1}{x_1} & \DS \pdydx{y_1}{x_2}
+  & \DS \pdydx{y_1}{x_3} \\[0.8em]
+  \DS \pdydx{y_2}{x_1} & \DS \pdydx{y_2}{x_2}
+  & \DS \pdydx{y_2}{x_3} \\[0.8em]
+  \DS \pdydx{y_3}{x_1} & \DS \pdydx{y_3}{x_2}
+  & \DS \pdydx{y_3}{x_3}
 \end{pmatrix} \ .
 \]
 Le {\bfseries Jacobian}\index{Jacobian} de la fonction $g$ est alors
@@ -452,7 +452,7 @@ définie par
 \begin{egg}
 Afin d'obtenir une intégrale qui est simple à calculer, utilisons la
 méthode de substitution pour évaluer l'intégrale
-$\displaystyle \int_{-a}^a \int_0^{\sqrt{a^2-y^2}} (x^2 + y^2)^{3/2}
+$\DS \int_{-a}^a \int_0^{\sqrt{a^2-y^2}} (x^2 + y^2)^{3/2}
 \dx{x} \dx{y}$.
 Nous invitons le lecteur a essayer de calculer directement cette intégrale.
 
@@ -474,8 +474,8 @@ Puisque
 \[
 \left| \frac{\partial(x,y)}{\partial(r,\theta)} \right| = 
   \left| \det \begin{pmatrix}
-  \displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}\\[0.8em]
-  \displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta} 
+  \DS \pdydx{x}{r} & \DS \pdydx{x}{\theta}\\[0.8em]
+  \DS \pdydx{y}{r} & \DS \pdydx{y}{\theta} 
   \end{pmatrix} \right|
 = \left| \det \begin{pmatrix}
 \cos(\theta) & -r \sin(\theta) \\
@@ -526,12 +526,12 @@ Puisque
 \[
 \left| \frac{\partial(x,y,z)}{\partial(r,\theta,z)} \right| = 
 \left| \det \begin{pmatrix}
-  \displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}
-  & \displaystyle \pdydx{x}{z} \\[0.8em]
-  \displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta}
-  & \displaystyle \pdydx{y}{z} \\[0.8em]
-  \displaystyle \pdydx{z}{r} & \displaystyle \pdydx{z}{\theta}
-  & \displaystyle \pdydx{z}{z}
+  \DS \pdydx{x}{r} & \DS \pdydx{x}{\theta}
+  & \DS \pdydx{x}{z} \\[0.8em]
+  \DS \pdydx{y}{r} & \DS \pdydx{y}{\theta}
+  & \DS \pdydx{y}{z} \\[0.8em]
+  \DS \pdydx{z}{r} & \DS \pdydx{z}{\theta}
+  & \DS \pdydx{z}{z}
 \end{pmatrix} \right|
 = \left| \det \begin{pmatrix}
   \cos(\theta) & -r \sin(\theta) & 0 \\
@@ -585,12 +585,12 @@ Puisque $x^2 + y^2 + z^2 = r^2$ et
 \begin{align*}
 \left| \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} \right| &= 
 \left| \det \begin{pmatrix}
-\displaystyle \pdydx{x}{r} & \displaystyle \pdydx{x}{\theta}
-& \displaystyle \pdydx{x}{\phi} \\[0.8em]
-\displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta}
-& \displaystyle \pdydx{y}{\phi} \\[0.8em]
-\displaystyle \pdydx{z}{r} & \displaystyle \pdydx{z}{\theta}
-& \displaystyle \pdydx{z}{\phi}
+\DS \pdydx{x}{r} & \DS \pdydx{x}{\theta}
+& \DS \pdydx{x}{\phi} \\[0.8em]
+\DS \pdydx{y}{r} & \DS \pdydx{y}{\theta}
+& \DS \pdydx{y}{\phi} \\[0.8em]
+\DS \pdydx{z}{r} & \DS \pdydx{z}{\theta}
+& \DS \pdydx{z}{\phi}
 \end{pmatrix} \right| \\
 &= \left| \det \begin{pmatrix}
 \cos(\theta)\sin(\phi) & -r \sin(\theta)\sin(\phi) &
@@ -622,16 +622,16 @@ M &= \int_0^{2\pi} \int_0^2 \int_0^{\pi/2}  r^4 \sin(\phi) \dx{\phi}
 \begin{question}
 Évaluez les intégrales suivantes.
 
-\subQ{a} $\displaystyle \iint_R \sin(2x+y) \dx{A}$ où
+\subQ{a} $\DS \iint_R \sin(2x+y) \dx{A}$ où
 $R = \{ (x,y) : 0 \leq x \leq \pi/4 \ , \ 0 \leq y \leq \pi/2 \}$.
 
-\subQ{b} $\displaystyle \iint_R \frac{2+y}{3+x} \dx{A}$ où
+\subQ{b} $\DS \iint_R \frac{2+y}{3+x} \dx{A}$ où
 $R = \{ (x,y) : -1 \leq x \leq 1 \ , \ -1 \leq y \leq 2 \}$.
 \label{16Q1}
 \end{question}
 
 \begin{question}
-Évaluez $\displaystyle \iint_R (2x+3y)^2 \dx{A}$ où $R$ est la région
+Évaluez $\DS \iint_R (2x+3y)^2 \dx{A}$ où $R$ est la région
 bornée qui est délimitée par $y=x+1$, $y=-x+1$ et $y=0$.
 \label{16Q2}
 \end{question}
@@ -642,9 +642,9 @@ d'intégration.
 
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \int_0^1 \int_{y^{1/3}}^1 \sqrt{x^4+1} \dx{x}\dx{y}$
+\subQ{a} & $\DS \int_0^1 \int_{y^{1/3}}^1 \sqrt{x^4+1} \dx{x}\dx{y}$
 & \subQ{b} &
-$\displaystyle \int_0^{\pi^{1/4}} \int_{y^2}^{\pi^{1/2}} y\sin(x^2)
+$\DS \int_0^{\pi^{1/4}} \int_{y^2}^{\pi^{1/2}} y\sin(x^2)
 \dx{x}\dx{y}$
 \end{tabular}
 \end{center}
@@ -656,9 +656,9 @@ Pour chacune des intégrales ci-dessous, dessinez le domaine
 d'intégration $D$ et donnez une intégrale équivalente en changeant
 l'ordre d'intégration.
 
-\subQ{a} $\displaystyle \int_0^4 \int_{-\sqrt{x}}^{\sqrt{x}} f(x,y) \dx{y}\dx{x}
+\subQ{a} $\DS \int_0^4 \int_{-\sqrt{x}}^{\sqrt{x}} f(x,y) \dx{y}\dx{x}
 + \int_4^9\int_{-\sqrt{x}}^{6-x} f(x,y) \dx{y} \dx{x}$ \\
-\subQ{b} $\displaystyle \int_{-6}^{-3} \int_{-\sqrt{6-x}}^{\sqrt{6-x}}
+\subQ{b} $\DS \int_{-6}^{-3} \int_{-\sqrt{6-x}}^{\sqrt{6-x}}
 f(x,y) \dx{y}\dx{x} + \int_{-3}^2 \int_{-\sqrt{6-x}}^{-x} f(x,y) \dx{y}\dx{x}$
 \label{16Q4}
 \end{question}
@@ -667,13 +667,13 @@ f(x,y) \dx{y}\dx{x} + \int_{-3}^2 \int_{-\sqrt{6-x}}^{-x} f(x,y) \dx{y}\dx{x}$
 Nous pourrions vérifier que le {\bfseries moment par rapport à l'axe des
 $x$}\index{Moment par rapport à l'axe des $x$} d'une surface plane
 $D$ de densité $\rho(x,y)$ est
-$\displaystyle M_x = \iint_D y \rho(x,y) \dx{A}$.  De même,
+$\DS M_x = \iint_D y \rho(x,y) \dx{A}$.  De même,
 le {\bfseries moment par rapport à l'axe des $y$}\index{Moment par
 rapport à l'axe des $y$} d'une surface plane $D$ de densité
 $\rho(x,y)$ est
-$\displaystyle M_y = \iint_D x \rho(x,y) \dx{A}$.   Le
+$\DS M_y = \iint_D x \rho(x,y) \dx{A}$.   Le
 {\bfseries centre de masse}\index{Centre de masse} est le point
-$\displaystyle \left(\frac{M_y}{M}, \frac{M_x}{M}\right)$ où $M$ est
+$\DS \left(\frac{M_y}{M}, \frac{M_x}{M}\right)$ où $M$ est
 la masse de la surface plane.
 
 Trouvez la masse, les moments par rapport à l'axe des $x$ et à l'axe
@@ -730,7 +730,7 @@ votre intégrale.
 
 \begin{question}
 Calculez le volume du tétraèdre délimité par les plans $x=0$, $y=0$, $z=0$
-et $\displaystyle 2x+y+ \frac{z}{3}=1$.
+et $\DS 2x+y+ \frac{z}{3}=1$.
 \label{16Q12}
 \end{question}
 
@@ -741,21 +741,21 @@ $(0,0,1)$, $(0,2,0)$ et $(2,2,0)$.
 \end{question}
 
 \begin{question}
-Évaluez l'intégrale $\displaystyle \iint_S xy \dx{V}$ où $S$ est le tétraèdre
+Évaluez l'intégrale $\DS \iint_S xy \dx{V}$ où $S$ est le tétraèdre
 $S$ délimité par les plans $y=0$, $z=0$, $y=x$ et
-$\displaystyle 3x+ 3y+ 2z=6$.
+$\DS 3x+ 3y+ 2z=6$.
 \label{16Q14}
 \end{question}
 
 \begin{question}
-Évaluez l'intégrale $\displaystyle \iint_S xz \dx{V}$ où $S$ est le tétraèdre
+Évaluez l'intégrale $\DS \iint_S xz \dx{V}$ où $S$ est le tétraèdre
 $S$ dont les sommets sont $(0,0,0)$, $(0,1,0)$, $(1,1,0)$ et $(0,1,1)$.
 \label{16Q15}
 \end{question}
 
 \begin{question}
 Récrivez l'intégrale
-$\displaystyle \int_0^2 \int_0^{y^3} \int_0^{y^2} f(x,y,z) \dx{z}\dx{x}\dx{y}$
+$\DS \int_0^2 \int_0^{y^3} \int_0^{y^2} f(x,y,z) \dx{z}\dx{x}\dx{y}$
 en changeant l'ordre d'intégration: (1) dans l'ordre $\dx{z}\dx{y}\dx{x}$,
 (2) dans l'ordre $\dx{x}\dx{y}\dx{z}$ et (3)  dans l'ordre
 $\dx{y}\dx{z}\dx{x}$. 
@@ -764,7 +764,7 @@ $\dx{y}\dx{z}\dx{x}$.
 
 \begin{question}
 Récrivez l'intégrale
-$\displaystyle \int_{0}^{4} \int_{\sqrt{x}}^{2} \int_{0}^{2-y}
+$\DS \int_{0}^{4} \int_{\sqrt{x}}^{2} \int_{0}^{2-y}
 f(x,y,z) \dx{z}\dx{y}\dx{x}$ en changeant l'ordre d'intégration: (1)
 dans l'ordre $\dx{x}\dx{z}\dx{y}$ et (2) dans l'ordre
 $\dx{y}\dx{x}\dx{z}$.
@@ -780,7 +780,7 @@ $z^2 \leq x^2 + y^2$.
 \end{question}
 
 \begin{question}
-Soit l'intégrale $\displaystyle \int_0^2 \int_{-\sqrt{x^2+y^2}}^0
+Soit l'intégrale $\DS \int_0^2 \int_{-\sqrt{x^2+y^2}}^0
 \frac{xy}{\sqrt{x^2+y^2}} \dx{y} \dx{x}$.
 
 \subQ{a} Dessinez le domaine d'intégration $D$.\\
@@ -810,9 +810,9 @@ l'intégrale suivante et utilisez les coordonnées cylindriques pour
 évaluer cette intégrale.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $ \displaystyle
+\subQ{a} & $ \DS
 \int_{-1}^1 \int_0^{\sqrt{1-x^2}}\int_{x^2+y^2}^1 z \dx{z}\dx{y}\dx{x}$ &
-\subQ{b} & $\displaystyle
+\subQ{b} & $\DS
 \int_0^{\sqrt{2}} \int_{-\sqrt{2-y^2}}^{\sqrt{2-y^2}}
 \int_{1+x^2+y^2}^{5-x^2-y^2}z \dx{z}\dx{x}\dx{y}$
 \end{tabular}
@@ -826,9 +826,9 @@ l'intégrale suivante et utilisez les coordonnées sphériques pour
 évaluer cette intégrale.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $ \displaystyle
+\subQ{a} & $ \DS
 \int_{-1}^1 \int_0^{\sqrt{1-x^2}}\int_{\sqrt{x^2+y^2}}^1 z \dx{z}\dx{y}\dx{x}$ &
-\subQ{b} & $\displaystyle \int_0^1 \int_x^{\sqrt{2-x^2}}
+\subQ{b} & $\DS \int_0^1 \int_x^{\sqrt{2-x^2}}
 \int_{\sqrt{x^2+y^2}}^{\sqrt{4-x^-y^2}} \dx{z}\dx{y}\dx{x}$
 \end{tabular}
 \end{center}
@@ -876,7 +876,7 @@ $z = 4x^2 + 3y^2$ et le cylindre parabolique $y^2 + z = 4$.
 Nous cherchons la masse du solide délimité par la partie supérieure ($z>0$)
 de la sphère de rayon $16$ centrée à l'origine et le plan $z=2$.
 La densité est donnée par
-$\displaystyle \rho(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$ g/cm$^3$.
+$\DS \rho(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$ g/cm$^3$.
 
 \subQ{a} Utilisez les coordonnées cylindrique pour trouver cette
 masse.\\
@@ -887,7 +887,7 @@ masse.
 
 \begin{question}
 Quelle est la masse du cornet de crème glacée bornée par la sphère
-$x^2+y^2+z^2 =25$ et le cône $\displaystyle \frac{16}{9} z^2 = x^2 + y^2$ pour
+$x^2+y^2+z^2 =25$ et le cône $\DS \frac{16}{9} z^2 = x^2 + y^2$ pour
 $z\geq 0$ si la densité est donnée par $\rho(x,y,z) = x^2+y^2$ g/cm$^3$.
 \label{16Q29}
 \end{question}

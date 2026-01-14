@@ -41,7 +41,7 @@ p'(t) = k p(t)
 pour tout $t$, où $k$ est la constante de proportionnalité.  La
 constante $k$ est appelée le {\bfseries taux de croissance
   relatif}\index{Taux de croissance relatif} car nous avons
-$\displaystyle k = \frac{p'(t)}{p(t)}$; le taux de croissance divisé
+$\DS k = \frac{p'(t)}{p(t)}$; le taux de croissance divisé
 par la taille de la population.
 
 L'équation $p'(t) = k p(t)$ est ce que nous appelons une
@@ -87,7 +87,7 @@ l'exemple qui suit.
 
 \begin{egg}[\life]
 Soit une population de bactéries ayant un taux de croissance relatif
-de $1.1$.  C'est-à-dire que $\displaystyle p'(t) = 1.1 p(t)$ où $p(t)$
+de $1.1$.  C'est-à-dire que $\DS p'(t) = 1.1 p(t)$ où $p(t)$
 est le nombre de bactéries au temps $t$.   Si nous supposons que le temps
 $t$ est mesuré en heures et qu'initialement nous avons $10^5$ bactéries,
 combien de bactéries aurons-nous après $2$ heures?
@@ -427,8 +427,8 @@ Ainsi,
 \frac{y^2}{2} = x e^x - e^x + C \; .
 \]
 La condition initiale $y(0)=1$ donne
-$\displaystyle \frac{1}{2} = -1 + C$.  Donc
-$\displaystyle C = \frac{3}{2}$ et nous obtenons la solution
+$\DS \frac{1}{2} = -1 + C$.  Donc
+$\DS C = \frac{3}{2}$ et nous obtenons la solution
 \begin{equation} \label{sol_ptt}
 y = \sqrt{2x e^x - 2 e^x + 3} \; .
 \end{equation}
@@ -1467,7 +1467,7 @@ Les points d'équilibre de (\ref{cont_fish_equ}) sont les solutions de
 r p\left(1-\frac{p}{M}\right) - h p = 0 \ ,
 \]
 Le seul point d'équilibre positif est
-$\displaystyle p(h) = M \left( 1 - \frac{h}{r}\right)$.  Donc
+$\DS p(h) = M \left( 1 - \frac{h}{r}\right)$.  Donc
 \[
 R(h) = M h \left( 1 - \frac{h}{r}\right) \ .
 \]
@@ -1810,7 +1810,7 @@ Les unités de $d$ doivent donc être des kg/m.
 
 Les points d'équilibre de l'équation différentielle (\ref{parachute})
 sont les solutions de $f(v)= - m g + d v^2 = 0$.  Nous trouvons
-$\displaystyle v_\pm = \pm \sqrt{\frac{mg}{d}}$.
+$\DS v_\pm = \pm \sqrt{\frac{mg}{d}}$.
 Si le poids du parachutiste est de $75$ km, donc $m=75$, et
 $d= 50$, nous obtenons les points d'équilibre
 $v_\pm = \pm \sqrt{14.7} \approx \pm 3.834$.
@@ -1861,7 +1861,7 @@ où $D = \pm e^{2kC}$.  Comme c'est bien souvent le cas, la cas $D=0$
 est aussi acceptable puisqu'il donne la solution constante
 $v(t) = \sqrt{mg/d}$ pout tout $t$.  Nous pouvons donc assumer que
 $D \in \RR$.  Nous avons 
-bien que $v(t) \to \displaystyle - \sqrt{mg/d}$ lorsque $t$
+bien que $v(t) \to \DS - \sqrt{mg/d}$ lorsque $t$
 tend vers l'infini.
 
 Comme nous pouvons voir, l'analyse qualitative avec le portrait de phases
@@ -1997,7 +1997,7 @@ $G(x,y,d)=0$ est orthogonale à la famille de courbes $F(x,y,c)=0$ et
 $y=\psi(x)$ est une courbe de la famille $G(x,y,d)=0$ qui coupe la courbe
 $y=\phi(x)$ de la famille $F(x,y,c)=0$ au point $(x_0,y_0)$, alors la
 pente de la tangente à la courbe $y=\psi(x)$ au point $(x_0,y_0)$ est
-$\displaystyle \psi'(x_0) = \frac{-1}{\phi'(x_0)}$.
+$\DS \psi'(x_0) = \frac{-1}{\phi'(x_0)}$.
 
 C'est ce raisonnement qui nous permet d'utiliser la méthode suivante
 pour trouver une famille de courbes orthogonale à une famille donnée
@@ -2044,7 +2044,7 @@ Donc
 \[
 \int y \dx{y} = - \int \dx{x} \ .
 \]
-Ce qui donne $\displaystyle \frac{y^2}{2} = - x + d$, la famille de
+Ce qui donne $\DS \frac{y^2}{2} = - x + d$, la famille de
 courbes cherchée.  Quelques courbes des deux familles sont représentés
 à la figure~\ref{orthFam2}.
 \end{egg}
@@ -2324,7 +2324,7 @@ allons utiliser la méthode d'Euler pour estimer la solution sur
 l'intervalle $[0,10]$.
 
 L'équation différentielle est de la forme $q'(t) = f(t,q(t))$ avec
-$\displaystyle f(t,q) = 1 - \frac{60}{(20+t)^2} \, q$.  Si nous choisissons
+$\DS f(t,q) = 1 - \frac{60}{(20+t)^2} \, q$.  Si nous choisissons
 $N=100$, alors $x_0 = 0$, $x_{10}=10$, $h = (x_{10}-x_0)/100 = 0.1$,
 et $x_i = x_0 + h\, i = 1 + 0.1\,i$ pour $i=0$, $1$, $2$, \ldots,
 $100$.  les approximations $w_i$ de $y_i = y(x_i)$ sont données par 
@@ -2383,13 +2383,13 @@ calculant une intégrale définie et (2) en utilisant le Théorème
 fondamental du calcul différentiel.
 
 \subQ{a} Si $L(t)$ satisfait l'équation différentielle
-$\displaystyle \dydx{L}{t} = 6.48 e^{-0.09t}$ avec $L(0)=5$, quelle
+$\DS \dydx{L}{t} = 6.48 e^{-0.09t}$ avec $L(0)=5$, quelle
 est la variation de $L$ entre $t=1$ et $t=5$?\\
 \subQ{b} Si $P(t)$ satisfait l'équation différentielle
-$\displaystyle \dydx{P}{t} = 5.0 e^{-2.0t}$ avec $P(0)=2$, quelle
+$\DS \dydx{P}{t} = 5.0 e^{-2.0t}$ avec $P(0)=2$, quelle
 est la variation de $P$ entre $t=5$ et $t=10$?\\
 \subQ{c} Si $A(t)$ satisfait l'équation différentielle 
-$\displaystyle \dydx{A}{t} = 523.8 (t-1981)^2$ avec $A(1981) = 13,400$,
+$\DS \dydx{A}{t} = 523.8 (t-1981)^2$ avec $A(1981) = 13,400$,
 quelle est la variation de $A$ entre $t=1985$ et $t=1987$?
 \label{10Q2}
 \end{question}
@@ -2413,7 +2413,7 @@ $9^e$ jours?
 \begin{question}
 Quelle est le déplacement entre $1$ et $5$ secondes d'une pierre qui tombe si
 la position $p(t)$ en mètres au temps $t$ en secondes est donnée par
-l'équation différentielle $\displaystyle \dydx{p}{t} = -9.8 t - 5.0$. 
+l'équation différentielle $\DS \dydx{p}{t} = -9.8 t - 5.0$. 
 \label{10Q5}
 \end{question}
 
@@ -2471,11 +2471,11 @@ satisfait la condition initiale donnée, tracez le graphe de cette
 solution ainsi que celui de son taux de variation instantanée.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \dydx{p}{t} = 5t^2 + \frac{5}{t^2}$ avec
+\subQ{a} & $\DS \dydx{p}{t} = 5t^2 + \frac{5}{t^2}$ avec
 $p(1)=12$ &
-\subQ{b} & $\displaystyle \dydx{M}{t} = t^3 + t^{-3}$ avec $M(2)=8$\\[0.8em]
-\subQ{c} & $\displaystyle \dydx{p}{t} = -0.25 t^3$ avec $p(0)= 5$ &
-\subQ{d} & $\displaystyle \dydx{M}{t} = 2 t^{-1/2}$ avec $M(0) = 5$
+\subQ{b} & $\DS \dydx{M}{t} = t^3 + t^{-3}$ avec $M(2)=8$\\[0.8em]
+\subQ{c} & $\DS \dydx{p}{t} = -0.25 t^3$ avec $p(0)= 5$ &
+\subQ{d} & $\DS \dydx{M}{t} = 2 t^{-1/2}$ avec $M(0) = 5$
 \end{tabular}
 \end{center}
 \label{10Q8}
@@ -2511,8 +2511,8 @@ $t \to \infty$ dans chacun des cas.  Il pourrait être utile de tracer
 le graphe de la solution.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \dydx{P}{t} = \frac{5}{1+2t}$ avec $P(0) = 5$ &
-\subQ{b} & $\displaystyle \dydx{P}{t} = \frac{5}{(1+t)^2}$ avec $P(0)=0$
+\subQ{a} & $\DS \dydx{P}{t} = \frac{5}{1+2t}$ avec $P(0) = 5$ &
+\subQ{b} & $\DS \dydx{P}{t} = \frac{5}{(1+t)^2}$ avec $P(0)=0$
 \end{tabular}
 \end{center}
 \label{10Q11}
@@ -2594,7 +2594,7 @@ continue dans lequel a été déposé 100 dollars.\\
 \end{question}
 
 \begin{question}
-Montrez que $\displaystyle x(t) = - \frac{1}{2} + \frac{3}{2} e^{2t}$ est une
+Montrez que $\DS x(t) = - \frac{1}{2} + \frac{3}{2} e^{2t}$ est une
 solution de l'équation différentielle $x'(t) = 1 + 2x(t)$
 et satisfait la condition initiale $x(0)=1$.
 \label{10Q17}
@@ -2664,11 +2664,11 @@ lesquelles des fonctions à droite sont des solutions de cette
 équation.  $k$ est une constante arbitraire.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.4em}}l@{\hspace{8em}}}l@{\hspace{0.4em}}l}
-\subQ{a} & $\displaystyle \dydx{y}{x} = \frac{y}{x}$ &
+\subQ{a} & $\DS \dydx{y}{x} = \frac{y}{x}$ &
 \subQ{I} & $y = kx$ \\[0.9em]
-\subQ{b} & $\displaystyle \dydx{y}{x} = \frac{y\ln y}{x}$ &
+\subQ{b} & $\DS \dydx{y}{x} = \frac{y\ln y}{x}$ &
 \subQ{II} & $y = x^k$ \\[0.9em]
-\subQ{c} & $\displaystyle \dydx{y}{x} = \frac{y\ln y}{x \ln x}$  &
+\subQ{c} & $\DS \dydx{y}{x} = \frac{y\ln y}{x \ln x}$  &
 \subQ{III} & $y=e^{kx}$
 \end{tabular}
 \end{center}
@@ -2690,20 +2690,20 @@ Résolvez les problèmes aux valeurs initiales suivants à l'aide de la méthode
 de séparation des variables.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \dydx{y}{t} = 2 y \quad , \quad y(0)=3$ &
-\subQ{b} & $\displaystyle \dydx{x}{t} = 3 t x^2 \quad , \quad x(1)=-0.4$
+\subQ{a} & $\DS \dydx{y}{t} = 2 y \quad , \quad y(0)=3$ &
+\subQ{b} & $\DS \dydx{x}{t} = 3 t x^2 \quad , \quad x(1)=-0.4$
  \\[0.7em]
-\subQ{c} & $\displaystyle \dydx{h}{t} = 1000-h \quad , \quad h(0)=500$ &
-\subQ{d} & $\displaystyle \dydx{g}{x} = \frac{5}{1+2g} \quad , \quad
+\subQ{c} & $\DS \dydx{h}{t} = 1000-h \quad , \quad h(0)=500$ &
+\subQ{d} & $\DS \dydx{g}{x} = \frac{5}{1+2g} \quad , \quad
  g(0)=0$  \\[0.7em]
-\subQ{e} & $\displaystyle \dydx{q}{t} = t q^2\,\sin(t^2)
+\subQ{e} & $\DS \dydx{q}{t} = t q^2\,\sin(t^2)
 \quad , \quad q(0) = 1$ &
-\subQ{f} & $\displaystyle \dydx{y}{t} =\frac{y}{1+x^2} \quad , \quad
+\subQ{f} & $\DS \dydx{y}{t} =\frac{y}{1+x^2} \quad , \quad
  y(0)=2$ \\[0.7em]
-\subQ{g} & $\displaystyle \dydx{y}{x} = (y-1)(x+2)  \quad , \quad y(1)=0$ &
-\subQ{h} & $\displaystyle \dydx{y}{x} = \frac{6y^2}{1+9x^2} \quad , \quad
+\subQ{g} & $\DS \dydx{y}{x} = (y-1)(x+2)  \quad , \quad y(1)=0$ &
+\subQ{h} & $\DS \dydx{y}{x} = \frac{6y^2}{1+9x^2} \quad , \quad
 y(0) = 1$ \\[0.7em]
-\subQ{i} & $\displaystyle \dydx{y}{x} = \frac{\ln(x)}{xy} \quad , \quad
+\subQ{i} & $\DS \dydx{y}{x} = \frac{\ln(x)}{xy} \quad , \quad
 y(1) = 2$ & &
 \end{tabular}
 \end{center}
@@ -2762,7 +2762,7 @@ $Q_\infty$ de $Q(t)$ lorsque $t$ tend vers l'infini?\\
 
 \begin{question}
 Résolvez le problème aux valeurs initiales
-$\displaystyle \dydx{y}{t} = y^{1.1}$ avec $y(0)=100$ à l'aide de la méthode
+$\DS \dydx{y}{t} = y^{1.1}$ avec $y(0)=100$ à l'aide de la méthode
 de séparation des variables.  Tracez le graphe de cette solution.  Trouver
 les valeurs de $t$ où la solution approche l'infini.
 \label{10Q30}
@@ -2770,7 +2770,7 @@ les valeurs de $t$ où la solution approche l'infini.
 
 \begin{question}
 Considérons le problème aux valeurs initiales
-$\displaystyle \dydx{x}{t} = \frac{x}{1+x}$ avec $x(0)=1$.
+$\DS \dydx{x}{t} = \frac{x}{1+x}$ avec $x(0)=1$.
 
 \subQ{a} Utilisez la méthode de séparation des variables pour résoudre le
 problème ci-dessus.  Vous ne serez pas capable d'exprimer $x$ en fonction de
@@ -2785,11 +2785,11 @@ $t$.
 \end{question}
 
 \begin{question}
-Considérons l'équation différentielle $\displaystyle \dydx{x}{t} = 2x-1$.
+Considérons l'équation différentielle $\DS \dydx{x}{t} = 2x-1$.
 Utilisez la substitution $y=2x-1$ pour réduire l'équation différentiel
 précédente en une équation différentiel plus simple.  Utilisez cette dernière
 équation différentielle pour résoudre l'équation différentielle initiale
-$\displaystyle \dydx{x}{t} = 2x-1$.
+$\DS \dydx{x}{t} = 2x-1$.
 \label{10Q32}
 \end{question}
 
@@ -2897,8 +2897,8 @@ différentielles suivantes et déterminez si possible leur stabilité à
 l'aide du théorème de stabilité des points d'équilibre.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \dydx{x}{t} = 1 - x^2$ &
-\subQ{b} & $\displaystyle \dydx{y}{t} = \alpha e^{\beta y} - 1$ avec
+\subQ{a} & $\DS \dydx{x}{t} = 1 - x^2$ &
+\subQ{b} & $\DS \dydx{y}{t} = \alpha e^{\beta y} - 1$ avec
 $\alpha>0$ et $\beta<0$
 \end{tabular}
 \end{center}
@@ -2915,8 +2915,8 @@ stabilité.\\
 donnée.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \dydx{x}{t} = x^2-4x+3$ et $x(0)=5$ &
-\subQ{b} & $\displaystyle \dydx{x}{t} = x^2-7x+10$ et $x(0)=7$
+\subQ{a} & $\DS \dydx{x}{t} = x^2-4x+3$ et $x(0)=5$ &
+\subQ{b} & $\DS \dydx{x}{t} = x^2-7x+10$ et $x(0)=7$
 \end{tabular}
 \end{center}
 \label{10Q39}
@@ -2934,7 +2934,7 @@ la condition initiale $x_0=5$.
 
 \begin{question}[\life]
 Considérons l´équation différentielle autonome
-$\displaystyle \dydx{y}{t} = y(y^2 -6 y + 5)$.
+$\DS \dydx{y}{t} = y(y^2 -6 y + 5)$.
 
 \subQ{a} Trouvez les trois points d'équilibre.\\
 \subQ{b} Déterminez la stabilité des points d'équilibre en (a) à
@@ -2949,16 +2949,16 @@ $y(0)=4$.
 
 \begin{question}[\life]
 Déterminez les points d'équilibre de l'équation différentielle
-$\displaystyle \dydx{\theta}{t} = \theta\cos(\theta)$.
+$\DS \dydx{\theta}{t} = \theta\cos(\theta)$.
 Tracez le portrait de phases de l'équation différentielle
-$\displaystyle \dydx{\theta}{t} = \theta \cos(\theta)$ pour
+$\DS \dydx{\theta}{t} = \theta \cos(\theta)$ pour
 $-\pi \leq \theta \leq 2\pi$.
 \label{10Q42}
 \end{question}
 
 \begin{question}[\life]
 Trouvez les points d'équilibre de l'équation différentielle
-$\displaystyle \dydx{x}{t}=x^2$.  Tracez le graphe de $f(x)=x^2$ et le
+$\DS \dydx{x}{t}=x^2$.  Tracez le graphe de $f(x)=x^2$ et le
 portrait de phases de ce système.  Déterminez la stabilité des points
 d'équilibre.  Est-ce que cela contredit le théorème de stabilité des
 points d'équilibre?
@@ -3039,7 +3039,7 @@ exemple simple d'une telle équation est
 \dydx{C}{t} = \beta(\gamma-C) + \frac{C}{2+C}
 \]
 où le terme $\beta(\gamma-C)$ représente la diffusion et le terme
-$\displaystyle \frac{C}{2+C}$ représente la réaction chimique.
+$\DS \frac{C}{2+C}$ représente la réaction chimique.
 les unités de la constante $\beta$ sont les m$^{-1}$ et les unités de la
 constante $\gamma$ sont les mol/l.  Si $\beta=1$ et $\gamma=5$, trouvez les
 points d'équilibre et déterminez leur stabilité.
@@ -3168,7 +3168,7 @@ concentration de sel dans le réservoir après $t$ minutes?
 \end{question}
 
 \begin{question}[\life]
-Considérons l'équation différentielle $\displaystyle \dydx{x}{t} = a x - x^2$
+Considérons l'équation différentielle $\DS \dydx{x}{t} = a x - x^2$
 où $a$ est un paramètre.
 
 \subQ{a} Trouvez les points d'équilibre de cette équation différentielle.  Un
@@ -3212,7 +3212,7 @@ inclure les valeurs négative des points d'équilibre.
 Considérons l'équation différentielle $y'(x)=f(x)$ avec $y(0) = 0$.
 Expliquez pourquoi l'approximation de $y(x)$ donnée par la méthode
 d'Euler correspond à une somme de Reimann à droite associée a
-l'intégrale $\displaystyle \int_0^x f(t) \dx{t} $.
+l'intégrale $\DS \int_0^x f(t) \dx{t} $.
 \label{10Q57}
 \end{question}
 
@@ -3246,7 +3246,7 @@ surestimations ou des sous-estimations de la solution $y$?
 \begin{question}[\eng]
 \subQ{a} Utilisez la méthode d'Euler avec $n=10$ sous-intervalles pour
 trouver une approximation de $y(1)$ où $y$ est la solution de l'équation
-différentielle $\displaystyle y'=\frac{3x^2}{2y}$ avec la condition
+différentielle $\DS y'=\frac{3x^2}{2y}$ avec la condition
 initiale $y(0)=1$.
 
 \subQ{b} Trouvez la solution exacte de l'équation différentielle

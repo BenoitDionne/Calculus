@@ -85,9 +85,9 @@ définie sur $V$.
 \end{defn}
 
 Puisque $x_2$ est fixe dans la définition de la dérivée partielle
-$\displaystyle \pdydx{f}{x_1}(x_1,x_2)$, cette dérivée partielle est la
+$\DS \pdydx{f}{x_1}(x_1,x_2)$, cette dérivée partielle est la
 dérivée d'une fonction d'une seule variable, $x_1$, qui dépend d'un
-paramètre, $x_2$.  De même, $\displaystyle \pdydx{f}{x_2}(x_1,x_2)$ est
+paramètre, $x_2$.  De même, $\DS \pdydx{f}{x_2}(x_1,x_2)$ est
 la dérivée d'une fonction d'une seule variable, $x_2$, qui dépend d'un
 paramètre, $x_1$.  Donc toutes les règles de dérivation pour les
 fonctions d'une variable sont valides si nous traitons comme une constante
@@ -304,14 +304,14 @@ pour $t \in \RR$.
 
 \begin{egg}
 Soit $z=e^x\cos(y)$, $x=t^2$ et $y=\sin(t)$, évaluons
-$\displaystyle \dydx{z}{t}$.
+$\DS \dydx{z}{t}$.
 
-La notation $\displaystyle \dydx{z}{t}$ peut porter à confusion car
+La notation $\DS \dydx{z}{t}$ peut porter à confusion car
 $z$ n'est pas explicitement une fonction de $t$.  Soit
 $\rho_1(t) = t^2$, $\rho_2(t) = \sin(t)$, $f(x,y) = e^x\cos(y)$ et
 $h(t) = f(\rho_1(t), \rho_2(t))$.   Il faut interpréter 
-$\displaystyle \dydx{z}{t}$ comme étant
-$\displaystyle \dydx{h}{t}$.
+$\DS \dydx{z}{t}$ comme étant
+$\DS \dydx{h}{t}$.
 
 Ainsi,
 \begin{align}
@@ -342,16 +342,16 @@ Cette notation est souvent utilisé en mathématiques appliquées
 
 \begin{egg}
 Soit $z=\sin(x)\cos(y^2)$, $x=t^2 + s^2$ et $y=e^{st}$, évaluons
-$\displaystyle \pdydx{z}{t}$ et $\displaystyle \pdydx{z}{s}$.
+$\DS \pdydx{z}{t}$ et $\DS \pdydx{z}{s}$.
 
 Comme à l'exemple précédent, la notation
-$\displaystyle \pdydx{z}{t}$ et $\displaystyle \pdydx{z}{s}$
+$\DS \pdydx{z}{t}$ et $\DS \pdydx{z}{s}$
 peut porter à confusion.  Soit $\rho_1(t,s) = t^2+s^2$,
 $\rho_2(t,s) = e^{st}$, $f(x,y) = \sin(x)\cos(y^2)$
 et $h(t,s) = f(\rho_1(t,s), \rho_2(t,s))$.  Les expressions
-$\displaystyle \pdydx{z}{t}$ et $\displaystyle \pdydx{z}{s}$ 
+$\DS \pdydx{z}{t}$ et $\DS \pdydx{z}{s}$ 
 représentent respectivement
-$\displaystyle \pdydx{h}{t}$ et $\displaystyle \pdydx{h}{s}$.
+$\DS \pdydx{h}{t}$ et $\DS \pdydx{h}{s}$.
 
 Ainsi,
 \begin{align}
@@ -542,7 +542,7 @@ z = f(1,\pi) + \pdydx{f}{x}(1,\pi) \, (x - 1)
 \begin{egg}
 Trouvons l'équation du plan tangent au point
 $\VEC{p} = (1,2,\sqrt{2})$ de l'ellipsoïde
-$\displaystyle \frac{x^2}{3} + \frac{y^2}{9} + \frac{z^2}{9} = 1$.
+$\DS \frac{x^2}{3} + \frac{y^2}{9} + \frac{z^2}{9} = 1$.
 
 Si, dans l'équation de l'ellipsoïde, nous assumons que $z$ est une fonction de
 $x$ et $y$, et nous dérivons implicitement cette équation par rapport à $x$ et
@@ -587,8 +587,8 @@ Une fonction $\rho :\RR^2 \to \RR^3$ est la représentation
 paramétrique d'une surface $S$ dans $\RR^3$ si:
 \begin{enumerate}
 \item $\rho_i$ est de classe $C^1$ pour $i=1$, $2$ et $3$.
-\item $\displaystyle \pdydx{\rho}{u_1}(u_1,u_2)$ et
-$\displaystyle \pdydx{\rho}{u_2}(u_1,u_2)$ sont deux vecteurs
+\item $\DS \pdydx{\rho}{u_1}(u_1,u_2)$ et
+$\DS \pdydx{\rho}{u_2}(u_1,u_2)$ sont deux vecteurs
 non colinéaires dans $\RR^3$ pour tout $(u_1,u_2)$. 
 \end{enumerate}
 \end{defn}
@@ -675,7 +675,7 @@ fonction a valeurs réelles.  Soit
 $\VEC{u} \in \RR^n$ un vecteur de longueur euclidienne $1$.  La
 {\bfseries dérivée de $f$ selon la direction $\VEC{u}$ au point
 $\VEC{a} \in V$}, que nous dénotons
-$\displaystyle \pdydx{f}{\VEC{u}}(\VEC{a})$, est définie par
+$\DS \pdydx{f}{\VEC{u}}(\VEC{a})$, est définie par
 \[
 \pdydx{f}{\VEC{u}}(\VEC{a}) =
 \lim_{h\rightarrow 0} \frac{1}{h}\left(f(\VEC{a}+h\VEC{u})-f(\VEC{a})\right)
@@ -803,16 +803,16 @@ $\VEC{a}$.
 \begin{rmk}
 Pour être consistant avec la représentation algébrique des vecteurs (i.e. un
 vecteur est une matrice de dimension \nm{n}{1}), nous devrions définir le
-gradient de $f$ à $\displaystyle \VEC{a} = \begin{pmatrix}
+gradient de $f$ à $\DS \VEC{a} = \begin{pmatrix}
 a_1 & a_2 & \cdots & a_n \end{pmatrix}^\top$ comme la matrice de dimension
 \nm{1}{n}
 \[
 \nabla f(\VEC{a}) =
-\begin{pmatrix}\displaystyle \pdydx{f}{x_1}(\VEC{a}) &
-\displaystyle \pdydx{f}{x_2}(\VEC{a}) & \ldots &
-\displaystyle \pdydx{f}{x_n}(\VEC{a}) \end{pmatrix} \; .
+\begin{pmatrix}\DS \pdydx{f}{x_1}(\VEC{a}) &
+\DS \pdydx{f}{x_2}(\VEC{a}) & \ldots &
+\DS \pdydx{f}{x_n}(\VEC{a}) \end{pmatrix} \; .
 \]
-Puisque $\displaystyle \VEC{u} = \begin{pmatrix} u_1 & u_2 & \cdots &
+Puisque $\DS \VEC{u} = \begin{pmatrix} u_1 & u_2 & \cdots &
 u_n \end{pmatrix}^\top$, nous avons que
 \[
 \pdydx{f}{\VEC{u}}(\VEC{a}) =
@@ -997,7 +997,7 @@ C'est la formule (\ref{planTANG}) car $a_3 = f(a_1,a_2)$.
 \begin{egg}
 Reprenons l'exemple~\ref{TPellipsoide} qui était de trouver l'équation du
 plan tangent au point $\VEC{p} = (1,2,\sqrt{2})$ de l'ellipsoïde
-$\displaystyle F(x,y,z) = \frac{x^2}{3} + \frac{y^2}{9} + \frac{z^2}{9} = 1$.
+$\DS F(x,y,z) = \frac{x^2}{3} + \frac{y^2}{9} + \frac{z^2}{9} = 1$.
 
 Un vecteur perpendiculaire au plan tangent à l'ellipsoïde au point
 $\VEC{p}$ est donnée par le gradient de $F$ au point $\VEC{p}$;
@@ -1071,7 +1071,7 @@ Ainsi, pour tout vecteur $\VEC{u}$ de longueur $1$,
 \end{equation}
 où $\theta$ est le plus petit angle entre $\VEC{u}$ et $\nabla f(\VEC{a})$.
 Il découle de (\ref{newtMAX}) que la valeur maximale de
-$\displaystyle \dydx{f}{\VEC{u}}(\VEC{a})$ est lorsque
+$\DS \dydx{f}{\VEC{u}}(\VEC{a})$ est lorsque
 $\cos(\theta)=1$; c'est-à-dire, $\theta =0$.  Donc les vecteurs
 $\VEC{u}$ et $\nabla f(\VEC{a})$ pointent dans la même
 direction.  Puisque $\VEC{u}$ est de longueur $1$, nous obtenons
@@ -1263,7 +1263,7 @@ les $n$ composantes sont des nombres naturels.   Posons
   \pdfdxn{f}{x_n}{\alpha_n}\right)\right)\right)
 \]
 ou, par convention, nous ignorons
-$\displaystyle \pdfdxn{}{x_j}{\alpha_j}$ lorsque $\alpha_j = 0$.
+$\DS \pdfdxn{}{x_j}{\alpha_j}$ lorsque $\alpha_j = 0$.
 De plus, définissons $\alpha!$, $|\alpha|$ et $\VEC{y}^{\alpha}$ pour
 $\VEC{y}\in \RR^n$ de la façon suivante.
 \[
@@ -1275,7 +1275,7 @@ $\VEC{y}\in \RR^n$ de la façon suivante.
 
 \begin{egg}
 Si $f:\RR^4 \to \RR$ et $\alpha = (2,0,1,3)$, alors
-$\displaystyle \pdfdxn{f}{\VEC{x}}{\alpha} = \pdfdxn{}{x_1}{2} \left(
+$\DS \pdfdxn{f}{\VEC{x}}{\alpha} = \pdfdxn{}{x_1}{2} \left(
 \pdfdx{}{x_3} \left( \pdfdxn{f}{x_4}{3}\right)\right)$,
 $\alpha! = 2!\ 0!\ 1!\ 3!= 12$, $|\alpha| = 2 + 0 + 1 + 3 = 6$ et
 $\VEC{y}^{\alpha} = y_1^2\ y_2^0\ y_3^1\ y_4^3 = y_1^2 y_3^{} y_4^3$.
@@ -1327,23 +1327,23 @@ algébrique qui nous sera très utile par la suite.  Posons
 \begin{align*}
 \diff f(\VEC{x}) &=
 \begin{pmatrix}
-\displaystyle \pdydx{f}{x_1}(\VEC{x}) &
-\displaystyle \pdydx{f}{x_2}(\VEC{x}) &
-\cdots & \displaystyle \pdydx{f}{x_n}(\VEC{x})
+\DS \pdydx{f}{x_1}(\VEC{x}) &
+\DS \pdydx{f}{x_2}(\VEC{x}) &
+\cdots & \DS \pdydx{f}{x_n}(\VEC{x})
 \end{pmatrix}
 \intertext{et}
   H(\VEC{x}) &=
 \begin{pmatrix}
-\displaystyle \pdydxn{f}{x_1}{2}(\VEC{x}) &
-\displaystyle \pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{x}) &
-\cdots & \displaystyle \pdydxnm{f}{x_n}{x_1}{2}{}{}(\VEC{x}) \\[0.8em]
-\displaystyle \pdydxnm{f}{x_1}{x_2}{2}{}{}(\VEC{x}) &
-\displaystyle \pdydxn{f}{x_2}{2}(\VEC{x}) & 
-\cdots & \displaystyle \pdydxnm{f}{x_n}{x_2}{2}{}{}(\VEC{x}) \\
+\DS \pdydxn{f}{x_1}{2}(\VEC{x}) &
+\DS \pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{x}) &
+\cdots & \DS \pdydxnm{f}{x_n}{x_1}{2}{}{}(\VEC{x}) \\[0.8em]
+\DS \pdydxnm{f}{x_1}{x_2}{2}{}{}(\VEC{x}) &
+\DS \pdydxn{f}{x_2}{2}(\VEC{x}) & 
+\cdots & \DS \pdydxnm{f}{x_n}{x_2}{2}{}{}(\VEC{x}) \\
 \vdots & \vdots & \ddots & \vdots \\
-\displaystyle \pdydxnm{f}{x_1}{x_n}{2}{}{}(\VEC{x}) &
-\displaystyle \pdydxnm{f}{x_2}{x_n}{2}{}{}(\VEC{x}) & 
-\cdots & \displaystyle \pdydxn{f}{x_n}{2}(\VEC{x})
+\DS \pdydxnm{f}{x_1}{x_n}{2}{}{}(\VEC{x}) &
+\DS \pdydxnm{f}{x_2}{x_n}{2}{}{}(\VEC{x}) & 
+\cdots & \DS \pdydxn{f}{x_n}{2}(\VEC{x})
 \end{pmatrix}
 \end{align*}
 
@@ -1417,7 +1417,7 @@ la figure~\ref{LocalMax}.  Elle possède un maximum local au point
 $\VEC{p} = (p_1,p_2)$.  De plus, le plan tangent à la surface $x_3= f(x_1,x_2)$
 au point $(x_1,x_2,x_3) = (p_1,p_2,f(p_1,p_2))$ est donné par
 $x_3 = M$ où $M = f(\VEC{p})$ est la valeur maximale.  Nous avons donc que
-$\displaystyle \pdydx{f}{x_1}(\VEC{p}) = \pdydx{f}{x_2}(\VEC{p}) = 0$;
+$\DS \pdydx{f}{x_1}(\VEC{p}) = \pdydx{f}{x_2}(\VEC{p}) = 0$;
 c'est-à-dire, $\nabla f(\VEC{p}) = \VEC{0}$.
 
 Pour compléter notre comparaison avec les fonctions d'une variable, nous
@@ -1442,7 +1442,7 @@ point critique $\VEC{p}$.
 
 Intuitivement, puisque $r_2(\VEC{x})$ contient seulement des termes de
 la forme $(\VEC{x} - \VEC{p})^{\alpha}$ avec $|\alpha| = 3$ alors que
-$\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p}) 
+$\DS \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p}) 
 (\VEC{x} - \VEC{p})$ contient seulement des termes de la forme
 $(\VEC{x} - \VEC{p})^{\alpha}$ avec $|\alpha| = 2$, nous pouvons supposer
 que cette dernière expression est dominante lorsque $\VEC{x}$ est près
@@ -1453,15 +1453,15 @@ de $\VEC{p}$.  Ainsi, à toute fin pratique, nous pouvons écrire
 \]
 pour $\VEC{x}$ prêt de $\VEC{p}$.
 
-Donc, si $\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
+Donc, si $\DS \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
 (\VEC{x} - \VEC{p}) > 0$ pour tout $\VEC{x} \neq \VEC{p}$, alors
 $f$ possède le minimum local $f(\VEC{p})$ au point
 $\VEC{x} = \VEC{p}$.  De même, si
-$\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
+$\DS \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
 (\VEC{x} - \VEC{p}) < 0$ pour tout $\VEC{x} \neq \VEC{p}$, alors
 $f$ possède le maximum local $f(\VEC{p})$ au point
 $\VEC{x} = \VEC{p}$.  Mais comment pouvons-nous savoir si 
-$\displaystyle \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
+$\DS \frac{1}{2} (\VEC{x} - \VEC{p})^\top H(\VEC{p})
 (\VEC{x} - \VEC{p})$ est toujours négative ou positive pour
 $\VEC{x} \neq \VEC{p}$.
 
@@ -1534,10 +1534,10 @@ est définie positive si
 $a_{1,1} >0$ et $a_{1,1} a_{2,2} - a_{1,2}a_{2,1} > 0$.
 Dans le cas où la matrice $A$ est la matrice Hessian 
 \[
-H(\VEC{p}) = \begin{pmatrix} \displaystyle \pdydxn{f}{x_1}{2}(\VEC{p})
-& \displaystyle \pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{p}) \\[0.9em]
-\displaystyle \pdydxnm{f}{x_1}{x_2}{2}{}{}(\VEC{p}) &
-\displaystyle \pdydxn{f}{x_2}{2}(\VEC{p})
+H(\VEC{p}) = \begin{pmatrix} \DS \pdydxn{f}{x_1}{2}(\VEC{p})
+& \DS \pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{p}) \\[0.9em]
+\DS \pdydxnm{f}{x_1}{x_2}{2}{}{}(\VEC{p}) &
+\DS \pdydxn{f}{x_2}{2}(\VEC{p})
 \end{pmatrix}
 \]
 d'une fonction $f:\RR^2 \to \RR$ suffisamment différentiable ayant un
@@ -1560,20 +1560,20 @@ Soit $f:\RR^2 \to \RR$ une fonction qui est trois fois continûment
 différentiable et $\VEC{p}$ un point critique de $f$.
 \begin{enumerate}
 \item Si
-$\displaystyle \det\left(H(\VEC{p})\right)
+$\DS \det\left(H(\VEC{p})\right)
 = \pdydxn{f}{x_1}{2}(\VEC{p}) \pdydxn{f}{x_2}{2}(\VEC{p}) -
 \left(\pdydxnm{f}{x_2}{x_1}{2}{}{}(\VEC{p})\right)^2 < 0$,
 alors $f$ à un col au point $(x,y) = \VEC{p}$ (figure~\ref{f2col}).
 \item Si
-$\displaystyle \pdydxn{f}{x_1}{2}(\VEC{p}) > 0$ et
-$\displaystyle \det\left(H(\VEC{p})\right) > 0$,
+$\DS \pdydxn{f}{x_1}{2}(\VEC{p}) > 0$ et
+$\DS \det\left(H(\VEC{p})\right) > 0$,
 alors $f$ à un minimum local au point $(x,y) = \VEC{p}$.
 \item Si
-$\displaystyle \pdydxn{f}{x_1}{2}(\VEC{p}) < 0$ et
-$\displaystyle \det\left(H(\VEC{p})\right) > 0$,
+$\DS \pdydxn{f}{x_1}{2}(\VEC{p}) < 0$ et
+$\DS \det\left(H(\VEC{p})\right) > 0$,
 alors $f$ à un maximum local au point $(x,y) = \VEC{p}$.
 \item Si
-$\displaystyle \det\left(H(\VEC{p})\right) = 0$,
+$\DS \det\left(H(\VEC{p})\right) = 0$,
 alors nous ne pouvons rien conclure (figure~\ref{f2col}).
 \end{enumerate}
 \end{prop}
@@ -1609,10 +1609,10 @@ un minimum local ou un col, nous évaluons la matrice Hessian à ce
 point.
 \[
 H(x,y) = \begin{pmatrix}
-\displaystyle \pdydxn{f}{x}{2}(x,y) &
-\displaystyle \pdydxnm{f}{y}{x}{2}{}{}(x,y) \\[0.9em]
-\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(x,y) &
-\displaystyle \pdydxn{f}{y}{2}(x,y)
+\DS \pdydxn{f}{x}{2}(x,y) &
+\DS \pdydxnm{f}{y}{x}{2}{}{}(x,y) \\[0.9em]
+\DS \pdydxnm{f}{x}{y}{2}{}{}(x,y) &
+\DS \pdydxn{f}{y}{2}(x,y)
 \end{pmatrix}
 = \begin{pmatrix}
   6 x & -6 \\
@@ -1620,13 +1620,13 @@ H(x,y) = \begin{pmatrix}
 \end{pmatrix}
 \]
 
-Puisque $\displaystyle \det H(0,0)
+Puisque $\DS \det H(0,0)
 = \det \begin{pmatrix} 0 & -6 \\ -6 & 0 \end{pmatrix} = - 36 < 0$,
 il y a un col au point $(0,0)$.
 
-Puisque $\displaystyle \det H(1,1/2)
+Puisque $\DS \det H(1,1/2)
 = \det \begin{pmatrix} 6 & -6 \\ -6 & 24 \end{pmatrix} = 108 > 0$ et
-$\displaystyle \pdydxn{f}{x}{2}(1,1/2) = 6 >0$, il y a un
+$\DS \pdydxn{f}{x}{2}(1,1/2) = 6 >0$, il y a un
 minimum local au point $(1,1/2)$.
 \end{egg}
 
@@ -1716,7 +1716,7 @@ $(0,1)$.  Comme nous avons mentionné, cela revient à trouver le points
 $(x,y)$ qui donnent la valeur maximale de $f(x,y) = x^2 + (y-1)^2$
 tout en satisfaisant $g(x,y) = x^2 + 2 y^2 - 9 = 0$.
 
-L'équation $\displaystyle \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
+L'équation $\DS \nabla f(\VEC{x}) = \lambda \nabla g(\VEC{x})$
 donne
 \begin{align}
 \pdydx{f}{x}(x,y) = \lambda \pdydx{g}{x}(x,y) &
@@ -1866,21 +1866,21 @@ définition.  Nous utilisons le résultat suivant pour calculer la dérivée.
 \begin{theorem}
 Soit $V\subset \RR^n$ un voisinage de $\VEC{c}$ et $f:V\rightarrow \RR^m$.
 Si $f$ est différentiable au point $\VEC{c}$ alors les dérivées partielles
-$\displaystyle \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
+$\DS \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
 $1\leq j \leq n$ existent.  De plus,
 \[
 \diff f(\VEC{c}) =
 \begin{pmatrix}
-\displaystyle \pdydx{f_1}{x_1}(\VEC{c}) &
-\displaystyle \pdydx{f_1}{x_2}(\VEC{c}) & \ldots &
-\displaystyle \pdydx{f_1}{x_n}(\VEC{c}) \\[1em]
-\displaystyle \pdydx{f_2}{x_1}(\VEC{c}) &
-\displaystyle \pdydx{f_2}{x_2}(\VEC{c}) & \ldots &
-\displaystyle \pdydx{f_2}{x_n}(\VEC{c}) \\[1em]
+\DS \pdydx{f_1}{x_1}(\VEC{c}) &
+\DS \pdydx{f_1}{x_2}(\VEC{c}) & \ldots &
+\DS \pdydx{f_1}{x_n}(\VEC{c}) \\[1em]
+\DS \pdydx{f_2}{x_1}(\VEC{c}) &
+\DS \pdydx{f_2}{x_2}(\VEC{c}) & \ldots &
+\DS \pdydx{f_2}{x_n}(\VEC{c}) \\[1em]
 \vdots & \vdots & \ddots & \vdots & \\[1em]
-\displaystyle \pdydx{f_m}{x_1}(\VEC{c}) &
-\displaystyle \pdydx{f_m}{x_2}(\VEC{c}) & \ldots &
-\displaystyle \pdydx{f_m}{x_n}(\VEC{c})
+\DS \pdydx{f_m}{x_1}(\VEC{c}) &
+\DS \pdydx{f_m}{x_2}(\VEC{c}) & \ldots &
+\DS \pdydx{f_m}{x_n}(\VEC{c})
 \end{pmatrix} \; .
 \]
 \end{theorem}
@@ -1893,29 +1893,29 @@ $\RR^m$.
 \begin{prop}
 Soit $V\subset \RR^n$ un voisinage de $\VEC{c}$ et $f:V\rightarrow \RR^m$.
 Si les dérivée partielles
-$\displaystyle \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
+$\DS \pdydx{f_i}{x_j}(\VEC{c})$ pour $1\leq i \leq m$ et
 $1\leq j \leq n$ existent et sont continues sur $V$, alors $f$ est
 différentiable pour tout $\VEC{x} \in V$ et
 \[
 \diff f(\VEC{x}) =
 \begin{pmatrix}
-\displaystyle \pdydx{f_1}{x_1}(\VEC{x}) &
-\displaystyle \pdydx{f_1}{x_2}(\VEC{x}) & \ldots &
-\displaystyle \pdydx{f_1}{x_n}(\VEC{x}) \\[1em]
-\displaystyle \pdydx{f_2}{x_1}(\VEC{x}) &
-\displaystyle \pdydx{f_2}{x_2}(\VEC{x}) & \ldots &
-\displaystyle \pdydx{f_2}{x_n}(\VEC{x}) \\[1em]
+\DS \pdydx{f_1}{x_1}(\VEC{x}) &
+\DS \pdydx{f_1}{x_2}(\VEC{x}) & \ldots &
+\DS \pdydx{f_1}{x_n}(\VEC{x}) \\[1em]
+\DS \pdydx{f_2}{x_1}(\VEC{x}) &
+\DS \pdydx{f_2}{x_2}(\VEC{x}) & \ldots &
+\DS \pdydx{f_2}{x_n}(\VEC{x}) \\[1em]
 \vdots & \vdots & \ddots & \vdots & \\[1em]
-\displaystyle \pdydx{f_m}{x_1}(\VEC{x}) &
-\displaystyle \pdydx{f_m}{x_2}(\VEC{x}) & \ldots &
-\displaystyle \pdydx{f_m}{x_n}(\VEC{x})
+\DS \pdydx{f_m}{x_1}(\VEC{x}) &
+\DS \pdydx{f_m}{x_2}(\VEC{x}) & \ldots &
+\DS \pdydx{f_m}{x_n}(\VEC{x})
 \end{pmatrix} \; .
 \]
 \end{prop}
 
 \begin{egg}
 Soit $f:\RR^2\rightarrow \RR^2$ une fonction définie par
-$\displaystyle f_1(x,y) = \frac{1}{x^2+y^2}$ et
+$\DS f_1(x,y) = \frac{1}{x^2+y^2}$ et
 $f_2(x,y) = \sin(\pi(x^2+y^2))$.  Calculons la dérivée de $f$ au point
 $\VEC{c} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.
 
@@ -1931,8 +1931,8 @@ nous obtenons
 \begin{align*}
 \diff f(\VEC{c}) &=
 \begin{pmatrix}
-\displaystyle \frac{-2x}{(x^2+y^2)^2}\bigg|_{(x,y)=(1,2)} &
-\displaystyle \frac{-2y}{(x^2+y^2)^2}\bigg|_{(x,y)=(1,2)} \\[1em]
+\DS \frac{-2x}{(x^2+y^2)^2}\bigg|_{(x,y)=(1,2)} &
+\DS \frac{-2y}{(x^2+y^2)^2}\bigg|_{(x,y)=(1,2)} \\[1em]
 2x \pi \cos(\pi(x^2+y^2))\bigg|_{(x,y)=(1,2)} &
 2y \pi \cos(\pi(x^2+y^2))\bigg|_{(x,y)=(1,2)}
 \end{pmatrix} \\
@@ -1949,9 +1949,9 @@ nous obtenons
 \[
 \diff f(\VEC{c}) =
 \begin{pmatrix}
-\displaystyle \pdydx{f}{x_1}(\VEC{c}) &
-\displaystyle \pdydx{f}{x_2}(\VEC{c}) & \ldots &
-\displaystyle \pdydx{f}{x_n}(\VEC{c})
+\DS \pdydx{f}{x_1}(\VEC{c}) &
+\DS \pdydx{f}{x_2}(\VEC{c}) & \ldots &
+\DS \pdydx{f}{x_n}(\VEC{c})
 \end{pmatrix}
 = \nabla f(\VEC{c})
 \]
@@ -1966,9 +1966,9 @@ simplement appeler $c$.  Ainsi,
 \[
 \diff \phi(c) =
 \begin{pmatrix}
-\displaystyle \dydx{\phi_1}{t}(c) \\[2ex]
-\displaystyle \dydx{\phi_2}{t}(c) \\ \vdots \\
-\displaystyle \dydx{\phi_m}{t}(c)
+\DS \dydx{\phi_1}{t}(c) \\[2ex]
+\DS \dydx{\phi_2}{t}(c) \\ \vdots \\
+\DS \dydx{\phi_m}{t}(c)
 \end{pmatrix}
 = \phi'(c)
 \]
@@ -1999,11 +1999,11 @@ point du domaine de $f$.  Nous écrivons $f \in C^k(U)$
 Évaluez toutes les dérivées premières des fonction suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle f(x,y,z,t) = xy^2z^3t^4$ &
-\subQ{b} & $\displaystyle f(x,y) = \frac{2x+y}{x-y}$ &
-\subQ{c} & $\displaystyle h(x,y) = f(x)g(y)$ \\[0.8em]
-\subQ{d} & $\displaystyle h(x,y) = f(xy)$ &
-\subQ{e} & $\displaystyle h(x,y) = f\left(\frac{x}{y}\right)$ & &
+\subQ{a} & $\DS f(x,y,z,t) = xy^2z^3t^4$ &
+\subQ{b} & $\DS f(x,y) = \frac{2x+y}{x-y}$ &
+\subQ{c} & $\DS h(x,y) = f(x)g(y)$ \\[0.8em]
+\subQ{d} & $\DS h(x,y) = f(xy)$ &
+\subQ{e} & $\DS h(x,y) = f\left(\frac{x}{y}\right)$ & &
 \end{tabular}
 \end{center}
 \label{15Q1}
@@ -2012,26 +2012,26 @@ point du domaine de $f$.  Nous écrivons $f \in C^k(U)$
 \begin{question}
 La figure suivante donne quelques courbes de niveau de la fonction
 $f(x,y)$.  Utilisez ces courbes de niveau pour estimer
-$\displaystyle \frac{\partial f(0.6,0.4)}{\partial x}$
-et $\displaystyle \frac{\partial f(0.2,0.3)}{\partial y}$.
+$\DS \frac{\partial f(0.6,0.4)}{\partial x}$
+et $\DS \frac{\partial f(0.2,0.3)}{\partial y}$.
 \PDFgraph{15_var_mult_der/questbasic}
 \label{15Q2}
 \end{question}
 
 \begin{question}
-Soit la fonction $\displaystyle f(x,y,z) = \frac{1}{1+xyz}$.  Si
+Soit la fonction $\DS f(x,y,z) = \frac{1}{1+xyz}$.  Si
 $x= \cos(\theta+\phi)$, $y=\sin(\theta+\phi)$ et
 $z=\cos(\phi)$, évaluez
-$\displaystyle \pdydx{f}{\theta}(\theta,\phi)$ au point
+$\DS \pdydx{f}{\theta}(\theta,\phi)$ au point
 $(\theta, \phi) = (\pi, 0)$.
 \label{15Q3}
 \end{question}
 
 \begin{question}[\eng]
-Si $\displaystyle w = f(x,y,z) = 2x^2 + y^2 + 2z^3$ où
+Si $\DS w = f(x,y,z) = 2x^2 + y^2 + 2z^3$ où
 $x=s+t^2$, $y=st$ et $z=s^2+t$, calculez
-$\displaystyle \pdydx{w}{s}$ et
-$\displaystyle \pdydx{w}{t}$ au point $(s,t) = (1,2)$.
+$\DS \pdydx{w}{s}$ et
+$\DS \pdydx{w}{t}$ au point $(s,t) = (1,2)$.
 \label{15Q4}
 \end{question}
 
@@ -2051,11 +2051,11 @@ $f:\RR^2 \rightarrow \RR$.
 Déterminez le signe (possible) des dérivées partielles suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \pdydx{f}{x}(\VEC{p})$ &
-\subQ{b} & $\displaystyle \pdydx{f}{y}(\VEC{p})$ &
-\subQ{c} & $\displaystyle \pdydxn{f}{x}{2}(\VEC{p})$ \\[0.8em]
-\subQ{d} & $\displaystyle \pdydxnm{f}{x}{y}{2}{}{}(\VEC{p})$ &
-\subQ{e} & $\displaystyle \pdydxn{f}{y}{2}(\VEC{p})$ & &
+\subQ{a} & $\DS \pdydx{f}{x}(\VEC{p})$ &
+\subQ{b} & $\DS \pdydx{f}{y}(\VEC{p})$ &
+\subQ{c} & $\DS \pdydxn{f}{x}{2}(\VEC{p})$ \\[0.8em]
+\subQ{d} & $\DS \pdydxnm{f}{x}{y}{2}{}{}(\VEC{p})$ &
+\subQ{e} & $\DS \pdydxn{f}{y}{2}(\VEC{p})$ & &
 \end{tabular}
 \end{center}
 \label{15Q6}
@@ -2098,12 +2098,12 @@ tangent à cette surface au point $(0,2,1)$.
 Pour chacune des fonctions ci-dessous, calculez la dérivée au point
 donnés et dans la direction données.
 
-\subQ{a} $\displaystyle f(x,y)=x^2y+4y^2$ au point $(2,1)$ et dans la
+\subQ{a} $\DS f(x,y)=x^2y+4y^2$ au point $(2,1)$ et dans la
 direction du vecteur $(1,\sqrt{3})$. \\
-\subQ{b} $\displaystyle f(x,y,z) = xyz + \ln(x^2+y^2+z^2)$ au point
+\subQ{b} $\DS f(x,y,z) = xyz + \ln(x^2+y^2+z^2)$ au point
 $(1,1,2)$ et dans la direction du vecteur
-$\displaystyle \VEC{v} = 2\ii + \jj - \kk$.\\
-\subQ{c} $\displaystyle f(x,y,z) = (x+y+z) e^{xyz}$ au point $(1,0,3)$
+$\DS \VEC{v} = 2\ii + \jj - \kk$.\\
+\subQ{c} $\DS f(x,y,z) = (x+y+z) e^{xyz}$ au point $(1,0,3)$
 et dans la direction du vecteur $(2,1,-2)$.
 \label{15Q10}
 \end{question}
@@ -2172,13 +2172,13 @@ $z=f(x,y)$ au point $(1,2,5)$.
 Utilisez l'approximation linéaire de la fonction $f$ au point suggéré
 pour obtenir l'estimation demandée.
 
-\subQ{a} $\displaystyle f(x,y)=2x^2y^2+3xy+x$ au point $(1,1)$ pour
+\subQ{a} $\DS f(x,y)=2x^2y^2+3xy+x$ au point $(1,1)$ pour
 estimer $f(0.9,1.1)$.\\
-\subQ{b} $\displaystyle f(x,y) =  \ln\left(\frac{2x^2+5y^2}{7}\right)$
+\subQ{b} $\DS f(x,y) =  \ln\left(\frac{2x^2+5y^2}{7}\right)$
 au point $(1,1)$ pour estimer $f(0.98,1.01)$.\\
-\subQ{c} $\displaystyle f(x,y) = (x^2-y^5)^{4/3}$ au point $(3,1)$
+\subQ{c} $\DS f(x,y) = (x^2-y^5)^{4/3}$ au point $(3,1)$
 pour estimer $f(3.2,1.2)$.\\
-\subQ{d} $\displaystyle f(x,y)= 1- \frac{2x}{y}+3y-4xy^2+e^{3x}$ au
+\subQ{d} $\DS f(x,y)= 1- \frac{2x}{y}+3y-4xy^2+e^{3x}$ au
 point $(0,1)$ pour estimer $f(-0.1,0.9)$.
 \label{15Q18}
 \end{question}
@@ -2203,7 +2203,7 @@ cas précédents.
 \subQ{a} & $f(x,y) = x^3 + y^3 - 3 x -12 y + 20$ &
 \subQ{b} & $h(x,y)=x^3 - y^3- 3xy + 290$ \\
 \subQ{c} & $f(x,y) = x^3 + 3 x y - y^3$ &
-\subQ{d} & $\displaystyle h(x,y)=x^3+y^3+3xy+\frac{1}{8}$ \\
+\subQ{d} & $\DS h(x,y)=x^3+y^3+3xy+\frac{1}{8}$ \\
 \subQ{e} & $f(x,y) = 2 x^3 + x y^2 + 5 x^2 + y^2$ & &
 \end{tabular}
 \end{center}
@@ -2239,7 +2239,7 @@ $x^2 + 4 y^2 + z^2 = 17$.
 \begin{question}[\eng]
 Trouvez le volume maximal de la boite ayant des côtés parallèles aux
 axes de coordonnées qui est contenu à l'intérieur de l'ellipsoïde
-d'équation $\displaystyle x^2 + \frac{y^2}{4} + \frac{z^2}{9} = 1$.
+d'équation $\DS x^2 + \frac{y^2}{4} + \frac{z^2}{9} = 1$.
 \label{15Q24}
 \end{question}
 
@@ -2253,8 +2253,8 @@ minimisent le coût de l'aquarium
 
 \begin{question}[\eng]
 Trouvez la valeur maximale de la fonction
-$\displaystyle f(x,y) = \frac{1}{x} + \frac{1}{y}$ sous la contrainte
-que $\displaystyle \frac{1}{x^2} + \frac{1}{y^2} = 1$.
+$\DS f(x,y) = \frac{1}{x} + \frac{1}{y}$ sous la contrainte
+que $\DS \frac{1}{x^2} + \frac{1}{y^2} = 1$.
 \label{15Q26}
 \end{question}
 
@@ -2286,10 +2286,10 @@ Pour chacune des fonctions $f:\RR^2 \rightarrow \RR^2$ ci-dessous,
 donnée par l'approximation linéaire au point $(-0.9, 1.05)$.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle f(x,y) = \begin{pmatrix} x/y \\
+\subQ{a} & $\DS f(x,y) = \begin{pmatrix} x/y \\
   2xy \end{pmatrix}$ &
-\subQ{b} & $\displaystyle f(x,y) = \begin{pmatrix} x^2y+2xe^y \\
-\displaystyle \frac{x}{y}-3ye^{-x} \end{pmatrix}$
+\subQ{b} & $\DS f(x,y) = \begin{pmatrix} x^2y+2xe^y \\
+\DS \frac{x}{y}-3ye^{-x} \end{pmatrix}$
 \end{tabular}
 \end{center}
 \label{15Q29}

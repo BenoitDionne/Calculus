@@ -121,7 +121,7 @@ ensemble de points du plan $x,y$ (uniformément distribués) et, à partir
 de chacun de ces points $(x,y)$, nous traçons le vecteur $F(x,y)$.
 
 \begin{egg}
-Pour tracer le champ de vecteurs donné par $\displaystyle
+Pour tracer le champ de vecteurs donné par $\DS
 F(x,y) = \left( \frac{-y}{\sqrt{x^2+y^2}}\right) \ii +
 \left( \frac{x}{\sqrt{x^2+y^2}}\right)\jj$, nous notons que le produit
 scalaire de $F(x,y)$ avec le vecteur $(x,y)$ est nul.  En effet,
@@ -246,7 +246,7 @@ $\sigma'(t) = (1, 2t, 3t^2)$, nous avons que
 
 \begin{egg}
 Quelle est la valeur de l'intégrale
-$\displaystyle \int_C xy \dx{x} - x \dx{y}$ le long de la courbe $C$
+$\DS \int_C xy \dx{x} - x \dx{y}$ le long de la courbe $C$
 donnée par $y=1-x^2$ à partir du point $(1,0)$ jusqu'au point $(0,1)$.
 
 Le dessin de la courbe $C$ est donnée ci-dessous.
@@ -255,7 +255,7 @@ Le dessin de la courbe $C$ est donnée ci-dessous.
 Nous devons choisir une représentation paramétrique pour $C$.  Un choix
 possible serait $x=1-t$ et $y = 1-(1-t)^2$ pour $0 \leq t \leq 1$.
 Nous pouvons simplifier les calculs, si nous utilisons le fait que
-$\displaystyle \int_C = - \int_{-C}$.  Une représentation
+$\DS \int_C = - \int_{-C}$.  Une représentation
 paramétrique pour $-C$ est simplement $x=t$ et $y = 1-t^2$ pour
 $0 \leq t \leq 1$.  Donc
 \begin{align*}
@@ -278,7 +278,7 @@ une fonction de classe $C^1$, alors
 quelle que soit la courbe orientée $\Gamma$ dans $V$ où
 $\sigma:[a,b]\to \RR^3$ est une représentation paramétrique de
 $\Gamma$ qui respect son orientation.  En particulier,
-l'intégrale $\displaystyle \int_\Gamma \nabla f \cdot \dx{\VEC{s}}$
+l'intégrale $\DS \int_\Gamma \nabla f \cdot \dx{\VEC{s}}$
 est indépendante de la courbe $\Gamma \subset V$ utilisée pour joindre
 deux points de $V$.
 \end{theorem}
@@ -339,10 +339,10 @@ $\sigma:[a,b]\to \RR^3$ est {\bfseries fermée} si $\sigma(a) = \sigma(b)$.
 \begin{prop}
 Soit $V$ un sous ensemble ouvert de $\RR^3$ et soit $F$ un champ de
 vecteurs défini sur $V$.  L'intégrale
-$\displaystyle \int_\Gamma F \cdot \dx{\VEC{s}}$ est indépendante
+$\DS \int_\Gamma F \cdot \dx{\VEC{s}}$ est indépendante
 de la courbe orientée $\Gamma \subset V$ utilisée pour joindre deux
 points de $V$ si et seulement si
-$\displaystyle \int_\Gamma F \cdot \dx{\VEC{s}} = 0$ pour toutes
+$\DS \int_\Gamma F \cdot \dx{\VEC{s}} = 0$ pour toutes
 courbes fermées $\Gamma$ dans $V$. 
 \end{prop}
 
@@ -375,9 +375,9 @@ Ainsi,
 \int_{-\Gamma_2} F \cdot \dx{\VEC{s}}
 = \int_{\Gamma_3} F \cdot \dx{\VEC{s}} \ .
 \]
-Donc $\displaystyle \int_{\Gamma_1} F \cdot \dx{\VEC{s}} =
+Donc $\DS \int_{\Gamma_1} F \cdot \dx{\VEC{s}} =
 \int_{\Gamma_2} F \cdot \dx{\VEC{s}}$ si et seulement si
-$\displaystyle \int_{\Gamma_3} F \cdot \dx{\VEC{s}} = 0$.
+$\DS \int_{\Gamma_3} F \cdot \dx{\VEC{s}} = 0$.
 \end{rmk}
 
 \PDFfig{17_vector_calculus/CloseCurve}{Somme de courbes orientées}
@@ -425,7 +425,7 @@ Le théorème fondamental a une contre partie.
 Soit $V$ un sous-ensemble ouvert et simplement connexe de $\RR^3$, et
 soit $F$ un champ de vecteurs défini sur $V$.  Si, pour tous $\VEC{a}$
 et $\VEC{b}$ dans $V$, l'intégrale
-$\displaystyle \int_\Gamma F \cdot \dx{\VEC{s}}$ est
+$\DS \int_\Gamma F \cdot \dx{\VEC{s}}$ est
 indépendante de la courbe orientée $\Gamma$ dans $V$ qui va de
 $\VEC{a}$ à $\VEC{b}$, alors il existe une fonction
 $f:V\rightarrow \RR$ de classe $C^1$ telle que
@@ -437,7 +437,7 @@ $F = \nabla f$ sur $V$.
 Soit $V$ un sous-ensemble ouvert de $\RR^3$.  Un champ de vecteurs
 $F$ défini sur $V$ est {\bfseries  conservateur} si, pour tous
 $\VEC{a}$ et $\VEC{b}$ dans $V$, l'intégrale
-$\displaystyle \int_\Gamma F \cdot \dx{\VEC{s}}$ est
+$\DS \int_\Gamma F \cdot \dx{\VEC{s}}$ est
 indépendante de la courbe orientée $\Gamma$ dans $V$ qui va de
 $\VEC{a}$ à $\VEC{b}$.
 \end{defn}
@@ -482,8 +482,8 @@ Si nous utilisons cette formulation symbolique, alors
 = \nabla \times F
 = \det \begin{pmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
-\displaystyle \pdydx{}{z} \\
+\DS \pdydx{}{x} & \DS \pdydx{}{y} &
+\DS \pdydx{}{z} \\
 F_1 & F_2 & F_3
 \end{pmatrix} \ .
 \]
@@ -513,10 +513,10 @@ $F(x,y) = \left( 2 x y^4 , 4 x^2y^3 - 6 y^2\right)$ est conservateur.
 Lorsque le champ de vecteur $F = F_1 \ii + F_2 \jj + F_3 \kk$ est
 indépendant de $z$ (i.e.\ $F_1$ et $F_2$ sont des fonctions de $x$ et $y$
 seulement) et $F_3(x,y,z) = 0$ pour tout $(x,y,z)$, nous avons que
-$\displaystyle \curl F =
+$\DS \curl F =
 \left( \pdydx{F_2}{x} - \pdydx{F_1}{y}\right)\kk$.
 Donc $\curl F = \VEC{0}$ est équivalent à
-$\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$.
+$\DS \pdydx{F_2}{x} = \pdydx{F_1}{y}$.
 
 Puisque
 \[
@@ -524,7 +524,7 @@ Puisque
 \quad \text{et} \quad
 \pdydx{F_1}{y} = \pdfdx{\left(2 x y^4\right)}{y} = 8x y^3 \ ,
 \]
-nous avons que $\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et donc
+nous avons que $\DS \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et donc
 $F$ est conservateur.  La proposition précédente affirme qu'il existe
 $f:\RR^2 \to \RR$ telle que $F = \nabla f$.  En effet,
 \[
@@ -641,7 +641,7 @@ long du flot est donnée par
 \]
 d'après le Théorème de Taylor, théorème~\ref{theoTaylorNdim}, pour les
 fonctions de $\RR^3$ dans $\RR^3$.  Comme
-$\displaystyle \lim_{\VEC{s}\to \VEC{0}}
+$\DS \lim_{\VEC{s}\to \VEC{0}}
 \frac{\|r_2(\VEC{s})\|}{\|\VEC{s}\|} = 0$,
 nous avons que l'image du parallélépipède $P_0$ est
 \[
@@ -674,7 +674,7 @@ $\VEC{x}_0$)}.
 \PDFfig{17_vector_calculus/div_interp}{Interprétation physique de la divergence}
 {Interprétation physique de la divergence.}{diff_geom_DIV}
 
-Puisque $\displaystyle \pdydx{\phi}{t}(t,\VEC{x}) = F(\phi(t,\VEC{x}))$,
+Puisque $\DS \pdydx{\phi}{t}(t,\VEC{x}) = F(\phi(t,\VEC{x}))$,
 nous avons
 \[
 \pdfdx{ \diff_{\VEC{x}} \phi(t,\VEC{x}) }{t}
@@ -690,8 +690,8 @@ Ainsi,
 \phi(t,\VEC{x}_0) \ii
 \end{equation}
 avec un résultat semblable pour
-$\displaystyle \dydx{\VEC{b}}{t}(t,\VEC{x}_0)$ et
-$\displaystyle \dydx{\VEC{c}}{t}(t,\VEC{x}_0)$.
+$\DS \dydx{\VEC{b}}{t}(t,\VEC{x}_0)$ et
+$\DS \dydx{\VEC{c}}{t}(t,\VEC{x}_0)$.
 Puisque $\phi(0,\VEC{x}) = \VEC{x}$ pour tout $\VEC{x}$, nous obtenons
 $\diff_{\VEC{x}} \phi(0,\VEC{x}_0) = \Id$. Ainsi, (\ref{diff_geom_DD0})
 donne
@@ -706,8 +706,8 @@ comme il se doit pour $P_0$, et (\ref{diff_geom_DD1}) devient
 F(\VEC{x}_0) \ii
 \end{equation}
 avec un résultat semblable pour
-$\displaystyle \dydx{\VEC{b}}{t}(0,\VEC{x}_0)$ et
-$\displaystyle \dydx{\VEC{c}}{t}(0,\VEC{x}_0)$.  Le volume de $P_t$ est
+$\DS \dydx{\VEC{b}}{t}(0,\VEC{x}_0)$ et
+$\DS \dydx{\VEC{c}}{t}(0,\VEC{x}_0)$.  Le volume de $P_t$ est
 \[
 V(t,\VEC{x}_0) = \VEC{a}(t,\VEC{x}_0) \cdot \left(\VEC{b}(t,\VEC{x}_0) \times
 \VEC{c}(t,\VEC{x}_0) \right) \; .
@@ -802,7 +802,7 @@ avons
 \; . \label{diff_geom_curl4}
 \end{align}
 Posons
-$\displaystyle \diff_{\VEC{x}} F(\VEC{0}) = S + W$ où 
+$\DS \diff_{\VEC{x}} F(\VEC{0}) = S + W$ où 
 \[
 S = \frac{1}{2} \left( \diff_{\VEC{x}} F(\VEC{0}) +
 \diff_{\VEC{x}} F(\VEC{0})^\top \right) \quad \text{et} \quad
@@ -832,21 +832,21 @@ W(x,y,z)
 \diff_{\VEC{x}} F(x,y,z)^\top \right) \\
 &= \frac{1}{2}
 \begin{pmatrix}
-0 & \displaystyle \pdydx{F_1}{y} - \pdydx{F_2}{x} &
-\displaystyle \pdydx{F_1}{z} - \pdydx{F_3}{x} \\[1em]
-\displaystyle \pdydx{F_2}{x} - \pdydx{F_1}{y} & 0 &
-\displaystyle \pdydx{F_2}{z} - \pdydx{F_3}{y} \\[1em]
-\displaystyle \pdydx{F_3}{x} - \pdydx{F_1}{z} &
-\displaystyle \pdydx{F_3}{y} - \pdydx{F_2}{z} & 0
+0 & \DS \pdydx{F_1}{y} - \pdydx{F_2}{x} &
+\DS \pdydx{F_1}{z} - \pdydx{F_3}{x} \\[1em]
+\DS \pdydx{F_2}{x} - \pdydx{F_1}{y} & 0 &
+\DS \pdydx{F_2}{z} - \pdydx{F_3}{y} \\[1em]
+\DS \pdydx{F_3}{x} - \pdydx{F_1}{z} &
+\DS \pdydx{F_3}{y} - \pdydx{F_2}{z} & 0
 \end{pmatrix} \\
 &= \frac{1}{2}
 \begin{pmatrix}
-0 & \displaystyle -\left(\curl F\right)_3 &
-\displaystyle \left(\curl F\right)_2 \\
-\displaystyle \left(\curl F\right)_3 & 0 &
-\displaystyle -\left(\curl F\right)_1 \\
-\displaystyle -\left(\curl F\right)_2 & 
-\displaystyle \left(\curl F\right)_1 & 0
+0 & \DS -\left(\curl F\right)_3 &
+\DS \left(\curl F\right)_2 \\
+\DS \left(\curl F\right)_3 & 0 &
+\DS -\left(\curl F\right)_1 \\
+\DS -\left(\curl F\right)_2 & 
+\DS \left(\curl F\right)_1 & 0
 \end{pmatrix}
 \end{align*}
 où $(\curl F)_i$ est la $i^e$ coordonnée de
@@ -955,7 +955,7 @@ où $\phi:D \to \RR^3$ est une représentation paramétrique de $S$ et
 \end{equation*}
 
 Nous écrivons
-$\displaystyle \dx{S} =
+$\DS \dx{S} =
 \left\| \pdydx{\rho}{u_1} \times \pdydx{\rho}{u_2} \right\|
 \dx{A}$.
 \end{defn}
@@ -974,10 +974,10 @@ vectoriel, nous pouvons écrire
 \pdydx{\rho}{u_1} \times \pdydx{\rho}{u_2}
 = \begin{vmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{\rho_1}{u_1} & \displaystyle \pdydx{\rho_2}{u_1} &
-\displaystyle \pdydx{\rho_3}{u_1} \\[0.8em]
-\displaystyle \pdydx{\rho_1}{u_2} & \displaystyle \pdydx{\rho_2}{u_2} &
-\displaystyle \pdydx{\rho_3}{u_2} \end{vmatrix}
+\DS \pdydx{\rho_1}{u_1} & \DS \pdydx{\rho_2}{u_1} &
+\DS \pdydx{\rho_3}{u_1} \\[0.8em]
+\DS \pdydx{\rho_1}{u_2} & \DS \pdydx{\rho_2}{u_2} &
+\DS \pdydx{\rho_3}{u_2} \end{vmatrix}
 \]
 où le déterminant est développé selon la première ligne seulement.
 \end{rmk}
@@ -989,7 +989,7 @@ précédente, nous obtenons le résultat suivant.
 Soit $S \subset \RR^3$ une surface possédant une représentation
 paramétrique $\rho:D\rightarrow S$ de classe $C^1$, où $D$ est un
 sous-ensemble ouvert $D \subset \RR^2$.  Alors
-$\displaystyle \iint_S \dx{S}$ est l'aire de la surface $S$.
+$\DS \iint_S \dx{S}$ est l'aire de la surface $S$.
 \end{prop}
 
 \begin{rmk}
@@ -997,12 +997,12 @@ Dans les exemples et remarques qui suivrons, la
 représentation paramétrique d'une surface $S$ sera souvent exprimée
 sous la forme $x = \rho_1(u,v)$, $y=\rho_2(u,v)$ et $z = \rho_3(u,v)$ 
 pour certaines fonctions $\rho_i:D\to S$.  Dans ce cas,
-$\displaystyle \pdydx{\rho}{u_1}$
-et $\displaystyle \pdydx{\rho}{u_2}$ prennent la forme
-$\displaystyle \pdydx{\rho}{u}
+$\DS \pdydx{\rho}{u_1}$
+et $\DS \pdydx{\rho}{u_2}$ prennent la forme
+$\DS \pdydx{\rho}{u}
 = \left( \pdydx{x}{u} , \pdydx{y}{u} , \pdydx{z}{u} \right)$
 et
-$\displaystyle
+$\DS
 \pdydx{\rho}{v} = \left( \pdydx{x}{v} , \pdydx{y}{v} , \pdydx{z}{v} \right)$
 respectivement.
 \end{rmk}
@@ -1027,8 +1027,8 @@ Nous avons que
 est l'aire d'un petit rectangle $R_{i,j}$ qui est tangent
 à la surface $S$ au point $\rho(u_i,v_j) \in S$ et dont les côtés à
 partir de ce point sont donnés par les vecteurs
-$\displaystyle \pdydx{\rho}{u}(u_i,v_j) \Delta u_i$ et
-$\displaystyle \pdydx{\rho}{v}(u_i,v_j) \Delta v_j$
+$\DS \pdydx{\rho}{u}(u_i,v_j) \Delta u_i$ et
+$\DS \pdydx{\rho}{v}(u_i,v_j) \Delta v_j$
 (figure~\ref{AreaRepr}).  Si
 la partition est très fine, le rectangle $R_{i,j}$ est presque la région
 $\rho(A_{i,j})$ où
@@ -1052,7 +1052,7 @@ Or, d'après la définition de l'intégrale de Reimann, nous avons
 \left\| \pdydx{\rho}{u}(u_i,v_j) \times \pdydx{\rho}{v}(u_i,v_j) \right\|
 \Delta u_i \ \Delta v_j \ .
 \]
-Donc $\displaystyle \iint_S \dx{\VEC{S}}$ est l'aire de la surface $S$.
+Donc $\DS \iint_S \dx{\VEC{S}}$ est l'aire de la surface $S$.
 \label{AreaReprRMK}
 \end{rmk}
 
@@ -1136,7 +1136,7 @@ polaires
 \]
 pour $0 \leq r \leq 2$ et $0 \leq \theta < 2\pi$.   Nous avons vu que
 le Jacobian pour les coordonnées polaires est
-$\displaystyle \frac{\partial(x,y)}{\partial(r,\theta)} = r $.  De
+$\DS \frac{\partial(x,y)}{\partial(r,\theta)} = r $.  De
 plus, $\sqrt{ 4x^2 + 4y^2 + 1} = \sqrt{4r^2 +1}$.  Ainsi,
 \begin{align*}
 \iint_S \dx{S} &= \int_0^{2\pi} \int_0^2 \sqrt{ 4r^2 + 1}\ r \dx{r}
@@ -1184,7 +1184,7 @@ Nous écrivons $\dx{\VEC{S}} = \VEC{n} \dx{S}$.
 Si la représentation paramétrique $\rho:D\rightarrow \RR^3$
 de classe $C^1$ de la surface orientée $S$ satisfait
 \begin{equation}\label{ReprMNorm}
-\frac{1}{\displaystyle \left\| \pdydx{\rho}{u_1}(\VEC{u}) \times
+\frac{1}{\DS \left\| \pdydx{\rho}{u_1}(\VEC{u}) \times
 \pdydx{\rho}{u_2}(\VEC{u})\right\|} \;
 \left( \pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u}) \right)
 = \VEC{n}(\rho(\VEC{u}))
@@ -1203,11 +1203,11 @@ Rappelons que
 \pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u}) \neq \VEC{0}
 \]
 pour tout $\VEC{u} \in D$ par hypothèse et
-$\displaystyle \pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u})$
+$\DS \pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u})$
 est un vecteur perpendiculaire au plan tangent à la surface
 $S$ au point $\rho(\VEC{u}) \in S$;
 C'est-à-dire que 
-$\displaystyle \pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u})$
+$\DS \pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u})$
 est parallèle à $\VEC{n}(\rho(\VEC{u}))$ pour tout
 $\VEC{u} \in D$.  Donc, le côté gauche de (\ref{ReprMNorm}) est soit
 $\VEC{n}(\rho(\VEC{u}))$ ou soit $-\VEC{n}(\rho(\VEC{u}))$.
@@ -1218,7 +1218,7 @@ fait en sorte que nous obtenons $\VEC{n}(\rho(\VEC{u}))$.
 Si $\rho:D\rightarrow \RR^3$ est une représentation paramétrique de classe
 $C^1$ de la surface orientée $S$ et
 \[
-\frac{1}{\displaystyle \left\| \pdydx{\rho}{u_1}(\VEC{u}) \times
+\frac{1}{\DS \left\| \pdydx{\rho}{u_1}(\VEC{u}) \times
 \pdydx{\rho}{u_2}(\VEC{u})\right\|} \;
 \left( \pdydx{\rho}{u_1}(\VEC{u}) \times \pdydx{\rho}{u_2}(\VEC{u}) \right)
 = \VEC{n}(\rho(\VEC{u}))
@@ -1243,7 +1243,7 @@ Comme nous avons fait précédemment, nous assumons que
 $\rho:D\rightarrow \RR^3$ est une représentation paramétrique de
 classe $C^1$ de la surface orientée $S$.  Nous assumons de plus que
 cette représentation paramétrique est telle que
-$\displaystyle \pdydx{\rho}{u} \times \pdydx{\rho}{v}$ pointe
+$\DS \pdydx{\rho}{u} \times \pdydx{\rho}{v}$ pointe
 dans la direction du vecteur $\VEC{n}$ normal à la surface $S$ qui a
 été choisie pour définir l'orientation de $S$.
 
@@ -1258,25 +1258,25 @@ l'axe des $v$ comme cela est définie à la section~\ref{DefIntMulti}.
 & \qquad = \det
 \begin{pmatrix}
 F_1(\rho(u_i,v_j)) & F_2(\rho(u_i,v_j)) & F_3(\rho(u_i,v_j)) \\[0.3em]
-\displaystyle \pdydx{\rho_1}{u}(u_i,v_j) \Delta u_i &
-\displaystyle \pdydx{\rho_2}{u}(u_i,v_j) \Delta u_i &
-\displaystyle \pdydx{\rho_3}{u}(u_i,v_j) \Delta u_i \\[1em]
-\displaystyle \pdydx{\rho_1}{v}(u_i,v_j) \Delta v_j &
-\displaystyle \pdydx{\rho_2}{v}(u_i,v_j) \Delta v_j &
-\displaystyle \pdydx{\rho_3}{v}(u_i,v_j) \Delta v_j
+\DS \pdydx{\rho_1}{u}(u_i,v_j) \Delta u_i &
+\DS \pdydx{\rho_2}{u}(u_i,v_j) \Delta u_i &
+\DS \pdydx{\rho_3}{u}(u_i,v_j) \Delta u_i \\[1em]
+\DS \pdydx{\rho_1}{v}(u_i,v_j) \Delta v_j &
+\DS \pdydx{\rho_2}{v}(u_i,v_j) \Delta v_j &
+\DS \pdydx{\rho_3}{v}(u_i,v_j) \Delta v_j
 \end{pmatrix}
 \end{align*}
 est le volume du parallélépipède produit par les vecteurs
 $F(\rho(u_i,v_j))$,
-$\displaystyle \pdydx{\rho}{u}(u_i,v_j) \Delta u_i$ et
-$\displaystyle \pdydx{\rho}{v}(u_i,v_j) \Delta v_j$
+$\DS \pdydx{\rho}{u}(u_i,v_j) \Delta u_i$ et
+$\DS \pdydx{\rho}{v}(u_i,v_j) \Delta v_j$
 (figure~\ref{FluxRepr}).  C'est une approximation du
 volume de fluide qui a passé au travers de la petite région
 $\rho(A_{i,j}) \subset S$ dans la direction de l'orientation de $S$ où
 $A_{i,j} = \{(u,v) : u_i \leq u \leq u_{i+1}\, , \, v_j\leq v \leq v_{j+1}\}$.
 Il ne faut pas oublier que les vecteurs
-$\displaystyle \pdydx{\rho}{u}(u_i,v_j)$ et
-$\displaystyle \pdydx{\rho}{v}(u_i,v_j)$ sont tangents à la surface
+$\DS \pdydx{\rho}{u}(u_i,v_j)$ et
+$\DS \pdydx{\rho}{v}(u_i,v_j)$ sont tangents à la surface
 $S$ au point $\rho(u_i,v_j)$.
 
 La somme
@@ -1299,7 +1299,7 @@ F(\rho(u_i,v_j)) \cdot
 \left( \pdydx{\rho}{u}(u_i,v_j) \times \pdydx{\rho}{v}(u_i,v_j) \right)
 \Delta u_i \ \Delta v_j
 \end{align*}
-Donc $\displaystyle \iint_S F \cdot \dx{\VEC{S}}$ est le
+Donc $\DS \iint_S F \cdot \dx{\VEC{S}}$ est le
 volume total de fluide qui traverse $S$.
 \label{FluxReprRMK}
 \end{rmk}
@@ -1333,7 +1333,7 @@ horizontal de $S$ est un cercle de rayon $z$.  Soit
 \left( -z\sin(\theta) , z\cos(\theta) , 0 \right)
 = \left( -z\cos(\theta) , -z \sin(\theta) , z\right) \ .
 \end{align*}
-Puisque $z>0$, le vecteur $\displaystyle \VEC{m}$
+Puisque $z>0$, le vecteur $\DS \VEC{m}$
 est un vecteur normal à la surface $S$ qui pointe vers le haut, donc
 dans la direction de l'orientation de la surface $S$.
 
@@ -1359,9 +1359,9 @@ et
 \begin{align*}
 \VEC{n}(x,y) &=
 \frac{\epsilon}
-{\displaystyle \left\| \left(-\pdydx{g}{x}(x,y) , -\pdydx{g}{y}(x,y) , 1\right)
+{\DS \left\| \left(-\pdydx{g}{x}(x,y) , -\pdydx{g}{y}(x,y) , 1\right)
 \right\|} \; \left(-\pdydx{g}{x} , -\pdydx{g}{y}, 1\right) \\
-&= \frac{\epsilon}{\displaystyle \sqrt{ \left(\pdydx{g}{x}(x,y)\right)^2 +
+&= \frac{\epsilon}{\DS \sqrt{ \left(\pdydx{g}{x}(x,y)\right)^2 +
     \left(\pdydx{g}{y}(x,y)\right)^2 + 1}}\;
 \left(-\pdydx{g}{x}(x,y) , -\pdydx{g}{y}(x,y), 1\right) \; ,
 \end{align*}
@@ -1384,7 +1384,7 @@ continues, nous obtenons
   + F_3(x,y,g(x,y))\right)\dx{A} \; ,
 \]
 où $\epsilon = 1$ si
-$\displaystyle \left(-\pdydx{g}{x}(x,y),
+$\DS \left(-\pdydx{g}{x}(x,y),
 -\pdydx{g}{y}(x,y), 1\right)$ pointe dans la direction de
 $\VEC{n}(x,y,z)$ et $\epsilon = -1$ autrement.
 
@@ -1601,7 +1601,7 @@ Stokes}{Stokes}
 
 \begin{egg}
 Soit $F(x,y,z) = (xy, yz, xz)$.  Calculons
-$\displaystyle \int_C F \cdot \dx{\VEC{s}}$
+$\DS \int_C F \cdot \dx{\VEC{s}}$
 où $C$ est la courbe donnée par l'intersection du cylindre d'équation
 $x^2 + y^2 =9$ et du plan contenant les points $(0,1,3)$, $(2,0,2)$ et
 $(2,-1,1)$.  L'orientation sur $C$ est dans le sens des aiguilles
@@ -1626,7 +1626,7 @@ Nous obtenons $z = y + 2$.
 Nous pourrions donner une représentation paramétrique de la courbe $C$
 qui est l'intersection du plan $z = y+2$ et du cylindre
 $x^2 + y^2 = 9$, et calculer directement l'intégrale
-$\displaystyle \int_C F \cdot \dx{\VEC{s}}$.  Nous ne ferons pas cela.
+$\DS \int_C F \cdot \dx{\VEC{s}}$.  Nous ne ferons pas cela.
 
 Nous avons que $C$ est le bord $\partial S$ de la partie $S$ du plan $z = y+2$
 qui se trouve à l'intérieur du cylindre $x^2 + y^2 = 9$ comme nous pouvons
@@ -1647,7 +1647,7 @@ Un représentation paramétrique de la surface $S$ est fourni par
 pour $0\leq r \leq 3$ et $0 \leq \theta \leq 2\pi$.  Le vecteur
 unitaire perpendiculaire à la surface $S$ qui est associé à la
 direction requise sur la courbe $C$ est
-$\displaystyle \VEC{n} = \frac{1}{\|\VEC{m}\|}\,\VEC{m} =
+$\DS \VEC{n} = \frac{1}{\|\VEC{m}\|}\,\VEC{m} =
 \left( 0, \frac{-1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right)$.
 
 Puisque
@@ -1672,8 +1672,8 @@ et
 \[
 \curl F = \det \begin{pmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
-\displaystyle \pdydx{}{z} \\
+\DS \pdydx{}{x} & \DS \pdydx{}{y} &
+\DS \pdydx{}{z} \\
 xy & yz & xz
 \end{pmatrix}
 = (-y, -z , -x )
@@ -1743,7 +1743,7 @@ $F(x,y) = (x^4-y^3, x^3 + y^4)$ qui circule le long de la frontière
 $\Gamma = \partial S$ de l'anneau.
 
 Nous pouvons soit calculer directement
-$\displaystyle \int_{\partial S} F \cdot \dx{\VEC{s}}$
+$\DS \int_{\partial S} F \cdot \dx{\VEC{s}}$
 ou utiliser le Théorème de Green avec $F_1(x,y) = x^4 - y^3$
 et $F_2(x,y) = x^3 + y^4$.   Nous obtenons
 \[
@@ -1760,9 +1760,9 @@ coordonnées polaire
 pour $2 \leq r \leq 3$ et $0 \leq \theta < 2 \pi$.  Puisque
 \[
 \left| \frac{\partial(x,y)}{\partial(r,\theta)} \right|
-= \left| \det \begin{pmatrix} \displaystyle \pdydx{x}{r} &
-\displaystyle \pdydx{y}{r} \\[0.7em]
-\displaystyle \pdydx{y}{r} & \displaystyle \pdydx{y}{\theta}
+= \left| \det \begin{pmatrix} \DS \pdydx{x}{r} &
+\DS \pdydx{y}{r} \\[0.7em]
+\DS \pdydx{y}{r} & \DS \pdydx{y}{\theta}
 \end{pmatrix} \right|
 = \left| \det \begin{pmatrix} \cos(\theta) & \sin(\theta) \\
 -r \sin(\theta) & r \cos(\theta) \end{pmatrix} \right|
@@ -1778,7 +1778,7 @@ car $r>0$ sur $S$, nous avons
 \]
 
 Vérifions en calculant l'intégrale
-$\displaystyle \int_{\partial S} F \cdot \dx{\VEC{s}}$ que nous
+$\DS \int_{\partial S} F \cdot \dx{\VEC{s}}$ que nous
 obtenons bien la même réponse.  Nous avons que $\partial S$ est l'union de
 $\Gamma_1$, le cercle $x^2+y^2 =4$, et $\Gamma_2$, le cercle
 $x^2 + y^2 = 9$.  L'orientation positive de $\partial S$ implique que la
@@ -1818,7 +1818,7 @@ Ainsi,
 \end{align*}
 Pour évaluer cette dernière intégrale, nous utilisons l'identité
 trigonométrique \lgm bien connue\rgm \ 
-$\displaystyle \cos^4(\theta) + \sin^4(\theta) =
+$\DS \cos^4(\theta) + \sin^4(\theta) =
 \frac{7}{4}\cos(4\theta) + \frac{3}{4}$.  Ainsi,
 \[
   \int_\Gamma F \cdot \dx{\VEC{s}}
@@ -1837,14 +1837,14 @@ vecteur $F(x,y) = x \jj$ (i.e.\ $F_1(x,y) =0$ et $F_2(x,y) = x$) donne
 \[
   \int_{\partial S} x \dx{y} = \iint_{S} \dx{x}\dx{y} \ .
 \]
-C'est-à-dire que $\displaystyle \int_{\partial S} x \dx{y}$ est l'aire
+C'est-à-dire que $\DS \int_{\partial S} x \dx{y}$ est l'aire
 de la région $S$.  De même, la formule (\ref{Green_th}) du Théorème de
 Green avec le champ de vecteur $F(x,y) = -y \ii$
 (i.e.\ $F_1(x,y)= -y$ et $F_2(x,y) = 0$) donne
 \[
   -\int_\Gamma y \dx{x} = \iint_{S} \dx{x}\dx{y} \ .
 \]
-Encore là, $\displaystyle -\int_\Gamma y \dx{x}$ est l'aire de la
+Encore là, $\DS -\int_\Gamma y \dx{x}$ est l'aire de la
 région $S$.  En combinant linéairement ces deux résultats, le lecteur
 peut créer de nouvelles formules pour calculer l'aire de régions dans le
 plan à l'aide du Théorème de Green.
@@ -1872,7 +1872,7 @@ Ainsi, l'aire de la région $S$ est
 \end{egg}
 
 \begin{egg}
-Calculons $\displaystyle \int_C F \cdot \dx{\VEC{s}}$ où
+Calculons $\DS \int_C F \cdot \dx{\VEC{s}}$ où
 $F(x,y,z) = (xy +\cos(z^2))\ii + yz \jj  + (xz -2xz \sin(z^2))\kk$
 et $C$ est le triangle de sommets aux points $(1,0,0)$, $(0,1,0)$ et
 $(0,0,1)$.  La direction sur $C$ est dans le sens des aiguilles d'une
@@ -1881,7 +1881,7 @@ $z$ avec $z$ assez grand, au moins $z>1$.
 
 \PDFgraph{17_vector_calculus/StokesEgg2}
 
-Nous pourrions calculer $\displaystyle \int_C F \cdot \dx{\VEC{s}}$
+Nous pourrions calculer $\DS \int_C F \cdot \dx{\VEC{s}}$
 directement en donnant une représentation paramétrique pour $C$.  Pour
 éviter ce travail, nous utilisons le Théorème de Stokes.
 Soit $S$ la surface produite par le triangle de sommets aux point
@@ -1901,8 +1901,8 @@ Nous avons
 \curl F(x,y,z) &=
 \begin{pmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y}
-& \displaystyle \pdydx{}{z} \\
+\DS \pdydx{}{x} & \DS \pdydx{}{y}
+& \DS \pdydx{}{z} \\
 xy +\cos(z^2) & yz & xz -2xz \sin(z^2)
 \end{pmatrix} \\
 &= -y \ii - z\jj -x \kk
@@ -1952,7 +1952,7 @@ de $S$.  Ainsi,
 Considérons la surface $S$ qui est la partie supérieure de la sphère
 de rayon $2$ centrée à l'origine qui se trouve à l'intérieur du
 cylindre de rayon $1$ dont l'axe est l'axe des $z$.   Calculons
-$\displaystyle \iint_S \curl  F \cdot \dx{\VEC{S}}$ où
+$\DS \iint_S \curl  F \cdot \dx{\VEC{S}}$ où
 $F:\RR^3 \to \RR^3$ est le champ de vecteurs défini par
 $F(x,y,z) = \left( z(x-y)^2, -z(x+y)^2, e^{xy} \right)$.
 \PDFgraph{17_vector_calculus/StokesEgg1}
@@ -1962,8 +1962,8 @@ Nous avons
 \curl F(x,y,z) &=
 \begin{pmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y}
-& \displaystyle \pdydx{}{z} \\  
+\DS \pdydx{}{x} & \DS \pdydx{}{y}
+& \DS \pdydx{}{z} \\  
 z(x-y)^2 & -z(x+y)^2 & e^{xy}
 \end{pmatrix} \\
 &= \left(xe^{xy} + (x+y)^2\right)\ii + \left( -ye^{xy} + (x-y)^2\right)\jj
@@ -1989,7 +1989,7 @@ pour $1 \leq \phi \leq \pi/6$ et $0 \leq \theta < 2\pi$, nous obtenons
 -4 \sin(\phi)\cos(\phi)  \right) \ .
 \end{align*}
 Puisque $-4 \sin(\phi)\cos(\phi) <0$ pour $0\leq \phi \leq \pi/6$, le
-vecteur $\displaystyle \VEC{m}$ est un vecteur normal à la surface $S$
+vecteur $\DS \VEC{m}$ est un vecteur normal à la surface $S$
 qui pointe vers le bas, donc dans la direction opposée à
 l'orientation de la surface $S$.  Ainsi,
 $\dx{\VEC{S}} = -\VEC{m} \dx{A}$ et
@@ -2102,7 +2102,7 @@ pour un point $\VEC{x}_r$ de $S_r$.  Donc
   \curl F(\VEC{x}_r) \cdot \VEC{v}  = \frac{1}{\pi r^2}
   \int_{C_r} F\cdot \dx{\VEC{s}} \ .
 \]
-Puisque $\displaystyle \lim_{r\to 0} \VEC{x}_r = \VEC{x}_0$, nous obtenons
+Puisque $\DS \lim_{r\to 0} \VEC{x}_r = \VEC{x}_0$, nous obtenons
 \[
 \curl F(\VEC{x}_0) \cdot \VEC{v}
 = \lim_{r\to 0} \curl F(\VEC{x}_r) \cdot \VEC{v}
@@ -2114,9 +2114,9 @@ au point $\VEC{x}$ sur la courbe.  Puisque
 $F(\VEC{x})\cdot \VEC{t}(\VEC{x})$ est la longueur de
 la composante du champ de vecteurs $F$ tangente à la courbe $C_r$
 au point $\VEC{x}$ de la courbe,
-$\displaystyle \int_{C_r} F\cdot \VEC{t} \dx{s}$ représente le
+$\DS \int_{C_r} F\cdot \VEC{t} \dx{s}$ représente le
 déplacement le long de $C_r$.  Donc, pour $r$ très petit,
-$\displaystyle \frac{1}{\pi r^2} \int_{C_r} F\cdot \VEC{t} \dx{s}$
+$\DS \frac{1}{\pi r^2} \int_{C_r} F\cdot \VEC{t} \dx{s}$
 peut être vu comme une mesure de la rotation autour du point
 $\VEC{x}_0$ par unité d'aire dans le plan perpendiculaire à
 $\VEC{v}$.  Donc, lorsque $r \to 0$,
@@ -2125,7 +2125,7 @@ point $\VEC{x}_0$ dans la direction $\VEC{v}$.
 
 Notons que $\curl F(\VEC{x}_0) \cdot \VEC{v}$ atteint sa valeur
 maximale pour
-$\displaystyle \VEC{v} = \frac{1}{\|\curl F(\VEC{x}_0)\|}\; \curl F(\VEC{x}_0)$.
+$\DS \VEC{v} = \frac{1}{\|\curl F(\VEC{x}_0)\|}\; \curl F(\VEC{x}_0)$.
 Dans ce cas,
 $\curl F(\VEC{x}_0) \cdot \VEC{v} = \|\curl F(\VEC{x}_0)\|$.
 Nous pouvons conclure que la vitesse angulaire de rotation par rapport à
@@ -2182,12 +2182,12 @@ $z$ et $y$ (attention à l'ordre des coordonnées).  Puisque
 \begin{align*}
 \left| \frac{\partial(x,y,z)}{\partial(\theta,\phi,r)} \right| &=  
 \left| \det \begin{pmatrix}
-  \displaystyle \pdydx{x}{\theta} & \displaystyle \pdydx{x}{\phi}
-  & \displaystyle \pdydx{x}{r} \\[0.8em]
-  \displaystyle \pdydx{y}{\theta} & \displaystyle \pdydx{y}{\phi}
-  & \displaystyle \pdydx{y}{r} \\[0.8em]
-  \displaystyle \pdydx{z}{\theta} & \displaystyle \pdydx{z}{\phi}
-  & \displaystyle \pdydx{z}{r}
+  \DS \pdydx{x}{\theta} & \DS \pdydx{x}{\phi}
+  & \DS \pdydx{x}{r} \\[0.8em]
+  \DS \pdydx{y}{\theta} & \DS \pdydx{y}{\phi}
+  & \DS \pdydx{y}{r} \\[0.8em]
+  \DS \pdydx{z}{\theta} & \DS \pdydx{z}{\phi}
+  & \DS \pdydx{z}{r}
 \end{pmatrix} \right| \\
 &= 
 \left| \det \begin{pmatrix}
@@ -2223,7 +2223,7 @@ nous avons
 \subsection{Intégrale le long d'une courbe}
 
 \begin{question}
-Évaluez l'intégrale $\displaystyle \int_C F \cdot \dx{\VEC{s}}$ où
+Évaluez l'intégrale $\DS \int_C F \cdot \dx{\VEC{s}}$ où
 $F$ est le champ de vecteurs défini par
 $F(x,y,z) = (xz, y+z,x)$ et $C$ est la courbe avec la
 représentation paramétrique 
@@ -2234,7 +2234,7 @@ point $(e,e^{-1}, e^2)$.
 
 \begin{question}
 Évaluez l'intégrale
-$\displaystyle \int_C x \sqrt{y} \dx{x} + 2xy \dx{y}$ où $C$
+$\DS \int_C x \sqrt{y} \dx{x} + 2xy \dx{y}$ où $C$
 est le trajet décrit dans le dessin suivant.
 \PDFgraph{17_vector_calculus/LineQ1}
 \label{17Q2}
@@ -2289,7 +2289,7 @@ calculer $f:\RR^3 \to \RR$ telle que $F = \nabla f$.
 
 \begin{question}
 Pour chacun des champs de vecteurs $F$ donnés ci-dessous,
-calculez $\displaystyle \int_C F \cdot \dx{\VEC{s}}$ le long de
+calculez $\DS \int_C F \cdot \dx{\VEC{s}}$ le long de
 la courbe $C$ donnée.\\
 Suggestion: Dans certains cas, il serait utile de vérifier si le champ
 de vecteurs est conservateur.
@@ -2338,14 +2338,14 @@ du champ de vecteurs.
 \subsection{Intégrale sur une surface}
 
 \begin{question}
-Évaluez l'intégrale $\displaystyle \iint_S xy \dx{S}$ où $S$
+Évaluez l'intégrale $\DS \iint_S xy \dx{S}$ où $S$
 est la surface du cylindre $y^2 + z^2 = 4$ entre les surface $y=0$ et
 $y = 3 - x$.
 \label{17Q9}
 \end{question}
 
 \begin{question}
-Évaluez l'intégrale $\displaystyle \iint_S (x^2+y^2)z \dx{S}$ où $S$
+Évaluez l'intégrale $\DS \iint_S (x^2+y^2)z \dx{S}$ où $S$
 est la surface de la partie supérieure de la sphère de rayon $2$
 centrée à l'origine qui est à l'intérieur du cylindre de rayon
 $\sqrt{2}$ dont l'axe principal est l'axe des $z$.
@@ -2393,7 +2393,7 @@ $x^2 + y^2 = ax$.  Dessinez cette surface.
 \end{question}
 
 \begin{question}
-Calculez l'intégrale $\displaystyle \iint_S F \cdot \dx{\VEC{S}}$
+Calculez l'intégrale $\DS \iint_S F \cdot \dx{\VEC{S}}$
 où $F(x,y,z) = (x,y,z)$ et $S$ est la partie du paraboloïde
 $z = x^2+y^2$ pour $z\leq 4$.  L'orientation sur la surface $S$ est
 donnée par un vecteur normal unitaire qui point dans la direction
@@ -2438,7 +2438,7 @@ cylindre $x^2+z^2 = a^2$ qui se trouve à l'intérieur du cylindre
 $y^2+z^2=a^2$.  L'orientation sur $S$ est donnée par un vecteur
 unitaire normal qui pointe vers l'extérieur du cylindre
 $x^2 + z^2 = a^2$.  Calculez
-$\displaystyle \iint_S F \cdot \dx{\VEC{S}}$.
+$\DS \iint_S F \cdot \dx{\VEC{S}}$.
 \label{17Q21}
 \end{question}
 
@@ -2446,7 +2446,7 @@ $\displaystyle \iint_S F \cdot \dx{\VEC{S}}$.
 
 \begin{question}
 Utilisez le Théorème de Green pour évaluez l'intégrale
-$\displaystyle \int_C(2xy -x^2)\dx{x} + (x + y^2)\dx{y}$
+$\DS \int_C(2xy -x^2)\dx{x} + (x + y^2)\dx{y}$
 où $C$ est la frontière de la région $D$ du premier quadrant
 (c'est-à-dire, $x,y \geq 0$) définie par $x^2 + y^2 \leq 1$.
 L'orientation de $C$ est dans le sens contraire aux aiguilles d'une
@@ -2456,7 +2456,7 @@ montre.
 
 \begin{question}
 Évaluez l'intégrale
-$\displaystyle \int_C(y+e^{x^2})\dx{x} + (2x + \cos(y^2))\dx{y}$
+$\DS \int_C(y+e^{x^2})\dx{x} + (2x + \cos(y^2))\dx{y}$
 où $C$ est la frontière de la région $D$ bornée par les courbes
 $y=x^2$ et $x = y^2$.  L'orientation de $C$ est dans le sens contraire
 aux aiguilles d'une montre.
@@ -2480,14 +2480,14 @@ aux points $(0,0,2)$, $(1,0,2)$, $(1,1,2)$ et $(0,1,2)$.   Supposons
 que $C$ soit parcourue dans le sens contraire aux aiguilles d'une
 montre lorsque nous l'observons d'un point $(0,0,z)$ avec $z>2$.
 Utilisez le Théorème de Stokes pour calculer l'intégrale
-$\displaystyle \int_C F \cdot \dx{\VEC{s}}$.
+$\DS \int_C F \cdot \dx{\VEC{s}}$.
 \label{17Q25}
 \end{question}
 
 \begin{question}
 Soit $F(x,y,z) = (y^2, x, z)$.  Utilisez le Théorème de Stokes
 pour calculer l'intégrale
-$\displaystyle \int_C F \cdot \dx{\VEC{s}}$
+$\DS \int_C F \cdot \dx{\VEC{s}}$
 où $C$ est la courbe donnée par l'intersection du cylindre d'équation
 $x^2 + y^2 =4$ et du plan contenant les points $(0,2,0)$, $(1,1,1)$ et
 $(-1,1,2)$.  L'orientation sur $C$ est dans le sens des aiguilles
@@ -2499,7 +2499,7 @@ $z>0$ très grand).
 \begin{question}
 Soit $S$ la surface de la paraboloïde $z = 4 - x^2 - y^2$ qui se
 trouve dans la région $x,y,z \geq 0$.  Calculez
-$\displaystyle \int_C F \cdot \dx{\VEC{s}}$ où le champ de
+$\DS \int_C F \cdot \dx{\VEC{s}}$ où le champ de
 vecteur $F$ est défini par
 $F(x,y,z) = -yz(1-z) \, \ii + xz \, \jj + xyz \, \kk$
 et la direction sur la courbe $C = \partial S$ est dans le sens
@@ -2513,7 +2513,7 @@ Soit $F(x,y,z) = x\; \ii + y\;\kk$ et $S$ la partie du
 paraboloïde d'équation $z = x^2+y^2$ pour $z \leq 4$.  L'orientation
 sur $S$ est donnée par un vecteur unitaire qui pointe dans la
 direction de $z$ positif.  Calculez
-$\displaystyle \iint_S \curl F \cdot \dx{\VEC{S}}$.
+$\DS \iint_S \curl F \cdot \dx{\VEC{S}}$.
 \label{17Q28}
 \end{question}
 
@@ -2522,7 +2522,7 @@ Soit $F(x,y,z) = z^3 e^{xz^2}\, \ii + z^4 e^{yz^2}\, \jj + xy\,\kk$ et
 $S$ la surface du cylindre $x^2+y^2 = 4$ pour $2 \leq z \leq 4$.
 L'orientation sur $S$ est donnée par un vecteur unitaire normal qui
 pointe vers l'extérieur du cylindre.  Calculez
-$\displaystyle \iint_S \curl  F \cdot \dx{\VEC{S}}$.
+$\DS \iint_S \curl  F \cdot \dx{\VEC{S}}$.
 \label{17Q29}
 \end{question}
 
@@ -2533,7 +2533,7 @@ Soit $F(x,y,z) = (x+y)\ii + (y+z) \jj + (x + z) \kk$ et
 $S$ la surface du tétraède bornée par les plans $x=0$, $y=0$, $z=0$ et
 $x+y+z=1$.  L'orientation de $S$ est donnée par une normale unitaire à
 $S$ qui pointe vers l'extérieure.  Calculez
-$\displaystyle \iint_S F \cdot \dx{\VEC{S}}$ à l'aide du
+$\DS \iint_S F \cdot \dx{\VEC{S}}$ à l'aide du
 Théorème de la divergence.
 \label{17Q30}
 \end{question}
@@ -2544,7 +2544,7 @@ $E$ le solide délimité par le cylindre $x^2+y^2 =1$ et les plans $z=0$
 et $z=2$.  L'orientation sur la surface $S$ de $E$ est donnée par une
 normale unitaire qui pointe vers l'extérieure.  Calculez le flux de
 $F$ qui s'échappe de ce solide; c'est-à-dire, calculez
-$\displaystyle \iint_S F \cdot \dx{\VEC{S}}$.
+$\DS \iint_S F \cdot \dx{\VEC{S}}$.
 \label{17Q31}
 \end{question}
 
@@ -2554,7 +2554,7 @@ $E$ le solide délimité par le paraboloïde $z = 4 - x^2 - y^2$ et le
 plan $z=0$.  L'orientation sur la surface $S$ de $E$ est donnée par la
 normale unitaire qui pointe vers l'extérieure.  Calculez le flux de
 $F$ qui s'échappe de ce solide; c'est-à-dire, calculez
-$\displaystyle \iint_S F \cdot \dx{\VEC{S}}$.
+$\DS \iint_S F \cdot \dx{\VEC{S}}$.
 \label{17Q32}
 \end{question}
 

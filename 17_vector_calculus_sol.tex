@@ -136,7 +136,7 @@ pour une certaine fonction $g:\RR^2 \to \RR$.  De plus,
   \pdydx{g}{y}(y,z) = y \Rightarrow g(y,z) = \frac{y^2}{2} + h(z)
 \]
 pour une certaine fonction $h:\RR \to \RR$.  Nous avons donc
-$\displaystyle f(x,y,z) = e^x\cos(z) + \frac{y^2}{2} + h(z)$.
+$\DS f(x,y,z) = e^x\cos(z) + \frac{y^2}{2} + h(z)$.
 Finalement,
 \[
   \pdydx{f}{z} = F_3(x,y,z) \Rightarrow
@@ -144,21 +144,21 @@ Finalement,
   h'(z) = 0 \Rightarrow h(z) = C
 \]
 où $C$ est une constante d'intégration.  La fonction cherchée est
-$\displaystyle f(x,y,z) = e^x\cos(z) + \frac{y^2}{2} + C$.
+$\DS f(x,y,z) = e^x\cos(z) + \frac{y^2}{2} + C$.
 }
 
 \compileSOL{\SOLUb}{\ref{17Q7}}{
 \subQ{a} Nous avons que $F = F_1 \ii + F_2\jj$ où $F_1(x,y) = e^{2y}$ et
 $F_2(x,y) = 1 + 2x e^{2y}$.  Grâce à la proposition~\ref{rotFzero}
 (exemple~\ref{rotFzeroD2}), il suffit de vérifier que
-$\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ pour démontrer que $F$
+$\DS \pdydx{F_2}{x} = \pdydx{F_1}{y}$ pour démontrer que $F$
 est conservateur.  Puisque
 \[
   \pdydx{F_2}{x} = \pdfdx{\left(1 + 2x e^{2y}\right)}{x} = 2 e^{2y}
 \quad \text{et} \quad
   \pdydx{F_1}{y} = \pdfdx{\left( e^{2y} \right)}{y} = 2 e^{2y} \ ,
 \]
-nous avons bien que $\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et
+nous avons bien que $\DS \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et
 $F$ est conservateur.  Il découle du théorème~\ref{Fnablaf1}
 que $F = \nabla f$ pour une fonction $f:\RR^2 \to \RR$.  En effet,
 \[
@@ -187,14 +187,14 @@ grâce au Théorème fondamental des intégrales le long de courbes.
 \subQ{c} Nous avons que $F = F_1 \ii + F_2\jj$ où $F_1(x,y) = 2x+y^2+3x^2y$ et
 $F_2(x,y) = 2xy + x^3 + 3y^2$.  Grâce à la proposition~\ref{rotFzero}
 (exemple~\ref{rotFzeroD2}), il suffit de vérifier que
-$\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ pour démontrer que $F$ est
+$\DS \pdydx{F_2}{x} = \pdydx{F_1}{y}$ pour démontrer que $F$ est
 conservateur.  Puisque
 \[
   \pdydx{F_2}{x} = \pdfdx{\left(2xy + x^3 + 3y^2\right)}{x} = 2y +3x^2
 \quad \text{et} \quad
   \pdydx{F_1}{y} = \pdfdx{\left(2x+y^2+3x^2y\right)}{y} = 2y + 3x^2 \ ,
 \]
-nous avons bien que $\displaystyle \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et $F$
+nous avons bien que $\DS \pdydx{F_2}{x} = \pdydx{F_1}{y}$ et $F$
 est conservateur.  Il découle du théorème~\ref{Fnablaf1}
 que $F = \nabla f$ pour une fonction $f:\RR^2 \to \RR$.  En effet,
 \[
@@ -224,7 +224,7 @@ grâce au Théorème fondamental des intégrales le long de courbes.
 Nous avons $F = F_1\; \ii + F_2\; \jj + F_3\; \kk$ où $F_1(x,y,z) = 2xyz$,
 $F_2(x,y,z) = x^2z + z\cos(yz)$ et $F_3(x,y,z) = x^2y + y \cos(yz) + 2z$.
 Grâce à la proposition~\ref{rotFzero}, il suffit de vérifier que
-$\displaystyle \curl F = \VEC{0}$ pour démontrer que $F$ est
+$\DS \curl F = \VEC{0}$ pour démontrer que $F$ est
 conservateur.  Or,
 \begin{align*}
 \curl\,F & = \left( \pdydx{F_3}{y} - \pdydx{F_2}{z} \right) \ii +
@@ -252,14 +252,14 @@ pour une certaine fonction $g:\RR^2 \to \RR$.  Donc
   g(y,z) = \sin(yz) + h(z)
 \end{align*}
 pour une certaine fonction $h:\RR \to \RR$.  Nous avons donc
-$\displaystyle f(x,y,z) = x^2yz  +\sin(yz) + h(z)$.  Finalement,
+$\DS f(x,y,z) = x^2yz  +\sin(yz) + h(z)$.  Finalement,
 \begin{align*}
   \pdydx{f}{z} = F_3(x,y,z) &\Rightarrow
   x^2y + y \cos(yz) + h'(z) = x^2y + y \cos(yz) + 2z \\
 &\Rightarrow  h'(z) = 2z \Rightarrow h(z) = z^2 + C
 \end{align*}
 où $C$ est une constante d'intégration.  La fonction cherchée est donc
-$\displaystyle f(x,y,z) = x^2yz  +\sin(yz) + z^2 + C$.
+$\DS f(x,y,z) = x^2yz  +\sin(yz) + z^2 + C$.
 Nous pouvons poser $C=0$.
 
 Si $\Gamma$ est une courbe quelconque qui va du point $(0,0,0)$ au point
@@ -318,8 +318,8 @@ nous avons
 = -16 \left(\theta + \frac{1}{2} \sin(2\theta)\right)\bigg|_0^{2\pi}
 = -32 \pi
 \end{align*}
-car $\displaystyle \int_0^{2\pi} \cos(\theta) \dx{\theta} = 0$
-et $\displaystyle \int_0^{2\pi} \cos^3(\theta) \dx{\theta} = 0$.
+car $\DS \int_0^{2\pi} \cos(\theta) \dx{\theta} = 0$
+et $\DS \int_0^{2\pi} \cos^3(\theta) \dx{\theta} = 0$.
 }
 
 \compileSOL{\SOLUa}{\ref{17Q10}}{
@@ -513,7 +513,7 @@ l'aire de la surface inférieure $S_2$ est donnée par
 = \frac{2\pi}{3}(5\sqrt{5}-1) \ .
 \end{align*}
 L'aire total de la surface $S$ du solide est
-$\displaystyle 8 \pi (2 - \sqrt{2}) + \frac{2\pi}{3}(5\sqrt{5}-1)$.
+$\DS 8 \pi (2 - \sqrt{2}) + \frac{2\pi}{3}(5\sqrt{5}-1)$.
 }
 
 \compileSOL{\SOLUa}{\ref{17Q15}}{
@@ -631,7 +631,7 @@ pour $0 \leq \phi \leq \pi/2$ et $0 \leq \theta < 2\pi$.  Soit
 4 \sin(\theta)\sin^2(\phi) \right) \ .
 \end{align*}
 Puisque $4 \sin(\phi)\cos(\phi) >0$ pour $0\leq \phi \leq \pi/2$, le
-vecteur $\displaystyle \VEC{m}$ est un vecteur normal à la surface $S$
+vecteur $\DS \VEC{m}$ est un vecteur normal à la surface $S$
 qui pointe dans la direction de l'orientation de la surface $S$.
 Notre représentation paramétrique est donc compatible avec
 l'orientation sur $S$.  Le flux est
@@ -720,7 +720,7 @@ Soit
 \times \left(0 , 1, 0 \right) \\
 &= \left( -a\cos(\theta) , 0, -a \sin(\theta) \right) \ .
 \end{align*}
-Le vecteur $\displaystyle \VEC{q}$ est un vecteur normal à la surface $S$
+Le vecteur $\DS \VEC{q}$ est un vecteur normal à la surface $S$
 qui pointe dans la direction opposée à la direction de l'orientation
 de la surface $S$.  Il faut donc utiliser $\VEC{m} = - \VEC{q}$ pour
 respecter l'orientation sur la surface $S$ ou remplacer la
@@ -845,7 +845,7 @@ les coordonnées polaires
   (x,y) = (r \cos(\theta), r \sin(\theta))
 \]
 pour $0 \leq r \leq 2$ et $0 \leq \theta \leq \pi$.  Puisque
-$\displaystyle \frac{\partial(x,y)}{\partial(r,\theta)} = r $ et
+$\DS \frac{\partial(x,y)}{\partial(r,\theta)} = r $ et
 $3x^2 + 3y^2 = 3r^2$, nous obtenons
 \[
   W = 3 \int_0^{\pi} \int_0^2 r^3 \dx{r}\dx{\theta}
@@ -889,8 +889,8 @@ Puisque
 \curl\,F = \nabla \times F
 = \begin{vmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
-\displaystyle \pdydx{}{z} \\
+\DS \pdydx{}{x} & \DS \pdydx{}{y} &
+\DS \pdydx{}{z} \\
 yz & xy & xz
 \end{vmatrix}
 = \left( 0, -z + y, y -z \right)
@@ -938,7 +938,7 @@ $x^2 + y^2 = 4$ et du plane $z = -x/2 -3y/2 + 3$.   Le dessin de cette
 courbe est donné ci-dessous.
 \PDFgraph{17_vector_calculus/StokesQ4}
 Nous pourrions calculer directement l'intégrale
-$\displaystyle \int_C F \cdot \dx{\VEC{s}}$ en utilisant la
+$\DS \int_C F \cdot \dx{\VEC{s}}$ en utilisant la
 représentation paramétrique de la courbe $C$ donnée par
 \[
   (x,y,z) = \rho(\theta) = (2 \cos(\theta), -2 \sin(\theta) ,
@@ -980,8 +980,8 @@ Puisque
 \curl F = \nabla \times F
 = \begin{vmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
-\displaystyle \pdydx{}{z} \\
+\DS \pdydx{}{x} & \DS \pdydx{}{y} &
+\DS \pdydx{}{z} \\
 y^2 & x & z
 \end{vmatrix}
 = \left( 0, 0, 1 - 2y \right)
@@ -1043,8 +1043,8 @@ Puisque
 \curl\,F = \nabla \times F
 = \begin{vmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
-\displaystyle \pdydx{}{z} \\
+\DS \pdydx{}{x} & \DS \pdydx{}{y} &
+\DS \pdydx{}{z} \\
 -yz(1-z) & xz & xyz
 \end{vmatrix}
 = \left( x(z-1), y(z-1), 2z -z^2 \right)
@@ -1105,8 +1105,8 @@ Nous pourrions calculer directement cette intégrale.  Cependant
 \curl\,F &= \nabla \times F
 = \begin{vmatrix}
 \ii & \jj & \kk \\
-\displaystyle \pdydx{}{x} & \displaystyle \pdydx{}{y} &
-\displaystyle \pdydx{}{z} \\
+\DS \pdydx{}{x} & \DS \pdydx{}{y} &
+\DS \pdydx{}{z} \\
 z^3 e^{xz^2} & z^4 e^{yz^2} & xy
 \end{vmatrix} \\
 &= \left( x - (4z^3 +2 yz^5)e^{yz^2} ,   -y + (3z^2 +2 xz^4)e^{xz^2},
@@ -1211,12 +1211,12 @@ $0 \leq z \leq 2$.  Puisque
 \[
 \left| \frac{\partial(x,y,z)}{\partial(\theta,r,z)} \right| =
 \left| \det \begin{pmatrix}
-  \displaystyle \pdydx{x}{\theta} & \displaystyle \pdydx{x}{r}
-  & \displaystyle \pdydx{x}{z} \\[0.8em]
-  \displaystyle \pdydx{y}{\theta} & \displaystyle \pdydx{y}{r}
-  & \displaystyle \pdydx{y}{z} \\[0.8em]
-  \displaystyle \pdydx{z}{\theta} & \displaystyle \pdydx{z}{r}
-  & \displaystyle \pdydx{z}{z}
+  \DS \pdydx{x}{\theta} & \DS \pdydx{x}{r}
+  & \DS \pdydx{x}{z} \\[0.8em]
+  \DS \pdydx{y}{\theta} & \DS \pdydx{y}{r}
+  & \DS \pdydx{y}{z} \\[0.8em]
+  \DS \pdydx{z}{\theta} & \DS \pdydx{z}{r}
+  & \DS \pdydx{z}{z}
 \end{pmatrix} \right|
 = 
 \left| \det \begin{pmatrix}
@@ -1260,12 +1260,12 @@ $0 \leq z \leq 4-r^2$.  Puisque
 \[
 \left| \frac{\partial(x,y,z)}{\partial(\theta,r,z)} \right| =
 \left| \det \begin{pmatrix}
-  \displaystyle \pdydx{x}{\theta} & \displaystyle \pdydx{x}{r}
-  & \displaystyle \pdydx{x}{z} \\[0.8em]
-  \displaystyle \pdydx{y}{\theta} & \displaystyle \pdydx{y}{r}
-  & \displaystyle \pdydx{y}{z} \\[0.8em]
-  \displaystyle \pdydx{z}{\theta} & \displaystyle \pdydx{z}{r}
-  & \displaystyle \pdydx{z}{z}
+  \DS \pdydx{x}{\theta} & \DS \pdydx{x}{r}
+  & \DS \pdydx{x}{z} \\[0.8em]
+  \DS \pdydx{y}{\theta} & \DS \pdydx{y}{r}
+  & \DS \pdydx{y}{z} \\[0.8em]
+  \DS \pdydx{z}{\theta} & \DS \pdydx{z}{r}
+  & \DS \pdydx{z}{z}
 \end{pmatrix} \right|
 = 
 \left| \det \begin{pmatrix}
@@ -1274,7 +1274,7 @@ $0 \leq z \leq 4-r^2$.  Puisque
   0 & 0 & 1 \end{pmatrix} \right|
 = r
 \]
-et $\displaystyle \diV F(x,y,z) = x^2 + y^2$, nous obtenons
+et $\DS \diV F(x,y,z) = x^2 + y^2$, nous obtenons
 \begin{align*}
 \iiint_E \diV  F \dx{V} &=
 \int_0^{2\pi} \int_0^2 \int_0^{4-r^2}  r^3 \dx{z} \dx{r} \dx{\theta}

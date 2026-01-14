@@ -131,13 +131,13 @@ dérivée de la fonction en ce point.
 \begin{defn} \index{Taux de variation moyen}
 Si $f$ est une fonction dont le domaine inclut l'intervalle $[a,b]$, le
 {\bfseries taux de variation moyen} de $f$ entre $a$ et $b$ est
-$\displaystyle \frac{f(b)-f(a)}{b-a}$
+$\DS \frac{f(b)-f(a)}{b-a}$
 \end{defn}
 
 \begin{egg}
 Suite à une expérience de laboratoire sur une culture de bactéries
 dans un milieu qui ne leur est pas favorable, nous observons que la
-fonction $\displaystyle g(t) = 50 \; e^{-2t}$ représente le
+fonction $\DS g(t) = 50 \; e^{-2t}$ représente le
 nombre de bactéries par cm$^3$ au temps $t$ en heures.
 
 Cette formule demande quelques clarifications.  Remarquons que $g$
@@ -245,7 +245,7 @@ trouvé le même taux de variation instantané.
 Si $f$ est une fonction définie sur un intervalle ouvert contenant
 $a \in \RR$, le {\bfseries taux de variation instantané} de $f$ au
 point $a$ est la valeur $M$ unique (si une telle valeur existe) telle
-que le taux de variation moyen $\displaystyle \frac{f(b)-f(a)}{b-a}$
+que le taux de variation moyen $\DS \frac{f(b)-f(a)}{b-a}$
 tend vers $M$ lorsque $b$ tend vers $a$ avec $b$ plus petit ou
 plus grand que $a$.
 \end{defn}
@@ -361,7 +361,7 @@ Avec la définition de limite d'une fonction en un point, nous pouvons
 donner un sens mathéma\-tique au taux de variation instantané de $f$
 au point $a$.  À la section~\ref{sect_TVI}, nous avons défini le taux de
 variation instantané de $f$ au point $a$ comme étant le nombre $M$ tel
-que le taux de variation moyen $\displaystyle \frac{f(b)-f(a)}{b-a}$
+que le taux de variation moyen $\DS \frac{f(b)-f(a)}{b-a}$
 approche $M$ lorsque $b$ approche $a$ où $b$ peut être plus petit ou
 plus grand que $a$.  En termes mathématiques, l'énoncé précédent est
 simplement
@@ -373,7 +373,7 @@ Nous obtenons la définition suivante.
 \begin{defn} \index{Dérivée d'une fonction à un point}
 Soit $f$ une fonction définie dans un voisinage de $a$ incluant le
 point $a$.  La {\bfseries dérivée de $f$ au point $a$}, dénotée
-$f'(a)$ ou $\displaystyle \dydx{f}{x}(a)$, est
+$f'(a)$ ou $\DS \dydx{f}{x}(a)$, est
 \[
 f'(a) \equiv \lim_{x\rightarrow a} \frac{f(x) - f(a)}{x-a}
 \]
@@ -410,7 +410,7 @@ $t$ est
 \]
 En d'autres mots, si $p(t)$ est le nombre d'individus au temps $t$, le
 taux de croissance relatif au temps $t$ est
-$\displaystyle \frac{p'(t)}{p(t)}$.
+$\DS \frac{p'(t)}{p(t)}$.
 \end{defn}
 
 \begin{egg}
@@ -452,7 +452,7 @@ et le taux de croissance relatif à $t=2$ est
 \frac{p'(2)}{p(2)} = \frac{2.772588722\ldots}{4}
 = 0.693147180559945\ldots
 \]
-Est-ce que $\displaystyle \frac{p'(t)}{p(t)} = 0.693147180559945\ldots$
+Est-ce que $\DS \frac{p'(t)}{p(t)} = 0.693147180559945\ldots$
 pour tout $t$?  Nous verrons prochainement que la réponse est affirmative.
 \end{egg}
 
@@ -548,16 +548,16 @@ instantané de $f$ à $x=a$.}{DER19}
 Une fonction peut ne pas avoir de dérivée en un point.  Prenons la
 fonction $g(x) = |x|$.  La dérivée de $g$ au point $x=0$ n'existe pas.
 Les tableaux suivants donnent deux suites
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tendent vers $0$.
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui tendent vers $0$.
 Dans le premier tableau, les valeurs
-$\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$
+$\DS \frac{g(x_n)-g(0)}{x_n-0}$
 approchent $1$ alors que dans le second tableau, les valeurs
-$\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$ approchent $-1$.
+$\DS \frac{g(x_n)-g(0)}{x_n-0}$ approchent $-1$.
 \[
 \begin{array}{l|l|l}
 \hline
-\rule[-1em]{0ex}{2.7em} n & \displaystyle x_n = \frac{1}{n} &
-\displaystyle \frac{g(x_n)-g(0)}{x_n-0} \\
+\rule[-1em]{0ex}{2.7em} n & \DS x_n = \frac{1}{n} &
+\DS \frac{g(x_n)-g(0)}{x_n-0} \\
 \hline
 1 & 1 & 1 \\
 2 & 1/2 & 1 \\
@@ -570,8 +570,8 @@ $\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$ approchent $-1$.
 \qquad
 \begin{array}{l|l|l}
 \hline
-\rule[-1em]{0ex}{2.7em} n & \displaystyle x_n = -\frac{1}{n} &
-\displaystyle \frac{g(x_n)-g(0)}{x_n-0} \\
+\rule[-1em]{0ex}{2.7em} n & \DS x_n = -\frac{1}{n} &
+\DS \frac{g(x_n)-g(0)}{x_n-0} \\
 \hline
 1 & -1 & -1 \\
 2 & -1/2 & -1 \\
@@ -583,9 +583,9 @@ $\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$ approchent $-1$.
 \end{array}
 \]
 Nous ne pouvons pas trouver une valeur unique $M$ telle que
-$\displaystyle \frac{g(x_n)-g(0)}{x_n-0}$ approche $M$ pour toute
+$\DS \frac{g(x_n)-g(0)}{x_n-0}$ approche $M$ pour toute
 suite $x_n$ qui approche $0$ lorsque $n \to \infty$.  Donc
-$\displaystyle \lim_{x\rightarrow 0} \frac{g(x)-g(0)}{x-0}$ n'existe 
+$\DS \lim_{x\rightarrow 0} \frac{g(x)-g(0)}{x-0}$ n'existe 
 pas, et $g'(0)$ n'existe pas.
 
 De plus, à partir du graphe de $g$ à la figure~\ref{DER7}, nous voyons
@@ -641,7 +641,7 @@ par
 f'(x) \equiv \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
 \]
 pour toutes les valeurs de $x$ où la limite existe.  Nous utilisons aussi
-la notation $\displaystyle \dydx{f}{x}$ pour désigner $f'$.
+la notation $\DS \dydx{f}{x}$ pour désigner $f'$.
 \end{defn}
 
 Puisque $f'(x)$ est la pente de la tangente au graphe de $f$ au point
@@ -995,13 +995,13 @@ La fonction constante à $1$ sur la droite réelle approche
 
 Considérons maintenant la fonction $f(x)=x^2$ pour tout $x$.  Dans le
 tableau suivant, nous avons estimé $f'(x)$ pour quelques valeurs de $x$ à
-l'aide du rapport $\displaystyle \frac{f(x+h)-f(x)}{h}$ où
+l'aide du rapport $\DS \frac{f(x+h)-f(x)}{h}$ où
 $h = 0.00001$.
 \[
 \begin{array}{l|l|l}
 \hline
 x & \rule{0em}{1.7em}
-\displaystyle f'(x) \approx \frac{f(x+0.00001)-f(x)}{0.00001}
+\DS f'(x) \approx \frac{f(x+0.00001)-f(x)}{0.00001}
 & |2x - f'(x)| \\[0.8em]
 \hline
 -1 & -2 & 0 \\
@@ -1136,7 +1136,7 @@ signe de la pente de la tangente à la courbe $y=f(x) = \cos(x)$.}
 {DER25X}
 
 Dans le tableau~\ref{TAB_COS_P}, nous avons estimé $f'(x)$ pour quelques
-valeurs de $x$ à l'aide du rapport $\displaystyle \frac{f(x+h)-f(x)}{h}$ où
+valeurs de $x$ à l'aide du rapport $\DS \frac{f(x+h)-f(x)}{h}$ où
 $h = 0.00001$.
 
 \begin{table}
@@ -1145,7 +1145,7 @@ $h = 0.00001$.
 \begin{tabular}{l|c|c}
 \cline{1-3}
 \rule[-0.7em]{0ex}{2.5em} $x$
-& $\displaystyle f'(x) \approx \frac{f(x+0.00001)-f(x)}{0.00001}$
+& $\DS f'(x) \approx \frac{f(x+0.00001)-f(x)}{0.00001}$
 & $|-\sin(x)-f'(x)|$ \\[0.8em]
 \cline{1-3}
 $0.000000\ldots$ & $-0.000005\ldots$ & $0.000005\ldots$ \\ 
@@ -1179,7 +1179,7 @@ $2\pi = 6.283185\ldots$ & $-0.000005\ldots$ & $0.000005\ldots$ \\
 }
 \caption[Approximations de la dérivée de $f(x) = \cos(x)$ à partir de
 la définition de la dérivées.]{Approximations de la dérivée de $f(x) =
-\cos(x)$ \`a l'aide du rapport $\displaystyle \frac{f(x+h)-f(x)}{h}$
+\cos(x)$ \`a l'aide du rapport $\DS \frac{f(x+h)-f(x)}{h}$
 où $h = 0.00001$ \label{TAB_COS_P}}
 \end{table}
 
@@ -1191,7 +1191,7 @@ graphe de $y=-\sin(x)$ sont donnés à la figure~\ref{DER15}.  Les deux
 graphes sont très semblables.  Pour obtenir un meilleur graphe de $f'$,
 nous suggérons au lecteur d'ajouter plus de points au
 tableau~\ref{TAB_COS_P} et de choisir $h$ plus petit dans
-l'approximation $\displaystyle \frac{f(x+h)-f(x)}{h}$ de $f'(x)$.
+l'approximation $\DS \frac{f(x+h)-f(x)}{h}$ de $f'(x)$.
 
 \MATHfig{5_derivees/der15}{8cm}{Le graphe de la dérivée de $\cos(x)$}
 {Les approximations de $f'(x)$ où $f(x)=\cos(x)$ qui se retrouvent
@@ -1199,7 +1199,7 @@ dans le tableau~\ref{TAB_COS_P} sont représentées par des cercles.  La
 courbe pleine est le graphe de $-\sin(x)$.}{DER15}
 
 Nous allons démontrer plus loin qu'il est effectivement vrai que
-$\displaystyle f'(x) = -\sin(x)$.
+$\DS f'(x) = -\sin(x)$.
 
 Si $g(x) = \sin(x)$, nous pourrions procéder comme nous venons de le faire
 pour $f(x)=\cos(x)$ pour montrer numériquement que
@@ -1269,7 +1269,7 @@ De plus,
 \times \lim_{h\rightarrow 0} \left(\frac{\sin(h)}{\cos(h)+1}\right) \\
 &= - 1 \times 0 = 0
 \end{align*}
-car $\displaystyle \frac{\sin(h)}{\cos(h)+1}$ est une fonction
+car $\DS \frac{\sin(h)}{\cos(h)+1}$ est une fonction
 continue à $h=0$ et donc
 \[
 \lim_{h\rightarrow 0} \frac{\sin(h)}{\cos(h)+1}=
@@ -1657,8 +1657,8 @@ Puisque $\tan(x) = \sin(x) / \cos(x)$, nous pouvons utiliser la règle de la
 dérivée du quotient de deux fonctions ci-haut avec
 $p(x) = \sin(x)$ et $q(x) = \cos(x)$.  Ainsi,
 \begin{align*}
-\dfdx{\tan(x)}{x} &= \frac{\left(\displaystyle \dfdx{\sin(x)}{x}\right) \cos(x)
-- \sin(x) \left(\displaystyle \dfdx{\cos(x)}{x}\right)}{\cos^2(x)} \\
+\dfdx{\tan(x)}{x} &= \frac{\left(\DS \dfdx{\sin(x)}{x}\right) \cos(x)
+- \sin(x) \left(\DS \dfdx{\cos(x)}{x}\right)}{\cos^2(x)} \\
 &= \frac{ \cos^2(x) + \sin^2(x)}{\cos^2(x)}
 = \frac{1}{\cos^2(x)}
 = \left(\frac{1}{\cos(x)}\right)^2 = \sec^2(x)
@@ -1880,9 +1880,9 @@ exponentielles et logarithmiques.
 \begin{tabular}{r|c|ccr|c|c}
 \cline{1-3} \cline{5-7}
 \rule[-0.7em]{0ex}{2.5em}
-$x$ & $\displaystyle f'(x) \approx \frac{f(x+h)-f(x)}{h}$ & $f'(x)/3^x$ &
+$x$ & $\DS f'(x) \approx \frac{f(x+h)-f(x)}{h}$ & $f'(x)/3^x$ &
 \qquad \qquad &
-$x$ & $\displaystyle f'(x) \approx \frac{f(x+h)-f(x)}{h}$ & $f'(x)/2^x$
+$x$ & $\DS f'(x) \approx \frac{f(x+h)-f(x)}{h}$ & $f'(x)/2^x$
 \\[0.8em]
 \cline{1-3} \cline{5-7}
 $-2.00$ & $0.122069\ldots$ & $1.098618\ldots$ && $-2.00$ & $0.173287\ldots$ & $0.693150\ldots$ \\
@@ -1918,7 +1918,7 @@ $2.00$ & $9.887565\ldots$ & $1.098618\ldots$ && $2.00$ & $2.772598\ldots$ & $0.6
 \caption[Approximations de la dérivée de $f(x) = 3^x$ et de $f(x) =2^x$ à
 partir de la définition de la dérivées.]{Approximations de la dérivée
 de $f(x) = 3^x$ à gauche et de $f(x) = 2^x$ à droite à l'aide du rapport
-$\displaystyle \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$\ .\label{TAB_32_EXP}}
+$\DS \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$\ .\label{TAB_32_EXP}}
 \end{table}
 
 \begin{egg}
@@ -1926,7 +1926,7 @@ Quelle est la dérivée de $f(x) = 3^x$?
 
 Dans la partie gauche du tableau~\ref{TAB_32_EXP}, nous avons
 estimé $f'(x)$ pour quelques valeurs de $x$ à l'aide du rapport
-$\displaystyle \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$.
+$\DS \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$.
 
 Remarquons que $f'(x) / f(x) \approx 1.098618\ldots$ pour les
 quelques valeurs de $x$ dans la partie gauche du tableau~\ref{TAB_32_EXP}.  Si
@@ -1953,7 +1953,7 @@ constante qu'à l'exemple précédent?
 
 Dans la partie droite du tableau~\ref{TAB_32_EXP}, nous avons
 estimé $f'(x)$ pour quelques valeurs de $x$ à l'aide du rapport
-$\displaystyle \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$.
+$\DS \frac{f(x+h)-f(x)}{h}$ où $h = 0.00001$.
 
 Remarquons que $f'(x)/f(x) \approx 0.693150\ldots$ pour les quelques
 valeurs de $x$ dans la partie droite du tableau~\ref{TAB_32_EXP}.  Si
@@ -2012,7 +2012,7 @@ f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h}
 = b^x \underbrace{\lim_{h\rightarrow 0} \frac{b^h-1}{h}}_{= C_b}
 \]
 si la limite existe.  Pour une base $b$ donnée, l'expression
-$\displaystyle C_b \equiv \lim_{h\rightarrow 0} (b^h-1)/h$ est une
+$\DS C_b \equiv \lim_{h\rightarrow 0} (b^h-1)/h$ est une
 constante car elle est indépendante du point $x$ qui est choisi.
 
 Nous avons bien que, quelle que soit la base $b$ utilisée, la dérivée de
@@ -2024,7 +2024,7 @@ C_b \equiv \lim_{h\rightarrow 0} \frac{b^h-1}{h} \;.
 
 \begin{rmk}[\theory]
 Dans la discussion précédente, nous avons supposé que la limite
-$\displaystyle \lim_{h\rightarrow 0} \frac{b^h-1}{h}$ existait pour
+$\DS \lim_{h\rightarrow 0} \frac{b^h-1}{h}$ existait pour
 tout $b>0$.  Effectivement, la limite existe et cela sera prouvé à la
 section~\ref{DEFofE}; après que nous aurons défini la fonction
 exponentielle $e^x$ à l'aide d'une série.
@@ -2033,14 +2033,14 @@ exponentielle $e^x$ à l'aide d'une série.
 \begin{egg}
 Soit $f(x) = 3^x$.  Pour estimer $C_3$, nous utilisons (\ref{COND_EXP})
 avec $b = 3$ et $h = h_n = 1/n^2$ pour $n=1$, $2$, $3$, \ldots
-La suite $\displaystyle \left\{h_n\right\}_{n=1}^\infty$ converge vers
-$0$.  Donc $\displaystyle \frac{3^{h_n}-1}{h_n}$ converge vers $C_3$
+La suite $\DS \left\{h_n\right\}_{n=1}^\infty$ converge vers
+$0$.  Donc $\DS \frac{3^{h_n}-1}{h_n}$ converge vers $C_3$
 lorsque $n \to \infty$.  Nous obtenons les résultats suivants.
 \[
 \begin{array}{c|c|l}
 \hline
 \rule[-0.4em]{0ex}{1.5em} n & h_n = 1/n^2 &
-\rule{0em}{1.7em} \displaystyle \frac{3^{h_n}-1}{h_n} \\[0.8em]
+\rule{0em}{1.7em} \DS \frac{3^{h_n}-1}{h_n} \\[0.8em]
 \hline
 1 & 1 & 2 \\
 2 & 1/4 & 1.26429605180997\ldots \\
@@ -2054,7 +2054,7 @@ lorsque $n \to \infty$.  Nous obtenons les résultats suivants.
 \vdots & \vdots & \vdots \\
 \end{array}
 \]
-Nous avons donc que $\displaystyle \frac{3^{h_n}-1}{h_n}$ approche la constante
+Nous avons donc que $\DS \frac{3^{h_n}-1}{h_n}$ approche la constante
 $1.09861\ldots$ lorsque $h_n$ approche $0$.  Comme toute autre
 séquence qui tend vers $0$ donnerait le même résultat, nous obtenons
 \[
@@ -2158,30 +2158,30 @@ Est-ce le même nombre $e$ que celui que nous venons de définir?
 
 Avec la définition de $e^x$ donnée à la section~\ref{DEFofE}, il est
 trivial de montrer que le nombre $e$ définie par (\ref{LIM_EXP})
-satisfait $\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$.
+satisfait $\DS \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$.
 
 Nous présentons ici un raisonnement qui supporte sans démontrer que le
 nombre $e$ défini en (\ref{LIM_EXP}) satisfait
-$\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$.
+$\DS \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$.
 
-Si $\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$, il
+Si $\DS \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$, il
 découle de la définition de limite d'une fonction en un point que
-$\displaystyle \frac{e^{x_n}-1}{x_n} \rightarrow 1$ lorsque
+$\DS \frac{e^{x_n}-1}{x_n} \rightarrow 1$ lorsque
 $n \rightarrow \infty$ quelle que soit la suite
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $0$.  Si
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $0$.  Si
 $x_n = \frac{1}{n}$ pour $n=1$, $2$, $3$, \ldots, nous pouvons donc dire que
-$\displaystyle 1 \approx \frac{e^{\frac{1}{n}}-1}{\frac{1}{n}}$
+$\DS 1 \approx \frac{e^{\frac{1}{n}}-1}{\frac{1}{n}}$
 pour $n$ très grand.  Si nous résolvons pour $e$, nous trouvons
 \[
 e \approx \left(1 + \frac{1}{n}\right)^n
 \]
 pour $n$ très grand.  Le nombre $e$ qui satisfait
-$\displaystyle \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$ et le nombre
+$\DS \lim_{h\rightarrow 0} \frac{e^h-1}{h} = 1$ et le nombre
 $e$ défini par (\ref{LIM_EXP}) semblent bien être le même nombre.
 
 Il est beaucoup plus facile d'estimer $e$ à l'aide de (\ref{LIM_EXP})
 que d'utiliser la formule (\ref{COND_EXP}) pour déterminer la valeur
-de $b$ telle que $\displaystyle \lim_{h\rightarrow 0} \frac{b^h-1}{h} = 1$
+de $b$ telle que $\DS \lim_{h\rightarrow 0} \frac{b^h-1}{h} = 1$
 comme nous l'avons fait au tableau~\ref{TAB_EXP}.
 \end{rmk}
 
@@ -2195,7 +2195,7 @@ constance $C_b$ dans la relation
 \]
 sans avoir à calculer une limite comme en (\ref{COND_EXP})?  Soit
 $q(x) = b^x$ avec $b>0$.  Puisque
-$\displaystyle q(x) = b^x = e^{x\ln(b)}$, 
+$\DS q(x) = b^x = e^{x\ln(b)}$, 
 nous pouvons exprimer $q(x)$ comme la composition $q(x) = f(g(x))$ des
 fonctions $g(x) = x \ln(b)$ et $f(y) = e^y$. Comme
 $f'(y) = f(y)$ et $g'(x) = \ln(b)$, nous avons
@@ -2352,7 +2352,7 @@ d'introduire.
 
 \begin{egg}
 Calculons la dérivée de
-$\displaystyle g(x) = \frac{(x^4+2)e^{2x}}{(x^2+3x)\sqrt{x^2+3}}$.
+$\DS g(x) = \frac{(x^4+2)e^{2x}}{(x^2+3x)\sqrt{x^2+3}}$.
 
 Nous pourrions adresser ce problème directement avec la règle de
 dérivation du quotient de deux fonctions mais, comme la fonction $g$
@@ -2399,13 +2399,13 @@ Commençons par un exemple simple.
 \begin{egg}
 Soit $f(x)= x^{-1} = 1/x$ pour $x\neq 0$.  Si nous estimons $f'(x)$ pour
 quelques valeurs de $x$ à l'aide du rapport
-$\displaystyle \frac{f(x+h)-f(x)}{h}$ où
+$\DS \frac{f(x+h)-f(x)}{h}$ où
 $h = 0.00001$, nous obtenons les résultats suivants.
 \[
 \begin{array}{l|l|l}
 \hline
 \rule[-0.7em]{0ex}{2.5em} x &
-f'(x) \approx \displaystyle \frac{f(x+0.00001)-f(x)}{0.00001}
+f'(x) \approx \DS \frac{f(x+0.00001)-f(x)}{0.00001}
  & |-x^{-2} - f'(x) | \\[0.8em]
 \hline
 -1 & -1.00001000009\ldots & 0.1000009\ldots \times 10^{-4} \\
@@ -2454,7 +2454,7 @@ s'appliquer pour tous les nombres rationnels $n$.  En fait,
 nous avons plus.
 
 Pour montrer que la règle est vraie pour tout exposant réel non nul,
-il faut se rappeler que $\displaystyle x^\alpha = e^{\alpha \ln(x)}$
+il faut se rappeler que $\DS x^\alpha = e^{\alpha \ln(x)}$
 pour $x>0$.  Ainsi, $x^\alpha = f(g(x))$ où $g(x) = \alpha \ln(x)$ et
 $f(y) = e^y$.   Puisque $f'(y) = f(y)$ et $g'(x) = \alpha / x$,
 nous déduisons de la règle de la dérivée de fonctions composées que
@@ -2475,7 +2475,7 @@ pour tout $x>0$.
 
 \begin{egg}
 Si $f(x) = x^{-1/2}$, alors
-$\displaystyle f'(x) = -\frac{1}{2} x^{-3/2} = \frac{-1}{2 x^{3/2}}$
+$\DS f'(x) = -\frac{1}{2} x^{-3/2} = \frac{-1}{2 x^{3/2}}$
 pour $x>0$.
 \end{egg}
 
@@ -2816,9 +2816,9 @@ chacune des fonctions suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
 \subQ{a} & $f(x) = (x+1)^2$ & \subQ{b}
-& $\displaystyle f(x) = \frac{1}{2x+5}$ & \subQ{c} & $f(x) = x^2+x$ \\[0.9em]
-\subQ{d} & $\displaystyle f(x) = \frac{x}{3x-1}$ &
-\subQ{e} & $\displaystyle f(x) = \frac{1}{x(x+1)}$ & &
+& $\DS f(x) = \frac{1}{2x+5}$ & \subQ{c} & $f(x) = x^2+x$ \\[0.9em]
+\subQ{d} & $\DS f(x) = \frac{x}{3x-1}$ &
+\subQ{e} & $\DS f(x) = \frac{1}{x(x+1)}$ & &
 \end{tabular}
 \end{center}
 \label{5Q18}
@@ -2838,7 +2838,7 @@ $H(-1)=0$ et $H(1)=1$.  Ceci démontre que le Théorème des valeurs
 intermédiaires est valable seulement pour les fonctions continues.  
 
 Montrez qu'il n'existe pas de valeur $c$ telle que $H'(c)$ soit égale à la
-pente $\displaystyle \frac{H(1)-H(-1)}{2}$ de la sécante entre les points
+pente $\DS \frac{H(1)-H(-1)}{2}$ de la sécante entre les points
 $(-1,H(-1))$ et $(1,H(1))$.  Ceci démontre que le Théorème de la moyenne est
 valable seulement pour les fonctions qui sont différentiable.
 \label{5Q19}
@@ -2884,13 +2884,13 @@ Pour chacune des questions suivantes, Calculez la dérivée à l'aide de
 la formule de dérivation des fonctions composées.
 
 \subQ{a} Soit $T(W) = 30 -0.2W$, $S(T) = 9 -T/5$ et $H(W) = S(T(W))$.
-Calculez $\displaystyle \dydx{H}{W}$.\\
+Calculez $\DS \dydx{H}{W}$.\\
 \subQ{b} Soit $L(T) = 10+T/10$, $V(L) = 2L^3$, $M(V) = 1.3V$
-$H(T) = M(V((L(T))))$.  Calculez $\displaystyle \dydx{H}{T}$.\\
+$H(T) = M(V((L(T))))$.  Calculez $\DS \dydx{H}{T}$.\\
 \subQ{c} Soit $M(G) = 5G+2$, $P(M) = 0.5 M$ et $H(G)=P(M(G))$.
-Calculer $\displaystyle \dydx{H}{G}$.\\
+Calculer $\DS \dydx{H}{G}$.\\
 \subQ{d} Soit $V(I) = 5 I^2$, $F(V) = 37 + 0.4 V$ et $H(I) = F(V(I))$.
-Calculer $\displaystyle \dydx{F}{I}$.  
+Calculer $\DS \dydx{F}{I}$.  
 \label{5Q24}
 \end{question}
 
@@ -2906,28 +2906,28 @@ est la dérivée de $H(t) = B(W(L(t)))$ par rapport à $t$ lorsque $L = 18$?
 Calculez la dérivée de chacune des fonctions suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.4em}}l@{\hspace{2.7em}}}l@{\hspace{0.4em}}l}
-\subQ{a} & $\displaystyle f(x) = x^{1/5}$ &
-\subQ{b} & $\displaystyle h(t) = x^{1/e}$ &
-\subQ{c} & $\displaystyle g(z) = 3z^3 + 2z^2$ \\[0.7em]
-\subQ{d} & $\displaystyle p(z) = (1+3z)^2(1+2z)^3$ &
-\subQ{e} & $\displaystyle f(x) = (2x+1)^3$ &
-\subQ{f} & $\displaystyle h(x) = (x^2-5)^{135/2}$ \\
-\subQ{g} & $\displaystyle G(x) = \frac{(1+x)(2+x)}{(3+x)}$ &
-\subQ{h} & $\displaystyle f(t) = \frac{\sqrt{t}}{1+\sqrt{t}}$ &
-\subQ{i} & $\displaystyle f(x) = \log_2(1-3x)$ \\[0.7em]
-\subQ{j} & $\displaystyle f(y) = (5y-3)^7(y^2-1)$ &
-\subQ{k} & $\displaystyle h(t) = \frac{1+t}{2-t}$ &
-\subQ{l} & $\displaystyle g(z) = \frac{1+z^2}{1+2z^3}$ \\[0.7em]
-\subQ{m} & $\displaystyle f(x) = \frac{\ln(2x+ e^x)}{2x+e^x}$ &
-\subQ{n} & $\displaystyle h(x) = \frac{(1+3x)^2}{(1+2x)^3}$ &
-\subQ{o} & $\displaystyle f(x) = e^{-7x}$ \\[1em]
-\subQ{p} & $\displaystyle g(z) = \left(1 + \frac{2}{1+z}\right)^7$ &
-\subQ{q} & $\displaystyle f(t) = (1+3t)^{33}$ &
-\subQ{r} & $\displaystyle h(x) = \ln|\ln(x)|$ \\[1em]
-\subQ{s} & $\displaystyle g(t) = \ln\left(\frac{t^2}{(t-2)^3}\right)$ &
-\subQ{t} & $\displaystyle f(x) = x^{\ln(x)}$ &
-\subQ{u} & $\displaystyle f(x) = x^{x^2}$ \\[1em]
-\subQ{v} & $\displaystyle g(t) = \ln\left(\frac{t^7(t^2-5)^8}{(t-2)^5}\right)$ &
+\subQ{a} & $\DS f(x) = x^{1/5}$ &
+\subQ{b} & $\DS h(t) = x^{1/e}$ &
+\subQ{c} & $\DS g(z) = 3z^3 + 2z^2$ \\[0.7em]
+\subQ{d} & $\DS p(z) = (1+3z)^2(1+2z)^3$ &
+\subQ{e} & $\DS f(x) = (2x+1)^3$ &
+\subQ{f} & $\DS h(x) = (x^2-5)^{135/2}$ \\
+\subQ{g} & $\DS G(x) = \frac{(1+x)(2+x)}{(3+x)}$ &
+\subQ{h} & $\DS f(t) = \frac{\sqrt{t}}{1+\sqrt{t}}$ &
+\subQ{i} & $\DS f(x) = \log_2(1-3x)$ \\[0.7em]
+\subQ{j} & $\DS f(y) = (5y-3)^7(y^2-1)$ &
+\subQ{k} & $\DS h(t) = \frac{1+t}{2-t}$ &
+\subQ{l} & $\DS g(z) = \frac{1+z^2}{1+2z^3}$ \\[0.7em]
+\subQ{m} & $\DS f(x) = \frac{\ln(2x+ e^x)}{2x+e^x}$ &
+\subQ{n} & $\DS h(x) = \frac{(1+3x)^2}{(1+2x)^3}$ &
+\subQ{o} & $\DS f(x) = e^{-7x}$ \\[1em]
+\subQ{p} & $\DS g(z) = \left(1 + \frac{2}{1+z}\right)^7$ &
+\subQ{q} & $\DS f(t) = (1+3t)^{33}$ &
+\subQ{r} & $\DS h(x) = \ln|\ln(x)|$ \\[1em]
+\subQ{s} & $\DS g(t) = \ln\left(\frac{t^2}{(t-2)^3}\right)$ &
+\subQ{t} & $\DS f(x) = x^{\ln(x)}$ &
+\subQ{u} & $\DS f(x) = x^{x^2}$ \\[1em]
+\subQ{v} & $\DS g(t) = \ln\left(\frac{t^7(t^2-5)^8}{(t-2)^5}\right)$ &
  &  & &
 \end{tabular}
 \end{center}
@@ -2938,20 +2938,20 @@ Calculez la dérivée de chacune des fonctions suivantes.
 Évaluez les dérivées suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle h(\theta) =\sec(\theta)\tan(\theta)$ &
-\subQ{b} & $\displaystyle G(t) = 1 + 2
+\subQ{a} & $\DS h(\theta) =\sec(\theta)\tan(\theta)$ &
+\subQ{b} & $\DS G(t) = 1 + 2
 \cos\left( \frac{2\pi(t-3)}{5} \right)$ \\[1em]
-\subQ{c} & $\displaystyle f(x) = \ln(4+\sin(x))$ &
-\subQ{d} & $\displaystyle g(\theta) = \sqrt{2\theta\, \sin(\theta)}$ \\
-\subQ{e} & $\displaystyle F(\theta) = \tan^2(\sin(\theta))$ &
-\subQ{f} & $\displaystyle g(x) = x \arctan(x^2)$\\
-\subQ{g} & $\displaystyle h(\theta) = \sin(\theta)\cos(\theta)$ &
-\subQ{h} & $\displaystyle h(x) = 3 + \cos(2x-1)$ \\
-\subQ{i} & $\displaystyle g(z) = e^{\cos(z)}$ &
-\subQ{j} & $\displaystyle f(\theta) = \sec(\theta)$ \\
-\subQ{k} & $\displaystyle f(x)=e^{\sin(x^{100}+1)}$ &
-\subQ{l} & $\displaystyle g(x) = x^{\sin(x)}$ \\
-\subQ{m} & $\displaystyle f(t) = \ln\left(\frac{2t-\cos(6t)}{t}\right)$  &
+\subQ{c} & $\DS f(x) = \ln(4+\sin(x))$ &
+\subQ{d} & $\DS g(\theta) = \sqrt{2\theta\, \sin(\theta)}$ \\
+\subQ{e} & $\DS F(\theta) = \tan^2(\sin(\theta))$ &
+\subQ{f} & $\DS g(x) = x \arctan(x^2)$\\
+\subQ{g} & $\DS h(\theta) = \sin(\theta)\cos(\theta)$ &
+\subQ{h} & $\DS h(x) = 3 + \cos(2x-1)$ \\
+\subQ{i} & $\DS g(z) = e^{\cos(z)}$ &
+\subQ{j} & $\DS f(\theta) = \sec(\theta)$ \\
+\subQ{k} & $\DS f(x)=e^{\sin(x^{100}+1)}$ &
+\subQ{l} & $\DS g(x) = x^{\sin(x)}$ \\
+\subQ{m} & $\DS f(t) = \ln\left(\frac{2t-\cos(6t)}{t}\right)$  &
          &
 \end{tabular}
 \end{center}
@@ -2959,7 +2959,7 @@ Calculez la dérivée de chacune des fonctions suivantes.
 \end{question}
 
 \begin{question}
-Calculez la dérivée de $\displaystyle f(x) = \frac{1}{1+e^x}$ de deux
+Calculez la dérivée de $\DS f(x) = \frac{1}{1+e^x}$ de deux
 façons:
 
 \subI{i} Avec la règle de la dérivée d'un quotient.\\
@@ -2968,7 +2968,7 @@ façons:
 \end{question}
 
 \begin{question}
-Calculez la dérivée de $\displaystyle f(x) = \ln(7x)$ de deux façons:
+Calculez la dérivée de $\DS f(x) = \ln(7x)$ de deux façons:
 
 \subI{i} Avec une des identités satisfaites par $\ln()$.\\
 \subI{ii} Avec la règle de la dérivée de fonctions composées.
@@ -2976,7 +2976,7 @@ Calculez la dérivée de $\displaystyle f(x) = \ln(7x)$ de deux façons:
 \end{question}
 
 \begin{question}
-Calculez la dérivée de $\displaystyle f(x) = 7^x$ de deux façons:
+Calculez la dérivée de $\DS f(x) = 7^x$ de deux façons:
 
 \subI{i} Avec la règle introduite en classe pour dériver ce type
 de fonctions.\\
@@ -2986,7 +2986,7 @@ $e^{h(x)}$ pour une certaine fonction $h$.
 \end{question}
 
 \begin{question}[\eng \life]
-Calculez la dérivée de $\displaystyle f(\theta) = \cos(2\theta)$ de deux
+Calculez la dérivée de $\DS f(\theta) = \cos(2\theta)$ de deux
 façons:
 
 \subI{i} Avec les formules d'addition pour le cosinus et le sinus.\\
@@ -3012,7 +3012,7 @@ $x$ & $f(x)$ & $g(x)$ & $f'(x)$ & $g'(x)$ \\
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
 \subQ{a} & Si $h(x) = f(g(x))$, calculez $h'(1)$. &
 \subQ{b} & Si $h(x) = g(f(x))$, calculez $h'(1)$. \\
-\subQ{c} & Si $\displaystyle h(x) = \frac{f(x)}{g(x)}$, calculez $h'(1)$. & 
+\subQ{c} & Si $\DS h(x) = \frac{f(x)}{g(x)}$, calculez $h'(1)$. & 
 \subQ{d} & Si $h(x) = f^{-1}(x)$, calculez $h'(1)$
 \end{tabular}
 \end{center}
@@ -3039,7 +3039,7 @@ $(f\circ f^{-1})(x) = f(f^{-1}(x)) = x$.
 
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle f(x) = 2 + x^3$ &
+\subQ{a} & $\DS f(x) = 2 + x^3$ &
 \subQ{b} & $f(x) = 1 - e^{-x}$
 \end{tabular}
 \end{center}
@@ -3087,7 +3087,7 @@ cohérentes.
 
 \begin{question}[\life \eng]
 Soit $f(x) = x^2$.  Trouvez le point sur l'intervalle $[0,2]$ où
-$\displaystyle f'(x) = \frac{f(2)-f(0)}{2-0}$.  
+$\DS f'(x) = \frac{f(2)-f(0)}{2-0}$.  
 \label{5Q39}
 \end{question}
 

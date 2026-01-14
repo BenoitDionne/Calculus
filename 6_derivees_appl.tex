@@ -129,17 +129,17 @@ Soit $f:]a,b[\rightarrow \RR$ une fonction différentiable telle que
 $f':]a,b[\to \RR$ est elle même une fonction différentiable.  La
 {\bfseries dérivée seconde de $f$} ou {\bfseries dérivée d'ordre 2 de $f$} 
 est la dérivée de la fonction $f'$.  Elle est dénotée $f''$,
-$\displaystyle \dydxn{f}{x}{2}$ ou $f^{(2)}$.
+$\DS \dydxn{f}{x}{2}$ ou $f^{(2)}$.
 
 Si $f'':]a,b[\to \RR$ est différentiable, la
 {\bfseries dérivée troisième de $f$} ou
 {\bfseries la dérivée d'ordre 3 de $f$} est la dérivée de la fonction
-$f''$.  Elle est dénotée $f'''$, $\displaystyle \dydxn{f}{x}{3}$ ou
+$f''$.  Elle est dénotée $f'''$, $\DS \dydxn{f}{x}{3}$ ou
 $f^{(3)}$.
 
 Par induction, nous pouvons définir la {\bfseries n$^e$ dérivée de $f$} 
 ou {\bfseries dérivée d'ordre n de $f$} qui
-est dénotée $f^{(n)}$ ou $\displaystyle \dydxn{f}{x}{n}$.
+est dénotée $f^{(n)}$ ou $\DS \dydxn{f}{x}{n}$.
 \end{defn}
 
 \begin{prop}\label{seccondDerCon}
@@ -375,7 +375,7 @@ vers plus l'infini.  De plus,
 \lim_{x\rightarrow -\infty} \frac{1}{xe^x} = -\infty \; .
 \]
 Nous pouvons vérifier numériquement cette dernière limite à l'aide de
-suites $\displaystyle \left\{x_n\right\}_{n=0}^\infty$ qui tendent
+suites $\DS \left\{x_n\right\}_{n=0}^\infty$ qui tendent
 vers moins l'infini (e.g. prenez la suite où $x_n = -n$).  Nous allons voir
 plus tard un résultat (i.e. la Règle de l'Hospital) qui nous
 permettra facilement de calculer ce genre de limites.
@@ -429,7 +429,7 @@ Le graphe de $f$ est donné ci-dessous.
 \end{egg}
 
 \begin{egg}
-Traçons le graphe de $\displaystyle f(x) = \frac{1}{(x-1)(x-2)}$.
+Traçons le graphe de $\DS f(x) = \frac{1}{(x-1)(x-2)}$.
 
 Nous avons
 \[
@@ -525,18 +525,18 @@ converge ou diverge.
 Montrons que cette séries converge en montrant qu'elle satisfait
 les trois conditions du test des séries alternées
 (théorème~\ref{altTest}).  Cette série est de la forme
-$\displaystyle \sum_{n=1}^\infty (-1)^n a_n$ avec 
+$\DS \sum_{n=1}^\infty (-1)^n a_n$ avec 
 \[
 a_n = \frac{\sqrt{n}}{n^{2/3}+1} > 0
 \]
-pour tout $n$.  De plus $\displaystyle \lim_{n\rightarrow \infty} a_n = 0$
+pour tout $n$.  De plus $\DS \lim_{n\rightarrow \infty} a_n = 0$
 grâce au théorème des gendarmes.  En effet,
 \[
 0 < a_n = \frac{n^{1/2}}{n^{2/3}+1} < \frac{n^{1/2}}{n^{2/3}} =
 \frac{1}{n^{1/6}}
 \]
 pour tout $n$ et
-$\displaystyle \lim_{n\rightarrow \infty} \frac{1}{n^{1/6}} = 0$.
+$\DS \lim_{n\rightarrow \infty} \frac{1}{n^{1/6}} = 0$.
 
 Finalement, pour démontrer que $a_{n+1} < a_n$ pour tout $n>6$, nous posons
 \[
@@ -998,11 +998,11 @@ où $p(t)$ est la probabilité que les mâles passent le temps $t$ à
 protéger les oeufs et $C$ est une constante qui représente le niveau
 de difficulté à trouver un partenaire.
 
-Si $\displaystyle p(t) = \frac{t}{1+t}$ et $C=3$, pour quelle valeur
+Si $\DS p(t) = \frac{t}{1+t}$ et $C=3$, pour quelle valeur
 de $t$ aurons-nous la plus grande proportion $w(t)$ d'oeufs pondus qui
 écloront?
 
-Nous obtenons de $\displaystyle w(t) = \frac{t}{(t+1)(t+3)}$ que
+Nous obtenons de $\DS w(t) = \frac{t}{(t+1)(t+3)}$ que
 \[
 \ln(w(t)) = \ln(t) - \ln(t+1) - \ln(t+3) \ .
 \]
@@ -1019,7 +1019,7 @@ pour $t=\sqrt{3}$.  Puisque $w'(t)<0$ pour $t>\sqrt{3}$ et $w'(t)>0$
 pour $0\leq t < \sqrt{3}$, nous obtenons que $t=\sqrt{3}$ est le temps
 qui maximise $w(t)$.
 
-Si nous dérivons $\displaystyle w(t) = \frac{p(t)}{t+C}$ par rapport à
+Si nous dérivons $\DS w(t) = \frac{p(t)}{t+C}$ par rapport à
 $t$, nous trouvons que
 \[
 w'(t) = \frac{p'(t)\,(t-C) - p(t)}{(t+C)^2} = 0
@@ -1126,7 +1126,7 @@ Donc
 \dydx{\theta}{t}(t) = 10 \dydx{x}{t}(t) \, \cos^2(\theta(t)) \ .
 \]
 Comme la vitesse du train est constante, nous avons
-$\displaystyle \dydx{x}{t}(t) = 140$ km/h pour tout $t$.
+$\DS \dydx{x}{t}(t) = 140$ km/h pour tout $t$.
 Si le (devant du) train est à $y = 0.5$ km de la vache
 lorsque $t=\tau$, alors
 \[
@@ -1161,7 +1161,7 @@ fait contracter le vaisseau sanguin à la vitesse de $0.01$ mm/m,
 quel est le taux de variation de la vitesse sanguin (l'accélération)
 lorsque le rayon du vaisseau sanguin est de $0.08$ mm?
 
-Nous avons que $\displaystyle \dydx{R}{t}(t) = -0.01$ mm/m pour tout $t$.
+Nous avons que $\DS \dydx{R}{t}(t) = -0.01$ mm/m pour tout $t$.
 Le signe négatif indique que le vaisseau contracte.  Si nous dérivons la
 lois de Poiseuille par rapport à $t$, nous obtenons
 \[
@@ -1195,7 +1195,7 @@ Ainsi, si nous dérivons par rapport à $t$, nous obtenons
 \[
 \dydx{y}{t}(t) = \frac{5}{3.3} \; \dydx{x}{t}(t) \ .
 \]
-Puisque $\displaystyle \dydx{x}{t}(t) = 4000$ m/h pour tout $t$, nous avons
+Puisque $\DS \dydx{x}{t}(t) = 4000$ m/h pour tout $t$, nous avons
 \[
 \dydx{y}{t}(t) = \frac{5}{3.3} \times 4000 = 6060.\overline{60}
 \ \text{m/h} \ .
@@ -1228,7 +1228,7 @@ et
 = - \frac{1}{\sqrt{3}}
 \]
 
-2$^e$ méthode:  Nous pouvons calculer $\displaystyle \dydx{y}{x}$ en un
+2$^e$ méthode:  Nous pouvons calculer $\DS \dydx{y}{x}$ en un
 point sans avoir à exprimer explicitement $y$ en fonction de $x$.
 Il suffit de dérivée par rapport à $x$ de chaque côté de
 l'équation $x^2 + y^2 = 1$ en tenant bien compte du fait que $y$ est
@@ -1254,7 +1254,7 @@ $(1/2,\sqrt{3}/2)$.}{implCircle}
 
 \begin{egg}
 Trouvons l'équation de la droite tangente à l'ellipse
-$\displaystyle \frac{x^2}{3} + \frac{y^2}{6} = 1$ au point $(1,2)$.
+$\DS \frac{x^2}{3} + \frac{y^2}{6} = 1$ au point $(1,2)$.
 
 Pour obtenir la pente de la droite tangente à la courbe
 \[
@@ -1301,7 +1301,7 @@ Ainsi, au point $(x,y) = (1,0)$, nous obtenons
 \dydx{y}{x}(1) = \frac{-3 - 1}{3 + 1} = -1 \ .
 \]
 L'équation de la droite tangente dans la forme point-pente est
-$\displaystyle y -1 = -1 (x-1)$.  Ce qui donne $y = -x + 1$
+$\DS y -1 = -1 (x-1)$.  Ce qui donne $y = -x + 1$
 dans la forme standard.   Nous retrouvons à la
 figure~\ref{implicit_der} le dessin de la courbe ainsi que sa tangente
 au point $(1,0)$.
@@ -1720,16 +1720,16 @@ contient seulement le point $c$.
 \subsection{Calcul de limites \eng}
 
 Nous pouvons utiliser les polynômes de Taylor pour évaluer les limites de
-la forme $\displaystyle \lim_{n\rightarrow a} \frac{f(x)}{g(x)}$ où
-$\displaystyle \lim_{n\rightarrow a} f(x) = 0$ et
-$\displaystyle \lim_{n\rightarrow a} g(x) = 0$.
+la forme $\DS \lim_{n\rightarrow a} \frac{f(x)}{g(x)}$ où
+$\DS \lim_{n\rightarrow a} f(x) = 0$ et
+$\DS \lim_{n\rightarrow a} g(x) = 0$.
 
 \begin{egg}
 Calculons les limites suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{5em}}}l@{\hspace{1em}}l}
-\subQ{a} & $\displaystyle \lim_{x\rightarrow 0} \frac{x-\sin(x)}{x^2}$ &
-\subQ{b} & $\displaystyle \lim_{x\rightarrow 0} \frac{1-\cos(2x)}{1+x-e^x}$
+\subQ{a} & $\DS \lim_{x\rightarrow 0} \frac{x-\sin(x)}{x^2}$ &
+\subQ{b} & $\DS \lim_{x\rightarrow 0} \frac{1-\cos(2x)}{1+x-e^x}$
 \end{tabular}
 \end{center}
 
@@ -1779,10 +1779,10 @@ e^{\hat{\xi}}\,x^3
 \]
 avec $\hat{\xi}$ entre $0$ et $x$.  Donc
 \[
-\frac{1-\cos(2x)}{1+x-e^x} = \frac{\displaystyle 2\,x^2 - r_2(2x)}
-{\displaystyle -\frac{x^2}{2!} - \hat{r}_2(x)}
-= \frac{\displaystyle 2 - \frac{r_2(2x)}{x^2}}
-{\displaystyle -\frac{1}{2} - \frac{\hat{r}_2(x)}{x^2}} \; .
+\frac{1-\cos(2x)}{1+x-e^x} = \frac{\DS 2\,x^2 - r_2(2x)}
+{\DS -\frac{x^2}{2!} - \hat{r}_2(x)}
+= \frac{\DS 2 - \frac{r_2(2x)}{x^2}}
+{\DS -\frac{1}{2} - \frac{\hat{r}_2(x)}{x^2}} \; .
 \]
 Puisque
 \[
@@ -1794,9 +1794,9 @@ Puisque
 lorsque $x\rightarrow 0$, nous obtenons
 \[
 \frac{1-\cos(2x)}{1+x-e^x}
-= \frac{\displaystyle 2 - \frac{r_2(2x)}{x^2}}
-{\displaystyle -\frac{1}{2} - \frac{\hat{r}_2(x)}{x^2}}
-\rightarrow \frac{2}{\displaystyle -\frac{1}{2}} = -4 \quad
+= \frac{\DS 2 - \frac{r_2(2x)}{x^2}}
+{\DS -\frac{1}{2} - \frac{\hat{r}_2(x)}{x^2}}
+\rightarrow \frac{2}{\DS -\frac{1}{2}} = -4 \quad
 \text{lorsque} \quad x \rightarrow 0 \; .
 \]
 \end{egg}
@@ -1885,9 +1885,9 @@ croît plus rapidement que $x^{1/5}$.  Mais, est-ce vrai?
 
 Le tableau suivant donne la valeur de $\ln(x)/x^{1/5}$ évaluée à
 certains des termes de la suite
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ où
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ où
 $x_n = 10^n$ pour $n=0$, $1$, $2$, \ldots\  La suite
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ tend vers plus
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ tend vers plus
 l'infini.
 \[
 \begin{array}{l|c|c|c|c|c|}
@@ -1907,10 +1907,10 @@ x & 10^6 & 10^7 & 10^8 & 10^9 & 10^{10} \\
 \end{array}
 \]
 La suite
-$\displaystyle \left\{ \frac{\ln(x_n)}{x_n^{1/5}} \right\}_{n=0}^\infty$
+$\DS \left\{ \frac{\ln(x_n)}{x_n^{1/5}} \right\}_{n=0}^\infty$
 semble bien tendre vers $0$.  Nous pourrions montrer que c'est le cas
 pour toute suite
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ qui tend vers plus
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ qui tend vers plus
 l'infini.  Donc
 \[
 \lim_{x\rightarrow \infty} \frac{\ln(x)}{x^{1/5}} = 0
@@ -2023,7 +2023,7 @@ en fait $e^{-x}$ qui tend vers $0$ plus rapidement que $10/x^{-5}$.
 
 Le tableau suivant donne la valeur de $e^{-x}/(10/x^5)$ évaluée à
 certains des termes de la suite
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ où
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ où
 $x_n = 10n$ pour $n=1$, $2$, $3$, \ldots\  Cette suite tend vers plus
 l'infini.
 \[
@@ -2044,10 +2044,10 @@ x & 10 & 20 & 30 & \ldots \\
 \end{array}
 \]
 La suite
-$\displaystyle \left\{ \frac{e^{-x_n}}{10/x_n^5} \right\}_{n=0}^\infty$
+$\DS \left\{ \frac{e^{-x_n}}{10/x_n^5} \right\}_{n=0}^\infty$
 semble tendre très rapidement vers $0$.  Nous pourrions montrer que c'est
 le cas pour toute suite
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ qui
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ qui
 tend vers l'infini.  Donc
 \[
 \lim_{x\rightarrow \infty} \frac{e^{-x}}{10/x^5} = 0
@@ -2082,7 +2082,7 @@ Est-ce vrai?
 Pour répondre à cette question, il nous faut donc calculer la limite
 (\ref{lim_00}).   Le tableau suivant donne la valeur de $x^5/(e^x-1)$
 évaluée à certains des termes de la suite 
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ où $x_n = 1/n^2$
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ où $x_n = 1/n^2$
 pour $n=1$, $2$, $3$, \ldots\  Cette suite tend vers l'origine.
 \[
 \begin{array}{l|c|c|c|c|c}
@@ -2093,11 +2093,11 @@ x & 1 & 1/4 & 1/9 & 1/25 & \ldots \\
 \end{array}
 \]
 La suite
-$\displaystyle \left\{ \frac{x_n^5}{e^{x_n}-1} \right\}_{n=0}^\infty$
+$\DS \left\{ \frac{x_n^5}{e^{x_n}-1} \right\}_{n=0}^\infty$
 semble tendre vers $0$.  Nous pourrions montrer que c'est le cas pour
-toute suite $\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ qui tend
+toute suite $\DS \left\{ x_n \right\}_{n=0}^\infty$ qui tend
 vers l'origine (même si certains des termes de la suite
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ sont négatifs).
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ sont négatifs).
 Donc
 \[
 \lim_{x\rightarrow 0} \frac{x^5}{e^x-1} = 0
@@ -2141,12 +2141,12 @@ reste valide pour $a=+\infty$ et $b=-\infty$.
 
 \begin{rmk}
 Pour calculer les limites du type
-$\displaystyle \lim_{x\rightarrow c} \frac{f(x)}{g(x)}$ avec
-$\displaystyle \lim_{x\rightarrow c} f(x) = \lim_{x\rightarrow c} g(x) = 0$
-ou $\displaystyle \lim_{x\rightarrow c} g(x) = \pm \infty$, il faut
+$\DS \lim_{x\rightarrow c} \frac{f(x)}{g(x)}$ avec
+$\DS \lim_{x\rightarrow c} f(x) = \lim_{x\rightarrow c} g(x) = 0$
+ou $\DS \lim_{x\rightarrow c} g(x) = \pm \infty$, il faut
 souvent calculer
-$\displaystyle \lim_{x\rightarrow c^+} \frac{f(x)}{g(x)}$
-et $\displaystyle \lim_{x\rightarrow c^-} \frac{f(x)}{g(x)}$.  Si
+$\DS \lim_{x\rightarrow c^+} \frac{f(x)}{g(x)}$
+et $\DS \lim_{x\rightarrow c^-} \frac{f(x)}{g(x)}$.  Si
 c'est deux limites sont égales, alors
 \[
 \lim_{x\rightarrow c} \frac{f(x)}{g(x)} =
@@ -2372,11 +2372,11 @@ Nous avons que
 \]
 car $\alpha>0$.  Chacune des égalités est une conséquence de la Règle
 de l'Hospital.  Dans le premier cas,
-$\displaystyle \lim_{x\to \infty} x^3 = \lim_{x\to \infty} e^{\alpha x}
+$\DS \lim_{x\to \infty} x^3 = \lim_{x\to \infty} e^{\alpha x}
 = \infty$, dans le deuxième cas 
-$\displaystyle \lim_{x\to \infty} 3x^2 = \lim_{x\to \infty} \alpha e^{\alpha x}
+$\DS \lim_{x\to \infty} 3x^2 = \lim_{x\to \infty} \alpha e^{\alpha x}
 = \infty$, et dans le troisième cas
-$\displaystyle \lim_{x\to \infty} 6x = \lim_{x\to \infty} \alpha^2 e^{\alpha x}
+$\DS \lim_{x\to \infty} 6x = \lim_{x\to \infty} \alpha^2 e^{\alpha x}
 = \infty$.
 \end{egg}
 
@@ -2448,7 +2448,7 @@ utiliser la Règle de l'Hospital.
   \lim_{x\rightarrow 0} \frac{\cos(x)-1}{2x}
 = \lim_{x\rightarrow 0} \frac{-\sin(x)}{2}  = -\sin(0) = 0 \ .
 \]
-Donc $\displaystyle \lim_{x\rightarrow 0}\frac{\sin(x)-x}{x^2} = 0$.
+Donc $\DS \lim_{x\rightarrow 0}\frac{\sin(x)-x}{x^2} = 0$.
 \end{egg}
 
 \begin{egg}[\eng]
@@ -2524,8 +2524,8 @@ pouvons utiliser la Règle de l'Hospital.
 Évaluons les limites suivantes si elles existent.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{7em}}}l@{\hspace{1em}}l}
-\subQ{a} & $\displaystyle \lim_{x\rightarrow \infty} \frac{\ln(e^x+x)}{x}$ &
-\subQ{b} & $\displaystyle \lim_{x\rightarrow \infty} (e^x+x)^{1/x}$
+\subQ{a} & $\DS \lim_{x\rightarrow \infty} \frac{\ln(e^x+x)}{x}$ &
+\subQ{b} & $\DS \lim_{x\rightarrow \infty} (e^x+x)^{1/x}$
 \end{tabular}
 \end{center}
 
@@ -2568,9 +2568,9 @@ où
   \lim_{x\to 1^-} \sin\left(\frac{\pi x}{2}\right) =
   \sin\left(\frac{\pi}{2}\right) = 1
 \]
-car $\displaystyle \sin\left(\frac{\pi x}{2}\right)$ est une fonction
+car $\DS \sin\left(\frac{\pi x}{2}\right)$ est une fonction
 continue.  Comme
-$\displaystyle \lim_{x\to 1^-} \frac{(x-1)}{\cos(\pi x/2)}$
+$\DS \lim_{x\to 1^-} \frac{(x-1)}{\cos(\pi x/2)}$
 est une limite du type $0/0$, nous pouvons utiliser la Règle de
 l'Hospital pour obtenir
 \begin{align*}
@@ -2600,19 +2600,19 @@ directement.  Par contre,
 \[
 \lim_{x\rightarrow \infty} x\ln\left(1+\frac{a}{x}\right)
 = \lim_{x\rightarrow \infty}
-\frac{\displaystyle \ln\left(1+\frac{a}{x}\right)}{(1/x)} \; .
+\frac{\DS \ln\left(1+\frac{a}{x}\right)}{(1/x)} \; .
 \]
 Cette dernière limite est du type $0/0$.  Nous obtenons
 \begin{align*}
 \lim_{x\rightarrow \infty} x\ln\left(1+\frac{a}{x}\right)
 &= \lim_{x\rightarrow \infty}
-\frac{\displaystyle\ln\left(1+\frac{a}{x}\right)}{(1/x)}
-= \lim_{x\rightarrow \infty} \frac{\displaystyle \left(1+\frac{a}{x}\right)^{-1}
-\left(-\frac{a}{x^2}\right)}{\displaystyle \left(-\frac{1}{x^2}\right)} \\
+\frac{\DS\ln\left(1+\frac{a}{x}\right)}{(1/x)}
+= \lim_{x\rightarrow \infty} \frac{\DS \left(1+\frac{a}{x}\right)^{-1}
+\left(-\frac{a}{x^2}\right)}{\DS \left(-\frac{1}{x^2}\right)} \\
 &= \lim_{x\rightarrow \infty} a\left(1+\frac{a}{x}\right)^{-1}
 = a\left(1+\lim_{x\rightarrow \infty} \frac{a}{x}\right)^{-1} = a
 \end{align*}
-car $\displaystyle \lim_{x\to \infty} \frac{a}{x} = 0$.  La second
+car $\DS \lim_{x\to \infty} \frac{a}{x} = 0$.  La second
 égalité est une conséquence de la Règle de l'Hospital.
 
 Puisque $x \mapsto e^x$ et $x\mapsto \ln(x)$ sont des fonctions
@@ -2632,10 +2632,10 @@ assumons que la limite est pour $x>|a|$. Finalement,
 
 \begin{egg}[\eng]
 Montrons que la séries alternée
-$\displaystyle \sum_{n=1}^\infty (-1)^n\;\frac{\ln(n)}{n}$ converge.
+$\DS \sum_{n=1}^\infty (-1)^n\;\frac{\ln(n)}{n}$ converge.
 
 Nous avons une série alternée de la forme
-$\displaystyle \sum_{n=1}^\infty (-1)^n a_n$ où $a_n = \ln(n)/n$.  Nous
+$\DS \sum_{n=1}^\infty (-1)^n a_n$ où $a_n = \ln(n)/n$.  Nous
 démontrons que cette série satisfait les trois hypothèses du test des
 séries alternées, théorème~\ref{altTest}.
 \begin{enumerate}
@@ -2662,14 +2662,14 @@ a_n
 pour tout $n\geq 3$.
 \end{enumerate}
 Nous pouvons donc conclure du test des séries alternées que la séries
-$\displaystyle \sum_{n=3}^\infty (-1)^n \frac{\ln(n)}{n}$ converge.
+$\DS \sum_{n=3}^\infty (-1)^n \frac{\ln(n)}{n}$ converge.
 Puisque
 \[
 \sum_{n=1}^k (-1)^n \frac{\ln(n)}{n}
 = 0 + \frac{\ln(2)}{2} + \sum_{n=3}^k (-1)^n \frac{\ln(n)}{n}
 \]
 pour tout $k>2$, nous avons que la série
-$\displaystyle \sum_{n=1}^\infty (-1)^n \frac{\ln(n)}{n}$ converge.  En effet,
+$\DS \sum_{n=1}^\infty (-1)^n \frac{\ln(n)}{n}$ converge.  En effet,
 \begin{align*}
 \sum_{n=1}^\infty (-1)^n \frac{\ln(n)}{n}
 &= \lim_{n\rightarrow \infty} \sum_{k=1}^n (-1)^k \frac{\ln(k)}{k}
@@ -2682,7 +2682,7 @@ $\displaystyle \sum_{n=1}^\infty (-1)^n \frac{\ln(n)}{n}$ converge.  En effet,
 \end{egg}
 
 % \begin{egg}[\eng]
-% Déterminer si la série $\displaystyle \sum_{n=1}^\infty\frac{\ln(n)}{2^n}$ 
+% Déterminer si la série $\DS \sum_{n=1}^\infty\frac{\ln(n)}{2^n}$ 
 % converge.
 % % The ratio test, it converges
 % \end{egg}
@@ -2739,7 +2739,7 @@ Nous présentons qu'une seule méthode numérique pour estimer les
 racines d'une équation de la forme (\ref{newt_equ}).  Cette méthode
 est connue sous le nom de {\bfseries méthode de Newton}.  Cette
 méthode permet de construire une suite de nombres
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ qui converge vers une
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ qui converge vers une
 racine de $f$.
 
 \begin{meth}[Méthodes de Newton] \index{Méthode de Newton}
@@ -2772,7 +2772,7 @@ x_{n+1} = x_n-\frac{f(x_n)}{f'(x_n)} \; .
 
 \PDFfig{6_derivees_appl/newton}{La méthode de Newton produit une suite
 qui tend vers une racine d'une fonction}{La suite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ est produite avec la
+$\DS \left\{x_n\right\}_{n=0}^\infty$ est produite avec la
 méthode de Newton et tend vers une racine $p$ de la fonction
 $f$}{NEWT}
 
@@ -2780,7 +2780,7 @@ $f$}{NEWT}
 Soit $f:\RR\rightarrow \RR$ une fonction dont la deuxième
 dérivée est une fonction continue.  Si $p$ est une racine de $f$
 telle que $f'(p) \neq 0$, alors il existe $\delta > 0$ tel que la
-suite $\displaystyle \left\{x_n\right\}_{n=0}^\infty$ produite par la
+suite $\DS \left\{x_n\right\}_{n=0}^\infty$ produite par la
 méthode de Newton converge vers $p$ si la distance entre $p$ et $x_0$
 est plus petite que $\delta$; c'est-à-dire, si $|x_0-p|<\delta$.
 \end{theorem}
@@ -2788,7 +2788,7 @@ est plus petite que $\delta$; c'est-à-dire, si $|x_0-p|<\delta$.
 \begin{rmk}[\theory]
 En d'autres mots, le théorème dit que si $f'(p)\neq 0$ et si $x_0$ est
 suffisamment près de $p$, alors la suite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ produite avec la
+$\DS \left\{x_n\right\}_{n=0}^\infty$ produite avec la
 méthode de Newton tend vers $p$.
 
 La méthode de Newton est une méthode du point fixe (voir
@@ -2884,7 +2884,7 @@ $a = 13478$.  Nous avons
 x_{n+1} = 2 x_n - 13478\, x_n^2 \quad , \quad n=0,1,2,3,\ldots
 \]
 Le tableau suivant donne les premiers termes de la suite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ produite à l'aide de la
+$\DS \left\{x_n\right\}_{n=0}^\infty$ produite à l'aide de la
 méthode de Newton avec $x_0 = 0.0001$.
 \[
 \begin{array}{c|c}
@@ -2928,7 +2928,7 @@ t_{n+1} = t_n - \frac{f(t_n)}{f'(t_n)}
 n=0,1,2,3,\ldots 
 \]
 Nous donnons dans le tableau suivant les premiers termes de la série
-$\displaystyle \left\{t_n\right\}_{n=0}^\infty$ générée par la méthode
+$\DS \left\{t_n\right\}_{n=0}^\infty$ générée par la méthode
 de Newton.
 \[
 \begin{array}{|c|c|c|}
@@ -2959,7 +2959,7 @@ Newton.
 Il faut faire un bon choix pour $x_0$.  Si
 la fonction $f$ a plusieurs racines, il peut s'avérer difficile de
 trouver $x_0$ pour obtenir une suite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ générée par la 
+$\DS \left\{x_n\right\}_{n=0}^\infty$ générée par la 
 méthode de Newton qui tend vers la racine $p$ que nous cherchons.  Il
 faut choisir $x_0$ assez près de cette racine $p$.  Mais comment
 pouvons-nous choisir $x_0$ près de $p$ si nous ne connaissons pas $p$?  Le
@@ -2973,7 +2973,7 @@ $f$ entre $a$ et $b$.  L'algorithme suivant, connu sous le nom de
 intervalle aussi petit que nous voulons et qui contient une racine de
 $f$.  Si nous prenons $x_0$ dans un tel intervalle, la méthode de Newton a
 de bonnes chances de nous donner une suite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ qui tend vers la
+$\DS \left\{x_n\right\}_{n=0}^\infty$ qui tend vers la
 racine dans ce petit intervalle.
 
 \begin{meth}[Méthode de bissection] \index{Méthode de bissection}
@@ -3257,7 +3257,7 @@ le taux de croissance relatif.
 \end{egg}
 
 Nous sommes intéressé au comportement de la suite
-$\displaystyle \left\{p_n\right\}_{n=0}^\infty$ lorsque $n$ devient de
+$\DS \left\{p_n\right\}_{n=0}^\infty$ lorsque $n$ devient de
 plus en plus grand.  Est-ce que $p_n$ tend vers une valeur quelconque
 lorsque $n$ tend vers plus l'infini?  Est-ce que $p_n$ croît sans
 borne supérieure comme c'est le cas pour notre population de bactéries
@@ -3269,7 +3269,7 @@ Soit
 p_{n+1}= f(p_n) \quad \text{pour} \quad n=0, 1, 2, \ldots
 \]
 un système dynamique discret.  L'{\bfseries orbite} (positive) de
-$p_0$ est la suite $\displaystyle \left\{ p_n \right\}_{n=0}^\infty$
+$p_0$ est la suite $\DS \left\{ p_n \right\}_{n=0}^\infty$
 où $p_1 = f(p_0)$, $p_2 = f(p_1)$, $p_3 = f(p_2)$, \ldots
 \end{defn}
 
@@ -3313,10 +3313,10 @@ exemple, à la figure~\ref{LINEAR1}, nous avons tracé le portrait de
 phase du système dynamique discret $p_{n+1} = f(p_n) = 0.8 p_n$ pour $n=0$,
 $1$, $2$, $3$, \ldots\ de l'exemple~\ref{sdd_egg1}.  Les flèches sont
 interprétées de la façon suivante.  Pour toute condition initiale
-$p_0> 0$, l'orbite $\displaystyle \left\{ p_n \right\}_{n=0}^\infty$
+$p_0> 0$, l'orbite $\DS \left\{ p_n \right\}_{n=0}^\infty$
 de $p_0$ tend vers $0$ lorsque $n$ devient de plus en plus grand.  Nous
 pourrions aussi vérifier que, pour toute condition initiale $p_0<0$,
-l'orbite $\displaystyle \left\{ p_n \right\}_{n=0}^\infty$ de $p_0$
+l'orbite $\DS \left\{ p_n \right\}_{n=0}^\infty$ de $p_0$
 tend aussi vers $0$ lorsque $n$ augmente.  Mais, naturellement, quelle
 interprétation biologique pouvons-nous donner à un nombre négatif de
 bactéries?
@@ -3490,7 +3490,7 @@ d'araignée pour le système dynamique discret $p_{n+1} = 0.8 p_n + 3$}
 {Le graphe en forme de toile d'araignée pour le système dynamique
 discret $p_{n+1} = 0.8 p_n + 3$ pour $n=0$, $1$, $2$,\ldots}{HS_LOG11}
 
-Remarquons que l'orbite $\displaystyle \left\{ p_n \right\}_{i=0}^\infty$
+Remarquons que l'orbite $\DS \left\{ p_n \right\}_{i=0}^\infty$
 de $p_0=15$ pour le système dynamique discret
 \[
 p_{n+1} = 0.8 p_n + 3 \quad , \quad n=0, 1, 2, \ldots
@@ -3529,7 +3529,7 @@ système dynamique discret (figure~\ref{HS_LOG11}).
 \begin{egg}
 À l'exemple~\ref{sol_lin_discr}, nous pouvons montrer que pour toute
 condition initiale $p_0$, l'orbite
-$\displaystyle \left\{ p_n\right\}_{n=0}^\infty$ du 
+$\DS \left\{ p_n\right\}_{n=0}^\infty$ du 
 système dynamique discret
 \[
 p_{n+1}=0.8 p_n +3 \quad \text{pour} \quad n=0, 1, 2, \ldots
@@ -3546,12 +3546,12 @@ p_{n+1} = f(p_n) \quad \text{pour} \quad n=0, 1, 2, \ldots
 \]
 est {\bfseries asymptotiquement stable}\footnotemark\ si, quelle que soit la
 condition initiale $p_0$ près de $p$, l'orbite
-$\displaystyle \left\{ p_n\right\}_{n=0}^\infty$ tend vers $p$.
+$\DS \left\{ p_n\right\}_{n=0}^\infty$ tend vers $p$.
 \index{Système dynamique discret!point d'équilibre!asymptotique stabilité}
 
 Un point d'équilibre $p$ du système dynamique discret est
 {\bfseries instable} si, pour toute condition initial $p_0$ assez près
-de $p$, l'orbite $\displaystyle \left\{ p_n\right\}_{n=0}^\infty$
+de $p$, l'orbite $\DS \left\{ p_n\right\}_{n=0}^\infty$
 \lgm s'éloigne\rgm\ de $p$.
 \index{Système dynamique discret!point d'équilibre!instable}
 \end{defn}
@@ -3567,7 +3567,7 @@ seulement.  Cela simplifie l'écriture mais entre en conflit
 avec la littérature spécialisée sur le sujet des systèmes dynamiques.
 En effet, dans la littérature spécialisée, nous disons qu'un point
 d'équilibre $p$ est stable si les orbites
-$\displaystyle \left\{ p_n\right\}_{n=0}^\infty$ avec la condition
+$\DS \left\{ p_n\right\}_{n=0}^\infty$ avec la condition
 initiale $p_0$ suffisamment près de $p$ \lgm ne s'éloignent pas\rgm\
 de $p$.  Il est possible que ces orbites n'approchent pas $p$ mais
 seulement demeurent dans le voisinage de $p$.  
@@ -3625,7 +3625,7 @@ $2$, \ldots\ comme nous avons trouvée précédemment.
 \begin{egg}
 Supposons que le nombre de bactéries dans un milieu donné satisfasse un
 système dynamique discret de la forme
-$\displaystyle p_{n+1} = \alpha p_n + \beta$ et que
+$\DS p_{n+1} = \alpha p_n + \beta$ et que
 le nombre initial de bactéries est de $2,500$ bactéries par cm$^3$.
 Si le nombre de bactéries après une heure est de $2,750$ bactéries par
 cm$^3$ et qu'il est de $3,125$ bactéries par cm$^3$ après deux heures,
@@ -3698,7 +3698,7 @@ Considérons le système dynamique discret
 p_{n+1} = r\;p_n\left( 1 - \frac{p_n}{M}\right) \quad \text{pour} \quad
 n=0,1,2,\ldots
 \end{equation}
-où le facteur $\displaystyle \left( 1 - \frac{p_n}{M}\right)$ devient
+où le facteur $\DS \left( 1 - \frac{p_n}{M}\right)$ devient
 de plus en plus petit lorsque le nombre de bactérie $p_n < M$ approche
 le nombre maximal de bactéries $M$ que le milieu peut supporter.
 
@@ -3805,7 +3805,7 @@ La population de bactéries ne disparaît pas mais approche un état
 d'équilibre de $1/11$ de la population maximale que le milieu peut
 supporter.  Nous pourrions choisir d'autres valeurs initiales pour $x_0$
 mais, dans tous les cas, la suite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ tendra vers l'état
+$\DS \left\{x_n\right\}_{n=0}^\infty$ tendra vers l'état
 d'équilibre $1/11$ qui représente la fraction de la population
 maximale que le milieu peut supporter.
 
@@ -3826,10 +3826,10 @@ x_{n+1} = f(x_n) = 1.1 x_n (1-x_n) \quad \text{pour} \quad n=0,1,2,3,\ldots
 nous utilisons le portrait de phase donné à la
 figure~\ref{HS_LOGISTIC2}.  Les flèches sont interprétées de la façon
 suivante.  Pour une condition initiale $x_0$ entre $0$ et
-$p = 1/11$, l'orbite $\displaystyle \left\{x_n\right\}_{n=0}^\infty$
+$p = 1/11$, l'orbite $\DS \left\{x_n\right\}_{n=0}^\infty$
 tend vers $p$.  De même, pour une condition initiale
 $x_0$ entre $p=1/11$ et $1$, l'orbite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ tend aussi vers $p$.
+$\DS \left\{x_n\right\}_{n=0}^\infty$ tend aussi vers $p$.
 
 \PDFfig{6_derivees_appl/hs_logistic2}{Portrait de phase du système
 dynamique discret $x_{n+1} = 1.1 x_n(1-x_n)$}{Portrait de phase du
@@ -3907,13 +3907,13 @@ d'équilibre $p=2/5$ dans le cas (iv) ne sont pas asymptotiquement stables.
 
 Dans les cas (i) et (iii), si nous prenons la condition initiale $x_0$
 plus petite que le point d'équilibre $p$ (i.e.\ à la gauche de $p$)
-alors l'orbite $\displaystyle \left\{x_n\right\}_{n=0}^\infty$ demeure 
+alors l'orbite $\DS \left\{x_n\right\}_{n=0}^\infty$ demeure 
 toujours à la gauche du point d'équilibre $p$.  De même, si la
 condition initiale $x_0$ est plus grande que $p$ (i.e.\ à la droite de
 $p$), alors l'orbite demeure toujours à la droite de $p$.  Par contre,
 ce n'est pas se que nous observons pour les cas (ii) et (iv).  En
 fait, que nous prenions $x_0$ à la droite ou à la gauche de $p$, l'orbite
-$\displaystyle \left\{x_n\right\}_{n=0}^\infty$ alterne entre la
+$\DS \left\{x_n\right\}_{n=0}^\infty$ alterne entre la
 gauche et la droite de $p$.
 \end{egg}
 
@@ -4216,7 +4216,7 @@ R'(h) & + & + & 0 & - & - \\
 La récolte $R(h)$ est donc maximale pour $h = H$.  L'état d'équilibre
 de la population de poissons pour $h = H$ est alors
 $p_H = (r-1)/(2r)$.  Comme nous avons démontré, le point d'équilibre 
-$p_H$ est stable et donc $\displaystyle \{p_n\}_{n=1}^\infty$ converge vers
+$p_H$ est stable et donc $\DS \{p_n\}_{n=1}^\infty$ converge vers
 ce point d'équilibre.  La récolte maximale de poissons à long terme
 sera $R(H) = H\,p_H = (r-1)^2/(4r)$.
 \label{discrete_fish_probl}
@@ -4231,7 +4231,7 @@ x_{n+1} = f(x_n) = r\, x_n(1-x_i) \quad \text{pour} \quad n=0, 1, 2, 3, \ldots
 \]
 avec $r=3.2$, quelle que soit la condition initiale $x_0$ entre $0$ et
 $1$ que nous choisissons, l'orbite
-$\displaystyle \left\{ x_n\right\}_{n=0}^\infty$ ne tend pas vers un
+$\DS \left\{ x_n\right\}_{n=0}^\infty$ ne tend pas vers un
 point d'équilibre comme nous pouvons constater avec les données dans la
 colonne de gauche du tableau~\ref{HS_LOGISTIC4}.  Remarquons que
 \[
@@ -4250,7 +4250,7 @@ Comme à l'exemple précédent, pour l'équation logistique
 \[
 x_{n+1} = f(x_n) = r\, x_n(1-x_n) \quad , \quad n =0, 1, 2, 3, \ldots
 \]
-avec $r=3.47$, l'orbite $\displaystyle \left\{ x_n\right\}_{n=0}^\infty$
+avec $r=3.47$, l'orbite $\DS \left\{ x_n\right\}_{n=0}^\infty$
 ne tend pas vers un point d'équilibre quelle que soit la condition
 initiale $x_0$ entre $0$ et $1$ que nous choisissons.  Cependant, à partir
 des données dans la colonne de droite du Tableau~\ref{HS_LOGISTIC4},
@@ -4321,14 +4321,14 @@ Les deux exemples précédents justifient la définition suivante.
 
 \begin{defn}
 Soit $f:X \to X$ avec $X \subset \RR$.  Si
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ est une orbite du
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ est une orbite du
 système dynamique discret
 \[
 x_{n+1} = f(x_n) \quad , \quad n=0, 1, 2, \ldots
 \]
 pour laquelle il existe un entier positif $k$ tel que $x_n = x_{n+k}$
 pour $n=0$, $1$, $2$, \ldots, alors l'orbite 
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ est appelée une
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ est appelée une
 {\bfseries orbite périodique}\index{Système dynamique discret!orbite
   périodique}
 ou {\bfseries solution périodique}\index{Système dynamique
@@ -4373,7 +4373,7 @@ logistique avec $r=3.47$.}\label{HS_LOGISTIC56}
 
 Dans les deux exemples précédents, quelle que soit la condition
 initiale $x_0$, l'orbite
-$\displaystyle \left\{ x_n\right\}_{n=0}^\infty$ se comporte de plus
+$\DS \left\{ x_n\right\}_{n=0}^\infty$ se comporte de plus
 en plus comme l'orbite périodique (figure~\ref{HS_LOGISTIC7}).  Nous
 avons donc une notion de stabilité asymptotique pour les solutions
 périodiques.
@@ -4387,7 +4387,7 @@ $x_0=0.1$}{HS_LOGISTIC7}
 \begin{defn}
 \index{Système dynamique discret!solution périodique!asymptotique stabilité}
 Soit $f: X \to X$ avec $X \subset \RR$, et
-$\displaystyle \left\{ x_n \right\}_{n=0}^\infty$ une orbite périodique
+$\DS \left\{ x_n \right\}_{n=0}^\infty$ une orbite périodique
 de période $k$ pour le système dynamique discret
 \[
 x_{n+1} = f(x_n) \quad , \quad n=0, 1, 2, 3, \ldots
@@ -4420,17 +4420,17 @@ lorsque $r$ varie.
 Calculez la dérivée première et seconde des fonctions suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle h(y) = y^{10}-y^9$ &
-\subQ{b} & $\displaystyle f(x) = \frac{3+x}{2x}$ &
-\subQ{c} & $\displaystyle f(x) = x^2 e^x$ \\
-\subQ{d} & $\displaystyle f(x) = \frac{1+x}{e^x}$ &
-\subQ{e} & $\displaystyle g(z) = (z+4)\ln(z)$ &
-\subQ{f} & $\displaystyle F(w) = e^w \ln(w)$ \\
-\subQ{g} & $\displaystyle f(x) = \ln(x^7)$ &
-\subQ{h} & $\displaystyle f(z) = \frac{1+e^{-z}}{1+e^z}$ &
-\subQ{i} & $\displaystyle F(y) = \frac{\ln(y)}{e^y}$ \\[0.9em]
-\subQ{j} & $\displaystyle f(x) = 1 + x^{4/5}$ &
-\subQ{k} & $\displaystyle f(x)= \frac{2+x^3}{1+x^2}$
+\subQ{a} & $\DS h(y) = y^{10}-y^9$ &
+\subQ{b} & $\DS f(x) = \frac{3+x}{2x}$ &
+\subQ{c} & $\DS f(x) = x^2 e^x$ \\
+\subQ{d} & $\DS f(x) = \frac{1+x}{e^x}$ &
+\subQ{e} & $\DS g(z) = (z+4)\ln(z)$ &
+\subQ{f} & $\DS F(w) = e^w \ln(w)$ \\
+\subQ{g} & $\DS f(x) = \ln(x^7)$ &
+\subQ{h} & $\DS f(z) = \frac{1+e^{-z}}{1+e^z}$ &
+\subQ{i} & $\DS F(y) = \frac{\ln(y)}{e^y}$ \\[0.9em]
+\subQ{j} & $\DS f(x) = 1 + x^{4/5}$ &
+\subQ{k} & $\DS f(x)= \frac{2+x^3}{1+x^2}$
 \end{tabular}
 \end{center}
 \label{6Q1}
@@ -4549,7 +4549,7 @@ qui est donné ci-dessous pour tracer le graphe de la fonction $w$ si $w(0)=1$.
 
 \begin{question}[\life]
 Le volume de déchets au temps $t$ produit par deux villes est donnée
-par $\displaystyle V_a(t) = t^2 - 3t + 16$ pour la ville $A$ et
+par $\DS V_a(t) = t^2 - 3t + 16$ pour la ville $A$ et
 $V_b(t) = 20 + 3t$ pour la ville $B$.  Le volume est mesuré en m$^3$
 et le temps $t$ est mesuré en années.  Si les déchets contiennent
 $\rho(t) = 1.2 - 0.1 t$ g/m$^3$ d'un certain produit toxique au temps
@@ -4584,7 +4584,7 @@ En l'absence d'influences externes, la croissance annuelle d'une
 population dépend seulement de la production annuelle moyenne par
 individu.  Supposons que la production annuelle moyenne par individu
 lorsqu'il y a $p$ individus soit donnée par
-$\displaystyle f(p) = 2\left( 1- \frac{p}{1000}\right)$.
+$\DS f(p) = 2\left( 1- \frac{p}{1000}\right)$.
 
 \subQ{a} Exprimez la taille $T$ de la population (i.e. nombre d'individus)
 après un an en fonction de la taille de la population au début de l'année.\\
@@ -4608,13 +4608,13 @@ Expliquez en une phrase le sens graphique des énoncés.
 
 \begin{question}
 Trouvez les points où la fonction
-$\displaystyle f(x)=\frac{e^{2x^2}}{x}$ possède un 
+$\DS f(x)=\frac{e^{2x^2}}{x}$ possède un 
 minimum ou un maximum local.
 \label{6Q16}
 \end{question}
 
 \begin{question}
-Soit $\displaystyle f(x) = x\sqrt{5-x}$ pour $x<5$.  Répondre aux questions
+Soit $\DS f(x) = x\sqrt{5-x}$ pour $x<5$.  Répondre aux questions
 suivantes.
 
 \subQ{a} Trouvez les intervalles où la fonction $f$ est strictement
@@ -4630,7 +4630,7 @@ graphe de $f$.
 \end{question}
 
 \begin{question}[\life \eng]
-Soit $\displaystyle f(x) = x - 2\sin(x)$ pour $0<x<3\pi$. Répondre aux
+Soit $\DS f(x) = x - 2\sin(x)$ pour $0<x<3\pi$. Répondre aux
 questions suivantes.
 
 \subQ{a} Trouvez les intervalles où la fonction $f$ est strictement
@@ -4659,15 +4659,15 @@ f''(x) & - & 0 & + & + & + & 0 & - & - & -
 \label{6Q19}
 \end{question}
 
-\begin{question}[4 points]
+\begin{question}
 Nous considérons la fonction $f$ qui possède les propriétés suivantes:
 {\renewcommand{\labelitemi}{\textbullet}
 \begin{itemize}
 \item $f$ est une fonction continue sur son domaine;
-\item $\displaystyle \lim_{x\to -\infty}f(x)=2$,
-$\displaystyle \lim_{x\to 1}f(x)=-2$,
-$\displaystyle \lim_{x\to 3^-} f(x) = -\infty$ et
-$\displaystyle \lim_{x\to 3^+}f(x)= \infty$;
+\item $\DS \lim_{x\to -\infty}f(x)=2$,
+$\DS \lim_{x\to 1}f(x)=-2$,
+$\DS \lim_{x\to 3^-} f(x) = -\infty$ et
+$\DS \lim_{x\to 3^+}f(x)= \infty$;
 \item $f(x)$ n'est pas définie en $x=3$;
 \item $f'(x)$ n'est pas définie en $x=1$;
 \item $f'(x)<0$ pour $x<1$, $2 < x < 3$ et $3 < x < 4$;
@@ -4698,18 +4698,18 @@ etc.
 \subQ{a} & $h(x) = x^3 - 3x + 3$ &
 \subQ{b} & $h(x) = x^3 - 6x^2 - 15 x + 3$ \\
 \subQ{c} & $f(x) = x + 4/x^2$ &
-\subQ{d} & $\displaystyle f(x) = (1-x)e^x$ \\
-\subQ{e} & $\displaystyle g(z) = \frac{e^z}{z^2}$ &
+\subQ{d} & $\DS f(x) = (1-x)e^x$ \\
+\subQ{e} & $\DS g(z) = \frac{e^z}{z^2}$ &
 \subQ{f} & $F(z) = z^3/e^z$ \\[0.5em]
 \subQ{g} & $T(t) = (1-t^2) e^t$\ ,\ $-1 \leq t \leq 1$ &
 \subQ{h} & $G(x) = \sqrt{x}\; e^{-x}$\ ,\ $x\geq 0$ \\
-\subQ{i} & $\displaystyle f(x) = \frac{x^3}{1+x^3}$  &
-\subQ{j} & $\displaystyle f(x) = \frac{2}{x^2} - \frac{3}{x^3}$ \\[0.8em]
-\subQ{k} & $\displaystyle f(x) = (x+4)e^{-x}$ &
-\subQ{l} & $\displaystyle f(x) = \frac{2}{x} -\frac{6}{x^3}$ \\[0.5em]
-\subQ{m} & $\displaystyle f(x) = \frac{e^x}{x-1}$ &
-\subQ{n} & $\displaystyle f(x) = \frac{x}{x^3+1}$ \\[0.5em]
-\subQ{o} & $\displaystyle f(x) = x \ln(x)$ & &
+\subQ{i} & $\DS f(x) = \frac{x^3}{1+x^3}$  &
+\subQ{j} & $\DS f(x) = \frac{2}{x^2} - \frac{3}{x^3}$ \\[0.8em]
+\subQ{k} & $\DS f(x) = (x+4)e^{-x}$ &
+\subQ{l} & $\DS f(x) = \frac{2}{x} -\frac{6}{x^3}$ \\[0.5em]
+\subQ{m} & $\DS f(x) = \frac{e^x}{x-1}$ &
+\subQ{n} & $\DS f(x) = \frac{x}{x^3+1}$ \\[0.5em]
+\subQ{o} & $\DS f(x) = x \ln(x)$ & &
 \end{tabular}
 \end{center}
 \label{6Q21}
@@ -4724,7 +4724,7 @@ les points d'inflexions, les asymptotes horizontales et verticales,
 etc.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle y = \sin^2(x) -2 \cos(x)$ &
+\subQ{a} & $\DS y = \sin^2(x) -2 \cos(x)$ &
 \subQ{b} & $f(\theta) = \theta + 3 \cos(\theta) \ , \ 0\leq \theta \leq 4\pi$
   \\
 \subQ{c} & $h(t) = e^{-t} \sin(t) \ , \ 0\leq \theta \leq 4\pi$ & &
@@ -4799,7 +4799,7 @@ minimum absolu sur l'intervalle donné.
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
 \subQ{a} & $f(x) = 2 + x e^{-x} \ , \ 0.5 \leq x \leq 2$ &
 \subQ{b} & $f(x) = x^3 - 3x \ , \ -2\leq c \leq 2$ \\[0.7em]
-\subQ{c} & $\displaystyle f(x) = \frac{x}{x^2+x+1} \ , \ -2 \leq x \leq 0$ &
+\subQ{c} & $\DS f(x) = \frac{x}{x^2+x+1} \ , \ -2 \leq x \leq 0$ &
 \subQ{d} & $f(x) = 5x(1-x)(2-x) - 1 \ , \ 0 \leq x \leq 1$ \\[0.7em]
 \subQ{e} & $f(x)=x^{1/2}(x-4)^2 \ , \ 0.5 \leq x \leq 6$ & &
 \end{tabular}
@@ -4892,9 +4892,9 @@ espèce de fleurs produit une quantité (moyenne) $q$ de nectar (en
 grammes).  Si, pour une espèce de fleurs qui produit $q$ g de nectar,
 $P(q)$ est le nombre de prédateurs pour les abeilles qui sont attirés
 par ces fleurs, alors les abeilles doivent maximiser
-$\displaystyle \frac{q}{P(q)}$ pour déterminer quelle espèce de fleurs
+$\DS \frac{q}{P(q)}$ pour déterminer quelle espèce de fleurs
 elles doivent privilégier.  Si $P(q) = 1 + q^2$, trouvez la valeur de $q$
-qui maximise le rapport $\displaystyle \frac{q}{P(q)}$.
+qui maximise le rapport $\DS \frac{q}{P(q)}$.
 \label{6Q36}
 \end{question}
 
@@ -4926,7 +4926,7 @@ la distance entre la source lumineuse et l'objet.
 Considérons le problème des abeilles qui butinent que nous retrouvons à
 l'exemple~\ref{egg_bees}.  Soit $t$ le temps qu'une abeille passe sur
 une fleur à aspirer du nectar.  Si
-$\displaystyle F(t) = \frac{t}{0.5+t}$ et si $t=T=1$ est le temps
+$\DS F(t) = \frac{t}{0.5+t}$ et si $t=T=1$ est le temps
 optimal pour maximiser la récolte de nectar durant une journée,
 déterminez le temps $\tau$ que prend l'abeille pour se rendre d'une
 fleur à une autre fleur?  Illustrez $\tau$ à l'aide d'un graphe comme
@@ -4938,7 +4938,7 @@ celui qui est donné à la figure~\ref{BEES2} des notes.
 Considérons le problème des abeilles qui butinent que nous retrouvons à
 l'exemple~\ref{egg_bees}.  Soit $t$ le temps qu'une abeille passe sur
 une fleur à aspirer du nectar.  Si
-$\displaystyle F(t) = \frac{t^2}{1+t^2}$ et $\tau = 1$, déterminez le
+$\DS F(t) = \frac{t^2}{1+t^2}$ et $\tau = 1$, déterminez le
 temps optimal $t=T$ pour maximiser la récolte de nectar.  Il faut
 répéter l'exemple~\ref{egg_bees} avec cette nouvelle fonction $F$ pour
 trouver $T$.  Illustrez la règle des valeurs marginales comme il est
@@ -4981,7 +4981,7 @@ côte au point $C$ qui se trouve à $1$ km du point $P$.
 
 \begin{question}[\eng]
 La fonction $f$ satisfait la relation
-$\displaystyle (f(x))^4 + 6 f(x) = x^2 + 6$.  Si $f(3)=1$,
+$\DS (f(x))^4 + 6 f(x) = x^2 + 6$.  Si $f(3)=1$,
 quelle est la valeur de $f'(3)$?
 \label{6Q44}
 \end{question}
@@ -4991,10 +4991,10 @@ Utilisez la dérivée implicite pour calculer la dérivée de la fonction $y$ qu
 est définie implicitement dans chacune des équations suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle x^2y +xy^2 = 3x$ &
-\subQ{b} & $\displaystyle \sqrt{xy} = 1 + x^2y$ &
-\subQ{c} & $\displaystyle xy^4 +x^2y = x + 3 y$ \\
-\subQ{d} & $\displaystyle ye^{y} = x^2e^x$ & & & &
+\subQ{a} & $\DS x^2y +xy^2 = 3x$ &
+\subQ{b} & $\DS \sqrt{xy} = 1 + x^2y$ &
+\subQ{c} & $\DS xy^4 +x^2y = x + 3 y$ \\
+\subQ{d} & $\DS ye^{y} = x^2e^x$ & & & &
 \end{tabular}
 \end{center}
 \label{6Q45}
@@ -5052,7 +5052,7 @@ Pourquoi?
 \end{question}
 
 \begin{question}[\life \eng]
-Soit $\displaystyle f(x) = \frac{\ln(x)}{x^2-1}$.
+Soit $\DS f(x) = \frac{\ln(x)}{x^2-1}$.
 
 \subQ{a} Trouvez l'approximation linéaire $p_1$ du numérateur de $f$ au
 voisinage de $x=1$.\\
@@ -5103,8 +5103,8 @@ Taylor de degré trois au point $a$ pour estimer $f(b)$.
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
 \subQ{a} & $f(x) = \ln(x)$, $a =1$ et $b = 1.2$ &
 \subQ{b} & $f(x) = x^{1/4}$, $a = 1$ et $b = 1.4$ \\
-\subQ{c} & $\displaystyle f(x) = \frac{1}{\sqrt{1+x}}$, $a=3$ et $b =3.1$ &
-\subQ{d} & $\displaystyle f(x)= x^{4/3}$, $a = 2$ et $b=8.1$ \\
+\subQ{c} & $\DS f(x) = \frac{1}{\sqrt{1+x}}$, $a=3$ et $b =3.1$ &
+\subQ{d} & $\DS f(x)= x^{4/3}$, $a = 2$ et $b=8.1$ \\
 \subQ{e} & $f(x) = \arcsin(x^2-1)$, $a=1$ et $b=1.1$ & &
 \end{tabular}
 \end{center}
@@ -5129,7 +5129,7 @@ la théorie.  Justifiez votre réponse.
 
 \begin{question}[\life \eng]
 Soit $p(x) = 7x^9 - 8 x^6 - 5 x^3 + 2x^2 -8$.  Pour quelles
-valeurs de $x$ avons-nous $\displaystyle \dydxn{p}{x}{9}(x) >0$?
+valeurs de $x$ avons-nous $\DS \dydxn{p}{x}{9}(x) >0$?
 Justifiez votre réponse.
 \label{6Q56}
 \end{question}
@@ -5156,9 +5156,9 @@ Utilisez un polynôme de Taylor de degré suffisamment grand pour
 calculer les limites suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \lim_{h\rightarrow 0}\frac{e^h -1 -h}{h^2}$ & 
-\subQ{b} & $\displaystyle \lim_{h\rightarrow 0}\frac{e^h -1 -h - h^2/2}{h^3}$ &
-\subQ{c} & $\displaystyle \lim_{\theta \rightarrow \pi/2}
+\subQ{a} & $\DS \lim_{h\rightarrow 0}\frac{e^h -1 -h}{h^2}$ & 
+\subQ{b} & $\DS \lim_{h\rightarrow 0}\frac{e^h -1 -h - h^2/2}{h^3}$ &
+\subQ{c} & $\DS \lim_{\theta \rightarrow \pi/2}
  \frac{\cos \theta}{\theta - \pi/2}$
 \end{tabular}
 \end{center}
@@ -5178,7 +5178,7 @@ f(x) = \frac{1}{x} \qquad \text{et} \qquad g(x) = \frac{1}{e^x-1} \ .
 \end{question}
 
 \begin{question}[\life \eng]
-Soit $\displaystyle f(t) = \frac{5t}{e^{2t}}$.  Utilisez la Règle de
+Soit $\DS f(t) = \frac{5t}{e^{2t}}$.  Utilisez la Règle de
 l'Hospital pour trouver l'asymptote horizontal pour $t>0$.
 \label{6Q61}
 \end{question}
@@ -5193,7 +5193,7 @@ où
 \begin{enumerate}
 \item $A$ et $k$ sont des constantes positives,
 \item $r(0)=0$,
-\item $\displaystyle \lim_{t\rightarrow \infty} r(t) = \infty$ et
+\item $\DS \lim_{t\rightarrow \infty} r(t) = \infty$ et
 \item $r'(t)>0$ pour $c>0$.
 \end{enumerate}
 Par exemple, considérons la fonction d'absorption
@@ -5223,16 +5223,16 @@ des deux fonctions approche cette limite le plus rapidement.
 Évaluez les limites suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \lim_{x\rightarrow \infty} \frac{\ln(x)}{e^{3x}}$ &
-\subQ{b} & $\displaystyle \lim_{t\rightarrow \infty} \frac{1+t}{1+t+t^2}$ &
-\subQ{c} & $\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)-x}{\cos(x)-1}$
+\subQ{a} & $\DS \lim_{x\rightarrow \infty} \frac{\ln(x)}{e^{3x}}$ &
+\subQ{b} & $\DS \lim_{t\rightarrow \infty} \frac{1+t}{1+t+t^2}$ &
+\subQ{c} & $\DS \lim_{x\rightarrow 0} \frac{\sin(x)-x}{\cos(x)-1}$
 \\[0.9em]
-\subQ{d} & $\displaystyle \lim_{z\rightarrow \infty} \frac{3z}{1+\ln(1+z)}$ &
-\subQ{e} & $\displaystyle \lim_{x\to 0}\frac{\sin(3x^2)}{x^2}$ &
-\subQ{f} & $\displaystyle \lim_{x\to \pi/2} \frac{\cos^2(x)}{(x-\pi/2)^2}$
+\subQ{d} & $\DS \lim_{z\rightarrow \infty} \frac{3z}{1+\ln(1+z)}$ &
+\subQ{e} & $\DS \lim_{x\to 0}\frac{\sin(3x^2)}{x^2}$ &
+\subQ{f} & $\DS \lim_{x\to \pi/2} \frac{\cos^2(x)}{(x-\pi/2)^2}$
 \\[0.9em]
-\subQ{g} & $\displaystyle \lim_{x\to \infty} \frac{e^{1/x}-1}{1/x}$ &
-\subQ{h} & $\displaystyle \lim_{x\to 0^+} \frac{\ln(\sin(x))}{\ln(x^4)}$ &
+\subQ{g} & $\DS \lim_{x\to \infty} \frac{e^{1/x}-1}{1/x}$ &
+\subQ{h} & $\DS \lim_{x\to 0^+} \frac{\ln(\sin(x))}{\ln(x^4)}$ &
 &
 \end{tabular}
 \end{center}
@@ -5243,17 +5243,17 @@ des deux fonctions approche cette limite le plus rapidement.
 Évaluez les limites suivantes si elles existent.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.4em}}l@{\hspace{3em}}}l@{\hspace{0.4em}}l}
-\subQ{a} & $\displaystyle \lim_{x\rightarrow \pi^+} \csc(5x)\sin(3x)$ &
-\subQ{b} & $\displaystyle \lim_{x\rightarrow 0^+}
+\subQ{a} & $\DS \lim_{x\rightarrow \pi^+} \csc(5x)\sin(3x)$ &
+\subQ{b} & $\DS \lim_{x\rightarrow 0^+}
 \left( \frac{1}{\sin(x)} -\frac{1}{x} \right)$  &
-\subQ{c} & $\displaystyle \lim_{x\rightarrow 0^+} \left(\csc(x) -
+\subQ{c} & $\DS \lim_{x\rightarrow 0^+} \left(\csc(x) -
 \cot(x)\right)$ \\[0.9em]
-\subQ{d} & $\displaystyle \lim_{x\to 0} (1-\cos(x))^x$ &
-\subQ{e} & $\displaystyle \lim_{x\to 0^+} 7x \cot(3x)$ &
-\subQ{f} & $\displaystyle \lim_{x\to \pi} \cot^2(x) (x-\pi)^2$ \\[0.9em]
-\subQ{g} & $\displaystyle \lim_{x\to +\infty} \left( x
+\subQ{d} & $\DS \lim_{x\to 0} (1-\cos(x))^x$ &
+\subQ{e} & $\DS \lim_{x\to 0^+} 7x \cot(3x)$ &
+\subQ{f} & $\DS \lim_{x\to \pi} \cot^2(x) (x-\pi)^2$ \\[0.9em]
+\subQ{g} & $\DS \lim_{x\to +\infty} \left( x
 \cos\left(\frac{1}{x}\right) - x \right)$ &
-\subQ{h} & $\displaystyle \lim_{x\to 0} (\cos(x))^{1/x^2}$ &
+\subQ{h} & $\DS \lim_{x\to 0} (\cos(x))^{1/x^2}$ &
 \end{tabular}
 \end{center}
 \label{6Q65}
@@ -5300,7 +5300,7 @@ x_{i+1} = x_i  - \frac{f(x_i)}{f'(x_i)} \quad \text{pour}
 \quad i=0, 1, 2, 3, \ldots
 \]
 si nous remplaçons $f'(x_i)$ par
-$\displaystyle \frac{f(x_i)-f(x_{i-1})}{x_i - x_{i-1}}$ (une
+$\DS \frac{f(x_i)-f(x_{i-1})}{x_i - x_{i-1}}$ (une
 approximation de $f'(x_i)$ si $x_{i-1}$ est très près de $x_i$), nous
 obtenons la méthode de la sécante
 \[
@@ -5663,7 +5663,7 @@ Considérons le système dynamique discret
 x_{i+1} &= f(x_i) \quad , \quad i=0, 1, 2, 3, \ldots \\
 x_0 &= 1
 \end{align*}
-où $\displaystyle f(x) = \frac{x}{1+x}$.  Calculez les valeurs de $x_1$,
+où $\DS f(x) = \frac{x}{1+x}$.  Calculez les valeurs de $x_1$,
 $x_2$, $x_3$, \ldots \ Trouvez la solution générale.
 \label{6Q92}
 \end{question}
@@ -5849,7 +5849,7 @@ le début du traitement.  $f(M_i)$ est la fraction du médicament qui est
 absorbée par l'organisme à chaque heure et le terme $1$ représente une dose
 du médicament administrée à toutes les heures.
 
-\subQ{a} Si $\displaystyle f(M) = \frac{M}{2+M}$, nous remarquons que
+\subQ{a} Si $\DS f(M) = \frac{M}{2+M}$, nous remarquons que
 $M=2$ est un point d'équilibre pour le système dynamique discret.
 Utilisez le théorème de stabilité des points d'équilibre pour
 déterminer la stabilité du point d'équilibre $M=2$.  Est-ce que les
@@ -5912,7 +5912,7 @@ plus grand que $0$ soit (asymptotiquement) stable?  Instable?
 \begin{question}[\life]
 Considérons une population dont le taux moyen de reproduction par
 individu et par heure est donné par
-$\displaystyle t(x) = \frac{2 x}{1+x^2}$ où $x$ est le nombre
+$\DS t(x) = \frac{2 x}{1+x^2}$ où $x$ est le nombre
 d'individus.
 
 \subQ{a} Si $x=x_n$ est le nombre d'individus par cm$^2$ après $n$
@@ -5931,7 +5931,7 @@ stabilité des points d'équilibre si possible.\\
 Soit $x_n$, le nombre d'individus dans un population $n$ semaines
 après le début de l'étude de cette population.  Si le taux de
 reproduction (nombre de descendants par habitant) à la $n^e$ semaine
-est donné par $\displaystyle \frac{2.5\,x_n}{1+x_n^2}$, donnez un
+est donné par $\DS \frac{2.5\,x_n}{1+x_n^2}$, donnez un
 système dynamique discret pour décrire cette population.  Pour le
 système dynamique discret que vous avez trouvé:
 

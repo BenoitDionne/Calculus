@@ -3,7 +3,7 @@
 \nonumsubsection{Introduction}
 
 \compileSOL{\SOLUb}{\ref{10Q1}}{
-La fonction $\displaystyle y(t) = t^2\sin(t)$ est une solution car
+La fonction $\DS y(t) = t^2\sin(t)$ est une solution car
 \[
 \dydx{y}{t}(t) = \dfdx{\left( t^2\sin(t)\right)}{t}
 = \left(\dfdx{ t^2 \right)}{t} \sin(t) + t^2 \left( \dfdx{\sin(t)\right)}{t}
@@ -18,7 +18,7 @@ pour tout $t$.
 L(t) = \int 6.48 e^{-0.09t} \dx{t} = -72 e^{-0.09t} + C .
 \]
 Nous obtenons $5 = -72 + C$ de la condition initiale $L(0)=5$.  Donc
-$C=77$.  Ainsi $\displaystyle L(t) = -72 e^{-0.09t} + 77$ et
+$C=77$.  Ainsi $\DS L(t) = -72 e^{-0.09t} + 77$ et
 $L(5) - L(1) \approx 19.89$.
 
 (2) Il découle du Théorème fondamental du calcul que
@@ -33,7 +33,7 @@ L(5) - L(1) &= \int_1^5 \dydx{L}{t} \dx{t} = \int_1^5 6.48 e^{-0.09t} \dx{t}
 P(t) = \int 5.0 e^{-2.0t} \dx{t} = -2.5 e^{-2 t} + C \ .
 \]
 Nous obtenons $2 = -2.5 +C$ de la condition initiale $P(0)= 2$.  Donc
-$C=4.5$.  Ainsi, $\displaystyle P(t) = -2.5 e^{-2 t} + 4.5$ et
+$C=4.5$.  Ainsi, $\DS P(t) = -2.5 e^{-2 t} + 4.5$ et
 $P(10) - P(5) \approx 0.000113495$.
 
 (2) Il découle du Théorème fondamental du calcul que
@@ -48,7 +48,7 @@ P(10) - P(5) &= \int_5^{10} \dydx{P}{t} \dx{t} =
 A(t) = \int 523.8 (t-1981)^2 \dx{t} = 174.6 (t-1981)^3 + C \ .
 \]
 Nous obtenons $C=13,400$ de la condition initiale $A(1981)=13,400$.
-Ainsi, $\displaystyle A(t) = 174.6 (t-1981)^3 + 13,400$ et
+Ainsi, $\DS A(t) = 174.6 (t-1981)^3 + 13,400$ et
 $A(1987) - A(1985) \approx 26,539.2$.
 
 (2) Il découle du Théorème fondamental du calcul que
@@ -81,7 +81,7 @@ L'énoncé de la question dit que $x'(t) = 2200+10e^{0.8t}$.
 L'augmentation cherché est la différence entre le nombre moyen de
 moustiques au $9^e$ jour et le nombre moyen de moustiques au $5^e$
 jour.  Notons que
-$\displaystyle \int_5^9 x'(t) \dx{t} = x(9)-x(5)$ est la variation du
+$\DS \int_5^9 x'(t) \dx{t} = x(9)-x(5)$ est la variation du
 nombre moyen de moustiques entre $t=5$ et $t=9$ jours.  Ainsi,
 l'augmentation cherché est de
 \begin{align*}
@@ -107,8 +107,8 @@ La distance est négative car le déplacement positif est vers le haut.
 \subQ{a} Graphe de $v(t) = e^t$.
 \MATHgraph{10_equ_diff/guepard}{8cm}
 
-\subQ{b} Puisque $\displaystyle \dydx{x}{t}(t) = v(t)$, nous obtenons
-$\displaystyle \dydx{x}{t}(t) = e^t$.
+\subQ{b} Puisque $\DS \dydx{x}{t}(t) = v(t)$, nous obtenons
+$\DS \dydx{x}{t}(t) = e^t$.
 
 \subQ{c} $x(t) = \int v(t) \dx{t} = \int e^t \dx{t} = e^t + C$ où $C$ est une
 constante.  Si $x(0)=0$, alors $0 = 1 + C$.  Ce qui
@@ -125,8 +125,8 @@ $t = \ln(201) \approx 5.3033$ s.
 \subQ{a}
 \PDFgraph{10_equ_diff/escargot1}
 
-\subQ{b} Puisque $\displaystyle \dydx{x}{t}(t) = v(t)$, nous avons
-$\displaystyle \dydx{x}{t}(t) = 0.1 + 0.2 e^{-t}$.
+\subQ{b} Puisque $\DS \dydx{x}{t}(t) = v(t)$, nous avons
+$\DS \dydx{x}{t}(t) = 0.1 + 0.2 e^{-t}$.
 
 \subQ{c}
 \[
@@ -190,10 +190,10 @@ le trottoir.
 p(t) = \int \left(5t^2 + 5t^{-2}\right)\dx{t} = \frac{5}{3} \, t^3
 - 5 \, t^{-1} + C \ .
 \]
-Si $p(1)=12$, alors $\displaystyle \frac{5}{3} - 5 + C = 12$
-et ainsi $\displaystyle C=\frac{46}{3}$.  Nous avons tracé le graphe de
-$\displaystyle p(t)=\frac{5}{3} \, t^3 - 5 \, t^{-1} + \frac{46}{3}$
-et celui de $\displaystyle p'(t) = 5t^2 + \frac{5}{t^2}$ ci-dessous.
+Si $p(1)=12$, alors $\DS \frac{5}{3} - 5 + C = 12$
+et ainsi $\DS C=\frac{46}{3}$.  Nous avons tracé le graphe de
+$\DS p(t)=\frac{5}{3} \, t^3 - 5 \, t^{-1} + \frac{46}{3}$
+et celui de $\DS p'(t) = 5t^2 + \frac{5}{t^2}$ ci-dessous.
 \MATHgraph{10_equ_diff/quest_ppm}{8cm}
 
 \subQ{b}
@@ -203,8 +203,8 @@ M(t) = \int M'(t) \dx{t} = \int \left( t^3 + t^{-3} \right) \dx{t}
 = \frac{t^4}{4} + \frac{t^{-2}}{-2} + C \ .
 \]
 Si $M(2)= 8$, alors
-$\displaystyle 8 = \frac{2^4}{4} + \frac{2^{-2}}{-2} + C = \frac{31}{8} + C$
-et ainsi $\displaystyle C = \frac{33}{8}$.  Nous obtenons la solution
+$\DS 8 = \frac{2^4}{4} + \frac{2^{-2}}{-2} + C = \frac{31}{8} + C$
+et ainsi $\DS C = \frac{33}{8}$.  Nous obtenons la solution
 \[
 M(t) = \frac{t^4}{4} + \frac{t^{-2}}{-2} + \frac{33}{8} \ .
 \]
@@ -216,7 +216,7 @@ Nous avons tracé les graphes de $M$ et $M'$ ci-dessous.
 p(t) = \int p'(t) \dx{t} = -0.25 \int t^3 \dx{t} = -\frac{t^4}{16} + C \ .
 \]
 De plus, la condition initiale $p(0)=5$ nous donne que $C=5$.
-La solution cherchée est donc $\displaystyle p(t) = -\frac{t^4}{16} + 5$.
+La solution cherchée est donc $\DS p(t) = -\frac{t^4}{16} + 5$.
 Le graphe de $p$ et celui de $p'$ sont donnés ci-dessous.
 \MATHgraph{10_equ_diff/masse}{8cm}
 La fonction $p(t)$ est de plus en plus décroissante lorsque $t>0$
@@ -227,7 +227,7 @@ augmente car $p'(t) = -0.25 t^3 < 0$ diminue lorsque $t>0$ augmente.
 M(t) = \int 2 t^{-1/2} \dx{t} = 4 t^{1/2} + C
 \]
 où $C$ est une constante. Il découle de $M(0)=5$ que
-$C=5$.  Ainsi, $\displaystyle M(t) = 4 t^{1/2} + 5$.
+$C=5$.  Ainsi, $\DS M(t) = 4 t^{1/2} + 5$.
 Les graphes de $M(t)$ et $M'(t)$ sont donnés ci-dessous.
 \MATHgraph{10_equ_diff/quest_mass}{8cm}
 La fonction $M(t)$ est de moins en moins croissante
@@ -273,7 +273,7 @@ L(t) = \int L'(t) \dx{t}
 \right) \dx{t} \ .
 \]
 Si $y = 2\pi(t-90)/182.5$, alors
-$\displaystyle \dx{y} = (2\pi/182.5) \dx{t}$ et
+$\DS \dx{y} = (2\pi/182.5) \dx{t}$ et
 \begin{align*}
 L(t) &= \frac{182.5}{2\pi}
 \int \left( 0.02 + 0.01 \cos\left(\frac{2\pi (t-90)}{182.5}\right)
@@ -318,8 +318,8 @@ et $L(300) = 3.0801$.
 }
 
 \compileSOL{\SOLUb}{\ref{10Q11}}{
-\subQ{a} Nous avons $\displaystyle P(t) = \int \frac{5}{1+2t} \dx{t}$.
-Si $u=1+2t$, alors $\displaystyle \dx{u} = 2 \dx{t}$ et
+\subQ{a} Nous avons $\DS P(t) = \int \frac{5}{1+2t} \dx{t}$.
+Si $u=1+2t$, alors $\DS \dx{u} = 2 \dx{t}$ et
 \begin{align*}
 P(t) &= \int \frac{5}{1+2t} \dx{t}
 = \frac{5}{2} \int \frac{1}{1+2t} (2) \dx{t}
@@ -328,17 +328,17 @@ P(t) &= \int \frac{5}{1+2t} \dx{t}
 = \frac{5}{2} \ln|1+2t| + C \ .
 \end{align*}
 La condition initiale $P(0)=5$ nous donne que $C=5$.  Donc
-$\displaystyle P(t) = \frac{5}{2} \ln|1+2t| + 5$.  Nous avons que
+$\DS P(t) = \frac{5}{2} \ln|1+2t| + 5$.  Nous avons que
 $P(t) \to \infty$ lorsque $t\to \infty$.
 
-\subQ{b} Nous avons $\displaystyle P(t) = \int \frac{5}{(1+t)^2} \dx{t}$.
+\subQ{b} Nous avons $\DS P(t) = \int \frac{5}{(1+t)^2} \dx{t}$.
 Si $y=1+t$, alors $\dx{y} = \dx{t}$ et
 \[
 P(t) = \int \frac{5}{(1+t)^2} \dx{t} = \int \frac{5}{y^2} \dx{y}
 = -\frac{5}{y} + C = - \frac{5}{1+t} + C \ .
 \]
 La condition initiale $p(0)=0$ nous donne $C=5$.  Donc
-$\displaystyle P(t) = -\frac{5}{1+t} + 5$.
+$\DS P(t) = -\frac{5}{1+t} + 5$.
 La figure ci-dessous contient le graphe de $P$ sur l'intervalle $[0,20]$.
 \MATHgraph{10_equ_diff/quest_chm}{8cm}
 La fonction $P(t)$ est de moins en moins croissante
@@ -392,7 +392,7 @@ W(t) = -\frac{1}{3}(4t-t^2) e^{-3t} -\frac{1}{9} (4-2t) e^{-3t} +
 \frac{2}{27} e^{-3t} + \frac{10}{27}
 \]
 et
-$\displaystyle W(2) = -\frac{34}{27} e^{-6} + \frac{10}{27} \approx 0.36725$.
+$\DS W(2) = -\frac{34}{27} e^{-6} + \frac{10}{27} \approx 0.36725$.
 
 \subQ{b} Il faut trouver la valeur de $t>0$ (s'il y en a une) à
 laquelle $W'(t)$ atteint son maximum absolu.  Nous avons
@@ -434,7 +434,7 @@ $W(2) = 0.9028$.
 
 \compileSOL{\SOLUa}{\ref{10Q13}}{
 \subQ{a}
-$\displaystyle M(t) = \int (1+t^2) e^{-2t} \dx{t}$.
+$\DS M(t) = \int (1+t^2) e^{-2t} \dx{t}$.
 Si $u=-2t$, alors $\dx{u} = -2 \dx{t}$, $t^2= u^2/4$ et
 \begin{align*}
 M(t) &= -\frac{1}{2} \int (1+t^2) e^{-2t} (-2) \dx{t}
@@ -462,7 +462,7 @@ M(t) = -\left( \frac{t^2}{2} + \frac{t}{2} + \frac{3}{4}\right) e^{-2t}
 + \frac{7}{4} \ .
 \]
 et
-$\displaystyle M(1) = -\left(\frac{1}{2}+ \frac{1}{2} + \frac{3}{4}
+$\DS M(1) = -\left(\frac{1}{2}+ \frac{1}{2} + \frac{3}{4}
 \right) e^{-2} + \frac{7}{4} \approx 1.51316$ .
 
 \subQ{b} Il faut trouver le maximum absolu de $M'(t) = (1+t^2) e^{-2t}$
@@ -479,17 +479,17 @@ et $M(1) = 2$.
 \compileSOL{\SOLUa}{\ref{10Q14}}{
 \subQ{a} Soit $x(t)$ la distance entre le sol et l'objet au temps $t$.
 L'accélération est $x''(t) = -10.5$.  La vitesse est
-$\displaystyle x'(t) = \int x''(t) \dx{t} = -10.5 t + C$ où
+$\DS x'(t) = \int x''(t) \dx{t} = -10.5 t + C$ où
 $C$ est une constante qui est déterminée à l'aide de la vitesse
 initiale.  La distance entre l'objet et le sol est
-$\displaystyle x(t) = \int x'(t) \dx{t}
+$\DS x(t) = \int x'(t) \dx{t}
 = -\frac{10.5}{2}\; t^2 + C t + D$ où $D$ est une
 constante qui est déterminée par la hauteur initiale de l'objet
 lorsqu'il est lancé.
 
 Nous obtenons $C=5$ de $x'(0) = 5$ et $D=100$ de $x(0)=100$. 
 La distance entre l'objet et le sol est donc
-$\displaystyle x(t) = -\frac{10.5}{2}\; t^2 + 5 t + 100$.
+$\DS x(t) = -\frac{10.5}{2}\; t^2 + 5 t + 100$.
 
 \subQ{b} La hauteur maximale atteint par l'objet est lorsque
 $x'(t)=-10.5 t + 5=0$; c'est-à-dire, $t= 5/10.5 \approx 0.47619$ s.
@@ -510,9 +510,9 @@ Sa vitesse à ce moment sera $x'(10/10.5) = -5$ m/s.  Le signe
 négatif indique que l'objet se dirige vers le sol.
 
 \subQ{d} L'objet frappe le sol au temps $t$ où $x(t)=0$.  Or
-$\displaystyle -\frac{10.5}{2}\; t^2 + 5 t + 100$ a une seul racine
+$\DS -\frac{10.5}{2}\; t^2 + 5 t + 100$ a une seul racine
 positive qui est
-$\displaystyle t_s =
+$\DS t_s =
 \frac{-5 - \sqrt{5^2 -4 \times (-10.5/2)\times 100}}{2 (-10.5/2)}
 \approx 4.8664497$.  Donc l'objet frappe le sol après $t_s$ s à une
 vitesse de $x'(t_s) \approx -46.097722$ m/s.
@@ -551,7 +551,7 @@ Donc la cellule va mourir empoisonnée après un certain temps $t$ donné par
 }
 
 \compileSOL{\SOLUb}{\ref{10Q17}}{
-$\displaystyle x(t) = - \frac{1}{2} + \frac{3}{2} e^{2t}$ est une
+$\DS x(t) = - \frac{1}{2} + \frac{3}{2} e^{2t}$ est une
 solution car
 \[
 x'(t) = \dfdx{\left(-\frac{1}{2} + \frac{3}{2} e^{2t}\right)}{t}
@@ -661,15 +661,15 @@ Césium $137$ est $30$ ans.  Donc
 \frac{q_0}{2} = q_0 e^{30k} \ .
 \]
 Si nous résolvons pour $k$, nous trouvons
-$\displaystyle k = \frac{1}{30} \, \ln(1/2) \approx -0.023104906$.
+$\DS k = \frac{1}{30} \, \ln(1/2) \approx -0.023104906$.
 
 Si la quantité initiale de Césium $137$ est $q_0 = 50$ mg, il restera
-$\displaystyle q(50) = 50 e^{50k} \approx 15.749013$ mg 
+$\DS q(50) = 50 e^{50k} \approx 15.749013$ mg 
 après $50$ ans.
 }
 
 \compileSOL{\SOLUb}{\ref{10Q26}}{
-\subQ{a} Puisque $\displaystyle y'(t) = 2 y(t)$, nous obtenons
+\subQ{a} Puisque $\DS y'(t) = 2 y(t)$, nous obtenons
 \[
 \int \frac{1}{y} \dx{y} = \int \frac{y'(t)}{y(t)} \dx{t} = \int 2
 \dx{t} \ .
@@ -696,8 +696,8 @@ Ainsi
 x = \frac{-1}{ (3/2) t^2 + D} = \frac{-2}{3 t^2 + 2D} \ .
 \]
 La condition initiale $x(1)=-2/5$ nous donne
-$\displaystyle -\frac{2}{5} = \frac{-2}{3+2D}$.
-Nous obtenons $D=1$ et donc $\displaystyle x(t) = \frac{-2}{3 t^2 + 2}$.
+$\DS -\frac{2}{5} = \frac{-2}{3+2D}$.
+Nous obtenons $D=1$ et donc $\DS x(t) = \frac{-2}{3 t^2 + 2}$.
 
 \subQ{c}
 Si nous séparons les variables, nous obtenons
@@ -723,12 +723,12 @@ où $C$ est une constante.  Ainsi,
 \end{align*}
 où $D = \pm e^{-C}$.  Notons que $D=0$ est aussi valable
 car $h(t) = 1000$ pour tout $t$ est une solution de
-$\displaystyle \dydx{h}{t} = 1000 -h$.  Nous obtenons donc
+$\DS \dydx{h}{t} = 1000 -h$.  Nous obtenons donc
 \[
 h(t) = 1000 - D e^{-t}
 \]
 avec $D$ une constante réelle.  Pour satisfaire $h(0)=500$, nous devons
-choisir $D$ tel que $\displaystyle 500 = 1000 - D$; c'est-à-dire,
+choisir $D$ tel que $\DS 500 = 1000 - D$; c'est-à-dire,
 $D=500$.  Finalement, nous trouvons $h(t) = 1000 - 500 e^{-t}$.
 
 \subQ{d}
@@ -751,7 +751,7 @@ $g^2 + g - 5t = 0$ que
 g(t) = \frac{1}{2} \left( -1 + \sqrt{ 1+ 20t}\right) \ .
 \]
 Notez que
-$\displaystyle g(t) = \frac{1}{2} \left( -1 - \sqrt{ 1+ 20t}\right)$
+$\DS g(t) = \frac{1}{2} \left( -1 - \sqrt{ 1+ 20t}\right)$
 ne satisfait pas $g(0) = 0$.
 
 \subQ{f} Si nous séparons les variables, nous avons
@@ -760,11 +760,11 @@ ne satisfait pas $g(0) = 0$.
 \Rightarrow
 \ln|y| = \arctan(x) + C \ .
 \]
-Donc $\displaystyle y = D e^{\arctan(x)}$ où $D = \pm e^C$ est une
+Donc $\DS y = D e^{\arctan(x)}$ où $D = \pm e^C$ est une
 constante.  Notons que $D=0$ est aussi acceptable car nous obtenons la
 solution triviale $y(x)=0$ pour tout $x$.  La condition initiale $y(0)=2$
 donne $D=2$.  La solution particulière est donc
-$\displaystyle y = 2 e^{\arctan(x)}$.
+$\DS y = 2 e^{\arctan(x)}$.
 
 \subQ{g} Si nous séparons les variables, nous avons
 \begin{align*}
@@ -777,7 +777,7 @@ où $D\equiv \pm e^C$ est une constante.  Notons que $D=0$ est aussi
 acceptable car nous obtenons la solution trivial $y(x) = 1$ pour tout
 $x$.  La condition $y(1)=0$ nous donne $0=1+De^{2.5}$ et donc 
 $D=-e^{-2.5}$.  Nous obtenons la solution particulière
-$\displaystyle y = 1 - e^{x^2/2 + 2x - 2.5}$.
+$\DS y = 1 - e^{x^2/2 + 2x - 2.5}$.
 
 \subQ{h} Si nous séparons les variables, nous avons
 \[
@@ -796,9 +796,9 @@ où $E$ est une constante arbitraire.  Donc,
 \Rightarrow y = \frac{1}{-2\arctan(3x)-6C}
 \]
 où $C$ est une constante arbitraire.  Si nous substituons $x=0$ dans cette
-dernière équation, nous obtenons $\displaystyle 1 = \frac{1}{-6C}$ car
-$\displaystyle y(0) = 1$.  Donc $C=-1/6$ et
-$\displaystyle y = \frac{1}{-2\arctan(3x) + 1}$.
+dernière équation, nous obtenons $\DS 1 = \frac{1}{-6C}$ car
+$\DS y(0) = 1$.  Donc $C=-1/6$ et
+$\DS y = \frac{1}{-2\arctan(3x) + 1}$.
 }
 
 \compileSOL{\SOLUa}{\ref{10Q27}}{
@@ -868,7 +868,7 @@ où $E = \pm e^{4C}$.  Notons que $E=0$ est aussi acceptable car $y(t)
 
 \subQ{d}
 Si nous substituons $y$ par $x^2$ dans
-$\displaystyle y = \frac{ E e^{4t} - 2}{4}$, nous obtenons
+$\DS y = \frac{ E e^{4t} - 2}{4}$, nous obtenons
 \[
 x^2 = \frac{E e^{4t} - 2}{4} \Rightarrow x
 = \pm \sqrt{\frac{De^{4t} - 1}{2}}
@@ -902,7 +902,7 @@ initiale.  Nous avons
 \[
 c(0) = c_0 \Rightarrow  C-E = c_0 \Rightarrow E = C - c_0 \ .
 \]
-La solution est donc $\displaystyle c(t) = C-(C-c_0) e^{-kA t/V}$.
+La solution est donc $\DS c(t) = C-(C-c_0) e^{-kA t/V}$.
 }
 
 \compileSOL{\SOLUb}{\ref{10Q30}}{
@@ -929,7 +929,7 @@ si $C= 10^{4/5}$.  La solution est
 y = \left( \frac{10}{t - 10^{4/5}} \right)^{10} \quad \text{pour} \quad
 t < 10^{4/5} \ .
 \]
-Notons que $\displaystyle \lim_{t\to (10^{4/5})^-} y(t) = \infty$.
+Notons que $\DS \lim_{t\to (10^{4/5})^-} y(t) = \infty$.
 
 Cette équation est plus délicate à résoudre car elle ne satisfait pas
 le théorème d'existence et d'unicité des équation différentielle.  La
@@ -967,19 +967,19 @@ y'= 2 x'= 2 \left(2x-1\right) = 2 y \ .
 Cette dernière équation différentielle est bien connue.  Sa solution générale
 est $y(t) = y_0 e^{2t}$ où $y_0$ est la condition initiale à $t=0$.
 
-La solution générale de $\displaystyle \dydx{x}{t} = 2x-1$ est donc
+La solution générale de $\DS \dydx{x}{t} = 2x-1$ est donc
 \[
 x = \frac{y+1}{2} = \frac{y_0 e^{2t} + 1}{2} 
 = \frac{ (2 x_0 - 1) e^{2t} + 1}{2}
 \]
 où $x_0$ est la condition initiale à $t=0$ pour
-$\displaystyle \dydx{x}{t} = 2x-1$.
+$\DS \dydx{x}{t} = 2x-1$.
 }
 
 \compileSOL{\SOLUb}{\ref{10Q33}}{
 \subQ{a}
 la température $T(t)$ du café au temps $t$ satisfait l'équation
-différentielle $\displaystyle \dydx{T}{t} = K ( M- T)$ où la constante $M$
+différentielle $\DS \dydx{T}{t} = K ( M- T)$ où la constante $M$
 est la température ambiante et la constant positive $K$ est associé à la
 conductivité thermique du café.  Le temps est mesuré en minutes et la
 température en degré Celsius.
@@ -1022,7 +1022,7 @@ T(60) = 22 - (22-60)e^{-0.03736072\times 60} \approx 26.038781^\circ\text{C}
 
 \compileSOL{\SOLUa}{\ref{10Q34}}{
 \subQ{a} Si $T(t)$ est la température au temps $t$, nous avons alors
-$\displaystyle \dydx{T}{t} = K(M - T)$ où $M$ est la température à
+$\DS \dydx{T}{t} = K(M - T)$ où $M$ est la température à
 l'extérieur de la maison, que nous assumons constante, et $K$ est une
 constante positive.  Dans le cas présent $M = -12$ C.
 
@@ -1122,7 +1122,7 @@ y' = -2\, (-t+D)
 -2\sqrt{y} = -2 \sqrt{ (-t+D)^2 } = -2 |-t+D| = -2 (-t+D)
 \]
 car $t\geq D$.  Donc
-$\displaystyle \dydx{y}{t} = -2 \sqrt{y}$ pour $t\leq D$.
+$\DS \dydx{y}{t} = -2 \sqrt{y}$ pour $t\leq D$.
 
 \subQ{b} la condition initiale $y(0)=16$ donne $16 = D^2$ et ainsi $D=4$ ou
 $D=-4$.  La solution $y=(-t+D)^2$ avec $D=-4$ n'est pas acceptable car 
@@ -1330,7 +1330,7 @@ pourrait avoir l'allure suivante.
 
 \compileSOL{\SOLUb}{\ref{10Q41}}{
 \subQ{a} Nous avons l'équation différentielle
-$\displaystyle \dydx{y}{t} = f(y)$ avec
+$\DS \dydx{y}{t} = f(y)$ avec
 $f(x) = y(y^2 -6 y + 5) = y(y-5)(y-1)$.  Les
 points d'équilibre sont les solutions de $f(y) = 0$.  Nous avons trois
 points d'équilibre: $y=0$, $y=1$ et $y=5$.
@@ -1376,7 +1376,7 @@ graphe suivant pour la solution $y=y(t)$ avec $y(0)=4$.
 \compileSOL{\SOLUa}{\ref{10Q42}}{
 Les points d'équilibre sont les valeurs de $\theta$ telles que 
 $f(\theta) = \theta\cos(\theta)=0$.  Nous trouvons $\theta =0$ et
-$\displaystyle \theta = \frac{\pi}{2} + n \pi$ pour $n\in \ZZ$.
+$\DS \theta = \frac{\pi}{2} + n \pi$ pour $n\in \ZZ$.
 
 Les points d'équilibre dans l'intervalle $[-\pi,2\pi]$ sont
 $-\pi/2$, $0$, $\pi/2$ et $3\pi/2$.  Le tableau ci-dessous donne le signe de
@@ -1432,8 +1432,8 @@ côte n'est pas possible.
 
 \compileSOL{\SOLUa}{\ref{10Q48}}{
 Nous avons l'équation différentielle 
-$\displaystyle \dydx{C}{t} = f(C)$ où
-$\displaystyle f(C) = 5-C + \frac{C}{2+C}$
+$\DS \dydx{C}{t} = f(C)$ où
+$\DS f(C) = 5-C + \frac{C}{2+C}$
 car $\beta =1$ et $\gamma = 5$.  Les points d'équilibre sont les
 solutions de $f(C)=0$; c'est-à-dire, les solutions de
 \[
@@ -1444,7 +1444,7 @@ Les solutions de cette dernière équation sont $C_\pm = 2 \pm \sqrt{14}$.  Ce
 sont les deux seules points d'équilibre.  La concentration
 $C_- = 2 - \sqrt{14}<0$ n'a pas de sens physique.
 
-La dérivée de $f$ est $\displaystyle f'(C) = -1 + \frac{2}{(2+C)^2}$.
+La dérivée de $f$ est $\DS f'(C) = -1 + \frac{2}{(2+C)^2}$.
 Ainsi, $C_+$ est un point d'équilibre stable car
 $f(C_+) \approx -0.966629547 < 0$.  Par contre,
 $C_-$ est instable car $f(C_-) \approx 28.966629547 > 0$.
@@ -1457,7 +1457,7 @@ Pour $\beta = 1.0$ et $\Gamma = 5.0$, l'équation (\ref{reactdiff}) devient
 \]
 
 \subQ{a} Nous avons une équation différentielle de la forme
-$\displaystyle \dydx{C}{t} = F(C)$ où
+$\DS \dydx{C}{t} = F(C)$ où
 $F(C) = 5 - 0.5\,C$.  Les points d'équilibre sont les valeurs de $C$
 telles que $F(C)=0$.  Le seul point d'équilibre est $C_e=10$.
 
@@ -1473,7 +1473,7 @@ ordinaire (\ref{reactdiff}) est donné ci-dessous.
 \MATHgraph{10_equ_diff/reactDiff2}{8cm}
 
 \subQ{e} Nous aurions une équation différentielle ordinaire de la forme
-$\displaystyle \dydx{C}{t} = F(C)$ où $F(C) = 5 - C$.  Les points d'équilibre
+$\DS \dydx{C}{t} = F(C)$ où $F(C) = 5 - C$.  Les points d'équilibre
 sont les valeurs de $C$ telles que données par $F(C)=0$.  Le seul
 point d'équilibre est $C_e=5$.
 }
@@ -1481,34 +1481,34 @@ point d'équilibre est $C_e=5$.
 \compileSOL{\SOLUa}{\ref{10Q50}}{
 Supposons que $P(t)$ est le nombre de gnous au temps $t$ en années.
 La solution de l'équation logistique
-$P'(t) = K P(t) (1-P(t)/M)$ est $\displaystyle P(t) = \frac{M}{1+Ce^{-Kt}}$
+$P'(t) = K P(t) (1-P(t)/M)$ est $\DS P(t) = \frac{M}{1+Ce^{-Kt}}$
 où $C$ est une constante.  
 
 Il est dit dans l'énoncé du problème que $M=1800$.  De plus,
 $P(0)=1000$ et $P(1) = 1100$.  Utilisons cette 
 information pour trouver les valeurs de $K$ et $C$.  Les variables $C$
 et $K$ sont déterminés par les équations
-$\displaystyle 1000 = P(0) = \frac{1800}{1+C}$ (qui provient de
+$\DS 1000 = P(0) = \frac{1800}{1+C}$ (qui provient de
 $P(0) = 1000$) et
-$\displaystyle 1100 = P(1) = \frac{1800}{1+Ce^{-K}}$ (qui provient de 
+$\DS 1100 = P(1) = \frac{1800}{1+Ce^{-K}}$ (qui provient de 
 $P(1) = 1100$).
 La solution de la première équation est $C=4/5$.  Si nous substituons
 cette valeur de $C$ dans la deuxième équation, nous obtenons
-$\displaystyle 1100 = \frac{1800}{1+4e^{-K}/5}$.
+$\DS 1100 = \frac{1800}{1+4e^{-K}/5}$.
 La solution de cette dernière équation est
-$\displaystyle K= -\ln\left( \frac{35}{44}\right) \approx 0.22884$.  Donc
+$\DS K= -\ln\left( \frac{35}{44}\right) \approx 0.22884$.  Donc
 \[
 P(t) \approx \frac{1800}{1+4e^{-0.22884 t}/5} \ .
 \]
 Pour trouver la valeur de $t$ telle que $P(t) = 1500$, il faut
 résoudre pour $t$ l'équation
-$\displaystyle 1500 = \frac{9000}{5+4e^{-Kt}}$.  Nous obtenons
-$\displaystyle t = \ln(4)/K \approx 6.0579$ années.
+$\DS 1500 = \frac{9000}{5+4e^{-Kt}}$.  Nous obtenons
+$\DS t = \ln(4)/K \approx 6.0579$ années.
 }
 
 \compileSOL{\SOLUb}{\ref{10Q51}}{
 \subQ{a} Nous avons une équation différentielle de la forme
-$\displaystyle \dydx{N}{t} = F(N)$ où
+$\DS \dydx{N}{t} = F(N)$ où
 \[
 F(N) = \frac{5\,N^2}{1+N^2} - 2\,N
 = \frac{-2\,N^3 +5\,N^2 -2\,N}{1+N^2} \ .
@@ -1566,7 +1566,7 @@ un état d'équilibre stable; c'est-à-dire, $N(t)=2$ pour tout $t$.
 
 \compileSOL{\SOLUa}{\ref{10Q52}}{
 \subQ{a} Nous avons une équation différentielle de la forme
-$\displaystyle \dydx{p}{t} = f(p)$ où $f(p) = 2\,p(1-d-p)- p$.  Les
+$\DS \dydx{p}{t} = f(p)$ où $f(p) = 2\,p(1-d-p)- p$.  Les
 points d'équilibre sont le solutions de
 \[
 f(p)=2\,p(1-d-p)- p = p(1-2\,p -2\,d) =0 \ .
@@ -1676,7 +1676,7 @@ cette équation différentielle.
 & \Rightarrow  0.1 - 0.01 Q = D e^{-0.01 t}
 \Rightarrow Q = 10 -100 D e^{-0.01 t}
 \end{align*}
-où $\displaystyle D=\pm e^{-0.01 C}$.   Notons que $D=0$ est aussi
+où $\DS D=\pm e^{-0.01 C}$.   Notons que $D=0$ est aussi
 acceptable car $Q(t) = 10$ pour tout $t$ est un solution.
 
 La concentration initiale est de $0.025$ kg/l, donc $Q(0)= 25$ g/l.
@@ -1700,7 +1700,7 @@ minutes).  La fonction $Q$ satisfait l'équation différentielle suivante.
   \text{\footnotesize par minute}}} \ .
 \]
 Nous allons résoudre l'équation différentielle
-$\displaystyle Q'= 1.25 - 0.02 Q$ avec la condition
+$\DS Q'= 1.25 - 0.02 Q$ avec la condition
 initiale $Q(0)= Q_0$; c'est-à-dire, $Q_0$ kg de sel au temps $t=0$.
 Utilisons la méthode de séparation des
 variables pour résoudre ce problème.
@@ -1713,7 +1713,7 @@ variables pour résoudre ce problème.
 où $D = \pm e^{-0.02 C}$.  Notons que $D=0$ est aussi acceptable car,
 pour $D=0$, nous obtenons le point d'équilibre $Q(t) = 1.25/0.02 =
 62.5$ kg pour tout $t$.  Ainsi,
-$\displaystyle Q(t) = 62.5 - 50 D e^{-0.02t}$ avec
+$\DS Q(t) = 62.5 - 50 D e^{-0.02t}$ avec
 $D\in \RR$.  La condition initiales $Q(0)=Q_0$ donne
 $D= 0.02 (62.5-Q_0)$.   
 
@@ -1727,13 +1727,13 @@ Nous remarquons que le volume du liquide dans le réservoir ne change pas.
 litres du liquide dans le réservoir qui est retiré.  Le volume de
 liquide dans le réservoir demeure donc à $1000$ litres.  Ainsi, la
 concentration de sel dans le réservoir après $t$ minutes est
-$\displaystyle C(t) = Q(t)/1000$ kg/l.
+$\DS C(t) = Q(t)/1000$ kg/l.
 }
 
 \compileSOL{\SOLUb}{\ref{10Q55}}{
 \subQ{a}
 Nous avons une équation différentielle de la forme
-$\displaystyle \dydx{x}{t} = f(x) = a x - x^2$ où $a$ est un paramètre.
+$\DS \dydx{x}{t} = f(x) = a x - x^2$ où $a$ est un paramètre.
 Les points d'équilibre sont les solutions de $f(x) = 0$; c'est-à-dire,
 $x=0$ et $x=a$.
 
@@ -1820,11 +1820,11 @@ approximation seront des sous-estimations des valeurs exactes.
 $x_i =  h\,i = 0.1 \,i$ pour $i=0$, $1$, $2$, \ldots, $10$.
 
 L'équation différentielle est de la forme $y'=f(x,y)$ où
-$\displaystyle f(x,y) = \frac{3x^2}{2y}$.  Soit $y$ la solution de
+$\DS f(x,y) = \frac{3x^2}{2y}$.  Soit $y$ la solution de
 l'équation différentielle $y'=f(x,y)$ avec la condition initiale $y(1)=1$.
 Les approximations $w_i$ de $y(x_i)$ pour $i=0$, $1$, $2$, \ldots, $10$ sont
 données par $w_0 = y_0 = y(x_0) = y(0) = 1$ et
-$\displaystyle w_{i+1} = w_i + h\,f(x_i,w_i) = w_i + \frac{0.3 x_i^2}{2w_i}$
+$\DS w_{i+1} = w_i + h\,f(x_i,w_i) = w_i + \frac{0.3 x_i^2}{2w_i}$
 pour $i=0$, $1$. $2$, \ldots, $9$.  Ainsi,
 \begin{align*}
 w_1 &= w_0 + \frac{0.3 x_0^2}{2w_0}
@@ -1844,14 +1844,14 @@ w_{10} &\approx 1.370878896454269
 \end{align*}
 
 \subQ{b} Utilisons la méthode de séparation des variables pour
-résoudre l'équation différentielle $\displaystyle y'=\frac{3x^2}{2y}$
+résoudre l'équation différentielle $\DS y'=\frac{3x^2}{2y}$
 avec la condition initiale $y(1)=1$.
 \[
 \int 2 y \dx{y} = \int 3 x^2 \dx{x} \Rightarrow
 y^2 = x^3 + C \Rightarrow y = \sqrt{x^3 + C} \ .
 \]
 Il découle de la condition initiale $y(0)=1$ que $C=1$.  La solution
-cherchée est $\displaystyle y(x) = \sqrt{x^3 + 1}$.
+cherchée est $\DS y(x) = \sqrt{x^3 + 1}$.
 
 \subQ{c} L'erreur absolue est
 \[
@@ -1859,7 +1859,7 @@ cherchée est $\displaystyle y(x) = \sqrt{x^3 + 1}$.
 0.043334665918826 \ .
 \]
 Si nous comparons avec la valeur de
-$\displaystyle y(1) = \sqrt{2} \approx 1.414213562373095$,
+$\DS y(1) = \sqrt{2} \approx 1.414213562373095$,
 l'erreur absolue est acceptable.  {\em L'erreur relative} (relative à la
 valeur estimée) est donnée par
 \[

@@ -35,11 +35,11 @@ Si $x_n = 1 +1/n$ pour $n =1$, $2$, $3$, \ldots
 \begin{array}{l|c|c|c|c|c|c|c|c|c}
 n & 1 & 2 & 3 & 4 & \ldots & 100 & \ldots & 10000 & \ldots \\
 \hline
-\rule[-1em]{0ex}{3em} \displaystyle x_n = 1 + \frac{1}{n} &
-\displaystyle 2 & \displaystyle \frac{3}{2} &
-\displaystyle \frac{4}{3} & \displaystyle \frac{5}{4} &
-\ldots & \displaystyle \frac{101}{100} &
-\ldots & \displaystyle \frac{10001}{10000} & \ldots \\
+\rule[-1em]{0ex}{3em} \DS x_n = 1 + \frac{1}{n} &
+\DS 2 & \DS \frac{3}{2} &
+\DS \frac{4}{3} & \DS \frac{5}{4} &
+\ldots & \DS \frac{101}{100} &
+\ldots & \DS \frac{10001}{10000} & \ldots \\
 \hline
 g(x_n) & 5 & 3.25 & 2.\overline{7} & 2.5625 &
 \ldots & 2.0201 & \ldots & 2.00020001 & \ldots
@@ -51,10 +51,10 @@ Si $x_n = 1 - 1/n^2$ pour $n=0$, $1$, $2$, \ldots
 \begin{array}{l|c|c|c|c|c|c|c|c}
 n & 1 & 2 & 3 & \ldots & 100 & \ldots & 10000 & \ldots \\
 \hline
-\rule[-1em]{0ex}{3em} \displaystyle x_n = 1 - \frac{1}{n^2} &
-\displaystyle 0 & \displaystyle \frac{3}{4} &
-\displaystyle \frac{8}{9} & \ldots & \displaystyle \frac{9999}{10000} &
-\ldots & \displaystyle \frac{99999999}{100000000} & \ldots \\
+\rule[-1em]{0ex}{3em} \DS x_n = 1 - \frac{1}{n^2} &
+\DS 0 & \DS \frac{3}{4} &
+\DS \frac{8}{9} & \ldots & \DS \frac{9999}{10000} &
+\ldots & \DS \frac{99999999}{100000000} & \ldots \\
 \hline
 g(x_n) & 1 & 1.5625\ldots & 1.7901\ldots &
 \ldots & 1.9998\ldots & \ldots & 1.99999998\ldots & \ldots
@@ -90,9 +90,9 @@ qui approche $2$ lorsque $n \to \infty$ car $1/n^2$
 et $1/n^4$ approchent $0$ lorsque $n \to \infty$.
 
 Quelque soit la suite de nombres
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+$\DS \left\{x_n\right\}_{n=1}^\infty$
 qui tend vers $1$ que nous choisissons, le résultat sera toujours une
-suite $\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$ qui tend vers
+suite $\DS \left\{g(x_n)\right\}_{n=1}^\infty$ qui tend vers
 la valeur $2$.  En d'autres mots,
 \[
 \lim_{n\rightarrow \infty} g(x_n) = 2 \quad
@@ -107,7 +107,7 @@ Pour résumer ce dernier énoncé, nous écrivons
 
 À partir du graphe de $g$ que nous retrouvons à la figure~\ref{DER3},
 nous constatons que $g(x_n)$ approche la valeur $2$ pour la suite qui
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ approche $1$.
+$\DS \left\{x_n\right\}_{n=1}^\infty$ approche $1$.
 \label{egg_cont1}
 \end{egg}
 
@@ -125,7 +125,7 @@ s'il existe un {\em unique nombre} $C$ tel que
 \lim_{n\rightarrow \infty} f(x_n) = C
 \]
 {\em quelle que soit la suite}
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ de
+$\DS \left\{x_n\right\}_{n=1}^\infty$ de
 {\em nombres différents de $c$} qui tend vers $c$.   Nous écrivons aussi
 $f(x) \to C$ lorsque $x \to c$.  Nous disons que
 {\bfseries $f(x)$ converge (ou tend) vers la valeur $C$
@@ -135,13 +135,13 @@ lorsque $x$ converge (ou tend) vers $c$}.  Nous disons aussi que
 \end{defn}
 
 Il est aussi nécessaire à l'occasion de considérer seulement les suites
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui approchent $c$ par la
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui approchent $c$ par la
 droite ou la gauche.
 
 \begin{defn}
 Si, dans la définition de la limite d'une fonction $f$ en un point
 $c$, nous considérons seulement les suites
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n < c$}, nous
+$\DS \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n < c$}, nous
 écrivons
 \[
 \lim_{x\rightarrow c^-} f(x) = C
@@ -154,7 +154,7 @@ que {\bfseries $C$ est la limite à gauche de $f$ au point $c$}.
 
 De même, si, dans la définition de la limite d'une fonction $f$ en un
 point $c$, nous considérons seulement les suites
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n > c$}, nous
+$\DS \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n > c$}, nous
 écrivons
 \[
 \lim_{x\rightarrow c^+} f(x) = C
@@ -169,10 +169,10 @@ lorsque $x$ converge (ou tend) par la droite vers $c$}.  nous disons aussi que
 \begin{egg}
 Soit $g(x) = \sin(x)/x$. Quelle est la limite de $g(x)$ lorsque $x$
 approche $0$?  En d'autres mots, quelle est la valeur de
-$\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x}$ ?
+$\DS \lim_{x\rightarrow 0} \frac{\sin(x)}{x}$ ?
 
 Dans le tableau suivant, nous évaluons $g$ à chacun des
-termes de la suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui
+termes de la suite $\DS \left\{x_n\right\}_{n=1}^\infty$ qui
 converge vers $0$ définie par $x_n = 1/n$ pour $n=1$, $2$, $3$,
 \ldots\  Toute autre suite qui tend vers $0$ aurait pu être utilisée.
 \[
@@ -192,11 +192,11 @@ converge vers $0$ définie par $x_n = 1/n$ pour $n=1$, $2$, $3$,
 \hline
 \end{array}
 \]
-La suite $\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$
+La suite $\DS \left\{g(x_n)\right\}_{n=1}^\infty$
 tend vers $1$.  Nous allons montrer plus loin que cela est vrai quelle que
-soit la suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend
+soit la suite $\DS \left\{x_n\right\}_{n=1}^\infty$ qui tend
 vers $0$.  Nous pourrons donc dire que
-$\displaystyle \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$.
+$\DS \lim_{x\rightarrow 0} \frac{\sin(x)}{x} = 1$.
 Comme nous pouvons constater à partir du graphe de $g$ donné à la
 figure~\ref{DER4}, $g(x)$ approche la valeur $1$ lorsque $x$ approche
 $0$.  Par contre, la fonction $g$ n'est pas définie à l'origine.
@@ -211,50 +211,50 @@ Soit $g(x) = \sin(1/x)$.  Est-ce que $g(x)$ approche une valeur quelconque
 lorsque $x$ approche l'origine?  Si oui, quelle est cette valeur?
 
 Le tableau suivant donne les valeurs de $g$ pour les termes de la
-suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$ où
-$\displaystyle x_n = \frac{1}{2n \pi}$ pour $n=1$, $2$, $3$, \ldots.
-La suite $\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$ tend
+suite $\DS \left\{x_n\right\}_{n=1}^\infty$ où
+$\DS x_n = \frac{1}{2n \pi}$ pour $n=1$, $2$, $3$, \ldots.
+La suite $\DS \left\{g(x_n)\right\}_{n=1}^\infty$ tend
 vers $0$ car $g(x_n) = 0$ pour tout $n$.
 \[
 \begin{array}{l|l|l|l|l|l|l|l|l|l}
 n & 1 & 2 & 3 & 4 & \ldots & 100 & \ldots & 10000 & \ldots \\
 \hline
-\rule[-1em]{0ex}{3em} \displaystyle x_n = \frac{1}{2n \pi} &
-\displaystyle \frac{1}{2\pi} & \displaystyle \frac{1}{4\pi} &
-\displaystyle \frac{1}{6\pi} & \displaystyle \frac{1}{8\pi} &
-\ldots & \displaystyle \frac{1}{200\pi} &
-\ldots & \displaystyle \frac{1}{20000\pi} & \ldots \\
+\rule[-1em]{0ex}{3em} \DS x_n = \frac{1}{2n \pi} &
+\DS \frac{1}{2\pi} & \DS \frac{1}{4\pi} &
+\DS \frac{1}{6\pi} & \DS \frac{1}{8\pi} &
+\ldots & \DS \frac{1}{200\pi} &
+\ldots & \DS \frac{1}{20000\pi} & \ldots \\
 \hline
 g(x_n) & 0 & 0 & 0 & 0 & \ldots & 0 & \ldots & 0 & \ldots
 \end{array}
 \]
 
 Il semble que $g(x)$ approche $0$ lorsque $x$ approche $0$.  Essayons
-maintenant avec la suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+maintenant avec la suite $\DS \left\{x_n\right\}_{n=1}^\infty$
 où $x_n = 2/((4n+1)\pi)$ pour $n=1$, $2$, $3$, \ldots  La suite
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ tend vers $0$.  Par
+$\DS \left\{x_n\right\}_{n=1}^\infty$ tend vers $0$.  Par
 contre, le tableau suivant semble indiquer que
-$\displaystyle \left\{g(x_n)\right\}_{n=1}^\infty$
+$\DS \left\{g(x_n)\right\}_{n=1}^\infty$
 approche $1$ lorsque $x_n$ approche $0$.
 \[
 \begin{array}{l|l|l|l|l|l|l|l|l|l}
 n & 1 & 2 & 3 & 4 & \ldots & 100 & \ldots & 10000 & \ldots \\
 \hline
-\rule[-1em]{0ex}{3em} \displaystyle x_n = \frac{2}{(4n+1)\pi} &
-\displaystyle \frac{2}{5\pi} & \displaystyle \frac{2}{9\pi} &
-\displaystyle \frac{2}{13\pi} & \displaystyle \frac{2}{17\pi} &
-\ldots & \displaystyle \frac{2}{4001\pi} &
-\ldots & \displaystyle \frac{2}{40001\pi} & \ldots \\
+\rule[-1em]{0ex}{3em} \DS x_n = \frac{2}{(4n+1)\pi} &
+\DS \frac{2}{5\pi} & \DS \frac{2}{9\pi} &
+\DS \frac{2}{13\pi} & \DS \frac{2}{17\pi} &
+\ldots & \DS \frac{2}{4001\pi} &
+\ldots & \DS \frac{2}{40001\pi} & \ldots \\
 \hline
 g(x_n) & 1 & 1 & 1 & 1 & \ldots & 1 & \ldots & 1 & \ldots
 \end{array}
 \]
 
 En fait, pour tout nombre $\alpha$ entre $-1$ et $1$ inclusivement, nous
-pourrions trouver une suite $\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+pourrions trouver une suite $\DS \left\{x_n\right\}_{n=1}^\infty$
 qui tend vers $0$ et telle que $g(x_n)$ tend vers $\alpha$ lorsque
 $n\to \infty$.  Il y a aussi des suites
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui
 tendent vers $0$ et telles que $g(x_n)$ n'approche aucune valeur fixe
 lorsque $n \to \infty$ mais se promène entre $-1$ et $1$.
 
@@ -263,11 +263,11 @@ que $g(x)$ n'approche pas une valeur unique lorsque $x$ approche $0$.
 Le graphe de $g$ oscille entre $-1$ et $1$ de plus en plus rapidement
 lorsque $x$ approche $0$.
 
-Donc, dans la définition de $\displaystyle \lim_{x\rightarrow c} f(x) = C$,
+Donc, dans la définition de $\DS \lim_{x\rightarrow c} f(x) = C$,
 il est très important que la suite
-$\displaystyle \left\{f(x_n)\right\}_{n=1}^\infty$ tende vers une
+$\DS \left\{f(x_n)\right\}_{n=1}^\infty$ tende vers une
 {\em valeur unique} $C$ {\em quelle que soit la suite}
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $c$.
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $c$.
 \end{egg}
 
 \MATHfig{4_limites/der5}{8cm}{Graphe de $g(x) = \sin(1/x)$}
@@ -277,14 +277,14 @@ La définition précédente pour
 \[
 \lim_{x\rightarrow c} f(x) = C \; ,
 \]
-où nous utilisons les suites $\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+où nous utilisons les suites $\DS \left\{x_n\right\}_{n=1}^\infty$
 qui tendent vers $c$ pour déterminer la valeur possible de $C$, est
 très utile pour prédire numériquement la valeur possible $C$ de la
 limite. Cependant, il est généralement impossible d'utiliser cette
 définition pour prouver que la limite est bien la valeur $C$ suggérée.
 Pour prouver cela, il faudrait vérifier que {\em toutes} les suites
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tendent vers $c$
-donnent des suites $\displaystyle \left\{f(x_n)\right\}_{n=1}^\infty$
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui tendent vers $c$
+donnent des suites $\DS \left\{f(x_n)\right\}_{n=1}^\infty$
 qui tendent vers $C$.  Ceci est évidemment impossible.
 
 \begin{egg}
@@ -315,21 +315,21 @@ nous devons conclure que la limite n'existe pas.
 
 \begin{egg}[\theory][Suite de l'exemple~\ref{egg_cont1}]
 Vérifions de façon algébrique (et donc rigoureusement) que
-$g(x) = x^2 +1$ satisfait $\displaystyle \lim_{x\rightarrow 1} g(x) = 2$.
+$g(x) = x^2 +1$ satisfait $\DS \lim_{x\rightarrow 1} g(x) = 2$.
 
 Remarquons que toute suite
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+$\DS \left\{x_n\right\}_{n=1}^\infty$
 qui approche $1$ peut s'écrire $x_n = 1 + r_n$ où la suite
-$\displaystyle \left\{r_n\right\}_{n=1}^\infty$ approche $0$ lorsque
+$\DS \left\{r_n\right\}_{n=1}^\infty$ approche $0$ lorsque
 $n \to \infty$.  C'est certainement le cas pour les
-suites $\displaystyle \left\{ 1 + \frac{1}{n} \right\}_{n=1}^\infty$
-et $\displaystyle \left\{1+\frac{1}{n^2} \right\}_{n=1}^\infty$
+suites $\DS \left\{ 1 + \frac{1}{n} \right\}_{n=1}^\infty$
+et $\DS \left\{1+\frac{1}{n^2} \right\}_{n=1}^\infty$
 que nous avons utilisées précédemment.  Ainsi,
 \[
 g(x_n) = g(1+r_n) = (1+r_n)^2 + 1 = 2 + 2r_n + r_n^2 \to 2
 \]
 lorsque $n \to \infty$ car $r_n$ et $r_n^2$ approchent $0$ lorsque
-$n \to \infty$.  Donc $\displaystyle \lim_{n\rightarrow \infty} g(x_n) = 2$.
+$n \to \infty$.  Donc $\DS \lim_{n\rightarrow \infty} g(x_n) = 2$.
 \label{egg_contcont1}
 \end{egg}
 
@@ -412,7 +412,7 @@ entre $c-\delta$ et $c+\delta$.}{EPSDELT2}
 \begin{egg}
 Montrons à l'aide de la dernière définition de limite d'une fonction
 en un point que
-$\displaystyle \lim_{x\rightarrow 2} \frac{1}{x} = \frac{1}{2}$.
+$\DS \lim_{x\rightarrow 2} \frac{1}{x} = \frac{1}{2}$.
 
 Soit $\epsilon >0$ quelconque mais fixe.  Puisque nous cherchons la
 limite lorsque $x$ approche $2$, nous pouvons supposer que $x>1$.
@@ -435,7 +435,7 @@ et \ref{def2_conv} sont équivalente.
 \end{prop}
 
 \begin{proof}
-\subQ{i} Supposons que $\displaystyle \lim_{x\rightarrow c} f(x) = C$
+\subQ{i} Supposons que $\DS \lim_{x\rightarrow c} f(x) = C$
 selon la définition~\ref{def1_conv}.  Montrons que la
 définition~\ref{def2_conv} est satisfaite.
 
@@ -443,38 +443,38 @@ La preuve est par contradiction.  Supposons que la
 définition~\ref{def2_conv} ne soit pas satisfaite.  Cela implique
 qu'il existe un $\epsilon >0$ tel que pour tout $\delta$ nous pouvons
 trouver au moins un point $x_\delta$ tel que
-$\displaystyle \left|x_\delta -c\right| < \delta$ et
-$\displaystyle \left|f(x_\delta) -C\right| \geq \epsilon$.
+$\DS \left|x_\delta -c\right| < \delta$ et
+$\DS \left|f(x_\delta) -C\right| \geq \epsilon$.
 
 Si nous prenons $\delta = 1/n$ pour $n$ un entier positif, nous
 obtenons une
-suite $\displaystyle \left\{ x_{1/n} \right\}_{n=1}^\infty$ telle que
-$\displaystyle \left|x_{1/n} - c \right| < \frac{1}{n}$ et
-$\displaystyle \left|f(x_{1/n}) -C\right| \geq \epsilon$ pour tout $n$.
-Nous avons donc $\displaystyle \lim_{n\rightarrow \infty} x_{1/n} = c$ mais
-la suite $\displaystyle \left\{ f(x_{1/n}) \right\}_{n=1}^\infty$ ne
+suite $\DS \left\{ x_{1/n} \right\}_{n=1}^\infty$ telle que
+$\DS \left|x_{1/n} - c \right| < \frac{1}{n}$ et
+$\DS \left|f(x_{1/n}) -C\right| \geq \epsilon$ pour tout $n$.
+Nous avons donc $\DS \lim_{n\rightarrow \infty} x_{1/n} = c$ mais
+la suite $\DS \left\{ f(x_{1/n}) \right\}_{n=1}^\infty$ ne
 tend pas vers $C$.  Ce qui contredit la définition~\ref{def1_conv}.
 
 \subQ{ii} Supposons maintenant que
-$\displaystyle \lim_{x\rightarrow c} f(x) = C$ selon la
+$\DS \lim_{x\rightarrow c} f(x) = C$ selon la
 définition~\ref{def2_conv}.  Montrons que la
 définition~\ref{def1_conv} est satisfaite.
 
-Supposons que $\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ soit
+Supposons que $\DS \left\{ x_n \right\}_{n=1}^\infty$ soit
 une suite qui tend vers $c$.  Soit $\epsilon >0$.  Selon la
 définition~\ref{def2_conv}, il existe $\delta >0$ tel que
-$\displaystyle \left|f(x) -C\right| < \epsilon$ si
-$\displaystyle \left|x -c\right| < \delta$.  Puisque
-$\displaystyle \lim_{n\rightarrow \infty} x_n = c$, il existe $N>0$
-tel que $\displaystyle \left|x_n - c \right| < \delta$ pour $n>N$.
+$\DS \left|f(x) -C\right| < \epsilon$ si
+$\DS \left|x -c\right| < \delta$.  Puisque
+$\DS \lim_{n\rightarrow \infty} x_n = c$, il existe $N>0$
+tel que $\DS \left|x_n - c \right| < \delta$ pour $n>N$.
 Ainsi,
-$\displaystyle \left|f(x_n) -C\right| < \epsilon$ pour $n>N$.  Puisque
+$\DS \left|f(x_n) -C\right| < \epsilon$ pour $n>N$.  Puisque
 $\epsilon$ est arbitraire, nous avons
-$\displaystyle \lim_{n\rightarrow \infty} f(x_n) = C$.
+$\DS \lim_{n\rightarrow \infty} f(x_n) = C$.
 
 Comme le résultat du paragraphe précédent est vrai pour toute suite
-$\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ qui tend vers $c$,
-nous avons que $\displaystyle \lim_{x\rightarrow c} f(x) = C$ selon la
+$\DS \left\{ x_n \right\}_{n=1}^\infty$ qui tend vers $c$,
+nous avons que $\DS \lim_{x\rightarrow c} f(x) = C$ selon la
 définition~\ref{def1_conv}.
 \end{proof}
 
@@ -538,7 +538,7 @@ Il est facile de vérifier à partir de la définition du cosinus que
 \lim_{x\rightarrow 0} \cos(x) = 1
 \]
 Par exemple, pour toute suite
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $0$,
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $0$,
 nous avons que $\cos(x_n)$ tend vers $\cos(0) = 1$. Ainsi, nous
 obtenons que
 $g(x) = \sin(x)/x$ approche $1$ lorsque $x$ approche $0$ grâce au
@@ -549,22 +549,22 @@ théorème des gendarmes.
 Comme nous venons de voir, il n'est pas toujours facile de démontrer
 rigoureusement qu'une fonction à une limite en un point.
 
-\PDFfig{4_limites/sin_x_x}{$\displaystyle \lim_{x\rightarrow 0}\sin(x)/x = 1$}
+\PDFfig{4_limites/sin_x_x}{$\DS \lim_{x\rightarrow 0}\sin(x)/x = 1$}
 {La figure utilisée pour démontrer rigoureusement que
-$\displaystyle \lim_{x\rightarrow 0} \sin(x)/x = 1$.}{SINXX}
+$\DS \lim_{x\rightarrow 0} \sin(x)/x = 1$.}{SINXX}
 
 Comme pour les limites de suites, nous avons les propriétés suivantes.
 
 \begin{theorem} \label{lim_funct_scd}
-Supposons que $\displaystyle \lim_{x\rightarrow c} f(x) = A$ et
-$\displaystyle \lim_{x\rightarrow c} g(x) = B$.
+Supposons que $\DS \lim_{x\rightarrow c} f(x) = A$ et
+$\DS \lim_{x\rightarrow c} g(x) = B$.
 \begin{enumerate}
-\item $\displaystyle \lim_{x\rightarrow c}\; (f(x) + g(x) ) = A + B$.
+\item $\DS \lim_{x\rightarrow c}\; (f(x) + g(x) ) = A + B$.
 \item Si $k$ est un nombre réel, alors
-$\displaystyle \lim_{x\rightarrow c}\; (k\; f(x)) = kA$.
-\item $\displaystyle \lim_{x\rightarrow c}\; (f(x)g(x)) = AB$.
+$\DS \lim_{x\rightarrow c}\; (k\; f(x)) = kA$.
+\item $\DS \lim_{x\rightarrow c}\; (f(x)g(x)) = AB$.
 \item Si $B \neq 0$ (donc $g(x) \neq 0$ pour $x$ près de $c$),
-alors $\displaystyle \lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \frac{A}{B}$.
+alors $\DS \lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \frac{A}{B}$.
 \end{enumerate}
 \end{theorem}
 
@@ -578,8 +578,8 @@ la façon suivante.
 \left(\lim_{x\rightarrow c} g(x)\right)  \\
 \intertext{et}
 \lim_{x\rightarrow c} \frac{f(x)}{g(x)} &=
-\frac{\displaystyle \lim_{x\rightarrow c} f(x)}
-{\displaystyle \lim_{x\rightarrow c} g(x)}
+\frac{\DS \lim_{x\rightarrow c} f(x)}
+{\DS \lim_{x\rightarrow c} g(x)}
 \end{align*}
 respectivement.
 
@@ -605,7 +605,7 @@ si
 
 En d'autres mots, $f$ est continue au point $c$ si $f(c)$ existe et
 $f(x_n)$ approche $f(c)$ quelle que soit la suite
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $c$.
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $c$.
 
 La figure~\ref{DER2} contient le graphe d'une fonction $f$ qui
 n'est pas continue au point $x=c$ car $f(x)$ approche la valeur $B$
@@ -626,10 +626,10 @@ $x=c$.
 \begin{egg}
 À l'exemple~\ref{egg_cont1}, nous avons montré que la fonction
 $g(x) = x^2+1$ est continue au point $x=1$ car
-$\displaystyle \lim_{x\rightarrow 1} g(x) = 2$ et $g(1)=2$. 
+$\DS \lim_{x\rightarrow 1} g(x) = 2$ et $g(1)=2$. 
 Donc
 \[
-\displaystyle \lim_{x\rightarrow 1} g(x) = g(1) \; .
+\DS \lim_{x\rightarrow 1} g(x) = g(1) \; .
 \]
 \end{egg}
 
@@ -639,7 +639,7 @@ l'exemple~\ref{E_SINXX} n'est pas continue au point $x=0$ car $g(x)$
 n'est pas définie pour $x=0$. Par contre, si nous définissons
 \[
 f(x) = \begin{cases}
-\displaystyle \frac{\sin(x)}{x} & \qquad \text{pour} \; x\neq 0 \\
+\DS \frac{\sin(x)}{x} & \qquad \text{pour} \; x\neq 0 \\
 1 & \qquad \text{pour} \; x = 0
 \end{cases}
 \]
@@ -672,7 +672,7 @@ l'exemple suivant.
 \begin{egg}[\life]
 La concentration d'un contaminant dans l'eau d'une rivière est
 déterminée par la fonction
-$\displaystyle f(t) = \frac{0.7 t}{1+t}$ où la variable $t$ est mesurée
+$\DS f(t) = \frac{0.7 t}{1+t}$ où la variable $t$ est mesurée
 en années.  À quel moment aurons-nous une concentration du contaminant
 entre $0.1$ et $0.2$ pourcent?
 
@@ -786,24 +786,24 @@ Les résultats suivants découlent de la définition d'une fonction continue.
 \end{enumerate}
 \end{prop}
 
-Si $\displaystyle \{ x_n\}_{n=0}^\infty$ est une suite qui converge
+Si $\DS \{ x_n\}_{n=0}^\infty$ est une suite qui converge
 vers un point $c$ du domaine d'une fonction continue $f$, alors
-la suite $\displaystyle \{ f(x_n)\}_{n=0}^\infty$ converge vers le
+la suite $\DS \{ f(x_n)\}_{n=0}^\infty$ converge vers le
 point $f(c)$.   En d'autres mots,
 \[
 \lim_{n\to \infty} f(x_n) = f\left(\lim_{n\to \infty} x_n\right)
 \]
 Puisque la définition de limite d'une fonction en un point $c$ fait
-appel aux suites $\displaystyle \{ x_n\}_{n=0}^\infty$ qui converge
+appel aux suites $\DS \{ x_n\}_{n=0}^\infty$ qui converge
 vers $c$, nous obtenons le résultat suivant qui est très utile pour
 calculer des limites.
 
 \begin{prop} \label{interLim}
 Soit $f$ une fonction continue et $g$ une fonction dont l'image est un
 sous-ensemble du domaine de $f$.  Nous pouvons donc considérer la
-composition $f\circ g$.   Si $\displaystyle \lim_{x\to r} g(x) = s$
+composition $f\circ g$.   Si $\DS \lim_{x\to r} g(x) = s$
 est un élément du domaine de $f$, alors
-$\displaystyle \lim_{x\to r} f(g(x)) = f(s)$.  En d'autres mots,
+$\DS \lim_{x\to r} f(g(x)) = f(s)$.  En d'autres mots,
 \[
 \lim_{x \to r} f(g(x)) = f\left(\lim_{x\to r} g(x)\right)
 \]
@@ -813,9 +813,9 @@ $\displaystyle \lim_{x\to r} f(g(x)) = f(s)$.  En d'autres mots,
 Calculons les limites suivantes si elles existent.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.6em}}l@{\hspace*{2.6em}}}l@{\hspace{0.6em}}l}
-\subQ{a} & $\displaystyle \lim_{x\to 2} \sin\left(\frac{x^2-4}{x-2}\right)$ &
-\subQ{b} & $\displaystyle \lim_{x\to 4} \frac{x-4}{2 - \sqrt{x}}$ &
-\subQ{c} & $\displaystyle \lim_{x\to 1} \frac{x-1}{2 - \sqrt{x+3}}$
+\subQ{a} & $\DS \lim_{x\to 2} \sin\left(\frac{x^2-4}{x-2}\right)$ &
+\subQ{b} & $\DS \lim_{x\to 4} \frac{x-4}{2 - \sqrt{x}}$ &
+\subQ{c} & $\DS \lim_{x\to 1} \frac{x-1}{2 - \sqrt{x+3}}$
 \end{tabular}
 \end{center}
 
@@ -967,15 +967,15 @@ domaine.
 
 \begin{egg}
 Comme nous pouvons le constater à partir du graphe de la fonction
-$\displaystyle g(x) = 5 + e^{(2 - x/10)}$ que l'on retrouve à la
+$\DS g(x) = 5 + e^{(2 - x/10)}$ que l'on retrouve à la
 figure~\ref{LIM1}, $g(x)$ semble approcher la valeur $5$ lorsque $x$
 devient de plus en plus grand.  En effet, $g(x) \approx 5$ pour $x$
 très grand.
 \end{egg}
 
 \MATHfig{4_limites/lim_inf1}{8cm}{Graphe de
-$\displaystyle g(x) = 5 + e^{(2-x/10)}$}{Le graphe
-de $\displaystyle g(x) = 5 + e^{(2-x/10)}$.  Nous avons que $g(x)$
+$\DS g(x) = 5 + e^{(2-x/10)}$}{Le graphe
+de $\DS g(x) = 5 + e^{(2-x/10)}$.  Nous avons que $g(x)$
 approche $5$ lorsque $x$ tend vers plus l'infini.}{LIM1}
 
 Commençons par donner un sens mathématique à l'énoncé \lgm $f(x)$
@@ -1005,14 +1005,14 @@ l'infini} et nous écrivons
 
 \begin{egg}
 Revenons à l'exemple précédent avec
-$\displaystyle g(x) = 5 + e^{\left(2 - x/10\right)}$.
+$\DS g(x) = 5 + e^{\left(2 - x/10\right)}$.
 
-La suite $\displaystyle \left\{ x_n \right\}_{n=1}^\infty$ où
+La suite $\DS \left\{ x_n \right\}_{n=1}^\infty$ où
 $x_n = n^2$ pour $n=1$, $2$, $3$, \ldots est une suite qui tend vers
 plus l'infini car c'est une suite croissante de nombres sans borne
 supérieure.  Nous donnons, dans le tableau~\ref{TAB_LIM_INF}, les valeurs
 de $g(x_n)$ pour quelques uns des termes de la suite
-$\displaystyle \left\{ x_n\right\}_{n=1}^\infty$.  Il est clair que
+$\DS \left\{ x_n\right\}_{n=1}^\infty$.  Il est clair que
 $g(x_n)$ approche $5$ lorsque $n$ (et donc $x_n$) devient de plus en
 plus grand.
 
@@ -1053,29 +1053,29 @@ $24$ & $576$ & $5.00000000000\ldots$ \\
 \end{table}
 
 Puisque pour toute suite
-$\displaystyle \left\{ x_n \right\}_{n=1}^\infty$
+$\DS \left\{ x_n \right\}_{n=1}^\infty$
 qui tend vers plus l'infini, nous pourrions montrer que $g(x_n)$ approche
 $5$ lorsque $n$ devient de plus en plus grand, nous avons que
-$\displaystyle \lim_{x\rightarrow \infty} g(x) = 5$.  Ainsi, $g(x)$
+$\DS \lim_{x\rightarrow \infty} g(x) = 5$.  Ainsi, $g(x)$
 tend vers $5$ lorsque $x$ tend vers plus l'infini.
 
 La droite $y=5$ est appelée une {\bfseries asymptote horizontale} pour
 la fonction $g$.\index{Asymptote horizontale}
 
 Nous pourrions aussi résonner à partir du graphe de $y=e^x$ pour montrer
-que $\displaystyle \lim_{x\rightarrow \infty} g(x) = 5$.  En effet,
-puisque $\displaystyle 2- x/10$ devient de plus en plus petit
+que $\DS \lim_{x\rightarrow \infty} g(x) = 5$.  En effet,
+puisque $\DS 2- x/10$ devient de plus en plus petit
 (de plus en plus \lgm négatif\rgm) lorsque $x$ devient de plus en plus
 grand, nous pouvons conclure à partir du graphe de $y=e^x$ que
-$\displaystyle e^{\left(2- x/10\right)}$ tend vers $0$ lorsque
+$\DS e^{\left(2- x/10\right)}$ tend vers $0$ lorsque
 $x$ tend vers plus l'infini.  Donc
-$\displaystyle 5+e^{\left(2- x/10\right)}$ tend vers $5$ lorsque
+$\DS 5+e^{\left(2- x/10\right)}$ tend vers $5$ lorsque
 $x$ tend vers plus l'infini.
 \label{asympt5}
 \end{egg}
 
 Les propositions \ref{suite1} et \ref{suite2} ne sont pas limitées à
-la suite $\displaystyle \{n\}_{n=1}^\infty$.
+la suite $\DS \{n\}_{n=1}^\infty$.
 
 \begin{prop} \label{limite1}
 Soit $r$ un nombre réel positif.  Alors
@@ -1113,9 +1113,9 @@ seront extrêmement utiles pour calculer des limites.
 Évaluons les limites suivantes si elles existent.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.6em}}l@{\hspace*{2.6em}}}l@{\hspace{0.6em}}l}
-\subQ{a} & $\displaystyle \lim_{x\to \infty} \frac{x^2 + x  +1}{5x^2 + 1}$ &
-\subQ{b} & $\displaystyle \lim_{x\to \infty} \frac{x-4}{x^{3/2} + 2x +1}$ &
-\subQ{c} & $\displaystyle \lim_{x\to \infty} \frac{\sqrt{4x^4+5}}
+\subQ{a} & $\DS \lim_{x\to \infty} \frac{x^2 + x  +1}{5x^2 + 1}$ &
+\subQ{b} & $\DS \lim_{x\to \infty} \frac{x-4}{x^{3/2} + 2x +1}$ &
+\subQ{c} & $\DS \lim_{x\to \infty} \frac{\sqrt{4x^4+5}}
 {\left(x^8 + x^2 + 1\right)^{1/4}}$
 \end{tabular}
 \end{center}
@@ -1124,26 +1124,26 @@ seront extrêmement utiles pour calculer des limites.
 \[
 \lim_{x\to \infty} \frac{x^2 + x  +3}{5x^2 + 1}
 = \lim_{x\to \infty} \frac{1 + (1/x)  + (3/x^2)}{5 + (1/x^2)}
-= \frac{\displaystyle 1 + \lim_{x\to \infty}(1/x)  + 3\lim_{x\to \infty}(1/x^2)}
-{\displaystyle 5 + \lim_{x\to \infty}(1/x^2)}
+= \frac{\DS 1 + \lim_{x\to \infty}(1/x)  + 3\lim_{x\to \infty}(1/x^2)}
+{\DS 5 + \lim_{x\to \infty}(1/x^2)}
 = \frac{1}{5}
 \]
 grâce à la proposition~\ref{limite2} qui nous donne
-$\displaystyle \lim_{x\to \infty}(1/x) = \lim_{x\to \infty}(1/x^2) = 0$.
+$\DS \lim_{x\to \infty}(1/x) = \lim_{x\to \infty}(1/x^2) = 0$.
 
 \subQ{b} Si nous divisons le numérateur et dénominateur par $x^{3/2}$, alors
 \begin{align*}
 \lim_{x\to \infty} \frac{x-4}{x^{3/2} + 2x +1}
 &= \lim_{x\to \infty} \frac{(1/x^{1/2})-(4/x^{3/2})}
 {1 + (2/x^{1/2}) +(1/x^{3/2})}\\
-&= \frac{\displaystyle \lim_{x\to \infty} (1/x^{1/2})
+&= \frac{\DS \lim_{x\to \infty} (1/x^{1/2})
  - 4 \lim_{x\to \infty} (1/x^{3/2})}
-{\displaystyle 1 + 2 \lim_{x\to \infty}(1/x^{1/2})
+{\DS 1 + 2 \lim_{x\to \infty}(1/x^{1/2})
  + \lim_{x\to \infty} (1/x^{3/2})}
 = \frac{0}{1} = 0
 \end{align*}
 grâce encore à la proposition~\ref{limite2} qui nous donne
-$\displaystyle \lim_{x\to \infty}(1/x^{1/2}) = \lim_{x\to \infty}(1/x^{3/2}) = 0$.
+$\DS \lim_{x\to \infty}(1/x^{1/2}) = \lim_{x\to \infty}(1/x^{3/2}) = 0$.
 
 \subQ{c} Si nous factorisons $x^4$ à l'extérieur de la racine carrée et
 $x^8$ à l'extérieur de la racine quatrième, alors
@@ -1157,12 +1157,12 @@ Ainsi,
 \lim_{x\to \infty} \frac{\sqrt{4x^4+5}}{ \left(x^8 + x^2 + 1\right)^{1/4}}
 &= \lim_{x\to \infty}
 \frac{\sqrt{4 + (5/x^4)}}{\left(1 + (1/x^6) + (1/x^8)\right)^{1/4}}\\
-&= \frac{\sqrt{\displaystyle 4 + \lim_{x\to \infty} (5/x^4)}}
-{\left(\displaystyle 1 + \lim_{x\to \infty} (1/x^6)
+&= \frac{\sqrt{\DS 4 + \lim_{x\to \infty} (5/x^4)}}
+{\left(\DS 1 + \lim_{x\to \infty} (1/x^6)
 + \lim_{x\to \infty} (1/x^8)\right)^{1/4}}
 = \frac{\sqrt{4}}{1^{1/4}} = 2
 \end{align*}
-car $\displaystyle \lim_{x\to \infty}(1/x^r) = 0$ pour $r>0$ comme nous
+car $\DS \lim_{x\to \infty}(1/x^r) = 0$ pour $r>0$ comme nous
 avons énoncé à la proposition~\ref{limite2} .
 \end{egg}
 
@@ -1193,13 +1193,13 @@ Nous avons
 \[
 \lim_{n\rightarrow \infty} f(x_n) = \infty
 \]
-si la suite $\displaystyle \left\{ f(x_n) \right\}_{n=1}^\infty$
+si la suite $\DS \left\{ f(x_n) \right\}_{n=1}^\infty$
 satisfait la définition~\ref{def_of_lim_at_inf} de convergence vers
 plus l'infini.  De même,
 \[
 \lim_{n\rightarrow \infty} f(x_n) = -\infty
 \]
-si la suite $\displaystyle \left\{ f(x_n) \right\}_{n=1}^\infty$
+si la suite $\DS \left\{ f(x_n) \right\}_{n=1}^\infty$
 satisfait la définition~\ref{def_of_lim_at_inf} de convergence vers
 moins l'infini.  Nous pouvons ainsi donner la définition suivante.
 
@@ -1213,7 +1213,7 @@ si
 \lim_{n\rightarrow \infty} f(x_n) = +\infty  \quad \text{(resp. $-\infty$)} 
 \]
 {\em quelle que soit la suite}
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ de
+$\DS \left\{x_n\right\}_{n=1}^\infty$ de
 {\em nombres différents de $c$} qui tend vers $c$.
 Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
 (resp. moins l'infini) lorsque $x$ converge (ou tend) vers $c$}.
@@ -1224,7 +1224,7 @@ $c = +\infty$ ou $-\infty$.
 \end{defn}
 
 \begin{egg}
-Si $\displaystyle f(x) = \frac{2}{(x-3)^2}$, que se passe-t-il lorsque
+Si $\DS f(x) = \frac{2}{(x-3)^2}$, que se passe-t-il lorsque
 $x$ approche $3$?  Remarquons que $f(x)$ n'est pas définie pour
 $x=3$.
 
@@ -1233,14 +1233,14 @@ Une façon de montrer que
 \lim_{x\rightarrow 3} \frac{2}{(x-3)^2} = \infty
 \]
 serait de montrer que, quelle que soit la suite
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $3$, la
+$\DS \left\{x_n\right\}_{n=1}^\infty$ qui tend vers $3$, la
 suite
-$\displaystyle \left\{\frac{2}{(x_n-3)^2}\right\}_{n=1}^\infty$
+$\DS \left\{\frac{2}{(x_n-3)^2}\right\}_{n=1}^\infty$
 tend vers plus l'infini.   Nous ne ferons pas cela mais le lecteur
 peut vérifier avec une suite
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$
+$\DS \left\{x_n\right\}_{n=1}^\infty$
 de son choix qui tend vers $3$ que
-$\displaystyle \left\{\frac{2}{(x_n-3)^2}\right\}_{n=1}^\infty$
+$\DS \left\{\frac{2}{(x_n-3)^2}\right\}_{n=1}^\infty$
 tend vers plus l'infini.
 
 Nous utilisons une autre approche (un peu moins rigoureuse) pour nous
@@ -1270,7 +1270,7 @@ limite supérieure lorsque $x$ approche $3$.  La droite $x=3$ est une
 asymptote verticale.}{LIM4}
 
 \begin{egg}
-Si $\displaystyle f(x) = \frac{2}{x^2-9}$, que se passe-t-il lorsque
+Si $\DS f(x) = \frac{2}{x^2-9}$, que se passe-t-il lorsque
 $x$ approche $3$?  Remarquons que $f(x)$ n'est pas définie pour
 $x=3$.
 
@@ -1311,7 +1311,7 @@ si
 \lim_{n\rightarrow \infty} f(x_n) = +\infty  \quad \text{(resp. $-\infty$)} 
 \]
 {\em quelle que soit la suite}
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n >c$}
+$\DS \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n >c$}
 qui tend vers $c$.
 Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
 (resp. moins l'infini) lorsque $x$ converge par la droite vers $c$}.
@@ -1324,7 +1324,7 @@ si
 \lim_{n\rightarrow \infty} f(x_n) = +\infty  \quad \text{(resp. $-\infty$)} 
 \]
 {\em quelle que soit la suite}
-$\displaystyle \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n <c$}
+$\DS \left\{x_n\right\}_{n=1}^\infty$ avec {\em $x_n <c$}
 qui tend vers $c$.
 Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
 (resp. moins l'infini) lorsque $x$ converge par la gauche vers $c$}
@@ -1333,9 +1333,9 @@ Nous disons que {\bfseries $f(x)$ converge (ou tend) vers plus l'infini
 
 \PDFfig{4_limites/lim_infini}{Limites à droite et à gauche}
 {Dans le graphe à de gauche
-$\displaystyle \lim_{x\rightarrow c^-} f(x) = \infty$
+$\DS \lim_{x\rightarrow c^-} f(x) = \infty$
 alors que dans le graphe à de droite 
-$\displaystyle \lim_{x\rightarrow c^+} f(x) = -\infty$.}{LIM_INFINI}
+$\DS \lim_{x\rightarrow c^+} f(x) = -\infty$.}{LIM_INFINI}
 
 \begin{egg}
 À l'exemple précédent, nous avons
@@ -1415,7 +1415,7 @@ existe $\delta>0$ tel que $f(x)>M$ si $x$ est entre $c-\delta$ et
 $c+\delta$.}{LIM_INFINI0}
 
 \begin{egg}
-Revenons à $\displaystyle f(x) = \frac{2}{x^2-9}$ que nous avons étudié
+Revenons à $\DS f(x) = \frac{2}{x^2-9}$ que nous avons étudié
 précédemment.  Montrons à l'aide des définitions précédentes que 
 \[
 \lim_{x\rightarrow c^-} f(x) = -\infty \quad \text{and} \quad
@@ -1428,7 +1428,7 @@ nombre $\delta>0$ tel que
 f(x)=\frac{2}{x^2-9} > M
 \]
 lorsque $3<x<3+\delta$?  Cherchons les valeurs de $x>3$ telles que
-$\displaystyle \frac{2}{x^2-9} > M$; c'est-à-dire, telles que
+$\DS \frac{2}{x^2-9} > M$; c'est-à-dire, telles que
 $x^2 < 9 + 2/M$.  Il faut donc que
 \[
 3<x < \sqrt{9+2/M} = 3 + \left(\sqrt{9+2/M} - 3\right) \; .
@@ -1447,7 +1447,7 @@ Existe-t-il un nombre $\delta>0$ tel que
 f(x)=\frac{2}{x^2-9} > M
 \]
 lorsque $3-\delta <x <3$?  Cherchons les valeurs de $x$ entre $0$ et
-$3$ telles que $\displaystyle \frac{2}{x^2-9} < M$; c'est-à-dire,
+$3$ telles que $\DS \frac{2}{x^2-9} < M$; c'est-à-dire,
 telles que $x^2 > 9 + 2/M$.  Il faut donc que
 \[
 3> x > \sqrt{9+2/M} = 3 - (3 - \sqrt{9+2/M})
@@ -1474,7 +1474,7 @@ Démontrons que
 \]
 à partir de notre définition de limite à l'infini.  Soit
 $\epsilon > 0$ quelconque mais fixe.  Si nous prenons 
-$\displaystyle M = \frac{1}{4\epsilon^2}$, nous obtenons
+$\DS M = \frac{1}{4\epsilon^2}$, nous obtenons
 \[
 \left| \frac{1}{\sqrt{x+1}+\sqrt{x}} - 0 \right|
 = \frac{1}{\sqrt{x+1}+\sqrt{x}} < \frac{1}{2\sqrt{x}}
@@ -1538,8 +1538,8 @@ plus l'infini (resp. moins l'infini) si
 
 \begin{egg}
 À l'exemple~\ref{asympt5}, nous avons montré que
-$\displaystyle \lim_{x\rightarrow +\infty} g(x) = 5$ 
-où $\displaystyle g(x)= 5 + e^{2-x/10}$.  Si nous posons $f(x) = 5$ pour
+$\DS \lim_{x\rightarrow +\infty} g(x) = 5$ 
+où $\DS g(x)= 5 + e^{2-x/10}$.  Si nous posons $f(x) = 5$ pour
 tout $x$, alors
 \[
 \lim_{x\rightarrow +\infty} \frac{f(x)}{g(x)} = 1 \; .
@@ -1571,9 +1571,9 @@ suivante si elle existe.
 Le graphe de la fonction $p$ est donné ci-dessous.
 \MATHgraph{4_limites/discount1}{8cm}
 Évaluez graphiquement
-$\displaystyle \lim_{t\rightarrow 1^-} p(t)$,
-$\displaystyle \lim_{t\rightarrow 1^+} p(t)$ et
-$\displaystyle \lim_{t\rightarrow 1} p(t)$ si cela est possible.
+$\DS \lim_{t\rightarrow 1^-} p(t)$,
+$\DS \lim_{t\rightarrow 1^+} p(t)$ et
+$\DS \lim_{t\rightarrow 1} p(t)$ si cela est possible.
 \label{4Q2}
 \end{question}
 
@@ -1582,15 +1582,15 @@ $\displaystyle \lim_{t\rightarrow 1} p(t)$ si cela est possible.
 suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{1em}}l@{\hspace{3.5em}}}l@{\hspace{1em}}l}
-\subQ{a} & $\displaystyle \lim_{x\rightarrow 0} \frac{1-\cos(x)}{x}$ &
-\subQ{b} & $\displaystyle \lim_{x\rightarrow 0} \frac{\ln(1-x)}{x}$
+\subQ{a} & $\DS \lim_{x\rightarrow 0} \frac{1-\cos(x)}{x}$ &
+\subQ{b} & $\DS \lim_{x\rightarrow 0} \frac{\ln(1-x)}{x}$
 \end{tabular}
 \end{center}
 \label{4Q3}
 \end{question}
 
 \begin{question}
-Nous savons que $\displaystyle \lim_{x\rightarrow 0^+} \sqrt{x} = 0$.
+Nous savons que $\DS \lim_{x\rightarrow 0^+} \sqrt{x} = 0$.
 Pour quelles valeurs de $x$ aurons-nous que $\sqrt{x} < 0.1$?  Que 
 $\sqrt{x} < 0.01$?  Est-ce que $\sqrt{x}$ approche rapidement $0$
 lorsque $x>0$ approche $0$?
@@ -1607,7 +1607,7 @@ Est-ce que la limite de la fonction existe aux points $x=1$ et $x=2$?
 
 \begin{question}
 Soit $v(t) = 1 + t^2$.  Évaluez la limite
-$\displaystyle \lim_{t\rightarrow 0} v(t)$.  Soit $\alpha$ la valeur de cette
+$\DS \lim_{t\rightarrow 0} v(t)$.  Soit $\alpha$ la valeur de cette
 limite.
 \begin{enumerate}
 \item Pour quelles valeurs de $t$ aurons-nous que $|v(t) - \alpha| < 1$?
@@ -1618,7 +1618,7 @@ limite.
 \end{question}
 
 \begin{question}[\eng \life]
-Évaluez si possible la limite $\displaystyle \lim_{x\to 0} x^2\sin(1/x)$.
+Évaluez si possible la limite $\DS \lim_{x\to 0} x^2\sin(1/x)$.
 \label{4Q7}
 \end{question}
 
@@ -1631,7 +1631,7 @@ H(x) =
 1 & \quad \text{si} \quad x \geq 0
 \end{cases} \ .
 \]
-Est-ce que $\displaystyle \lim_{x\to 0} H(x) = 1$?  Justifiez votre
+Est-ce que $\DS \lim_{x\to 0} H(x) = 1$?  Justifiez votre
 réponse.
 \label{4Q8}
 \end{question}
@@ -1643,11 +1643,11 @@ Déterminez si les limites suivantes existent.  Évaluez la limite
 quand elle existe.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \lim_{t\rightarrow 0} \frac{1+t+t^2}{1+t}$ &
-\subQ{b} & $\displaystyle \lim_{x\rightarrow 0} \frac{e^x}{1+x}$ &
-\subQ{c} & $\displaystyle \lim_{x\to 2} \frac{(x-2)}{2+\sqrt{2x^2-4}}$ \\[0.9em]
-\subQ{d} & $\displaystyle \lim_{z\rightarrow 0} \frac{3z}{1+\ln(1+z)}$ &
-\subQ{e} & $\displaystyle \lim_{x\to 3} \frac{\cos(\pi/x)}{x^2-5}$ & &
+\subQ{a} & $\DS \lim_{t\rightarrow 0} \frac{1+t+t^2}{1+t}$ &
+\subQ{b} & $\DS \lim_{x\rightarrow 0} \frac{e^x}{1+x}$ &
+\subQ{c} & $\DS \lim_{x\to 2} \frac{(x-2)}{2+\sqrt{2x^2-4}}$ \\[0.9em]
+\subQ{d} & $\DS \lim_{z\rightarrow 0} \frac{3z}{1+\ln(1+z)}$ &
+\subQ{e} & $\DS \lim_{x\to 3} \frac{\cos(\pi/x)}{x^2-5}$ & &
 \end{tabular}
 \end{center}
 \label{4Q9}
@@ -1658,13 +1658,13 @@ Déterminez si les limites suivantes existent.  Évaluez la limite
 quand elle existe.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \lim_{x\to 3} \frac{(x-3)}{2-\sqrt{x^2-5}}$ &
-\subQ{b} & $\displaystyle \lim_{x\to 5} \frac{|x-5|}{x^2-25}$ &
-\subQ{c} & $\displaystyle \lim_{x\rightarrow 0}
+\subQ{a} & $\DS \lim_{x\to 3} \frac{(x-3)}{2-\sqrt{x^2-5}}$ &
+\subQ{b} & $\DS \lim_{x\to 5} \frac{|x-5|}{x^2-25}$ &
+\subQ{c} & $\DS \lim_{x\rightarrow 0}
     \frac{3-\sqrt{9-3x}}{8x}$ \\[0.9em]
-\subQ{d} & $\displaystyle \lim_{x\to 1} \frac{|x-2|-1}{x^2-1}$ &
-\subQ{e} & $\displaystyle \lim_{x\to -3} \frac{|x+3|(5+x)}{x+3}$ &
-\subQ{f} & $\displaystyle \lim_{x\to 1} \frac{5x^4 + 3x^2-8}{12x^2-11x-1}$
+\subQ{d} & $\DS \lim_{x\to 1} \frac{|x-2|-1}{x^2-1}$ &
+\subQ{e} & $\DS \lim_{x\to -3} \frac{|x+3|(5+x)}{x+3}$ &
+\subQ{f} & $\DS \lim_{x\to 1} \frac{5x^4 + 3x^2-8}{12x^2-11x-1}$
 \end{tabular}
 \end{center}
 \label{4Q10}
@@ -1707,9 +1707,9 @@ Soit
 \[
 f(x) =
 \begin{cases}
-\displaystyle a \sin\left(\frac{\pi x}{2}\right) &
+\DS a \sin\left(\frac{\pi x}{2}\right) &
 \quad \text{si} \quad x < 3 \\
-\displaystyle \frac{x^2}{2} - 4 & \quad \text{si} \quad x \geq 3
+\DS \frac{x^2}{2} - 4 & \quad \text{si} \quad x \geq 3
 \end{cases}
 \]
 Trouvez la valeur de $a$ pour que $f$ soit continue sur la droite
@@ -1734,9 +1734,9 @@ réelle.  Donnez une justification claire et complète.
 Soit
 \[
 f(x) = \begin{cases}
-\displaystyle \frac{x^2 - 2 x- 3}{x-3} & \quad \text{si} \quad x<3 \\
+\DS \frac{x^2 - 2 x- 3}{x-3} & \quad \text{si} \quad x<3 \\
 a x^2 + x + b & \quad \text{si}\quad  3 \leq x < 4 \\
-\displaystyle b \sqrt{x} + \frac{5 a x}{2} &  \quad \text{si}\quad x \geq 4
+\DS b \sqrt{x} + \frac{5 a x}{2} &  \quad \text{si}\quad x \geq 4
 \end{cases}
 \]
 Trouvez les valeurs de $a$ et $b$ pour que $f$ soit continue sur la
@@ -1757,7 +1757,7 @@ avez utilisé et de vérifier que ses hypothèses sont satisfaites.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
 \subQ{a} & $\tan(x) + 4x = x^2+e^x$ sur $[0,\pi/4]$ &
-\subQ{b} & $\displaystyle e^{\cos(x/2)}=2\sin(x/2)$ sur $[0,\pi]$
+\subQ{b} & $\DS e^{\cos(x/2)}=2\sin(x/2)$ sur $[0,\pi]$
 \end{tabular}
 \end{center}
 \label{4Q18}
@@ -1787,18 +1787,18 @@ un diapason parfait?
 
 \begin{question}
 Nous savons que
-$\displaystyle \lim_{x\rightarrow 0^+} \frac{1}{\sqrt{x}} = +\infty$.
+$\DS \lim_{x\rightarrow 0^+} \frac{1}{\sqrt{x}} = +\infty$.
 Pour quelles valeurs de $x$ aurons-nous que
-$\displaystyle \frac{1}{\sqrt{x}} >10$? Que 
-$\displaystyle \frac{1}{\sqrt{x}} >100$?  Est-ce que
-$\displaystyle \frac{1}{\sqrt{x}}$ croît rapidement ou lentement
+$\DS \frac{1}{\sqrt{x}} >10$? Que 
+$\DS \frac{1}{\sqrt{x}} >100$?  Est-ce que
+$\DS \frac{1}{\sqrt{x}}$ croît rapidement ou lentement
 lorsque $x>0$ approche $0$?
 \label{4Q21}
 \end{question}
 
 \begin{question}
 Utilisez des suites pour évaluer
-$\displaystyle \lim_{t\rightarrow 1}\ (1-t)^{-4}$.
+$\DS \lim_{t\rightarrow 1}\ (1-t)^{-4}$.
 \label{4Q22}
 \end{question}
 
@@ -1816,15 +1816,15 @@ existent.  Pour celles qui n'existent pas, expliquez pourquoi.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{1em}}l@{\hspace{3.5em}}}l@{\hspace{1em}}l}
 \subQ{a} &
-$\displaystyle \lim_{x\rightarrow \infty} \frac{x^2+5x-4}{3x^2 +1}$ &
+$\DS \lim_{x\rightarrow \infty} \frac{x^2+5x-4}{3x^2 +1}$ &
 \subQ{b} &
-$\displaystyle \lim_{x\rightarrow \infty} \frac{x-(8x^3+3)^{1/3}}{x}$ &
-\subQ{c} & $\displaystyle \lim_{x\rightarrow 0}\; \frac{1}{x}$ \\[1em]
+$\DS \lim_{x\rightarrow \infty} \frac{x-(8x^3+3)^{1/3}}{x}$ &
+\subQ{c} & $\DS \lim_{x\rightarrow 0}\; \frac{1}{x}$ \\[1em]
 \subQ{d} &
-$\displaystyle \lim_{x\rightarrow \infty} \left(\sqrt{x^2+3x}
+$\DS \lim_{x\rightarrow \infty} \left(\sqrt{x^2+3x}
 - \sqrt{x^2 + 7x}\right)$ &
 \subQ{e} &
-$\displaystyle \lim_{x\rightarrow \infty} \frac{2e^{2x} -e^{-3x}}
+$\DS \lim_{x\rightarrow \infty} \frac{2e^{2x} -e^{-3x}}
 {3e^{2x} - 4e^{-5x}}$ & &
 \end{tabular}
 \end{center}
@@ -1833,7 +1833,7 @@ $\displaystyle \lim_{x\rightarrow \infty} \frac{2e^{2x} -e^{-3x}}
 
 \begin{question}[\life \eng]
 Évaluez si possible la limite
-$\displaystyle \lim_{x\to \infty} \frac{\sin^2(x)}{1+x^2}$.
+$\DS \lim_{x\to \infty} \frac{\sin^2(x)}{1+x^2}$.
 \label{4Q25}
 \end{question}
 

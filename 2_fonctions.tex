@@ -118,7 +118,7 @@ cartésien du graphe de la fonction $h$ définie à
 l'exemple~\ref{GRAPH_SET}.
 \end{egg}
 
-\MATHfig{2_fonctions/funct2}{8cm}{Graphe de $h(x) = x^3-2x+1$}
+\MATHfig{2_fonctions/funct2}{8cm}{Graphe de $\DS h(x) = x^3-2x+1$}
 {Graphe de $y= h(x) = x^3-2x+1$ pour $-2 \leq x \leq 2$.}{FUNCT2}
 
 \section{Image et domaine d'une fonction}
@@ -249,7 +249,7 @@ Quel est le résultat de la composition $F \circ M \circ F$?
 \begin{egg}
 Regardons un exemple de fonctions dont le domaine et l'image font
 parties des nombres réels.  Plus précisément, considérons les
-fonctions $f(x) = x^2+3$ et $g(x) = 3 x - 2$.  Ainsi,
+fonctions $\DS f(x) = x^2+3$ et $g(x) = 3 x - 2$.  Ainsi,
 \begin{align*}
 (f\circ g)(x) &\equiv f(g(x)) = f(3x - 2) = (3x-2)^2 + 3
 = 9 x^2 - 12 x + 7
@@ -264,14 +264,14 @@ du produit $f g$ qui est
 \]
 \end{egg}
 
-\MATHfig{2_fonctions/compog}{8cm}{Graphe de $g(x) = x^2 -1$}
-{Graphe de $y= g(x) = x^2 -1$ pour $-2 \leq x \leq 2$}{COMPOG}
+\MATHfig{2_fonctions/compog}{8cm}{Graphe de $\DS g(x) = x^2 -1$}
+{Graphe de $\DS y= g(x) = x^2 -1$ pour $-2 \leq x \leq 2$}{COMPOG}
 
 \MATHfig{2_fonctions/compohg}{8cm}{Graphe de $y= h(g(x))$}
-{Graphe de $y= h(g(x)) = \sqrt{x^2 -1}$ pour $1 \leq |x| \leq 3$}{COMPOHG}
+{Graphe de $\DS y= h(g(x)) = \sqrt{x^2 -1}$ pour $1 \leq |x| \leq 3$}{COMPOHG}
 
 \begin{egg}
-Nous pouvons composer les fonctions $g(x) = x^2 - 1$
+Nous pouvons composer les fonctions $\DS g(x) = x^2 - 1$
 (figure~\ref{COMPOG}) et $h(x) = \sqrt{x}$ pour obtenir de nouvelles
 fonctions.  Le domaine de $g$ est $\RR$ et
 l'image de $g$ est $\{ y \in \RR : y \geq -1 \}$.  De plus, le domaine
@@ -283,7 +283,7 @@ Pour définir la composition $h \circ g$, il faut avoir
 \IM g \subset \DO h \; .
 \end{equation}
 Ce qui n'est pas le cas présentement.  Il faut restreindre $g$
-à l'ensemble des $x$ tels que $x^2-1 \geq 0$ pour satisfaire
+à l'ensemble des $x$ tels que $\DS x^2-1 \geq 0$ pour satisfaire
 (\ref{funct_domimg1}).  Avec la restriction $|x|\geq 1$, nous avons
 maintenant que
 \begin{equation} \label{funct_domimg2}
@@ -325,10 +325,10 @@ Le graphe de $g\circ h$ est donné à la figure~\ref{COMPOGH}.
 
 \begin{rmk}
 Il serait tentant de dire que
-$\displaystyle (g\circ h)(x) = x - 1$ pour tout $x$ mais cela est vrai
+$\DS (g\circ h)(x) = x - 1$ pour tout $x$ mais cela est vrai
 seulement si $x\geq 0$ car la fonction $h$ n'est pas définie pour les
 nombres négatifs et nous ne pouvons donc pas définir $g(h(x))$ pour $x<0$;
-l'expression $\left(\sqrt{x}\right)^2-1$ n'est pas définie pour $x<0$.
+l'expression $\DS \left(\sqrt{x}\right)^2-1$ n'est pas définie pour $x<0$.
 
 La fonction $f(x) = x -1$ n'est pas la fonction $g\circ h$.  Il est
 vrai que $(g\circ h)(x) = f(x)$ pour $x \geq 0$ mais $f$ est définie
@@ -445,7 +445,7 @@ Pour la composition de fonctions dont le domaine et l'image sont des
 sous-ensembles des nombres réels, l'élément neutre $\Id$ est la
 fonction qui à chaque nombre réel $x$ redonne le nombre réel $x$.
 
-Par exemple, si $p(x) = x^2 + 5x$, alors $\Id \circ p = p \circ \Id = p$
+Par exemple, si $\DS p(x) = x^2 + 5x$, alors $\Id \circ p = p \circ \Id = p$
 car $(\Id \circ p)(x) = \Id(p(x)) = p(x)$ et
 $(p \circ \Id)(x) = p(\Id(x)) = p(x)$ pour tout nombre réel $x$.
 \end{egg}
@@ -462,7 +462,7 @@ l'ensemble $Y$ à l'ensemble $X$ et qui satisfait
 f\circ g = \Id \qquad \text{et}  \qquad  g \circ f = \Id \; ,
 \]
 C'est-à-dire, $g(f(x)) = x$ pour tout $x \in X$ et $f(g(y)) = y$
-pour tout $y\in Y$.  Nous dénotons par $f^{-1}$ la fonction $g$ qui est
+pour tout $y\in Y$.  Nous dénotons par $\DS f^{-1}$ la fonction $g$ qui est
 l'inverse de $f$.
 \end{defn}
 
@@ -471,30 +471,30 @@ souvent utilisé comme défini\-tion de l'inverse d'une fonction.
 
 \begin{defn}
 L'inverse de la fonction $f$ qui va d'un ensemble $X$ à un ensemble
-$Y$ est la fonction $f^{-1}$ qui va de l'ensemble $Y$ à l'ensemble $X$
+$Y$ est la fonction $\DS f^{-1}$ qui va de l'ensemble $Y$ à l'ensemble $X$
 et qui satisfait
 \[
 x = f^{-1}(y) \qquad \text{si et seulement si} \qquad y = f(x) \; .
 \]
 \end{defn}
 
-En effet, si $y=f(x)$ alors $f^{-1}(y) = f^{-1}(f(x)) = x$ et si
-$x = f^{-1}(y)$ alors $f(x) = f(f^{-1}(y)) = y$ par définition de l'inverse
-d'une fonction.
+En effet, si $y=f(x)$ alors $\DS f^{-1}(y) = f^{-1}(f(x)) = x$ et si
+$\DS x = f^{-1}(y)$ alors $\DS f(x) = f(f^{-1}(y)) = y$ par définition
+de l'inverse d'une fonction.
 
 \begin{egg}
 Nous retrouvons à la figure~\ref{INVERSE1} un diagramme qui définit
 d'une fonction $f$ qui à chaque pays dans $X$ assigne sa capitale dans
-$Y$.  La fonction inverse $f^{-1}$ est donc la fonction qui, à chaque
+$Y$.  La fonction inverse $\DS f^{-1}$ est donc la fonction qui, à chaque
 capitale dans $Y$, assigne le pays dont elle est la capitale dans $X$.
 
-La fonction $f^{-1}$ est définie à la figure~\ref{INVERSE1} par les
+La fonction $\DS f^{-1}$ est définie à la figure~\ref{INVERSE1} par les
 flèches formées de tirets.
 \label{FMOINS1}
 \end{egg}
 
-\PDFfig{2_fonctions/inverse1}{Définition des fonctions $f$ et $f^{-1}$}
-{Définition des fonctions $f$ et $f^{-1}$ de l'exemple~\ref{FMOINS1}}
+\PDFfig{2_fonctions/inverse1}{Définition des fonctions $f$ et $\DS f^{-1}$}
+{Définition des fonctions $f$ et $\DS f^{-1}$ de l'exemple~\ref{FMOINS1}}
 {INVERSE1}
 
 \begin{egg}
@@ -506,7 +506,7 @@ L'inverse de la fonction $f(x) = x/3 + 1$ est la fonction $g(x) = 3x - 3$ car
 pour tout $x$.  De même, nous pouvons vérifier que
 $(f \circ g)(x) = f(g(x)) = \Id(x)$ pour tout $x$.
 
-Ainsi, pour $f(x) = x/3 + 1$, nous obtenons $f^{-1}(x) = 3x + 3$.
+Ainsi, pour $f(x) = x/3 + 1$, nous obtenons $\DS f^{-1}(x) = 3x + 3$.
 \end{egg}
 
 Nous avons vu que $0$ n'avait pas d'inverse multiplicatif mais que tous les
@@ -595,7 +595,7 @@ démontrer.
 \end{egg}
 
 \begin{egg}
-Est-ce que la fonction $\displaystyle f(x) = \frac{1+3x}{5-2x}$ a un
+Est-ce que la fonction $\DS f(x) = \frac{1+3x}{5-2x}$ a un
 inverse sur $\RR \setminus \{5/2\}$, son domaine?
 
 Cela revient à montrer que $f$ est injective.  Supposons que
@@ -627,7 +627,7 @@ support le fait que la fonction $f$ est injective.
 \end{egg}
 
 \PDFfig{2_fonctions/one2one}{Graphe de $f(x) = x/3 +1$}
-{Le graphe de $\displaystyle f(x) = x/3 +1$ et de quelques droites
+{Le graphe de $\DS f(x) = x/3 +1$ et de quelques droites
 horizontales}{GRAPH}
 
 \subsection{Comment trouver l'inverse d'une fonction}
@@ -645,23 +645,23 @@ Dans le cas simple de la fonction $f(x) = x/3 +1$, nous posons
 $y = f(x) = x/3 +1$ et nous résolvons pour $x$.  Nous soustrayons $1$
 de chaque côté de l'égalité précédente pour obtenir $y - 1 =  x/3$.
 Puis nous multiplions les deux côtés de cette nouvelle égalité par $3$
-pour obtenir $x = 3y - 3$.  Donc $x=f^{-1}(y) = 3y-3$.
+pour obtenir $x = 3y - 3$.  Donc $\DS x=f^{-1}(y) = 3y-3$.
 
 Par tradition, nous utilisons $y$ pour la variable dépendante et
 $x$ pour la variable indépendante.  Nous échangeons donc $x$ et $y$ pour
-obtenir $y = f^{-1}(x) = 3 x - 3$ pour $x\in \RR$.
+obtenir $\DS y = f^{-1}(x) = 3 x - 3$ pour $x\in \RR$.
 \end{egg}
 
 \begin{egg}
 Même si $f$ est donnée par un simple polynôme, il n'est pas toujours
 possible de trouver une expression algébrique pour l'inverse de $f$.
 
-Par exemple, soit $f(x) = x^6 + x^2 + 3$.  Il est facile de tracer le
+Par exemple, soit $\DS f(x) = x^6 + x^2 + 3$.  Il est facile de tracer le
 graphe de $f$ et de remarquer que $f$ satisfait le test de la droite
 horizontale.  Nous sommes donc certain que l'inverse de $f$ existe.
 
-Cependant, nous ne pouvons résoudre l'équation $y=x^6+x^2+3$ pour $x$
-en fonction de $y$ afin d'obtenir $x = f^{-1}(y)$.  En fait, il a été
+Cependant, nous ne pouvons résoudre l'équation $\DS y=x^6+x^2+3$ pour $x$
+en fonction de $y$ afin d'obtenir $\DS x = f^{-1}(y)$.  En fait, il a été
 démontré par Evariste Galois, un mathématicien français du $18^e$
 siècle, qu'il n'existe pas de formule générale pour trouver les
 racines d'un polynôme de degré plus grand que quatre comme c'est le
@@ -670,7 +670,7 @@ cas pour les polynômes de degré deux.
 
 \begin{egg}
 À l'exemple~\ref{invEGG}, nous avons montré que la fonction
-$\displaystyle f(x) = \frac{1+3x}{5-2x}$ était injective.  Il existe
+$\DS f(x) = \frac{1+3x}{5-2x}$ était injective.  Il existe
 donc un inverse de $f$ en tant que fonction définie sur
 $\RR\setminus \{5/2\}$.  Trouvons cet inverse.
 
@@ -681,24 +681,24 @@ y = f(x) = \frac{1+3x}{5-2x} &
 &\Leftrightarrow 5y -1 = 2xy + 3x = (2y+3)x
 \Leftrightarrow x = \frac{5y -1}{2y+3} \ ,
 \end{align*}
-nous avons $\displaystyle x=f^{-1}(y) = \frac{5y -1}{2y+3}$.  Comme par
+nous avons $\DS x=f^{-1}(y) = \frac{5y -1}{2y+3}$.  Comme par
 tradition nous utilisions $y$ pour la variable dépendante et $x$
 pour la variable indépendante, nous échangeons $x$ et $y$ pour obtenir
-$\displaystyle y=f^{-1}(x) = \frac{5x -1}{2x+3}$.  La fonction
-$f^{-1}$ a comme domaine l'image de la fonction $f$ qui est
+$\DS y=f^{-1}(x) = \frac{5x -1}{2x+3}$.  La fonction
+$\DS f^{-1}$ a comme domaine l'image de la fonction $f$ qui est
 $\RR \setminus \{-3/2\}$.
 \end{egg}
 
 \subsubsection{Méthode graphique}
 
 \begin{meth}
-Si $f$ est une fonction qui possède une fonction inverse $f^{-1}$,
-alors nous obtenons le graphe de $f^{-1}$ en faisant la réflexion du
+Si $f$ est une fonction qui possède une fonction inverse $\DS f^{-1}$,
+alors nous obtenons le graphe de $\DS f^{-1}$ en faisant la réflexion du
 graphe de $f$ par rapport à la droite $y=x$.
 \end{meth}
 
-\PDFfig{2_fonctions/inverse}{Graphe de $f^{-1}$ obtenu par réflexion du
-graphe de $f$}{Graphe de $f^{-1}$ obtenu par réflexion du
+\PDFfig{2_fonctions/inverse}{Graphe de $\DS f^{-1}$ obtenu par réflexion du
+graphe de $f$}{Graphe de $\DS f^{-1}$ obtenu par réflexion du
 graphe de $f$ par rapport à la droite $y=x$}{INVERSE} 
 
 \begin{rmk}[\theory]
@@ -707,7 +707,7 @@ figure~\ref{INVERSE}.
 Nous fixons $z$ et cherchons les coordonnées du point $B$ qui est
 le point symétrique au point $A = (z,f(z))$ par rapport à la droite
 $y=x$.  Nous voulons montrer que les coordonnées du point $B$ sont
-$(f(z),z)$, un point du graphe de $f^{-1}$ car $z = f^{-1}(f(z))$.
+$(f(z),z)$, un point du graphe de $\DS f^{-1}$ car $\DS z = f^{-1}(f(z))$.
 
 Si $B$ est le point qui est symétrique au point $A$ par rapport à la
 droite $y=x$, alors les angles $\angle AEC$ et $\angle BEC$ sont des
@@ -747,23 +747,23 @@ domaine et de l'image d'une fonction sur la définition de son
 inverse.
 
 \begin{egg}
-Considérons la fonction $f(x) = x^2 -1$ pour toutes les valeurs
+Considérons la fonction $\DS f(x) = x^2 -1$ pour toutes les valeurs
 réelles de $x$.  Cette fonction n'a pas d'inverse car elle n'est pas
 injective.  Par exemple, $f(-1) = f(1) = 0$.  Il est aussi facile de
 voir à partir du graphe de $f$ que cette fonction ne satisfait pas le
 test de la droite horizontale.
 
-Par contre, si nous considèrons $f(x) = x^2-1$ pour $x\geq 0$ seulement,
-alors $f$ a un inverse qui est $f^{-1}(x) = \sqrt{x+1}$ pour
+Par contre, si nous considèrons $\DS f(x) = x^2-1$ pour $x\geq 0$ seulement,
+alors $f$ a un inverse qui est $\DS f^{-1}(x) = \sqrt{x+1}$ pour
 $x\geq -1$.  Nous retrouvons à la figure~\ref{INVERSE2} les graphes de
-$f$ et $f^{-1}$.
+$f$ et $\DS f^{-1}$.
 
 Utilisons la méthode algébrique pour trouver l'inverse de
-$f(x) = x^2-1$ pour $x\geq 0$.  Nous additionnons $1$ de chaque
-côté de $y = f(x) = x^2 -1$ pour obtenir $y + 1 =  x^2$.
+$\DS f(x) = x^2-1$ pour $x\geq 0$.  Nous additionnons $1$ de chaque
+côté de $\DS y = f(x) = x^2 -1$ pour obtenir $\DS y + 1 =  x^2$.
 Puis nous prenons la racine carrée des deux côtés de cette dernière
 égalité pour obtenir $x = \sqrt{y + 1}$.
-Donc $x = f^{-1}(y) = \sqrt{y+1}$ pour $y \geq -1$.
+Donc $\DS x = f^{-1}(y) = \sqrt{y+1}$ pour $y \geq -1$.
 
 Par tradition, nous échangeons $x$ et $y$ pour obtenir
 \[
@@ -771,13 +771,13 @@ y = f^{-1}(x) = \sqrt{x + 1} \quad \text{pour} \quad x\geq -1 \; .
 \]
 
 Sans l'hypothèse que $x\geq 0$, nous aurions obtenu
-$\displaystyle x = \pm \sqrt{y + 1}$.  Or, cette formule ne peut pas
+$\DS x = \pm \sqrt{y + 1}$.  Or, cette formule ne peut pas
 définir une fonction car nous avons deux valeurs pour chaque valeur de $y$.
 \end{egg}
 
-\PDFfig{2_fonctions/inverse2}{Graphes de $f(x) = x^2 -1$ et $f^{-1}$}
-{Graphes de $f(x) = x^2 -1$ pour $x\geq 0$ et de
-$f^{-1}(x) = \sqrt{x+1}$ pour $x\geq -1$.}{INVERSE2}
+\PDFfig{2_fonctions/inverse2}{Graphes de $\DS f(x) = x^2 -1$ et $\DS f^{-1}$}
+{Graphes de $\DS f(x) = x^2 -1$ pour $x\geq 0$ et de
+$\DS f^{-1}(x) = \sqrt{x+1}$ pour $x\geq -1$.}{INVERSE2}
 
 \section{Fonctions trigonométriques \life \eng}
 
@@ -794,8 +794,8 @@ sont définis par
 où $|\sgm{AC}|$, $|\sgm{BC}|$ et $|\sgm{AB}|$ sont les longueurs des
 segments $\sgm{AC}$, $\sgm{BC}$ et $\sgm{AB}$ respectivement.  Cette
 définition est excellente pour les angles aiguës (moins de
-$90^\circ$) mais comment définir le cosinus ou sinus d'un angle obtus
-(plus de $90^\circ$).
+$\DS 90^\circ$) mais comment définir le cosinus ou sinus d'un angle obtus
+(plus de $\DS 90^\circ$).
 
 \PDFfig{2_fonctions/trig0}{Définition du sinus et cosinus d'un angle à
 partir du cercle unité}{Définition du sinus et cosinus de l'angle
@@ -821,7 +821,7 @@ $\theta$ à partir d'un triangle.}{TRIG1}
 À partir de maintenant, au lieu de calculer les angles en degrés, nous
 calculons les angles en radians.  N'oubliez pas que le nombre $\pi$
 est le rapport de la circonférence d'un cercle sur son diamètre.
-Ainsi,  $360^\circ$ correspond à $2\pi$ radians, la circonférence d'un
+Ainsi,  $\DS 360^\circ$ correspond à $2\pi$ radians, la circonférence d'un
 cercle de rayon $1$.
 
 Les deux définitions du cosinus et sinus que nous venons de donner
@@ -924,23 +924,23 @@ n \pi \ \text{pour} \ n\in \ZZ \, .
 Notons que  $\cos(\theta) \neq \cos(\theta)$.
 
 La fonction $\cos(x)$ définie dans le cours de
-{\bfseries Fonctions} de $11^e$ année en Ontario assume
+{\bfseries Fonctions} de $\DS 11^e$ année en Ontario assume
 que $x$ est mesuré en degrés.  Alors que la fonction $\cos(x)$
-définie dans le cours de {\bfseries Fonctions Avancées} de $12^e$
+définie dans le cours de {\bfseries Fonctions Avancées} de $\DS 12^e$
 assume que $x$ est mesuré en radians.
 
 La même notation a été utilisée pour dénoter deux différentes
 fonctions.  Par exemple, $\cos(10) \neq \cos(10)$ si l'angle du
 premier cosinus est $10$ degrés et celui du deuxième cosinus est $10$
-radians.  Il est aussi mélangeant d'écrire $\displaystyle \cos(10) =
+radians.  Il est aussi mélangeant d'écrire $\DS \cos(10) =
 \cos\left( 10 (\pi/180)\right)$; il faut comprendre que
 l'angle du premier cosinus est $10$ degrés alors que celui du deuxième
-cosinus est $\displaystyle 10 (\pi/180)$ radians.
+cosinus est $\DS 10 (\pi/180)$ radians.
 
 Si nous dénotons par $\cos_{d}$ le cosinus où l'angle est mesuré en
 degrés et par $\cos$ le cosinus où l'angle est mesuré en radians,
 alors il est maintenant clair que $\cos_{d}(10) \neq \cos(10)$ et
-$\displaystyle \cos_{d}(10) = \cos\left( 10 (\pi/180) \right)$.
+$\DS \cos_{d}(10) = \cos\left( 10 (\pi/180) \right)$.
 
 Il aurait été préférable de donner des noms différents au cosinus pour
 les angles en degrés et au cosinus pour les angles en radians.
@@ -1122,8 +1122,8 @@ donnons quand même cette démonstration puisqu'elle est très courte et
 approfondir leurs connaissances en mathématiques au delà du cours de
 calcul différentiel et intégral.
 
-Puisque $e^{\theta i} = \cos(\theta) + i \sin(\theta)$ où $i$ est le
-nombre complexe tel que $i^2=-1$ et $\theta \in \RR$, nous avons
+Puisque $\DS e^{\theta i} = \cos(\theta) + i \sin(\theta)$ où $i$ est le
+nombre complexe tel que $\DS i^2=-1$ et $\theta \in \RR$, nous avons
 \begin{equation} \label{complex_equ1}
 e^{(\theta_1+\theta_2)i} = \cos(\theta_1+\theta_2) + i \sin(\theta_1+\theta_2)
 \end{equation}
@@ -1146,7 +1146,7 @@ Si nous comparons la partie réelle et imaginaire de (\ref{complex_equ1}) et
 \cos(\theta_1)\sin(\theta_2) \; .
 \end{align*}
 Évidemment, cette démonstration est très courte mais fait appel à
-l'identité $e^{\theta i} = \cos(\theta) + i \sin(\theta)$ qui n'est
+l'identité $\DS e^{\theta i} = \cos(\theta) + i \sin(\theta)$ qui n'est
 pas triviale à démontrer.
 
 % \PDFfig{2_fonctions/trigadd}{Règle d'addition pour les sinus et
@@ -1193,15 +1193,15 @@ pas triviale à démontrer.
 % Ainsi,
 % \begin{align}
 % \cos(\alpha+\beta) &= \frac{\cos(\alpha)}
-% {\displaystyle \frac{\sin(\beta)\sin(\alpha+\beta)}{\cos(\alpha+\beta)}
+% {\DS \frac{\sin(\beta)\sin(\alpha+\beta)}{\cos(\alpha+\beta)}
 % + \cos(\beta)} \nonumber \\
 % &= \frac{\cos(\alpha)\cos(\alpha+\beta)}
 % {\sin(\beta)\sin(\alpha+\beta)+ \cos(\beta)\cos(\alpha+\beta)}
 % \label{add_1}
 % \intertext{et}
 % \sin(\alpha+\beta) &=
-% \frac{\displaystyle \frac{\sin(\beta)}{\cos(\alpha+\beta)}+\sin(\alpha)}
-% {\displaystyle \sin(\beta)\frac{\sin(\alpha+\beta)}{\cos(\alpha+\beta)}
+% \frac{\DS \frac{\sin(\beta)}{\cos(\alpha+\beta)}+\sin(\alpha)}
+% {\DS \sin(\beta)\frac{\sin(\alpha+\beta)}{\cos(\alpha+\beta)}
 % + \cos(\beta)} \nonumber \\
 % &= \frac{\sin(\beta)  +\sin(\alpha)\cos(\alpha+\beta)}
 % {\sin(\beta)\sin(\alpha+\beta) + \cos(\beta)\cos(\alpha+\beta)} \; .
@@ -1278,7 +1278,7 @@ pas triviale à démontrer.
 \end{rmk}
 
 \begin{egg}
-Quelle est la valeur de $\displaystyle \sin(2\pi/3)$?
+Quelle est la valeur de $\DS \sin(2\pi/3)$?
 
 Puisque $\sin(\theta) = \sin(\pi - \theta)$, nous avons que
 \[
@@ -1316,7 +1316,7 @@ formule d'addition pour le cosinus, nous obtenons
 \[
 \cos(2 \theta) = \cos^2(\theta) - \sin^2(\theta) \; .
 \]
-Puisque $\sin^2(\theta) = 1 - \cos^2(\theta)$, il découle de
+Puisque $\DS \sin^2(\theta) = 1 - \cos^2(\theta)$, il découle de
 l'équation ci-dessus que
 \begin{equation} \label{doubleAngle}
 \cos(2 \theta) = 2 \cos^2(\theta) - 1 \; .
@@ -1327,7 +1327,7 @@ D'où
 \]
 \end{egg}
 
-Il existe une formule pour $\sin^2(\theta)$ qui est
+Il existe une formule pour $\DS \sin^2(\theta)$ qui est
 semblable à celle donnée en (\ref{db_angle}).  La proposition suivante
 inclus ces deux formules. 
 
@@ -1354,15 +1354,15 @@ chapitre~\ref{chapter_integr}.
 
 Pour terminer, mentionnons deux identités trigonométriques qui
 font appel à la tangente, la cotangente, la sécante et la cosécante.
-Si nous divisons l'identité $\cos^2(\theta) + \sin^2(\theta) = 1$ tour
-à tour par $\cos^2(\theta)$ et par $\sin^2(\theta)$, nous obtenons les
+Si nous divisons l'identité $\DS \cos^2(\theta) + \sin^2(\theta) = 1$ tour
+à tour par $\DS \cos^2(\theta)$ et par $\DS \sin^2(\theta)$, nous obtenons les
 deux identités suivantes.
 
 \begin{prop}
 \[
 \begin{array}{ll}
 1 + \tan^2(\theta) = \sec^2(\theta) &\quad \text{pour} \quad \theta \neq
-\displaystyle \frac{\pi}{2} + n \pi \ \text{pour} \ n \in \ZZ \; . \\[0.5em]
+\DS \frac{\pi}{2} + n \pi \ \text{pour} \ n \in \ZZ \; . \\[0.5em]
 \cot^2(\theta) + 1 = \csc^2(\theta) &\quad \text{pour} \quad \theta \neq
 n \pi \ \text{pour} \ n \in \ZZ \; .
 \end{array}
@@ -1479,8 +1479,8 @@ période de cette fonction est donné à la figure~\ref{sinuso_egg}.
 
 \begin{egg}
 La température moyenne du corps pour une période de $24$
-heures est de $36.8^\circ$C avec un minimum de $36.5^\circ$C à 2h00 et
-un maximum de $37.1^\circ$C à 14h00.  Supposons que la
+heures est de $\DS 36.8^\circ$C avec un minimum de $\DS 36.5^\circ$C à 2h00 et
+un maximum de $\DS 37.1^\circ$C à 14h00.  Supposons que la
 température $T$ du corps en fonction du temps $t$ soit décrite par
 une fonction sinusoïdale.   Quelle est cette fonction?
 
@@ -1503,7 +1503,7 @@ n'est pas injective et donc n'a pas d'inverse.
 \MATHfig{2_fonctions/sin1}{8cm}{Graphe de $y=\sin(x)$}
 {Graphe de $y=\sin(x)$ pour $-6 \leq x \leq 6$}{SIN}
 
-Mais! Il y a bien une fonction $\sin^{-1}$ sur les calculatrices.
+Mais! Il y a bien une fonction $\DS \sin^{-1}$ sur les calculatrices.
 Quelle est cette fonction?
 
 Nous définissons la fonction inverse pour le sinus en restreignant le
@@ -1513,74 +1513,74 @@ courbe tracée en vert que nous retrouvons sur le graphe
 
 \begin{defn} \index{Arcsinus}
 Sur l'intervalle $-\pi/2 \leq x \leq \pi/2$, la fonction $\sin$ est
-bien injective et nous pouvons définir son inverse $\sin^{-1}$ par la
+bien injective et nous pouvons définir son inverse $\DS \sin^{-1}$ par la
 formule standard
 \[
 x = \sin^{-1}(y) \qquad \text{si et seulement si} \qquad y = \sin(x)
 \]
 pour $-\pi/2 \leq x \leq \pi/2$ et $-1 \leq y \leq 1$.  La fonction
-$\sin^{-1}$ est appelée l'{\bfseries arcsinus} et est
-aussi dénotée $\arcsin$; c'est-à-dire, $\sin^{-1}(x) \equiv \arcsin(x)$.
+$\DS \sin^{-1}$ est appelée l'{\bfseries arcsinus} et est
+aussi dénotée $\arcsin$; c'est-à-dire, $\DS \sin^{-1}(x) \equiv \arcsin(x)$.
 \end{defn}
 
-En d'autres mots, $x = \sin^{-1}(y)$ est l'angle en radians entre
+En d'autres mots, $\DS x = \sin^{-1}(y)$ est l'angle en radians entre
 $-\pi/2$ et $\pi/2$ qu'il faut pour que $\sin(x) = y$.
 
-La définition de $\sin^{-1}$ explique pourquoi cette fonction sur
+La définition de $\DS \sin^{-1}$ explique pourquoi cette fonction sur
 votre calculatrice n'acceptera jamais d'arguments plus petits que $-1$
 et plus grands que $1$.
 
 Nous retrouvons à la figure~\ref{ASIN} le graphe de la fonction
-$\sin^{-1}$.  Le lecteur peut vérifier que le graphe de $\sin^{-1}$
+$\DS \sin^{-1}$.  Le lecteur peut vérifier que le graphe de $\DS \sin^{-1}$
 est bien obtenu d'une réflexion par rapport à la droite $y=x$ du
 graphe de $\sin$.
 
-\MATHfig{2_fonctions/arcsin1}{8cm}{Graphe de $y=\sin^{-1}(x)$}
-{Graphe de $y=\sin^{-1}(x)$ pour $-1 \leq x \leq 1$}{ASIN}
+\MATHfig{2_fonctions/arcsin1}{8cm}{Graphe de $\DS y=\sin^{-1}(x)$}
+{Graphe de $\DS y=\sin^{-1}(x)$ pour $-1 \leq x \leq 1$}{ASIN}
 
 De même, nous pouvons définir l'inverse pour le cosinus.
 
 \begin{defn} \index{Arccosinus}
 Sur l'intervalle $0 \leq x \leq \pi$, la fonction $\cos$ est bien
-injective et nous pouvons définir son inverse $\cos^{-1}$ par la formule
+injective et nous pouvons définir son inverse $\DS \cos^{-1}$ par la formule
 standard
 \[
 x = \cos^{-1}(y) \qquad \text{si et seulement si} \qquad y = \cos(x)
 \]
 pour $0 \leq x \leq \pi$ et $-1 \leq y \leq 1$.  La fonction
-$\cos^{-1}$ est appelée {\bfseries arccosinus} et
+$\DS \cos^{-1}$ est appelée {\bfseries arccosinus} et
 est aussi dénotée $\arccos$; c'est-à-dire,
-$\cos^{-1}(x) \equiv \arccos(x)$.
+$\DS \cos^{-1}(x) \equiv \arccos(x)$.
 \end{defn}
 
 Finalement, nous pouvons définir l'inverse pour la tangente.
 
 \begin{defn} \index{Arctangente}
 Sur l'intervalle $-\pi/2 < x < \pi/2$,  la fonction $\tan$ est bien
-injective et nous pouvons définir son inverse $\tan^{-1}$ par la formule
+injective et nous pouvons définir son inverse $\DS \tan^{-1}$ par la formule
 standard
 \[
 x = \tan^{-1}(y) \qquad \text{si et seulement si} \qquad y = \tan(x)
 \]
-pour $-\pi/2 < x < \pi/2$ et $y$ réels.  La fonction $tan^{-1}$ est
+pour $-\pi/2 < x < \pi/2$ et $y$ réels.  La fonction $\DS tan^{-1}$ est
 appelée l'{\bfseries arctangente} et est aussi
-dénotée $\arctan$; c'est-à-dire, $\tan^{-1}(x) \equiv \arctan(x)$.
+dénotée $\arctan$; c'est-à-dire, $\DS \tan^{-1}(x) \equiv \arctan(x)$.
 \end{defn}
 
-Le graphe de $\cos^{-1}$ est donné à la figure~\ref{ACOS} et celui de
-$\tan^{-1}$ est donné à la figure~\ref{ATAN}.
+Le graphe de $\DS \cos^{-1}$ est donné à la figure~\ref{ACOS} et celui de
+$\DS \tan^{-1}$ est donné à la figure~\ref{ATAN}.
 
-\MATHfig{2_fonctions/arccos1}{8cm}{Graphe de $y=\cos^{-1}(x)$}
-{Graphe de $y=\cos^{-1}(x)$ pour $-1 \leq x \leq 1$}{ACOS}
+\MATHfig{2_fonctions/arccos1}{8cm}{Graphe de $\DS y=\cos^{-1}(x)$}
+{Graphe de $\DS y=\cos^{-1}(x)$ pour $-1 \leq x \leq 1$}{ACOS}
 
-\MATHfig{2_fonctions/arctan1}{8cm}{Graphe de $y=\tan^{-1}(x)$}
-{Graphe de $y=\tan^{-1}(x)$ pour $x$ réels}{ATAN}
+\MATHfig{2_fonctions/arctan1}{8cm}{Graphe de $\DS y=\tan^{-1}(x)$}
+{Graphe de $\DS y=\tan^{-1}(x)$ pour $x$ réels}{ATAN}
 
 \begin{rmk}
-Remarquons que $\displaystyle \sin^{-1} \neq \sin^{-1}$
+Remarquons que $\DS \sin^{-1} \neq \sin^{-1}$
 
-Il faut bien comprendre que $\sin^{-1}$ sur la calculatrice n'est pas
-égale à $\left(\sin(x)\right)^{-1} = 1/\sin(x)$.  Par exemple,
+Il faut bien comprendre que $\DS \sin^{-1}$ sur la calculatrice n'est pas
+égale à $\DS \left(\sin(x)\right)^{-1} = 1/\sin(x)$.  Par exemple,
 \[
 \sin^{-1}\left(\frac{1}{2}\right) = \frac{\pi}{6} = 0.52359877559830\ldots
 \]
@@ -1593,12 +1593,12 @@ alors que
 \end{rmk}
 
 \begin{egg}
-Montrons que $\displaystyle \sin(\arccos(x)) = \sqrt{1-x^2}$ pour
+Montrons que $\DS \sin(\arccos(x)) = \sqrt{1-x^2}$ pour
 $-1\leq x \leq 1$. 
 
 Soit $\theta = \arccos(x)$ où $0 \leq \theta \leq \pi$.  Nous
 déduisons des deux dessins à la figure~\ref{arcXX3} que
-$\sin(\theta) = \sqrt{1-x^2}$.
+$\DS \sin(\theta) = \sqrt{1-x^2}$.
 \end{egg}
 
 \PDFfig{2_fonctions/arcXX3}{Représentation graphique de
@@ -1608,7 +1608,7 @@ $0\leq \theta \leq \pi$.}{arcXX3}
 
 % \begin{egg}
 % Montrons que
-% $\displaystyle \sin(\arcsec(x)) = \sqrt{1-\frac{1}{x^2}}$
+% $\DS \sin(\arcsec(x)) = \sqrt{1-\frac{1}{x^2}}$
 % pour $|x|>1$.
 
 % Soit $\theta = \arcsec(x)$ où $\pi/2 < \theta \leq \pi$ pour $x\leq -1$
@@ -1619,103 +1619,104 @@ $0\leq \theta \leq \pi$.}{arcXX3}
 
 \subsection{Fonctions exponentielles}\label{cerclevicieux}
 
-Le but de cette section est de donner un sens à l'expression $b^p$
+Le but de cette section est de donner un sens à l'expression $\DS b^p$
 pour le plus grand ensemble possible de {\bfseries base} $b$ et
 d'{\bfseries exposant} $p$.  Nous résumons ci-dessous ce qui est connu
 au sujet de l'exponentiel d'un nombre.
 
 {\renewcommand{\labelitemi}{\textbullet}
 \begin{itemize}
-\item L'expression $b^p$ n'est pas définie pour $b=p=0$.
-\item $b^p =1$ pour $b>0$ et $p=0$.  Par exemple, $\pi^0 = 1$.
+\item L'expression $\DS b^p$ n'est pas définie pour $b=p=0$.
+\item $\DS b^p =1$ pour $b>0$ et $p=0$.  Par exemple, $\DS \pi^0 = 1$.
 \item Si $b \in \RR$ et $p$ est un entier positif,
 \[
 b^{p} = \underbrace{b \times b \times \ldots \times b}_{\text{p fois}}
 \; .
 \]
-Par exemple, $\pi^3 = \pi \times \pi \times \pi$.
-\item Si $b \in \RR$ et $p = 1/n$ où $n$ est un nombre impair, $y=b^p$
-  est le nombre réel tel que $y^n = b$.  Par exemple,
-  $(-8)^{1/3} = -2$ car $(-2)^3 = -8$.
-\item Si $b \geq 0$ et $p = 1/n$ où $n$ est un nombre pair, $y=b^p$
-  est le {\bfseries nombre réel positif} tel que $y^n = b$.  Par exemple,
-  $16^{1/4} = 2$ car $2^4 = 16$.
-\item Si $p = m/n$, nous calculons $\displaystyle \left(b^{1/n}\right)^m$
-  s'il est possible de calculer $\displaystyle b^{1/n}$ en premier.
+Par exemple, $\DS \pi^3 = \pi \times \pi \times \pi$.
+\item Si $b \in \RR$ et $p = 1/n$ où $n$ est un nombre impair, $\DS y=b^p$
+  est le nombre réel tel que $\DS y^n = b$.  Par exemple,
+  $\DS (-8)^{1/3} = -2$ car $\DS (-2)^3 = -8$.
+\item Si $b \geq 0$ et $p = 1/n$ où $n$ est un nombre pair, $\DS y=b^p$
+  est le {\bfseries nombre réel positif} tel que $\DS y^n = b$.  Par exemple,
+  $\DS 16^{1/4} = 2$ car $\DS 2^4 = 16$.
+\item Si $p = m/n$, nous calculons $\DS \left(b^{1/n}\right)^m$
+  s'il est possible de calculer $\DS b^{1/n}$ en premier.
   Il est toujours avantageux de simplifier la fraction $m/n$ avant de
-  faire les calculs.  Par exemple, $(-8)^{2/3} = 4$ car $(-8)^{1/3} = -2$ et
-  $\displaystyle \left((-8)^{1/3}\right)^2 = (-2)^2 = 4$.  De même,
-  $16^{3/4} = 8$ car $16^{1/4} =2$ et
-  $\displaystyle \left(16^{1/4}\right)^3 = 2^3 = 8$.
-\item Si $p<0$, nous définissons $b^p$ comme étant le nombre
-  $1/b^{-p}$ si $b^{-p}$ est définie.  Par exemple,
-  $\pi^{-3} = 1/\pi^3 = 1/(\pi \times \pi \times \pi)$.
+  faire les calculs.  Par exemple, $\DS (-8)^{2/3} = 4$ car
+  $\DS (-8)^{1/3} = -2$ et $\DS \left((-8)^{1/3}\right)^2 = (-2)^2 = 4$.
+  De même, $\DS 16^{3/4} = 8$ car $\DS 16^{1/4} =2$ et
+  $\DS \left(16^{1/4}\right)^3 = 2^3 = 8$.
+\item Si $p<0$, nous définissons $\DS b^p$ comme étant le nombre
+  $\DS 1/b^{-p}$ si $\DS b^{-p}$ est définie.  Par exemple,
+  $\DS \pi^{-3} = 1/\pi^3 = 1/(\pi \times \pi \times \pi)$.
 \end{itemize}
 }
 
-Aucune définition n'est donnée pour $b^p$ lorsque $b$ est un nombre
+Aucune définition n'est donnée pour $\DS b^p$ lorsque $b$ est un nombre
 réel positif et $p$ est un exposant réel quelconque.  Pour calculer
-$4^2$, il suffit de multiplier $4$ par lui-même.  Pour calculer
-$4^{1/2}$, il suffit de trouver le nombre positif $y$ tel que $y^2=4$;
+$\DS 4^2$, il suffit de multiplier $4$ par lui-même.  Pour calculer
+$\DS 4^{1/2}$, il suffit de trouver le nombre positif $y$ tel que $\DS y^2=4$;
 c'est-à-dire, $y=2$ dans le cas présent.  Mais que devons-nous faire
-pour obtenir la valeur de $4^\pi$?  Nous pouvons utiliser
+pour obtenir la valeur de $\DS 4^\pi$?  Nous pouvons utiliser
 la définition suivante.
 
 \begin{defn} \label{pr_def_of_exp}
 Pour $b >1$ et $p \in \RR$, nous définissons le {\bfseries nombre exponentiel}
-$b^p$ comme étant le plus petit nombre réel\footnotemark\ $M$ tel que
+$\DS b^p$ comme étant le plus petit nombre réel\footnotemark\ $M$ tel que
 $M \geq  b^r$ pour tout nombre rationnel $r\leq p$.
 
 Pour $0<b<1$ et $p \in \RR$, nous définissons le {\bfseries nombre exponentiel}
-$b^p$ comme étant le plus grand nombre réel $M$ tel que $M \leq  b^r$
+$\DS b^p$ comme étant le plus grand nombre réel $M$ tel que $\DS M \leq  b^r$
 pour tout nombre rationnel $r\leq p$.
 
-Naturellement, si $b=1$, nous obtenons $b^p = 1$ pour tout $p\in \RR$.
+Naturellement, si $b=1$, nous obtenons $\DS b^p = 1$ pour tout $p\in \RR$.
 \end{defn}
 
 \footnotetext{{\bfseries L'Axiome de complétude} des nombres réels dit
   que tout ensemble non vide et borné supé\-rieurement possède une
   plus petite borne supérieure.}
 
-Ainsi, $4^\pi$ est le plus petit nombre réel $M$ tel que $4^r \leq M$
-pour tout nombre rationnel $r\leq \pi$.  De même, $4^2 = 16$ car
-$M=16$ est le plus petit nombre tel que $4^r \leq M$ pour tout nombre
+Ainsi, $\DS 4^\pi$ est le plus petit nombre réel $M$ tel que $\DS 4^r \leq M$
+pour tout nombre rationnel $r\leq \pi$.  De même, $\DS 4^2 = 16$ car
+$M=16$ est le plus petit nombre tel que $\DS 4^r \leq M$ pour tout nombre
 rationnel $r\leq 2$; le nombre $2$ est une valeur possible pour $r$. 
 
 La définition que nous venons de donner pour le nombre exponentiel
-$b^p$ avec $b\in]0,\infty[$ et $p\in \RR$ n'est pas facile à utiliser.
+$\DS b^p$ avec $b\in]0,\infty[$ et $p\in \RR$ n'est pas facile à utiliser.
 Il faut généralement beaucoup de travail pour évaluer un nombre
 exponentiel avec cette définition.  Pour l'instant, cette définition
 sera suffisante pour nos besoins.
 
 En fait, cette définition d'un nombre exponentiel manque de rigueur.
 Il faudrait démontrer que cette définition est consistante.  Par
-exemple, est-ce que cette définition de $b^p$ pour $b>1$ est
-équivalente à \lgm $b^p$ est le plus grand nombre réel $M$ tel que $M
-\leq  b^r$ pour tout nombre rationnel $r\geq p$\rgm ?  Comme nous verrons 
-prochainement, cela revient à exiger que les limites à droite et à
-gauche de $b^r$ soient égales à $r=p$.  Il y a bien d'autres questions
+exemple, est-ce que cette définition de $\DS b^p$ pour $b>1$ est
+équivalente à \lgm $\DS b^p$ est le plus grand nombre réel $M$ tel que
+$\DS M \leq  b^r$ pour tout nombre rationnel $r\geq p$\rgm ?  Comme
+nous verrons prochainement, cela revient à exiger que les limites à droite et à
+gauche de $\DS b^r$ soient égales à $r=p$.  Il y a bien d'autres questions
 de ce genre que nous pourrions poser au sujet de cette définition.  
 De plus, il est difficile de démontrer les propriétés des exposants
 avec cette définition.
 
 Nous donnerons à la section~\ref{DEFofE} une définition équivalent du
-nombre exponentiel $b^p$, $b\in]0,\infty[$ et $p\in \RR$, qui sera
+nombre exponentiel $\DS b^p$, $b\in]0,\infty[$ et $p\in \RR$, qui sera
 plus facile à manipuler que celle ci-dessus.  Avec la définition
 présentée à la section~\ref{DEFofE}, il est facile de déduire les
 propriétés des exposants.  De plus, les calculatrices et ordinateurs
 utilisent cette définition (avec quelques subtilités additionnelles)
 pour évaluer les nombres exponentiels.
 
-Pour l'instant, la valeur d'un nombre exponentiel comme $4^\pi$ sera estimée
-par $4^r$ pour des valeurs rationnelles de $r$ très près de $\pi$ et
+Pour l'instant, la valeur d'un nombre exponentiel comme $\DS 4^\pi$
+sera estimée
+par $\DS 4^r$ pour des valeurs rationnelles de $r$ très près de $\pi$ et
 inférieures à $\pi$.  Quelle valeur de $r$, proche de $\pi$, doit-on
-utiliser pour obtenir une bonne approximation de $4^\pi$?  Cette
+utiliser pour obtenir une bonne approximation de $\DS 4^\pi$?  Cette
 question ne sera pas abordée.
 
 \begin{defn} \index{Fonction exponentielle}
 Si $b$ est un nombre réel positif, la fonction
-$f:\RR\rightarrow ]0,\infty[$ définie par $f(x) = b^x$ pour tout $x$
+$f:\RR\rightarrow ]0,\infty[$ définie par $\DS f(x) = b^x$ pour tout $x$
 réel est appelée une {\bfseries fonction exponentielle}.
 \end{defn}
 
@@ -1736,7 +1737,7 @@ figure~\ref{EXP1}.
 \MATHfig{2_fonctions/exp1}{8cm}{Graphes de $y=3^x$, $y=2^x$
 et $y=(1/2)^x$}{Graphes de $y=3^x$, $y=2^x$ et $y=(1/2)^x$}{EXP1}
 
-Si $f$ est la fonction définie par $f(x) = b^x$ pour tout $x$, nous
+Si $f$ est la fonction définie par $\DS f(x) = b^x$ pour tout $x$, nous
 déduisons des graphes à la figure~\ref{EXP1} que le domaine de $f$ est
 $\RR$ et que son image est $\{ x \in \RR : x > 0 \}$.  De plus, $f$
 est une fonction croissante pour $b>1$ et décroissante pour $0<b<1$.
@@ -1744,7 +1745,7 @@ est une fonction croissante pour $b>1$ et décroissante pour $0<b<1$.
 \subsection{Fonctions logarithmiques}
 
 La fonction logarithmique n'est rien d'autre que la fonction inverse
-de $f(x) = b^x$ où $b$, la {\bfseries base}, est un nombre réel
+de $\DS f(x) = b^x$ où $b$, la {\bfseries base}, est un nombre réel
 positif.  Si nous appliquons la définition de l'inverse d'une fonction à
 la fonction $b^y$, nous obtenons:
 
@@ -1756,17 +1757,17 @@ y = \log_b(x)  \quad \text{si et seulement si} \quad  b^y = x
 pour $x>0$ et $y\in\RR$.
 \end{defn}
 
-Nous donnons à la figure~\ref{LOG1} le graphe des fonctions $f(x) = b^x$
-et $f^{-1}(x) = \log_b(x)$ pour $b=3$.  Puisque le domaine de
-$f(x) = b^x$ est $\RR$ et son image est $\{ x \in \RR : x > 0 \}$, nous
+Nous donnons à la figure~\ref{LOG1} le graphe des fonctions $\DS f(x) = b^x$
+et $\DS f^{-1}(x) = \log_b(x)$ pour $b=3$.  Puisque le domaine de
+$\DS f(x) = b^x$ est $\RR$ et son image est $\{ x \in \RR : x > 0 \}$, nous
 obtenons bien que le domaine de $\log_b$ est $\{ x \in \RR : x > 0 \}$
 et son image est $\RR$.
 
-\MATHfig{2_fonctions/log1}{8cm}{Graphes de $y=3^x$ et de $y=\log_3(x)$}
-{Graphes de $y=3^x$ (tirets) et de $y=\log_3(x)$ (ligne pleine)}{LOG1}
+\MATHfig{2_fonctions/log1}{8cm}{Graphes de $\DS y=3^x$ et de $y=\log_3(x)$}
+{Graphes de $\DS y=3^x$ (tirets) et de $y=\log_3(x)$ (ligne pleine)}{LOG1}
 
 Puisque $y=\log_b(x)$ est l'exposant qu'il faut donner à $b$ pour
-obtenir $x$ (i.e. pour que $b^y = x$), il est alors simple de vérifier
+obtenir $x$ (i.e. pour que $\DS b^y = x$), il est alors simple de vérifier
 à partir de cet énoncé que les fonctions logarithmiques satisfont les
 propriétés suivantes.
 
@@ -1797,24 +1798,24 @@ où la deuxième égalité provient de (\ref{log_id2}) et la troisième
 
 \begin{egg}
 Démontrons à partir de la définition du logarithme que
-$\log_b(x^p) = p \log_b(x)$.
+$\DS \log_b(x^p) = p \log_b(x)$.
 
-Si $y = \log_b(x^p)$ alors $b^y = x^p$ par définition du logarithme.
-Donc $b^{y/p} = x$.  Une deuxième utilisation de la définition du
+Si $\DS y = \log_b(x^p)$ alors $\DS b^y = x^p$ par définition du logarithme.
+Donc $\DS b^{y/p} = x$.  Une deuxième utilisation de la définition du
 logarithme donne $\log_b(x) = y/p$.  Ainsi, si nous résolvons cette
-dernière équation pour $y$, nous trouvons $p\log_b(x) = y = \log_b(x^p)$.
+dernière équation pour $y$, nous trouvons $\DS p\log_b(x) = y = \log_b(x^p)$.
 \end{egg}
 
 \begin{egg}
-Démontrons que $\displaystyle \frac{\log_a(x)}{\log_a(y)} = \log_y(x)$
+Démontrons que $\DS \frac{\log_a(x)}{\log_a(y)} = \log_y(x)$
 à partir de la définition du logarithme.
 
-Si $v = \log_a(x)$ et $w = \log_a(y)$, alors $a^v = x$ et $a^w = y$
-par définition du logarithme.  Nous obtenons de $a^w = y$ que
-$a = y^{1/w}$.  Si nous substituons cette expression pour $a$ dans
-$a^v = x$, nous trouvons $x = \left(y^{1/w}\right)^v = y^{v/w}$.  Une
+Si $v = \log_a(x)$ et $w = \log_a(y)$, alors $\DS a^v = x$ et $\DS a^w = y$
+par définition du logarithme.  Nous obtenons de $\DS a^w = y$ que
+$\DS a = y^{1/w}$.  Si nous substituons cette expression pour $a$ dans
+$\DS a^v = x$, nous trouvons $\DS x = \left(y^{1/w}\right)^v = y^{v/w}$.  Une
 deuxième utilisation de la définition du logarithme donne
-$\displaystyle \log_y(x) = \frac{v}{w} = \frac{\log_a(x)}{\log_a(y)}$ par
+$\DS \log_y(x) = \frac{v}{w} = \frac{\log_a(x)}{\log_a(y)}$ par
 définition de $v$ et $w$.
 \end{egg}
 
@@ -1836,21 +1837,22 @@ La définition précédente est équivalente à
 y=\ln(x) \quad \Leftrightarrow \quad e^y = x \; .
 \]
 La fonction $\ln:]0,\infty[\rightarrow \RR$ est l'inverse de la fonction
-exponentielle $f(x) = e^x$.
+exponentielle $\DS f(x) = e^x$.
 
 \begin{egg}
 Démontrons à partir de la définition du logarithme que
-$\log_b(x^p) = p \log_b(x)$.
+$\DS \log_b(x^p) = p \log_b(x)$.
 
-Si $y = \log_b(x^p)$ alors $b^y = x^p$ par définition du logarithme.
-Donc $b^{y/p} = x$.  Une deuxième utilisation de la définition du
+Si $\DS y = \log_b(x^p)$ alors $\DS b^y = x^p$ par définition du logarithme.
+Donc $\DS b^{y/p} = x$.  Une deuxième utilisation de la définition du
 logarithme donne $\log_b(x) = y/p$.  Ainsi, si nous résolvons cette
-dernière équation pour $y$, nous trouvons $p\log_b(x) = y = \log_b(x^p)$.
+dernière équation pour $y$, nous trouvons
+$\DS p\log_b(x) = y = \log_b(x^p)$.
 \end{egg}
 
 \begin{egg}
 Un modèle fréquemment utilisé pour décrire une population est de la
-forme $P(t) = P_0 e^{\alpha t}$ où $P(t)$ est le nombre d'individus au
+forme $\DS P(t) = P_0 e^{\alpha t}$ où $P(t)$ est le nombre d'individus au
 temps $t$, $P_0$ est le nombre initial d'individus, et $\alpha$ est le
 \lgm taux de croissance relatif\rgm.  Le taux de croissance relatif
 est défini comme étant le taux de croissance (instantané) au temps $t$
@@ -1863,8 +1865,9 @@ Déterminons le temps nécessaire pour que la population soit
 $2.5$ plus grande si $\alpha =1.5$.  Supposons que le temps soit
 mesuré en heures.
 
-Il faut donc trouver $t$ tel que $\displaystyle P(t) = 2.5 P_0$.
-C'est-à-dire, il faut trouver $t$ tel que $P_0 e^{1.5 t}  = 2.5 P_0$.  Ainsi,
+Il faut donc trouver $t$ tel que $\DS P(t) = 2.5 P_0$.
+C'est-à-dire, il faut trouver $t$ tel que
+$\DS P_0 e^{1.5 t}  = 2.5 P_0$.  Ainsi,
 \[
 P_0 e^{1.5 t}  = 2.5 P_0 \Rightarrow e^{1.5 t}  = 2.5
 \Rightarrow 1.5 t = \ln\left( e^{1.5 t} \right) = \ln(2.5)
@@ -1884,10 +1887,10 @@ P_0 e^{3 \alpha} = 2.5 P_0 \Rightarrow e^{3 \alpha} = 2.5
 \]
 
 Quelle est le nombre initial d'individus si nous avons $\alpha = 0.5$ et
-$10^6$ individus après $10$ jours?
+$\DS 10^6$ individus après $10$ jours?
 
-Puisque $\displaystyle 10^6 = P(10) = P_0 e^{0.5 \times 10}$, nous
-obtenons $\displaystyle P_0 = \frac{10^6}{e^{5}} \approx 6738$ individus.
+Puisque $\DS 10^6 = P(10) = P_0 e^{0.5 \times 10}$, nous
+obtenons $\DS P_0 = \frac{10^6}{e^{5}} \approx 6738$ individus.
 \end{egg}
 
 }  % End of theory
@@ -1900,12 +1903,12 @@ obtenons $\displaystyle P_0 = \frac{10^6}{e^{5}} \approx 6738$ individus.
 Simplifiez si possible les expressions suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle (3^4)^{0.5}$ &
-\subQ{b} & $\displaystyle 2^{2^3} \times 2^{2^2}$ &
-\subQ{c} & $\displaystyle \log_3(1)$  \\[0.7em]
-\subQ{d} & $\displaystyle \log_{10}(5) + \log_{10}(20)$ &
-\subQ{e} & $\displaystyle \log_{10}(500) - \log_{10}(50)$ &
-\subQ{f} & $\displaystyle \log_{42.3}(42.3^7)$
+\subQ{a} & $\DS (3^4)^{0.5}$ &
+\subQ{b} & $\DS 2^{2^3} \times 2^{2^2}$ &
+\subQ{c} & $\DS \log_3(1)$  \\[0.7em]
+\subQ{d} & $\DS \log_{10}(5) + \log_{10}(20)$ &
+\subQ{e} & $\DS \log_{10}(500) - \log_{10}(50)$ &
+\subQ{f} & $\DS \log_{42.3}(42.3^7)$
 \end{tabular}
 \end{center}
 \label{2Q1}
@@ -1915,8 +1918,8 @@ Simplifiez si possible les expressions suivantes.
 Simplifiez si possible les expressions suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \frac{(x^4 y^{1/4})^{1/2}}{y^{1/2}}$ &
-\subQ{b} & $\displaystyle \frac{x+1}{x-2} + \frac{x+1}{x-3} +
+\subQ{a} & $\DS \frac{(x^4 y^{1/4})^{1/2}}{y^{1/2}}$ &
+\subQ{b} & $\DS \frac{x+1}{x-2} + \frac{x+1}{x-3} +
  \frac{-9x+21}{x^2-5x+6}$
 \end{tabular}
 \end{center}
@@ -1925,7 +1928,7 @@ Simplifiez si possible les expressions suivantes.
 
 \begin{question}
 Utilisez la division de polynômes pour écrire
-$\displaystyle \frac{x^3 + 2x^2 +x+3}{x+2}$ sous la forme
+$\DS \frac{x^3 + 2x^2 +x+3}{x+2}$ sous la forme
 $p(x)+r(x)/q(x)$ où le degré de $r(x)$ est plus petite que le degré de
 $q(x)$.
 \label{2Q3}
@@ -1935,9 +1938,9 @@ $q(x)$.
 Factorisez les polynômes suivants.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $x^2+x-6$ &
-\subQ{b} & $3x^2 - 5 x -2$ &
-\subQ{c} & $\displaystyle x^{3/2} + x^{1/2}-12 x^{-1/2}$
+\subQ{a} & $\DS x^2+x-6$ &
+\subQ{b} & $\DS 3x^2 - 5 x -2$ &
+\subQ{c} & $\DS x^{3/2} + x^{1/2}-12 x^{-1/2}$
 \end{tabular}
 \end{center}
 \label{2Q4}
@@ -1947,15 +1950,15 @@ Factorisez les polynômes suivants.
 Cette question fait appel à ce que vous avez appris au secondaire sur les
 polynôme de degré deux.
 
-\subQ{a} Quelles sont les racines du polynôme $\displaystyle x^2 + 2x -2$?\\
-\subQ{b} Tracez la parabole $\displaystyle y=x^2+2x-2$.  N'oubliez
+\subQ{a} Quelles sont les racines du polynôme $\DS x^2 + 2x -2$?\\
+\subQ{b} Tracez la parabole $\DS y=x^2+2x-2$.  N'oubliez
 pas d'indiquer sur votre graphe l'intersection avec les axes.  S'il y
 a une valeur maximale ou minimale, indiquez la sur le graphe.
 \label{2Q5}
 \end{question}
 
 \begin{question}
-Quelle valeur devez-vous donner à $c$ dans le polynôme $4x^2 -12x + c$
+Quelle valeur devez-vous donner à $c$ dans le polynôme $\DS 4x^2 -12x + c$
 pour que les racines soient égales?
 \label{2Q6}
 \end{question}
@@ -1964,9 +1967,9 @@ pour que les racines soient égales?
 Résolvez les équations suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $7\times 5^{3x} = 21$ &
-\subQ{b} & $4\times 3^{-2x+1} = 7\time 3^{3x}$ &
-\subQ{c} & $\displaystyle \log_{10}(100^x) = 3$
+\subQ{a} & $\DS 7\times 5^{3x} = 21$ &
+\subQ{b} & $\DS 4\times 3^{-2x+1} = 7\time 3^{3x}$ &
+\subQ{c} & $\DS \log_{10}(100^x) = 3$
 \end{tabular}
 \end{center}
 \label{2Q7}
@@ -1974,7 +1977,7 @@ Résolvez les équations suivantes.
 
 \begin{question}
 Quelles sont les valeurs de $x$ pour lesquelles
-$\displaystyle e^x + 2e^{-x} = 3$?
+$\DS e^x + 2e^{-x} = 3$?
 \label{2Q8}
 \end{question}
 
@@ -1982,12 +1985,12 @@ $\displaystyle e^x + 2e^{-x} = 3$?
 Résolvez les équations suivantes.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle \frac{2x}{x+1} = \frac{2x-1}{x}$ &
-\subQ{b} & $\displaystyle \frac{1}{x+1} + \frac{3}{x-1} = 4$ \\[1em]
+\subQ{a} & $\DS \frac{2x}{x+1} = \frac{2x-1}{x}$ &
+\subQ{b} & $\DS \frac{1}{x+1} + \frac{3}{x-1} = 4$ \\[1em]
 \subQ{c} & $\ln(x-3)+\ln(x-5) = \ln(2x-6)$ &
 \subQ{d} & $|x-2| = 5$ \\[1em]
 \subQ{e} & $|x-2| = |2x-5|$ &
-\subQ{f} & $|x^2 - 4| = 4$ \\[1em]
+\subQ{f} & $\DS |x^2 - 4| = 4$ \\[1em]
 \subQ{g} & $\ln(2) - \ln(x) = \ln(3-x)$ & &
 \end{tabular}
 \end{center}
@@ -1998,13 +2001,13 @@ Résolvez les équations suivantes.
 Résolvez les inégalités suivantes.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle 5 -\frac{6}{x} < 4$ &
-\subQ{b} & $x^2 -4x + 3 > 0$ &
-\subQ{c} & $\displaystyle \frac{2}{x+1} >\frac{1}{x-3}$ \\[1em]
-\subQ{d} & $\displaystyle \frac{x^2}{x+2}  < 1$ &
-\subQ{e} & $\displaystyle \frac{x}{x-3}  < \frac{-6}{x+1}$  &
+\subQ{a} & $\DS 5 -\frac{6}{x} < 4$ &
+\subQ{b} & $\DS x^2 -4x + 3 > 0$ &
+\subQ{c} & $\DS \frac{2}{x+1} >\frac{1}{x-3}$ \\[1em]
+\subQ{d} & $\DS \frac{x^2}{x+2}  < 1$ &
+\subQ{e} & $\DS \frac{x}{x-3}  < \frac{-6}{x+1}$  &
 \subQ{f} & $|x-2| < 5$ \\[1em]
-\subQ{g} & $|x^2-2x - 5| < |x-1|$ & & & &
+\subQ{g} & $\DS |x^2-2x - 5| < |x-1|$ & & & &
 \end{tabular}
 \end{center}
 \label{2Q10}
@@ -2013,7 +2016,7 @@ Résolvez les inégalités suivantes.
 \subsection{Functions}
 
 \begin{question}
-Quel est l'image de la fonction $f(x) = 3 + 2x-x^2$?
+Quel est l'image de la fonction $\DS f(x) = 3 + 2x-x^2$?
 \label{2Q11}
 \end{question}
 
@@ -2030,10 +2033,10 @@ a un inverse, trouvez cet inverse.  Bien indiquer le domaine et
 l'image de la fonction et de son inverse.
 \begin{center}
 \begin{tabular}{*{2}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle g(x) =5^{x^3}$ &
-\subQ{b} & $\displaystyle f(x) = \sqrt{ \frac{x+1}{x-1} }$ &
-\subQ{c} & $\displaystyle h(x) = \left(\frac{x}{x+1}\right)^{10}$ \\
-\subQ{d} & $\displaystyle y=f(x) = \left(\frac{2x+7}{3}\right)^{-1/2}$ &
+\subQ{a} & $\DS g(x) =5^{x^3}$ &
+\subQ{b} & $\DS f(x) = \sqrt{ \frac{x+1}{x-1} }$ &
+\subQ{c} & $\DS h(x) = \left(\frac{x}{x+1}\right)^{10}$ \\
+\subQ{d} & $\DS y=f(x) = \left(\frac{2x+7}{3}\right)^{-1/2}$ &
 & & &
 \end{tabular}
 \end{center}
@@ -2042,28 +2045,28 @@ l'image de la fonction et de son inverse.
 
 \begin{question}
 Quelle est la forme la plus simple pour $(f\circ g)(x)$ où
-$\displaystyle f(x) = \sqrt{x^2-1}$ et $g(x) = \sqrt{x^2+1}$?
+$\DS f(x) = \sqrt{x^2-1}$ et $\DS g(x) = \sqrt{x^2+1}$?
 \label{2Q14}
 \end{question}
 
 \begin{question}
 Écrivez les fonctions suivantes comme la composition de fonctions
-simples.  Pour nous, les fonctions simples sont $f(x)=x^a$,
-$a^x$, $\log_b(x)$, ..., et le produit et la somme de telles
+simples.  Pour nous, les fonctions simples sont $\DS f(x)=x^a$,
+$\DS a^x$, $\log_b(x)$, ..., et le produit et la somme de telles
 fonctions.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle f(x) = \frac{5}{1+5^x}$ &
-\subQ{b} & $\displaystyle h(t) = (1-t^2)^{-4}$
+\subQ{a} & $\DS f(x) = \frac{5}{1+5^x}$ &
+\subQ{b} & $\DS h(t) = (1-t^2)^{-4}$
 \end{tabular}
 \end{center}
 \label{2Q15}
 \end{question}
 
 \begin{question}[\eng \life]
-Écrivez la fonction $\displaystyle g(x) = \cos(\sqrt{1+x^2})$ comme la
+Écrivez la fonction $\DS g(x) = \cos(\sqrt{1+x^2})$ comme la
 composition de fonctions simples.  Pour nous, les fonctions simples
-sont $f(x)=x^a$, $a^x$, $\log_b(x)$, $\cos(x)$, ..., et le produit et
+sont $\DS f(x)=x^a$, $\DS a^x$, $\log_b(x)$, $\cos(x)$, ..., et le produit et
 la somme de telles fonctions.
 \label{2Q16}
 \end{question}
@@ -2074,9 +2077,9 @@ la somme de telles fonctions.
 Vérifiez les identités trigonométriques suivantes pour
 $\theta = 0$, $\pi/4$, $\pi/2$ et $\pi$.
 
-\subQ{a} $\displaystyle \cos(\theta-\pi) = - \cos(\theta)$.
+\subQ{a} $\DS \cos(\theta-\pi) = - \cos(\theta)$.
 
-\subQ{b} $\cos(2\theta) = \cos^2(\theta) - \sin^2(\theta)$.
+\subQ{b} $\DS \cos(2\theta) = \cos^2(\theta) - \sin^2(\theta)$.
 \label{2Q17}
 \end{question}
 
@@ -2110,7 +2113,7 @@ avec $A>0$.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{6em}}}l@{\hspace{0.5em}}l}
 \subQ{a} & $f(t) = 2 - \cos(t)$ & \subQ{b} & $f(t) = 2 + \sin(t)$ \\
-\subQ{c} & $\displaystyle f(x) = -3 + 5\sin\left(\frac{\pi}{2}(2-x)\right)$ &
+\subQ{c} & $\DS f(x) = -3 + 5\sin\left(\frac{\pi}{2}(2-x)\right)$ &
 \end{tabular}
 \end{center}
 \label{2Q20}
@@ -2123,7 +2126,7 @@ graphe de la fonction.  Bien indiquer sur votre dessin la moyenne,
 l'amplitude, la période et la phase.
 \begin{center}
 \begin{tabular}{*{1}{l@{\hspace{0.5em}}l@{\hspace{3em}}}l@{\hspace{0.5em}}l}
-\subQ{a} & $\displaystyle h(z) = 1 + 5 \cos\left(\frac{\pi z}{2} -
+\subQ{a} & $\DS h(z) = 1 + 5 \cos\left(\frac{\pi z}{2} -
   \frac{3\pi}{2}\right)$ &
 \subQ{b} & $f(x)= 6 \sin(3x-6) -4$\\[1em]
 \subQ{c} & $W(y) = -2.0 + 3.0\cos\left(4\pi(y+0.1)\right)$ & &
@@ -2147,14 +2150,14 @@ Quel est le cosinus de l'angle $\theta$ dans le dessin suivant?
 \end{question}
 
 \begin{question}[\eng \life]
-Si $\displaystyle \sin(\theta)=\frac{1}{x}$, quelles sont les valeurs
+Si $\DS \sin(\theta)=\frac{1}{x}$, quelles sont les valeurs
 possible pour $\tan(\theta)$?
 \label{2Q24}
 \end{question}
 
 \begin{question}[\eng \life]
 Montrez que
-$\displaystyle \tan(\arcsin(x)) = \frac{x}{\sqrt{1-x^2}}$ pour $-1<x<1$.
+$\DS \tan(\arcsin(x)) = \frac{x}{\sqrt{1-x^2}}$ pour $-1<x<1$.
 \label{2Q25}
 \end{question}
 
@@ -2163,7 +2166,7 @@ $\displaystyle \tan(\arcsin(x)) = \frac{x}{\sqrt{1-x^2}}$ pour $-1<x<1$.
 \begin{question}
 Quelques valeurs de deux fonctions sont données dans le tableau
 ci-dessous.  Une des fonctions est linéaire (de la forme $mx+b$) et
-l'autre est exponentielle (de la forme $p\, b^x$).  Trouvez une formule
+l'autre est exponentielle (de la forme $\DS p\, b^x$).  Trouvez une formule
 pour chacune des fonctions.
 \[
 \begin{array}{c|cccc}
@@ -2179,7 +2182,7 @@ $g(x)$ & 5.7& 10.3& 14.9& 19.5
 
 \begin{question}
 Le poids $S$ en kilogrammes d'un individu au temps $t$ en jours est
-donné par la formule $\displaystyle S(t) = S_0 10^{\alpha t}$ où le
+donné par la formule $\DS S(t) = S_0 10^{\alpha t}$ où le
 poids initial est $S_0 = S(0) = 2.34$ kg et le taux de croissance
 par rapport au poids de l'individu est $\alpha = 0.693$.  Combien de temps
 faut-il pour que le poids de l'individu double?  Pour que le poids
@@ -2193,7 +2196,7 @@ population initiale est de $500$ individus (par km$^2$), quel sera le
 nombre d'individus (par km$^2$) après $12$ années? Il faut se rappeler
 que le nombre d'individus dans la population au temps $t$ en années
 est donné par une formule de la forme
-$\displaystyle p(t) = p_0 e^{\alpha t}$ où $p_0$ est le nombre initial
+$\DS p(t) = p_0 e^{\alpha t}$ où $p_0$ est le nombre initial
 d'individus et $\alpha$ est une constante représentant le taux de
 croissance par rapport à la taille de la population.
 
@@ -2204,7 +2207,7 @@ nécessaire pour que la population double.
 
 \begin{question}
 Le volume (en cm$^3$) d'un organisme au temps $t$ (en seconde) est
-donné par l'expression $V(t) = V_0 e^{\alpha t}$.  Quelles sont les
+donné par l'expression $\DS V(t) = V_0 e^{\alpha t}$.  Quelles sont les
 unités de $\alpha$?  Si $V_0 = 2$ et $\alpha = 0.1$, combien faut-il
 de temps pour que le volume double?  Pour qu'il quadruple?
 \label{2Q29}
@@ -2213,7 +2216,7 @@ de temps pour que le volume double?  Pour qu'il quadruple?
 \begin{question}
 La quantité de Carbone-14 (en atomes) que nous retrouvons dans les os
 d'un animal, $t$ années après son décès, est donnée par
-$\displaystyle Q(t) = Q_0 e^{-0.000122\; t}$ où $Q_0$ est la quantité de
+$\DS Q(t) = Q_0 e^{-0.000122\; t}$ où $Q_0$ est la quantité de
 carbone-14 au moment du décès.  Quelle est la demie-vie du carbone-14?
 \label{2Q30}
 \end{question}
@@ -2229,7 +2232,7 @@ population soit de $437$ individus (par m$^2$)?
 \end{question}
 
 \begin{question}[\eng \life]
-Tracez le graphe de la fonction $g(t) = e^t \cos(2\pi t)$ pour $0<t<3$.
+Tracez le graphe de la fonction $\DS g(t) = e^t \cos(2\pi t)$ pour $0<t<3$.
 Il n'est pas nécessaire que le graphe soit très précis mais il doit
 bien décrire le comportement qualitatif de la fonction.
 \label{2Q32}
